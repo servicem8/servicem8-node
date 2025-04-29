@@ -1,7 +1,7 @@
 {
   "name": "servicem8",
-  "version": "0.3.8",
-  "author": "Speakeasy",
+  "version": "0.3.9",
+  "author": "ServiceM8",
   "type": "module",
   "bin": {
     "mcp": "bin/mcp-server.js"
