@@ -181,7 +181,7 @@ import { tool$vendorsUpdateVendors } from "./tools/vendorsUpdateVendors.js";
 export function createMCPServer(deps) {
     const server = new McpServer({
         name: "ServiceM8",
-        version: "0.3.5",
+        version: "0.3.7",
     });
     const client = new ServiceM8Core({
         security: deps.security,

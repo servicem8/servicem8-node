@@ -22,7 +22,7 @@ const routes = (0, core_1.buildRouteMap)({
 exports.app = (0, core_1.buildApplication)(routes, {
     name: "mcp",
     versionInfo: {
-        currentVersion: "0.3.5",
+        currentVersion: "0.3.7",
     },
 });
 (0, core_1.run)(exports.app, node_process_1.default.argv.slice(2), (0, cli_js_1.buildContext)(node_process_1.default));
