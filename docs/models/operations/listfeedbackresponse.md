@@ -8,9 +8,9 @@
 ```typescript
 const value: components.Feedback[] = [
   {
-    uuid: "123e4567-f9cb-45dc-959f-22b4dbb5d5fb",
+    uuid: "123e4567-e334-4268-9474-22b4d3d8c89b",
     editDate: "YYYY-MM-DD HH:MM:SS",
-    relatedObjectUuid: "123e4567-f879-45db-bedd-22b4d31594ab",
+    relatedObjectUuid: "123e4567-9146-4b2d-958a-22b4d7d2688b",
   },
 ];
 ```

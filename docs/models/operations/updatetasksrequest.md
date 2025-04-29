@@ -8,14 +8,14 @@ import { UpdateTasksRequest } from "servicem8/models/operations";
 let value: UpdateTasksRequest = {
   uuid: "3ae11dd4-7b1b-49ee-aafc-39a9453e472f",
   task: {
-    uuid: "123e4567-dc43-4493-9ca7-22b4d0090a8b",
+    uuid: "123e4567-23f2-4a4c-99b4-22b4d56f813b",
     dueDate: "YYYY-MM-DD",
     name: "<value>",
-    relatedObjectUuid: "123e4567-d2a6-4591-a6dd-22b4d017cefb",
+    relatedObjectUuid: "123e4567-576f-4010-9711-22b4d7262f3b",
     completedTimestamp: "YYYY-MM-DD HH:MM:SS",
-    completedByStaffUuid: "123e4567-fb87-4daf-8cb3-22b4dc2a492b",
-    assignedToStaffUuid: "123e4567-698c-4d37-8aca-22b4dea21ccb",
-    createdByStaffUuid: "123e4567-9b5f-4964-ad21-22b4dd2c51db",
+    completedByStaffUuid: "123e4567-529f-457a-b588-22b4d1e045cb",
+    assignedToStaffUuid: "123e4567-1d55-481f-9f97-22b4d83c193b",
+    createdByStaffUuid: "123e4567-37bb-4d5d-8826-22b4d5b5c9bb",
     createDate: "YYYY-MM-DD HH:MM:SS",
   },
 };

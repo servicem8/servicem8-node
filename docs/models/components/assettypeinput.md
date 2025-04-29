@@ -6,7 +6,7 @@
 import { AssetTypeInput } from "servicem8/models/components";
 
 let value: AssetTypeInput = {
-  uuid: "123e4567-6e2a-4bdd-a391-22b4d692c17b",
+  uuid: "123e4567-0b38-4050-8e20-22b4d2316fdb",
 };
 ```
 
@@ -14,6 +14,6 @@ let value: AssetTypeInput = {
 
 | Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `uuid`                                                                   | *string*                                                                 | :heavy_minus_sign:                                                       | Record UUID key                                                          | 123e4567-6e2a-4bdd-a391-22b4d692c17b                                     |
+| `uuid`                                                                   | *string*                                                                 | :heavy_minus_sign:                                                       | Record UUID key                                                          | 123e4567-0b38-4050-8e20-22b4d2316fdb                                     |
 | `active`                                                                 | [components.AssetTypeActive](../../models/components/assettypeactive.md) | :heavy_minus_sign:                                                       | Record active/deleted flag. <br/><br/>Valid values are [0,1]             |                                                                          |
 | `name`                                                                   | *string*                                                                 | :heavy_minus_sign:                                                       | N/A                                                                      |                                                                          |

@@ -6,7 +6,7 @@
 import { QueueInput } from "servicem8/models/components";
 
 let value: QueueInput = {
-  uuid: "123e4567-5f69-43b0-bf45-22b4dfb57ebb",
+  uuid: "123e4567-6fa0-4c3a-b106-22b4d9c51a9b",
 };
 ```
 
@@ -14,7 +14,7 @@ let value: QueueInput = {
 
 | Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `uuid`                                                                         | *string*                                                                       | :heavy_minus_sign:                                                             | Record UUID key                                                                | 123e4567-5f69-43b0-bf45-22b4dfb57ebb                                           |
+| `uuid`                                                                         | *string*                                                                       | :heavy_minus_sign:                                                             | Record UUID key                                                                | 123e4567-6fa0-4c3a-b106-22b4d9c51a9b                                           |
 | `active`                                                                       | [components.QueueActive](../../models/components/queueactive.md)               | :heavy_minus_sign:                                                             | Record active/deleted flag. <br/><br/>Valid values are [0,1]                   |                                                                                |
 | `name`                                                                         | *string*                                                                       | :heavy_minus_sign:                                                             | N/A                                                                            |                                                                                |
 | `defaultTimeframe`                                                             | *number*                                                                       | :heavy_minus_sign:                                                             | N/A                                                                            |                                                                                |

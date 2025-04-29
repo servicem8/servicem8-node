@@ -75,7 +75,7 @@ export type Asset = {
   /**
    * User-facing description of this asset
    */
-  name: string;
+  name?: string | undefined;
   /**
    * Latitude component of the Asset's location in degrees
    */
@@ -123,7 +123,7 @@ export type AssetInput = {
   /**
    * User-facing description of this asset
    */
-  name: string;
+  name?: string | undefined;
   /**
    * Latitude component of the Asset's location in degrees
    */
@@ -233,7 +233,7 @@ export const Asset$inboundSchema: z.ZodType<Asset, z.ZodTypeDef, unknown> = z
     company_uuid: z.string().optional(),
     asset_code: z.string().optional(),
     asset_type_uuid: z.string().optional(),
-    name: z.string(),
+    name: z.string().optional(),
     lat: z.number().optional(),
     lng: z.number().optional(),
     geo_timestamp: z.string().optional(),
@@ -258,7 +258,7 @@ export type Asset$Outbound = {
   company_uuid?: string | undefined;
   asset_code?: string | undefined;
   asset_type_uuid?: string | undefined;
-  name: string;
+  name?: string | undefined;
   lat?: number | undefined;
   lng?: number | undefined;
   geo_timestamp?: string | undefined;
@@ -278,7 +278,7 @@ export const Asset$outboundSchema: z.ZodType<
   companyUuid: z.string().optional(),
   assetCode: z.string().optional(),
   assetTypeUuid: z.string().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   lat: z.number().optional(),
   lng: z.number().optional(),
   geoTimestamp: z.string().optional(),
@@ -333,7 +333,7 @@ export const AssetInput$inboundSchema: z.ZodType<
   company_uuid: z.string().optional(),
   asset_code: z.string().optional(),
   asset_type_uuid: z.string().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   lat: z.number().optional(),
   lng: z.number().optional(),
   geo_timestamp: z.string().optional(),
@@ -356,7 +356,7 @@ export type AssetInput$Outbound = {
   company_uuid?: string | undefined;
   asset_code?: string | undefined;
   asset_type_uuid?: string | undefined;
-  name: string;
+  name?: string | undefined;
   lat?: number | undefined;
   lng?: number | undefined;
   geo_timestamp?: string | undefined;
@@ -375,7 +375,7 @@ export const AssetInput$outboundSchema: z.ZodType<
   companyUuid: z.string().optional(),
   assetCode: z.string().optional(),
   assetTypeUuid: z.string().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   lat: z.number().optional(),
   lng: z.number().optional(),
   geoTimestamp: z.string().optional(),

@@ -8,7 +8,7 @@
 ```typescript
 const value: components.TaxRate[] = [
   {
-    uuid: "123e4567-0681-478a-982b-22b4d19afceb",
+    uuid: "123e4567-6130-411f-b3af-22b4df0ef74b",
     editDate: "YYYY-MM-DD HH:MM:SS",
     name: "<value>",
   },

@@ -7,7 +7,7 @@
 
 ```typescript
 const value: components.Category = {
-  uuid: "123e4567-19f6-4afb-a54c-22b4d49b4feb",
+  uuid: "123e4567-3d68-47a1-8419-22b4ddbc000b",
   editDate: "YYYY-MM-DD HH:MM:SS",
   name: "<value>",
 };

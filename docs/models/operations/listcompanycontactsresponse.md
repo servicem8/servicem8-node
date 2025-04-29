@@ -8,9 +8,9 @@
 ```typescript
 const value: components.CompanyContact[] = [
   {
-    uuid: "123e4567-2131-4758-9a09-22b4dafcc32b",
+    uuid: "123e4567-3676-4b9a-8464-22b4d4160c3b",
     editDate: "YYYY-MM-DD HH:MM:SS",
-    companyUuid: "123e4567-c05a-4e61-b23c-22b4d6884bcb",
+    companyUuid: "123e4567-5aec-4060-af6d-22b4d50de58b",
   },
 ];
 ```

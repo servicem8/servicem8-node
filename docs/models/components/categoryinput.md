@@ -6,7 +6,7 @@
 import { CategoryInput } from "servicem8/models/components";
 
 let value: CategoryInput = {
-  uuid: "123e4567-19f6-4afb-a54c-22b4d49b4feb",
+  uuid: "123e4567-3d68-47a1-8419-22b4ddbc000b",
   name: "<value>",
 };
 ```
@@ -15,7 +15,7 @@ let value: CategoryInput = {
 
 | Field                                                                  | Type                                                                   | Required                                                               | Description                                                            | Example                                                                |
 | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `uuid`                                                                 | *string*                                                               | :heavy_minus_sign:                                                     | Record UUID key                                                        | 123e4567-19f6-4afb-a54c-22b4d49b4feb                                   |
+| `uuid`                                                                 | *string*                                                               | :heavy_minus_sign:                                                     | Record UUID key                                                        | 123e4567-3d68-47a1-8419-22b4ddbc000b                                   |
 | `active`                                                               | [components.CategoryActive](../../models/components/categoryactive.md) | :heavy_minus_sign:                                                     | Record active/deleted flag. <br/><br/>Valid values are [0,1]           |                                                                        |
 | `name`                                                                 | *string*                                                               | :heavy_check_mark:                                                     | N/A                                                                    |                                                                        |
 | `colour`                                                               | *string*                                                               | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |

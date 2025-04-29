@@ -6,7 +6,7 @@
 import { LocationInput } from "servicem8/models/components";
 
 let value: LocationInput = {
-  uuid: "123e4567-050e-4e5a-a231-22b4d5a6f43b",
+  uuid: "123e4567-58eb-44a7-af94-22b4d35a770b",
   name: "<value>",
 };
 ```
@@ -15,7 +15,7 @@ let value: LocationInput = {
 
 | Field                                                                  | Type                                                                   | Required                                                               | Description                                                            | Example                                                                |
 | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `uuid`                                                                 | *string*                                                               | :heavy_minus_sign:                                                     | Record UUID key                                                        | 123e4567-050e-4e5a-a231-22b4d5a6f43b                                   |
+| `uuid`                                                                 | *string*                                                               | :heavy_minus_sign:                                                     | Record UUID key                                                        | 123e4567-58eb-44a7-af94-22b4d35a770b                                   |
 | `active`                                                               | [components.LocationActive](../../models/components/locationactive.md) | :heavy_minus_sign:                                                     | Record active/deleted flag. <br/><br/>Valid values are [0,1]           |                                                                        |
 | `name`                                                                 | *string*                                                               | :heavy_check_mark:                                                     | Location's name                                                        |                                                                        |
 | `line1`                                                                | *string*                                                               | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |

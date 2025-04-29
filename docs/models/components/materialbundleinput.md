@@ -6,7 +6,7 @@
 import { MaterialBundleInput } from "servicem8/models/components";
 
 let value: MaterialBundleInput = {
-  uuid: "123e4567-2e7a-490f-8d31-22b4d60de63b",
+  uuid: "123e4567-a275-440b-a3f1-22b4d26a4f4b",
   itemNumber: "<value>",
 };
 ```
@@ -15,7 +15,7 @@ let value: MaterialBundleInput = {
 
 | Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        | Example                                                                            |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `uuid`                                                                             | *string*                                                                           | :heavy_minus_sign:                                                                 | Record UUID key                                                                    | 123e4567-2e7a-490f-8d31-22b4d60de63b                                               |
+| `uuid`                                                                             | *string*                                                                           | :heavy_minus_sign:                                                                 | Record UUID key                                                                    | 123e4567-a275-440b-a3f1-22b4d26a4f4b                                               |
 | `active`                                                                           | [components.MaterialBundleActive](../../models/components/materialbundleactive.md) | :heavy_minus_sign:                                                                 | Record active/deleted flag. <br/><br/>Valid values are [0,1]                       |                                                                                    |
 | `itemNumber`                                                                       | *string*                                                                           | :heavy_check_mark:                                                                 | N/A                                                                                |                                                                                    |
 | `name`                                                                             | *string*                                                                           | :heavy_minus_sign:                                                                 | N/A                                                                                |                                                                                    |

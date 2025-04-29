@@ -8,10 +8,10 @@
 ```typescript
 const value: components.Attachment[] = [
   {
-    uuid: "123e4567-8119-4e93-ac74-22b4dd381f5b",
+    uuid: "123e4567-66de-441e-b9c1-22b4dc20867b",
     editDate: "YYYY-MM-DD HH:MM:SS",
-    relatedObjectUuid: "123e4567-a583-486e-97e3-22b4daffb4cb",
-    createdByStaffUuid: "123e4567-6213-4fd6-92b6-22b4da6db1eb",
+    relatedObjectUuid: "123e4567-1357-448a-81f1-22b4dabdf47b",
+    createdByStaffUuid: "123e4567-0cb5-47d1-8669-22b4d2b3c20b",
   },
 ];
 ```

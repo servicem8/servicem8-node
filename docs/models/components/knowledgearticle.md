@@ -6,7 +6,7 @@
 import { KnowledgeArticle } from "servicem8/models/components";
 
 let value: KnowledgeArticle = {
-  uuid: "123e4567-24f1-44ed-baec-22b4d2b5544b",
+  uuid: "123e4567-c7a0-4d3d-8a49-22b4dfd70f7b",
   editDate: "YYYY-MM-DD HH:MM:SS",
   name: "<value>",
 };
@@ -16,7 +16,7 @@ let value: KnowledgeArticle = {
 
 | Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            | Example                                                                                |
 | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `uuid`                                                                                 | *string*                                                                               | :heavy_minus_sign:                                                                     | Record UUID key                                                                        | 123e4567-24f1-44ed-baec-22b4d2b5544b                                                   |
+| `uuid`                                                                                 | *string*                                                                               | :heavy_minus_sign:                                                                     | Record UUID key                                                                        | 123e4567-c7a0-4d3d-8a49-22b4dfd70f7b                                                   |
 | `active`                                                                               | [components.KnowledgeArticleActive](../../models/components/knowledgearticleactive.md) | :heavy_minus_sign:                                                                     | Record active/deleted flag. <br/><br/>Valid values are [0,1]                           |                                                                                        |
 | `editDate`                                                                             | *string*                                                                               | :heavy_minus_sign:                                                                     | Record last modified timestamp                                                         | YYYY-MM-DD HH:MM:SS                                                                    |
 | `name`                                                                                 | *string*                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |                                                                                        |
