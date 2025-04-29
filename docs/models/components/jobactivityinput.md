@@ -1,0 +1,40 @@
+# JobActivityInput
+
+## Example Usage
+
+```typescript
+import { JobActivityInput } from "servicem8/models/components";
+
+let value: JobActivityInput = {
+  uuid: "123e4567-a1bd-49bb-bdf8-22b4d64a2feb",
+  jobUuid: "123e4567-cf75-4525-80d6-22b4d383748b",
+  staffUuid: "123e4567-db25-4d06-80fa-22b4d92f9b7b",
+  startDate: "YYYY-MM-DD HH:MM:SS",
+  endDate: "YYYY-MM-DD HH:MM:SS",
+  hasBeenOpenedTimestamp: "YYYY-MM-DD HH:MM:SS",
+  allocatedByStaffUuid: "123e4567-fb76-4cd6-98e4-22b4ddb2c40b",
+  allocatedTimestamp: "YYYY-MM-DD HH:MM:SS",
+  materialUuid: "123e4567-0f6f-4f02-a47d-22b4d0a0628b",
+};
+```
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  | Example                                                                      |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `uuid`                                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | Record UUID key                                                              | 123e4567-a1bd-49bb-bdf8-22b4d64a2feb                                         |
+| `active`                                                                     | [components.JobActivityActive](../../models/components/jobactivityactive.md) | :heavy_minus_sign:                                                           | Record active/deleted flag. <br/><br/>Valid values are [0,1]                 |                                                                              |
+| `jobUuid`                                                                    | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          | 123e4567-cf75-4525-80d6-22b4d383748b                                         |
+| `staffUuid`                                                                  | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          | 123e4567-db25-4d06-80fa-22b4d92f9b7b                                         |
+| `startDate`                                                                  | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          | YYYY-MM-DD HH:MM:SS                                                          |
+| `endDate`                                                                    | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          | YYYY-MM-DD HH:MM:SS                                                          |
+| `activityWasScheduled`                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |                                                                              |
+| `activityWasRecorded`                                                        | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |                                                                              |
+| `activityWasAutomated`                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |                                                                              |
+| `hasBeenOpened`                                                              | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |                                                                              |
+| `hasBeenOpenedTimestamp`                                                     | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          | YYYY-MM-DD HH:MM:SS                                                          |
+| `travelTimeInSeconds`                                                        | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |                                                                              |
+| `travelDistanceInMeters`                                                     | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |                                                                              |
+| `allocatedByStaffUuid`                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          | 123e4567-fb76-4cd6-98e4-22b4ddb2c40b                                         |
+| `allocatedTimestamp`                                                         | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          | YYYY-MM-DD HH:MM:SS                                                          |
+| `materialUuid`                                                               | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          | 123e4567-0f6f-4f02-a47d-22b4d0a0628b                                         |

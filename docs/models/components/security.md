@@ -1,0 +1,16 @@
+# Security
+
+## Example Usage
+
+```typescript
+import { Security } from "servicem8/models/components";
+
+let value: Security = {};
+```
+
+## Fields
+
+| Field              | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `oauth2`           | *string*           | :heavy_minus_sign: | N/A                |
+| `apiKeyAuth`       | *string*           | :heavy_minus_sign: | N/A                |

@@ -1,0 +1,27 @@
+# CompanyContactInput
+
+## Example Usage
+
+```typescript
+import { CompanyContactInput } from "servicem8/models/components";
+
+let value: CompanyContactInput = {
+  uuid: "123e4567-2131-4758-9a09-22b4dafcc32b",
+  companyUuid: "123e4567-c05a-4e61-b23c-22b4d6884bcb",
+};
+```
+
+## Fields
+
+| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        | Example                                                                            |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `uuid`                                                                             | *string*                                                                           | :heavy_minus_sign:                                                                 | Record UUID key                                                                    | 123e4567-2131-4758-9a09-22b4dafcc32b                                               |
+| `active`                                                                           | [components.CompanyContactActive](../../models/components/companycontactactive.md) | :heavy_minus_sign:                                                                 | Record active/deleted flag. <br/><br/>Valid values are [0,1]                       |                                                                                    |
+| `companyUuid`                                                                      | *string*                                                                           | :heavy_minus_sign:                                                                 | N/A                                                                                | 123e4567-c05a-4e61-b23c-22b4d6884bcb                                               |
+| `first`                                                                            | *string*                                                                           | :heavy_minus_sign:                                                                 | N/A                                                                                |                                                                                    |
+| `last`                                                                             | *string*                                                                           | :heavy_minus_sign:                                                                 | N/A                                                                                |                                                                                    |
+| `phone`                                                                            | *string*                                                                           | :heavy_minus_sign:                                                                 | N/A                                                                                |                                                                                    |
+| `mobile`                                                                           | *string*                                                                           | :heavy_minus_sign:                                                                 | N/A                                                                                |                                                                                    |
+| `email`                                                                            | *string*                                                                           | :heavy_minus_sign:                                                                 | N/A                                                                                |                                                                                    |
+| `type`                                                                             | *string*                                                                           | :heavy_minus_sign:                                                                 | N/A                                                                                |                                                                                    |
+| `isPrimaryContact`                                                                 | *string*                                                                           | :heavy_minus_sign:                                                                 | N/A                                                                                |                                                                                    |
