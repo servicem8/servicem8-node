@@ -184,7 +184,7 @@ const vendorsUpdateVendors_js_1 = require("./tools/vendorsUpdateVendors.js");
 function createMCPServer(deps) {
     const server = new mcp_js_1.McpServer({
         name: "ServiceM8",
-        version: "0.3.7",
+        version: "0.3.8",
     });
     const client = new core_js_1.ServiceM8Core({
         security: deps.security,

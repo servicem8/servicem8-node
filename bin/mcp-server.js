@@ -34190,9 +34190,9 @@ var init_config = __esm(() => {
   SDK_METADATA = {
     language: "typescript",
     openapiDocVersion: "1.0.0",
-    sdkVersion: "0.3.7",
+    sdkVersion: "0.3.8",
     genVersion: "2.593.4",
-    userAgent: "speakeasy-sdk/typescript 0.3.7 2.593.4 1.0.0 servicem8"
+    userAgent: "speakeasy-sdk/typescript 0.3.8 2.593.4 1.0.0 servicem8"
   };
 });
 
@@ -65506,7 +65506,7 @@ Vendor account information
 function createMCPServer(deps) {
   const server = new McpServer({
     name: "ServiceM8",
-    version: "0.3.7"
+    version: "0.3.8"
   });
   const client = new ServiceM8Core({
     security: deps.security,
@@ -67069,7 +67069,7 @@ var routes = an({
 var app = He(routes, {
   name: "mcp",
   versionInfo: {
-    currentVersion: "0.3.7"
+    currentVersion: "0.3.8"
   }
 });
 zt(app, process3.argv.slice(2), buildContext(process3));
@@ -67077,5 +67077,5 @@ export {
   app
 };
 
-//# debugId=A83773B08E13DE5164756E2164756E21
+//# debugId=0556E1FB98F0B37364756E2164756E21
 //# sourceMappingURL=mcp-server.js.map
