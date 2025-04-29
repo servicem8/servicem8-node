@@ -1,0 +1,53 @@
+speakeasyVersion: 1.540.1
+sources:
+    ServiceM8 API:
+        sourceNamespace: service-m-8-api
+        sourceRevisionDigest: sha256:aa374a9dfc2b9d8b73bbb6c75deeb788bc23c75565f675e55441e1ad89752b32
+        sourceBlobDigest: sha256:34f2221c7d2168e6a19f1dc289112f6568c91d657513dc1d2290218830e97d95
+        tags:
+            - latest
+            - 1.0.0
+targets:
+    service-m-8:
+        source: ServiceM8 API
+        sourceNamespace: service-m-8-api
+        sourceRevisionDigest: sha256:3ece1261ae831566b9a980459308f092968b35f18593f52c78d11f86ae397614
+        sourceBlobDigest: sha256:5a069cf0f545262aeda24ae1cb299eda6aab7b8dc848c317ec32310db46f4f1b
+        codeSamplesNamespace: service-m-8-api-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:8992ab76b9347817ba94159c46658e90854af0ba7e3243efaefa51ddb5dd9c72
+    service-m8:
+        source: ServiceM8 API
+        sourceNamespace: service-m-8-api
+        sourceRevisionDigest: sha256:131fb1410b23ea980ae26df254edd05177c4dd03840755ef3397a3458bdfcb39
+        sourceBlobDigest: sha256:5a069cf0f545262aeda24ae1cb299eda6aab7b8dc848c317ec32310db46f4f1b
+        codeSamplesNamespace: service-m-8-api-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:357c964a0fecdcd8d0bdcf281950f0409fb22021be9ec901ff807694932489b0
+    servicem8:
+        source: ServiceM8 API
+        sourceNamespace: service-m-8-api
+        sourceRevisionDigest: sha256:aa374a9dfc2b9d8b73bbb6c75deeb788bc23c75565f675e55441e1ad89752b32
+        sourceBlobDigest: sha256:34f2221c7d2168e6a19f1dc289112f6568c91d657513dc1d2290218830e97d95
+        codeSamplesNamespace: service-m-8-api-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:b8b2d5f405b11e190fc9411474e222e4654054a4201df41515efed4c4c259d9f
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        ServiceM8 API:
+            inputs:
+                - location: api.json
+            registry:
+                location: registry.speakeasyapi.dev/servicem8-afy/main/service-m-8-api
+    targets:
+        servicem8:
+            target: typescript
+            source: ServiceM8 API
+            publish:
+                npm:
+                    token: $npm_token
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/servicem8-afy/main/service-m-8-api-typescript-code-samples
+                labelOverride:
+                    fixedValue: Typescript (SDK)
+                blocking: false

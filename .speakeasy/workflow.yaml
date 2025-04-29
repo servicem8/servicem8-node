@@ -1,0 +1,21 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    ServiceM8 API:
+        inputs:
+            - location: api.json
+        registry:
+            location: registry.speakeasyapi.dev/servicem8-afy/main/service-m-8-api
+targets:
+    servicem8:
+        target: typescript
+        source: ServiceM8 API
+        publish:
+            npm:
+                token: $npm_token
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/servicem8-afy/main/service-m-8-api-typescript-code-samples
+            labelOverride:
+                fixedValue: Typescript (SDK)
+            blocking: false
