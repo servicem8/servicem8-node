@@ -1,0 +1,448 @@
+# AssetTypes
+(*assetTypes*)
+
+## Overview
+
+Operations related to Asset Types
+
+### Available Operations
+
+* [listAssetTypes](#listassettypes) - List all Asset Types
+* [createAssetTypes](#createassettypes) - Create a new Asset Type
+* [getAssetTypes](#getassettypes) - Retrieve an Asset Type
+* [updateAssetTypes](#updateassettypes) - Update an Asset Type
+* [deleteAssetTypes](#deleteassettypes) - Delete an Asset Type
+
+## listAssetTypes
+
+
+			
+#### Filtering
+This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_assets**.
+
+			
+
+### Example Usage
+
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.listAssetTypes();
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesListAssetTypes } from "servicem8/funcs/assetTypesListAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesListAssetTypes(serviceM8);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.ListAssetTypesResponse](../../models/operations/listassettypesresponse.md)\>**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorT    | 400              | application/json |
+| errors.APIError  | 4XX, 5XX         | \*/\*            |
+
+## createAssetTypes
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_assets**.
+
+			
+			
+#### Record UUID
+UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the response header as x-record-uuid.
+
+			
+
+### Example Usage
+
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.createAssetTypes({
+    uuid: "123e4567-6271-4eaa-9cd3-22b4d8f3e59b",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesCreateAssetTypes } from "servicem8/funcs/assetTypesCreateAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesCreateAssetTypes(serviceM8, {
+    uuid: "123e4567-6271-4eaa-9cd3-22b4d8f3e59b",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AssetTypeInput](../../models/components/assettypeinput.md)                                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.CreateAssetTypesResponse](../../models/operations/createassettypesresponse.md)\>**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorT    | 400              | application/json |
+| errors.APIError  | 4XX, 5XX         | \*/\*            |
+
+## getAssetTypes
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_assets**.
+
+			
+
+### Example Usage
+
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.getAssetTypes({
+    uuid: "60d92c37-ec9f-444d-be47-2661b6ad833a",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesGetAssetTypes } from "servicem8/funcs/assetTypesGetAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesGetAssetTypes(serviceM8, {
+    uuid: "60d92c37-ec9f-444d-be47-2661b6ad833a",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetAssetTypesRequest](../../models/operations/getassettypesrequest.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.GetAssetTypesResponse](../../models/operations/getassettypesresponse.md)\>**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorT    | 400              | application/json |
+| errors.APIError  | 4XX, 5XX         | \*/\*            |
+
+## updateAssetTypes
+
+Update an Asset Type
+
+### Example Usage
+
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.updateAssetTypes({
+    uuid: "533258a6-a77b-40f0-81c1-0888e3215102",
+    assetType: {
+      uuid: "123e4567-6271-4eaa-9cd3-22b4d8f3e59b",
+    },
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesUpdateAssetTypes } from "servicem8/funcs/assetTypesUpdateAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesUpdateAssetTypes(serviceM8, {
+    uuid: "533258a6-a77b-40f0-81c1-0888e3215102",
+    assetType: {
+      uuid: "123e4567-6271-4eaa-9cd3-22b4d8f3e59b",
+    },
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateAssetTypesRequest](../../models/operations/updateassettypesrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.UpdateAssetTypesResponse](../../models/operations/updateassettypesresponse.md)\>**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorT    | 400              | application/json |
+| errors.APIError  | 4XX, 5XX         | \*/\*            |
+
+## deleteAssetTypes
+
+
+			
+In ServiceM8, records are never deleted, but are archived. Archived records will remain accessible via the API as (active = 0), however will no longer be visible in UI. Archived records can be restored to active by setting the record active field to 1.
+
+			
+
+### Example Usage
+
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.deleteAssetTypes({
+    uuid: "ce66b3b1-ed5d-4c84-bc4a-d2042accb19f",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesDeleteAssetTypes } from "servicem8/funcs/assetTypesDeleteAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesDeleteAssetTypes(serviceM8, {
+    uuid: "ce66b3b1-ed5d-4c84-bc4a-d2042accb19f",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.DeleteAssetTypesRequest](../../models/operations/deleteassettypesrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.DeleteAssetTypesResponse](../../models/operations/deleteassettypesresponse.md)\>**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorT    | 400              | application/json |
+| errors.APIError  | 4XX, 5XX         | \*/\*            |

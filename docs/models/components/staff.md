@@ -1,0 +1,47 @@
+# Staff
+
+## Example Usage
+
+```typescript
+import { Staff } from "servicem8/models/components";
+
+let value: Staff = {
+  uuid: "123e4567-e9bc-479a-8bf1-22b4d962fe9b",
+  editDate: "YYYY-MM-DD HH:MM:SS",
+  first: "<value>",
+  last: "<value>",
+  email: "Felipa97@yahoo.com",
+  geoTimestamp: "YYYY-MM-DD HH:MM:SS",
+  navigatingToJobUuid: "123e4567-d527-48f4-8c4c-22b4df5c869b",
+  navigatingTimestamp: "YYYY-MM-DD HH:MM:SS",
+  navigatingExpiryTimestamp: "YYYY-MM-DD HH:MM:SS",
+  statusMessageTimestamp: "YYYY-MM-DD HH:MM:SS",
+  securityRoleUuid: "123e4567-8665-4de6-bb36-22b4dc40e2bb",
+};
+```
+
+## Fields
+
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                | Example                                                                    |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `uuid`                                                                     | *string*                                                                   | :heavy_minus_sign:                                                         | Record UUID key                                                            | 123e4567-e9bc-479a-8bf1-22b4d962fe9b                                       |
+| `active`                                                                   | [components.StaffActive](../../models/components/staffactive.md)           | :heavy_minus_sign:                                                         | Record active/deleted flag. <br/><br/>Valid values are [0,1]               |                                                                            |
+| `editDate`                                                                 | *string*                                                                   | :heavy_minus_sign:                                                         | Record last modified timestamp                                             | YYYY-MM-DD HH:MM:SS                                                        |
+| `first`                                                                    | *string*                                                                   | :heavy_check_mark:                                                         | Staff First Name                                                           |                                                                            |
+| `last`                                                                     | *string*                                                                   | :heavy_check_mark:                                                         | Staff Last Name                                                            |                                                                            |
+| `email`                                                                    | *string*                                                                   | :heavy_check_mark:                                                         | Staff Email Address. This is also your login name.                         |                                                                            |
+| `mobile`                                                                   | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
+| `lng`                                                                      | *number*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
+| `lat`                                                                      | *number*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
+| `geoTimestamp`                                                             | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | YYYY-MM-DD HH:MM:SS                                                        |
+| `jobTitle`                                                                 | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
+| `navigatingToJobUuid`                                                      | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | 123e4567-d527-48f4-8c4c-22b4df5c869b                                       |
+| `navigatingTimestamp`                                                      | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | YYYY-MM-DD HH:MM:SS                                                        |
+| `navigatingExpiryTimestamp`                                                | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | YYYY-MM-DD HH:MM:SS                                                        |
+| `color`                                                                    | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
+| `customIconUrl`                                                            | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
+| `statusMessage`                                                            | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
+| `statusMessageTimestamp`                                                   | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | YYYY-MM-DD HH:MM:SS                                                        |
+| `canReceivePushNotification`                                               | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
+| `hideFromSchedule`                                                         | [components.HideFromSchedule](../../models/components/hidefromschedule.md) | :heavy_minus_sign:                                                         | <br/><br/>Valid values are [0,1]                                           |                                                                            |
+| `securityRoleUuid`                                                         | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | 123e4567-8665-4de6-bb36-22b4dc40e2bb                                       |
