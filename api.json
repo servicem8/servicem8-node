@@ -6,11 +6,6 @@
         "termsOfService": "https://www.servicem8.com/terms-of-service",
         "version": "1.0.0"
     },
-    "servers": [
-        {
-            "url": "https://api.servicem8.com/api_1.0"
-        }
-    ],
     "security": [
         {
             "oauth2": []
