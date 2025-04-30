@@ -10,42 +10,30 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const JobAllocationActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type JobAllocationActive = ClosedEnum<typeof JobAllocationActive>;
 
 export type JobAllocation = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: JobAllocationActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
+  editDate?: any | undefined;
   jobUuid?: string | undefined;
   queueUuid?: string | undefined;
   staffUuid?: string | undefined;
@@ -66,15 +54,11 @@ export type JobAllocation = {
 
 export type JobAllocationInput = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: JobAllocationActive | undefined;
   jobUuid?: string | undefined;
@@ -124,7 +108,7 @@ export const JobAllocation$inboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: JobAllocationActive$inboundSchema.default(1),
-  edit_date: z.string().optional(),
+  edit_date: z.any().optional(),
   job_uuid: z.string().optional(),
   queue_uuid: z.string().optional(),
   staff_uuid: z.string().optional(),
@@ -167,7 +151,7 @@ export const JobAllocation$inboundSchema: z.ZodType<
 export type JobAllocation$Outbound = {
   uuid?: string | undefined;
   active: number;
-  edit_date?: string | undefined;
+  edit_date?: any | undefined;
   job_uuid?: string | undefined;
   queue_uuid?: string | undefined;
   staff_uuid?: string | undefined;
@@ -194,7 +178,7 @@ export const JobAllocation$outboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: JobAllocationActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
+  editDate: z.any().optional(),
   jobUuid: z.string().optional(),
   queueUuid: z.string().optional(),
   staffUuid: z.string().optional(),

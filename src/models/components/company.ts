@@ -10,55 +10,26 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const CompanyActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type CompanyActive = ClosedEnum<typeof CompanyActive>;
 
 export type Company = {
   /**
-   * Record UUID key
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
-   */
-  active?: CompanyActive | undefined;
-  /**
-   * Record last modified timestamp
-   */
-  editDate?: string | undefined;
-  /**
    * Company Name
    */
   name: string;
-  website?: string | undefined;
+  /**
+   * Australian Business Number. A unique 11-digit identifier issued by the Australian Taxation Office to businesses. Required for tax compliance and validation of business identity in Australia.
+   */
   abnNumber?: string | undefined;
-  isIndividual?: string | undefined;
-  addressStreet?: string | undefined;
-  addressCity?: string | undefined;
-  addressState?: string | undefined;
-  addressPostcode?: string | undefined;
-  addressCountry?: string | undefined;
-  faxNumber?: string | undefined;
   /**
    * Password
    */
@@ -67,6 +38,30 @@ export type Company = {
    * Confirm Password
    */
   billingAddress?: string | undefined;
+  /**
+   * If provided, specifies the UUID of this Site's parent Company. If blank, this record is a Head Office rather than a Site. This field is only present on ServiceM8 Accounts with the Company Sites addon activated.
+   */
+  parentCompanyUuid?: any | undefined;
+  /**
+   * Unique identifier for this record
+   */
+  uuid?: string | undefined;
+  /**
+   * Record active/deleted flag.  Valid values are [0,1]
+   */
+  active?: CompanyActive | undefined;
+  /**
+   * Timestamp at which record was last modified
+   */
+  editDate?: any | undefined;
+  website?: string | undefined;
+  isIndividual?: string | undefined;
+  addressStreet?: string | undefined;
+  addressCity?: string | undefined;
+  addressState?: string | undefined;
+  addressPostcode?: string | undefined;
+  addressCountry?: string | undefined;
+  faxNumber?: string | undefined;
   badges?: string | undefined;
   taxRateUuid?: string | undefined;
   billingAttention?: string | undefined;
@@ -75,30 +70,13 @@ export type Company = {
 
 export type CompanyInput = {
   /**
-   * Record UUID key
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
-   */
-  active?: CompanyActive | undefined;
-  /**
    * Company Name
    */
   name: string;
-  website?: string | undefined;
+  /**
+   * Australian Business Number. A unique 11-digit identifier issued by the Australian Taxation Office to businesses. Required for tax compliance and validation of business identity in Australia.
+   */
   abnNumber?: string | undefined;
-  isIndividual?: string | undefined;
-  addressStreet?: string | undefined;
-  addressCity?: string | undefined;
-  addressState?: string | undefined;
-  addressPostcode?: string | undefined;
-  addressCountry?: string | undefined;
-  faxNumber?: string | undefined;
   /**
    * Password
    */
@@ -107,6 +85,26 @@ export type CompanyInput = {
    * Confirm Password
    */
   billingAddress?: string | undefined;
+  /**
+   * If provided, specifies the UUID of this Site's parent Company. If blank, this record is a Head Office rather than a Site. This field is only present on ServiceM8 Accounts with the Company Sites addon activated.
+   */
+  parentCompanyUuid?: any | undefined;
+  /**
+   * Unique identifier for this record
+   */
+  uuid?: string | undefined;
+  /**
+   * Record active/deleted flag.  Valid values are [0,1]
+   */
+  active?: CompanyActive | undefined;
+  website?: string | undefined;
+  isIndividual?: string | undefined;
+  addressStreet?: string | undefined;
+  addressCity?: string | undefined;
+  addressState?: string | undefined;
+  addressPostcode?: string | undefined;
+  addressCountry?: string | undefined;
+  faxNumber?: string | undefined;
   badges?: string | undefined;
   taxRateUuid?: string | undefined;
   billingAttention?: string | undefined;
@@ -137,12 +135,15 @@ export namespace CompanyActive$ {
 /** @internal */
 export const Company$inboundSchema: z.ZodType<Company, z.ZodTypeDef, unknown> =
   z.object({
+    name: z.string(),
+    abn_number: z.string().optional(),
+    address: z.string().optional(),
+    billing_address: z.string().optional(),
+    parent_company_uuid: z.any().optional(),
     uuid: z.string().optional(),
     active: CompanyActive$inboundSchema.default(1),
-    edit_date: z.string().optional(),
-    name: z.string(),
+    edit_date: z.any().optional(),
     website: z.string().optional(),
-    abn_number: z.string().optional(),
     is_individual: z.string().optional(),
     address_street: z.string().optional(),
     address_city: z.string().optional(),
@@ -150,16 +151,16 @@ export const Company$inboundSchema: z.ZodType<Company, z.ZodTypeDef, unknown> =
     address_postcode: z.string().optional(),
     address_country: z.string().optional(),
     fax_number: z.string().optional(),
-    address: z.string().optional(),
-    billing_address: z.string().optional(),
     badges: z.string().optional(),
     tax_rate_uuid: z.string().optional(),
     billing_attention: z.string().optional(),
     payment_terms: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
-      "edit_date": "editDate",
       "abn_number": "abnNumber",
+      "billing_address": "billingAddress",
+      "parent_company_uuid": "parentCompanyUuid",
+      "edit_date": "editDate",
       "is_individual": "isIndividual",
       "address_street": "addressStreet",
       "address_city": "addressCity",
@@ -167,7 +168,6 @@ export const Company$inboundSchema: z.ZodType<Company, z.ZodTypeDef, unknown> =
       "address_postcode": "addressPostcode",
       "address_country": "addressCountry",
       "fax_number": "faxNumber",
-      "billing_address": "billingAddress",
       "tax_rate_uuid": "taxRateUuid",
       "billing_attention": "billingAttention",
       "payment_terms": "paymentTerms",
@@ -176,12 +176,15 @@ export const Company$inboundSchema: z.ZodType<Company, z.ZodTypeDef, unknown> =
 
 /** @internal */
 export type Company$Outbound = {
+  name: string;
+  abn_number?: string | undefined;
+  address?: string | undefined;
+  billing_address?: string | undefined;
+  parent_company_uuid?: any | undefined;
   uuid?: string | undefined;
   active: number;
-  edit_date?: string | undefined;
-  name: string;
+  edit_date?: any | undefined;
   website?: string | undefined;
-  abn_number?: string | undefined;
   is_individual?: string | undefined;
   address_street?: string | undefined;
   address_city?: string | undefined;
@@ -189,8 +192,6 @@ export type Company$Outbound = {
   address_postcode?: string | undefined;
   address_country?: string | undefined;
   fax_number?: string | undefined;
-  address?: string | undefined;
-  billing_address?: string | undefined;
   badges?: string | undefined;
   tax_rate_uuid?: string | undefined;
   billing_attention?: string | undefined;
@@ -203,12 +204,15 @@ export const Company$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Company
 > = z.object({
+  name: z.string(),
+  abnNumber: z.string().optional(),
+  address: z.string().optional(),
+  billingAddress: z.string().optional(),
+  parentCompanyUuid: z.any().optional(),
   uuid: z.string().optional(),
   active: CompanyActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
-  name: z.string(),
+  editDate: z.any().optional(),
   website: z.string().optional(),
-  abnNumber: z.string().optional(),
   isIndividual: z.string().optional(),
   addressStreet: z.string().optional(),
   addressCity: z.string().optional(),
@@ -216,16 +220,16 @@ export const Company$outboundSchema: z.ZodType<
   addressPostcode: z.string().optional(),
   addressCountry: z.string().optional(),
   faxNumber: z.string().optional(),
-  address: z.string().optional(),
-  billingAddress: z.string().optional(),
   badges: z.string().optional(),
   taxRateUuid: z.string().optional(),
   billingAttention: z.string().optional(),
   paymentTerms: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
     abnNumber: "abn_number",
+    billingAddress: "billing_address",
+    parentCompanyUuid: "parent_company_uuid",
+    editDate: "edit_date",
     isIndividual: "is_individual",
     addressStreet: "address_street",
     addressCity: "address_city",
@@ -233,7 +237,6 @@ export const Company$outboundSchema: z.ZodType<
     addressPostcode: "address_postcode",
     addressCountry: "address_country",
     faxNumber: "fax_number",
-    billingAddress: "billing_address",
     taxRateUuid: "tax_rate_uuid",
     billingAttention: "billing_attention",
     paymentTerms: "payment_terms",
@@ -273,11 +276,14 @@ export const CompanyInput$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  name: z.string(),
+  abn_number: z.string().optional(),
+  address: z.string().optional(),
+  billing_address: z.string().optional(),
+  parent_company_uuid: z.any().optional(),
   uuid: z.string().optional(),
   active: CompanyActive$inboundSchema.default(1),
-  name: z.string(),
   website: z.string().optional(),
-  abn_number: z.string().optional(),
   is_individual: z.string().optional(),
   address_street: z.string().optional(),
   address_city: z.string().optional(),
@@ -285,8 +291,6 @@ export const CompanyInput$inboundSchema: z.ZodType<
   address_postcode: z.string().optional(),
   address_country: z.string().optional(),
   fax_number: z.string().optional(),
-  address: z.string().optional(),
-  billing_address: z.string().optional(),
   badges: z.string().optional(),
   tax_rate_uuid: z.string().optional(),
   billing_attention: z.string().optional(),
@@ -294,6 +298,8 @@ export const CompanyInput$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "abn_number": "abnNumber",
+    "billing_address": "billingAddress",
+    "parent_company_uuid": "parentCompanyUuid",
     "is_individual": "isIndividual",
     "address_street": "addressStreet",
     "address_city": "addressCity",
@@ -301,7 +307,6 @@ export const CompanyInput$inboundSchema: z.ZodType<
     "address_postcode": "addressPostcode",
     "address_country": "addressCountry",
     "fax_number": "faxNumber",
-    "billing_address": "billingAddress",
     "tax_rate_uuid": "taxRateUuid",
     "billing_attention": "billingAttention",
     "payment_terms": "paymentTerms",
@@ -310,11 +315,14 @@ export const CompanyInput$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CompanyInput$Outbound = {
+  name: string;
+  abn_number?: string | undefined;
+  address?: string | undefined;
+  billing_address?: string | undefined;
+  parent_company_uuid?: any | undefined;
   uuid?: string | undefined;
   active: number;
-  name: string;
   website?: string | undefined;
-  abn_number?: string | undefined;
   is_individual?: string | undefined;
   address_street?: string | undefined;
   address_city?: string | undefined;
@@ -322,8 +330,6 @@ export type CompanyInput$Outbound = {
   address_postcode?: string | undefined;
   address_country?: string | undefined;
   fax_number?: string | undefined;
-  address?: string | undefined;
-  billing_address?: string | undefined;
   badges?: string | undefined;
   tax_rate_uuid?: string | undefined;
   billing_attention?: string | undefined;
@@ -336,11 +342,14 @@ export const CompanyInput$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CompanyInput
 > = z.object({
+  name: z.string(),
+  abnNumber: z.string().optional(),
+  address: z.string().optional(),
+  billingAddress: z.string().optional(),
+  parentCompanyUuid: z.any().optional(),
   uuid: z.string().optional(),
   active: CompanyActive$outboundSchema.default(1),
-  name: z.string(),
   website: z.string().optional(),
-  abnNumber: z.string().optional(),
   isIndividual: z.string().optional(),
   addressStreet: z.string().optional(),
   addressCity: z.string().optional(),
@@ -348,8 +357,6 @@ export const CompanyInput$outboundSchema: z.ZodType<
   addressPostcode: z.string().optional(),
   addressCountry: z.string().optional(),
   faxNumber: z.string().optional(),
-  address: z.string().optional(),
-  billingAddress: z.string().optional(),
   badges: z.string().optional(),
   taxRateUuid: z.string().optional(),
   billingAttention: z.string().optional(),
@@ -357,6 +364,8 @@ export const CompanyInput$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     abnNumber: "abn_number",
+    billingAddress: "billing_address",
+    parentCompanyUuid: "parent_company_uuid",
     isIndividual: "is_individual",
     addressStreet: "address_street",
     addressCity: "address_city",
@@ -364,7 +373,6 @@ export const CompanyInput$outboundSchema: z.ZodType<
     addressPostcode: "address_postcode",
     addressCountry: "address_country",
     faxNumber: "fax_number",
-    billingAddress: "billing_address",
     taxRateUuid: "tax_rate_uuid",
     billingAttention: "billing_attention",
     paymentTerms: "payment_terms",

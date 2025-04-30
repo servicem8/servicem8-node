@@ -8,8 +8,8 @@ import { UpdateSecurityRolesRequest } from "servicem8/models/operations";
 let value: UpdateSecurityRolesRequest = {
   uuid: "6e56caba-8c3c-495e-9cd6-d570c3993688",
   securityRole: {
-    uuid: "123e4567-1b02-4623-a457-22b56bc1e05b",
     name: "<value>",
+    uuid: "123e4567-c882-465f-b540-22b567c39adb",
   },
 };
 ```

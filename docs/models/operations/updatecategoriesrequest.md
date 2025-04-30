@@ -8,8 +8,8 @@ import { UpdateCategoriesRequest } from "servicem8/models/operations";
 let value: UpdateCategoriesRequest = {
   uuid: "a91e8171-6ae0-4f6a-8b4c-d78c5601e0a9",
   category: {
-    uuid: "123e4567-f051-4494-9fe1-22b56fe7870b",
     name: "<value>",
+    uuid: "123e4567-469e-482b-9e21-22b5614a4fcb",
   },
 };
 ```

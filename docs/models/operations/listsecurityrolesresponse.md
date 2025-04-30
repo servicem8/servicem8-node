@@ -8,9 +8,9 @@
 ```typescript
 const value: components.SecurityRole[] = [
   {
-    uuid: "123e4567-1b02-4623-a457-22b56bc1e05b",
-    editDate: "YYYY-MM-DD HH:MM:SS",
     name: "<value>",
+    uuid: "123e4567-c882-465f-b540-22b567c39adb",
+    editDate: "2025-04-01 12:00:00",
   },
 ];
 ```

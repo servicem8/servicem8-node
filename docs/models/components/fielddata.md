@@ -1,5 +1,7 @@
 # FieldData
 
+Configuration data for the field
+
 ## Example Usage
 
 ```typescript

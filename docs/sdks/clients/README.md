@@ -108,7 +108,7 @@ This endpoint requires the following OAuth scope **manage_customers**.
 			
 			
 #### Record UUID
-UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the response header as x-record-uuid.
+UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
 			
 
@@ -125,8 +125,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.clients.createClients({
-    uuid: "123e4567-7bbb-4453-af74-22b4d21656ab",
     name: "<value>",
+    uuid: "123e4567-7bbb-4453-af74-22b4d21656ab",
     taxRateUuid: "123e4567-f0d3-4396-a609-22b4d94f07fb",
   });
 
@@ -155,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await clientsCreateClients(serviceM8, {
-    uuid: "123e4567-7bbb-4453-af74-22b4d21656ab",
     name: "<value>",
+    uuid: "123e4567-7bbb-4453-af74-22b4d21656ab",
     taxRateUuid: "123e4567-f0d3-4396-a609-22b4d94f07fb",
   });
 
@@ -303,8 +303,8 @@ async function run() {
   const result = await serviceM8.clients.updateClients({
     uuid: "f11a55dd-2ac9-459f-be84-6c4d35c68836",
     company: {
-      uuid: "123e4567-7bbb-4453-af74-22b4d21656ab",
       name: "<value>",
+      uuid: "123e4567-7bbb-4453-af74-22b4d21656ab",
       taxRateUuid: "123e4567-f0d3-4396-a609-22b4d94f07fb",
     },
   });
@@ -336,8 +336,8 @@ async function run() {
   const res = await clientsUpdateClients(serviceM8, {
     uuid: "f11a55dd-2ac9-459f-be84-6c4d35c68836",
     company: {
-      uuid: "123e4567-7bbb-4453-af74-22b4d21656ab",
       name: "<value>",
+      uuid: "123e4567-7bbb-4453-af74-22b4d21656ab",
       taxRateUuid: "123e4567-f0d3-4396-a609-22b4d94f07fb",
     },
   });
@@ -379,7 +379,7 @@ run();
 
 
 			
-In ServiceM8, records are never deleted, but are archived. Archived records will remain accessible via the API as (active = 0), however will no longer be visible in UI. Archived records can be restored to active by setting the record active field to 1.
+In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
 
 			
 			

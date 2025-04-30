@@ -8,9 +8,9 @@
 ```typescript
 const value: components.Location[] = [
   {
-    uuid: "123e4567-296e-4370-bdfd-22b56b621beb",
-    editDate: "YYYY-MM-DD HH:MM:SS",
     name: "<value>",
+    uuid: "123e4567-4056-409e-9f17-22b56f24746b",
+    editDate: "2025-04-01 12:00:00",
   },
 ];
 ```

@@ -1,8 +1,6 @@
 # QueueActive
 
-Record active/deleted flag. 
-
-Valid values are [0,1]
+Record active/deleted flag.  Valid values are [0,1]
 
 ## Example Usage
 

@@ -10,22 +10,14 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const AssetActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type AssetActive = ClosedEnum<typeof AssetActive>;
 
@@ -45,31 +37,27 @@ export type FieldDatum = {
 
 export type Asset = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: AssetActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
+  editDate?: any | undefined;
   /**
    * UUID of the Client to which this Asset is attached
    */
   companyUuid?: string | undefined;
   /**
-   * The unique code printed on this Asset's attached label (read only) (Read-only)
+   * The unique code printed on this Asset's attached label (read only)
    */
   assetCode?: string | undefined;
   /**
-   * UUID of an Asset Type which defines the fields that can be stored for this Asset (read only) (Read-only)
+   * UUID of an Asset Type which defines the fields that can be stored for this Asset (read only)
    */
   assetTypeUuid?: string | undefined;
   /**
@@ -92,20 +80,19 @@ export type Asset = {
    * Altitude component of the Asset's location in metres
    */
   altitude?: number | undefined;
+  /**
+   * JSON array containing field values for this asset. Each entry represents a field value defined by the associated AssetType, with field values stored as strings. Date fields use Y-m-d format. This field stores all custom fields defined in the asset type template.
+   */
   fieldData?: Array<FieldDatum> | undefined;
 };
 
 export type AssetInput = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: AssetActive | undefined;
   /**
@@ -113,11 +100,11 @@ export type AssetInput = {
    */
   companyUuid?: string | undefined;
   /**
-   * The unique code printed on this Asset's attached label (read only) (Read-only)
+   * The unique code printed on this Asset's attached label (read only)
    */
   assetCode?: string | undefined;
   /**
-   * UUID of an Asset Type which defines the fields that can be stored for this Asset (read only) (Read-only)
+   * UUID of an Asset Type which defines the fields that can be stored for this Asset (read only)
    */
   assetTypeUuid?: string | undefined;
   /**
@@ -140,6 +127,9 @@ export type AssetInput = {
    * Altitude component of the Asset's location in metres
    */
   altitude?: number | undefined;
+  /**
+   * JSON array containing field values for this asset. Each entry represents a field value defined by the associated AssetType, with field values stored as strings. Date fields use Y-m-d format. This field stores all custom fields defined in the asset type template.
+   */
   fieldData?: Array<FieldDatum> | undefined;
 };
 
@@ -229,7 +219,7 @@ export const Asset$inboundSchema: z.ZodType<Asset, z.ZodTypeDef, unknown> = z
   .object({
     uuid: z.string().optional(),
     active: AssetActive$inboundSchema.default(1),
-    edit_date: z.string().optional(),
+    edit_date: z.any().optional(),
     company_uuid: z.string().optional(),
     asset_code: z.string().optional(),
     asset_type_uuid: z.string().optional(),
@@ -254,7 +244,7 @@ export const Asset$inboundSchema: z.ZodType<Asset, z.ZodTypeDef, unknown> = z
 export type Asset$Outbound = {
   uuid?: string | undefined;
   active: number;
-  edit_date?: string | undefined;
+  edit_date?: any | undefined;
   company_uuid?: string | undefined;
   asset_code?: string | undefined;
   asset_type_uuid?: string | undefined;
@@ -274,7 +264,7 @@ export const Asset$outboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: AssetActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
+  editDate: z.any().optional(),
   companyUuid: z.string().optional(),
   assetCode: z.string().optional(),
   assetTypeUuid: z.string().optional(),

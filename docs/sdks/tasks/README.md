@@ -108,7 +108,7 @@ This endpoint requires the following OAuth scope **manage_tasks**.
 			
 			
 #### Record UUID
-UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the response header as x-record-uuid.
+UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
 			
 
@@ -125,13 +125,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.tasks.createTasks({
-    uuid: "123e4567-a72d-4a44-883e-22b4dc3e260b",
     dueDate: "YYYY-MM-DD",
     name: "<value>",
     relatedObjectUuid: "123e4567-ea7a-418d-8bc7-22b4d6f88e8b",
     completedTimestamp: "YYYY-MM-DD HH:MM:SS",
     completedByStaffUuid: "123e4567-1596-433b-8657-22b4d1913aab",
     assignedToStaffUuid: "123e4567-299b-4b50-b21f-22b4d1057ebb",
+    uuid: "123e4567-a72d-4a44-883e-22b4dc3e260b",
     createdByStaffUuid: "123e4567-dd10-49af-ba90-22b4d80f729b",
     createDate: "YYYY-MM-DD HH:MM:SS",
   });
@@ -161,13 +161,13 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await tasksCreateTasks(serviceM8, {
-    uuid: "123e4567-a72d-4a44-883e-22b4dc3e260b",
     dueDate: "YYYY-MM-DD",
     name: "<value>",
     relatedObjectUuid: "123e4567-ea7a-418d-8bc7-22b4d6f88e8b",
     completedTimestamp: "YYYY-MM-DD HH:MM:SS",
     completedByStaffUuid: "123e4567-1596-433b-8657-22b4d1913aab",
     assignedToStaffUuid: "123e4567-299b-4b50-b21f-22b4d1057ebb",
+    uuid: "123e4567-a72d-4a44-883e-22b4dc3e260b",
     createdByStaffUuid: "123e4567-dd10-49af-ba90-22b4d80f729b",
     createDate: "YYYY-MM-DD HH:MM:SS",
   });
@@ -315,13 +315,13 @@ async function run() {
   const result = await serviceM8.tasks.updateTasks({
     uuid: "63b2819d-65b6-4785-8dec-6cc2953e2c97",
     task: {
-      uuid: "123e4567-a72d-4a44-883e-22b4dc3e260b",
       dueDate: "YYYY-MM-DD",
       name: "<value>",
       relatedObjectUuid: "123e4567-ea7a-418d-8bc7-22b4d6f88e8b",
       completedTimestamp: "YYYY-MM-DD HH:MM:SS",
       completedByStaffUuid: "123e4567-1596-433b-8657-22b4d1913aab",
       assignedToStaffUuid: "123e4567-299b-4b50-b21f-22b4d1057ebb",
+      uuid: "123e4567-a72d-4a44-883e-22b4dc3e260b",
       createdByStaffUuid: "123e4567-dd10-49af-ba90-22b4d80f729b",
       createDate: "YYYY-MM-DD HH:MM:SS",
     },
@@ -354,13 +354,13 @@ async function run() {
   const res = await tasksUpdateTasks(serviceM8, {
     uuid: "63b2819d-65b6-4785-8dec-6cc2953e2c97",
     task: {
-      uuid: "123e4567-a72d-4a44-883e-22b4dc3e260b",
       dueDate: "YYYY-MM-DD",
       name: "<value>",
       relatedObjectUuid: "123e4567-ea7a-418d-8bc7-22b4d6f88e8b",
       completedTimestamp: "YYYY-MM-DD HH:MM:SS",
       completedByStaffUuid: "123e4567-1596-433b-8657-22b4d1913aab",
       assignedToStaffUuid: "123e4567-299b-4b50-b21f-22b4d1057ebb",
+      uuid: "123e4567-a72d-4a44-883e-22b4dc3e260b",
       createdByStaffUuid: "123e4567-dd10-49af-ba90-22b4d80f729b",
       createDate: "YYYY-MM-DD HH:MM:SS",
     },
@@ -403,7 +403,7 @@ run();
 
 
 			
-In ServiceM8, records are never deleted, but are archived. Archived records will remain accessible via the API as (active = 0), however will no longer be visible in UI. Archived records can be restored to active by setting the record active field to 1.
+In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
 
 			
 			

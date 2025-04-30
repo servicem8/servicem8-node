@@ -108,7 +108,7 @@ This endpoint requires the following OAuth scope **manage_staff**.
 			
 			
 #### Record UUID
-UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the response header as x-record-uuid.
+UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
 			
 
@@ -125,7 +125,6 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.staffMembers.createStaffMembers({
-    uuid: "123e4567-cae1-4f3e-a379-22b4db118b0b",
     first: "<value>",
     last: "<value>",
     email: "Percy_Mohr@gmail.com",
@@ -135,6 +134,7 @@ async function run() {
     navigatingExpiryTimestamp: "YYYY-MM-DD HH:MM:SS",
     statusMessageTimestamp: "YYYY-MM-DD HH:MM:SS",
     securityRoleUuid: "123e4567-8382-4695-8066-22b4d256355b",
+    uuid: "123e4567-cae1-4f3e-a379-22b4db118b0b",
   });
 
   // Handle the result
@@ -162,7 +162,6 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await staffMembersCreateStaffMembers(serviceM8, {
-    uuid: "123e4567-cae1-4f3e-a379-22b4db118b0b",
     first: "<value>",
     last: "<value>",
     email: "Percy_Mohr@gmail.com",
@@ -172,6 +171,7 @@ async function run() {
     navigatingExpiryTimestamp: "YYYY-MM-DD HH:MM:SS",
     statusMessageTimestamp: "YYYY-MM-DD HH:MM:SS",
     securityRoleUuid: "123e4567-8382-4695-8066-22b4d256355b",
+    uuid: "123e4567-cae1-4f3e-a379-22b4db118b0b",
   });
 
   if (!res.ok) {
@@ -317,7 +317,6 @@ async function run() {
   const result = await serviceM8.staffMembers.updateStaffMembers({
     uuid: "dde350a8-169f-4f86-a7d6-d3853076bb89",
     staff: {
-      uuid: "123e4567-cae1-4f3e-a379-22b4db118b0b",
       first: "<value>",
       last: "<value>",
       email: "Kylee.Medhurst@hotmail.com",
@@ -327,6 +326,7 @@ async function run() {
       navigatingExpiryTimestamp: "YYYY-MM-DD HH:MM:SS",
       statusMessageTimestamp: "YYYY-MM-DD HH:MM:SS",
       securityRoleUuid: "123e4567-8382-4695-8066-22b4d256355b",
+      uuid: "123e4567-cae1-4f3e-a379-22b4db118b0b",
     },
   });
 
@@ -357,7 +357,6 @@ async function run() {
   const res = await staffMembersUpdateStaffMembers(serviceM8, {
     uuid: "dde350a8-169f-4f86-a7d6-d3853076bb89",
     staff: {
-      uuid: "123e4567-cae1-4f3e-a379-22b4db118b0b",
       first: "<value>",
       last: "<value>",
       email: "Kylee.Medhurst@hotmail.com",
@@ -367,6 +366,7 @@ async function run() {
       navigatingExpiryTimestamp: "YYYY-MM-DD HH:MM:SS",
       statusMessageTimestamp: "YYYY-MM-DD HH:MM:SS",
       securityRoleUuid: "123e4567-8382-4695-8066-22b4d256355b",
+      uuid: "123e4567-cae1-4f3e-a379-22b4db118b0b",
     },
   });
 
@@ -407,7 +407,7 @@ run();
 
 
 			
-In ServiceM8, records are never deleted, but are archived. Archived records will remain accessible via the API as (active = 0), however will no longer be visible in UI. Archived records can be restored to active by setting the record active field to 1.
+In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
 
 			
 			

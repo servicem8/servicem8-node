@@ -10,22 +10,14 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const AssetTypeFieldActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type AssetTypeFieldActive = ClosedEnum<typeof AssetTypeFieldActive>;
 
@@ -39,6 +31,9 @@ export type AssetTypeFieldFieldType = ClosedEnum<
   typeof AssetTypeFieldFieldType
 >;
 
+/**
+ * Configuration data for the field
+ */
 export type FieldData = {
   fieldType: AssetTypeFieldFieldType;
   mandatory: boolean;
@@ -47,49 +42,59 @@ export type FieldData = {
 
 export type AssetTypeField = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: AssetTypeFieldActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
+  editDate?: any | undefined;
   /**
-   * (Read-only)
+   * UUID of the Asset Type to which this field belongs. This field is read-only in the API. (Read only)
    */
   assetTypeUuid?: string | undefined;
+  /**
+   * Name of the field that will be displayed to users. Used as a label for the input field when managing assets.
+   */
   name: string;
+  /**
+   * Configuration data for the field
+   */
   fieldData?: FieldData | undefined;
+  /**
+   * The order in which this field should be displayed relative to other fields of the same asset type. Lower values display first.
+   */
   sortOrder?: number | undefined;
 };
 
 export type AssetTypeFieldInput = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: AssetTypeFieldActive | undefined;
   /**
-   * (Read-only)
+   * UUID of the Asset Type to which this field belongs. This field is read-only in the API. (Read only)
    */
   assetTypeUuid?: string | undefined;
+  /**
+   * Name of the field that will be displayed to users. Used as a label for the input field when managing assets.
+   */
   name: string;
+  /**
+   * Configuration data for the field
+   */
   fieldData?: FieldData | undefined;
+  /**
+   * The order in which this field should be displayed relative to other fields of the same asset type. Lower values display first.
+   */
   sortOrder?: number | undefined;
 };
 
@@ -199,7 +204,7 @@ export const AssetTypeField$inboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: AssetTypeFieldActive$inboundSchema.default(1),
-  edit_date: z.string().optional(),
+  edit_date: z.any().optional(),
   asset_type_uuid: z.string().optional(),
   name: z.string(),
   field_data: z.lazy(() => FieldData$inboundSchema).optional(),
@@ -217,7 +222,7 @@ export const AssetTypeField$inboundSchema: z.ZodType<
 export type AssetTypeField$Outbound = {
   uuid?: string | undefined;
   active: number;
-  edit_date?: string | undefined;
+  edit_date?: any | undefined;
   asset_type_uuid?: string | undefined;
   name: string;
   field_data?: FieldData$Outbound | undefined;
@@ -232,7 +237,7 @@ export const AssetTypeField$outboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: AssetTypeFieldActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
+  editDate: z.any().optional(),
   assetTypeUuid: z.string().optional(),
   name: z.string(),
   fieldData: z.lazy(() => FieldData$outboundSchema).optional(),

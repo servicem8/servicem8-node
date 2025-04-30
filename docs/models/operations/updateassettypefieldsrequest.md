@@ -8,8 +8,8 @@ import { UpdateAssetTypeFieldsRequest } from "servicem8/models/operations";
 let value: UpdateAssetTypeFieldsRequest = {
   uuid: "0e497e9c-3bf6-4591-8804-ec893a659c64",
   assetTypeField: {
-    uuid: "123e4567-06b4-472f-b640-22b56208afdb",
-    assetTypeUuid: "123e4567-d21e-41d6-886f-22b569c2dc0b",
+    uuid: "123e4567-3c05-4b9b-af2d-22b5619bebab",
+    assetTypeUuid: "123e4567-d25a-406d-ba7b-22b56e8827eb",
     name: "<value>",
   },
 };

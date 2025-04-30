@@ -10,48 +10,33 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const LocationActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type LocationActive = ClosedEnum<typeof LocationActive>;
 
 export type Location = {
   /**
-   * Record UUID key
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
-   */
-  active?: LocationActive | undefined;
-  /**
-   * Record last modified timestamp
-   */
-  editDate?: string | undefined;
-  /**
    * Location's name
    */
   name: string;
+  /**
+   * First line of the location's address. Contains the street number and street name.
+   */
   line1?: string | undefined;
+  /**
+   * Second line of the location's address. Used for additional address information such as building/suite numbers or street details.
+   */
   line2?: string | undefined;
+  /**
+   * Third line of the location's address. Used for additional address details when line1 and line2 are not sufficient.
+   */
   line3?: string | undefined;
   /**
    * Email Address
@@ -65,34 +50,52 @@ export type Location = {
    * Email Address
    */
   postCode?: string | undefined;
+  /**
+   * Primary contact phone number for the location. Can include formatting characters.
+   */
   phone1?: string | undefined;
   /**
    * Address State
    */
   state?: string | undefined;
+  /**
+   * Longitude coordinate of the location in decimal degrees format. Used for geolocation and distance calculations. Expected range is between -180 and 180 degrees.
+   */
   lng?: number | undefined;
+  /**
+   * Latitude coordinate of the location in decimal degrees format. Used for geolocation and distance calculations. Expected range is between -90 and 90 degrees.
+   */
   lat?: number | undefined;
+  /**
+   * Unique identifier for this record
+   */
+  uuid?: string | undefined;
+  /**
+   * Record active/deleted flag.  Valid values are [0,1]
+   */
+  active?: LocationActive | undefined;
+  /**
+   * Timestamp at which record was last modified
+   */
+  editDate?: any | undefined;
 };
 
 export type LocationInput = {
   /**
-   * Record UUID key
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
-   */
-  active?: LocationActive | undefined;
-  /**
    * Location's name
    */
   name: string;
+  /**
+   * First line of the location's address. Contains the street number and street name.
+   */
   line1?: string | undefined;
+  /**
+   * Second line of the location's address. Used for additional address information such as building/suite numbers or street details.
+   */
   line2?: string | undefined;
+  /**
+   * Third line of the location's address. Used for additional address details when line1 and line2 are not sufficient.
+   */
   line3?: string | undefined;
   /**
    * Email Address
@@ -106,13 +109,30 @@ export type LocationInput = {
    * Email Address
    */
   postCode?: string | undefined;
+  /**
+   * Primary contact phone number for the location. Can include formatting characters.
+   */
   phone1?: string | undefined;
   /**
    * Address State
    */
   state?: string | undefined;
+  /**
+   * Longitude coordinate of the location in decimal degrees format. Used for geolocation and distance calculations. Expected range is between -180 and 180 degrees.
+   */
   lng?: number | undefined;
+  /**
+   * Latitude coordinate of the location in decimal degrees format. Used for geolocation and distance calculations. Expected range is between -90 and 90 degrees.
+   */
   lat?: number | undefined;
+  /**
+   * Unique identifier for this record
+   */
+  uuid?: string | undefined;
+  /**
+   * Record active/deleted flag.  Valid values are [0,1]
+   */
+  active?: LocationActive | undefined;
 };
 
 /** @internal */
@@ -142,9 +162,6 @@ export const Location$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: LocationActive$inboundSchema.default(1),
-  edit_date: z.string().optional(),
   name: z.string(),
   line1: z.string().optional(),
   line2: z.string().optional(),
@@ -156,19 +173,19 @@ export const Location$inboundSchema: z.ZodType<
   state: z.string().optional(),
   lng: z.number().optional(),
   lat: z.number().optional(),
+  uuid: z.string().optional(),
+  active: LocationActive$inboundSchema.default(1),
+  edit_date: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "edit_date": "editDate",
     "post_code": "postCode",
     "phone_1": "phone1",
+    "edit_date": "editDate",
   });
 });
 
 /** @internal */
 export type Location$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: string | undefined;
   name: string;
   line1?: string | undefined;
   line2?: string | undefined;
@@ -180,6 +197,9 @@ export type Location$Outbound = {
   state?: string | undefined;
   lng?: number | undefined;
   lat?: number | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
 };
 
 /** @internal */
@@ -188,9 +208,6 @@ export const Location$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Location
 > = z.object({
-  uuid: z.string().optional(),
-  active: LocationActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
   name: z.string(),
   line1: z.string().optional(),
   line2: z.string().optional(),
@@ -202,11 +219,14 @@ export const Location$outboundSchema: z.ZodType<
   state: z.string().optional(),
   lng: z.number().optional(),
   lat: z.number().optional(),
+  uuid: z.string().optional(),
+  active: LocationActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
     postCode: "post_code",
     phone1: "phone_1",
+    editDate: "edit_date",
   });
 });
 
@@ -243,8 +263,6 @@ export const LocationInput$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: LocationActive$inboundSchema.default(1),
   name: z.string(),
   line1: z.string().optional(),
   line2: z.string().optional(),
@@ -256,6 +274,8 @@ export const LocationInput$inboundSchema: z.ZodType<
   state: z.string().optional(),
   lng: z.number().optional(),
   lat: z.number().optional(),
+  uuid: z.string().optional(),
+  active: LocationActive$inboundSchema.default(1),
 }).transform((v) => {
   return remap$(v, {
     "post_code": "postCode",
@@ -265,8 +285,6 @@ export const LocationInput$inboundSchema: z.ZodType<
 
 /** @internal */
 export type LocationInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
   name: string;
   line1?: string | undefined;
   line2?: string | undefined;
@@ -278,6 +296,8 @@ export type LocationInput$Outbound = {
   state?: string | undefined;
   lng?: number | undefined;
   lat?: number | undefined;
+  uuid?: string | undefined;
+  active: number;
 };
 
 /** @internal */
@@ -286,8 +306,6 @@ export const LocationInput$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   LocationInput
 > = z.object({
-  uuid: z.string().optional(),
-  active: LocationActive$outboundSchema.default(1),
   name: z.string(),
   line1: z.string().optional(),
   line2: z.string().optional(),
@@ -299,6 +317,8 @@ export const LocationInput$outboundSchema: z.ZodType<
   state: z.string().optional(),
   lng: z.number().optional(),
   lat: z.number().optional(),
+  uuid: z.string().optional(),
+  active: LocationActive$outboundSchema.default(1),
 }).transform((v) => {
   return remap$(v, {
     postCode: "post_code",

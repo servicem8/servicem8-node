@@ -6,7 +6,7 @@
 import { VendorInput } from "servicem8/models/components";
 
 let value: VendorInput = {
-  uuid: "123e4567-746f-4d8a-838c-22b56a17c75b",
+  uuid: "123e4567-f4d7-41c2-ba09-22b563d5310b",
   name: "<value>",
 };
 ```
@@ -15,8 +15,8 @@ let value: VendorInput = {
 
 | Field                                                              | Type                                                               | Required                                                           | Description                                                        | Example                                                            |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `uuid`                                                             | *string*                                                           | :heavy_minus_sign:                                                 | Record UUID key                                                    | 123e4567-746f-4d8a-838c-22b56a17c75b                               |
-| `active`                                                           | [components.VendorActive](../../models/components/vendoractive.md) | :heavy_minus_sign:                                                 | Record active/deleted flag. <br/><br/>Valid values are [0,1]       |                                                                    |
+| `uuid`                                                             | *string*                                                           | :heavy_minus_sign:                                                 | Unique identifier for this record                                  | 123e4567-f4d7-41c2-ba09-22b563d5310b                               |
+| `active`                                                           | [components.VendorActive](../../models/components/vendoractive.md) | :heavy_minus_sign:                                                 | Record active/deleted flag.  Valid values are [0,1]                |                                                                    |
 | `name`                                                             | *string*                                                           | :heavy_check_mark:                                                 | Company Name                                                       |                                                                    |
 | `abnNumber`                                                        | *string*                                                           | :heavy_minus_sign:                                                 | N/A                                                                |                                                                    |
 | `businessNumber`                                                   | *string*                                                           | :heavy_minus_sign:                                                 | Company Business Number                                            |                                                                    |

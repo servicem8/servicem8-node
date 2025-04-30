@@ -10,22 +10,14 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const JobChecklistActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type JobChecklistActive = ClosedEnum<typeof JobChecklistActive>;
 
@@ -37,6 +29,9 @@ export type ReminderData1 = {};
 
 export type ReminderDataUnion1 = ReminderData1 | string;
 
+/**
+ * JSON data containing additional information for the reminder. Format depends on the reminder_type. For ABSOLUTE_DATETIME, includes 'absoluteDateTime'. For RELATIVE_DATETIME, includes 'relativeDateTime' with 'baseDate', 'unit', and 'quantity'. Exposed via API as 'reminder_data'.
+ */
 export type ReminderDataUnion3 =
   | ReminderData1
   | string
@@ -44,51 +39,69 @@ export type ReminderDataUnion3 =
   | string;
 
 /**
- * If this checklist item is locked (read-only) and cannot be modified. This is set by the system when the checklist item is created from a Task or Network Request. (Read-only).
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * If this checklist item is locked (read-only) and cannot be modified. This is set by the system when the checklist item is created from a Task or Network Request. (Read only).  Valid values are [0,1]
  */
 export const IsLocked = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * If this checklist item is locked (read-only) and cannot be modified. This is set by the system when the checklist item is created from a Task or Network Request. (Read-only).
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * If this checklist item is locked (read-only) and cannot be modified. This is set by the system when the checklist item is created from a Task or Network Request. (Read only).  Valid values are [0,1]
  */
 export type IsLocked = ClosedEnum<typeof IsLocked>;
 
 export type JobChecklist = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: JobChecklistActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
+  editDate?: any | undefined;
+  /**
+   * UUID of the job this checklist item belongs to. This links the checklist item to a specific job in the system.
+   */
   jobUuid?: string | undefined;
+  /**
+   * The name or description of the checklist item. This is displayed to users in the mobile app and web interface.
+   */
   name?: string | undefined;
+  /**
+   * The section or category name under which this checklist item is grouped. This helps organize related checklist items together.
+   */
   sectionName?: string | undefined;
+  /**
+   * The type of checklist item. Valid values are: 'Todo', 'Asset', 'Photo', 'Form', and 'Document'. Defaults to 'Todo' if not specified. This determines the functionality and appearance of the checklist item.
+   */
   itemType?: string | undefined;
+  /**
+   * A numeric value determining the order in which checklist items appear in the user interface. Lower values appear first. Used to customize the display sequence of items.
+   */
   sortOrder?: number | undefined;
+  /**
+   * The date and time when the checklist item was marked as completed. Empty or '0000-00-00 00:00:00' indicates the item is not completed.
+   */
   completedTimestamp?: string | undefined;
+  /**
+   * UUID of the staff member who completed this checklist item. References a Staff object. Empty if the item is not completed.
+   */
   completedByStaffUuid?: string | undefined;
+  /**
+   * UUID of the job check-in during which this checklist item was completed. This links the checklist completion to a specific check-in event in the job history.
+   */
   completedDuringCheckinUuid?: string | undefined;
+  /**
+   * The type of reminder associated with this checklist item. Valid values are: '' (no reminder), 'CHECK_IN', 'NAVIGATE', 'CHECK_OUT', 'ABSOLUTE_DATETIME', or 'RELATIVE_DATETIME'. Determines when the system will remind users about this checklist item.
+   */
   reminderType?: string | undefined;
+  /**
+   * JSON data containing additional information for the reminder. Format depends on the reminder_type. For ABSOLUTE_DATETIME, includes 'absoluteDateTime'. For RELATIVE_DATETIME, includes 'relativeDateTime' with 'baseDate', 'unit', and 'quantity'. Exposed via API as 'reminder_data'.
+   */
   reminderData?: ReminderData1 | string | ReminderData2 | string | undefined;
   /**
    * The type of object which this checklist item is related to. For example, for Form checklists, this will be 'Form'.
@@ -106,47 +119,72 @@ export type JobChecklist = {
    * The UUID of the object which completes this checklist item. For example, for Form checklists, this references the UUID of a FormResponse record.
    */
   fulfilledByObjectUuid?: string | undefined;
+  /**
+   * JSON array of staff UUIDs to whom this checklist item is assigned. Determines which staff members are responsible for completing this checklist item. Currently limited to a maximum of 1 staff member.
+   */
   assignedToStaffUuids?: Array<string> | undefined;
   /**
-   * If this checklist item is locked (read-only) and cannot be modified. This is set by the system when the checklist item is created from a Task or Network Request. (Read-only).
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * If this checklist item is locked (read-only) and cannot be modified. This is set by the system when the checklist item is created from a Task or Network Request. (Read only).  Valid values are [0,1]
    */
   isLocked?: IsLocked | undefined;
   /**
-   * The timestamp when the checklist item was assigned to the staff member. (Read-only)
+   * The timestamp when the checklist item was assigned to the staff member. (Read only)
    */
   assignedTimestamp?: string | undefined;
   /**
-   * The UUID of the staff member who assigned the checklist item to the staff member. (Read-only)
+   * The UUID of the staff member who assigned the checklist item to the staff member. (Read only)
    */
   assignedByStaffUuid?: string | undefined;
 };
 
 export type JobChecklistInput = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: JobChecklistActive | undefined;
+  /**
+   * UUID of the job this checklist item belongs to. This links the checklist item to a specific job in the system.
+   */
   jobUuid?: string | undefined;
+  /**
+   * The name or description of the checklist item. This is displayed to users in the mobile app and web interface.
+   */
   name?: string | undefined;
+  /**
+   * The section or category name under which this checklist item is grouped. This helps organize related checklist items together.
+   */
   sectionName?: string | undefined;
+  /**
+   * The type of checklist item. Valid values are: 'Todo', 'Asset', 'Photo', 'Form', and 'Document'. Defaults to 'Todo' if not specified. This determines the functionality and appearance of the checklist item.
+   */
   itemType?: string | undefined;
+  /**
+   * A numeric value determining the order in which checklist items appear in the user interface. Lower values appear first. Used to customize the display sequence of items.
+   */
   sortOrder?: number | undefined;
+  /**
+   * The date and time when the checklist item was marked as completed. Empty or '0000-00-00 00:00:00' indicates the item is not completed.
+   */
   completedTimestamp?: string | undefined;
+  /**
+   * UUID of the staff member who completed this checklist item. References a Staff object. Empty if the item is not completed.
+   */
   completedByStaffUuid?: string | undefined;
+  /**
+   * UUID of the job check-in during which this checklist item was completed. This links the checklist completion to a specific check-in event in the job history.
+   */
   completedDuringCheckinUuid?: string | undefined;
+  /**
+   * The type of reminder associated with this checklist item. Valid values are: '' (no reminder), 'CHECK_IN', 'NAVIGATE', 'CHECK_OUT', 'ABSOLUTE_DATETIME', or 'RELATIVE_DATETIME'. Determines when the system will remind users about this checklist item.
+   */
   reminderType?: string | undefined;
+  /**
+   * JSON data containing additional information for the reminder. Format depends on the reminder_type. For ABSOLUTE_DATETIME, includes 'absoluteDateTime'. For RELATIVE_DATETIME, includes 'relativeDateTime' with 'baseDate', 'unit', and 'quantity'. Exposed via API as 'reminder_data'.
+   */
   reminderData?: ReminderData1 | string | ReminderData2 | string | undefined;
   /**
    * The type of object which this checklist item is related to. For example, for Form checklists, this will be 'Form'.
@@ -164,21 +202,20 @@ export type JobChecklistInput = {
    * The UUID of the object which completes this checklist item. For example, for Form checklists, this references the UUID of a FormResponse record.
    */
   fulfilledByObjectUuid?: string | undefined;
+  /**
+   * JSON array of staff UUIDs to whom this checklist item is assigned. Determines which staff members are responsible for completing this checklist item. Currently limited to a maximum of 1 staff member.
+   */
   assignedToStaffUuids?: Array<string> | undefined;
   /**
-   * If this checklist item is locked (read-only) and cannot be modified. This is set by the system when the checklist item is created from a Task or Network Request. (Read-only).
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * If this checklist item is locked (read-only) and cannot be modified. This is set by the system when the checklist item is created from a Task or Network Request. (Read only).  Valid values are [0,1]
    */
   isLocked?: IsLocked | undefined;
   /**
-   * The timestamp when the checklist item was assigned to the staff member. (Read-only)
+   * The timestamp when the checklist item was assigned to the staff member. (Read only)
    */
   assignedTimestamp?: string | undefined;
   /**
-   * The UUID of the staff member who assigned the checklist item to the staff member. (Read-only)
+   * The UUID of the staff member who assigned the checklist item to the staff member. (Read only)
    */
   assignedByStaffUuid?: string | undefined;
 };
@@ -473,7 +510,7 @@ export const JobChecklist$inboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: JobChecklistActive$inboundSchema.default(1),
-  edit_date: z.string().optional(),
+  edit_date: z.any().optional(),
   job_uuid: z.string().optional(),
   name: z.string().optional(),
   section_name: z.string().optional(),
@@ -522,7 +559,7 @@ export const JobChecklist$inboundSchema: z.ZodType<
 export type JobChecklist$Outbound = {
   uuid?: string | undefined;
   active: number;
-  edit_date?: string | undefined;
+  edit_date?: any | undefined;
   job_uuid?: string | undefined;
   name?: string | undefined;
   section_name?: string | undefined;
@@ -556,7 +593,7 @@ export const JobChecklist$outboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: JobChecklistActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
+  editDate: z.any().optional(),
   jobUuid: z.string().optional(),
   name: z.string().optional(),
   sectionName: z.string().optional(),

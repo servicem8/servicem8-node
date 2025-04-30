@@ -10,22 +10,14 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const MaterialBundleActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type MaterialBundleActive = ClosedEnum<typeof MaterialBundleActive>;
 
@@ -39,41 +31,51 @@ export type MaterialList = {
 
 export type MaterialBundle = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: MaterialBundleActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
+  editDate?: any | undefined;
+  /**
+   * Unique identifier for this bundle. Must be 30 characters or less and unique across both Materials and Bundles. Used when adding bundles to jobs.
+   */
   itemNumber: string;
+  /**
+   * The display name of the bundle. Used for identification in the system and shows on documents when the bundle is added to a job.
+   */
   name?: string | undefined;
+  /**
+   * A JSON array containing the materials that make up this bundle. Each item includes the material's UUID and the quantity to be added when this bundle is used. Limited to between 1 and 50 items, with all quantities being positive numbers.
+   */
   materialList?: Array<MaterialList> | undefined;
 };
 
 export type MaterialBundleInput = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: MaterialBundleActive | undefined;
+  /**
+   * Unique identifier for this bundle. Must be 30 characters or less and unique across both Materials and Bundles. Used when adding bundles to jobs.
+   */
   itemNumber: string;
+  /**
+   * The display name of the bundle. Used for identification in the system and shows on documents when the bundle is added to a job.
+   */
   name?: string | undefined;
+  /**
+   * A JSON array containing the materials that make up this bundle. Each item includes the material's UUID and the quantity to be added when this bundle is used. Limited to between 1 and 50 items, with all quantities being positive numbers.
+   */
   materialList?: Array<MaterialList> | undefined;
 };
 
@@ -159,7 +161,7 @@ export const MaterialBundle$inboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: MaterialBundleActive$inboundSchema.default(1),
-  edit_date: z.string().optional(),
+  edit_date: z.any().optional(),
   item_number: z.string(),
   name: z.string().optional(),
   material_list: z.array(z.lazy(() => MaterialList$inboundSchema)).optional(),
@@ -175,7 +177,7 @@ export const MaterialBundle$inboundSchema: z.ZodType<
 export type MaterialBundle$Outbound = {
   uuid?: string | undefined;
   active: number;
-  edit_date?: string | undefined;
+  edit_date?: any | undefined;
   item_number: string;
   name?: string | undefined;
   material_list?: Array<MaterialList$Outbound> | undefined;
@@ -189,7 +191,7 @@ export const MaterialBundle$outboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: MaterialBundleActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
+  editDate: z.any().optional(),
   itemNumber: z.string(),
   name: z.string().optional(),
   materialList: z.array(z.lazy(() => MaterialList$outboundSchema)).optional(),

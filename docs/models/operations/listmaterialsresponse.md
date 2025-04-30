@@ -8,10 +8,10 @@
 ```typescript
 const value: components.Material[] = [
   {
-    uuid: "123e4567-d547-445c-af46-22b563fea8eb",
-    editDate: "YYYY-MM-DD HH:MM:SS",
     name: "<value>",
-    taxRateUuid: "123e4567-6003-4b9c-9984-22b562ddbf9b",
+    uuid: "123e4567-7a23-4f6d-8e46-22b561b3840b",
+    editDate: "2025-04-01 12:00:00",
+    taxRateUuid: "123e4567-80e5-4d97-a1b2-22b56feba79b",
   },
 ];
 ```

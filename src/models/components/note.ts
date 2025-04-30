@@ -10,68 +10,52 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const NoteActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type NoteActive = ClosedEnum<typeof NoteActive>;
 
 export type Note = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: NoteActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
+  editDate?: any | undefined;
   relatedObject?: string | undefined;
   relatedObjectUuid?: string | undefined;
   note?: string | undefined;
   actionRequired?: string | undefined;
   actionCompletedByStaffUuid?: string | undefined;
   /**
-   * Staff Member who last modified record
+   * UUID of Staff Member who last modified record
    */
-  editByStaffUuid?: string | undefined;
+  editByStaffUuid?: any | undefined;
   /**
-   * Record creation timestamp
+   * Timestamp at which record was last modified
    */
-  createDate?: string | undefined;
+  createDate?: any | undefined;
 };
 
 export type NoteInput = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: NoteActive | undefined;
   relatedObject?: string | undefined;
@@ -80,9 +64,9 @@ export type NoteInput = {
   actionRequired?: string | undefined;
   actionCompletedByStaffUuid?: string | undefined;
   /**
-   * Record creation timestamp
+   * Timestamp at which record was last modified
    */
-  createDate?: string | undefined;
+  createDate?: any | undefined;
 };
 
 /** @internal */
@@ -109,14 +93,14 @@ export const Note$inboundSchema: z.ZodType<Note, z.ZodTypeDef, unknown> = z
   .object({
     uuid: z.string().optional(),
     active: NoteActive$inboundSchema.default(1),
-    edit_date: z.string().optional(),
+    edit_date: z.any().optional(),
     related_object: z.string().optional(),
     related_object_uuid: z.string().optional(),
     note: z.string().optional(),
     action_required: z.string().optional(),
     action_completed_by_staff_uuid: z.string().optional(),
-    edit_by_staff_uuid: z.string().optional(),
-    create_date: z.string().optional(),
+    edit_by_staff_uuid: z.any().optional(),
+    create_date: z.any().optional(),
   }).transform((v) => {
     return remap$(v, {
       "edit_date": "editDate",
@@ -133,14 +117,14 @@ export const Note$inboundSchema: z.ZodType<Note, z.ZodTypeDef, unknown> = z
 export type Note$Outbound = {
   uuid?: string | undefined;
   active: number;
-  edit_date?: string | undefined;
+  edit_date?: any | undefined;
   related_object?: string | undefined;
   related_object_uuid?: string | undefined;
   note?: string | undefined;
   action_required?: string | undefined;
   action_completed_by_staff_uuid?: string | undefined;
-  edit_by_staff_uuid?: string | undefined;
-  create_date?: string | undefined;
+  edit_by_staff_uuid?: any | undefined;
+  create_date?: any | undefined;
 };
 
 /** @internal */
@@ -148,14 +132,14 @@ export const Note$outboundSchema: z.ZodType<Note$Outbound, z.ZodTypeDef, Note> =
   z.object({
     uuid: z.string().optional(),
     active: NoteActive$outboundSchema.default(1),
-    editDate: z.string().optional(),
+    editDate: z.any().optional(),
     relatedObject: z.string().optional(),
     relatedObjectUuid: z.string().optional(),
     note: z.string().optional(),
     actionRequired: z.string().optional(),
     actionCompletedByStaffUuid: z.string().optional(),
-    editByStaffUuid: z.string().optional(),
-    createDate: z.string().optional(),
+    editByStaffUuid: z.any().optional(),
+    createDate: z.any().optional(),
   }).transform((v) => {
     return remap$(v, {
       editDate: "edit_date",
@@ -208,7 +192,7 @@ export const NoteInput$inboundSchema: z.ZodType<
   note: z.string().optional(),
   action_required: z.string().optional(),
   action_completed_by_staff_uuid: z.string().optional(),
-  create_date: z.string().optional(),
+  create_date: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
     "related_object": "relatedObject",
@@ -228,7 +212,7 @@ export type NoteInput$Outbound = {
   note?: string | undefined;
   action_required?: string | undefined;
   action_completed_by_staff_uuid?: string | undefined;
-  create_date?: string | undefined;
+  create_date?: any | undefined;
 };
 
 /** @internal */
@@ -244,7 +228,7 @@ export const NoteInput$outboundSchema: z.ZodType<
   note: z.string().optional(),
   actionRequired: z.string().optional(),
   actionCompletedByStaffUuid: z.string().optional(),
-  createDate: z.string().optional(),
+  createDate: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
     relatedObject: "related_object",

@@ -10,57 +10,41 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const SmsTemplateActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type SmsTemplateActive = ClosedEnum<typeof SmsTemplateActive>;
 
 export type SmsTemplate = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: SmsTemplateActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
+  editDate?: any | undefined;
   name: string;
   message?: string | undefined;
 };
 
 export type SmsTemplateInput = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: SmsTemplateActive | undefined;
   name: string;
@@ -96,7 +80,7 @@ export const SmsTemplate$inboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: SmsTemplateActive$inboundSchema.default(1),
-  edit_date: z.string().optional(),
+  edit_date: z.any().optional(),
   name: z.string(),
   message: z.string().optional(),
 }).transform((v) => {
@@ -109,7 +93,7 @@ export const SmsTemplate$inboundSchema: z.ZodType<
 export type SmsTemplate$Outbound = {
   uuid?: string | undefined;
   active: number;
-  edit_date?: string | undefined;
+  edit_date?: any | undefined;
   name: string;
   message?: string | undefined;
 };
@@ -122,7 +106,7 @@ export const SmsTemplate$outboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: SmsTemplateActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
+  editDate: z.any().optional(),
   name: z.string(),
   message: z.string().optional(),
 }).transform((v) => {

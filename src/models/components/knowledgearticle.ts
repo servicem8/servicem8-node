@@ -10,22 +10,14 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const KnowledgeArticleActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type KnowledgeArticleActive = ClosedEnum<typeof KnowledgeArticleActive>;
 
@@ -44,45 +36,67 @@ export type Relationship = {
 
 export type KnowledgeArticle = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: KnowledgeArticleActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
+  editDate?: any | undefined;
+  /**
+   * Title of the knowledge article. This is a mandatory field with a maximum length of 100 characters. Used for identifying and searching for articles in the knowledge base.
+   */
   name: string;
+  /**
+   * The main content of the knowledge article. For 'richtext' articles, this contains HTML formatted text. For 'video' articles, this may contain supplementary information. For 'call' articles, this contains call details. Supports extended text length.
+   */
   content?: string | undefined;
+  /**
+   * Type of knowledge article. Valid values are 'video', 'richtext', or 'call'. This determines how the article content is presented and processed in the system.
+   */
   articleType?: string | undefined;
+  /**
+   * Comma-separated list of tags associated with this knowledge article. Maximum length is 2000 characters. Tags are used for categorization, searching, and automatic relationship generation with other objects like Services, Materials, and Companies.
+   */
   tags?: string | undefined;
+  /**
+   * JSON array of manually created relationships between this knowledge article and other objects. Contains objects with properties: object_name (e.g., 'job'), object_uuid (the related object's UUID), object_description (a description of the related object), and create_date. Used to associate articles with specific jobs or other system objects.
+   */
   relationships?: Array<Relationship> | undefined;
 };
 
 export type KnowledgeArticleInput = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: KnowledgeArticleActive | undefined;
+  /**
+   * Title of the knowledge article. This is a mandatory field with a maximum length of 100 characters. Used for identifying and searching for articles in the knowledge base.
+   */
   name: string;
+  /**
+   * The main content of the knowledge article. For 'richtext' articles, this contains HTML formatted text. For 'video' articles, this may contain supplementary information. For 'call' articles, this contains call details. Supports extended text length.
+   */
   content?: string | undefined;
+  /**
+   * Type of knowledge article. Valid values are 'video', 'richtext', or 'call'. This determines how the article content is presented and processed in the system.
+   */
   articleType?: string | undefined;
+  /**
+   * Comma-separated list of tags associated with this knowledge article. Maximum length is 2000 characters. Tags are used for categorization, searching, and automatic relationship generation with other objects like Services, Materials, and Companies.
+   */
   tags?: string | undefined;
+  /**
+   * JSON array of manually created relationships between this knowledge article and other objects. Contains objects with properties: object_name (e.g., 'job'), object_uuid (the related object's UUID), object_description (a description of the related object), and create_date. Used to associate articles with specific jobs or other system objects.
+   */
   relationships?: Array<Relationship> | undefined;
 };
 
@@ -207,7 +221,7 @@ export const KnowledgeArticle$inboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: KnowledgeArticleActive$inboundSchema.default(1),
-  edit_date: z.string().optional(),
+  edit_date: z.any().optional(),
   name: z.string(),
   content: z.string().optional(),
   article_type: z.string().optional(),
@@ -224,7 +238,7 @@ export const KnowledgeArticle$inboundSchema: z.ZodType<
 export type KnowledgeArticle$Outbound = {
   uuid?: string | undefined;
   active: number;
-  edit_date?: string | undefined;
+  edit_date?: any | undefined;
   name: string;
   content?: string | undefined;
   article_type?: string | undefined;
@@ -240,7 +254,7 @@ export const KnowledgeArticle$outboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: KnowledgeArticleActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
+  editDate: z.any().optional(),
   name: z.string(),
   content: z.string().optional(),
   articleType: z.string().optional(),

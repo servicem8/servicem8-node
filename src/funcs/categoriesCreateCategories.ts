@@ -34,7 +34,7 @@ import { Result } from "../types/fp.js";
  * This endpoint requires the following OAuth scope **manage_job_categories**.
  *
  * #### Record UUID
- * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the response header as x-record-uuid.
+ * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
  */
 export function categoriesCreateCategories(
   client: ServiceM8Core,

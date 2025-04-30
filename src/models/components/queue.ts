@@ -10,89 +10,83 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const QueueActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type QueueActive = ClosedEnum<typeof QueueActive>;
 
 /**
- * @remarks
- *
- * Valid values are [0,1]
+ * Determines if jobs in this queue require assignment to staff members. If true, jobs must be explicitly assigned to staff. If false, jobs are visible to all staff..  Valid values are [0,1]
  */
 export const RequiresAssignment = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * @remarks
- *
- * Valid values are [0,1]
+ * Determines if jobs in this queue require assignment to staff members. If true, jobs must be explicitly assigned to staff. If false, jobs are visible to all staff..  Valid values are [0,1]
  */
 export type RequiresAssignment = ClosedEnum<typeof RequiresAssignment>;
 
 export type Queue = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: QueueActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
+  editDate?: any | undefined;
+  /**
+   * Name of the job queue. Used to identify the queue in the system. Examples include 'Workshop', 'Pending Quotes', etc.
+   */
   name?: string | undefined;
+  /**
+   * Default number of days that jobs should remain in this queue before requiring attention. Common values are 7 days (1 week) or 14 days (2 weeks).
+   */
   defaultTimeframe?: number | undefined;
+  /**
+   * Semicolon-delimited list of staff UUIDs who are subscribed to receive notifications for this queue.
+   */
   subscribedStaff?: string | undefined;
   /**
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Determines if jobs in this queue require assignment to staff members. If true, jobs must be explicitly assigned to staff. If false, jobs are visible to all staff..  Valid values are [0,1]
    */
   requiresAssignment?: RequiresAssignment | undefined;
 };
 
 export type QueueInput = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: QueueActive | undefined;
+  /**
+   * Name of the job queue. Used to identify the queue in the system. Examples include 'Workshop', 'Pending Quotes', etc.
+   */
   name?: string | undefined;
+  /**
+   * Default number of days that jobs should remain in this queue before requiring attention. Common values are 7 days (1 week) or 14 days (2 weeks).
+   */
   defaultTimeframe?: number | undefined;
+  /**
+   * Semicolon-delimited list of staff UUIDs who are subscribed to receive notifications for this queue.
+   */
   subscribedStaff?: string | undefined;
   /**
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Determines if jobs in this queue require assignment to staff members. If true, jobs must be explicitly assigned to staff. If false, jobs are visible to all staff..  Valid values are [0,1]
    */
   requiresAssignment?: RequiresAssignment | undefined;
 };
@@ -142,7 +136,7 @@ export const Queue$inboundSchema: z.ZodType<Queue, z.ZodTypeDef, unknown> = z
   .object({
     uuid: z.string().optional(),
     active: QueueActive$inboundSchema.default(1),
-    edit_date: z.string().optional(),
+    edit_date: z.any().optional(),
     name: z.string().optional(),
     default_timeframe: z.number().int().optional(),
     subscribed_staff: z.string().optional(),
@@ -160,7 +154,7 @@ export const Queue$inboundSchema: z.ZodType<Queue, z.ZodTypeDef, unknown> = z
 export type Queue$Outbound = {
   uuid?: string | undefined;
   active: number;
-  edit_date?: string | undefined;
+  edit_date?: any | undefined;
   name?: string | undefined;
   default_timeframe?: number | undefined;
   subscribed_staff?: string | undefined;
@@ -175,7 +169,7 @@ export const Queue$outboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: QueueActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
+  editDate: z.any().optional(),
   name: z.string().optional(),
   defaultTimeframe: z.number().int().optional(),
   subscribedStaff: z.string().optional(),

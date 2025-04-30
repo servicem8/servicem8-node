@@ -10,62 +10,42 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const JobPaymentActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type JobPaymentActive = ClosedEnum<typeof JobPaymentActive>;
 
 /**
- * (Read-only).
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Boolean flag indicating whether this payment represents a deposit against future work (true) rather than a payment for completed work (false). Read-only in the API. (Read only).  Valid values are [0,1]
  */
 export const IsDeposit = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * (Read-only).
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Boolean flag indicating whether this payment represents a deposit against future work (true) rather than a payment for completed work (false). Read-only in the API. (Read only).  Valid values are [0,1]
  */
 export type IsDeposit = ClosedEnum<typeof IsDeposit>;
 
 export type JobPayment = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: JobPaymentActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
+  editDate?: any | undefined;
   jobUuid?: string | undefined;
   actionedByUuid?: string | undefined;
   timestamp?: string | undefined;
@@ -74,26 +54,18 @@ export type JobPayment = {
   note?: string | undefined;
   attachmentUuid?: string | undefined;
   /**
-   * (Read-only).
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Boolean flag indicating whether this payment represents a deposit against future work (true) rather than a payment for completed work (false). Read-only in the API. (Read only).  Valid values are [0,1]
    */
   isDeposit?: IsDeposit | undefined;
 };
 
 export type JobPaymentInput = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: JobPaymentActive | undefined;
   jobUuid?: string | undefined;
@@ -104,11 +76,7 @@ export type JobPaymentInput = {
   note?: string | undefined;
   attachmentUuid?: string | undefined;
   /**
-   * (Read-only).
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Boolean flag indicating whether this payment represents a deposit against future work (true) rather than a payment for completed work (false). Read-only in the API. (Read only).  Valid values are [0,1]
    */
   isDeposit?: IsDeposit | undefined;
 };
@@ -161,7 +129,7 @@ export const JobPayment$inboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: JobPaymentActive$inboundSchema.default(1),
-  edit_date: z.string().optional(),
+  edit_date: z.any().optional(),
   job_uuid: z.string().optional(),
   actioned_by_uuid: z.string().optional(),
   timestamp: z.string().optional(),
@@ -184,7 +152,7 @@ export const JobPayment$inboundSchema: z.ZodType<
 export type JobPayment$Outbound = {
   uuid?: string | undefined;
   active: number;
-  edit_date?: string | undefined;
+  edit_date?: any | undefined;
   job_uuid?: string | undefined;
   actioned_by_uuid?: string | undefined;
   timestamp?: string | undefined;
@@ -203,7 +171,7 @@ export const JobPayment$outboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: JobPaymentActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
+  editDate: z.any().optional(),
   jobUuid: z.string().optional(),
   actionedByUuid: z.string().optional(),
   timestamp: z.string().optional(),

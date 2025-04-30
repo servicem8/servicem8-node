@@ -10,67 +10,57 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const SecurityRoleActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type SecurityRoleActive = ClosedEnum<typeof SecurityRoleActive>;
 
 export type SecurityRole = {
   /**
-   * Record UUID key
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
-   */
-  active?: SecurityRoleActive | undefined;
-  /**
-   * Record last modified timestamp
-   */
-  editDate?: string | undefined;
-  /**
    * The name given to the security role
    */
   name: string;
+  /**
+   * A detailed description of the security role's purpose and permissions. This field provides information about what access and capabilities are granted to users assigned this role.
+   */
   roleDescription?: string | undefined;
+  /**
+   * Unique identifier for this record
+   */
+  uuid?: string | undefined;
+  /**
+   * Record active/deleted flag.  Valid values are [0,1]
+   */
+  active?: SecurityRoleActive | undefined;
+  /**
+   * Timestamp at which record was last modified
+   */
+  editDate?: any | undefined;
 };
 
 export type SecurityRoleInput = {
   /**
-   * Record UUID key
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
-   */
-  active?: SecurityRoleActive | undefined;
-  /**
    * The name given to the security role
    */
   name: string;
+  /**
+   * A detailed description of the security role's purpose and permissions. This field provides information about what access and capabilities are granted to users assigned this role.
+   */
   roleDescription?: string | undefined;
+  /**
+   * Unique identifier for this record
+   */
+  uuid?: string | undefined;
+  /**
+   * Record active/deleted flag.  Valid values are [0,1]
+   */
+  active?: SecurityRoleActive | undefined;
 };
 
 /** @internal */
@@ -100,25 +90,25 @@ export const SecurityRole$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: SecurityRoleActive$inboundSchema.default(1),
-  edit_date: z.string().optional(),
   name: z.string(),
   role_description: z.string().optional(),
+  uuid: z.string().optional(),
+  active: SecurityRoleActive$inboundSchema.default(1),
+  edit_date: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "edit_date": "editDate",
     "role_description": "roleDescription",
+    "edit_date": "editDate",
   });
 });
 
 /** @internal */
 export type SecurityRole$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: string | undefined;
   name: string;
   role_description?: string | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
 };
 
 /** @internal */
@@ -127,15 +117,15 @@ export const SecurityRole$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   SecurityRole
 > = z.object({
-  uuid: z.string().optional(),
-  active: SecurityRoleActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
   name: z.string(),
   roleDescription: z.string().optional(),
+  uuid: z.string().optional(),
+  active: SecurityRoleActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
     roleDescription: "role_description",
+    editDate: "edit_date",
   });
 });
 
@@ -172,10 +162,10 @@ export const SecurityRoleInput$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: SecurityRoleActive$inboundSchema.default(1),
   name: z.string(),
   role_description: z.string().optional(),
+  uuid: z.string().optional(),
+  active: SecurityRoleActive$inboundSchema.default(1),
 }).transform((v) => {
   return remap$(v, {
     "role_description": "roleDescription",
@@ -184,10 +174,10 @@ export const SecurityRoleInput$inboundSchema: z.ZodType<
 
 /** @internal */
 export type SecurityRoleInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
   name: string;
   role_description?: string | undefined;
+  uuid?: string | undefined;
+  active: number;
 };
 
 /** @internal */
@@ -196,10 +186,10 @@ export const SecurityRoleInput$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   SecurityRoleInput
 > = z.object({
-  uuid: z.string().optional(),
-  active: SecurityRoleActive$outboundSchema.default(1),
   name: z.string(),
   roleDescription: z.string().optional(),
+  uuid: z.string().optional(),
+  active: SecurityRoleActive$outboundSchema.default(1),
 }).transform((v) => {
   return remap$(v, {
     roleDescription: "role_description",

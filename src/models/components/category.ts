@@ -10,61 +10,57 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const CategoryActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type CategoryActive = ClosedEnum<typeof CategoryActive>;
 
 export type Category = {
   /**
-   * Record UUID key
+   * The name of the job category. Used to classify and organize jobs.
+   */
+  name: string;
+  /**
+   * The colour associated with this job category. This colour is used to visually identify the category on the dispatch board and in calendar views. The value is a hexadecimal colour code (6 characters 0-9a-f).
+   */
+  colour?: string | undefined;
+  /**
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: CategoryActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
-  name: string;
-  colour?: string | undefined;
+  editDate?: any | undefined;
 };
 
 export type CategoryInput = {
   /**
-   * Record UUID key
+   * The name of the job category. Used to classify and organize jobs.
+   */
+  name: string;
+  /**
+   * The colour associated with this job category. This colour is used to visually identify the category on the dispatch board and in calendar views. The value is a hexadecimal colour code (6 characters 0-9a-f).
+   */
+  colour?: string | undefined;
+  /**
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: CategoryActive | undefined;
-  name: string;
-  colour?: string | undefined;
 };
 
 /** @internal */
@@ -94,11 +90,11 @@ export const Category$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: CategoryActive$inboundSchema.default(1),
-  edit_date: z.string().optional(),
   name: z.string(),
   colour: z.string().optional(),
+  uuid: z.string().optional(),
+  active: CategoryActive$inboundSchema.default(1),
+  edit_date: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
     "edit_date": "editDate",
@@ -107,11 +103,11 @@ export const Category$inboundSchema: z.ZodType<
 
 /** @internal */
 export type Category$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: string | undefined;
   name: string;
   colour?: string | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
 };
 
 /** @internal */
@@ -120,11 +116,11 @@ export const Category$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Category
 > = z.object({
-  uuid: z.string().optional(),
-  active: CategoryActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
   name: z.string(),
   colour: z.string().optional(),
+  uuid: z.string().optional(),
+  active: CategoryActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
     editDate: "edit_date",
@@ -164,18 +160,18 @@ export const CategoryInput$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: CategoryActive$inboundSchema.default(1),
   name: z.string(),
   colour: z.string().optional(),
+  uuid: z.string().optional(),
+  active: CategoryActive$inboundSchema.default(1),
 });
 
 /** @internal */
 export type CategoryInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
   name: string;
   colour?: string | undefined;
+  uuid?: string | undefined;
+  active: number;
 };
 
 /** @internal */
@@ -184,10 +180,10 @@ export const CategoryInput$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CategoryInput
 > = z.object({
-  uuid: z.string().optional(),
-  active: CategoryActive$outboundSchema.default(1),
   name: z.string(),
   colour: z.string().optional(),
+  uuid: z.string().optional(),
+  active: CategoryActive$outboundSchema.default(1),
 });
 
 /**

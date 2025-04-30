@@ -98,7 +98,7 @@ run();
 
 			
 #### Record UUID
-UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the response header as x-record-uuid.
+UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
 			
 
@@ -115,8 +115,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.forms.createForms({
-    uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
     documentTemplateUuid: "123e4567-d467-40de-924d-22b4da1881bb",
+    uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
   });
 
   // Handle the result
@@ -144,8 +144,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formsCreateForms(serviceM8, {
-    uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
     documentTemplateUuid: "123e4567-d467-40de-924d-22b4da1881bb",
+    uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
   });
 
   if (!res.ok) {
@@ -281,8 +281,8 @@ async function run() {
   const result = await serviceM8.forms.updateForms({
     uuid: "bb397553-eb0b-4e65-89e5-bfd6db4fee68",
     form: {
-      uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
       documentTemplateUuid: "123e4567-d467-40de-924d-22b4da1881bb",
+      uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
     },
   });
 
@@ -313,8 +313,8 @@ async function run() {
   const res = await formsUpdateForms(serviceM8, {
     uuid: "bb397553-eb0b-4e65-89e5-bfd6db4fee68",
     form: {
-      uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
       documentTemplateUuid: "123e4567-d467-40de-924d-22b4da1881bb",
+      uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
     },
   });
 
@@ -355,7 +355,7 @@ run();
 
 
 			
-In ServiceM8, records are never deleted, but are archived. Archived records will remain accessible via the API as (active = 0), however will no longer be visible in UI. Archived records can be restored to active by setting the record active field to 1.
+In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
 
 			
 

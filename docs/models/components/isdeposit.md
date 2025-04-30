@@ -1,8 +1,6 @@
 # IsDeposit
 
-(Read-only). 
-
-Valid values are [0,1]
+Boolean flag indicating whether this payment represents a deposit against future work (true) rather than a payment for completed work (false). Read-only in the API. (Read only).  Valid values are [0,1]
 
 ## Example Usage
 

@@ -108,7 +108,7 @@ This endpoint requires the following OAuth scope **create_jobs**.
 			
 			
 #### Record UUID
-UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the response header as x-record-uuid.
+UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
 			
 
@@ -125,29 +125,29 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobs.createJobs({
-    uuid: "123e4567-9443-40f8-a097-22b4d1d047fb",
     createdByStaffUuid: "123e4567-a308-44ce-a0e1-22b4d0829b3b",
     date: "YYYY-MM-DD",
     companyUuid: "123e4567-db1c-45f1-b8d3-22b4d70ec70b",
-    status: "<value>",
+    status: "Unsuccessful",
     paymentDate: "YYYY-MM-DD HH:MM:SS",
     paymentActionedByUuid: "123e4567-79d7-4031-8216-22b4d90caa2b",
     categoryUuid: "123e4567-1e98-4f7e-b691-22b4d501e20b",
     invoiceSentStamp: "YYYY-MM-DD HH:MM:SS",
     readyToInvoiceStamp: "YYYY-MM-DD HH:MM:SS",
-    paymentProcessedStamp: "YYYY-MM-DD HH:MM:SS",
     queueUuid: "123e4567-4eca-4c40-ae6d-22b4d3576c7b",
     queueExpiryDate: "YYYY-MM-DD HH:MM:SS",
     queueAssignedStaffUuid: "123e4567-b6b5-4aee-9f2e-22b4d13f676b",
-    paymentReceivedStamp: "YYYY-MM-DD HH:MM:SS",
     quoteDate: "YYYY-MM-DD HH:MM:SS",
     quoteSentStamp: "YYYY-MM-DD HH:MM:SS",
     workOrderDate: "YYYY-MM-DD HH:MM:SS",
+    activeNetworkRequestUuid: "123e4567-bf1f-4806-b2ac-22b4d33ee99b",
+    uuid: "123e4567-9443-40f8-a097-22b4d1d047fb",
+    paymentProcessedStamp: "YYYY-MM-DD HH:MM:SS",
+    paymentReceivedStamp: "YYYY-MM-DD HH:MM:SS",
     completionDate: "YYYY-MM-DD HH:MM:SS",
     completionActionedByUuid: "123e4567-ced8-4c56-90ff-22b4deca2cdb",
     unsuccessfulDate: "YYYY-MM-DD HH:MM:SS",
     jobIsScheduledUntilStamp: "YYYY-MM-DD HH:MM:SS",
-    activeNetworkRequestUuid: "123e4567-bf1f-4806-b2ac-22b4d33ee99b",
   });
 
   // Handle the result
@@ -175,29 +175,29 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobsCreateJobs(serviceM8, {
-    uuid: "123e4567-9443-40f8-a097-22b4d1d047fb",
     createdByStaffUuid: "123e4567-a308-44ce-a0e1-22b4d0829b3b",
     date: "YYYY-MM-DD",
     companyUuid: "123e4567-db1c-45f1-b8d3-22b4d70ec70b",
-    status: "<value>",
+    status: "Unsuccessful",
     paymentDate: "YYYY-MM-DD HH:MM:SS",
     paymentActionedByUuid: "123e4567-79d7-4031-8216-22b4d90caa2b",
     categoryUuid: "123e4567-1e98-4f7e-b691-22b4d501e20b",
     invoiceSentStamp: "YYYY-MM-DD HH:MM:SS",
     readyToInvoiceStamp: "YYYY-MM-DD HH:MM:SS",
-    paymentProcessedStamp: "YYYY-MM-DD HH:MM:SS",
     queueUuid: "123e4567-4eca-4c40-ae6d-22b4d3576c7b",
     queueExpiryDate: "YYYY-MM-DD HH:MM:SS",
     queueAssignedStaffUuid: "123e4567-b6b5-4aee-9f2e-22b4d13f676b",
-    paymentReceivedStamp: "YYYY-MM-DD HH:MM:SS",
     quoteDate: "YYYY-MM-DD HH:MM:SS",
     quoteSentStamp: "YYYY-MM-DD HH:MM:SS",
     workOrderDate: "YYYY-MM-DD HH:MM:SS",
+    activeNetworkRequestUuid: "123e4567-bf1f-4806-b2ac-22b4d33ee99b",
+    uuid: "123e4567-9443-40f8-a097-22b4d1d047fb",
+    paymentProcessedStamp: "YYYY-MM-DD HH:MM:SS",
+    paymentReceivedStamp: "YYYY-MM-DD HH:MM:SS",
     completionDate: "YYYY-MM-DD HH:MM:SS",
     completionActionedByUuid: "123e4567-ced8-4c56-90ff-22b4deca2cdb",
     unsuccessfulDate: "YYYY-MM-DD HH:MM:SS",
     jobIsScheduledUntilStamp: "YYYY-MM-DD HH:MM:SS",
-    activeNetworkRequestUuid: "123e4567-bf1f-4806-b2ac-22b4d33ee99b",
   });
 
   if (!res.ok) {
@@ -343,29 +343,29 @@ async function run() {
   const result = await serviceM8.jobs.updateJobs({
     uuid: "4f33e04f-a386-479f-8e76-bf95913d83ac",
     job: {
-      uuid: "123e4567-9443-40f8-a097-22b4d1d047fb",
       createdByStaffUuid: "123e4567-a308-44ce-a0e1-22b4d0829b3b",
       date: "YYYY-MM-DD",
       companyUuid: "123e4567-db1c-45f1-b8d3-22b4d70ec70b",
-      status: "<value>",
+      status: "Work Order",
       paymentDate: "YYYY-MM-DD HH:MM:SS",
       paymentActionedByUuid: "123e4567-79d7-4031-8216-22b4d90caa2b",
       categoryUuid: "123e4567-1e98-4f7e-b691-22b4d501e20b",
       invoiceSentStamp: "YYYY-MM-DD HH:MM:SS",
       readyToInvoiceStamp: "YYYY-MM-DD HH:MM:SS",
-      paymentProcessedStamp: "YYYY-MM-DD HH:MM:SS",
       queueUuid: "123e4567-4eca-4c40-ae6d-22b4d3576c7b",
       queueExpiryDate: "YYYY-MM-DD HH:MM:SS",
       queueAssignedStaffUuid: "123e4567-b6b5-4aee-9f2e-22b4d13f676b",
-      paymentReceivedStamp: "YYYY-MM-DD HH:MM:SS",
       quoteDate: "YYYY-MM-DD HH:MM:SS",
       quoteSentStamp: "YYYY-MM-DD HH:MM:SS",
       workOrderDate: "YYYY-MM-DD HH:MM:SS",
+      activeNetworkRequestUuid: "123e4567-bf1f-4806-b2ac-22b4d33ee99b",
+      uuid: "123e4567-9443-40f8-a097-22b4d1d047fb",
+      paymentProcessedStamp: "YYYY-MM-DD HH:MM:SS",
+      paymentReceivedStamp: "YYYY-MM-DD HH:MM:SS",
       completionDate: "YYYY-MM-DD HH:MM:SS",
       completionActionedByUuid: "123e4567-ced8-4c56-90ff-22b4deca2cdb",
       unsuccessfulDate: "YYYY-MM-DD HH:MM:SS",
       jobIsScheduledUntilStamp: "YYYY-MM-DD HH:MM:SS",
-      activeNetworkRequestUuid: "123e4567-bf1f-4806-b2ac-22b4d33ee99b",
     },
   });
 
@@ -396,29 +396,29 @@ async function run() {
   const res = await jobsUpdateJobs(serviceM8, {
     uuid: "4f33e04f-a386-479f-8e76-bf95913d83ac",
     job: {
-      uuid: "123e4567-9443-40f8-a097-22b4d1d047fb",
       createdByStaffUuid: "123e4567-a308-44ce-a0e1-22b4d0829b3b",
       date: "YYYY-MM-DD",
       companyUuid: "123e4567-db1c-45f1-b8d3-22b4d70ec70b",
-      status: "<value>",
+      status: "Work Order",
       paymentDate: "YYYY-MM-DD HH:MM:SS",
       paymentActionedByUuid: "123e4567-79d7-4031-8216-22b4d90caa2b",
       categoryUuid: "123e4567-1e98-4f7e-b691-22b4d501e20b",
       invoiceSentStamp: "YYYY-MM-DD HH:MM:SS",
       readyToInvoiceStamp: "YYYY-MM-DD HH:MM:SS",
-      paymentProcessedStamp: "YYYY-MM-DD HH:MM:SS",
       queueUuid: "123e4567-4eca-4c40-ae6d-22b4d3576c7b",
       queueExpiryDate: "YYYY-MM-DD HH:MM:SS",
       queueAssignedStaffUuid: "123e4567-b6b5-4aee-9f2e-22b4d13f676b",
-      paymentReceivedStamp: "YYYY-MM-DD HH:MM:SS",
       quoteDate: "YYYY-MM-DD HH:MM:SS",
       quoteSentStamp: "YYYY-MM-DD HH:MM:SS",
       workOrderDate: "YYYY-MM-DD HH:MM:SS",
+      activeNetworkRequestUuid: "123e4567-bf1f-4806-b2ac-22b4d33ee99b",
+      uuid: "123e4567-9443-40f8-a097-22b4d1d047fb",
+      paymentProcessedStamp: "YYYY-MM-DD HH:MM:SS",
+      paymentReceivedStamp: "YYYY-MM-DD HH:MM:SS",
       completionDate: "YYYY-MM-DD HH:MM:SS",
       completionActionedByUuid: "123e4567-ced8-4c56-90ff-22b4deca2cdb",
       unsuccessfulDate: "YYYY-MM-DD HH:MM:SS",
       jobIsScheduledUntilStamp: "YYYY-MM-DD HH:MM:SS",
-      activeNetworkRequestUuid: "123e4567-bf1f-4806-b2ac-22b4d33ee99b",
     },
   });
 
@@ -459,7 +459,7 @@ run();
 
 
 			
-In ServiceM8, records are never deleted, but are archived. Archived records will remain accessible via the API as (active = 0), however will no longer be visible in UI. Archived records can be restored to active by setting the record active field to 1.
+In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
 
 			
 			

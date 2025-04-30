@@ -10,42 +10,30 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const VendorActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type VendorActive = ClosedEnum<typeof VendorActive>;
 
 export type Vendor = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: VendorActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
+  editDate?: any | undefined;
   /**
    * Company Name
    */
@@ -86,15 +74,11 @@ export type Vendor = {
 
 export type VendorInput = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: VendorActive | undefined;
   /**
@@ -159,7 +143,7 @@ export const Vendor$inboundSchema: z.ZodType<Vendor, z.ZodTypeDef, unknown> = z
   .object({
     uuid: z.string().optional(),
     active: VendorActive$inboundSchema.default(1),
-    edit_date: z.string().optional(),
+    edit_date: z.any().optional(),
     name: z.string(),
     abn_number: z.string().optional(),
     business_number: z.string().optional(),
@@ -220,7 +204,7 @@ export const Vendor$inboundSchema: z.ZodType<Vendor, z.ZodTypeDef, unknown> = z
 export type Vendor$Outbound = {
   uuid?: string | undefined;
   active: number;
-  edit_date?: string | undefined;
+  edit_date?: any | undefined;
   name: string;
   abn_number?: string | undefined;
   business_number?: string | undefined;
@@ -258,7 +242,7 @@ export const Vendor$outboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: VendorActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
+  editDate: z.any().optional(),
   name: z.string(),
   abnNumber: z.string().optional(),
   businessNumber: z.string().optional(),

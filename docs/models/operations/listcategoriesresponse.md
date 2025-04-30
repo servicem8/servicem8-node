@@ -8,9 +8,9 @@
 ```typescript
 const value: components.Category[] = [
   {
-    uuid: "123e4567-f051-4494-9fe1-22b56fe7870b",
-    editDate: "YYYY-MM-DD HH:MM:SS",
     name: "<value>",
+    uuid: "123e4567-469e-482b-9e21-22b5614a4fcb",
+    editDate: "2025-04-01 12:00:00",
   },
 ];
 ```

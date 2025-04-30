@@ -8,11 +8,11 @@
 ```typescript
 const value: components.JobPayment[] = [
   {
-    uuid: "123e4567-6be2-4325-ae6b-22b5692a112b",
-    editDate: "YYYY-MM-DD HH:MM:SS",
-    jobUuid: "123e4567-88c7-4507-835f-22b56b53eeab",
-    actionedByUuid: "123e4567-e4c5-45fa-b043-22b561dff4ab",
-    attachmentUuid: "123e4567-dbc1-436b-95b3-22b56b9ff1cb",
+    uuid: "123e4567-3694-4285-9813-22b56d5917fb",
+    editDate: "2025-04-01 12:00:00",
+    jobUuid: "123e4567-8047-4400-91ac-22b560188acb",
+    actionedByUuid: "123e4567-998b-4013-b5ec-22b564f592eb",
+    attachmentUuid: "123e4567-707d-4337-a0c2-22b56a71ed0b",
   },
 ];
 ```

@@ -108,7 +108,7 @@ This endpoint requires the following OAuth scope **manage_locations**.
 			
 			
 #### Record UUID
-UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the response header as x-record-uuid.
+UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
 			
 
@@ -125,8 +125,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.locations.createLocations({
-    uuid: "123e4567-05e7-48cd-a7e5-22b4d5838b3b",
     name: "<value>",
+    uuid: "123e4567-05e7-48cd-a7e5-22b4d5838b3b",
   });
 
   // Handle the result
@@ -154,8 +154,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await locationsCreateLocations(serviceM8, {
-    uuid: "123e4567-05e7-48cd-a7e5-22b4d5838b3b",
     name: "<value>",
+    uuid: "123e4567-05e7-48cd-a7e5-22b4d5838b3b",
   });
 
   if (!res.ok) {
@@ -301,8 +301,8 @@ async function run() {
   const result = await serviceM8.locations.updateLocations({
     uuid: "f05b34ba-ce1d-4329-a6e7-836cc33d661d",
     location: {
-      uuid: "123e4567-05e7-48cd-a7e5-22b4d5838b3b",
       name: "<value>",
+      uuid: "123e4567-05e7-48cd-a7e5-22b4d5838b3b",
     },
   });
 
@@ -333,8 +333,8 @@ async function run() {
   const res = await locationsUpdateLocations(serviceM8, {
     uuid: "f05b34ba-ce1d-4329-a6e7-836cc33d661d",
     location: {
-      uuid: "123e4567-05e7-48cd-a7e5-22b4d5838b3b",
       name: "<value>",
+      uuid: "123e4567-05e7-48cd-a7e5-22b4d5838b3b",
     },
   });
 
@@ -375,7 +375,7 @@ run();
 
 
 			
-In ServiceM8, records are never deleted, but are archived. Archived records will remain accessible via the API as (active = 0), however will no longer be visible in UI. Archived records can be restored to active by setting the record active field to 1.
+In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
 
 			
 			

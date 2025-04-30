@@ -10,22 +10,14 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const JobMaterialBundleActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type JobMaterialBundleActive = ClosedEnum<
   typeof JobMaterialBundleActive
@@ -33,53 +25,75 @@ export type JobMaterialBundleActive = ClosedEnum<
 
 export type JobMaterialBundle = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: JobMaterialBundleActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
+  editDate?: any | undefined;
+  /**
+   * Unique identifier for the material bundle within the job. Displayed on the Quote/Invoice in the same way as for JobMaterials.
+   */
   itemNumber?: string | undefined;
+  /**
+   * Descriptive name of the job material bundle. Displayed on the Quote/Invoice in the same way as for JobMaterials.
+   */
   name?: string | undefined;
+  /**
+   * The quantity shown for the bundle line item on the invoice. Must be greater than zero. The quantity of each JobMaterial within the bundle is determined by dividing by this value.
+   */
   quantity?: string | undefined;
+  /**
+   * Defines the display order of the JobMaterialBundle relative to other JobMaterials and JobMaterialBundles on the Job. Lower values are displayed first.
+   */
   sortOrder?: number | undefined;
   /**
    * UUID of the MaterialBundle which this JobMaterialBundle was originally created from.
    */
   materialBundleUuid?: string | undefined;
+  /**
+   * UUID of the job that this material bundle is associated with. Links the bundle to a specific job record.
+   */
   jobUuid?: string | undefined;
 };
 
 export type JobMaterialBundleInput = {
   /**
-   * Record UUID key
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: JobMaterialBundleActive | undefined;
+  /**
+   * Unique identifier for the material bundle within the job. Displayed on the Quote/Invoice in the same way as for JobMaterials.
+   */
   itemNumber?: string | undefined;
+  /**
+   * Descriptive name of the job material bundle. Displayed on the Quote/Invoice in the same way as for JobMaterials.
+   */
   name?: string | undefined;
+  /**
+   * The quantity shown for the bundle line item on the invoice. Must be greater than zero. The quantity of each JobMaterial within the bundle is determined by dividing by this value.
+   */
   quantity?: string | undefined;
+  /**
+   * Defines the display order of the JobMaterialBundle relative to other JobMaterials and JobMaterialBundles on the Job. Lower values are displayed first.
+   */
   sortOrder?: number | undefined;
   /**
    * UUID of the MaterialBundle which this JobMaterialBundle was originally created from.
    */
   materialBundleUuid?: string | undefined;
+  /**
+   * UUID of the job that this material bundle is associated with. Links the bundle to a specific job record.
+   */
   jobUuid?: string | undefined;
 };
 
@@ -112,7 +126,7 @@ export const JobMaterialBundle$inboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: JobMaterialBundleActive$inboundSchema.default(1),
-  edit_date: z.string().optional(),
+  edit_date: z.any().optional(),
   item_number: z.string().optional(),
   name: z.string().optional(),
   quantity: z.string().optional(),
@@ -133,7 +147,7 @@ export const JobMaterialBundle$inboundSchema: z.ZodType<
 export type JobMaterialBundle$Outbound = {
   uuid?: string | undefined;
   active: number;
-  edit_date?: string | undefined;
+  edit_date?: any | undefined;
   item_number?: string | undefined;
   name?: string | undefined;
   quantity?: string | undefined;
@@ -150,7 +164,7 @@ export const JobMaterialBundle$outboundSchema: z.ZodType<
 > = z.object({
   uuid: z.string().optional(),
   active: JobMaterialBundleActive$outboundSchema.default(1),
-  editDate: z.string().optional(),
+  editDate: z.any().optional(),
   itemNumber: z.string().optional(),
   name: z.string().optional(),
   quantity: z.string().optional(),

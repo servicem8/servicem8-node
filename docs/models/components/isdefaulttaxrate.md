@@ -1,8 +1,6 @@
 # IsDefaultTaxRate
 
-
-
-Valid values are [0,1]
+ Valid values are [0,1]
 
 ## Example Usage
 

@@ -10,89 +10,139 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export const TaskActive = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Record active/deleted flag.
- *
- * @remarks
- *
- * Valid values are [0,1]
+ * Record active/deleted flag.  Valid values are [0,1]
  */
 export type TaskActive = ClosedEnum<typeof TaskActive>;
 
 export type Task = {
   /**
-   * Record UUID key
+   * The date by which the task should be completed. Format is YYYY-MM-DD. For mobile app compatibility, may be returned with time component (HHMMSS) in some contexts.
+   */
+  dueDate?: string | undefined;
+  /**
+   * Detailed description of the task. Contains more comprehensive information about what needs to be done, how to complete the task, or any other relevant notes.
+   */
+  taskDetails?: string | undefined;
+  /**
+   * The name or title of the task. This field is mandatory and used to identify the task in listings and the user interface.
+   */
+  name: string;
+  /**
+   * The name of the object class this task is related to. Must be a valid object class name in the system (e.g., 'job', 'client', etc.). The value is always stored as lowercase regardless of input case.
+   */
+  relatedObject?: string | undefined;
+  /**
+   * UUID of the specific object instance this task is related to. Must be a valid UUID corresponding to an existing object of the type specified in related_object.
+   */
+  relatedObjectUuid?: string | undefined;
+  /**
+   * Boolean flag indicating whether the task has been completed (1) or is still pending (0). When set to 1, the completed_timestamp and completed_by_staff_uuid fields are automatically populated.
+   */
+  taskComplete?: string | undefined;
+  /**
+   * The date and time when the task was marked as complete. Format is YYYY-MM-DD HH:MM:SS. Automatically set when task_complete is changed to 1.
+   */
+  completedTimestamp?: string | undefined;
+  /**
+   * UUID of the staff member who marked the task as complete. Automatically set to the current staff member's UUID when task_complete is changed to 1.
+   */
+  completedByStaffUuid?: string | undefined;
+  /**
+   * UUID of the staff member assigned to complete this task. Must be a valid staff UUID in the system.
+   */
+  assignedToStaffUuid?: string | undefined;
+  /**
+   * DEPRECATED
+   */
+  lng?: any | undefined;
+  /**
+   * DEPRECATED
+   */
+  lat?: any | undefined;
+  /**
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: TaskActive | undefined;
   /**
-   * Record last modified timestamp
+   * Timestamp at which record was last modified
    */
-  editDate?: string | undefined;
-  dueDate?: string | undefined;
-  taskDetails?: string | undefined;
-  name: string;
-  relatedObject?: string | undefined;
-  relatedObjectUuid?: string | undefined;
-  taskComplete?: string | undefined;
-  completedTimestamp?: string | undefined;
-  completedByStaffUuid?: string | undefined;
-  assignedToStaffUuid?: string | undefined;
-  lng?: number | undefined;
-  lat?: number | undefined;
+  editDate?: any | undefined;
   createdByStaffUuid?: string | undefined;
   /**
-   * Record creation timestamp
+   * Timestamp at which record was last modified
    */
-  createDate?: string | undefined;
+  createDate?: any | undefined;
 };
 
 export type TaskInput = {
   /**
-   * Record UUID key
+   * The date by which the task should be completed. Format is YYYY-MM-DD. For mobile app compatibility, may be returned with time component (HHMMSS) in some contexts.
+   */
+  dueDate?: string | undefined;
+  /**
+   * Detailed description of the task. Contains more comprehensive information about what needs to be done, how to complete the task, or any other relevant notes.
+   */
+  taskDetails?: string | undefined;
+  /**
+   * The name or title of the task. This field is mandatory and used to identify the task in listings and the user interface.
+   */
+  name: string;
+  /**
+   * The name of the object class this task is related to. Must be a valid object class name in the system (e.g., 'job', 'client', etc.). The value is always stored as lowercase regardless of input case.
+   */
+  relatedObject?: string | undefined;
+  /**
+   * UUID of the specific object instance this task is related to. Must be a valid UUID corresponding to an existing object of the type specified in related_object.
+   */
+  relatedObjectUuid?: string | undefined;
+  /**
+   * Boolean flag indicating whether the task has been completed (1) or is still pending (0). When set to 1, the completed_timestamp and completed_by_staff_uuid fields are automatically populated.
+   */
+  taskComplete?: string | undefined;
+  /**
+   * The date and time when the task was marked as complete. Format is YYYY-MM-DD HH:MM:SS. Automatically set when task_complete is changed to 1.
+   */
+  completedTimestamp?: string | undefined;
+  /**
+   * UUID of the staff member who marked the task as complete. Automatically set to the current staff member's UUID when task_complete is changed to 1.
+   */
+  completedByStaffUuid?: string | undefined;
+  /**
+   * UUID of the staff member assigned to complete this task. Must be a valid staff UUID in the system.
+   */
+  assignedToStaffUuid?: string | undefined;
+  /**
+   * DEPRECATED
+   */
+  lng?: any | undefined;
+  /**
+   * DEPRECATED
+   */
+  lat?: any | undefined;
+  /**
+   * Unique identifier for this record
    */
   uuid?: string | undefined;
   /**
-   * Record active/deleted flag.
-   *
-   * @remarks
-   *
-   * Valid values are [0,1]
+   * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: TaskActive | undefined;
-  dueDate?: string | undefined;
-  taskDetails?: string | undefined;
-  name: string;
-  relatedObject?: string | undefined;
-  relatedObjectUuid?: string | undefined;
-  taskComplete?: string | undefined;
-  completedTimestamp?: string | undefined;
-  completedByStaffUuid?: string | undefined;
-  assignedToStaffUuid?: string | undefined;
-  lng?: number | undefined;
-  lat?: number | undefined;
   createdByStaffUuid?: string | undefined;
   /**
-   * Record creation timestamp
+   * Timestamp at which record was last modified
    */
-  createDate?: string | undefined;
+  createDate?: any | undefined;
 };
 
 /** @internal */
@@ -117,9 +167,6 @@ export namespace TaskActive$ {
 /** @internal */
 export const Task$inboundSchema: z.ZodType<Task, z.ZodTypeDef, unknown> = z
   .object({
-    uuid: z.string().optional(),
-    active: TaskActive$inboundSchema.default(1),
-    edit_date: z.string().optional(),
     due_date: z.string().optional(),
     task_details: z.string().optional(),
     name: z.string(),
@@ -129,13 +176,15 @@ export const Task$inboundSchema: z.ZodType<Task, z.ZodTypeDef, unknown> = z
     completed_timestamp: z.string().optional(),
     completed_by_staff_uuid: z.string().optional(),
     assigned_to_staff_uuid: z.string().optional(),
-    lng: z.number().optional(),
-    lat: z.number().optional(),
+    lng: z.any().optional(),
+    lat: z.any().optional(),
+    uuid: z.string().optional(),
+    active: TaskActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
     created_by_staff_uuid: z.string().optional(),
-    create_date: z.string().optional(),
+    create_date: z.any().optional(),
   }).transform((v) => {
     return remap$(v, {
-      "edit_date": "editDate",
       "due_date": "dueDate",
       "task_details": "taskDetails",
       "related_object": "relatedObject",
@@ -144,6 +193,7 @@ export const Task$inboundSchema: z.ZodType<Task, z.ZodTypeDef, unknown> = z
       "completed_timestamp": "completedTimestamp",
       "completed_by_staff_uuid": "completedByStaffUuid",
       "assigned_to_staff_uuid": "assignedToStaffUuid",
+      "edit_date": "editDate",
       "created_by_staff_uuid": "createdByStaffUuid",
       "create_date": "createDate",
     });
@@ -151,9 +201,6 @@ export const Task$inboundSchema: z.ZodType<Task, z.ZodTypeDef, unknown> = z
 
 /** @internal */
 export type Task$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: string | undefined;
   due_date?: string | undefined;
   task_details?: string | undefined;
   name: string;
@@ -163,18 +210,18 @@ export type Task$Outbound = {
   completed_timestamp?: string | undefined;
   completed_by_staff_uuid?: string | undefined;
   assigned_to_staff_uuid?: string | undefined;
-  lng?: number | undefined;
-  lat?: number | undefined;
+  lng?: any | undefined;
+  lat?: any | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
   created_by_staff_uuid?: string | undefined;
-  create_date?: string | undefined;
+  create_date?: any | undefined;
 };
 
 /** @internal */
 export const Task$outboundSchema: z.ZodType<Task$Outbound, z.ZodTypeDef, Task> =
   z.object({
-    uuid: z.string().optional(),
-    active: TaskActive$outboundSchema.default(1),
-    editDate: z.string().optional(),
     dueDate: z.string().optional(),
     taskDetails: z.string().optional(),
     name: z.string(),
@@ -184,13 +231,15 @@ export const Task$outboundSchema: z.ZodType<Task$Outbound, z.ZodTypeDef, Task> =
     completedTimestamp: z.string().optional(),
     completedByStaffUuid: z.string().optional(),
     assignedToStaffUuid: z.string().optional(),
-    lng: z.number().optional(),
-    lat: z.number().optional(),
+    lng: z.any().optional(),
+    lat: z.any().optional(),
+    uuid: z.string().optional(),
+    active: TaskActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
     createdByStaffUuid: z.string().optional(),
-    createDate: z.string().optional(),
+    createDate: z.any().optional(),
   }).transform((v) => {
     return remap$(v, {
-      editDate: "edit_date",
       dueDate: "due_date",
       taskDetails: "task_details",
       relatedObject: "related_object",
@@ -199,6 +248,7 @@ export const Task$outboundSchema: z.ZodType<Task$Outbound, z.ZodTypeDef, Task> =
       completedTimestamp: "completed_timestamp",
       completedByStaffUuid: "completed_by_staff_uuid",
       assignedToStaffUuid: "assigned_to_staff_uuid",
+      editDate: "edit_date",
       createdByStaffUuid: "created_by_staff_uuid",
       createDate: "create_date",
     });
@@ -237,8 +287,6 @@ export const TaskInput$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: TaskActive$inboundSchema.default(1),
   due_date: z.string().optional(),
   task_details: z.string().optional(),
   name: z.string(),
@@ -248,10 +296,12 @@ export const TaskInput$inboundSchema: z.ZodType<
   completed_timestamp: z.string().optional(),
   completed_by_staff_uuid: z.string().optional(),
   assigned_to_staff_uuid: z.string().optional(),
-  lng: z.number().optional(),
-  lat: z.number().optional(),
+  lng: z.any().optional(),
+  lat: z.any().optional(),
+  uuid: z.string().optional(),
+  active: TaskActive$inboundSchema.default(1),
   created_by_staff_uuid: z.string().optional(),
-  create_date: z.string().optional(),
+  create_date: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
     "due_date": "dueDate",
@@ -269,8 +319,6 @@ export const TaskInput$inboundSchema: z.ZodType<
 
 /** @internal */
 export type TaskInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
   due_date?: string | undefined;
   task_details?: string | undefined;
   name: string;
@@ -280,10 +328,12 @@ export type TaskInput$Outbound = {
   completed_timestamp?: string | undefined;
   completed_by_staff_uuid?: string | undefined;
   assigned_to_staff_uuid?: string | undefined;
-  lng?: number | undefined;
-  lat?: number | undefined;
+  lng?: any | undefined;
+  lat?: any | undefined;
+  uuid?: string | undefined;
+  active: number;
   created_by_staff_uuid?: string | undefined;
-  create_date?: string | undefined;
+  create_date?: any | undefined;
 };
 
 /** @internal */
@@ -292,8 +342,6 @@ export const TaskInput$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   TaskInput
 > = z.object({
-  uuid: z.string().optional(),
-  active: TaskActive$outboundSchema.default(1),
   dueDate: z.string().optional(),
   taskDetails: z.string().optional(),
   name: z.string(),
@@ -303,10 +351,12 @@ export const TaskInput$outboundSchema: z.ZodType<
   completedTimestamp: z.string().optional(),
   completedByStaffUuid: z.string().optional(),
   assignedToStaffUuid: z.string().optional(),
-  lng: z.number().optional(),
-  lat: z.number().optional(),
+  lng: z.any().optional(),
+  lat: z.any().optional(),
+  uuid: z.string().optional(),
+  active: TaskActive$outboundSchema.default(1),
   createdByStaffUuid: z.string().optional(),
-  createDate: z.string().optional(),
+  createDate: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
     dueDate: "due_date",

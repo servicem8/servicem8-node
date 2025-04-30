@@ -6,8 +6,8 @@
 import { Vendor } from "servicem8/models/components";
 
 let value: Vendor = {
-  uuid: "123e4567-746f-4d8a-838c-22b56a17c75b",
-  editDate: "YYYY-MM-DD HH:MM:SS",
+  uuid: "123e4567-f4d7-41c2-ba09-22b563d5310b",
+  editDate: "2025-04-01 12:00:00",
   name: "<value>",
 };
 ```
@@ -16,9 +16,9 @@ let value: Vendor = {
 
 | Field                                                              | Type                                                               | Required                                                           | Description                                                        | Example                                                            |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `uuid`                                                             | *string*                                                           | :heavy_minus_sign:                                                 | Record UUID key                                                    | 123e4567-746f-4d8a-838c-22b56a17c75b                               |
-| `active`                                                           | [components.VendorActive](../../models/components/vendoractive.md) | :heavy_minus_sign:                                                 | Record active/deleted flag. <br/><br/>Valid values are [0,1]       |                                                                    |
-| `editDate`                                                         | *string*                                                           | :heavy_minus_sign:                                                 | Record last modified timestamp                                     | YYYY-MM-DD HH:MM:SS                                                |
+| `uuid`                                                             | *string*                                                           | :heavy_minus_sign:                                                 | Unique identifier for this record                                  | 123e4567-f4d7-41c2-ba09-22b563d5310b                               |
+| `active`                                                           | [components.VendorActive](../../models/components/vendoractive.md) | :heavy_minus_sign:                                                 | Record active/deleted flag.  Valid values are [0,1]                |                                                                    |
+| `editDate`                                                         | *any*                                                              | :heavy_minus_sign:                                                 | Timestamp at which record was last modified                        | 2025-04-01 12:00:00                                                |
 | `name`                                                             | *string*                                                           | :heavy_check_mark:                                                 | Company Name                                                       |                                                                    |
 | `abnNumber`                                                        | *string*                                                           | :heavy_minus_sign:                                                 | N/A                                                                |                                                                    |
 | `businessNumber`                                                   | *string*                                                           | :heavy_minus_sign:                                                 | Company Business Number                                            |                                                                    |
