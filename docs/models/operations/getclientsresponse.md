@@ -7,10 +7,10 @@
 
 ```typescript
 const value: components.Company = {
-  uuid: "123e4567-1212-4112-9b17-22b4d494775b",
+  uuid: "123e4567-8942-4366-afdb-22b56324a07b",
   editDate: "YYYY-MM-DD HH:MM:SS",
   name: "<value>",
-  taxRateUuid: "123e4567-f027-4427-b18b-22b4d82bdecb",
+  taxRateUuid: "123e4567-a39f-4b2b-84eb-22b56502a32b",
 };
 ```
 

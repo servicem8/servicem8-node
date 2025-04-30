@@ -8,7 +8,7 @@ import { UpdateLocationsRequest } from "servicem8/models/operations";
 let value: UpdateLocationsRequest = {
   uuid: "ac85e73d-8f41-4f46-8322-919804d725ea",
   location: {
-    uuid: "123e4567-58eb-44a7-af94-22b4d35a770b",
+    uuid: "123e4567-ffeb-4418-a089-22b56ab6867b",
     name: "<value>",
   },
 };

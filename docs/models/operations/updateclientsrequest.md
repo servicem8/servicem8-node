@@ -8,9 +8,9 @@ import { UpdateClientsRequest } from "servicem8/models/operations";
 let value: UpdateClientsRequest = {
   uuid: "706de9fc-6f51-44a6-a14d-628b91da42cd",
   company: {
-    uuid: "123e4567-1212-4112-9b17-22b4d494775b",
+    uuid: "123e4567-8942-4366-afdb-22b56324a07b",
     name: "<value>",
-    taxRateUuid: "123e4567-f027-4427-b18b-22b4d82bdecb",
+    taxRateUuid: "123e4567-a39f-4b2b-84eb-22b56502a32b",
   },
 };
 ```

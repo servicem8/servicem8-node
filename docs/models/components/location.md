@@ -6,7 +6,7 @@
 import { Location } from "servicem8/models/components";
 
 let value: Location = {
-  uuid: "123e4567-58eb-44a7-af94-22b4d35a770b",
+  uuid: "123e4567-ffeb-4418-a089-22b56ab6867b",
   editDate: "YYYY-MM-DD HH:MM:SS",
   name: "<value>",
 };
@@ -16,7 +16,7 @@ let value: Location = {
 
 | Field                                                                  | Type                                                                   | Required                                                               | Description                                                            | Example                                                                |
 | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `uuid`                                                                 | *string*                                                               | :heavy_minus_sign:                                                     | Record UUID key                                                        | 123e4567-58eb-44a7-af94-22b4d35a770b                                   |
+| `uuid`                                                                 | *string*                                                               | :heavy_minus_sign:                                                     | Record UUID key                                                        | 123e4567-ffeb-4418-a089-22b56ab6867b                                   |
 | `active`                                                               | [components.LocationActive](../../models/components/locationactive.md) | :heavy_minus_sign:                                                     | Record active/deleted flag. <br/><br/>Valid values are [0,1]           |                                                                        |
 | `editDate`                                                             | *string*                                                               | :heavy_minus_sign:                                                     | Record last modified timestamp                                         | YYYY-MM-DD HH:MM:SS                                                    |
 | `name`                                                                 | *string*                                                               | :heavy_check_mark:                                                     | Location's name                                                        |                                                                        |

@@ -6,10 +6,10 @@
 import { BadgeInput } from "servicem8/models/components";
 
 let value: BadgeInput = {
-  uuid: "123e4567-6bed-4fc2-90a6-22b4d89e1eeb",
+  uuid: "123e4567-b986-432c-af2c-22b56b6d339b",
   name: "<value>",
-  regardingFormUuid: "123e4567-efce-4f55-a4ed-22b4d5f2a9eb",
-  regardingAssetTypeUuid: "123e4567-d74a-46e0-89f1-22b4da76c33b",
+  regardingFormUuid: "123e4567-16b1-46c6-abab-22b56589fbdb",
+  regardingAssetTypeUuid: "123e4567-ab60-4561-a222-22b56585483b",
 };
 ```
 
@@ -17,10 +17,10 @@ let value: BadgeInput = {
 
 | Field                                                            | Type                                                             | Required                                                         | Description                                                      | Example                                                          |
 | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `uuid`                                                           | *string*                                                         | :heavy_minus_sign:                                               | Record UUID key                                                  | 123e4567-6bed-4fc2-90a6-22b4d89e1eeb                             |
+| `uuid`                                                           | *string*                                                         | :heavy_minus_sign:                                               | Record UUID key                                                  | 123e4567-b986-432c-af2c-22b56b6d339b                             |
 | `active`                                                         | [components.BadgeActive](../../models/components/badgeactive.md) | :heavy_minus_sign:                                               | Record active/deleted flag. <br/><br/>Valid values are [0,1]     |                                                                  |
 | `name`                                                           | *string*                                                         | :heavy_check_mark:                                               | Badge Name                                                       |                                                                  |
 | `automaticallyAllocated`                                         | *string*                                                         | :heavy_minus_sign:                                               | N/A                                                              |                                                                  |
 | `fileName`                                                       | *string*                                                         | :heavy_minus_sign:                                               | N/A                                                              |                                                                  |
-| `regardingFormUuid`                                              | *string*                                                         | :heavy_minus_sign:                                               | N/A                                                              | 123e4567-efce-4f55-a4ed-22b4d5f2a9eb                             |
-| `regardingAssetTypeUuid`                                         | *string*                                                         | :heavy_minus_sign:                                               | N/A                                                              | 123e4567-d74a-46e0-89f1-22b4da76c33b                             |
+| `regardingFormUuid`                                              | *string*                                                         | :heavy_minus_sign:                                               | N/A                                                              | 123e4567-16b1-46c6-abab-22b56589fbdb                             |
+| `regardingAssetTypeUuid`                                         | *string*                                                         | :heavy_minus_sign:                                               | N/A                                                              | 123e4567-ab60-4561-a222-22b56585483b                             |
