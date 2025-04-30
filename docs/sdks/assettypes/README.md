@@ -33,7 +33,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -59,7 +59,7 @@ import { assetTypesListAssetTypes } from "servicem8/funcs/assetTypesListAssetTyp
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -119,7 +119,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -147,7 +147,7 @@ import { assetTypesCreateAssetTypes } from "servicem8/funcs/assetTypesCreateAsse
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -205,7 +205,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -233,7 +233,7 @@ import { assetTypesGetAssetTypes } from "servicem8/funcs/assetTypesGetAssetTypes
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -286,7 +286,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -317,7 +317,7 @@ import { assetTypesUpdateAssetTypes } from "servicem8/funcs/assetTypesUpdateAsse
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -377,7 +377,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -405,7 +405,7 @@ import { assetTypesDeleteAssetTypes } from "servicem8/funcs/assetTypesDeleteAsse
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 

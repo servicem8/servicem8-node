@@ -28,7 +28,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -54,7 +54,7 @@ import { smsTemplatesListSMSTemplates } from "servicem8/funcs/smsTemplatesListSM
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -109,7 +109,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -138,7 +138,7 @@ import { smsTemplatesCreateSMSTemplates } from "servicem8/funcs/smsTemplatesCrea
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -192,7 +192,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -220,7 +220,7 @@ import { smsTemplatesGetSMSTemplates } from "servicem8/funcs/smsTemplatesGetSMST
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -273,7 +273,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -305,7 +305,7 @@ import { smsTemplatesUpdateSMSTemplates } from "servicem8/funcs/smsTemplatesUpda
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -366,7 +366,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -394,7 +394,7 @@ import { smsTemplatesDeleteSMSTemplates } from "servicem8/funcs/smsTemplatesDele
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 

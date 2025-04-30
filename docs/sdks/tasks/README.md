@@ -33,7 +33,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -59,7 +59,7 @@ import { tasksListTasks } from "servicem8/funcs/tasksListTasks.js";
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -119,7 +119,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -155,7 +155,7 @@ import { tasksCreateTasks } from "servicem8/funcs/tasksCreateTasks.js";
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -221,7 +221,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -249,7 +249,7 @@ import { tasksGetTasks } from "servicem8/funcs/tasksGetTasks.js";
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -307,7 +307,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -346,7 +346,7 @@ import { tasksUpdateTasks } from "servicem8/funcs/tasksUpdateTasks.js";
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -419,7 +419,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -447,7 +447,7 @@ import { tasksDeleteTasks } from "servicem8/funcs/tasksDeleteTasks.js";
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 

@@ -242,16 +242,16 @@ export function resolveGlobalSecurity(
   return resolveSecurity(
     [
       {
-        fieldName: "Authorization",
-        type: "oauth2",
-        value: security?.oauth2 ?? env().SERVICEM8_OAUTH2,
+        fieldName: "X-Api-Key",
+        type: "apiKey:header",
+        value: security?.apiKeyAuth ?? env().SERVICEM8_API_KEY_AUTH,
       },
     ],
     [
       {
-        fieldName: "X-Api-Key",
-        type: "apiKey:header",
-        value: security?.apiKeyAuth ?? env().SERVICEM8_API_KEY_AUTH,
+        fieldName: "Authorization",
+        type: "oauth2",
+        value: security?.oauth2 ?? env().SERVICEM8_OAUTH2,
       },
     ],
   );

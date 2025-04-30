@@ -28,7 +28,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -54,7 +54,7 @@ import { jobPaymentsListJobPayments } from "servicem8/funcs/jobPaymentsListJobPa
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -109,7 +109,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -140,7 +140,7 @@ import { jobPaymentsCreateJobPayments } from "servicem8/funcs/jobPaymentsCreateJ
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -196,7 +196,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -224,7 +224,7 @@ import { jobPaymentsGetJobPayments } from "servicem8/funcs/jobPaymentsGetJobPaym
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -277,7 +277,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -311,7 +311,7 @@ import { jobPaymentsUpdateJobPayments } from "servicem8/funcs/jobPaymentsUpdateJ
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -374,7 +374,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -402,7 +402,7 @@ import { jobPaymentsDeleteJobPayments } from "servicem8/funcs/jobPaymentsDeleteJ
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 

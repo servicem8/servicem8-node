@@ -7,17 +7,17 @@
 
 ```typescript
 const value: components.Staff = {
-  uuid: "123e4567-5690-4973-a448-22b565612ffb",
+  uuid: "123e4567-0d3d-4a8c-93de-22b56d78afab",
   editDate: "YYYY-MM-DD HH:MM:SS",
   first: "<value>",
   last: "<value>",
   email: "Shanelle_Morar@gmail.com",
   geoTimestamp: "YYYY-MM-DD HH:MM:SS",
-  navigatingToJobUuid: "123e4567-75db-4ea5-b55d-22b56b50ffbb",
+  navigatingToJobUuid: "123e4567-f778-4f38-aa4c-22b56947e28b",
   navigatingTimestamp: "YYYY-MM-DD HH:MM:SS",
   navigatingExpiryTimestamp: "YYYY-MM-DD HH:MM:SS",
   statusMessageTimestamp: "YYYY-MM-DD HH:MM:SS",
-  securityRoleUuid: "123e4567-e30a-4045-ab41-22b562f2e45b",
+  securityRoleUuid: "123e4567-2602-42f7-bf8d-22b5650cf00b",
 };
 ```
 

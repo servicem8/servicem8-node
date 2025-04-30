@@ -4,7 +4,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 

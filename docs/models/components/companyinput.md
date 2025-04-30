@@ -6,9 +6,9 @@
 import { CompanyInput } from "servicem8/models/components";
 
 let value: CompanyInput = {
-  uuid: "123e4567-8942-4366-afdb-22b56324a07b",
+  uuid: "123e4567-f315-41ed-85f5-22b561afde9b",
   name: "<value>",
-  taxRateUuid: "123e4567-a39f-4b2b-84eb-22b56502a32b",
+  taxRateUuid: "123e4567-97ed-424b-ada4-22b560d9a44b",
 };
 ```
 
@@ -16,7 +16,7 @@ let value: CompanyInput = {
 
 | Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
 | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `uuid`                                                               | *string*                                                             | :heavy_minus_sign:                                                   | Record UUID key                                                      | 123e4567-8942-4366-afdb-22b56324a07b                                 |
+| `uuid`                                                               | *string*                                                             | :heavy_minus_sign:                                                   | Record UUID key                                                      | 123e4567-f315-41ed-85f5-22b561afde9b                                 |
 | `active`                                                             | [components.CompanyActive](../../models/components/companyactive.md) | :heavy_minus_sign:                                                   | Record active/deleted flag. <br/><br/>Valid values are [0,1]         |                                                                      |
 | `name`                                                               | *string*                                                             | :heavy_check_mark:                                                   | Company Name                                                         |                                                                      |
 | `website`                                                            | *string*                                                             | :heavy_minus_sign:                                                   | N/A                                                                  |                                                                      |
@@ -31,6 +31,6 @@ let value: CompanyInput = {
 | `address`                                                            | *string*                                                             | :heavy_minus_sign:                                                   | Password                                                             |                                                                      |
 | `billingAddress`                                                     | *string*                                                             | :heavy_minus_sign:                                                   | Confirm Password                                                     |                                                                      |
 | `badges`                                                             | *string*                                                             | :heavy_minus_sign:                                                   | N/A                                                                  |                                                                      |
-| `taxRateUuid`                                                        | *string*                                                             | :heavy_minus_sign:                                                   | N/A                                                                  | 123e4567-a39f-4b2b-84eb-22b56502a32b                                 |
+| `taxRateUuid`                                                        | *string*                                                             | :heavy_minus_sign:                                                   | N/A                                                                  | 123e4567-97ed-424b-ada4-22b560d9a44b                                 |
 | `billingAttention`                                                   | *string*                                                             | :heavy_minus_sign:                                                   | N/A                                                                  |                                                                      |
 | `paymentTerms`                                                       | *string*                                                             | :heavy_minus_sign:                                                   | N/A                                                                  |                                                                      |

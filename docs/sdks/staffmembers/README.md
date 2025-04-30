@@ -33,7 +33,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -59,7 +59,7 @@ import { staffMembersListStaffMembers } from "servicem8/funcs/staffMembersListSt
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -119,7 +119,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -156,7 +156,7 @@ import { staffMembersCreateStaffMembers } from "servicem8/funcs/staffMembersCrea
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -223,7 +223,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -251,7 +251,7 @@ import { staffMembersGetStaffMembers } from "servicem8/funcs/staffMembersGetStaf
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -309,7 +309,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -349,7 +349,7 @@ import { staffMembersUpdateStaffMembers } from "servicem8/funcs/staffMembersUpda
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -423,7 +423,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -451,7 +451,7 @@ import { staffMembersDeleteStaffMembers } from "servicem8/funcs/staffMembersDele
 // You can create one instance of it to use across an application.
 const serviceM8 = new ServiceM8Core({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 

@@ -6,8 +6,8 @@
 import { FormInput } from "servicem8/models/components";
 
 let value: FormInput = {
-  uuid: "123e4567-8e23-47c1-b831-22b56c9fce9b",
-  documentTemplateUuid: "123e4567-675e-40fe-a95b-22b56017a07b",
+  uuid: "123e4567-b766-4e8d-945a-22b56eea858b",
+  documentTemplateUuid: "123e4567-4b79-40f3-b592-22b56b97f03b",
 };
 ```
 
@@ -15,10 +15,10 @@ let value: FormInput = {
 
 | Field                                                                  | Type                                                                   | Required                                                               | Description                                                            | Example                                                                |
 | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `uuid`                                                                 | *string*                                                               | :heavy_minus_sign:                                                     | Record UUID key                                                        | 123e4567-8e23-47c1-b831-22b56c9fce9b                                   |
+| `uuid`                                                                 | *string*                                                               | :heavy_minus_sign:                                                     | Record UUID key                                                        | 123e4567-b766-4e8d-945a-22b56eea858b                                   |
 | `active`                                                               | [components.FormActive](../../models/components/formactive.md)         | :heavy_minus_sign:                                                     | Record active/deleted flag. <br/><br/>Valid values are [0,1]           |                                                                        |
 | `name`                                                                 | *string*                                                               | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |
-| `documentTemplateUuid`                                                 | *string*                                                               | :heavy_minus_sign:                                                     | N/A                                                                    | 123e4567-675e-40fe-a95b-22b56017a07b                                   |
+| `documentTemplateUuid`                                                 | *string*                                                               | :heavy_minus_sign:                                                     | N/A                                                                    | 123e4567-4b79-40f3-b592-22b56b97f03b                                   |
 | `canBeUsedIndependently`                                               | *string*                                                               | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |
 | `badgeMandatoryState`                                                  | *string*                                                               | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |
 | `templateFields`                                                       | [components.TemplateField](../../models/components/templatefield.md)[] | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |

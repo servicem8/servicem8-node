@@ -109,8 +109,8 @@ Add the following server definition to your `claude_desktop_config.json` file:
         "-y", "--package", "servicem8",
         "--",
         "mcp", "start",
-        "--oauth2", "...",
-        "--api-key-auth", "..."
+        "--api-key-auth", "...",
+        "--oauth2", "..."
       ]
     }
   }
@@ -133,8 +133,8 @@ Create a `.cursor/mcp.json` file in your project root with the following content
         "-y", "--package", "servicem8",
         "--",
         "mcp", "start",
-        "--oauth2", "...",
-        "--api-key-auth", "..."
+        "--api-key-auth", "...",
+        "--oauth2", "..."
       ]
     }
   }
@@ -190,7 +190,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -215,8 +215,8 @@ This SDK supports the following security schemes globally:
 
 | Name         | Type   | Scheme       | Environment Variable     |
 | ------------ | ------ | ------------ | ------------------------ |
-| `oauth2`     | oauth2 | OAuth2 token | `SERVICEM8_OAUTH2`       |
 | `apiKeyAuth` | apiKey | API key      | `SERVICEM8_API_KEY_AUTH` |
+| `oauth2`     | oauth2 | OAuth2 token | `SERVICEM8_OAUTH2`       |
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```typescript
@@ -224,7 +224,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -729,7 +729,7 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -771,7 +771,7 @@ const serviceM8 = new ServiceM8({
     retryConnectionErrors: false,
   },
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -805,7 +805,7 @@ import { ErrorT, SDKValidationError } from "servicem8/models/errors";
 
 const serviceM8 = new ServiceM8({
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 
@@ -868,7 +868,7 @@ import { ServiceM8 } from "servicem8";
 const serviceM8 = new ServiceM8({
   serverURL: "https://api.servicem8.com/api_1.0",
   security: {
-    oauth2: process.env["SERVICEM8_OAUTH2"] ?? "",
+    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
   },
 });
 

@@ -6,17 +6,17 @@
 import { Staff } from "servicem8/models/components";
 
 let value: Staff = {
-  uuid: "123e4567-5690-4973-a448-22b565612ffb",
+  uuid: "123e4567-0d3d-4a8c-93de-22b56d78afab",
   editDate: "YYYY-MM-DD HH:MM:SS",
   first: "<value>",
   last: "<value>",
   email: "Felipa97@yahoo.com",
   geoTimestamp: "YYYY-MM-DD HH:MM:SS",
-  navigatingToJobUuid: "123e4567-75db-4ea5-b55d-22b56b50ffbb",
+  navigatingToJobUuid: "123e4567-f778-4f38-aa4c-22b56947e28b",
   navigatingTimestamp: "YYYY-MM-DD HH:MM:SS",
   navigatingExpiryTimestamp: "YYYY-MM-DD HH:MM:SS",
   statusMessageTimestamp: "YYYY-MM-DD HH:MM:SS",
-  securityRoleUuid: "123e4567-e30a-4045-ab41-22b562f2e45b",
+  securityRoleUuid: "123e4567-2602-42f7-bf8d-22b5650cf00b",
 };
 ```
 
@@ -24,7 +24,7 @@ let value: Staff = {
 
 | Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                | Example                                                                    |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `uuid`                                                                     | *string*                                                                   | :heavy_minus_sign:                                                         | Record UUID key                                                            | 123e4567-5690-4973-a448-22b565612ffb                                       |
+| `uuid`                                                                     | *string*                                                                   | :heavy_minus_sign:                                                         | Record UUID key                                                            | 123e4567-0d3d-4a8c-93de-22b56d78afab                                       |
 | `active`                                                                   | [components.StaffActive](../../models/components/staffactive.md)           | :heavy_minus_sign:                                                         | Record active/deleted flag. <br/><br/>Valid values are [0,1]               |                                                                            |
 | `editDate`                                                                 | *string*                                                                   | :heavy_minus_sign:                                                         | Record last modified timestamp                                             | YYYY-MM-DD HH:MM:SS                                                        |
 | `first`                                                                    | *string*                                                                   | :heavy_check_mark:                                                         | Staff First Name                                                           |                                                                            |
@@ -35,7 +35,7 @@ let value: Staff = {
 | `lat`                                                                      | *number*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
 | `geoTimestamp`                                                             | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | YYYY-MM-DD HH:MM:SS                                                        |
 | `jobTitle`                                                                 | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
-| `navigatingToJobUuid`                                                      | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | 123e4567-75db-4ea5-b55d-22b56b50ffbb                                       |
+| `navigatingToJobUuid`                                                      | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | 123e4567-f778-4f38-aa4c-22b56947e28b                                       |
 | `navigatingTimestamp`                                                      | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | YYYY-MM-DD HH:MM:SS                                                        |
 | `navigatingExpiryTimestamp`                                                | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | YYYY-MM-DD HH:MM:SS                                                        |
 | `color`                                                                    | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
@@ -44,4 +44,4 @@ let value: Staff = {
 | `statusMessageTimestamp`                                                   | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | YYYY-MM-DD HH:MM:SS                                                        |
 | `canReceivePushNotification`                                               | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
 | `hideFromSchedule`                                                         | [components.HideFromSchedule](../../models/components/hidefromschedule.md) | :heavy_minus_sign:                                                         | <br/><br/>Valid values are [0,1]                                           |                                                                            |
-| `securityRoleUuid`                                                         | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | 123e4567-e30a-4045-ab41-22b562f2e45b                                       |
+| `securityRoleUuid`                                                         | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | 123e4567-2602-42f7-bf8d-22b5650cf00b                                       |

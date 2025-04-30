@@ -12,5 +12,5 @@ let value: Security = {};
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `oauth2`           | *string*           | :heavy_minus_sign: | N/A                |
 | `apiKeyAuth`       | *string*           | :heavy_minus_sign: | N/A                |
+| `oauth2`           | *string*           | :heavy_minus_sign: | N/A                |

@@ -7,15 +7,15 @@ import { dlv } from "./dlv.js";
 import * as z from "zod";
 
 export interface Env {
-  SERVICEM8_OAUTH2?: string | undefined;
   SERVICEM8_API_KEY_AUTH?: string | undefined;
+  SERVICEM8_OAUTH2?: string | undefined;
 
   SERVICEM8_DEBUG?: boolean | undefined;
 }
 
 export const envSchema: z.ZodType<Env, z.ZodTypeDef, unknown> = z.object({
-  SERVICEM8_OAUTH2: z.string().optional(),
   SERVICEM8_API_KEY_AUTH: z.string().optional(),
+  SERVICEM8_OAUTH2: z.string().optional(),
 
   SERVICEM8_DEBUG: z.coerce.boolean().optional(),
 });

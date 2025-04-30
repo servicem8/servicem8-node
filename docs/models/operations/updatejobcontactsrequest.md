@@ -8,8 +8,8 @@ import { UpdateJobContactsRequest } from "servicem8/models/operations";
 let value: UpdateJobContactsRequest = {
   uuid: "13a3c3db-d688-4b7f-8fbf-23387e342b07",
   jobContact: {
-    uuid: "123e4567-fec0-401e-8ebe-22b564bc273b",
-    jobUuid: "123e4567-62e3-4ef4-bd60-22b564b2f64b",
+    uuid: "123e4567-6db3-43d6-ab8c-22b565d7f76b",
+    jobUuid: "123e4567-1099-4214-b9b0-22b56ff91cdb",
   },
 };
 ```

@@ -7,10 +7,10 @@
 
 ```typescript
 const value: components.Material = {
-  uuid: "123e4567-6180-4bb1-8575-22b56c71d43b",
+  uuid: "123e4567-d547-445c-af46-22b563fea8eb",
   editDate: "YYYY-MM-DD HH:MM:SS",
   name: "<value>",
-  taxRateUuid: "123e4567-12ca-4b6d-a0d1-22b56098093b",
+  taxRateUuid: "123e4567-6003-4b9c-9984-22b562ddbf9b",
 };
 ```
 

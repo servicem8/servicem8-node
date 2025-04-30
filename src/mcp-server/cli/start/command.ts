@@ -49,17 +49,17 @@ export const startCommand = buildCommand({
           },
         }
         : {}),
-      oauth2: {
+      "api-key-auth": {
         kind: "parsed",
-        brief: "Sets the oauth2 auth field for the API",
+        brief: "Sets the apiKeyAuth auth field for the API",
         optional: true,
         parse: (value) => {
           return z.string().parse(value);
         },
       },
-      "api-key-auth": {
+      oauth2: {
         kind: "parsed",
-        brief: "Sets the apiKeyAuth auth field for the API",
+        brief: "Sets the oauth2 auth field for the API",
         optional: true,
         parse: (value) => {
           return z.string().parse(value);
