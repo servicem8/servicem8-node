@@ -8,10 +8,10 @@
 ```typescript
 const value: components.JobMaterialBundle[] = [
   {
-    uuid: "123e4567-2888-4590-b7eb-22b56d5afe3b",
-    editDate: "2025-04-01 12:00:00",
-    materialBundleUuid: "123e4567-dc49-4f0e-bd42-22b56773226b",
-    jobUuid: "123e4567-e876-4265-843e-22b56ac6b82b",
+    uuid: "123e4567-c295-48aa-bfa0-22b6c05e3bfb",
+    editDate: "2025-05-01 12:00:00",
+    materialBundleUuid: "123e4567-1e40-4da5-a8b8-22b6cc8c870b",
+    jobUuid: "123e4567-10b7-42cf-a6da-22b6c27340fb",
   },
 ];
 ```
