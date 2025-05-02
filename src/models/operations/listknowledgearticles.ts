@@ -8,9 +8,73 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type ListKnowledgeArticlesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type ListKnowledgeArticlesResponse =
   | components.ErrorT
   | Array<components.KnowledgeArticle>;
+
+/** @internal */
+export const ListKnowledgeArticlesSecurity$inboundSchema: z.ZodType<
+  ListKnowledgeArticlesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type ListKnowledgeArticlesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const ListKnowledgeArticlesSecurity$outboundSchema: z.ZodType<
+  ListKnowledgeArticlesSecurity$Outbound,
+  z.ZodTypeDef,
+  ListKnowledgeArticlesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListKnowledgeArticlesSecurity$ {
+  /** @deprecated use `ListKnowledgeArticlesSecurity$inboundSchema` instead. */
+  export const inboundSchema = ListKnowledgeArticlesSecurity$inboundSchema;
+  /** @deprecated use `ListKnowledgeArticlesSecurity$outboundSchema` instead. */
+  export const outboundSchema = ListKnowledgeArticlesSecurity$outboundSchema;
+  /** @deprecated use `ListKnowledgeArticlesSecurity$Outbound` instead. */
+  export type Outbound = ListKnowledgeArticlesSecurity$Outbound;
+}
+
+export function listKnowledgeArticlesSecurityToJSON(
+  listKnowledgeArticlesSecurity: ListKnowledgeArticlesSecurity,
+): string {
+  return JSON.stringify(
+    ListKnowledgeArticlesSecurity$outboundSchema.parse(
+      listKnowledgeArticlesSecurity,
+    ),
+  );
+}
+
+export function listKnowledgeArticlesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<ListKnowledgeArticlesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListKnowledgeArticlesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListKnowledgeArticlesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const ListKnowledgeArticlesResponse$inboundSchema: z.ZodType<

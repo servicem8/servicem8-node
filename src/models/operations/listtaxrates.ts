@@ -8,9 +8,71 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type ListTaxRatesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type ListTaxRatesResponse =
   | components.ErrorT
   | Array<components.TaxRate>;
+
+/** @internal */
+export const ListTaxRatesSecurity$inboundSchema: z.ZodType<
+  ListTaxRatesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type ListTaxRatesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const ListTaxRatesSecurity$outboundSchema: z.ZodType<
+  ListTaxRatesSecurity$Outbound,
+  z.ZodTypeDef,
+  ListTaxRatesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListTaxRatesSecurity$ {
+  /** @deprecated use `ListTaxRatesSecurity$inboundSchema` instead. */
+  export const inboundSchema = ListTaxRatesSecurity$inboundSchema;
+  /** @deprecated use `ListTaxRatesSecurity$outboundSchema` instead. */
+  export const outboundSchema = ListTaxRatesSecurity$outboundSchema;
+  /** @deprecated use `ListTaxRatesSecurity$Outbound` instead. */
+  export type Outbound = ListTaxRatesSecurity$Outbound;
+}
+
+export function listTaxRatesSecurityToJSON(
+  listTaxRatesSecurity: ListTaxRatesSecurity,
+): string {
+  return JSON.stringify(
+    ListTaxRatesSecurity$outboundSchema.parse(listTaxRatesSecurity),
+  );
+}
+
+export function listTaxRatesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<ListTaxRatesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListTaxRatesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListTaxRatesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const ListTaxRatesResponse$inboundSchema: z.ZodType<

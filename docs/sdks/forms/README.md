@@ -26,14 +26,12 @@ This endpoint supports result filtering. For more information on how to filter t
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
-  const result = await serviceM8.forms.listForms();
+  const result = await serviceM8.forms.listForms({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  });
 
   // Handle the result
   console.log(result);
@@ -52,14 +50,12 @@ import { formsListForms } from "servicem8/funcs/formsListForms.js";
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
-  const res = await formsListForms(serviceM8);
+  const res = await formsListForms(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  });
 
   if (!res.ok) {
     throw res.error;
@@ -78,6 +74,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `security`                                                                                                                                                                     | [operations.ListFormsSecurity](../../models/operations/listformssecurity.md)                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -107,14 +104,12 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.forms.createForms({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     documentTemplateUuid: "123e4567-d467-40de-924d-22b4da1881bb",
     uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
   });
@@ -136,14 +131,12 @@ import { formsCreateForms } from "servicem8/funcs/formsCreateForms.js";
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await formsCreateForms(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     documentTemplateUuid: "123e4567-d467-40de-924d-22b4da1881bb",
     uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
   });
@@ -166,6 +159,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [components.FormInput](../../models/components/forminput.md)                                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.CreateFormsSecurity](../../models/operations/createformssecurity.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -190,14 +184,12 @@ Retrieve a Form
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.forms.getForms({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "56e285a2-c6af-4c67-87b1-6ba5832617e0",
   });
 
@@ -218,14 +210,12 @@ import { formsGetForms } from "servicem8/funcs/formsGetForms.js";
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await formsGetForms(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "56e285a2-c6af-4c67-87b1-6ba5832617e0",
   });
 
@@ -247,6 +237,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.GetFormsRequest](../../models/operations/getformsrequest.md)                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.GetFormsSecurity](../../models/operations/getformssecurity.md)                                                                                                     | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -271,14 +262,12 @@ Update a Form
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.forms.updateForms({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "bb397553-eb0b-4e65-89e5-bfd6db4fee68",
     form: {
       documentTemplateUuid: "123e4567-d467-40de-924d-22b4da1881bb",
@@ -303,14 +292,12 @@ import { formsUpdateForms } from "servicem8/funcs/formsUpdateForms.js";
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await formsUpdateForms(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "bb397553-eb0b-4e65-89e5-bfd6db4fee68",
     form: {
       documentTemplateUuid: "123e4567-d467-40de-924d-22b4da1881bb",
@@ -336,6 +323,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.UpdateFormsRequest](../../models/operations/updateformsrequest.md)                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.UpdateFormsSecurity](../../models/operations/updateformssecurity.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -364,14 +352,12 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.forms.deleteForms({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "eae94b1e-10d9-4270-bca0-cbe1c887f39a",
   });
 
@@ -392,14 +378,12 @@ import { formsDeleteForms } from "servicem8/funcs/formsDeleteForms.js";
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await formsDeleteForms(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "eae94b1e-10d9-4270-bca0-cbe1c887f39a",
   });
 
@@ -421,6 +405,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.DeleteFormsRequest](../../models/operations/deleteformsrequest.md)                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.DeleteFormsSecurity](../../models/operations/deleteformssecurity.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

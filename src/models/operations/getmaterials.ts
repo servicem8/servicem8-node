@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetMaterialsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetMaterialsRequest = {
   /**
    * UUID of the Material
@@ -16,6 +21,63 @@ export type GetMaterialsRequest = {
 };
 
 export type GetMaterialsResponse = components.ErrorT | components.Material;
+
+/** @internal */
+export const GetMaterialsSecurity$inboundSchema: z.ZodType<
+  GetMaterialsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetMaterialsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetMaterialsSecurity$outboundSchema: z.ZodType<
+  GetMaterialsSecurity$Outbound,
+  z.ZodTypeDef,
+  GetMaterialsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetMaterialsSecurity$ {
+  /** @deprecated use `GetMaterialsSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetMaterialsSecurity$inboundSchema;
+  /** @deprecated use `GetMaterialsSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetMaterialsSecurity$outboundSchema;
+  /** @deprecated use `GetMaterialsSecurity$Outbound` instead. */
+  export type Outbound = GetMaterialsSecurity$Outbound;
+}
+
+export function getMaterialsSecurityToJSON(
+  getMaterialsSecurity: GetMaterialsSecurity,
+): string {
+  return JSON.stringify(
+    GetMaterialsSecurity$outboundSchema.parse(getMaterialsSecurity),
+  );
+}
+
+export function getMaterialsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetMaterialsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetMaterialsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetMaterialsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetMaterialsRequest$inboundSchema: z.ZodType<

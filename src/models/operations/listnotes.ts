@@ -8,7 +8,69 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type ListNotesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type ListNotesResponse = components.ErrorT | Array<components.Note>;
+
+/** @internal */
+export const ListNotesSecurity$inboundSchema: z.ZodType<
+  ListNotesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type ListNotesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const ListNotesSecurity$outboundSchema: z.ZodType<
+  ListNotesSecurity$Outbound,
+  z.ZodTypeDef,
+  ListNotesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListNotesSecurity$ {
+  /** @deprecated use `ListNotesSecurity$inboundSchema` instead. */
+  export const inboundSchema = ListNotesSecurity$inboundSchema;
+  /** @deprecated use `ListNotesSecurity$outboundSchema` instead. */
+  export const outboundSchema = ListNotesSecurity$outboundSchema;
+  /** @deprecated use `ListNotesSecurity$Outbound` instead. */
+  export type Outbound = ListNotesSecurity$Outbound;
+}
+
+export function listNotesSecurityToJSON(
+  listNotesSecurity: ListNotesSecurity,
+): string {
+  return JSON.stringify(
+    ListNotesSecurity$outboundSchema.parse(listNotesSecurity),
+  );
+}
+
+export function listNotesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<ListNotesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListNotesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListNotesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const ListNotesResponse$inboundSchema: z.ZodType<

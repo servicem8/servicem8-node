@@ -8,9 +8,71 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type ListFormResponsesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type ListFormResponsesResponse =
   | components.ErrorT
   | Array<components.FormResponse>;
+
+/** @internal */
+export const ListFormResponsesSecurity$inboundSchema: z.ZodType<
+  ListFormResponsesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type ListFormResponsesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const ListFormResponsesSecurity$outboundSchema: z.ZodType<
+  ListFormResponsesSecurity$Outbound,
+  z.ZodTypeDef,
+  ListFormResponsesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListFormResponsesSecurity$ {
+  /** @deprecated use `ListFormResponsesSecurity$inboundSchema` instead. */
+  export const inboundSchema = ListFormResponsesSecurity$inboundSchema;
+  /** @deprecated use `ListFormResponsesSecurity$outboundSchema` instead. */
+  export const outboundSchema = ListFormResponsesSecurity$outboundSchema;
+  /** @deprecated use `ListFormResponsesSecurity$Outbound` instead. */
+  export type Outbound = ListFormResponsesSecurity$Outbound;
+}
+
+export function listFormResponsesSecurityToJSON(
+  listFormResponsesSecurity: ListFormResponsesSecurity,
+): string {
+  return JSON.stringify(
+    ListFormResponsesSecurity$outboundSchema.parse(listFormResponsesSecurity),
+  );
+}
+
+export function listFormResponsesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<ListFormResponsesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListFormResponsesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListFormResponsesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const ListFormResponsesResponse$inboundSchema: z.ZodType<

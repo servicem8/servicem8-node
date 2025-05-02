@@ -8,9 +8,73 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type ListAllocationWindowsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type ListAllocationWindowsResponse =
   | components.ErrorT
   | Array<components.AllocationWindow>;
+
+/** @internal */
+export const ListAllocationWindowsSecurity$inboundSchema: z.ZodType<
+  ListAllocationWindowsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type ListAllocationWindowsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const ListAllocationWindowsSecurity$outboundSchema: z.ZodType<
+  ListAllocationWindowsSecurity$Outbound,
+  z.ZodTypeDef,
+  ListAllocationWindowsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListAllocationWindowsSecurity$ {
+  /** @deprecated use `ListAllocationWindowsSecurity$inboundSchema` instead. */
+  export const inboundSchema = ListAllocationWindowsSecurity$inboundSchema;
+  /** @deprecated use `ListAllocationWindowsSecurity$outboundSchema` instead. */
+  export const outboundSchema = ListAllocationWindowsSecurity$outboundSchema;
+  /** @deprecated use `ListAllocationWindowsSecurity$Outbound` instead. */
+  export type Outbound = ListAllocationWindowsSecurity$Outbound;
+}
+
+export function listAllocationWindowsSecurityToJSON(
+  listAllocationWindowsSecurity: ListAllocationWindowsSecurity,
+): string {
+  return JSON.stringify(
+    ListAllocationWindowsSecurity$outboundSchema.parse(
+      listAllocationWindowsSecurity,
+    ),
+  );
+}
+
+export function listAllocationWindowsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<ListAllocationWindowsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListAllocationWindowsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListAllocationWindowsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const ListAllocationWindowsResponse$inboundSchema: z.ZodType<

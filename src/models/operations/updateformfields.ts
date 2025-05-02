@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type UpdateFormFieldsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type UpdateFormFieldsRequest = {
   /**
    * UUID of the Form Field
@@ -21,6 +26,63 @@ export type UpdateFormFieldsRequest = {
 };
 
 export type UpdateFormFieldsResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const UpdateFormFieldsSecurity$inboundSchema: z.ZodType<
+  UpdateFormFieldsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type UpdateFormFieldsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const UpdateFormFieldsSecurity$outboundSchema: z.ZodType<
+  UpdateFormFieldsSecurity$Outbound,
+  z.ZodTypeDef,
+  UpdateFormFieldsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateFormFieldsSecurity$ {
+  /** @deprecated use `UpdateFormFieldsSecurity$inboundSchema` instead. */
+  export const inboundSchema = UpdateFormFieldsSecurity$inboundSchema;
+  /** @deprecated use `UpdateFormFieldsSecurity$outboundSchema` instead. */
+  export const outboundSchema = UpdateFormFieldsSecurity$outboundSchema;
+  /** @deprecated use `UpdateFormFieldsSecurity$Outbound` instead. */
+  export type Outbound = UpdateFormFieldsSecurity$Outbound;
+}
+
+export function updateFormFieldsSecurityToJSON(
+  updateFormFieldsSecurity: UpdateFormFieldsSecurity,
+): string {
+  return JSON.stringify(
+    UpdateFormFieldsSecurity$outboundSchema.parse(updateFormFieldsSecurity),
+  );
+}
+
+export function updateFormFieldsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateFormFieldsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateFormFieldsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateFormFieldsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const UpdateFormFieldsRequest$inboundSchema: z.ZodType<

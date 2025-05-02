@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type DeleteBundlesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type DeleteBundlesRequest = {
   /**
    * UUID of the Bundle
@@ -16,6 +21,63 @@ export type DeleteBundlesRequest = {
 };
 
 export type DeleteBundlesResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const DeleteBundlesSecurity$inboundSchema: z.ZodType<
+  DeleteBundlesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteBundlesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const DeleteBundlesSecurity$outboundSchema: z.ZodType<
+  DeleteBundlesSecurity$Outbound,
+  z.ZodTypeDef,
+  DeleteBundlesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeleteBundlesSecurity$ {
+  /** @deprecated use `DeleteBundlesSecurity$inboundSchema` instead. */
+  export const inboundSchema = DeleteBundlesSecurity$inboundSchema;
+  /** @deprecated use `DeleteBundlesSecurity$outboundSchema` instead. */
+  export const outboundSchema = DeleteBundlesSecurity$outboundSchema;
+  /** @deprecated use `DeleteBundlesSecurity$Outbound` instead. */
+  export type Outbound = DeleteBundlesSecurity$Outbound;
+}
+
+export function deleteBundlesSecurityToJSON(
+  deleteBundlesSecurity: DeleteBundlesSecurity,
+): string {
+  return JSON.stringify(
+    DeleteBundlesSecurity$outboundSchema.parse(deleteBundlesSecurity),
+  );
+}
+
+export function deleteBundlesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<DeleteBundlesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeleteBundlesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeleteBundlesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const DeleteBundlesRequest$inboundSchema: z.ZodType<

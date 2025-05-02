@@ -26,14 +26,12 @@ This endpoint supports result filtering. For more information on how to filter t
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
-  const result = await serviceM8.emailTemplates.listEmailTemplates();
+  const result = await serviceM8.emailTemplates.listEmailTemplates({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  });
 
   // Handle the result
   console.log(result);
@@ -52,14 +50,12 @@ import { emailTemplatesListEmailTemplates } from "servicem8/funcs/emailTemplates
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
-  const res = await emailTemplatesListEmailTemplates(serviceM8);
+  const res = await emailTemplatesListEmailTemplates(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  });
 
   if (!res.ok) {
     throw res.error;
@@ -78,6 +74,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `security`                                                                                                                                                                     | [operations.ListEmailTemplatesSecurity](../../models/operations/listemailtemplatessecurity.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -107,14 +104,12 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.emailTemplates.createEmailTemplates({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "123e4567-f545-4db1-a5e8-22b4d7622d0b",
     name: "<value>",
   });
@@ -136,14 +131,12 @@ import { emailTemplatesCreateEmailTemplates } from "servicem8/funcs/emailTemplat
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await emailTemplatesCreateEmailTemplates(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "123e4567-f545-4db1-a5e8-22b4d7622d0b",
     name: "<value>",
   });
@@ -166,6 +159,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [components.EmailTemplateInput](../../models/components/emailtemplateinput.md)                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.CreateEmailTemplatesSecurity](../../models/operations/createemailtemplatessecurity.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -190,14 +184,12 @@ Retrieve an Email Template
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.emailTemplates.getEmailTemplates({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "01e49d7f-64e2-4e6f-b41a-39acd826f9d1",
   });
 
@@ -218,14 +210,12 @@ import { emailTemplatesGetEmailTemplates } from "servicem8/funcs/emailTemplatesG
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await emailTemplatesGetEmailTemplates(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "01e49d7f-64e2-4e6f-b41a-39acd826f9d1",
   });
 
@@ -247,6 +237,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.GetEmailTemplatesRequest](../../models/operations/getemailtemplatesrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.GetEmailTemplatesSecurity](../../models/operations/getemailtemplatessecurity.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -271,14 +262,12 @@ Update an Email Template
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.emailTemplates.updateEmailTemplates({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "fa27ec4a-b284-4c08-a042-7fd0d943ed6e",
     emailTemplate: {
       uuid: "123e4567-f545-4db1-a5e8-22b4d7622d0b",
@@ -303,14 +292,12 @@ import { emailTemplatesUpdateEmailTemplates } from "servicem8/funcs/emailTemplat
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await emailTemplatesUpdateEmailTemplates(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "fa27ec4a-b284-4c08-a042-7fd0d943ed6e",
     emailTemplate: {
       uuid: "123e4567-f545-4db1-a5e8-22b4d7622d0b",
@@ -336,6 +323,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.UpdateEmailTemplatesRequest](../../models/operations/updateemailtemplatesrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.UpdateEmailTemplatesSecurity](../../models/operations/updateemailtemplatessecurity.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -364,14 +352,12 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.emailTemplates.deleteEmailTemplates({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "dfea2db9-0def-4920-9904-a2b188367027",
   });
 
@@ -392,14 +378,12 @@ import { emailTemplatesDeleteEmailTemplates } from "servicem8/funcs/emailTemplat
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await emailTemplatesDeleteEmailTemplates(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "dfea2db9-0def-4920-9904-a2b188367027",
   });
 
@@ -421,6 +405,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.DeleteEmailTemplatesRequest](../../models/operations/deleteemailtemplatesrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.DeleteEmailTemplatesSecurity](../../models/operations/deleteemailtemplatessecurity.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

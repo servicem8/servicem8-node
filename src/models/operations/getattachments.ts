@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetAttachmentsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetAttachmentsRequest = {
   /**
    * UUID of the Attachment
@@ -16,6 +21,63 @@ export type GetAttachmentsRequest = {
 };
 
 export type GetAttachmentsResponse = components.ErrorT | components.Attachment;
+
+/** @internal */
+export const GetAttachmentsSecurity$inboundSchema: z.ZodType<
+  GetAttachmentsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetAttachmentsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetAttachmentsSecurity$outboundSchema: z.ZodType<
+  GetAttachmentsSecurity$Outbound,
+  z.ZodTypeDef,
+  GetAttachmentsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAttachmentsSecurity$ {
+  /** @deprecated use `GetAttachmentsSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetAttachmentsSecurity$inboundSchema;
+  /** @deprecated use `GetAttachmentsSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetAttachmentsSecurity$outboundSchema;
+  /** @deprecated use `GetAttachmentsSecurity$Outbound` instead. */
+  export type Outbound = GetAttachmentsSecurity$Outbound;
+}
+
+export function getAttachmentsSecurityToJSON(
+  getAttachmentsSecurity: GetAttachmentsSecurity,
+): string {
+  return JSON.stringify(
+    GetAttachmentsSecurity$outboundSchema.parse(getAttachmentsSecurity),
+  );
+}
+
+export function getAttachmentsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAttachmentsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAttachmentsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAttachmentsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetAttachmentsRequest$inboundSchema: z.ZodType<

@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type CreateJobChecklistsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type CreateJobChecklistsResponseResult =
   | components.Result
   | components.ErrorT;
@@ -17,6 +22,65 @@ export type CreateJobChecklistsResponse = {
   headers: { [k: string]: Array<string> };
   result: components.Result | components.ErrorT;
 };
+
+/** @internal */
+export const CreateJobChecklistsSecurity$inboundSchema: z.ZodType<
+  CreateJobChecklistsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type CreateJobChecklistsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const CreateJobChecklistsSecurity$outboundSchema: z.ZodType<
+  CreateJobChecklistsSecurity$Outbound,
+  z.ZodTypeDef,
+  CreateJobChecklistsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateJobChecklistsSecurity$ {
+  /** @deprecated use `CreateJobChecklistsSecurity$inboundSchema` instead. */
+  export const inboundSchema = CreateJobChecklistsSecurity$inboundSchema;
+  /** @deprecated use `CreateJobChecklistsSecurity$outboundSchema` instead. */
+  export const outboundSchema = CreateJobChecklistsSecurity$outboundSchema;
+  /** @deprecated use `CreateJobChecklistsSecurity$Outbound` instead. */
+  export type Outbound = CreateJobChecklistsSecurity$Outbound;
+}
+
+export function createJobChecklistsSecurityToJSON(
+  createJobChecklistsSecurity: CreateJobChecklistsSecurity,
+): string {
+  return JSON.stringify(
+    CreateJobChecklistsSecurity$outboundSchema.parse(
+      createJobChecklistsSecurity,
+    ),
+  );
+}
+
+export function createJobChecklistsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateJobChecklistsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateJobChecklistsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateJobChecklistsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const CreateJobChecklistsResponseResult$inboundSchema: z.ZodType<

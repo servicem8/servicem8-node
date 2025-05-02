@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type UpdateAssetsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type UpdateAssetsRequest = {
   /**
    * UUID of the Asset
@@ -21,6 +26,63 @@ export type UpdateAssetsRequest = {
 };
 
 export type UpdateAssetsResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const UpdateAssetsSecurity$inboundSchema: z.ZodType<
+  UpdateAssetsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type UpdateAssetsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const UpdateAssetsSecurity$outboundSchema: z.ZodType<
+  UpdateAssetsSecurity$Outbound,
+  z.ZodTypeDef,
+  UpdateAssetsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateAssetsSecurity$ {
+  /** @deprecated use `UpdateAssetsSecurity$inboundSchema` instead. */
+  export const inboundSchema = UpdateAssetsSecurity$inboundSchema;
+  /** @deprecated use `UpdateAssetsSecurity$outboundSchema` instead. */
+  export const outboundSchema = UpdateAssetsSecurity$outboundSchema;
+  /** @deprecated use `UpdateAssetsSecurity$Outbound` instead. */
+  export type Outbound = UpdateAssetsSecurity$Outbound;
+}
+
+export function updateAssetsSecurityToJSON(
+  updateAssetsSecurity: UpdateAssetsSecurity,
+): string {
+  return JSON.stringify(
+    UpdateAssetsSecurity$outboundSchema.parse(updateAssetsSecurity),
+  );
+}
+
+export function updateAssetsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateAssetsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateAssetsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateAssetsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const UpdateAssetsRequest$inboundSchema: z.ZodType<

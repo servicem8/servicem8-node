@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type DeleteEmailTemplatesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type DeleteEmailTemplatesRequest = {
   /**
    * UUID of the Email Template
@@ -18,6 +23,65 @@ export type DeleteEmailTemplatesRequest = {
 export type DeleteEmailTemplatesResponse =
   | components.Result
   | components.ErrorT;
+
+/** @internal */
+export const DeleteEmailTemplatesSecurity$inboundSchema: z.ZodType<
+  DeleteEmailTemplatesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteEmailTemplatesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const DeleteEmailTemplatesSecurity$outboundSchema: z.ZodType<
+  DeleteEmailTemplatesSecurity$Outbound,
+  z.ZodTypeDef,
+  DeleteEmailTemplatesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeleteEmailTemplatesSecurity$ {
+  /** @deprecated use `DeleteEmailTemplatesSecurity$inboundSchema` instead. */
+  export const inboundSchema = DeleteEmailTemplatesSecurity$inboundSchema;
+  /** @deprecated use `DeleteEmailTemplatesSecurity$outboundSchema` instead. */
+  export const outboundSchema = DeleteEmailTemplatesSecurity$outboundSchema;
+  /** @deprecated use `DeleteEmailTemplatesSecurity$Outbound` instead. */
+  export type Outbound = DeleteEmailTemplatesSecurity$Outbound;
+}
+
+export function deleteEmailTemplatesSecurityToJSON(
+  deleteEmailTemplatesSecurity: DeleteEmailTemplatesSecurity,
+): string {
+  return JSON.stringify(
+    DeleteEmailTemplatesSecurity$outboundSchema.parse(
+      deleteEmailTemplatesSecurity,
+    ),
+  );
+}
+
+export function deleteEmailTemplatesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<DeleteEmailTemplatesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeleteEmailTemplatesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeleteEmailTemplatesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const DeleteEmailTemplatesRequest$inboundSchema: z.ZodType<

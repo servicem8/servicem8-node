@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type DeleteTasksSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type DeleteTasksRequest = {
   /**
    * UUID of the Task
@@ -16,6 +21,63 @@ export type DeleteTasksRequest = {
 };
 
 export type DeleteTasksResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const DeleteTasksSecurity$inboundSchema: z.ZodType<
+  DeleteTasksSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteTasksSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const DeleteTasksSecurity$outboundSchema: z.ZodType<
+  DeleteTasksSecurity$Outbound,
+  z.ZodTypeDef,
+  DeleteTasksSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeleteTasksSecurity$ {
+  /** @deprecated use `DeleteTasksSecurity$inboundSchema` instead. */
+  export const inboundSchema = DeleteTasksSecurity$inboundSchema;
+  /** @deprecated use `DeleteTasksSecurity$outboundSchema` instead. */
+  export const outboundSchema = DeleteTasksSecurity$outboundSchema;
+  /** @deprecated use `DeleteTasksSecurity$Outbound` instead. */
+  export type Outbound = DeleteTasksSecurity$Outbound;
+}
+
+export function deleteTasksSecurityToJSON(
+  deleteTasksSecurity: DeleteTasksSecurity,
+): string {
+  return JSON.stringify(
+    DeleteTasksSecurity$outboundSchema.parse(deleteTasksSecurity),
+  );
+}
+
+export function deleteTasksSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<DeleteTasksSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeleteTasksSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeleteTasksSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const DeleteTasksRequest$inboundSchema: z.ZodType<

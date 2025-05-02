@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type DeleteStaffMessagesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type DeleteStaffMessagesRequest = {
   /**
    * UUID of the Staff Message
@@ -16,6 +21,65 @@ export type DeleteStaffMessagesRequest = {
 };
 
 export type DeleteStaffMessagesResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const DeleteStaffMessagesSecurity$inboundSchema: z.ZodType<
+  DeleteStaffMessagesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteStaffMessagesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const DeleteStaffMessagesSecurity$outboundSchema: z.ZodType<
+  DeleteStaffMessagesSecurity$Outbound,
+  z.ZodTypeDef,
+  DeleteStaffMessagesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeleteStaffMessagesSecurity$ {
+  /** @deprecated use `DeleteStaffMessagesSecurity$inboundSchema` instead. */
+  export const inboundSchema = DeleteStaffMessagesSecurity$inboundSchema;
+  /** @deprecated use `DeleteStaffMessagesSecurity$outboundSchema` instead. */
+  export const outboundSchema = DeleteStaffMessagesSecurity$outboundSchema;
+  /** @deprecated use `DeleteStaffMessagesSecurity$Outbound` instead. */
+  export type Outbound = DeleteStaffMessagesSecurity$Outbound;
+}
+
+export function deleteStaffMessagesSecurityToJSON(
+  deleteStaffMessagesSecurity: DeleteStaffMessagesSecurity,
+): string {
+  return JSON.stringify(
+    DeleteStaffMessagesSecurity$outboundSchema.parse(
+      deleteStaffMessagesSecurity,
+    ),
+  );
+}
+
+export function deleteStaffMessagesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<DeleteStaffMessagesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeleteStaffMessagesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeleteStaffMessagesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const DeleteStaffMessagesRequest$inboundSchema: z.ZodType<

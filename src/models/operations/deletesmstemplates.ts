@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type DeleteSMSTemplatesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type DeleteSMSTemplatesRequest = {
   /**
    * UUID of the SMS Template
@@ -16,6 +21,63 @@ export type DeleteSMSTemplatesRequest = {
 };
 
 export type DeleteSMSTemplatesResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const DeleteSMSTemplatesSecurity$inboundSchema: z.ZodType<
+  DeleteSMSTemplatesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteSMSTemplatesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const DeleteSMSTemplatesSecurity$outboundSchema: z.ZodType<
+  DeleteSMSTemplatesSecurity$Outbound,
+  z.ZodTypeDef,
+  DeleteSMSTemplatesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeleteSMSTemplatesSecurity$ {
+  /** @deprecated use `DeleteSMSTemplatesSecurity$inboundSchema` instead. */
+  export const inboundSchema = DeleteSMSTemplatesSecurity$inboundSchema;
+  /** @deprecated use `DeleteSMSTemplatesSecurity$outboundSchema` instead. */
+  export const outboundSchema = DeleteSMSTemplatesSecurity$outboundSchema;
+  /** @deprecated use `DeleteSMSTemplatesSecurity$Outbound` instead. */
+  export type Outbound = DeleteSMSTemplatesSecurity$Outbound;
+}
+
+export function deleteSMSTemplatesSecurityToJSON(
+  deleteSMSTemplatesSecurity: DeleteSMSTemplatesSecurity,
+): string {
+  return JSON.stringify(
+    DeleteSMSTemplatesSecurity$outboundSchema.parse(deleteSMSTemplatesSecurity),
+  );
+}
+
+export function deleteSMSTemplatesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<DeleteSMSTemplatesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeleteSMSTemplatesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeleteSMSTemplatesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const DeleteSMSTemplatesRequest$inboundSchema: z.ZodType<

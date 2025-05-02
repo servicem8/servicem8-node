@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type UpdateVendorsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type UpdateVendorsRequest = {
   /**
    * UUID of the Vendor
@@ -21,6 +26,63 @@ export type UpdateVendorsRequest = {
 };
 
 export type UpdateVendorsResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const UpdateVendorsSecurity$inboundSchema: z.ZodType<
+  UpdateVendorsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type UpdateVendorsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const UpdateVendorsSecurity$outboundSchema: z.ZodType<
+  UpdateVendorsSecurity$Outbound,
+  z.ZodTypeDef,
+  UpdateVendorsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateVendorsSecurity$ {
+  /** @deprecated use `UpdateVendorsSecurity$inboundSchema` instead. */
+  export const inboundSchema = UpdateVendorsSecurity$inboundSchema;
+  /** @deprecated use `UpdateVendorsSecurity$outboundSchema` instead. */
+  export const outboundSchema = UpdateVendorsSecurity$outboundSchema;
+  /** @deprecated use `UpdateVendorsSecurity$Outbound` instead. */
+  export type Outbound = UpdateVendorsSecurity$Outbound;
+}
+
+export function updateVendorsSecurityToJSON(
+  updateVendorsSecurity: UpdateVendorsSecurity,
+): string {
+  return JSON.stringify(
+    UpdateVendorsSecurity$outboundSchema.parse(updateVendorsSecurity),
+  );
+}
+
+export function updateVendorsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateVendorsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateVendorsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateVendorsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const UpdateVendorsRequest$inboundSchema: z.ZodType<

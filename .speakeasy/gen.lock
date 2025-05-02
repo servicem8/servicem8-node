@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 5292d1b1-a456-4df8-b793-88d92b92bb91
 management:
-  docChecksum: dab07854772b9f3e5fcd384753732752
+  docChecksum: 44795343dea29fca384d780178605123
   docVersion: 1.0.0
-  speakeasyVersion: 1.541.2
-  generationVersion: 2.595.4
-  releaseVersion: 0.3.18
-  configChecksum: 76329e7288afeb233dc7475482ef2fa3
+  speakeasyVersion: 1.542.0
+  generationVersion: 2.596.2
+  releaseVersion: 0.4.0
+  configChecksum: 89e41bfa23f5783401ca81ea2bcfbeeb
   published: true
 features:
   typescript:
@@ -21,7 +21,7 @@ features:
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.4
     inputOutputModels: 2.82.0
-    mcpServer: 0.9.2
+    methodSecurity: 2.82.6
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.2.0
@@ -169,313 +169,485 @@ generatedFiles:
   - docs/models/errors/errort.md
   - docs/models/operations/createallocationwindowsresponse.md
   - docs/models/operations/createallocationwindowsresponseresult.md
+  - docs/models/operations/createallocationwindowssecurity.md
   - docs/models/operations/createassettypefieldsresponse.md
   - docs/models/operations/createassettypefieldsresponseresult.md
+  - docs/models/operations/createassettypefieldssecurity.md
   - docs/models/operations/createassettypesresponse.md
   - docs/models/operations/createassettypesresponseresult.md
+  - docs/models/operations/createassettypessecurity.md
   - docs/models/operations/createattachmentsresponse.md
   - docs/models/operations/createattachmentsresponseresult.md
+  - docs/models/operations/createattachmentssecurity.md
   - docs/models/operations/createbadgesresponse.md
   - docs/models/operations/createbadgesresponseresult.md
+  - docs/models/operations/createbadgessecurity.md
   - docs/models/operations/createbundlesresponse.md
   - docs/models/operations/createbundlesresponseresult.md
+  - docs/models/operations/createbundlessecurity.md
   - docs/models/operations/createcategoriesresponse.md
   - docs/models/operations/createcategoriesresponseresult.md
+  - docs/models/operations/createcategoriessecurity.md
   - docs/models/operations/createclientsresponse.md
   - docs/models/operations/createclientsresponseresult.md
+  - docs/models/operations/createclientssecurity.md
   - docs/models/operations/createcompanycontactsresponse.md
   - docs/models/operations/createcompanycontactsresponseresult.md
+  - docs/models/operations/createcompanycontactssecurity.md
   - docs/models/operations/createemailtemplatesresponse.md
   - docs/models/operations/createemailtemplatesresponseresult.md
+  - docs/models/operations/createemailtemplatessecurity.md
   - docs/models/operations/createfeedbackresponse.md
   - docs/models/operations/createfeedbackresponseresult.md
+  - docs/models/operations/createfeedbacksecurity.md
   - docs/models/operations/createformfieldsresponse.md
   - docs/models/operations/createformfieldsresponseresult.md
+  - docs/models/operations/createformfieldssecurity.md
   - docs/models/operations/createformresponsesresponse.md
   - docs/models/operations/createformresponsesresponseresult.md
+  - docs/models/operations/createformresponsessecurity.md
   - docs/models/operations/createformsresponse.md
   - docs/models/operations/createformsresponseresult.md
+  - docs/models/operations/createformssecurity.md
   - docs/models/operations/createjobactivitiesresponse.md
   - docs/models/operations/createjobactivitiesresponseresult.md
+  - docs/models/operations/createjobactivitiessecurity.md
   - docs/models/operations/createjoballocationsresponse.md
   - docs/models/operations/createjoballocationsresponseresult.md
+  - docs/models/operations/createjoballocationssecurity.md
   - docs/models/operations/createjobchecklistsresponse.md
   - docs/models/operations/createjobchecklistsresponseresult.md
+  - docs/models/operations/createjobchecklistssecurity.md
   - docs/models/operations/createjobcontactsresponse.md
   - docs/models/operations/createjobcontactsresponseresult.md
+  - docs/models/operations/createjobcontactssecurity.md
   - docs/models/operations/createjobmaterialbundlesresponse.md
   - docs/models/operations/createjobmaterialbundlesresponseresult.md
+  - docs/models/operations/createjobmaterialbundlessecurity.md
   - docs/models/operations/createjobmaterialsresponse.md
   - docs/models/operations/createjobmaterialsresponseresult.md
+  - docs/models/operations/createjobmaterialssecurity.md
   - docs/models/operations/createjobpaymentsresponse.md
   - docs/models/operations/createjobpaymentsresponseresult.md
+  - docs/models/operations/createjobpaymentssecurity.md
   - docs/models/operations/createjobqueuesresponse.md
   - docs/models/operations/createjobqueuesresponseresult.md
+  - docs/models/operations/createjobqueuessecurity.md
   - docs/models/operations/createjobsresponse.md
   - docs/models/operations/createjobsresponseresult.md
+  - docs/models/operations/createjobssecurity.md
   - docs/models/operations/createknowledgearticlesresponse.md
   - docs/models/operations/createknowledgearticlesresponseresult.md
+  - docs/models/operations/createknowledgearticlessecurity.md
   - docs/models/operations/createlocationsresponse.md
   - docs/models/operations/createlocationsresponseresult.md
+  - docs/models/operations/createlocationssecurity.md
   - docs/models/operations/creatematerialsresponse.md
   - docs/models/operations/creatematerialsresponseresult.md
+  - docs/models/operations/creatematerialssecurity.md
   - docs/models/operations/createnotesresponse.md
   - docs/models/operations/createnotesresponseresult.md
+  - docs/models/operations/createnotessecurity.md
   - docs/models/operations/createsecurityrolesresponse.md
   - docs/models/operations/createsecurityrolesresponseresult.md
+  - docs/models/operations/createsecurityrolessecurity.md
   - docs/models/operations/createsmstemplatesresponse.md
   - docs/models/operations/createsmstemplatesresponseresult.md
+  - docs/models/operations/createsmstemplatessecurity.md
   - docs/models/operations/createstaffmembersresponse.md
   - docs/models/operations/createstaffmembersresponseresult.md
+  - docs/models/operations/createstaffmemberssecurity.md
   - docs/models/operations/createstaffmessagesresponse.md
   - docs/models/operations/createstaffmessagesresponseresult.md
+  - docs/models/operations/createstaffmessagessecurity.md
   - docs/models/operations/createtasksresponse.md
   - docs/models/operations/createtasksresponseresult.md
+  - docs/models/operations/createtaskssecurity.md
   - docs/models/operations/createtaxratesresponse.md
   - docs/models/operations/createtaxratesresponseresult.md
+  - docs/models/operations/createtaxratessecurity.md
   - docs/models/operations/deleteallocationwindowsrequest.md
   - docs/models/operations/deleteallocationwindowsresponse.md
+  - docs/models/operations/deleteallocationwindowssecurity.md
   - docs/models/operations/deleteassetsrequest.md
   - docs/models/operations/deleteassetsresponse.md
+  - docs/models/operations/deleteassetssecurity.md
   - docs/models/operations/deleteassettypefieldsrequest.md
   - docs/models/operations/deleteassettypefieldsresponse.md
+  - docs/models/operations/deleteassettypefieldssecurity.md
   - docs/models/operations/deleteassettypesrequest.md
   - docs/models/operations/deleteassettypesresponse.md
+  - docs/models/operations/deleteassettypessecurity.md
   - docs/models/operations/deleteattachmentsrequest.md
   - docs/models/operations/deleteattachmentsresponse.md
+  - docs/models/operations/deleteattachmentssecurity.md
   - docs/models/operations/deletebadgesrequest.md
   - docs/models/operations/deletebadgesresponse.md
+  - docs/models/operations/deletebadgessecurity.md
   - docs/models/operations/deletebundlesrequest.md
   - docs/models/operations/deletebundlesresponse.md
+  - docs/models/operations/deletebundlessecurity.md
   - docs/models/operations/deletecategoriesrequest.md
   - docs/models/operations/deletecategoriesresponse.md
+  - docs/models/operations/deletecategoriessecurity.md
   - docs/models/operations/deleteclientsrequest.md
   - docs/models/operations/deleteclientsresponse.md
+  - docs/models/operations/deleteclientssecurity.md
   - docs/models/operations/deletecompanycontactsrequest.md
   - docs/models/operations/deletecompanycontactsresponse.md
+  - docs/models/operations/deletecompanycontactssecurity.md
   - docs/models/operations/deleteemailtemplatesrequest.md
   - docs/models/operations/deleteemailtemplatesresponse.md
+  - docs/models/operations/deleteemailtemplatessecurity.md
   - docs/models/operations/deletefeedbackrequest.md
   - docs/models/operations/deletefeedbackresponse.md
+  - docs/models/operations/deletefeedbacksecurity.md
   - docs/models/operations/deleteformfieldsrequest.md
   - docs/models/operations/deleteformfieldsresponse.md
+  - docs/models/operations/deleteformfieldssecurity.md
   - docs/models/operations/deleteformresponsesrequest.md
   - docs/models/operations/deleteformresponsesresponse.md
+  - docs/models/operations/deleteformresponsessecurity.md
   - docs/models/operations/deleteformsrequest.md
   - docs/models/operations/deleteformsresponse.md
+  - docs/models/operations/deleteformssecurity.md
   - docs/models/operations/deletejobactivitiesrequest.md
   - docs/models/operations/deletejobactivitiesresponse.md
+  - docs/models/operations/deletejobactivitiessecurity.md
   - docs/models/operations/deletejoballocationsrequest.md
   - docs/models/operations/deletejoballocationsresponse.md
+  - docs/models/operations/deletejoballocationssecurity.md
   - docs/models/operations/deletejobchecklistsrequest.md
   - docs/models/operations/deletejobchecklistsresponse.md
+  - docs/models/operations/deletejobchecklistssecurity.md
   - docs/models/operations/deletejobcontactsrequest.md
   - docs/models/operations/deletejobcontactsresponse.md
+  - docs/models/operations/deletejobcontactssecurity.md
   - docs/models/operations/deletejobmaterialbundlesrequest.md
   - docs/models/operations/deletejobmaterialbundlesresponse.md
+  - docs/models/operations/deletejobmaterialbundlessecurity.md
   - docs/models/operations/deletejobmaterialsrequest.md
   - docs/models/operations/deletejobmaterialsresponse.md
+  - docs/models/operations/deletejobmaterialssecurity.md
   - docs/models/operations/deletejobpaymentsrequest.md
   - docs/models/operations/deletejobpaymentsresponse.md
+  - docs/models/operations/deletejobpaymentssecurity.md
   - docs/models/operations/deletejobqueuesrequest.md
   - docs/models/operations/deletejobqueuesresponse.md
+  - docs/models/operations/deletejobqueuessecurity.md
   - docs/models/operations/deletejobsrequest.md
   - docs/models/operations/deletejobsresponse.md
+  - docs/models/operations/deletejobssecurity.md
   - docs/models/operations/deleteknowledgearticlesrequest.md
   - docs/models/operations/deleteknowledgearticlesresponse.md
+  - docs/models/operations/deleteknowledgearticlessecurity.md
   - docs/models/operations/deletelocationsrequest.md
   - docs/models/operations/deletelocationsresponse.md
+  - docs/models/operations/deletelocationssecurity.md
   - docs/models/operations/deletematerialsrequest.md
   - docs/models/operations/deletematerialsresponse.md
+  - docs/models/operations/deletematerialssecurity.md
   - docs/models/operations/deletenotesrequest.md
   - docs/models/operations/deletenotesresponse.md
+  - docs/models/operations/deletenotessecurity.md
   - docs/models/operations/deletesecurityrolesrequest.md
   - docs/models/operations/deletesecurityrolesresponse.md
+  - docs/models/operations/deletesecurityrolessecurity.md
   - docs/models/operations/deletesmstemplatesrequest.md
   - docs/models/operations/deletesmstemplatesresponse.md
+  - docs/models/operations/deletesmstemplatessecurity.md
   - docs/models/operations/deletestaffmembersrequest.md
   - docs/models/operations/deletestaffmembersresponse.md
+  - docs/models/operations/deletestaffmemberssecurity.md
   - docs/models/operations/deletestaffmessagesrequest.md
   - docs/models/operations/deletestaffmessagesresponse.md
+  - docs/models/operations/deletestaffmessagessecurity.md
   - docs/models/operations/deletetasksrequest.md
   - docs/models/operations/deletetasksresponse.md
+  - docs/models/operations/deletetaskssecurity.md
   - docs/models/operations/deletetaxratesrequest.md
   - docs/models/operations/deletetaxratesresponse.md
+  - docs/models/operations/deletetaxratessecurity.md
   - docs/models/operations/getallocationwindowsrequest.md
   - docs/models/operations/getallocationwindowsresponse.md
+  - docs/models/operations/getallocationwindowssecurity.md
   - docs/models/operations/getassetsrequest.md
   - docs/models/operations/getassetsresponse.md
+  - docs/models/operations/getassetssecurity.md
   - docs/models/operations/getassettypefieldsrequest.md
   - docs/models/operations/getassettypefieldsresponse.md
+  - docs/models/operations/getassettypefieldssecurity.md
   - docs/models/operations/getassettypesrequest.md
   - docs/models/operations/getassettypesresponse.md
+  - docs/models/operations/getassettypessecurity.md
   - docs/models/operations/getattachmentsrequest.md
   - docs/models/operations/getattachmentsresponse.md
+  - docs/models/operations/getattachmentssecurity.md
   - docs/models/operations/getbadgesrequest.md
   - docs/models/operations/getbadgesresponse.md
+  - docs/models/operations/getbadgessecurity.md
   - docs/models/operations/getbundlesrequest.md
   - docs/models/operations/getbundlesresponse.md
+  - docs/models/operations/getbundlessecurity.md
   - docs/models/operations/getcategoriesrequest.md
   - docs/models/operations/getcategoriesresponse.md
+  - docs/models/operations/getcategoriessecurity.md
   - docs/models/operations/getclientsrequest.md
   - docs/models/operations/getclientsresponse.md
+  - docs/models/operations/getclientssecurity.md
   - docs/models/operations/getcompanycontactsrequest.md
   - docs/models/operations/getcompanycontactsresponse.md
+  - docs/models/operations/getcompanycontactssecurity.md
   - docs/models/operations/getemailtemplatesrequest.md
   - docs/models/operations/getemailtemplatesresponse.md
+  - docs/models/operations/getemailtemplatessecurity.md
   - docs/models/operations/getfeedbackrequest.md
   - docs/models/operations/getfeedbackresponse.md
+  - docs/models/operations/getfeedbacksecurity.md
   - docs/models/operations/getformfieldsrequest.md
   - docs/models/operations/getformfieldsresponse.md
+  - docs/models/operations/getformfieldssecurity.md
   - docs/models/operations/getformresponsesrequest.md
   - docs/models/operations/getformresponsesresponse.md
+  - docs/models/operations/getformresponsessecurity.md
   - docs/models/operations/getformsrequest.md
   - docs/models/operations/getformsresponse.md
+  - docs/models/operations/getformssecurity.md
   - docs/models/operations/getjobactivitiesrequest.md
   - docs/models/operations/getjobactivitiesresponse.md
+  - docs/models/operations/getjobactivitiessecurity.md
   - docs/models/operations/getjoballocationsrequest.md
   - docs/models/operations/getjoballocationsresponse.md
+  - docs/models/operations/getjoballocationssecurity.md
   - docs/models/operations/getjobchecklistsrequest.md
   - docs/models/operations/getjobchecklistsresponse.md
+  - docs/models/operations/getjobchecklistssecurity.md
   - docs/models/operations/getjobcontactsrequest.md
   - docs/models/operations/getjobcontactsresponse.md
+  - docs/models/operations/getjobcontactssecurity.md
   - docs/models/operations/getjobmaterialbundlesrequest.md
   - docs/models/operations/getjobmaterialbundlesresponse.md
+  - docs/models/operations/getjobmaterialbundlessecurity.md
   - docs/models/operations/getjobmaterialsrequest.md
   - docs/models/operations/getjobmaterialsresponse.md
+  - docs/models/operations/getjobmaterialssecurity.md
   - docs/models/operations/getjobpaymentsrequest.md
   - docs/models/operations/getjobpaymentsresponse.md
+  - docs/models/operations/getjobpaymentssecurity.md
   - docs/models/operations/getjobqueuesrequest.md
   - docs/models/operations/getjobqueuesresponse.md
+  - docs/models/operations/getjobqueuessecurity.md
   - docs/models/operations/getjobsrequest.md
   - docs/models/operations/getjobsresponse.md
+  - docs/models/operations/getjobssecurity.md
   - docs/models/operations/getknowledgearticlesrequest.md
   - docs/models/operations/getknowledgearticlesresponse.md
+  - docs/models/operations/getknowledgearticlessecurity.md
   - docs/models/operations/getlocationsrequest.md
   - docs/models/operations/getlocationsresponse.md
+  - docs/models/operations/getlocationssecurity.md
   - docs/models/operations/getmaterialsrequest.md
   - docs/models/operations/getmaterialsresponse.md
+  - docs/models/operations/getmaterialssecurity.md
   - docs/models/operations/getnotesrequest.md
   - docs/models/operations/getnotesresponse.md
+  - docs/models/operations/getnotessecurity.md
   - docs/models/operations/getsecurityrolesrequest.md
   - docs/models/operations/getsecurityrolesresponse.md
+  - docs/models/operations/getsecurityrolessecurity.md
   - docs/models/operations/getsmstemplatesrequest.md
   - docs/models/operations/getsmstemplatesresponse.md
+  - docs/models/operations/getsmstemplatessecurity.md
   - docs/models/operations/getstaffmembersrequest.md
   - docs/models/operations/getstaffmembersresponse.md
+  - docs/models/operations/getstaffmemberssecurity.md
   - docs/models/operations/getstaffmessagesrequest.md
   - docs/models/operations/getstaffmessagesresponse.md
+  - docs/models/operations/getstaffmessagessecurity.md
   - docs/models/operations/gettasksrequest.md
   - docs/models/operations/gettasksresponse.md
+  - docs/models/operations/gettaskssecurity.md
   - docs/models/operations/gettaxratesrequest.md
   - docs/models/operations/gettaxratesresponse.md
+  - docs/models/operations/gettaxratessecurity.md
   - docs/models/operations/getvendorsrequest.md
   - docs/models/operations/getvendorsresponse.md
+  - docs/models/operations/getvendorssecurity.md
   - docs/models/operations/listallocationwindowsresponse.md
+  - docs/models/operations/listallocationwindowssecurity.md
   - docs/models/operations/listassetsresponse.md
+  - docs/models/operations/listassetssecurity.md
   - docs/models/operations/listassettypefieldsresponse.md
+  - docs/models/operations/listassettypefieldssecurity.md
   - docs/models/operations/listassettypesresponse.md
+  - docs/models/operations/listassettypessecurity.md
   - docs/models/operations/listattachmentsresponse.md
+  - docs/models/operations/listattachmentssecurity.md
   - docs/models/operations/listbadgesresponse.md
+  - docs/models/operations/listbadgessecurity.md
   - docs/models/operations/listbundlesresponse.md
+  - docs/models/operations/listbundlessecurity.md
   - docs/models/operations/listcategoriesresponse.md
+  - docs/models/operations/listcategoriessecurity.md
   - docs/models/operations/listclientsresponse.md
+  - docs/models/operations/listclientssecurity.md
   - docs/models/operations/listcompanycontactsresponse.md
+  - docs/models/operations/listcompanycontactssecurity.md
   - docs/models/operations/listemailtemplatesresponse.md
+  - docs/models/operations/listemailtemplatessecurity.md
   - docs/models/operations/listfeedbackresponse.md
+  - docs/models/operations/listfeedbacksecurity.md
   - docs/models/operations/listformfieldsresponse.md
+  - docs/models/operations/listformfieldssecurity.md
   - docs/models/operations/listformresponsesresponse.md
+  - docs/models/operations/listformresponsessecurity.md
   - docs/models/operations/listformsresponse.md
+  - docs/models/operations/listformssecurity.md
   - docs/models/operations/listjobactivitiesresponse.md
+  - docs/models/operations/listjobactivitiessecurity.md
   - docs/models/operations/listjoballocationsresponse.md
+  - docs/models/operations/listjoballocationssecurity.md
   - docs/models/operations/listjobchecklistsresponse.md
+  - docs/models/operations/listjobchecklistssecurity.md
   - docs/models/operations/listjobcontactsresponse.md
+  - docs/models/operations/listjobcontactssecurity.md
   - docs/models/operations/listjobmaterialbundlesresponse.md
+  - docs/models/operations/listjobmaterialbundlessecurity.md
   - docs/models/operations/listjobmaterialsresponse.md
+  - docs/models/operations/listjobmaterialssecurity.md
   - docs/models/operations/listjobpaymentsresponse.md
+  - docs/models/operations/listjobpaymentssecurity.md
   - docs/models/operations/listjobqueuesresponse.md
+  - docs/models/operations/listjobqueuessecurity.md
   - docs/models/operations/listjobsresponse.md
+  - docs/models/operations/listjobssecurity.md
   - docs/models/operations/listknowledgearticlesresponse.md
+  - docs/models/operations/listknowledgearticlessecurity.md
   - docs/models/operations/listlocationsresponse.md
+  - docs/models/operations/listlocationssecurity.md
   - docs/models/operations/listmaterialsresponse.md
+  - docs/models/operations/listmaterialssecurity.md
   - docs/models/operations/listnotesresponse.md
+  - docs/models/operations/listnotessecurity.md
   - docs/models/operations/listsecurityrolesresponse.md
+  - docs/models/operations/listsecurityrolessecurity.md
   - docs/models/operations/listsmstemplatesresponse.md
+  - docs/models/operations/listsmstemplatessecurity.md
   - docs/models/operations/liststaffmembersresponse.md
+  - docs/models/operations/liststaffmemberssecurity.md
   - docs/models/operations/liststaffmessagesresponse.md
+  - docs/models/operations/liststaffmessagessecurity.md
   - docs/models/operations/listtasksresponse.md
+  - docs/models/operations/listtaskssecurity.md
   - docs/models/operations/listtaxratesresponse.md
+  - docs/models/operations/listtaxratessecurity.md
   - docs/models/operations/listvendorsresponse.md
+  - docs/models/operations/listvendorssecurity.md
   - docs/models/operations/updateallocationwindowsrequest.md
   - docs/models/operations/updateallocationwindowsresponse.md
+  - docs/models/operations/updateallocationwindowssecurity.md
   - docs/models/operations/updateassetsrequest.md
   - docs/models/operations/updateassetsresponse.md
+  - docs/models/operations/updateassetssecurity.md
   - docs/models/operations/updateassettypefieldsrequest.md
   - docs/models/operations/updateassettypefieldsresponse.md
+  - docs/models/operations/updateassettypefieldssecurity.md
   - docs/models/operations/updateassettypesrequest.md
   - docs/models/operations/updateassettypesresponse.md
+  - docs/models/operations/updateassettypessecurity.md
   - docs/models/operations/updateattachmentsrequest.md
   - docs/models/operations/updateattachmentsresponse.md
+  - docs/models/operations/updateattachmentssecurity.md
   - docs/models/operations/updatebadgesrequest.md
   - docs/models/operations/updatebadgesresponse.md
+  - docs/models/operations/updatebadgessecurity.md
   - docs/models/operations/updatebundlesrequest.md
   - docs/models/operations/updatebundlesresponse.md
+  - docs/models/operations/updatebundlessecurity.md
   - docs/models/operations/updatecategoriesrequest.md
   - docs/models/operations/updatecategoriesresponse.md
+  - docs/models/operations/updatecategoriessecurity.md
   - docs/models/operations/updateclientsrequest.md
   - docs/models/operations/updateclientsresponse.md
+  - docs/models/operations/updateclientssecurity.md
   - docs/models/operations/updatecompanycontactsrequest.md
   - docs/models/operations/updatecompanycontactsresponse.md
+  - docs/models/operations/updatecompanycontactssecurity.md
   - docs/models/operations/updateemailtemplatesrequest.md
   - docs/models/operations/updateemailtemplatesresponse.md
+  - docs/models/operations/updateemailtemplatessecurity.md
   - docs/models/operations/updatefeedbackrequest.md
   - docs/models/operations/updatefeedbackresponse.md
+  - docs/models/operations/updatefeedbacksecurity.md
   - docs/models/operations/updateformfieldsrequest.md
   - docs/models/operations/updateformfieldsresponse.md
+  - docs/models/operations/updateformfieldssecurity.md
   - docs/models/operations/updateformresponsesrequest.md
   - docs/models/operations/updateformresponsesresponse.md
+  - docs/models/operations/updateformresponsessecurity.md
   - docs/models/operations/updateformsrequest.md
   - docs/models/operations/updateformsresponse.md
+  - docs/models/operations/updateformssecurity.md
   - docs/models/operations/updatejobactivitiesrequest.md
   - docs/models/operations/updatejobactivitiesresponse.md
+  - docs/models/operations/updatejobactivitiessecurity.md
   - docs/models/operations/updatejoballocationsrequest.md
   - docs/models/operations/updatejoballocationsresponse.md
+  - docs/models/operations/updatejoballocationssecurity.md
   - docs/models/operations/updatejobchecklistsrequest.md
   - docs/models/operations/updatejobchecklistsresponse.md
+  - docs/models/operations/updatejobchecklistssecurity.md
   - docs/models/operations/updatejobcontactsrequest.md
   - docs/models/operations/updatejobcontactsresponse.md
+  - docs/models/operations/updatejobcontactssecurity.md
   - docs/models/operations/updatejobmaterialbundlesrequest.md
   - docs/models/operations/updatejobmaterialbundlesresponse.md
+  - docs/models/operations/updatejobmaterialbundlessecurity.md
   - docs/models/operations/updatejobmaterialsrequest.md
   - docs/models/operations/updatejobmaterialsresponse.md
+  - docs/models/operations/updatejobmaterialssecurity.md
   - docs/models/operations/updatejobpaymentsrequest.md
   - docs/models/operations/updatejobpaymentsresponse.md
+  - docs/models/operations/updatejobpaymentssecurity.md
   - docs/models/operations/updatejobqueuesrequest.md
   - docs/models/operations/updatejobqueuesresponse.md
+  - docs/models/operations/updatejobqueuessecurity.md
   - docs/models/operations/updatejobsrequest.md
   - docs/models/operations/updatejobsresponse.md
+  - docs/models/operations/updatejobssecurity.md
   - docs/models/operations/updateknowledgearticlesrequest.md
   - docs/models/operations/updateknowledgearticlesresponse.md
+  - docs/models/operations/updateknowledgearticlessecurity.md
   - docs/models/operations/updatelocationsrequest.md
   - docs/models/operations/updatelocationsresponse.md
+  - docs/models/operations/updatelocationssecurity.md
   - docs/models/operations/updatematerialsrequest.md
   - docs/models/operations/updatematerialsresponse.md
+  - docs/models/operations/updatematerialssecurity.md
   - docs/models/operations/updatenotesrequest.md
   - docs/models/operations/updatenotesresponse.md
+  - docs/models/operations/updatenotessecurity.md
   - docs/models/operations/updatesecurityrolesrequest.md
   - docs/models/operations/updatesecurityrolesresponse.md
+  - docs/models/operations/updatesecurityrolessecurity.md
   - docs/models/operations/updatesmstemplatesrequest.md
   - docs/models/operations/updatesmstemplatesresponse.md
+  - docs/models/operations/updatesmstemplatessecurity.md
   - docs/models/operations/updatestaffmembersrequest.md
   - docs/models/operations/updatestaffmembersresponse.md
+  - docs/models/operations/updatestaffmemberssecurity.md
   - docs/models/operations/updatestaffmessagesrequest.md
   - docs/models/operations/updatestaffmessagesresponse.md
+  - docs/models/operations/updatestaffmessagessecurity.md
   - docs/models/operations/updatetasksrequest.md
   - docs/models/operations/updatetasksresponse.md
+  - docs/models/operations/updatetaskssecurity.md
   - docs/models/operations/updatetaxratesrequest.md
   - docs/models/operations/updatetaxratesresponse.md
+  - docs/models/operations/updatetaxratessecurity.md
   - docs/models/operations/updatevendorsrequest.md
   - docs/models/operations/updatevendorsresponse.md
+  - docs/models/operations/updatevendorssecurity.md
   - docs/sdks/allocationwindows/README.md
   - docs/sdks/assets/README.md
   - docs/sdks/assettypefields/README.md
@@ -708,191 +880,6 @@ generatedFiles:
   - src/lib/sdks.ts
   - src/lib/security.ts
   - src/lib/url.ts
-  - src/mcp-server/build.mts
-  - src/mcp-server/cli.ts
-  - src/mcp-server/cli/start/command.ts
-  - src/mcp-server/cli/start/impl.ts
-  - src/mcp-server/console-logger.ts
-  - src/mcp-server/extensions.ts
-  - src/mcp-server/mcp-server.ts
-  - src/mcp-server/prompts.ts
-  - src/mcp-server/resources.ts
-  - src/mcp-server/scopes.ts
-  - src/mcp-server/server.ts
-  - src/mcp-server/shared.ts
-  - src/mcp-server/tools.ts
-  - src/mcp-server/tools/allocationWindowsCreateAllocationWindows.ts
-  - src/mcp-server/tools/allocationWindowsDeleteAllocationWindows.ts
-  - src/mcp-server/tools/allocationWindowsGetAllocationWindows.ts
-  - src/mcp-server/tools/allocationWindowsListAllocationWindows.ts
-  - src/mcp-server/tools/allocationWindowsUpdateAllocationWindows.ts
-  - src/mcp-server/tools/assetTypeFieldsCreateAssetTypeFields.ts
-  - src/mcp-server/tools/assetTypeFieldsDeleteAssetTypeFields.ts
-  - src/mcp-server/tools/assetTypeFieldsGetAssetTypeFields.ts
-  - src/mcp-server/tools/assetTypeFieldsListAssetTypeFields.ts
-  - src/mcp-server/tools/assetTypeFieldsUpdateAssetTypeFields.ts
-  - src/mcp-server/tools/assetTypesCreateAssetTypes.ts
-  - src/mcp-server/tools/assetTypesDeleteAssetTypes.ts
-  - src/mcp-server/tools/assetTypesGetAssetTypes.ts
-  - src/mcp-server/tools/assetTypesListAssetTypes.ts
-  - src/mcp-server/tools/assetTypesUpdateAssetTypes.ts
-  - src/mcp-server/tools/assetsDeleteAssets.ts
-  - src/mcp-server/tools/assetsGetAssets.ts
-  - src/mcp-server/tools/assetsListAssets.ts
-  - src/mcp-server/tools/assetsUpdateAssets.ts
-  - src/mcp-server/tools/attachmentsCreateAttachments.ts
-  - src/mcp-server/tools/attachmentsDeleteAttachments.ts
-  - src/mcp-server/tools/attachmentsGetAttachments.ts
-  - src/mcp-server/tools/attachmentsListAttachments.ts
-  - src/mcp-server/tools/attachmentsUpdateAttachments.ts
-  - src/mcp-server/tools/badgesCreateBadges.ts
-  - src/mcp-server/tools/badgesDeleteBadges.ts
-  - src/mcp-server/tools/badgesGetBadges.ts
-  - src/mcp-server/tools/badgesListBadges.ts
-  - src/mcp-server/tools/badgesUpdateBadges.ts
-  - src/mcp-server/tools/bundlesCreateBundles.ts
-  - src/mcp-server/tools/bundlesDeleteBundles.ts
-  - src/mcp-server/tools/bundlesGetBundles.ts
-  - src/mcp-server/tools/bundlesListBundles.ts
-  - src/mcp-server/tools/bundlesUpdateBundles.ts
-  - src/mcp-server/tools/categoriesCreateCategories.ts
-  - src/mcp-server/tools/categoriesDeleteCategories.ts
-  - src/mcp-server/tools/categoriesGetCategories.ts
-  - src/mcp-server/tools/categoriesListCategories.ts
-  - src/mcp-server/tools/categoriesUpdateCategories.ts
-  - src/mcp-server/tools/clientsCreateClients.ts
-  - src/mcp-server/tools/clientsDeleteClients.ts
-  - src/mcp-server/tools/clientsGetClients.ts
-  - src/mcp-server/tools/clientsListClients.ts
-  - src/mcp-server/tools/clientsUpdateClients.ts
-  - src/mcp-server/tools/companyContactsCreateCompanyContacts.ts
-  - src/mcp-server/tools/companyContactsDeleteCompanyContacts.ts
-  - src/mcp-server/tools/companyContactsGetCompanyContacts.ts
-  - src/mcp-server/tools/companyContactsListCompanyContacts.ts
-  - src/mcp-server/tools/companyContactsUpdateCompanyContacts.ts
-  - src/mcp-server/tools/emailTemplatesCreateEmailTemplates.ts
-  - src/mcp-server/tools/emailTemplatesDeleteEmailTemplates.ts
-  - src/mcp-server/tools/emailTemplatesGetEmailTemplates.ts
-  - src/mcp-server/tools/emailTemplatesListEmailTemplates.ts
-  - src/mcp-server/tools/emailTemplatesUpdateEmailTemplates.ts
-  - src/mcp-server/tools/feedbackCreateFeedback.ts
-  - src/mcp-server/tools/feedbackDeleteFeedback.ts
-  - src/mcp-server/tools/feedbackGetFeedback.ts
-  - src/mcp-server/tools/feedbackListFeedback.ts
-  - src/mcp-server/tools/feedbackUpdateFeedback.ts
-  - src/mcp-server/tools/formFieldsCreateFormFields.ts
-  - src/mcp-server/tools/formFieldsDeleteFormFields.ts
-  - src/mcp-server/tools/formFieldsGetFormFields.ts
-  - src/mcp-server/tools/formFieldsListFormFields.ts
-  - src/mcp-server/tools/formFieldsUpdateFormFields.ts
-  - src/mcp-server/tools/formResponsesCreateFormResponses.ts
-  - src/mcp-server/tools/formResponsesDeleteFormResponses.ts
-  - src/mcp-server/tools/formResponsesGetFormResponses.ts
-  - src/mcp-server/tools/formResponsesListFormResponses.ts
-  - src/mcp-server/tools/formResponsesUpdateFormResponses.ts
-  - src/mcp-server/tools/formsCreateForms.ts
-  - src/mcp-server/tools/formsDeleteForms.ts
-  - src/mcp-server/tools/formsGetForms.ts
-  - src/mcp-server/tools/formsListForms.ts
-  - src/mcp-server/tools/formsUpdateForms.ts
-  - src/mcp-server/tools/jobActivitiesCreateJobActivities.ts
-  - src/mcp-server/tools/jobActivitiesDeleteJobActivities.ts
-  - src/mcp-server/tools/jobActivitiesGetJobActivities.ts
-  - src/mcp-server/tools/jobActivitiesListJobActivities.ts
-  - src/mcp-server/tools/jobActivitiesUpdateJobActivities.ts
-  - src/mcp-server/tools/jobAllocationsCreateJobAllocations.ts
-  - src/mcp-server/tools/jobAllocationsDeleteJobAllocations.ts
-  - src/mcp-server/tools/jobAllocationsGetJobAllocations.ts
-  - src/mcp-server/tools/jobAllocationsListJobAllocations.ts
-  - src/mcp-server/tools/jobAllocationsUpdateJobAllocations.ts
-  - src/mcp-server/tools/jobChecklistsCreateJobChecklists.ts
-  - src/mcp-server/tools/jobChecklistsDeleteJobChecklists.ts
-  - src/mcp-server/tools/jobChecklistsGetJobChecklists.ts
-  - src/mcp-server/tools/jobChecklistsListJobChecklists.ts
-  - src/mcp-server/tools/jobChecklistsUpdateJobChecklists.ts
-  - src/mcp-server/tools/jobContactsCreateJobContacts.ts
-  - src/mcp-server/tools/jobContactsDeleteJobContacts.ts
-  - src/mcp-server/tools/jobContactsGetJobContacts.ts
-  - src/mcp-server/tools/jobContactsListJobContacts.ts
-  - src/mcp-server/tools/jobContactsUpdateJobContacts.ts
-  - src/mcp-server/tools/jobMaterialBundlesCreateJobMaterialBundles.ts
-  - src/mcp-server/tools/jobMaterialBundlesDeleteJobMaterialBundles.ts
-  - src/mcp-server/tools/jobMaterialBundlesGetJobMaterialBundles.ts
-  - src/mcp-server/tools/jobMaterialBundlesListJobMaterialBundles.ts
-  - src/mcp-server/tools/jobMaterialBundlesUpdateJobMaterialBundles.ts
-  - src/mcp-server/tools/jobMaterialsCreateJobMaterials.ts
-  - src/mcp-server/tools/jobMaterialsDeleteJobMaterials.ts
-  - src/mcp-server/tools/jobMaterialsGetJobMaterials.ts
-  - src/mcp-server/tools/jobMaterialsListJobMaterials.ts
-  - src/mcp-server/tools/jobMaterialsUpdateJobMaterials.ts
-  - src/mcp-server/tools/jobPaymentsCreateJobPayments.ts
-  - src/mcp-server/tools/jobPaymentsDeleteJobPayments.ts
-  - src/mcp-server/tools/jobPaymentsGetJobPayments.ts
-  - src/mcp-server/tools/jobPaymentsListJobPayments.ts
-  - src/mcp-server/tools/jobPaymentsUpdateJobPayments.ts
-  - src/mcp-server/tools/jobQueuesCreateJobQueues.ts
-  - src/mcp-server/tools/jobQueuesDeleteJobQueues.ts
-  - src/mcp-server/tools/jobQueuesGetJobQueues.ts
-  - src/mcp-server/tools/jobQueuesListJobQueues.ts
-  - src/mcp-server/tools/jobQueuesUpdateJobQueues.ts
-  - src/mcp-server/tools/jobsCreateJobs.ts
-  - src/mcp-server/tools/jobsDeleteJobs.ts
-  - src/mcp-server/tools/jobsGetJobs.ts
-  - src/mcp-server/tools/jobsListJobs.ts
-  - src/mcp-server/tools/jobsUpdateJobs.ts
-  - src/mcp-server/tools/knowledgeArticlesCreateKnowledgeArticles.ts
-  - src/mcp-server/tools/knowledgeArticlesDeleteKnowledgeArticles.ts
-  - src/mcp-server/tools/knowledgeArticlesGetKnowledgeArticles.ts
-  - src/mcp-server/tools/knowledgeArticlesListKnowledgeArticles.ts
-  - src/mcp-server/tools/knowledgeArticlesUpdateKnowledgeArticles.ts
-  - src/mcp-server/tools/locationsCreateLocations.ts
-  - src/mcp-server/tools/locationsDeleteLocations.ts
-  - src/mcp-server/tools/locationsGetLocations.ts
-  - src/mcp-server/tools/locationsListLocations.ts
-  - src/mcp-server/tools/locationsUpdateLocations.ts
-  - src/mcp-server/tools/materialsCreateMaterials.ts
-  - src/mcp-server/tools/materialsDeleteMaterials.ts
-  - src/mcp-server/tools/materialsGetMaterials.ts
-  - src/mcp-server/tools/materialsListMaterials.ts
-  - src/mcp-server/tools/materialsUpdateMaterials.ts
-  - src/mcp-server/tools/notesCreateNotes.ts
-  - src/mcp-server/tools/notesDeleteNotes.ts
-  - src/mcp-server/tools/notesGetNotes.ts
-  - src/mcp-server/tools/notesListNotes.ts
-  - src/mcp-server/tools/notesUpdateNotes.ts
-  - src/mcp-server/tools/securityRolesCreateSecurityRoles.ts
-  - src/mcp-server/tools/securityRolesDeleteSecurityRoles.ts
-  - src/mcp-server/tools/securityRolesGetSecurityRoles.ts
-  - src/mcp-server/tools/securityRolesListSecurityRoles.ts
-  - src/mcp-server/tools/securityRolesUpdateSecurityRoles.ts
-  - src/mcp-server/tools/smsTemplatesCreateSMSTemplates.ts
-  - src/mcp-server/tools/smsTemplatesDeleteSMSTemplates.ts
-  - src/mcp-server/tools/smsTemplatesGetSMSTemplates.ts
-  - src/mcp-server/tools/smsTemplatesListSMSTemplates.ts
-  - src/mcp-server/tools/smsTemplatesUpdateSMSTemplates.ts
-  - src/mcp-server/tools/staffMembersCreateStaffMembers.ts
-  - src/mcp-server/tools/staffMembersDeleteStaffMembers.ts
-  - src/mcp-server/tools/staffMembersGetStaffMembers.ts
-  - src/mcp-server/tools/staffMembersListStaffMembers.ts
-  - src/mcp-server/tools/staffMembersUpdateStaffMembers.ts
-  - src/mcp-server/tools/staffMessagesCreateStaffMessages.ts
-  - src/mcp-server/tools/staffMessagesDeleteStaffMessages.ts
-  - src/mcp-server/tools/staffMessagesGetStaffMessages.ts
-  - src/mcp-server/tools/staffMessagesListStaffMessages.ts
-  - src/mcp-server/tools/staffMessagesUpdateStaffMessages.ts
-  - src/mcp-server/tools/tasksCreateTasks.ts
-  - src/mcp-server/tools/tasksDeleteTasks.ts
-  - src/mcp-server/tools/tasksGetTasks.ts
-  - src/mcp-server/tools/tasksListTasks.ts
-  - src/mcp-server/tools/tasksUpdateTasks.ts
-  - src/mcp-server/tools/taxRatesCreateTaxRates.ts
-  - src/mcp-server/tools/taxRatesDeleteTaxRates.ts
-  - src/mcp-server/tools/taxRatesGetTaxRates.ts
-  - src/mcp-server/tools/taxRatesListTaxRates.ts
-  - src/mcp-server/tools/taxRatesUpdateTaxRates.ts
-  - src/mcp-server/tools/vendorsGetVendors.ts
-  - src/mcp-server/tools/vendorsListVendors.ts
-  - src/mcp-server/tools/vendorsUpdateVendors.ts
   - src/models/components/allocationwindow.ts
   - src/models/components/asset.ts
   - src/models/components/assettype.ts
@@ -3112,7 +3099,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-e432-4d6b-ab0b-22b6ca91920b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "start_time": "string", "end_time": "string", "sort_priority": "string"}]
+          application/json: [{"uuid": "123e4567-d83f-46d7-b035-22b6cd9e8b5b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "start_time": "string", "end_time": "string", "sort_priority": "string"}]
     badRequest:
       responses:
         "400":
@@ -3141,7 +3128,7 @@ examples:
           uuid: "4b696862-c2d8-4bfe-936b-d6716d1d97a4"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-d4d5-4ab9-9814-22b6caa450bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "start_time": "string", "end_time": "string", "sort_priority": "string"}
+          application/json: {"uuid": "123e4567-688c-4a53-8fd0-22b6ca6e945b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "start_time": "string", "end_time": "string", "sort_priority": "string"}
     badRequest:
       parameters:
         path:
@@ -3188,7 +3175,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-7cd0-412a-b996-22b6cf5e1afb", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-e3a0-4250-ab21-22b6cb9e635b", "asset_code": "string", "asset_type_uuid": "123e4567-78c3-477d-83ea-22b6c69b46cb", "name": "string", "lat": "number", "lng": "number", "geo_timestamp": "2025-05-01 12:00:00", "altitude": "number", "field_data": [{"uuid": "string", "fieldType": "string", "fieldName": "string", "fieldValue": "string", "sortOrder": "number"}]}]
+          application/json: [{"uuid": "123e4567-7277-4762-a3a7-22b6c05b457b", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-04e3-4be0-b5d0-22b6c75c2abb", "asset_code": "string", "asset_type_uuid": "123e4567-ef9c-4de4-a102-22b6c01c362b", "name": "string", "lat": "number", "lng": "number", "geo_timestamp": "2025-05-01 12:00:00", "altitude": "number", "field_data": [{"uuid": "string", "fieldType": "string", "fieldName": "string", "fieldValue": "string", "sortOrder": "number"}]}]
     badRequest:
       responses:
         "400":
@@ -3202,7 +3189,7 @@ examples:
           uuid: "8eb1fa27-739c-4946-b465-dfd310714838"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-8fa4-472b-998c-22b6c539164b", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-1e33-47c7-b976-22b6c30e369b", "asset_code": "string", "asset_type_uuid": "123e4567-74ae-4b7f-b01f-22b6c2c00ecb", "name": "string", "lat": "number", "lng": "number", "geo_timestamp": "2025-05-01 12:00:00", "altitude": "number", "field_data": [{"uuid": "string", "fieldType": "string", "fieldName": "string", "fieldValue": "string", "sortOrder": "number"}]}
+          application/json: {"uuid": "123e4567-68b0-40c7-91eb-22b6c773712b", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-8983-4f07-94f0-22b6c43d00fb", "asset_code": "string", "asset_type_uuid": "123e4567-388a-423a-be89-22b6c96e454b", "name": "string", "lat": "number", "lng": "number", "geo_timestamp": "2025-05-01 12:00:00", "altitude": "number", "field_data": [{"uuid": "string", "fieldType": "string", "fieldName": "string", "fieldValue": "string", "sortOrder": "number"}]}
     badRequest:
       parameters:
         path:
@@ -3249,7 +3236,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-78ce-403e-a22b-22b6c365647b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string"}]
+          application/json: [{"uuid": "123e4567-2ac2-4729-81fc-22b6c2c06e9b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string"}]
     badRequest:
       responses:
         "400":
@@ -3278,7 +3265,7 @@ examples:
           uuid: "60d92c37-ec9f-444d-be47-2661b6ad833a"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-ac4b-4d4e-a5ad-22b6c01d4a2b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string"}
+          application/json: {"uuid": "123e4567-4daf-422e-891c-22b6c0191f2b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string"}
     badRequest:
       parameters:
         path:
@@ -3325,7 +3312,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-be65-4021-beeb-22b6c79f265b", "active": 1, "edit_date": "2025-05-01 12:00:00", "asset_type_uuid": "123e4567-f945-4ce0-a07c-22b6c22ecbdb", "name": "string", "field_data": {"fieldType": "Multiple Choice", "mandatory": "string", "choices": ["string"]}, "sort_order": "string"}]
+          application/json: [{"uuid": "123e4567-3858-40f0-aace-22b6ccd7802b", "active": 1, "edit_date": "2025-05-01 12:00:00", "asset_type_uuid": "123e4567-9bca-4cd9-b51c-22b6c81c90ab", "name": "string", "field_data": {"fieldType": "Multiple Choice", "mandatory": "string", "choices": ["string"]}, "sort_order": "string"}]
     badRequest:
       responses:
         "400":
@@ -3354,7 +3341,7 @@ examples:
           uuid: "9f043044-07d3-499c-b070-95e848797216"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-f65a-4185-9647-22b6ce75565b", "active": 1, "edit_date": "2025-05-01 12:00:00", "asset_type_uuid": "123e4567-ebae-4a75-95fc-22b6c0f6701b", "name": "string", "field_data": {"fieldType": "Date", "mandatory": "string", "choices": ["string"]}, "sort_order": "string"}
+          application/json: {"uuid": "123e4567-bd9d-48e0-8c8c-22b6c9aecafb", "active": 1, "edit_date": "2025-05-01 12:00:00", "asset_type_uuid": "123e4567-7fb9-4d84-8473-22b6c552508b", "name": "string", "field_data": {"fieldType": "Date", "mandatory": "string", "choices": ["string"]}, "sort_order": "string"}
     badRequest:
       parameters:
         path:
@@ -3401,7 +3388,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-ea34-4205-a34b-22b6c958080b", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-9fa7-4453-b267-22b6cbe38eab", "attachment_name": "string", "file_type": "string", "created_by_staff_uuid": "123e4567-b491-42bc-8815-22b6c114bdfb", "timestamp": "string", "attachment_source": "string", "tags": "string", "lng": "number", "lat": "number", "photo_width": "string", "photo_height": "string", "extracted_info": "string", "is_favourite": "string", "class_name": "string", "metadata": "string"}]
+          application/json: [{"uuid": "123e4567-802f-4c09-9ab7-22b6c99af44b", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-d816-4b81-8589-22b6c5ebab2b", "attachment_name": "string", "file_type": "string", "created_by_staff_uuid": "123e4567-f7e0-41cd-a489-22b6c62bad7b", "timestamp": "string", "attachment_source": "string", "tags": "string", "lng": "number", "lat": "number", "photo_width": "string", "photo_height": "string", "extracted_info": "string", "is_favourite": "string", "class_name": "string", "metadata": "string"}]
     badRequest:
       responses:
         "400":
@@ -3430,7 +3417,7 @@ examples:
           uuid: "a2f84c5a-7c7b-498c-98b8-8833efa107b6"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-e33f-439c-858b-22b6cabb5cab", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-cd64-4726-bee5-22b6ce20eb3b", "attachment_name": "string", "file_type": "string", "created_by_staff_uuid": "123e4567-3f1f-4be1-89e4-22b6cfabeddb", "timestamp": "string", "attachment_source": "string", "tags": "string", "lng": "number", "lat": "number", "photo_width": "string", "photo_height": "string", "extracted_info": "string", "is_favourite": "string", "class_name": "string", "metadata": "string"}
+          application/json: {"uuid": "123e4567-a6b9-480b-8488-22b6c5c2aa5b", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-8652-4d8b-a67a-22b6c9095cbb", "attachment_name": "string", "file_type": "string", "created_by_staff_uuid": "123e4567-fa79-451c-a476-22b6c12517db", "timestamp": "string", "attachment_source": "string", "tags": "string", "lng": "number", "lat": "number", "photo_width": "string", "photo_height": "string", "extracted_info": "string", "is_favourite": "string", "class_name": "string", "metadata": "string"}
     badRequest:
       parameters:
         path:
@@ -3477,7 +3464,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-c567-4cba-88bc-22b6ce1861fb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "automatically_allocated": "string", "file_name": "string", "regarding_form_uuid": "123e4567-6035-4b49-9cde-22b6c4329cbb", "regarding_asset_type_uuid": "123e4567-0fba-4604-b106-22b6cc88f62b"}]
+          application/json: [{"uuid": "123e4567-7c5b-497c-8b0e-22b6ce93733b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "automatically_allocated": "string", "file_name": "string", "regarding_form_uuid": "123e4567-8dde-448a-8f83-22b6cecb292b", "regarding_asset_type_uuid": "123e4567-10dc-40ce-b38f-22b6c213435b"}]
     badRequest:
       responses:
         "400":
@@ -3506,7 +3493,7 @@ examples:
           uuid: "c714ee05-601d-45d9-8e91-f4918cce018c"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-a7ab-487b-83ed-22b6c9b798fb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "automatically_allocated": "string", "file_name": "string", "regarding_form_uuid": "123e4567-8553-4c2b-98ab-22b6cb62c65b", "regarding_asset_type_uuid": "123e4567-22c3-41be-a36b-22b6c798402b"}
+          application/json: {"uuid": "123e4567-ff8a-4d5e-b8df-22b6c91de3fb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "automatically_allocated": "string", "file_name": "string", "regarding_form_uuid": "123e4567-a86b-4e49-8557-22b6c59c984b", "regarding_asset_type_uuid": "123e4567-dd11-465d-9b60-22b6c3e30acb"}
     badRequest:
       parameters:
         path:
@@ -3553,7 +3540,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "colour": "string", "uuid": "123e4567-f854-483a-8d42-22b6c0bf56fb", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
+          application/json: [{"name": "string", "colour": "string", "uuid": "123e4567-70ad-4252-b342-22b6c95c555b", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -3582,7 +3569,7 @@ examples:
           uuid: "c9cb910e-06e5-4dd4-8c13-2eb75ed22e5e"
       responses:
         "200":
-          application/json: {"name": "string", "colour": "string", "uuid": "123e4567-dbd3-4a0b-a701-22b6c918b0fb", "active": 1, "edit_date": "2025-05-01 12:00:00"}
+          application/json: {"name": "string", "colour": "string", "uuid": "123e4567-2a58-444f-a970-22b6c399ea7b", "active": 1, "edit_date": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -3629,7 +3616,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "abn_number": "string", "address": "string", "billing_address": "string", "parent_company_uuid": "string", "uuid": "123e4567-913a-4e2c-b977-22b6c9cf079b", "active": 1, "edit_date": "2025-05-01 12:00:00", "website": "string", "is_individual": "string", "address_street": "string", "address_city": "string", "address_state": "string", "address_postcode": "string", "address_country": "string", "fax_number": "string", "badges": "string", "tax_rate_uuid": "123e4567-bd0b-4440-a8c7-22b6c6e264ab", "billing_attention": "string", "payment_terms": "string"}]
+          application/json: [{"name": "string", "abn_number": "string", "address": "string", "billing_address": "string", "parent_company_uuid": "string", "uuid": "123e4567-dfd5-4c5c-9227-22b6c7e0350b", "active": 1, "edit_date": "2025-05-01 12:00:00", "website": "string", "is_individual": "string", "address_street": "string", "address_city": "string", "address_state": "string", "address_postcode": "string", "address_country": "string", "fax_number": "string", "badges": "string", "tax_rate_uuid": "123e4567-bf80-4767-97f6-22b6c0b46f5b", "billing_attention": "string", "payment_terms": "string"}]
     badRequest:
       responses:
         "400":
@@ -3658,7 +3645,7 @@ examples:
           uuid: "9c1a0df8-3b93-4256-a5b9-153f2476dca2"
       responses:
         "200":
-          application/json: {"name": "string", "abn_number": "string", "address": "string", "billing_address": "string", "parent_company_uuid": "string", "uuid": "123e4567-db87-4802-8859-22b6ceb7e7bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "website": "string", "is_individual": "string", "address_street": "string", "address_city": "string", "address_state": "string", "address_postcode": "string", "address_country": "string", "fax_number": "string", "badges": "string", "tax_rate_uuid": "123e4567-dd34-4f82-a4bb-22b6c0f7e08b", "billing_attention": "string", "payment_terms": "string"}
+          application/json: {"name": "string", "abn_number": "string", "address": "string", "billing_address": "string", "parent_company_uuid": "string", "uuid": "123e4567-1482-48b9-bbe2-22b6c398d69b", "active": 1, "edit_date": "2025-05-01 12:00:00", "website": "string", "is_individual": "string", "address_street": "string", "address_city": "string", "address_state": "string", "address_postcode": "string", "address_country": "string", "fax_number": "string", "badges": "string", "tax_rate_uuid": "123e4567-43b8-4df4-a920-22b6c967c1db", "billing_attention": "string", "payment_terms": "string"}
     badRequest:
       parameters:
         path:
@@ -3705,7 +3692,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-ded7-4d41-aa75-22b6c6c1340b", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-a4b5-4dec-bf90-22b6c0830b7b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}]
+          application/json: [{"uuid": "123e4567-00bb-47f2-8e34-22b6c45dbc8b", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-f44b-4971-af65-22b6c3781adb", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}]
     badRequest:
       responses:
         "400":
@@ -3734,7 +3721,7 @@ examples:
           uuid: "5f831978-f7ea-4695-814c-ccb0913baf0a"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-ed23-4eab-9f8a-22b6c2b357ab", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-04d5-496c-bbd3-22b6ce9022bb", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}
+          application/json: {"uuid": "123e4567-1fd8-4d2a-ac63-22b6c3fe520b", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-479e-4c9d-99a7-22b6c48e106b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}
     badRequest:
       parameters:
         path:
@@ -3781,7 +3768,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-40e7-459b-9d9a-22b6c1d7253b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "subject": "string", "message": "string"}]
+          application/json: [{"uuid": "123e4567-2b10-4a8c-a635-22b6c1207f3b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "subject": "string", "message": "string"}]
     badRequest:
       responses:
         "400":
@@ -3810,7 +3797,7 @@ examples:
           uuid: "01e49d7f-64e2-4e6f-b41a-39acd826f9d1"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-c1be-45b4-97f6-22b6c4f446bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "subject": "string", "message": "string"}
+          application/json: {"uuid": "123e4567-af64-435e-9388-22b6c40251db", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "subject": "string", "message": "string"}
     badRequest:
       parameters:
         path:
@@ -3857,7 +3844,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-d9f5-4867-9eb9-22b6c8fd48cb", "active": 1, "edit_date": "2025-05-01 12:00:00", "timestamp": "string", "related_object": "string", "related_object_uuid": "123e4567-622d-443c-8e85-22b6c03ad7cb", "rating": "string", "comment": "string"}]
+          application/json: [{"uuid": "123e4567-dc95-4a2d-a185-22b6c7237ccb", "active": 1, "edit_date": "2025-05-01 12:00:00", "timestamp": "string", "related_object": "string", "related_object_uuid": "123e4567-60dc-4a01-b1aa-22b6caeab3cb", "rating": "string", "comment": "string"}]
     badRequest:
       responses:
         "400":
@@ -3886,7 +3873,7 @@ examples:
           uuid: "0b790bbd-e3c4-4110-af59-442137023f8b"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-e39d-44b0-9cd5-22b6c9a6fc6b", "active": 1, "edit_date": "2025-05-01 12:00:00", "timestamp": "string", "related_object": "string", "related_object_uuid": "123e4567-6e43-4997-9147-22b6cf45b00b", "rating": "string", "comment": "string"}
+          application/json: {"uuid": "123e4567-d059-465f-a19b-22b6c4bf46ab", "active": 1, "edit_date": "2025-05-01 12:00:00", "timestamp": "string", "related_object": "string", "related_object_uuid": "123e4567-34e1-48b9-aa83-22b6c35a4c4b", "rating": "string", "comment": "string"}
     badRequest:
       parameters:
         path:
@@ -3933,7 +3920,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "document_template_uuid": "123e4567-1859-4a77-a02d-22b6cee3671b", "can_be_used_independently": "string", "badge_mandatory_state": "string", "template_fields": [{"name": "string", "fieldType": "Text", "value": "string", "sortOrder": "string"}], "uuid": "123e4567-143a-4092-9dcb-22b6c159da6b", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
+          application/json: [{"name": "string", "document_template_uuid": "123e4567-c642-41ac-ba21-22b6c31c1e9b", "can_be_used_independently": "string", "badge_mandatory_state": "string", "template_fields": [{"name": "string", "fieldType": "Text", "value": "string", "sortOrder": "string"}], "uuid": "123e4567-9703-4fc7-9ee9-22b6cb64e8cb", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -3962,7 +3949,7 @@ examples:
           uuid: "56e285a2-c6af-4c67-87b1-6ba5832617e0"
       responses:
         "200":
-          application/json: {"name": "string", "document_template_uuid": "123e4567-e8ac-439a-ac10-22b6c182b7cb", "can_be_used_independently": "string", "badge_mandatory_state": "string", "template_fields": [{"name": "string", "fieldType": "Text", "value": "string", "sortOrder": "string"}], "uuid": "123e4567-7b28-4add-943d-22b6c45d1bfb", "active": 1, "edit_date": "2025-05-01 12:00:00"}
+          application/json: {"name": "string", "document_template_uuid": "123e4567-3b38-48f7-861e-22b6c8c36c7b", "can_be_used_independently": "string", "badge_mandatory_state": "string", "template_fields": [{"name": "string", "fieldType": "Text", "value": "string", "sortOrder": "string"}], "uuid": "123e4567-660c-416b-b38a-22b6ca30ba6b", "active": 1, "edit_date": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -4009,7 +3996,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-0fc0-461c-b547-22b6ca6ebe2b", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-c1d8-4b7a-a4ef-22b6c37d7acb", "name": "string", "field_data_json": "string", "sort_order": "string"}]
+          application/json: [{"uuid": "123e4567-f5c7-4fcc-aabe-22b6c58057eb", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-e2ae-4061-936c-22b6cfd735cb", "name": "string", "field_data_json": "string", "sort_order": "string"}]
     badRequest:
       responses:
         "400":
@@ -4038,7 +4025,7 @@ examples:
           uuid: "45a3c3af-9f5d-46a2-b258-7ba29e2086c3"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-ec35-49bf-8a45-22b6c30abcbb", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-d4e9-4485-a6e4-22b6cfc36d4b", "name": "string", "field_data_json": "string", "sort_order": "string"}
+          application/json: {"uuid": "123e4567-d0de-4cc8-bb55-22b6ce164dab", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-81f5-4bf4-9c59-22b6c9998e5b", "name": "string", "field_data_json": "string", "sort_order": "string"}
     badRequest:
       parameters:
         path:
@@ -4085,7 +4072,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-d1a0-4be7-b018-22b6cfbba45b", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-21ff-4c0e-888e-22b6cdbbddfb", "staff_uuid": "123e4567-f653-4c8f-b966-22b6cff8418b", "regarding_object": "string", "regarding_object_uuid": "123e4567-5ffc-4726-a231-22b6ca53541b", "field_data": "string", "timestamp": "2025-05-01 12:00:00", "form_by_staff_uuid": "123e4567-402d-4bcd-9807-22b6c4d2592b", "document_attachment_uuid": "123e4567-5f13-4b97-b829-22b6ce42950b", "asset_uuid": "123e4567-8334-493d-aaf5-22b6cb8b3acb"}]
+          application/json: [{"uuid": "123e4567-3c5e-49e4-b688-22b6cb76c8eb", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-c849-4157-9678-22b6c3799e0b", "staff_uuid": "123e4567-0e4f-4988-9cbe-22b6c4881c9b", "regarding_object": "string", "regarding_object_uuid": "123e4567-a6ff-4a61-bb0a-22b6c18cc53b", "field_data": "string", "timestamp": "2025-05-01 12:00:00", "form_by_staff_uuid": "123e4567-3a73-4937-bb8d-22b6ca91063b", "document_attachment_uuid": "123e4567-b73a-4806-9bc8-22b6c515893b", "asset_uuid": "123e4567-e0ea-422a-908d-22b6cff413ab"}]
     badRequest:
       responses:
         "400":
@@ -4114,7 +4101,7 @@ examples:
           uuid: "23aea6ea-cca1-4a9f-b754-cf0a7e13a1e5"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-dc72-4120-971f-22b6c04c1feb", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-4735-4448-9567-22b6c72039eb", "staff_uuid": "123e4567-49f4-4e57-814e-22b6c1f22d0b", "regarding_object": "string", "regarding_object_uuid": "123e4567-d560-4d1a-9b04-22b6c70f496b", "field_data": "string", "timestamp": "2025-05-01 12:00:00", "form_by_staff_uuid": "123e4567-d04f-4a1e-a618-22b6cdec870b", "document_attachment_uuid": "123e4567-fec1-46fa-95b6-22b6c87d345b", "asset_uuid": "123e4567-677a-4bdd-8d70-22b6c388a42b"}
+          application/json: {"uuid": "123e4567-ada2-416c-a0ab-22b6c2f9f3fb", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-eed5-4b29-8e2c-22b6ce315f2b", "staff_uuid": "123e4567-5428-4da7-8238-22b6c795e8eb", "regarding_object": "string", "regarding_object_uuid": "123e4567-bbf6-46e8-8a45-22b6c25ea34b", "field_data": "string", "timestamp": "2025-05-01 12:00:00", "form_by_staff_uuid": "123e4567-1262-4a01-8203-22b6c20be65b", "document_attachment_uuid": "123e4567-229a-438e-b386-22b6cf16c60b", "asset_uuid": "123e4567-7c67-4142-95c9-22b6c327901b"}
     badRequest:
       parameters:
         path:
@@ -4161,7 +4148,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"created_by_staff_uuid": "123e4567-7f9e-4dbb-8932-22b6c2080e4b", "date": "YYYY-MM-DD", "company_uuid": "123e4567-bbdd-4174-9579-22b6cf957d8b", "billing_address": "string", "status": "Completed", "lng": "number", "lat": "number", "payment_date": "2025-05-01 12:00:00", "payment_actioned_by_uuid": "123e4567-9b21-49b5-9ad7-22b6c0bd448b", "payment_method": "string", "payment_amount": "string", "category_uuid": "123e4567-eee3-4047-9a1f-22b6c693d8cb", "payment_note": "string", "geo_is_valid": "string", "purchase_order_number": "string", "invoice_sent": "string", "invoice_sent_stamp": "2025-05-01 12:00:00", "ready_to_invoice": "string", "ready_to_invoice_stamp": "string", "geo_country": "string", "geo_postcode": "string", "geo_state": "string", "geo_city": "string", "geo_street": "string", "geo_number": "string", "queue_uuid": "123e4567-88bf-4615-98ba-22b6c9fa84cb", "queue_expiry_date": "2025-05-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-375d-4bb2-8eac-22b6ca9f6e5b", "badges": "string", "quote_date": "2025-05-01 12:00:00", "quote_sent": 0, "quote_sent_stamp": "2025-05-01 12:00:00", "work_order_date": "2025-05-01 12:00:00", "active_network_request_uuid": "string", "related_knowledge_articles": "string", "uuid": "123e4567-2a86-4eb1-89ae-22b6c284980b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_address": "string", "job_description": "string", "work_done_description": "string", "generated_job_id": "string", "total_invoice_amount": "string", "payment_processed": "string", "payment_processed_stamp": "2025-05-01 12:00:00", "payment_received": "string", "payment_received_stamp": "2025-05-01 12:00:00", "completion_date": "2025-05-01 12:00:00", "completion_actioned_by_uuid": "123e4567-72ca-4d85-a449-22b6cb604f0b", "unsuccessful_date": "2025-05-01 12:00:00", "job_is_scheduled_until_stamp": "2025-05-01 12:00:00"}]
+          application/json: [{"created_by_staff_uuid": "123e4567-95b6-4f84-86cc-22b6c4b523ab", "date": "YYYY-MM-DD", "company_uuid": "123e4567-428c-4646-b417-22b6cc196eab", "billing_address": "string", "status": "Completed", "lng": "number", "lat": "number", "payment_date": "2025-05-01 12:00:00", "payment_actioned_by_uuid": "123e4567-1804-45ef-87eb-22b6c2e9908b", "payment_method": "string", "payment_amount": "string", "category_uuid": "123e4567-82bd-4595-8165-22b6c8edd05b", "payment_note": "string", "geo_is_valid": "string", "purchase_order_number": "string", "invoice_sent": "string", "invoice_sent_stamp": "2025-05-01 12:00:00", "ready_to_invoice": "string", "ready_to_invoice_stamp": "string", "geo_country": "string", "geo_postcode": "string", "geo_state": "string", "geo_city": "string", "geo_street": "string", "geo_number": "string", "queue_uuid": "123e4567-9277-444b-9da8-22b6c898d5db", "queue_expiry_date": "2025-05-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-6d6d-48d8-99bc-22b6c8d2bf9b", "badges": "string", "quote_date": "2025-05-01 12:00:00", "quote_sent": 0, "quote_sent_stamp": "2025-05-01 12:00:00", "work_order_date": "2025-05-01 12:00:00", "active_network_request_uuid": "string", "related_knowledge_articles": "string", "uuid": "123e4567-37ad-40c0-af12-22b6cf07308b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_address": "string", "job_description": "string", "work_done_description": "string", "generated_job_id": "string", "total_invoice_amount": "string", "payment_processed": "string", "payment_processed_stamp": "2025-05-01 12:00:00", "payment_received": "string", "payment_received_stamp": "2025-05-01 12:00:00", "completion_date": "2025-05-01 12:00:00", "completion_actioned_by_uuid": "123e4567-5e35-4971-9733-22b6cd45132b", "unsuccessful_date": "2025-05-01 12:00:00", "job_is_scheduled_until_stamp": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -4190,7 +4177,7 @@ examples:
           uuid: "e03231ef-9c59-48f0-8dc1-2a1c0a2ec3b8"
       responses:
         "200":
-          application/json: {"created_by_staff_uuid": "123e4567-1e90-45f3-9776-22b6c547490b", "date": "YYYY-MM-DD", "company_uuid": "123e4567-6bbf-4663-9f71-22b6c4c587fb", "billing_address": "string", "status": "Completed", "lng": "number", "lat": "number", "payment_date": "2025-05-01 12:00:00", "payment_actioned_by_uuid": "123e4567-eeef-4b21-9b74-22b6c2fa42ab", "payment_method": "string", "payment_amount": "string", "category_uuid": "123e4567-9bcd-4195-89ee-22b6ce615ffb", "payment_note": "string", "geo_is_valid": "string", "purchase_order_number": "string", "invoice_sent": "string", "invoice_sent_stamp": "2025-05-01 12:00:00", "ready_to_invoice": "string", "ready_to_invoice_stamp": "string", "geo_country": "string", "geo_postcode": "string", "geo_state": "string", "geo_city": "string", "geo_street": "string", "geo_number": "string", "queue_uuid": "123e4567-ba41-4173-9c52-22b6cc77bd1b", "queue_expiry_date": "2025-05-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-9337-4aa8-87fe-22b6ce2cbd5b", "badges": "string", "quote_date": "2025-05-01 12:00:00", "quote_sent": 0, "quote_sent_stamp": "2025-05-01 12:00:00", "work_order_date": "2025-05-01 12:00:00", "active_network_request_uuid": "string", "related_knowledge_articles": "string", "uuid": "123e4567-2684-4e58-98f5-22b6c9133ffb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_address": "string", "job_description": "string", "work_done_description": "string", "generated_job_id": "string", "total_invoice_amount": "string", "payment_processed": "string", "payment_processed_stamp": "2025-05-01 12:00:00", "payment_received": "string", "payment_received_stamp": "2025-05-01 12:00:00", "completion_date": "2025-05-01 12:00:00", "completion_actioned_by_uuid": "123e4567-942d-43bf-8101-22b6c827e4cb", "unsuccessful_date": "2025-05-01 12:00:00", "job_is_scheduled_until_stamp": "2025-05-01 12:00:00"}
+          application/json: {"created_by_staff_uuid": "123e4567-c378-46ee-8aca-22b6cff0c9eb", "date": "YYYY-MM-DD", "company_uuid": "123e4567-5063-4318-8552-22b6c62510bb", "billing_address": "string", "status": "Completed", "lng": "number", "lat": "number", "payment_date": "2025-05-01 12:00:00", "payment_actioned_by_uuid": "123e4567-8fbf-4a8f-aa9e-22b6c58f93ab", "payment_method": "string", "payment_amount": "string", "category_uuid": "123e4567-527e-4e5d-9d4d-22b6cd1ab34b", "payment_note": "string", "geo_is_valid": "string", "purchase_order_number": "string", "invoice_sent": "string", "invoice_sent_stamp": "2025-05-01 12:00:00", "ready_to_invoice": "string", "ready_to_invoice_stamp": "string", "geo_country": "string", "geo_postcode": "string", "geo_state": "string", "geo_city": "string", "geo_street": "string", "geo_number": "string", "queue_uuid": "123e4567-6c71-4a0c-ae22-22b6c0d84d1b", "queue_expiry_date": "2025-05-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-ecab-4858-ace7-22b6cda28c5b", "badges": "string", "quote_date": "2025-05-01 12:00:00", "quote_sent": 0, "quote_sent_stamp": "2025-05-01 12:00:00", "work_order_date": "2025-05-01 12:00:00", "active_network_request_uuid": "string", "related_knowledge_articles": "string", "uuid": "123e4567-162d-46de-b7dc-22b6c9786f3b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_address": "string", "job_description": "string", "work_done_description": "string", "generated_job_id": "string", "total_invoice_amount": "string", "payment_processed": "string", "payment_processed_stamp": "2025-05-01 12:00:00", "payment_received": "string", "payment_received_stamp": "2025-05-01 12:00:00", "completion_date": "2025-05-01 12:00:00", "completion_actioned_by_uuid": "123e4567-45db-442a-badc-22b6c6cf066b", "unsuccessful_date": "2025-05-01 12:00:00", "job_is_scheduled_until_stamp": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -4237,7 +4224,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-c19b-40fb-9c9a-22b6cf50135b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-0f06-4952-bf64-22b6c178dadb", "staff_uuid": "123e4567-5c2b-4c57-bedb-22b6cddf7b6b", "start_date": "2025-05-01 12:00:00", "end_date": "2025-05-01 12:00:00", "activity_was_scheduled": "string", "activity_was_recorded": "string", "activity_was_automated": "string", "has_been_opened": "string", "has_been_opened_timestamp": "2025-05-01 12:00:00", "travel_time_in_seconds": "string", "travel_distance_in_meters": "string", "allocated_by_staff_uuid": "123e4567-5e69-49be-9a17-22b6c4dff8eb", "allocated_timestamp": "2025-05-01 12:00:00", "material_uuid": "123e4567-c863-4fbb-977c-22b6cddb974b", "edit_by_staff_uuid": "123e4567-13eb-446c-aeff-22b6c1ef54ab"}]
+          application/json: [{"uuid": "123e4567-18e5-4307-a4b8-22b6c53953bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-21f8-4ccf-ab44-22b6c1985aeb", "staff_uuid": "123e4567-c926-4e1c-b87a-22b6c0eb2e7b", "start_date": "2025-05-01 12:00:00", "end_date": "2025-05-01 12:00:00", "activity_was_scheduled": "string", "activity_was_recorded": "string", "activity_was_automated": "string", "has_been_opened": "string", "has_been_opened_timestamp": "2025-05-01 12:00:00", "travel_time_in_seconds": "string", "travel_distance_in_meters": "string", "allocated_by_staff_uuid": "123e4567-e711-4d91-82d8-22b6c0f5530b", "allocated_timestamp": "2025-05-01 12:00:00", "material_uuid": "123e4567-f8e6-46f0-98f5-22b6cea47e4b", "edit_by_staff_uuid": "123e4567-65a9-45d3-8505-22b6c2c96c0b"}]
     badRequest:
       responses:
         "400":
@@ -4266,7 +4253,7 @@ examples:
           uuid: "f32731bb-bb87-4332-b835-cec6ca6ebe5c"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-33a9-4646-afea-22b6cf9b60db", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-bb81-418c-a38d-22b6cf11f10b", "staff_uuid": "123e4567-cf3e-48fc-aa9a-22b6c91b544b", "start_date": "2025-05-01 12:00:00", "end_date": "2025-05-01 12:00:00", "activity_was_scheduled": "string", "activity_was_recorded": "string", "activity_was_automated": "string", "has_been_opened": "string", "has_been_opened_timestamp": "2025-05-01 12:00:00", "travel_time_in_seconds": "string", "travel_distance_in_meters": "string", "allocated_by_staff_uuid": "123e4567-e0ec-403c-ad20-22b6c85a163b", "allocated_timestamp": "2025-05-01 12:00:00", "material_uuid": "123e4567-5455-4f16-b154-22b6cc703acb", "edit_by_staff_uuid": "123e4567-996a-4a5f-8e69-22b6c1fb989b"}
+          application/json: {"uuid": "123e4567-a2a3-4e2d-9512-22b6c2803b5b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-ca13-4841-a5c8-22b6c3b4911b", "staff_uuid": "123e4567-2e17-46aa-ad0a-22b6c3eff36b", "start_date": "2025-05-01 12:00:00", "end_date": "2025-05-01 12:00:00", "activity_was_scheduled": "string", "activity_was_recorded": "string", "activity_was_automated": "string", "has_been_opened": "string", "has_been_opened_timestamp": "2025-05-01 12:00:00", "travel_time_in_seconds": "string", "travel_distance_in_meters": "string", "allocated_by_staff_uuid": "123e4567-e098-4829-a060-22b6cb10b63b", "allocated_timestamp": "2025-05-01 12:00:00", "material_uuid": "123e4567-25f9-4aa9-9f2b-22b6c1a0ff0b", "edit_by_staff_uuid": "123e4567-ef9a-4851-a241-22b6cc534a0b"}
     badRequest:
       parameters:
         path:
@@ -4313,7 +4300,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-1bc9-49c4-ab1a-22b6c2b2368b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-0aca-4543-be22-22b6ce3ba31b", "queue_uuid": "123e4567-ae1b-4865-abe5-22b6c98e56cb", "staff_uuid": "123e4567-2601-4a60-8d24-22b6c4f20a6b", "allocation_date": "2025-05-01 12:00:00", "allocation_window_uuid": "123e4567-5f53-4baa-b9d0-22b6c7a1f19b", "allocated_by_staff_uuid": "123e4567-04df-49dc-8c65-22b6cc20f9db", "allocated_timestamp": "2025-05-01 12:00:00", "expiry_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "completion_timestamp": "2025-05-01 12:00:00", "estimated_duration": "string", "revised_duration": "string", "sort_priority": "string", "requires_acceptance": "string", "acceptance_status": "string", "acceptance_timestamp": "2025-05-01 12:00:00"}]
+          application/json: [{"uuid": "123e4567-7f5a-4a92-8793-22b6c1c6d0bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-352b-4747-aa54-22b6c55eacab", "queue_uuid": "123e4567-69f1-4f7f-a2f7-22b6c07f524b", "staff_uuid": "123e4567-5b9b-4e8d-9841-22b6ca8da99b", "allocation_date": "2025-05-01 12:00:00", "allocation_window_uuid": "123e4567-b956-4953-9bb4-22b6c95299eb", "allocated_by_staff_uuid": "123e4567-44ef-40fc-a1c7-22b6ca711e7b", "allocated_timestamp": "2025-05-01 12:00:00", "expiry_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "completion_timestamp": "2025-05-01 12:00:00", "estimated_duration": "string", "revised_duration": "string", "sort_priority": "string", "requires_acceptance": "string", "acceptance_status": "string", "acceptance_timestamp": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -4342,7 +4329,7 @@ examples:
           uuid: "0d05bbd5-edc5-48f5-97dd-9ac71aad761c"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-a039-4b6d-b183-22b6c4d4634b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-b6b2-4bb9-b083-22b6cab5ab2b", "queue_uuid": "123e4567-5077-4091-9bb4-22b6cb599ffb", "staff_uuid": "123e4567-fea4-4340-b161-22b6c0e5cbab", "allocation_date": "2025-05-01 12:00:00", "allocation_window_uuid": "123e4567-10c1-468b-b090-22b6cb1a2e6b", "allocated_by_staff_uuid": "123e4567-4b09-40fe-b060-22b6ca8c1ddb", "allocated_timestamp": "2025-05-01 12:00:00", "expiry_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "completion_timestamp": "2025-05-01 12:00:00", "estimated_duration": "string", "revised_duration": "string", "sort_priority": "string", "requires_acceptance": "string", "acceptance_status": "string", "acceptance_timestamp": "2025-05-01 12:00:00"}
+          application/json: {"uuid": "123e4567-34e6-4870-a9fb-22b6cb924a4b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-e70f-482a-8700-22b6c43e0d4b", "queue_uuid": "123e4567-7ea6-43bb-a547-22b6cfe1dedb", "staff_uuid": "123e4567-f300-4fa0-853d-22b6cbb0276b", "allocation_date": "2025-05-01 12:00:00", "allocation_window_uuid": "123e4567-69f9-4780-ae7b-22b6c768fecb", "allocated_by_staff_uuid": "123e4567-c258-4cc3-b32c-22b6c9ead4fb", "allocated_timestamp": "2025-05-01 12:00:00", "expiry_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "completion_timestamp": "2025-05-01 12:00:00", "estimated_duration": "string", "revised_duration": "string", "sort_priority": "string", "requires_acceptance": "string", "acceptance_status": "string", "acceptance_timestamp": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -4389,7 +4376,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-5538-48b4-95dd-22b6ce1b8bdb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-1b8d-4f4e-933f-22b6cdec111b", "name": "string", "section_name": "string", "item_type": "string", "sort_order": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-12e6-45de-8051-22b6c130e0eb", "completed_during_checkin_uuid": "123e4567-6ac1-452e-b48d-22b6c4c597eb", "reminder_type": "string", "reminder_data": {}, "regarding_object": "string", "regarding_object_uuid": "123e4567-77a2-4116-b2a4-22b6cc66949b", "fulfilled_by_object_name": "string", "fulfilled_by_object_uuid": "123e4567-ac7a-47bd-98fc-22b6c09583cb", "assigned_to_staff_uuids": ["123e4567-ed65-43bc-a4f0-22b6cfb70b2b"], "is_locked": 1, "assigned_timestamp": "2025-05-01 12:00:00", "assigned_by_staff_uuid": "123e4567-cfab-4306-8994-22b6c8f6d63b"}]
+          application/json: [{"uuid": "123e4567-aa69-4fbc-be4a-22b6c7b955cb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-ad8b-440a-8177-22b6cd9bcfeb", "name": "string", "section_name": "string", "item_type": "string", "sort_order": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-6cb6-4f85-bed8-22b6cae49f2b", "completed_during_checkin_uuid": "123e4567-a876-4866-a3af-22b6c973aeab", "reminder_type": "string", "reminder_data": {}, "regarding_object": "string", "regarding_object_uuid": "123e4567-9067-42d3-b31c-22b6c9121b2b", "fulfilled_by_object_name": "string", "fulfilled_by_object_uuid": "123e4567-655a-45e1-b7d6-22b6cc66e7ab", "assigned_to_staff_uuids": ["123e4567-71b7-47c6-bdf7-22b6c6ae7edb"], "is_locked": 1, "assigned_timestamp": "2025-05-01 12:00:00", "assigned_by_staff_uuid": "123e4567-36ae-43de-855d-22b6cb4b8b3b"}]
     badRequest:
       responses:
         "400":
@@ -4418,7 +4405,7 @@ examples:
           uuid: "63a0aea3-0abf-4ee8-b0d9-411f9216037e"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-7ab4-4531-b342-22b6cc13d77b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-e3ea-4049-ad66-22b6c071869b", "name": "string", "section_name": "string", "item_type": "string", "sort_order": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-4345-43a1-bd28-22b6c0da768b", "completed_during_checkin_uuid": "123e4567-376e-4d4f-8df1-22b6c21fbaeb", "reminder_type": "string", "reminder_data": {}, "regarding_object": "string", "regarding_object_uuid": "123e4567-7fe0-464b-81cc-22b6cca8b83b", "fulfilled_by_object_name": "string", "fulfilled_by_object_uuid": "123e4567-46de-4700-8890-22b6c7b81b6b", "assigned_to_staff_uuids": ["123e4567-4fa6-47b5-ae01-22b6cbbb78ab"], "is_locked": 1, "assigned_timestamp": "2025-05-01 12:00:00", "assigned_by_staff_uuid": "123e4567-0172-4c0b-9a37-22b6ce4af67b"}
+          application/json: {"uuid": "123e4567-3518-41c2-93a6-22b6c6280bab", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-70b4-42f2-998f-22b6c7e1287b", "name": "string", "section_name": "string", "item_type": "string", "sort_order": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-2526-42c8-b521-22b6c95ffd3b", "completed_during_checkin_uuid": "123e4567-7e30-4256-915c-22b6c4b2045b", "reminder_type": "string", "reminder_data": {}, "regarding_object": "string", "regarding_object_uuid": "123e4567-b351-4b75-bbd8-22b6ce71ba4b", "fulfilled_by_object_name": "string", "fulfilled_by_object_uuid": "123e4567-abe1-45d8-a08a-22b6c7c2754b", "assigned_to_staff_uuids": ["123e4567-b9e6-463f-927a-22b6c9abadab"], "is_locked": 1, "assigned_timestamp": "2025-05-01 12:00:00", "assigned_by_staff_uuid": "123e4567-5047-4590-8e8b-22b6c73be42b"}
     badRequest:
       parameters:
         path:
@@ -4465,7 +4452,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-b1bb-4fe0-8106-22b6c6c63d5b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-b639-4595-beb8-22b6c144ab5b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}]
+          application/json: [{"uuid": "123e4567-9b65-4cfa-95cf-22b6c9c70c8b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-a228-4285-a941-22b6cfe8c43b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}]
     badRequest:
       responses:
         "400":
@@ -4494,7 +4481,7 @@ examples:
           uuid: "307a9624-022f-459d-9dad-a935302ed7d1"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-a414-49ff-9d34-22b6c327b0ab", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-472e-4c8e-b797-22b6c869031b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}
+          application/json: {"uuid": "123e4567-94db-4b6b-b201-22b6c656ffdb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-23ea-4b5d-b3d6-22b6ca42e8eb", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}
     badRequest:
       parameters:
         path:
@@ -4541,7 +4528,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-a7c8-4b86-b31a-22b6cdcbfaeb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-f59f-4c14-9ed3-22b6cea3b72b", "material_uuid": "123e4567-1410-40c9-8093-22b6c58a190b", "name": "string", "quantity": "string", "price": "string", "displayed_amount": "string", "displayed_amount_is_tax_inclusive": "string", "tax_rate_uuid": "123e4567-b3e4-4845-8725-22b6cd5f12bb", "sort_order": "string", "cost": "string", "displayed_cost": "string", "job_material_bundle_uuid": "123e4567-838d-4a62-aa99-22b6cb409d6b"}]
+          application/json: [{"uuid": "123e4567-4625-4f4d-9f55-22b6ccd41bab", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-cbda-4ea2-b97c-22b6cb9c0ccb", "material_uuid": "123e4567-be17-4dd7-bcf6-22b6cc497fdb", "name": "string", "quantity": "string", "price": "string", "displayed_amount": "string", "displayed_amount_is_tax_inclusive": "string", "tax_rate_uuid": "123e4567-3eed-4f55-91d0-22b6cffaf5bb", "sort_order": "string", "cost": "string", "displayed_cost": "string", "job_material_bundle_uuid": "123e4567-33f2-4955-b562-22b6c877e38b"}]
     badRequest:
       responses:
         "400":
@@ -4570,7 +4557,7 @@ examples:
           uuid: "d79254ce-b994-4a50-8a99-5f1146cac7ca"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-4717-467c-8a22-22b6c7babe5b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-95ba-4852-bb30-22b6c34225cb", "material_uuid": "123e4567-6874-450d-9907-22b6ccd094fb", "name": "string", "quantity": "string", "price": "string", "displayed_amount": "string", "displayed_amount_is_tax_inclusive": "string", "tax_rate_uuid": "123e4567-184c-4d09-9277-22b6c342f7cb", "sort_order": "string", "cost": "string", "displayed_cost": "string", "job_material_bundle_uuid": "123e4567-9f5f-4d25-bdd5-22b6c819fc0b"}
+          application/json: {"uuid": "123e4567-f62a-40ed-bdb1-22b6c214735b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-fdda-458d-b6a2-22b6cc5f902b", "material_uuid": "123e4567-72dc-4086-a595-22b6c2b1030b", "name": "string", "quantity": "string", "price": "string", "displayed_amount": "string", "displayed_amount_is_tax_inclusive": "string", "tax_rate_uuid": "123e4567-b4d4-48b0-964d-22b6c955970b", "sort_order": "string", "cost": "string", "displayed_cost": "string", "job_material_bundle_uuid": "123e4567-2a47-4513-a431-22b6c24f980b"}
     badRequest:
       parameters:
         path:
@@ -4617,7 +4604,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-bf03-4434-be7a-22b6c63070db", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "quantity": "string", "sort_order": "string", "material_bundle_uuid": "123e4567-8874-429b-bb80-22b6c639ebbb", "job_uuid": "123e4567-824f-450f-a8be-22b6c16b8c7b"}]
+          application/json: [{"uuid": "123e4567-8a34-4b1c-83c3-22b6c515dfcb", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "quantity": "string", "sort_order": "string", "material_bundle_uuid": "123e4567-73a2-470e-ab56-22b6cabc114b", "job_uuid": "123e4567-003b-4594-a0ce-22b6c1c0d19b"}]
     badRequest:
       responses:
         "400":
@@ -4646,7 +4633,7 @@ examples:
           uuid: "a1bdb9d6-9b4c-469e-bcbd-b107a1c475b9"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-dda5-4059-8996-22b6ca1dd1ab", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "quantity": "string", "sort_order": "string", "material_bundle_uuid": "123e4567-6689-4578-9b6e-22b6cc3c4b1b", "job_uuid": "123e4567-71a9-4175-a810-22b6cff023eb"}
+          application/json: {"uuid": "123e4567-aae9-48a1-b03f-22b6cba11f5b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "quantity": "string", "sort_order": "string", "material_bundle_uuid": "123e4567-047f-456c-9529-22b6c181f1cb", "job_uuid": "123e4567-582c-48b4-9948-22b6c372819b"}
     badRequest:
       parameters:
         path:
@@ -4693,7 +4680,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-bac8-4fb0-a5e2-22b6c4eed48b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-1c0c-4061-b0c4-22b6cb2ddfdb", "actioned_by_uuid": "123e4567-481d-4e73-bd0e-22b6c5ccc59b", "timestamp": "string", "amount": "string", "method": "string", "note": "string", "attachment_uuid": "123e4567-6d12-4310-9c74-22b6cabad4ab", "is_deposit": 0}]
+          application/json: [{"uuid": "123e4567-f70d-4151-841f-22b6c52f0dab", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-bf9e-420a-827d-22b6c9991b9b", "actioned_by_uuid": "123e4567-b1f2-4627-93f9-22b6c08dd46b", "timestamp": "string", "amount": "string", "method": "string", "note": "string", "attachment_uuid": "123e4567-aacd-4428-afaf-22b6c96424fb", "is_deposit": 0}]
     badRequest:
       responses:
         "400":
@@ -4722,7 +4709,7 @@ examples:
           uuid: "552a589e-4936-496e-aab9-3793675d46d1"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-8019-46ac-9bff-22b6c5f9f69b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-5819-4a8c-b0df-22b6ccd748eb", "actioned_by_uuid": "123e4567-e3d7-487f-8d0e-22b6c6f8a8db", "timestamp": "string", "amount": "string", "method": "string", "note": "string", "attachment_uuid": "123e4567-5e2c-4ffa-98ea-22b6ccd2186b", "is_deposit": 0}
+          application/json: {"uuid": "123e4567-fbb9-4ce4-ba2e-22b6ccc870bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-a22f-4af5-90c4-22b6c9c14bfb", "actioned_by_uuid": "123e4567-d9d2-4a27-b0e3-22b6c3ff119b", "timestamp": "string", "amount": "string", "method": "string", "note": "string", "attachment_uuid": "123e4567-d0ac-463d-a7a4-22b6ccfbffdb", "is_deposit": 0}
     badRequest:
       parameters:
         path:
@@ -4769,7 +4756,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-fc6c-496f-af58-22b6cd1d54db", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "content": "string", "article_type": "string", "tags": "string", "relationships": [{"object_name": "Job", "object_uuid": "string", "object_description": "string", "create_date": "string"}]}]
+          application/json: [{"uuid": "123e4567-0416-40e5-9f5d-22b6c68d06cb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "content": "string", "article_type": "string", "tags": "string", "relationships": [{"object_name": "Job", "object_uuid": "string", "object_description": "string", "create_date": "string"}]}]
     badRequest:
       responses:
         "400":
@@ -4798,7 +4785,7 @@ examples:
           uuid: "2c7d225f-8f77-49cd-9760-85e9336ff06c"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-eb43-4a9e-987e-22b6c81da66b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "content": "string", "article_type": "string", "tags": "string", "relationships": [{"object_name": "Job", "object_uuid": "string", "object_description": "string", "create_date": "string"}]}
+          application/json: {"uuid": "123e4567-2ad5-4a52-9a45-22b6c0b417bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "content": "string", "article_type": "string", "tags": "string", "relationships": [{"object_name": "Job", "object_uuid": "string", "object_description": "string", "create_date": "string"}]}
     badRequest:
       parameters:
         path:
@@ -4845,7 +4832,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "line1": "string", "line2": "string", "line3": "string", "city": "string", "country": "string", "post_code": "string", "phone_1": "string", "state": "string", "lng": "number", "lat": "number", "uuid": "123e4567-c068-40a0-8baf-22b6c5de161b", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
+          application/json: [{"name": "string", "line1": "string", "line2": "string", "line3": "string", "city": "string", "country": "string", "post_code": "string", "phone_1": "string", "state": "string", "lng": "number", "lat": "number", "uuid": "123e4567-0ee0-45d0-9064-22b6cb3ecb3b", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -4874,7 +4861,7 @@ examples:
           uuid: "7e65687e-03d3-48f0-b0b2-e5b1b278767a"
       responses:
         "200":
-          application/json: {"name": "string", "line1": "string", "line2": "string", "line3": "string", "city": "string", "country": "string", "post_code": "string", "phone_1": "string", "state": "string", "lng": "number", "lat": "number", "uuid": "123e4567-ba4b-4de9-a98a-22b6c16457ab", "active": 1, "edit_date": "2025-05-01 12:00:00"}
+          application/json: {"name": "string", "line1": "string", "line2": "string", "line3": "string", "city": "string", "country": "string", "post_code": "string", "phone_1": "string", "state": "string", "lng": "number", "lat": "number", "uuid": "123e4567-0202-40bf-a386-22b6c2ee344b", "active": 1, "edit_date": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -4921,7 +4908,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "item_number": "string", "price": "string", "cost": "string", "quantity_in_stock": "number", "price_includes_taxes": 1, "barcode": "string", "item_is_inventoried": 1, "uuid": "123e4567-0c7b-422a-89a7-22b6c8a67b2b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_description": "string", "use_description_for_invoicing": "string", "tax_rate_uuid": "123e4567-d28e-4f1e-aa07-22b6c642ecdb"}]
+          application/json: [{"name": "string", "item_number": "string", "price": "string", "cost": "string", "quantity_in_stock": "number", "price_includes_taxes": 1, "barcode": "string", "item_is_inventoried": 1, "uuid": "123e4567-95ac-494a-98ba-22b6c861be9b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_description": "string", "use_description_for_invoicing": "string", "tax_rate_uuid": "123e4567-e662-449e-b321-22b6c47bae0b"}]
     badRequest:
       responses:
         "400":
@@ -4950,7 +4937,7 @@ examples:
           uuid: "7dfbb5d7-a043-43e1-bfab-b59b30e6b5c8"
       responses:
         "200":
-          application/json: {"name": "string", "item_number": "string", "price": "string", "cost": "string", "quantity_in_stock": "number", "price_includes_taxes": 0, "barcode": "string", "item_is_inventoried": 1, "uuid": "123e4567-c714-4948-9fb5-22b6cc08832b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_description": "string", "use_description_for_invoicing": "string", "tax_rate_uuid": "123e4567-e0ba-4ea4-aa14-22b6c0b0570b"}
+          application/json: {"name": "string", "item_number": "string", "price": "string", "cost": "string", "quantity_in_stock": "number", "price_includes_taxes": 0, "barcode": "string", "item_is_inventoried": 1, "uuid": "123e4567-2da3-4b51-bfba-22b6c1e6057b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_description": "string", "use_description_for_invoicing": "string", "tax_rate_uuid": "123e4567-4c8e-4092-a0fd-22b6c4bec5cb"}
     badRequest:
       parameters:
         path:
@@ -4997,7 +4984,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-cf78-408a-985a-22b6cee5576b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "material_list": [{"uuid": "string", "quantity": "number"}]}]
+          application/json: [{"uuid": "123e4567-dc9f-42e9-988c-22b6c699ce6b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "material_list": [{"uuid": "string", "quantity": "number"}]}]
     badRequest:
       responses:
         "400":
@@ -5026,7 +5013,7 @@ examples:
           uuid: "68bf3354-67cb-48c6-a571-688901bf9c51"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-3d51-4702-9aca-22b6c719e4fb", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "material_list": [{"uuid": "string", "quantity": "number"}]}
+          application/json: {"uuid": "123e4567-3abd-460e-8fc7-22b6caede46b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "material_list": [{"uuid": "string", "quantity": "number"}]}
     badRequest:
       parameters:
         path:
@@ -5073,7 +5060,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-9282-45a2-8390-22b6cb4c4a8b", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-053f-4123-8daa-22b6ce99573b", "note": "string", "action_required": "string", "action_completed_by_staff_uuid": "123e4567-1ae6-4c97-a2b3-22b6c0a5293b", "edit_by_staff_uuid": "123e4567-c3cc-4a10-8259-22b6c0153c0b", "create_date": "2025-05-01 12:00:00"}]
+          application/json: [{"uuid": "123e4567-5a68-4ab0-ac86-22b6c7f0d56b", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-6cbb-40d8-b4bd-22b6c4be28cb", "note": "string", "action_required": "string", "action_completed_by_staff_uuid": "123e4567-80ab-46c9-8013-22b6c1c6c17b", "edit_by_staff_uuid": "123e4567-abe4-499e-901a-22b6cc1a19eb", "create_date": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -5102,7 +5089,7 @@ examples:
           uuid: "85c68aeb-6c45-4957-ba02-c526213a6bef"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-fe4b-41dc-b8bb-22b6cf8ffcfb", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-bdc6-4c28-b64f-22b6cd72067b", "note": "string", "action_required": "string", "action_completed_by_staff_uuid": "123e4567-aff3-4f9a-b11d-22b6ce0112bb", "edit_by_staff_uuid": "123e4567-6128-4a26-91a8-22b6c2dcefeb", "create_date": "2025-05-01 12:00:00"}
+          application/json: {"uuid": "123e4567-8434-4760-b25c-22b6c25edecb", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-5ec1-4496-9175-22b6c5f690ab", "note": "string", "action_required": "string", "action_completed_by_staff_uuid": "123e4567-f578-4e82-8a1a-22b6caff20fb", "edit_by_staff_uuid": "123e4567-d6d2-454d-b656-22b6c0e6fa1b", "create_date": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -5149,7 +5136,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-3b61-4c04-8f74-22b6c81dd43b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "default_timeframe": "string", "subscribed_staff": "string", "requires_assignment": 0}]
+          application/json: [{"uuid": "123e4567-424e-4f20-9f56-22b6c8de411b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "default_timeframe": "string", "subscribed_staff": "string", "requires_assignment": 0}]
     badRequest:
       responses:
         "400":
@@ -5178,7 +5165,7 @@ examples:
           uuid: "01a98529-6f8e-4d0f-a6f8-868464b87282"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-64be-47d4-866e-22b6c23fc5cb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "default_timeframe": "string", "subscribed_staff": "string", "requires_assignment": 0}
+          application/json: {"uuid": "123e4567-6175-4aa7-ada4-22b6cc4c6f6b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "default_timeframe": "string", "subscribed_staff": "string", "requires_assignment": 0}
     badRequest:
       parameters:
         path:
@@ -5225,7 +5212,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "role_description": "string", "uuid": "123e4567-35f8-4a24-8cc1-22b6cca0294b", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
+          application/json: [{"name": "string", "role_description": "string", "uuid": "123e4567-3467-4072-a249-22b6cac67edb", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -5254,7 +5241,7 @@ examples:
           uuid: "2a2f5d93-2d30-4fff-b709-324e4e335f45"
       responses:
         "200":
-          application/json: {"name": "string", "role_description": "string", "uuid": "123e4567-c4c2-4178-956a-22b6cd1e48eb", "active": 1, "edit_date": "2025-05-01 12:00:00"}
+          application/json: {"name": "string", "role_description": "string", "uuid": "123e4567-55a6-4f7e-a14e-22b6c742e37b", "active": 1, "edit_date": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -5301,7 +5288,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-4395-413f-9bd3-22b6c33542fb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "message": "string"}]
+          application/json: [{"uuid": "123e4567-ce0e-401a-913a-22b6ca7b71db", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "message": "string"}]
     badRequest:
       responses:
         "400":
@@ -5330,7 +5317,7 @@ examples:
           uuid: "a90778f1-08e0-482b-abc7-4697a615eded"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-f769-4b4d-97a7-22b6cdd3faeb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "message": "string"}
+          application/json: {"uuid": "123e4567-38f9-424d-a668-22b6cbd7aa3b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "message": "string"}
     badRequest:
       parameters:
         path:
@@ -5377,7 +5364,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"first": "string", "last": "string", "email": "string", "mobile": "string", "lng": "number", "lat": "number", "geo_timestamp": "2025-05-01 12:00:00", "job_title": "string", "navigating_to_job_uuid": "123e4567-98af-4c1e-a236-22b6c9a7a52b", "navigating_timestamp": "2025-05-01 12:00:00", "navigating_expiry_timestamp": "2025-05-01 12:00:00", "color": "string", "custom_icon_url": "string", "status_message": "string", "status_message_timestamp": "2025-05-01 12:00:00", "hide_from_schedule": 0, "security_role_uuid": "123e4567-3218-4bef-9fca-22b6c3ad755b", "uuid": "123e4567-3e42-440c-adf1-22b6c2fdae2b", "active": 1, "edit_date": "2025-05-01 12:00:00", "can_receive_push_notification": "string"}]
+          application/json: [{"first": "string", "last": "string", "email": "string", "mobile": "string", "lng": "number", "lat": "number", "geo_timestamp": "2025-05-01 12:00:00", "job_title": "string", "navigating_to_job_uuid": "123e4567-db0a-4be0-9d45-22b6cb28e2fb", "navigating_timestamp": "2025-05-01 12:00:00", "navigating_expiry_timestamp": "2025-05-01 12:00:00", "color": "string", "custom_icon_url": "string", "status_message": "string", "status_message_timestamp": "2025-05-01 12:00:00", "hide_from_schedule": 0, "security_role_uuid": "123e4567-b800-4893-8935-22b6ccbd516b", "uuid": "123e4567-7c07-4e77-92af-22b6ca40aebb", "active": 1, "edit_date": "2025-05-01 12:00:00", "can_receive_push_notification": "string"}]
     badRequest:
       responses:
         "400":
@@ -5406,7 +5393,7 @@ examples:
           uuid: "bca073cf-b49a-49ff-a79d-e2af24c8f074"
       responses:
         "200":
-          application/json: {"first": "string", "last": "string", "email": "string", "mobile": "string", "lng": "number", "lat": "number", "geo_timestamp": "2025-05-01 12:00:00", "job_title": "string", "navigating_to_job_uuid": "123e4567-a375-416c-a01b-22b6c1b63b2b", "navigating_timestamp": "2025-05-01 12:00:00", "navigating_expiry_timestamp": "2025-05-01 12:00:00", "color": "string", "custom_icon_url": "string", "status_message": "string", "status_message_timestamp": "2025-05-01 12:00:00", "hide_from_schedule": 1, "security_role_uuid": "123e4567-128a-4de2-b295-22b6c62b171b", "uuid": "123e4567-04d6-414d-965f-22b6c7ddc1cb", "active": 1, "edit_date": "2025-05-01 12:00:00", "can_receive_push_notification": "string"}
+          application/json: {"first": "string", "last": "string", "email": "string", "mobile": "string", "lng": "number", "lat": "number", "geo_timestamp": "2025-05-01 12:00:00", "job_title": "string", "navigating_to_job_uuid": "123e4567-c0fc-463a-a9ca-22b6c2f42f9b", "navigating_timestamp": "2025-05-01 12:00:00", "navigating_expiry_timestamp": "2025-05-01 12:00:00", "color": "string", "custom_icon_url": "string", "status_message": "string", "status_message_timestamp": "2025-05-01 12:00:00", "hide_from_schedule": 1, "security_role_uuid": "123e4567-460f-46d8-908c-22b6c32700eb", "uuid": "123e4567-cc50-4008-90d7-22b6c0fb4c2b", "active": 1, "edit_date": "2025-05-01 12:00:00", "can_receive_push_notification": "string"}
     badRequest:
       parameters:
         path:
@@ -5453,7 +5440,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-05b2-4ff2-957f-22b6cf6e400b", "active": 1, "edit_date": "2025-05-01 12:00:00", "from_staff_uuid": "123e4567-b5bd-4e73-b81b-22b6c09f592b", "to_staff_uuid": "123e4567-6517-4a8d-a9e0-22b6ca3033bb", "sent_timestamp": "2025-05-01 12:00:00", "delivered_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "message": "string", "regarding_job_uuid": "123e4567-f251-46c7-bf58-22b6cd4cefab", "attached_json": "string"}]
+          application/json: [{"uuid": "123e4567-bcc8-4f16-be04-22b6c3a4880b", "active": 1, "edit_date": "2025-05-01 12:00:00", "from_staff_uuid": "123e4567-7373-4d1c-8d8a-22b6cf0773db", "to_staff_uuid": "123e4567-c07d-413c-a948-22b6c183157b", "sent_timestamp": "2025-05-01 12:00:00", "delivered_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "message": "string", "regarding_job_uuid": "123e4567-3e3a-407c-b335-22b6c3205e7b", "attached_json": "string"}]
     badRequest:
       responses:
         "400":
@@ -5482,7 +5469,7 @@ examples:
           uuid: "3b5bea69-86fe-4ecc-bd6d-6cf454d8243a"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-ec9c-400e-98bc-22b6c985d8db", "active": 1, "edit_date": "2025-05-01 12:00:00", "from_staff_uuid": "123e4567-46f2-47d2-9ae3-22b6c5818c1b", "to_staff_uuid": "123e4567-ad04-4f0d-9d9b-22b6ca316feb", "sent_timestamp": "2025-05-01 12:00:00", "delivered_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "message": "string", "regarding_job_uuid": "123e4567-d6a6-4b02-8f5e-22b6c570046b", "attached_json": "string"}
+          application/json: {"uuid": "123e4567-1d89-4c6b-b2fe-22b6c97ff84b", "active": 1, "edit_date": "2025-05-01 12:00:00", "from_staff_uuid": "123e4567-d032-4cb0-bc1d-22b6ce5db01b", "to_staff_uuid": "123e4567-f445-4c7a-94bb-22b6ce39461b", "sent_timestamp": "2025-05-01 12:00:00", "delivered_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "message": "string", "regarding_job_uuid": "123e4567-8033-4089-af26-22b6c90df03b", "attached_json": "string"}
     badRequest:
       parameters:
         path:
@@ -5529,7 +5516,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"due_date": "YYYY-MM-DD", "task_details": "string", "name": "string", "related_object": "string", "related_object_uuid": "123e4567-07db-4fa8-a64b-22b6cbc28bab", "task_complete": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-b65b-4170-b22d-22b6cd9d87db", "assigned_to_staff_uuid": "123e4567-0bd7-4ccf-b215-22b6ca2d4beb", "lng": "string", "lat": "string", "uuid": "123e4567-6329-4fa2-b3a3-22b6c29f1b6b", "active": 1, "edit_date": "2025-05-01 12:00:00", "created_by_staff_uuid": "123e4567-5be8-44c4-8b8c-22b6cffdbd3b", "create_date": "2025-05-01 12:00:00"}]
+          application/json: [{"due_date": "YYYY-MM-DD", "task_details": "string", "name": "string", "related_object": "string", "related_object_uuid": "123e4567-7b34-4754-b4e8-22b6cf0bc9ab", "task_complete": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-c8f1-42c2-b010-22b6cdbd83ab", "assigned_to_staff_uuid": "123e4567-6af7-4de3-bbf3-22b6c7251b8b", "lng": "string", "lat": "string", "uuid": "123e4567-0f26-4c45-9f6b-22b6cdf2174b", "active": 1, "edit_date": "2025-05-01 12:00:00", "created_by_staff_uuid": "123e4567-4c8b-410b-aa6d-22b6cb3147ab", "create_date": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -5558,7 +5545,7 @@ examples:
           uuid: "89513748-b917-4807-944b-430445ee8621"
       responses:
         "200":
-          application/json: {"due_date": "YYYY-MM-DD", "task_details": "string", "name": "string", "related_object": "string", "related_object_uuid": "123e4567-051a-4eea-bf72-22b6c2ef7ffb", "task_complete": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-2834-4fa5-8fd3-22b6cb7540ab", "assigned_to_staff_uuid": "123e4567-eea3-4dda-884e-22b6c4f5f86b", "lng": "string", "lat": "string", "uuid": "123e4567-2302-469a-8f74-22b6c5c4438b", "active": 1, "edit_date": "2025-05-01 12:00:00", "created_by_staff_uuid": "123e4567-93cc-465e-898e-22b6c504d7db", "create_date": "2025-05-01 12:00:00"}
+          application/json: {"due_date": "YYYY-MM-DD", "task_details": "string", "name": "string", "related_object": "string", "related_object_uuid": "123e4567-7e64-4f50-a735-22b6c052fe3b", "task_complete": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-1f79-4e4e-b4dc-22b6ce270a3b", "assigned_to_staff_uuid": "123e4567-31d9-47be-af42-22b6cec9fe3b", "lng": "string", "lat": "string", "uuid": "123e4567-6acc-4a18-bd8f-22b6c56288cb", "active": 1, "edit_date": "2025-05-01 12:00:00", "created_by_staff_uuid": "123e4567-704a-4095-8c0a-22b6c193e8fb", "create_date": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -5605,7 +5592,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-61ab-48e6-a013-22b6c4758bab", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "amount": "string", "is_default_tax_rate": 1}]
+          application/json: [{"uuid": "123e4567-3cd0-4658-8e28-22b6cd541f7b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "amount": "string", "is_default_tax_rate": 1}]
     badRequest:
       responses:
         "400":
@@ -5634,7 +5621,7 @@ examples:
           uuid: "67685a70-6660-4003-a677-5c9a2d1afa31"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-1b0b-4609-8db7-22b6c79cc10b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "amount": "string", "is_default_tax_rate": 0}
+          application/json: {"uuid": "123e4567-e4dd-4530-9953-22b6c4028ebb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "amount": "string", "is_default_tax_rate": 0}
     badRequest:
       parameters:
         path:
@@ -5681,7 +5668,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-3142-4221-ab0d-22b6c338bc8b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "abn_number": "string", "business_number": "string", "website": "string", "email": "string", "email_accounts": "string", "billing_address": "string", "accepted_payment_methods": "string", "default_region": "string", "currency": "string", "opening_time_monday": "string", "closing_time_monday": "string", "opening_time_tuesday": "string", "closing_time_tuesday": "string", "opening_time_wednesday": "string", "closing_time_wednesday": "string", "opening_time_thursday": "string", "closing_time_thursday": "string", "opening_time_friday": "string", "closing_time_friday": "string", "opening_time_saturday": "string", "closing_time_saturday": "string", "opening_time_sunday": "string", "closing_time_sunday": "string", "timezone_name": "string", "invoice_terms": "string", "job_default_status": "string"}]
+          application/json: [{"uuid": "123e4567-0592-4147-beea-22b6caba30fb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "abn_number": "string", "business_number": "string", "website": "string", "email": "string", "email_accounts": "string", "billing_address": "string", "accepted_payment_methods": "string", "default_region": "string", "currency": "string", "opening_time_monday": "string", "closing_time_monday": "string", "opening_time_tuesday": "string", "closing_time_tuesday": "string", "opening_time_wednesday": "string", "closing_time_wednesday": "string", "opening_time_thursday": "string", "closing_time_thursday": "string", "opening_time_friday": "string", "closing_time_friday": "string", "opening_time_saturday": "string", "closing_time_saturday": "string", "opening_time_sunday": "string", "closing_time_sunday": "string", "timezone_name": "string", "invoice_terms": "string", "job_default_status": "string"}]
     badRequest:
       responses:
         "400":
@@ -5695,7 +5682,7 @@ examples:
           uuid: "3856b51a-59e7-4442-afe7-adbe7477e097"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-9bc5-4462-8035-22b6c99feb7b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "abn_number": "string", "business_number": "string", "website": "string", "email": "string", "email_accounts": "string", "billing_address": "string", "accepted_payment_methods": "string", "default_region": "string", "currency": "string", "opening_time_monday": "string", "closing_time_monday": "string", "opening_time_tuesday": "string", "closing_time_tuesday": "string", "opening_time_wednesday": "string", "closing_time_wednesday": "string", "opening_time_thursday": "string", "closing_time_thursday": "string", "opening_time_friday": "string", "closing_time_friday": "string", "opening_time_saturday": "string", "closing_time_saturday": "string", "opening_time_sunday": "string", "closing_time_sunday": "string", "timezone_name": "string", "invoice_terms": "string", "job_default_status": "string"}
+          application/json: {"uuid": "123e4567-235a-4b98-9303-22b6c14aceab", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "abn_number": "string", "business_number": "string", "website": "string", "email": "string", "email_accounts": "string", "billing_address": "string", "accepted_payment_methods": "string", "default_region": "string", "currency": "string", "opening_time_monday": "string", "closing_time_monday": "string", "opening_time_tuesday": "string", "closing_time_tuesday": "string", "opening_time_wednesday": "string", "closing_time_wednesday": "string", "opening_time_thursday": "string", "closing_time_thursday": "string", "opening_time_friday": "string", "closing_time_friday": "string", "opening_time_saturday": "string", "closing_time_saturday": "string", "opening_time_sunday": "string", "closing_time_sunday": "string", "timezone_name": "string", "invoice_terms": "string", "job_default_status": "string"}
     badRequest:
       parameters:
         path:

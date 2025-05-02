@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetTaxRatesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetTaxRatesRequest = {
   /**
    * UUID of the Tax Rate
@@ -16,6 +21,63 @@ export type GetTaxRatesRequest = {
 };
 
 export type GetTaxRatesResponse = components.ErrorT | components.TaxRate;
+
+/** @internal */
+export const GetTaxRatesSecurity$inboundSchema: z.ZodType<
+  GetTaxRatesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetTaxRatesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetTaxRatesSecurity$outboundSchema: z.ZodType<
+  GetTaxRatesSecurity$Outbound,
+  z.ZodTypeDef,
+  GetTaxRatesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetTaxRatesSecurity$ {
+  /** @deprecated use `GetTaxRatesSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetTaxRatesSecurity$inboundSchema;
+  /** @deprecated use `GetTaxRatesSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetTaxRatesSecurity$outboundSchema;
+  /** @deprecated use `GetTaxRatesSecurity$Outbound` instead. */
+  export type Outbound = GetTaxRatesSecurity$Outbound;
+}
+
+export function getTaxRatesSecurityToJSON(
+  getTaxRatesSecurity: GetTaxRatesSecurity,
+): string {
+  return JSON.stringify(
+    GetTaxRatesSecurity$outboundSchema.parse(getTaxRatesSecurity),
+  );
+}
+
+export function getTaxRatesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetTaxRatesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetTaxRatesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetTaxRatesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetTaxRatesRequest$inboundSchema: z.ZodType<

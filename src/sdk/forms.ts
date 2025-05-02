@@ -22,10 +22,12 @@ export class Forms extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listForms(
+    security: operations.ListFormsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListFormsResponse> {
     return unwrapAsync(formsListForms(
       this,
+      security,
       options,
     ));
   }
@@ -39,11 +41,13 @@ export class Forms extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createForms(
+    security: operations.CreateFormsSecurity,
     request: components.FormInput,
     options?: RequestOptions,
   ): Promise<operations.CreateFormsResponse> {
     return unwrapAsync(formsCreateForms(
       this,
+      security,
       request,
       options,
     ));
@@ -53,11 +57,13 @@ export class Forms extends ClientSDK {
    * Retrieve a Form
    */
   async getForms(
+    security: operations.GetFormsSecurity,
     request: operations.GetFormsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetFormsResponse> {
     return unwrapAsync(formsGetForms(
       this,
+      security,
       request,
       options,
     ));
@@ -67,11 +73,13 @@ export class Forms extends ClientSDK {
    * Update a Form
    */
   async updateForms(
+    security: operations.UpdateFormsSecurity,
     request: operations.UpdateFormsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateFormsResponse> {
     return unwrapAsync(formsUpdateForms(
       this,
+      security,
       request,
       options,
     ));
@@ -85,11 +93,13 @@ export class Forms extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteForms(
+    security: operations.DeleteFormsSecurity,
     request: operations.DeleteFormsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteFormsResponse> {
     return unwrapAsync(formsDeleteForms(
       this,
+      security,
       request,
       options,
     ));

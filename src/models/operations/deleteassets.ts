@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type DeleteAssetsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type DeleteAssetsRequest = {
   /**
    * UUID of the Asset
@@ -16,6 +21,63 @@ export type DeleteAssetsRequest = {
 };
 
 export type DeleteAssetsResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const DeleteAssetsSecurity$inboundSchema: z.ZodType<
+  DeleteAssetsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteAssetsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const DeleteAssetsSecurity$outboundSchema: z.ZodType<
+  DeleteAssetsSecurity$Outbound,
+  z.ZodTypeDef,
+  DeleteAssetsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeleteAssetsSecurity$ {
+  /** @deprecated use `DeleteAssetsSecurity$inboundSchema` instead. */
+  export const inboundSchema = DeleteAssetsSecurity$inboundSchema;
+  /** @deprecated use `DeleteAssetsSecurity$outboundSchema` instead. */
+  export const outboundSchema = DeleteAssetsSecurity$outboundSchema;
+  /** @deprecated use `DeleteAssetsSecurity$Outbound` instead. */
+  export type Outbound = DeleteAssetsSecurity$Outbound;
+}
+
+export function deleteAssetsSecurityToJSON(
+  deleteAssetsSecurity: DeleteAssetsSecurity,
+): string {
+  return JSON.stringify(
+    DeleteAssetsSecurity$outboundSchema.parse(deleteAssetsSecurity),
+  );
+}
+
+export function deleteAssetsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<DeleteAssetsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeleteAssetsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeleteAssetsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const DeleteAssetsRequest$inboundSchema: z.ZodType<

@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetEmailTemplatesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetEmailTemplatesRequest = {
   /**
    * UUID of the Email Template
@@ -18,6 +23,63 @@ export type GetEmailTemplatesRequest = {
 export type GetEmailTemplatesResponse =
   | components.ErrorT
   | components.EmailTemplate;
+
+/** @internal */
+export const GetEmailTemplatesSecurity$inboundSchema: z.ZodType<
+  GetEmailTemplatesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetEmailTemplatesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetEmailTemplatesSecurity$outboundSchema: z.ZodType<
+  GetEmailTemplatesSecurity$Outbound,
+  z.ZodTypeDef,
+  GetEmailTemplatesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetEmailTemplatesSecurity$ {
+  /** @deprecated use `GetEmailTemplatesSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetEmailTemplatesSecurity$inboundSchema;
+  /** @deprecated use `GetEmailTemplatesSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetEmailTemplatesSecurity$outboundSchema;
+  /** @deprecated use `GetEmailTemplatesSecurity$Outbound` instead. */
+  export type Outbound = GetEmailTemplatesSecurity$Outbound;
+}
+
+export function getEmailTemplatesSecurityToJSON(
+  getEmailTemplatesSecurity: GetEmailTemplatesSecurity,
+): string {
+  return JSON.stringify(
+    GetEmailTemplatesSecurity$outboundSchema.parse(getEmailTemplatesSecurity),
+  );
+}
+
+export function getEmailTemplatesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetEmailTemplatesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetEmailTemplatesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetEmailTemplatesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetEmailTemplatesRequest$inboundSchema: z.ZodType<

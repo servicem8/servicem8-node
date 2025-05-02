@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type DeleteJobMaterialsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type DeleteJobMaterialsRequest = {
   /**
    * UUID of the Job Material
@@ -16,6 +21,63 @@ export type DeleteJobMaterialsRequest = {
 };
 
 export type DeleteJobMaterialsResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const DeleteJobMaterialsSecurity$inboundSchema: z.ZodType<
+  DeleteJobMaterialsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteJobMaterialsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const DeleteJobMaterialsSecurity$outboundSchema: z.ZodType<
+  DeleteJobMaterialsSecurity$Outbound,
+  z.ZodTypeDef,
+  DeleteJobMaterialsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeleteJobMaterialsSecurity$ {
+  /** @deprecated use `DeleteJobMaterialsSecurity$inboundSchema` instead. */
+  export const inboundSchema = DeleteJobMaterialsSecurity$inboundSchema;
+  /** @deprecated use `DeleteJobMaterialsSecurity$outboundSchema` instead. */
+  export const outboundSchema = DeleteJobMaterialsSecurity$outboundSchema;
+  /** @deprecated use `DeleteJobMaterialsSecurity$Outbound` instead. */
+  export type Outbound = DeleteJobMaterialsSecurity$Outbound;
+}
+
+export function deleteJobMaterialsSecurityToJSON(
+  deleteJobMaterialsSecurity: DeleteJobMaterialsSecurity,
+): string {
+  return JSON.stringify(
+    DeleteJobMaterialsSecurity$outboundSchema.parse(deleteJobMaterialsSecurity),
+  );
+}
+
+export function deleteJobMaterialsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<DeleteJobMaterialsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeleteJobMaterialsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeleteJobMaterialsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const DeleteJobMaterialsRequest$inboundSchema: z.ZodType<

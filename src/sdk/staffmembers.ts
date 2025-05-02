@@ -25,10 +25,12 @@ export class StaffMembers extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_staff**.
    */
   async listStaffMembers(
+    security: operations.ListStaffMembersSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListStaffMembersResponse> {
     return unwrapAsync(staffMembersListStaffMembers(
       this,
+      security,
       options,
     ));
   }
@@ -45,11 +47,13 @@ export class StaffMembers extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createStaffMembers(
+    security: operations.CreateStaffMembersSecurity,
     request: components.StaffInput,
     options?: RequestOptions,
   ): Promise<operations.CreateStaffMembersResponse> {
     return unwrapAsync(staffMembersCreateStaffMembers(
       this,
+      security,
       request,
       options,
     ));
@@ -64,11 +68,13 @@ export class StaffMembers extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_staff**.
    */
   async getStaffMembers(
+    security: operations.GetStaffMembersSecurity,
     request: operations.GetStaffMembersRequest,
     options?: RequestOptions,
   ): Promise<operations.GetStaffMembersResponse> {
     return unwrapAsync(staffMembersGetStaffMembers(
       this,
+      security,
       request,
       options,
     ));
@@ -83,11 +89,13 @@ export class StaffMembers extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_staff**.
    */
   async updateStaffMembers(
+    security: operations.UpdateStaffMembersSecurity,
     request: operations.UpdateStaffMembersRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateStaffMembersResponse> {
     return unwrapAsync(staffMembersUpdateStaffMembers(
       this,
+      security,
       request,
       options,
     ));
@@ -104,11 +112,13 @@ export class StaffMembers extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_staff**.
    */
   async deleteStaffMembers(
+    security: operations.DeleteStaffMembersSecurity,
     request: operations.DeleteStaffMembersRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteStaffMembersResponse> {
     return unwrapAsync(staffMembersDeleteStaffMembers(
       this,
+      security,
       request,
       options,
     ));

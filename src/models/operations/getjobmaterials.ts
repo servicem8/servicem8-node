@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetJobMaterialsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetJobMaterialsRequest = {
   /**
    * UUID of the Job Material
@@ -18,6 +23,63 @@ export type GetJobMaterialsRequest = {
 export type GetJobMaterialsResponse =
   | components.ErrorT
   | components.JobMaterial;
+
+/** @internal */
+export const GetJobMaterialsSecurity$inboundSchema: z.ZodType<
+  GetJobMaterialsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetJobMaterialsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetJobMaterialsSecurity$outboundSchema: z.ZodType<
+  GetJobMaterialsSecurity$Outbound,
+  z.ZodTypeDef,
+  GetJobMaterialsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetJobMaterialsSecurity$ {
+  /** @deprecated use `GetJobMaterialsSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetJobMaterialsSecurity$inboundSchema;
+  /** @deprecated use `GetJobMaterialsSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetJobMaterialsSecurity$outboundSchema;
+  /** @deprecated use `GetJobMaterialsSecurity$Outbound` instead. */
+  export type Outbound = GetJobMaterialsSecurity$Outbound;
+}
+
+export function getJobMaterialsSecurityToJSON(
+  getJobMaterialsSecurity: GetJobMaterialsSecurity,
+): string {
+  return JSON.stringify(
+    GetJobMaterialsSecurity$outboundSchema.parse(getJobMaterialsSecurity),
+  );
+}
+
+export function getJobMaterialsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetJobMaterialsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetJobMaterialsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetJobMaterialsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetJobMaterialsRequest$inboundSchema: z.ZodType<

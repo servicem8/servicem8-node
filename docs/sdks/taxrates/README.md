@@ -26,14 +26,12 @@ This endpoint supports result filtering. For more information on how to filter t
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
-  const result = await serviceM8.taxRates.listTaxRates();
+  const result = await serviceM8.taxRates.listTaxRates({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  });
 
   // Handle the result
   console.log(result);
@@ -52,14 +50,12 @@ import { taxRatesListTaxRates } from "servicem8/funcs/taxRatesListTaxRates.js";
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
-  const res = await taxRatesListTaxRates(serviceM8);
+  const res = await taxRatesListTaxRates(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  });
 
   if (!res.ok) {
     throw res.error;
@@ -78,6 +74,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `security`                                                                                                                                                                     | [operations.ListTaxRatesSecurity](../../models/operations/listtaxratessecurity.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -107,14 +104,12 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.taxRates.createTaxRates({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "123e4567-e3d5-4ffa-9b84-22b4dc47075b",
     name: "<value>",
   });
@@ -136,14 +131,12 @@ import { taxRatesCreateTaxRates } from "servicem8/funcs/taxRatesCreateTaxRates.j
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await taxRatesCreateTaxRates(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "123e4567-e3d5-4ffa-9b84-22b4dc47075b",
     name: "<value>",
   });
@@ -166,6 +159,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [components.TaxRateInput](../../models/components/taxrateinput.md)                                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.CreateTaxRatesSecurity](../../models/operations/createtaxratessecurity.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -190,14 +184,12 @@ Retrieve a Tax Rate
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.taxRates.getTaxRates({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "67685a70-6660-4003-a677-5c9a2d1afa31",
   });
 
@@ -218,14 +210,12 @@ import { taxRatesGetTaxRates } from "servicem8/funcs/taxRatesGetTaxRates.js";
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await taxRatesGetTaxRates(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "67685a70-6660-4003-a677-5c9a2d1afa31",
   });
 
@@ -247,6 +237,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.GetTaxRatesRequest](../../models/operations/gettaxratesrequest.md)                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.GetTaxRatesSecurity](../../models/operations/gettaxratessecurity.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -271,14 +262,12 @@ Update a Tax Rate
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.taxRates.updateTaxRates({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "be8ebe99-a72d-4521-b95a-4785eb03f4b8",
     taxRate: {
       uuid: "123e4567-e3d5-4ffa-9b84-22b4dc47075b",
@@ -303,14 +292,12 @@ import { taxRatesUpdateTaxRates } from "servicem8/funcs/taxRatesUpdateTaxRates.j
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await taxRatesUpdateTaxRates(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "be8ebe99-a72d-4521-b95a-4785eb03f4b8",
     taxRate: {
       uuid: "123e4567-e3d5-4ffa-9b84-22b4dc47075b",
@@ -336,6 +323,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.UpdateTaxRatesRequest](../../models/operations/updatetaxratesrequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.UpdateTaxRatesSecurity](../../models/operations/updatetaxratessecurity.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -364,14 +352,12 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.taxRates.deleteTaxRates({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "fa9e97dc-288f-4f18-9f51-12bfc6b18f46",
   });
 
@@ -392,14 +378,12 @@ import { taxRatesDeleteTaxRates } from "servicem8/funcs/taxRatesDeleteTaxRates.j
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await taxRatesDeleteTaxRates(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "fa9e97dc-288f-4f18-9f51-12bfc6b18f46",
   });
 
@@ -421,6 +405,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.DeleteTaxRatesRequest](../../models/operations/deletetaxratesrequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.DeleteTaxRatesSecurity](../../models/operations/deletetaxratessecurity.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

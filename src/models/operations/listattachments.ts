@@ -8,9 +8,71 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type ListAttachmentsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type ListAttachmentsResponse =
   | components.ErrorT
   | Array<components.Attachment>;
+
+/** @internal */
+export const ListAttachmentsSecurity$inboundSchema: z.ZodType<
+  ListAttachmentsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type ListAttachmentsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const ListAttachmentsSecurity$outboundSchema: z.ZodType<
+  ListAttachmentsSecurity$Outbound,
+  z.ZodTypeDef,
+  ListAttachmentsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListAttachmentsSecurity$ {
+  /** @deprecated use `ListAttachmentsSecurity$inboundSchema` instead. */
+  export const inboundSchema = ListAttachmentsSecurity$inboundSchema;
+  /** @deprecated use `ListAttachmentsSecurity$outboundSchema` instead. */
+  export const outboundSchema = ListAttachmentsSecurity$outboundSchema;
+  /** @deprecated use `ListAttachmentsSecurity$Outbound` instead. */
+  export type Outbound = ListAttachmentsSecurity$Outbound;
+}
+
+export function listAttachmentsSecurityToJSON(
+  listAttachmentsSecurity: ListAttachmentsSecurity,
+): string {
+  return JSON.stringify(
+    ListAttachmentsSecurity$outboundSchema.parse(listAttachmentsSecurity),
+  );
+}
+
+export function listAttachmentsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<ListAttachmentsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListAttachmentsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListAttachmentsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const ListAttachmentsResponse$inboundSchema: z.ZodType<

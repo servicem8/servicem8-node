@@ -26,14 +26,12 @@ This endpoint supports result filtering. For more information on how to filter t
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
-  const result = await serviceM8.allocationWindows.listAllocationWindows();
+  const result = await serviceM8.allocationWindows.listAllocationWindows({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  });
 
   // Handle the result
   console.log(result);
@@ -52,14 +50,12 @@ import { allocationWindowsListAllocationWindows } from "servicem8/funcs/allocati
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
-  const res = await allocationWindowsListAllocationWindows(serviceM8);
+  const res = await allocationWindowsListAllocationWindows(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  });
 
   if (!res.ok) {
     throw res.error;
@@ -78,6 +74,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `security`                                                                                                                                                                     | [operations.ListAllocationWindowsSecurity](../../models/operations/listallocationwindowssecurity.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -107,14 +104,12 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.allocationWindows.createAllocationWindows({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "123e4567-9668-4a12-bc72-22b4d86a47db",
   });
 
@@ -135,14 +130,12 @@ import { allocationWindowsCreateAllocationWindows } from "servicem8/funcs/alloca
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await allocationWindowsCreateAllocationWindows(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "123e4567-9668-4a12-bc72-22b4d86a47db",
   });
 
@@ -164,6 +157,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [components.AllocationWindowInput](../../models/components/allocationwindowinput.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.CreateAllocationWindowsSecurity](../../models/operations/createallocationwindowssecurity.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -188,14 +182,12 @@ Retrieve an Allocation Window
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.allocationWindows.getAllocationWindows({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "4b696862-c2d8-4bfe-936b-d6716d1d97a4",
   });
 
@@ -216,14 +208,12 @@ import { allocationWindowsGetAllocationWindows } from "servicem8/funcs/allocatio
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await allocationWindowsGetAllocationWindows(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "4b696862-c2d8-4bfe-936b-d6716d1d97a4",
   });
 
@@ -245,6 +235,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.GetAllocationWindowsRequest](../../models/operations/getallocationwindowsrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.GetAllocationWindowsSecurity](../../models/operations/getallocationwindowssecurity.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -269,14 +260,12 @@ Update an Allocation Window
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.allocationWindows.updateAllocationWindows({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "c0cdf698-ce1e-4a18-8dc8-7753e239240e",
     allocationWindow: {
       uuid: "123e4567-9668-4a12-bc72-22b4d86a47db",
@@ -300,14 +289,12 @@ import { allocationWindowsUpdateAllocationWindows } from "servicem8/funcs/alloca
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await allocationWindowsUpdateAllocationWindows(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "c0cdf698-ce1e-4a18-8dc8-7753e239240e",
     allocationWindow: {
       uuid: "123e4567-9668-4a12-bc72-22b4d86a47db",
@@ -332,6 +319,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.UpdateAllocationWindowsRequest](../../models/operations/updateallocationwindowsrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.UpdateAllocationWindowsSecurity](../../models/operations/updateallocationwindowssecurity.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -360,14 +348,12 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.allocationWindows.deleteAllocationWindows({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "e4f73706-6c1c-46f5-b319-113193db25ca",
   });
 
@@ -388,14 +374,12 @@ import { allocationWindowsDeleteAllocationWindows } from "servicem8/funcs/alloca
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8Core();
 
 async function run() {
   const res = await allocationWindowsDeleteAllocationWindows(serviceM8, {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     uuid: "e4f73706-6c1c-46f5-b319-113193db25ca",
   });
 
@@ -417,6 +401,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.DeleteAllocationWindowsRequest](../../models/operations/deleteallocationwindowsrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.DeleteAllocationWindowsSecurity](../../models/operations/deleteallocationwindowssecurity.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

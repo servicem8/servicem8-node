@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetFeedbackSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetFeedbackRequest = {
   /**
    * UUID of the Feedback
@@ -16,6 +21,63 @@ export type GetFeedbackRequest = {
 };
 
 export type GetFeedbackResponse = components.ErrorT | components.Feedback;
+
+/** @internal */
+export const GetFeedbackSecurity$inboundSchema: z.ZodType<
+  GetFeedbackSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetFeedbackSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetFeedbackSecurity$outboundSchema: z.ZodType<
+  GetFeedbackSecurity$Outbound,
+  z.ZodTypeDef,
+  GetFeedbackSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetFeedbackSecurity$ {
+  /** @deprecated use `GetFeedbackSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetFeedbackSecurity$inboundSchema;
+  /** @deprecated use `GetFeedbackSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetFeedbackSecurity$outboundSchema;
+  /** @deprecated use `GetFeedbackSecurity$Outbound` instead. */
+  export type Outbound = GetFeedbackSecurity$Outbound;
+}
+
+export function getFeedbackSecurityToJSON(
+  getFeedbackSecurity: GetFeedbackSecurity,
+): string {
+  return JSON.stringify(
+    GetFeedbackSecurity$outboundSchema.parse(getFeedbackSecurity),
+  );
+}
+
+export function getFeedbackSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetFeedbackSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetFeedbackSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetFeedbackSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetFeedbackRequest$inboundSchema: z.ZodType<

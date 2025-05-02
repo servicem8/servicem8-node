@@ -22,10 +22,12 @@ export class Attachments extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listAttachments(
+    security: operations.ListAttachmentsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListAttachmentsResponse> {
     return unwrapAsync(attachmentsListAttachments(
       this,
+      security,
       options,
     ));
   }
@@ -39,11 +41,13 @@ export class Attachments extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createAttachments(
+    security: operations.CreateAttachmentsSecurity,
     request: components.AttachmentInput,
     options?: RequestOptions,
   ): Promise<operations.CreateAttachmentsResponse> {
     return unwrapAsync(attachmentsCreateAttachments(
       this,
+      security,
       request,
       options,
     ));
@@ -53,11 +57,13 @@ export class Attachments extends ClientSDK {
    * Retrieve an Attachment
    */
   async getAttachments(
+    security: operations.GetAttachmentsSecurity,
     request: operations.GetAttachmentsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetAttachmentsResponse> {
     return unwrapAsync(attachmentsGetAttachments(
       this,
+      security,
       request,
       options,
     ));
@@ -67,11 +73,13 @@ export class Attachments extends ClientSDK {
    * Update an Attachment
    */
   async updateAttachments(
+    security: operations.UpdateAttachmentsSecurity,
     request: operations.UpdateAttachmentsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateAttachmentsResponse> {
     return unwrapAsync(attachmentsUpdateAttachments(
       this,
+      security,
       request,
       options,
     ));
@@ -85,11 +93,13 @@ export class Attachments extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteAttachments(
+    security: operations.DeleteAttachmentsSecurity,
     request: operations.DeleteAttachmentsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteAttachmentsResponse> {
     return unwrapAsync(attachmentsDeleteAttachments(
       this,
+      security,
       request,
       options,
     ));

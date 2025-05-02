@@ -8,9 +8,71 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type ListBundlesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type ListBundlesResponse =
   | components.ErrorT
   | Array<components.MaterialBundle>;
+
+/** @internal */
+export const ListBundlesSecurity$inboundSchema: z.ZodType<
+  ListBundlesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type ListBundlesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const ListBundlesSecurity$outboundSchema: z.ZodType<
+  ListBundlesSecurity$Outbound,
+  z.ZodTypeDef,
+  ListBundlesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListBundlesSecurity$ {
+  /** @deprecated use `ListBundlesSecurity$inboundSchema` instead. */
+  export const inboundSchema = ListBundlesSecurity$inboundSchema;
+  /** @deprecated use `ListBundlesSecurity$outboundSchema` instead. */
+  export const outboundSchema = ListBundlesSecurity$outboundSchema;
+  /** @deprecated use `ListBundlesSecurity$Outbound` instead. */
+  export type Outbound = ListBundlesSecurity$Outbound;
+}
+
+export function listBundlesSecurityToJSON(
+  listBundlesSecurity: ListBundlesSecurity,
+): string {
+  return JSON.stringify(
+    ListBundlesSecurity$outboundSchema.parse(listBundlesSecurity),
+  );
+}
+
+export function listBundlesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<ListBundlesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListBundlesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListBundlesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const ListBundlesResponse$inboundSchema: z.ZodType<

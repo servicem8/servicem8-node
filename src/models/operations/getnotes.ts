@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetNotesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetNotesRequest = {
   /**
    * UUID of the Note
@@ -16,6 +21,63 @@ export type GetNotesRequest = {
 };
 
 export type GetNotesResponse = components.ErrorT | components.Note;
+
+/** @internal */
+export const GetNotesSecurity$inboundSchema: z.ZodType<
+  GetNotesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetNotesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetNotesSecurity$outboundSchema: z.ZodType<
+  GetNotesSecurity$Outbound,
+  z.ZodTypeDef,
+  GetNotesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetNotesSecurity$ {
+  /** @deprecated use `GetNotesSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetNotesSecurity$inboundSchema;
+  /** @deprecated use `GetNotesSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetNotesSecurity$outboundSchema;
+  /** @deprecated use `GetNotesSecurity$Outbound` instead. */
+  export type Outbound = GetNotesSecurity$Outbound;
+}
+
+export function getNotesSecurityToJSON(
+  getNotesSecurity: GetNotesSecurity,
+): string {
+  return JSON.stringify(
+    GetNotesSecurity$outboundSchema.parse(getNotesSecurity),
+  );
+}
+
+export function getNotesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetNotesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetNotesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetNotesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetNotesRequest$inboundSchema: z.ZodType<

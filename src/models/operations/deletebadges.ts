@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type DeleteBadgesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type DeleteBadgesRequest = {
   /**
    * UUID of the Badge
@@ -16,6 +21,63 @@ export type DeleteBadgesRequest = {
 };
 
 export type DeleteBadgesResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const DeleteBadgesSecurity$inboundSchema: z.ZodType<
+  DeleteBadgesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteBadgesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const DeleteBadgesSecurity$outboundSchema: z.ZodType<
+  DeleteBadgesSecurity$Outbound,
+  z.ZodTypeDef,
+  DeleteBadgesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeleteBadgesSecurity$ {
+  /** @deprecated use `DeleteBadgesSecurity$inboundSchema` instead. */
+  export const inboundSchema = DeleteBadgesSecurity$inboundSchema;
+  /** @deprecated use `DeleteBadgesSecurity$outboundSchema` instead. */
+  export const outboundSchema = DeleteBadgesSecurity$outboundSchema;
+  /** @deprecated use `DeleteBadgesSecurity$Outbound` instead. */
+  export type Outbound = DeleteBadgesSecurity$Outbound;
+}
+
+export function deleteBadgesSecurityToJSON(
+  deleteBadgesSecurity: DeleteBadgesSecurity,
+): string {
+  return JSON.stringify(
+    DeleteBadgesSecurity$outboundSchema.parse(deleteBadgesSecurity),
+  );
+}
+
+export function deleteBadgesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<DeleteBadgesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeleteBadgesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeleteBadgesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const DeleteBadgesRequest$inboundSchema: z.ZodType<

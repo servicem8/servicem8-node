@@ -8,9 +8,71 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type ListJobAllocationsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type ListJobAllocationsResponse =
   | components.ErrorT
   | Array<components.JobAllocation>;
+
+/** @internal */
+export const ListJobAllocationsSecurity$inboundSchema: z.ZodType<
+  ListJobAllocationsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type ListJobAllocationsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const ListJobAllocationsSecurity$outboundSchema: z.ZodType<
+  ListJobAllocationsSecurity$Outbound,
+  z.ZodTypeDef,
+  ListJobAllocationsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListJobAllocationsSecurity$ {
+  /** @deprecated use `ListJobAllocationsSecurity$inboundSchema` instead. */
+  export const inboundSchema = ListJobAllocationsSecurity$inboundSchema;
+  /** @deprecated use `ListJobAllocationsSecurity$outboundSchema` instead. */
+  export const outboundSchema = ListJobAllocationsSecurity$outboundSchema;
+  /** @deprecated use `ListJobAllocationsSecurity$Outbound` instead. */
+  export type Outbound = ListJobAllocationsSecurity$Outbound;
+}
+
+export function listJobAllocationsSecurityToJSON(
+  listJobAllocationsSecurity: ListJobAllocationsSecurity,
+): string {
+  return JSON.stringify(
+    ListJobAllocationsSecurity$outboundSchema.parse(listJobAllocationsSecurity),
+  );
+}
+
+export function listJobAllocationsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<ListJobAllocationsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListJobAllocationsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListJobAllocationsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const ListJobAllocationsResponse$inboundSchema: z.ZodType<

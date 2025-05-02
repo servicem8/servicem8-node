@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetCategoriesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetCategoriesRequest = {
   /**
    * UUID of the Category
@@ -16,6 +21,63 @@ export type GetCategoriesRequest = {
 };
 
 export type GetCategoriesResponse = components.ErrorT | components.Category;
+
+/** @internal */
+export const GetCategoriesSecurity$inboundSchema: z.ZodType<
+  GetCategoriesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetCategoriesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetCategoriesSecurity$outboundSchema: z.ZodType<
+  GetCategoriesSecurity$Outbound,
+  z.ZodTypeDef,
+  GetCategoriesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetCategoriesSecurity$ {
+  /** @deprecated use `GetCategoriesSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetCategoriesSecurity$inboundSchema;
+  /** @deprecated use `GetCategoriesSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetCategoriesSecurity$outboundSchema;
+  /** @deprecated use `GetCategoriesSecurity$Outbound` instead. */
+  export type Outbound = GetCategoriesSecurity$Outbound;
+}
+
+export function getCategoriesSecurityToJSON(
+  getCategoriesSecurity: GetCategoriesSecurity,
+): string {
+  return JSON.stringify(
+    GetCategoriesSecurity$outboundSchema.parse(getCategoriesSecurity),
+  );
+}
+
+export function getCategoriesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetCategoriesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetCategoriesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetCategoriesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetCategoriesRequest$inboundSchema: z.ZodType<

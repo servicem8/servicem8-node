@@ -8,7 +8,69 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type ListClientsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type ListClientsResponse = components.ErrorT | Array<components.Company>;
+
+/** @internal */
+export const ListClientsSecurity$inboundSchema: z.ZodType<
+  ListClientsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type ListClientsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const ListClientsSecurity$outboundSchema: z.ZodType<
+  ListClientsSecurity$Outbound,
+  z.ZodTypeDef,
+  ListClientsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListClientsSecurity$ {
+  /** @deprecated use `ListClientsSecurity$inboundSchema` instead. */
+  export const inboundSchema = ListClientsSecurity$inboundSchema;
+  /** @deprecated use `ListClientsSecurity$outboundSchema` instead. */
+  export const outboundSchema = ListClientsSecurity$outboundSchema;
+  /** @deprecated use `ListClientsSecurity$Outbound` instead. */
+  export type Outbound = ListClientsSecurity$Outbound;
+}
+
+export function listClientsSecurityToJSON(
+  listClientsSecurity: ListClientsSecurity,
+): string {
+  return JSON.stringify(
+    ListClientsSecurity$outboundSchema.parse(listClientsSecurity),
+  );
+}
+
+export function listClientsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<ListClientsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListClientsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListClientsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const ListClientsResponse$inboundSchema: z.ZodType<

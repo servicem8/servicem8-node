@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type CreateSMSTemplatesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type CreateSMSTemplatesResponseResult =
   | components.Result
   | components.ErrorT;
@@ -17,6 +22,63 @@ export type CreateSMSTemplatesResponse = {
   headers: { [k: string]: Array<string> };
   result: components.Result | components.ErrorT;
 };
+
+/** @internal */
+export const CreateSMSTemplatesSecurity$inboundSchema: z.ZodType<
+  CreateSMSTemplatesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type CreateSMSTemplatesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const CreateSMSTemplatesSecurity$outboundSchema: z.ZodType<
+  CreateSMSTemplatesSecurity$Outbound,
+  z.ZodTypeDef,
+  CreateSMSTemplatesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateSMSTemplatesSecurity$ {
+  /** @deprecated use `CreateSMSTemplatesSecurity$inboundSchema` instead. */
+  export const inboundSchema = CreateSMSTemplatesSecurity$inboundSchema;
+  /** @deprecated use `CreateSMSTemplatesSecurity$outboundSchema` instead. */
+  export const outboundSchema = CreateSMSTemplatesSecurity$outboundSchema;
+  /** @deprecated use `CreateSMSTemplatesSecurity$Outbound` instead. */
+  export type Outbound = CreateSMSTemplatesSecurity$Outbound;
+}
+
+export function createSMSTemplatesSecurityToJSON(
+  createSMSTemplatesSecurity: CreateSMSTemplatesSecurity,
+): string {
+  return JSON.stringify(
+    CreateSMSTemplatesSecurity$outboundSchema.parse(createSMSTemplatesSecurity),
+  );
+}
+
+export function createSMSTemplatesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateSMSTemplatesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateSMSTemplatesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateSMSTemplatesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const CreateSMSTemplatesResponseResult$inboundSchema: z.ZodType<

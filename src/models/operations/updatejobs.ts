@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type UpdateJobsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type UpdateJobsRequest = {
   /**
    * UUID of the Job
@@ -21,6 +26,63 @@ export type UpdateJobsRequest = {
 };
 
 export type UpdateJobsResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const UpdateJobsSecurity$inboundSchema: z.ZodType<
+  UpdateJobsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type UpdateJobsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const UpdateJobsSecurity$outboundSchema: z.ZodType<
+  UpdateJobsSecurity$Outbound,
+  z.ZodTypeDef,
+  UpdateJobsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateJobsSecurity$ {
+  /** @deprecated use `UpdateJobsSecurity$inboundSchema` instead. */
+  export const inboundSchema = UpdateJobsSecurity$inboundSchema;
+  /** @deprecated use `UpdateJobsSecurity$outboundSchema` instead. */
+  export const outboundSchema = UpdateJobsSecurity$outboundSchema;
+  /** @deprecated use `UpdateJobsSecurity$Outbound` instead. */
+  export type Outbound = UpdateJobsSecurity$Outbound;
+}
+
+export function updateJobsSecurityToJSON(
+  updateJobsSecurity: UpdateJobsSecurity,
+): string {
+  return JSON.stringify(
+    UpdateJobsSecurity$outboundSchema.parse(updateJobsSecurity),
+  );
+}
+
+export function updateJobsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateJobsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateJobsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateJobsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const UpdateJobsRequest$inboundSchema: z.ZodType<

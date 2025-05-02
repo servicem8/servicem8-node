@@ -22,10 +22,12 @@ export class Notes extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listNotes(
+    security: operations.ListNotesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListNotesResponse> {
     return unwrapAsync(notesListNotes(
       this,
+      security,
       options,
     ));
   }
@@ -39,11 +41,13 @@ export class Notes extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createNotes(
+    security: operations.CreateNotesSecurity,
     request: components.NoteInput,
     options?: RequestOptions,
   ): Promise<operations.CreateNotesResponse> {
     return unwrapAsync(notesCreateNotes(
       this,
+      security,
       request,
       options,
     ));
@@ -53,11 +57,13 @@ export class Notes extends ClientSDK {
    * Retrieve a Note
    */
   async getNotes(
+    security: operations.GetNotesSecurity,
     request: operations.GetNotesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetNotesResponse> {
     return unwrapAsync(notesGetNotes(
       this,
+      security,
       request,
       options,
     ));
@@ -67,11 +73,13 @@ export class Notes extends ClientSDK {
    * Update a Note
    */
   async updateNotes(
+    security: operations.UpdateNotesSecurity,
     request: operations.UpdateNotesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateNotesResponse> {
     return unwrapAsync(notesUpdateNotes(
       this,
+      security,
       request,
       options,
     ));
@@ -85,11 +93,13 @@ export class Notes extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteNotes(
+    security: operations.DeleteNotesSecurity,
     request: operations.DeleteNotesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteNotesResponse> {
     return unwrapAsync(notesDeleteNotes(
       this,
+      security,
       request,
       options,
     ));

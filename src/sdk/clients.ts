@@ -25,10 +25,12 @@ export class Clients extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_customers**.
    */
   async listClients(
+    security: operations.ListClientsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListClientsResponse> {
     return unwrapAsync(clientsListClients(
       this,
+      security,
       options,
     ));
   }
@@ -45,11 +47,13 @@ export class Clients extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createClients(
+    security: operations.CreateClientsSecurity,
     request: components.CompanyInput,
     options?: RequestOptions,
   ): Promise<operations.CreateClientsResponse> {
     return unwrapAsync(clientsCreateClients(
       this,
+      security,
       request,
       options,
     ));
@@ -64,11 +68,13 @@ export class Clients extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_customers**.
    */
   async getClients(
+    security: operations.GetClientsSecurity,
     request: operations.GetClientsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetClientsResponse> {
     return unwrapAsync(clientsGetClients(
       this,
+      security,
       request,
       options,
     ));
@@ -83,11 +89,13 @@ export class Clients extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_customers**.
    */
   async updateClients(
+    security: operations.UpdateClientsSecurity,
     request: operations.UpdateClientsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateClientsResponse> {
     return unwrapAsync(clientsUpdateClients(
       this,
+      security,
       request,
       options,
     ));
@@ -104,11 +112,13 @@ export class Clients extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_customers**.
    */
   async deleteClients(
+    security: operations.DeleteClientsSecurity,
     request: operations.DeleteClientsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteClientsResponse> {
     return unwrapAsync(clientsDeleteClients(
       this,
+      security,
       request,
       options,
     ));

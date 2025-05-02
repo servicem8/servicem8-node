@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type DeleteAllocationWindowsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type DeleteAllocationWindowsRequest = {
   /**
    * UUID of the Allocation Window
@@ -18,6 +23,65 @@ export type DeleteAllocationWindowsRequest = {
 export type DeleteAllocationWindowsResponse =
   | components.Result
   | components.ErrorT;
+
+/** @internal */
+export const DeleteAllocationWindowsSecurity$inboundSchema: z.ZodType<
+  DeleteAllocationWindowsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteAllocationWindowsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const DeleteAllocationWindowsSecurity$outboundSchema: z.ZodType<
+  DeleteAllocationWindowsSecurity$Outbound,
+  z.ZodTypeDef,
+  DeleteAllocationWindowsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeleteAllocationWindowsSecurity$ {
+  /** @deprecated use `DeleteAllocationWindowsSecurity$inboundSchema` instead. */
+  export const inboundSchema = DeleteAllocationWindowsSecurity$inboundSchema;
+  /** @deprecated use `DeleteAllocationWindowsSecurity$outboundSchema` instead. */
+  export const outboundSchema = DeleteAllocationWindowsSecurity$outboundSchema;
+  /** @deprecated use `DeleteAllocationWindowsSecurity$Outbound` instead. */
+  export type Outbound = DeleteAllocationWindowsSecurity$Outbound;
+}
+
+export function deleteAllocationWindowsSecurityToJSON(
+  deleteAllocationWindowsSecurity: DeleteAllocationWindowsSecurity,
+): string {
+  return JSON.stringify(
+    DeleteAllocationWindowsSecurity$outboundSchema.parse(
+      deleteAllocationWindowsSecurity,
+    ),
+  );
+}
+
+export function deleteAllocationWindowsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<DeleteAllocationWindowsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeleteAllocationWindowsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeleteAllocationWindowsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const DeleteAllocationWindowsRequest$inboundSchema: z.ZodType<

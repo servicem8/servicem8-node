@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type DeleteAttachmentsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type DeleteAttachmentsRequest = {
   /**
    * UUID of the Attachment
@@ -16,6 +21,63 @@ export type DeleteAttachmentsRequest = {
 };
 
 export type DeleteAttachmentsResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const DeleteAttachmentsSecurity$inboundSchema: z.ZodType<
+  DeleteAttachmentsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteAttachmentsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const DeleteAttachmentsSecurity$outboundSchema: z.ZodType<
+  DeleteAttachmentsSecurity$Outbound,
+  z.ZodTypeDef,
+  DeleteAttachmentsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeleteAttachmentsSecurity$ {
+  /** @deprecated use `DeleteAttachmentsSecurity$inboundSchema` instead. */
+  export const inboundSchema = DeleteAttachmentsSecurity$inboundSchema;
+  /** @deprecated use `DeleteAttachmentsSecurity$outboundSchema` instead. */
+  export const outboundSchema = DeleteAttachmentsSecurity$outboundSchema;
+  /** @deprecated use `DeleteAttachmentsSecurity$Outbound` instead. */
+  export type Outbound = DeleteAttachmentsSecurity$Outbound;
+}
+
+export function deleteAttachmentsSecurityToJSON(
+  deleteAttachmentsSecurity: DeleteAttachmentsSecurity,
+): string {
+  return JSON.stringify(
+    DeleteAttachmentsSecurity$outboundSchema.parse(deleteAttachmentsSecurity),
+  );
+}
+
+export function deleteAttachmentsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<DeleteAttachmentsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeleteAttachmentsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeleteAttachmentsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const DeleteAttachmentsRequest$inboundSchema: z.ZodType<

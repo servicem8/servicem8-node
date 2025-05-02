@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetVendorsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetVendorsRequest = {
   /**
    * UUID of the Vendor
@@ -16,6 +21,63 @@ export type GetVendorsRequest = {
 };
 
 export type GetVendorsResponse = components.ErrorT | components.Vendor;
+
+/** @internal */
+export const GetVendorsSecurity$inboundSchema: z.ZodType<
+  GetVendorsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetVendorsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetVendorsSecurity$outboundSchema: z.ZodType<
+  GetVendorsSecurity$Outbound,
+  z.ZodTypeDef,
+  GetVendorsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetVendorsSecurity$ {
+  /** @deprecated use `GetVendorsSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetVendorsSecurity$inboundSchema;
+  /** @deprecated use `GetVendorsSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetVendorsSecurity$outboundSchema;
+  /** @deprecated use `GetVendorsSecurity$Outbound` instead. */
+  export type Outbound = GetVendorsSecurity$Outbound;
+}
+
+export function getVendorsSecurityToJSON(
+  getVendorsSecurity: GetVendorsSecurity,
+): string {
+  return JSON.stringify(
+    GetVendorsSecurity$outboundSchema.parse(getVendorsSecurity),
+  );
+}
+
+export function getVendorsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetVendorsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetVendorsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetVendorsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetVendorsRequest$inboundSchema: z.ZodType<

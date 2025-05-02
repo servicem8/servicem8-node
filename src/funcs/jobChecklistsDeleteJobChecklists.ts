@@ -8,7 +8,7 @@ import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
-import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
+import { resolveSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import { APIError } from "../models/errors/apierror.js";
 import {
@@ -33,6 +33,7 @@ import { Result } from "../types/fp.js";
  */
 export function jobChecklistsDeleteJobChecklists(
   client: ServiceM8Core,
+  security: operations.DeleteJobChecklistsSecurity,
   request: operations.DeleteJobChecklistsRequest,
   options?: RequestOptions,
 ): APIPromise<
@@ -50,6 +51,7 @@ export function jobChecklistsDeleteJobChecklists(
 > {
   return new APIPromise($do(
     client,
+    security,
     request,
     options,
   ));
@@ -57,6 +59,7 @@ export function jobChecklistsDeleteJobChecklists(
 
 async function $do(
   client: ServiceM8Core,
+  security: operations.DeleteJobChecklistsSecurity,
   request: operations.DeleteJobChecklistsRequest,
   options?: RequestOptions,
 ): Promise<
@@ -100,17 +103,31 @@ async function $do(
     Accept: "application/json",
   }));
 
-  const securityInput = await extractSecurity(client._options.security);
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveSecurity(
+    [
+      {
+        fieldName: "Authorization",
+        type: "apiKey:header",
+        value: security?.apiKey,
+      },
+    ],
+    [
+      {
+        fieldName: "Authorization",
+        type: "oauth2",
+        value: security?.oauth2,
+      },
+    ],
+  );
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "deleteJobChecklists",
-    oAuth2Scopes: [],
+    oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
 
-    securitySource: client._options.security,
+    securitySource: security,
     retryConfig: options?.retries
       || client._options.retryConfig
       || {

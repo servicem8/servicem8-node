@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetSecurityRolesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetSecurityRolesRequest = {
   /**
    * UUID of the Security Role
@@ -18,6 +23,63 @@ export type GetSecurityRolesRequest = {
 export type GetSecurityRolesResponse =
   | components.ErrorT
   | components.SecurityRole;
+
+/** @internal */
+export const GetSecurityRolesSecurity$inboundSchema: z.ZodType<
+  GetSecurityRolesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetSecurityRolesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetSecurityRolesSecurity$outboundSchema: z.ZodType<
+  GetSecurityRolesSecurity$Outbound,
+  z.ZodTypeDef,
+  GetSecurityRolesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetSecurityRolesSecurity$ {
+  /** @deprecated use `GetSecurityRolesSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetSecurityRolesSecurity$inboundSchema;
+  /** @deprecated use `GetSecurityRolesSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetSecurityRolesSecurity$outboundSchema;
+  /** @deprecated use `GetSecurityRolesSecurity$Outbound` instead. */
+  export type Outbound = GetSecurityRolesSecurity$Outbound;
+}
+
+export function getSecurityRolesSecurityToJSON(
+  getSecurityRolesSecurity: GetSecurityRolesSecurity,
+): string {
+  return JSON.stringify(
+    GetSecurityRolesSecurity$outboundSchema.parse(getSecurityRolesSecurity),
+  );
+}
+
+export function getSecurityRolesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetSecurityRolesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetSecurityRolesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetSecurityRolesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetSecurityRolesRequest$inboundSchema: z.ZodType<

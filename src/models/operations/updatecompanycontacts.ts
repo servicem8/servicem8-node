@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type UpdateCompanyContactsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type UpdateCompanyContactsRequest = {
   /**
    * UUID of the Company Contact
@@ -23,6 +28,65 @@ export type UpdateCompanyContactsRequest = {
 export type UpdateCompanyContactsResponse =
   | components.Result
   | components.ErrorT;
+
+/** @internal */
+export const UpdateCompanyContactsSecurity$inboundSchema: z.ZodType<
+  UpdateCompanyContactsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type UpdateCompanyContactsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const UpdateCompanyContactsSecurity$outboundSchema: z.ZodType<
+  UpdateCompanyContactsSecurity$Outbound,
+  z.ZodTypeDef,
+  UpdateCompanyContactsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateCompanyContactsSecurity$ {
+  /** @deprecated use `UpdateCompanyContactsSecurity$inboundSchema` instead. */
+  export const inboundSchema = UpdateCompanyContactsSecurity$inboundSchema;
+  /** @deprecated use `UpdateCompanyContactsSecurity$outboundSchema` instead. */
+  export const outboundSchema = UpdateCompanyContactsSecurity$outboundSchema;
+  /** @deprecated use `UpdateCompanyContactsSecurity$Outbound` instead. */
+  export type Outbound = UpdateCompanyContactsSecurity$Outbound;
+}
+
+export function updateCompanyContactsSecurityToJSON(
+  updateCompanyContactsSecurity: UpdateCompanyContactsSecurity,
+): string {
+  return JSON.stringify(
+    UpdateCompanyContactsSecurity$outboundSchema.parse(
+      updateCompanyContactsSecurity,
+    ),
+  );
+}
+
+export function updateCompanyContactsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateCompanyContactsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateCompanyContactsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateCompanyContactsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const UpdateCompanyContactsRequest$inboundSchema: z.ZodType<

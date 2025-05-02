@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type UpdateTasksSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type UpdateTasksRequest = {
   /**
    * UUID of the Task
@@ -21,6 +26,63 @@ export type UpdateTasksRequest = {
 };
 
 export type UpdateTasksResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const UpdateTasksSecurity$inboundSchema: z.ZodType<
+  UpdateTasksSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type UpdateTasksSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const UpdateTasksSecurity$outboundSchema: z.ZodType<
+  UpdateTasksSecurity$Outbound,
+  z.ZodTypeDef,
+  UpdateTasksSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateTasksSecurity$ {
+  /** @deprecated use `UpdateTasksSecurity$inboundSchema` instead. */
+  export const inboundSchema = UpdateTasksSecurity$inboundSchema;
+  /** @deprecated use `UpdateTasksSecurity$outboundSchema` instead. */
+  export const outboundSchema = UpdateTasksSecurity$outboundSchema;
+  /** @deprecated use `UpdateTasksSecurity$Outbound` instead. */
+  export type Outbound = UpdateTasksSecurity$Outbound;
+}
+
+export function updateTasksSecurityToJSON(
+  updateTasksSecurity: UpdateTasksSecurity,
+): string {
+  return JSON.stringify(
+    UpdateTasksSecurity$outboundSchema.parse(updateTasksSecurity),
+  );
+}
+
+export function updateTasksSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateTasksSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateTasksSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateTasksSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const UpdateTasksRequest$inboundSchema: z.ZodType<

@@ -9,12 +9,74 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type CreateClientsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type CreateClientsResponseResult = components.Result | components.ErrorT;
 
 export type CreateClientsResponse = {
   headers: { [k: string]: Array<string> };
   result: components.Result | components.ErrorT;
 };
+
+/** @internal */
+export const CreateClientsSecurity$inboundSchema: z.ZodType<
+  CreateClientsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type CreateClientsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const CreateClientsSecurity$outboundSchema: z.ZodType<
+  CreateClientsSecurity$Outbound,
+  z.ZodTypeDef,
+  CreateClientsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateClientsSecurity$ {
+  /** @deprecated use `CreateClientsSecurity$inboundSchema` instead. */
+  export const inboundSchema = CreateClientsSecurity$inboundSchema;
+  /** @deprecated use `CreateClientsSecurity$outboundSchema` instead. */
+  export const outboundSchema = CreateClientsSecurity$outboundSchema;
+  /** @deprecated use `CreateClientsSecurity$Outbound` instead. */
+  export type Outbound = CreateClientsSecurity$Outbound;
+}
+
+export function createClientsSecurityToJSON(
+  createClientsSecurity: CreateClientsSecurity,
+): string {
+  return JSON.stringify(
+    CreateClientsSecurity$outboundSchema.parse(createClientsSecurity),
+  );
+}
+
+export function createClientsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateClientsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateClientsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateClientsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const CreateClientsResponseResult$inboundSchema: z.ZodType<

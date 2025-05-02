@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type UpdateNotesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type UpdateNotesRequest = {
   /**
    * UUID of the Note
@@ -21,6 +26,63 @@ export type UpdateNotesRequest = {
 };
 
 export type UpdateNotesResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const UpdateNotesSecurity$inboundSchema: z.ZodType<
+  UpdateNotesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type UpdateNotesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const UpdateNotesSecurity$outboundSchema: z.ZodType<
+  UpdateNotesSecurity$Outbound,
+  z.ZodTypeDef,
+  UpdateNotesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateNotesSecurity$ {
+  /** @deprecated use `UpdateNotesSecurity$inboundSchema` instead. */
+  export const inboundSchema = UpdateNotesSecurity$inboundSchema;
+  /** @deprecated use `UpdateNotesSecurity$outboundSchema` instead. */
+  export const outboundSchema = UpdateNotesSecurity$outboundSchema;
+  /** @deprecated use `UpdateNotesSecurity$Outbound` instead. */
+  export type Outbound = UpdateNotesSecurity$Outbound;
+}
+
+export function updateNotesSecurityToJSON(
+  updateNotesSecurity: UpdateNotesSecurity,
+): string {
+  return JSON.stringify(
+    UpdateNotesSecurity$outboundSchema.parse(updateNotesSecurity),
+  );
+}
+
+export function updateNotesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateNotesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateNotesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateNotesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const UpdateNotesRequest$inboundSchema: z.ZodType<

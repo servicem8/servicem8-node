@@ -25,10 +25,12 @@ export class JobAllocations extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_schedule**.
    */
   async listJobAllocations(
+    security: operations.ListJobAllocationsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListJobAllocationsResponse> {
     return unwrapAsync(jobAllocationsListJobAllocations(
       this,
+      security,
       options,
     ));
   }
@@ -45,11 +47,13 @@ export class JobAllocations extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createJobAllocations(
+    security: operations.CreateJobAllocationsSecurity,
     request: components.JobAllocationInput,
     options?: RequestOptions,
   ): Promise<operations.CreateJobAllocationsResponse> {
     return unwrapAsync(jobAllocationsCreateJobAllocations(
       this,
+      security,
       request,
       options,
     ));
@@ -64,11 +68,13 @@ export class JobAllocations extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_schedule**.
    */
   async getJobAllocations(
+    security: operations.GetJobAllocationsSecurity,
     request: operations.GetJobAllocationsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetJobAllocationsResponse> {
     return unwrapAsync(jobAllocationsGetJobAllocations(
       this,
+      security,
       request,
       options,
     ));
@@ -78,11 +84,13 @@ export class JobAllocations extends ClientSDK {
    * Update a Job Allocation
    */
   async updateJobAllocations(
+    security: operations.UpdateJobAllocationsSecurity,
     request: operations.UpdateJobAllocationsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateJobAllocationsResponse> {
     return unwrapAsync(jobAllocationsUpdateJobAllocations(
       this,
+      security,
       request,
       options,
     ));
@@ -96,11 +104,13 @@ export class JobAllocations extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteJobAllocations(
+    security: operations.DeleteJobAllocationsSecurity,
     request: operations.DeleteJobAllocationsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteJobAllocationsResponse> {
     return unwrapAsync(jobAllocationsDeleteJobAllocations(
       this,
+      security,
       request,
       options,
     ));

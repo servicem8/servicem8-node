@@ -22,10 +22,12 @@ export class TaxRates extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listTaxRates(
+    security: operations.ListTaxRatesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListTaxRatesResponse> {
     return unwrapAsync(taxRatesListTaxRates(
       this,
+      security,
       options,
     ));
   }
@@ -39,11 +41,13 @@ export class TaxRates extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createTaxRates(
+    security: operations.CreateTaxRatesSecurity,
     request: components.TaxRateInput,
     options?: RequestOptions,
   ): Promise<operations.CreateTaxRatesResponse> {
     return unwrapAsync(taxRatesCreateTaxRates(
       this,
+      security,
       request,
       options,
     ));
@@ -53,11 +57,13 @@ export class TaxRates extends ClientSDK {
    * Retrieve a Tax Rate
    */
   async getTaxRates(
+    security: operations.GetTaxRatesSecurity,
     request: operations.GetTaxRatesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetTaxRatesResponse> {
     return unwrapAsync(taxRatesGetTaxRates(
       this,
+      security,
       request,
       options,
     ));
@@ -67,11 +73,13 @@ export class TaxRates extends ClientSDK {
    * Update a Tax Rate
    */
   async updateTaxRates(
+    security: operations.UpdateTaxRatesSecurity,
     request: operations.UpdateTaxRatesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateTaxRatesResponse> {
     return unwrapAsync(taxRatesUpdateTaxRates(
       this,
+      security,
       request,
       options,
     ));
@@ -85,11 +93,13 @@ export class TaxRates extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteTaxRates(
+    security: operations.DeleteTaxRatesSecurity,
     request: operations.DeleteTaxRatesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteTaxRatesResponse> {
     return unwrapAsync(taxRatesDeleteTaxRates(
       this,
+      security,
       request,
       options,
     ));

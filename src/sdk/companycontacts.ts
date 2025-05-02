@@ -25,10 +25,12 @@ export class CompanyContacts extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_customer_contacts**.
    */
   async listCompanyContacts(
+    security: operations.ListCompanyContactsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListCompanyContactsResponse> {
     return unwrapAsync(companyContactsListCompanyContacts(
       this,
+      security,
       options,
     ));
   }
@@ -45,11 +47,13 @@ export class CompanyContacts extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createCompanyContacts(
+    security: operations.CreateCompanyContactsSecurity,
     request: components.CompanyContactInput,
     options?: RequestOptions,
   ): Promise<operations.CreateCompanyContactsResponse> {
     return unwrapAsync(companyContactsCreateCompanyContacts(
       this,
+      security,
       request,
       options,
     ));
@@ -64,11 +68,13 @@ export class CompanyContacts extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_customer_contacts**.
    */
   async getCompanyContacts(
+    security: operations.GetCompanyContactsSecurity,
     request: operations.GetCompanyContactsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetCompanyContactsResponse> {
     return unwrapAsync(companyContactsGetCompanyContacts(
       this,
+      security,
       request,
       options,
     ));
@@ -83,11 +89,13 @@ export class CompanyContacts extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_customer_contacts**.
    */
   async updateCompanyContacts(
+    security: operations.UpdateCompanyContactsSecurity,
     request: operations.UpdateCompanyContactsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateCompanyContactsResponse> {
     return unwrapAsync(companyContactsUpdateCompanyContacts(
       this,
+      security,
       request,
       options,
     ));
@@ -104,11 +112,13 @@ export class CompanyContacts extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_customer_contacts**.
    */
   async deleteCompanyContacts(
+    security: operations.DeleteCompanyContactsSecurity,
     request: operations.DeleteCompanyContactsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteCompanyContactsResponse> {
     return unwrapAsync(companyContactsDeleteCompanyContacts(
       this,
+      security,
       request,
       options,
     ));

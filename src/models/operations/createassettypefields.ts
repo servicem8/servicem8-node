@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type CreateAssetTypeFieldsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type CreateAssetTypeFieldsResponseResult =
   | components.Result
   | components.ErrorT;
@@ -17,6 +22,65 @@ export type CreateAssetTypeFieldsResponse = {
   headers: { [k: string]: Array<string> };
   result: components.Result | components.ErrorT;
 };
+
+/** @internal */
+export const CreateAssetTypeFieldsSecurity$inboundSchema: z.ZodType<
+  CreateAssetTypeFieldsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type CreateAssetTypeFieldsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const CreateAssetTypeFieldsSecurity$outboundSchema: z.ZodType<
+  CreateAssetTypeFieldsSecurity$Outbound,
+  z.ZodTypeDef,
+  CreateAssetTypeFieldsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateAssetTypeFieldsSecurity$ {
+  /** @deprecated use `CreateAssetTypeFieldsSecurity$inboundSchema` instead. */
+  export const inboundSchema = CreateAssetTypeFieldsSecurity$inboundSchema;
+  /** @deprecated use `CreateAssetTypeFieldsSecurity$outboundSchema` instead. */
+  export const outboundSchema = CreateAssetTypeFieldsSecurity$outboundSchema;
+  /** @deprecated use `CreateAssetTypeFieldsSecurity$Outbound` instead. */
+  export type Outbound = CreateAssetTypeFieldsSecurity$Outbound;
+}
+
+export function createAssetTypeFieldsSecurityToJSON(
+  createAssetTypeFieldsSecurity: CreateAssetTypeFieldsSecurity,
+): string {
+  return JSON.stringify(
+    CreateAssetTypeFieldsSecurity$outboundSchema.parse(
+      createAssetTypeFieldsSecurity,
+    ),
+  );
+}
+
+export function createAssetTypeFieldsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateAssetTypeFieldsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateAssetTypeFieldsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateAssetTypeFieldsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const CreateAssetTypeFieldsResponseResult$inboundSchema: z.ZodType<

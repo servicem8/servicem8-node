@@ -22,10 +22,12 @@ export class FormResponses extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listFormResponses(
+    security: operations.ListFormResponsesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListFormResponsesResponse> {
     return unwrapAsync(formResponsesListFormResponses(
       this,
+      security,
       options,
     ));
   }
@@ -39,11 +41,13 @@ export class FormResponses extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createFormResponses(
+    security: operations.CreateFormResponsesSecurity,
     request: components.FormResponseInput,
     options?: RequestOptions,
   ): Promise<operations.CreateFormResponsesResponse> {
     return unwrapAsync(formResponsesCreateFormResponses(
       this,
+      security,
       request,
       options,
     ));
@@ -53,11 +57,13 @@ export class FormResponses extends ClientSDK {
    * Retrieve a Form Response
    */
   async getFormResponses(
+    security: operations.GetFormResponsesSecurity,
     request: operations.GetFormResponsesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetFormResponsesResponse> {
     return unwrapAsync(formResponsesGetFormResponses(
       this,
+      security,
       request,
       options,
     ));
@@ -67,11 +73,13 @@ export class FormResponses extends ClientSDK {
    * Update a Form Response
    */
   async updateFormResponses(
+    security: operations.UpdateFormResponsesSecurity,
     request: operations.UpdateFormResponsesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateFormResponsesResponse> {
     return unwrapAsync(formResponsesUpdateFormResponses(
       this,
+      security,
       request,
       options,
     ));
@@ -85,11 +93,13 @@ export class FormResponses extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteFormResponses(
+    security: operations.DeleteFormResponsesSecurity,
     request: operations.DeleteFormResponsesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteFormResponsesResponse> {
     return unwrapAsync(formResponsesDeleteFormResponses(
       this,
+      security,
       request,
       options,
     ));

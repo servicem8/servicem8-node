@@ -8,9 +8,71 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type ListLocationsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type ListLocationsResponse =
   | components.ErrorT
   | Array<components.Location>;
+
+/** @internal */
+export const ListLocationsSecurity$inboundSchema: z.ZodType<
+  ListLocationsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type ListLocationsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const ListLocationsSecurity$outboundSchema: z.ZodType<
+  ListLocationsSecurity$Outbound,
+  z.ZodTypeDef,
+  ListLocationsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListLocationsSecurity$ {
+  /** @deprecated use `ListLocationsSecurity$inboundSchema` instead. */
+  export const inboundSchema = ListLocationsSecurity$inboundSchema;
+  /** @deprecated use `ListLocationsSecurity$outboundSchema` instead. */
+  export const outboundSchema = ListLocationsSecurity$outboundSchema;
+  /** @deprecated use `ListLocationsSecurity$Outbound` instead. */
+  export type Outbound = ListLocationsSecurity$Outbound;
+}
+
+export function listLocationsSecurityToJSON(
+  listLocationsSecurity: ListLocationsSecurity,
+): string {
+  return JSON.stringify(
+    ListLocationsSecurity$outboundSchema.parse(listLocationsSecurity),
+  );
+}
+
+export function listLocationsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<ListLocationsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListLocationsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListLocationsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const ListLocationsResponse$inboundSchema: z.ZodType<

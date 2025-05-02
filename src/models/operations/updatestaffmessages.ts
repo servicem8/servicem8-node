@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type UpdateStaffMessagesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type UpdateStaffMessagesRequest = {
   /**
    * UUID of the Staff Message
@@ -21,6 +26,65 @@ export type UpdateStaffMessagesRequest = {
 };
 
 export type UpdateStaffMessagesResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const UpdateStaffMessagesSecurity$inboundSchema: z.ZodType<
+  UpdateStaffMessagesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type UpdateStaffMessagesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const UpdateStaffMessagesSecurity$outboundSchema: z.ZodType<
+  UpdateStaffMessagesSecurity$Outbound,
+  z.ZodTypeDef,
+  UpdateStaffMessagesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateStaffMessagesSecurity$ {
+  /** @deprecated use `UpdateStaffMessagesSecurity$inboundSchema` instead. */
+  export const inboundSchema = UpdateStaffMessagesSecurity$inboundSchema;
+  /** @deprecated use `UpdateStaffMessagesSecurity$outboundSchema` instead. */
+  export const outboundSchema = UpdateStaffMessagesSecurity$outboundSchema;
+  /** @deprecated use `UpdateStaffMessagesSecurity$Outbound` instead. */
+  export type Outbound = UpdateStaffMessagesSecurity$Outbound;
+}
+
+export function updateStaffMessagesSecurityToJSON(
+  updateStaffMessagesSecurity: UpdateStaffMessagesSecurity,
+): string {
+  return JSON.stringify(
+    UpdateStaffMessagesSecurity$outboundSchema.parse(
+      updateStaffMessagesSecurity,
+    ),
+  );
+}
+
+export function updateStaffMessagesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateStaffMessagesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateStaffMessagesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateStaffMessagesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const UpdateStaffMessagesRequest$inboundSchema: z.ZodType<

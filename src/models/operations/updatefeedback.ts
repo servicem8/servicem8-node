@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type UpdateFeedbackSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type UpdateFeedbackRequest = {
   /**
    * UUID of the Feedback
@@ -21,6 +26,63 @@ export type UpdateFeedbackRequest = {
 };
 
 export type UpdateFeedbackResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const UpdateFeedbackSecurity$inboundSchema: z.ZodType<
+  UpdateFeedbackSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type UpdateFeedbackSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const UpdateFeedbackSecurity$outboundSchema: z.ZodType<
+  UpdateFeedbackSecurity$Outbound,
+  z.ZodTypeDef,
+  UpdateFeedbackSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateFeedbackSecurity$ {
+  /** @deprecated use `UpdateFeedbackSecurity$inboundSchema` instead. */
+  export const inboundSchema = UpdateFeedbackSecurity$inboundSchema;
+  /** @deprecated use `UpdateFeedbackSecurity$outboundSchema` instead. */
+  export const outboundSchema = UpdateFeedbackSecurity$outboundSchema;
+  /** @deprecated use `UpdateFeedbackSecurity$Outbound` instead. */
+  export type Outbound = UpdateFeedbackSecurity$Outbound;
+}
+
+export function updateFeedbackSecurityToJSON(
+  updateFeedbackSecurity: UpdateFeedbackSecurity,
+): string {
+  return JSON.stringify(
+    UpdateFeedbackSecurity$outboundSchema.parse(updateFeedbackSecurity),
+  );
+}
+
+export function updateFeedbackSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateFeedbackSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateFeedbackSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateFeedbackSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const UpdateFeedbackRequest$inboundSchema: z.ZodType<

@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type CreateAttachmentsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type CreateAttachmentsResponseResult =
   | components.Result
   | components.ErrorT;
@@ -17,6 +22,63 @@ export type CreateAttachmentsResponse = {
   headers: { [k: string]: Array<string> };
   result: components.Result | components.ErrorT;
 };
+
+/** @internal */
+export const CreateAttachmentsSecurity$inboundSchema: z.ZodType<
+  CreateAttachmentsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type CreateAttachmentsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const CreateAttachmentsSecurity$outboundSchema: z.ZodType<
+  CreateAttachmentsSecurity$Outbound,
+  z.ZodTypeDef,
+  CreateAttachmentsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateAttachmentsSecurity$ {
+  /** @deprecated use `CreateAttachmentsSecurity$inboundSchema` instead. */
+  export const inboundSchema = CreateAttachmentsSecurity$inboundSchema;
+  /** @deprecated use `CreateAttachmentsSecurity$outboundSchema` instead. */
+  export const outboundSchema = CreateAttachmentsSecurity$outboundSchema;
+  /** @deprecated use `CreateAttachmentsSecurity$Outbound` instead. */
+  export type Outbound = CreateAttachmentsSecurity$Outbound;
+}
+
+export function createAttachmentsSecurityToJSON(
+  createAttachmentsSecurity: CreateAttachmentsSecurity,
+): string {
+  return JSON.stringify(
+    CreateAttachmentsSecurity$outboundSchema.parse(createAttachmentsSecurity),
+  );
+}
+
+export function createAttachmentsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateAttachmentsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateAttachmentsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateAttachmentsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const CreateAttachmentsResponseResult$inboundSchema: z.ZodType<

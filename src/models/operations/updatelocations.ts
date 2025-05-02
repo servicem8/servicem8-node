@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type UpdateLocationsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type UpdateLocationsRequest = {
   /**
    * UUID of the Location
@@ -21,6 +26,63 @@ export type UpdateLocationsRequest = {
 };
 
 export type UpdateLocationsResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const UpdateLocationsSecurity$inboundSchema: z.ZodType<
+  UpdateLocationsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type UpdateLocationsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const UpdateLocationsSecurity$outboundSchema: z.ZodType<
+  UpdateLocationsSecurity$Outbound,
+  z.ZodTypeDef,
+  UpdateLocationsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateLocationsSecurity$ {
+  /** @deprecated use `UpdateLocationsSecurity$inboundSchema` instead. */
+  export const inboundSchema = UpdateLocationsSecurity$inboundSchema;
+  /** @deprecated use `UpdateLocationsSecurity$outboundSchema` instead. */
+  export const outboundSchema = UpdateLocationsSecurity$outboundSchema;
+  /** @deprecated use `UpdateLocationsSecurity$Outbound` instead. */
+  export type Outbound = UpdateLocationsSecurity$Outbound;
+}
+
+export function updateLocationsSecurityToJSON(
+  updateLocationsSecurity: UpdateLocationsSecurity,
+): string {
+  return JSON.stringify(
+    UpdateLocationsSecurity$outboundSchema.parse(updateLocationsSecurity),
+  );
+}
+
+export function updateLocationsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateLocationsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateLocationsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateLocationsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const UpdateLocationsRequest$inboundSchema: z.ZodType<

@@ -25,10 +25,12 @@ export class JobQueues extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_job_queues**.
    */
   async listJobQueues(
+    security: operations.ListJobQueuesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListJobQueuesResponse> {
     return unwrapAsync(jobQueuesListJobQueues(
       this,
+      security,
       options,
     ));
   }
@@ -45,11 +47,13 @@ export class JobQueues extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createJobQueues(
+    security: operations.CreateJobQueuesSecurity,
     request: components.QueueInput,
     options?: RequestOptions,
   ): Promise<operations.CreateJobQueuesResponse> {
     return unwrapAsync(jobQueuesCreateJobQueues(
       this,
+      security,
       request,
       options,
     ));
@@ -64,11 +68,13 @@ export class JobQueues extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_job_queues**.
    */
   async getJobQueues(
+    security: operations.GetJobQueuesSecurity,
     request: operations.GetJobQueuesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetJobQueuesResponse> {
     return unwrapAsync(jobQueuesGetJobQueues(
       this,
+      security,
       request,
       options,
     ));
@@ -83,11 +89,13 @@ export class JobQueues extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_job_queues**.
    */
   async updateJobQueues(
+    security: operations.UpdateJobQueuesSecurity,
     request: operations.UpdateJobQueuesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateJobQueuesResponse> {
     return unwrapAsync(jobQueuesUpdateJobQueues(
       this,
+      security,
       request,
       options,
     ));
@@ -104,11 +112,13 @@ export class JobQueues extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_job_queues**.
    */
   async deleteJobQueues(
+    security: operations.DeleteJobQueuesSecurity,
     request: operations.DeleteJobQueuesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteJobQueuesResponse> {
     return unwrapAsync(jobQueuesDeleteJobQueues(
       this,
+      security,
       request,
       options,
     ));

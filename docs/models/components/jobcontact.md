@@ -6,9 +6,9 @@
 import { JobContact } from "servicem8/models/components";
 
 let value: JobContact = {
-  uuid: "123e4567-f0e0-433f-bbfc-22b6c0b0680b",
+  uuid: "123e4567-ca85-49e4-9425-22b6cb05adbb",
   editDate: "2025-05-01 12:00:00",
-  jobUuid: "123e4567-e6e3-49ac-95bb-22b6c71fc95b",
+  jobUuid: "123e4567-1f65-4120-a8eb-22b6c261d96b",
 };
 ```
 
@@ -16,10 +16,10 @@ let value: JobContact = {
 
 | Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                | Example                                                                    |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `uuid`                                                                     | *string*                                                                   | :heavy_minus_sign:                                                         | Unique identifier for this record                                          | 123e4567-f0e0-433f-bbfc-22b6c0b0680b                                       |
+| `uuid`                                                                     | *string*                                                                   | :heavy_minus_sign:                                                         | Unique identifier for this record                                          | 123e4567-ca85-49e4-9425-22b6cb05adbb                                       |
 | `active`                                                                   | [components.JobContactActive](../../models/components/jobcontactactive.md) | :heavy_minus_sign:                                                         | Record active/deleted flag.  Valid values are [0,1]                        |                                                                            |
 | `editDate`                                                                 | *any*                                                                      | :heavy_minus_sign:                                                         | Timestamp at which record was last modified                                | 2025-05-01 12:00:00                                                        |
-| `jobUuid`                                                                  | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | 123e4567-e6e3-49ac-95bb-22b6c71fc95b                                       |
+| `jobUuid`                                                                  | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | 123e4567-1f65-4120-a8eb-22b6c261d96b                                       |
 | `first`                                                                    | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
 | `last`                                                                     | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
 | `phone`                                                                    | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |

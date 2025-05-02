@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type DeleteJobsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type DeleteJobsRequest = {
   /**
    * UUID of the Job
@@ -16,6 +21,63 @@ export type DeleteJobsRequest = {
 };
 
 export type DeleteJobsResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const DeleteJobsSecurity$inboundSchema: z.ZodType<
+  DeleteJobsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteJobsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const DeleteJobsSecurity$outboundSchema: z.ZodType<
+  DeleteJobsSecurity$Outbound,
+  z.ZodTypeDef,
+  DeleteJobsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeleteJobsSecurity$ {
+  /** @deprecated use `DeleteJobsSecurity$inboundSchema` instead. */
+  export const inboundSchema = DeleteJobsSecurity$inboundSchema;
+  /** @deprecated use `DeleteJobsSecurity$outboundSchema` instead. */
+  export const outboundSchema = DeleteJobsSecurity$outboundSchema;
+  /** @deprecated use `DeleteJobsSecurity$Outbound` instead. */
+  export type Outbound = DeleteJobsSecurity$Outbound;
+}
+
+export function deleteJobsSecurityToJSON(
+  deleteJobsSecurity: DeleteJobsSecurity,
+): string {
+  return JSON.stringify(
+    DeleteJobsSecurity$outboundSchema.parse(deleteJobsSecurity),
+  );
+}
+
+export function deleteJobsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<DeleteJobsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeleteJobsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeleteJobsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const DeleteJobsRequest$inboundSchema: z.ZodType<

@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetTasksSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetTasksRequest = {
   /**
    * UUID of the Task
@@ -16,6 +21,63 @@ export type GetTasksRequest = {
 };
 
 export type GetTasksResponse = components.ErrorT | components.Task;
+
+/** @internal */
+export const GetTasksSecurity$inboundSchema: z.ZodType<
+  GetTasksSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetTasksSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetTasksSecurity$outboundSchema: z.ZodType<
+  GetTasksSecurity$Outbound,
+  z.ZodTypeDef,
+  GetTasksSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetTasksSecurity$ {
+  /** @deprecated use `GetTasksSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetTasksSecurity$inboundSchema;
+  /** @deprecated use `GetTasksSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetTasksSecurity$outboundSchema;
+  /** @deprecated use `GetTasksSecurity$Outbound` instead. */
+  export type Outbound = GetTasksSecurity$Outbound;
+}
+
+export function getTasksSecurityToJSON(
+  getTasksSecurity: GetTasksSecurity,
+): string {
+  return JSON.stringify(
+    GetTasksSecurity$outboundSchema.parse(getTasksSecurity),
+  );
+}
+
+export function getTasksSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetTasksSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetTasksSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetTasksSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetTasksRequest$inboundSchema: z.ZodType<

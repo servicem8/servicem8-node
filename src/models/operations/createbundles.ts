@@ -9,12 +9,74 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type CreateBundlesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type CreateBundlesResponseResult = components.Result | components.ErrorT;
 
 export type CreateBundlesResponse = {
   headers: { [k: string]: Array<string> };
   result: components.Result | components.ErrorT;
 };
+
+/** @internal */
+export const CreateBundlesSecurity$inboundSchema: z.ZodType<
+  CreateBundlesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type CreateBundlesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const CreateBundlesSecurity$outboundSchema: z.ZodType<
+  CreateBundlesSecurity$Outbound,
+  z.ZodTypeDef,
+  CreateBundlesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateBundlesSecurity$ {
+  /** @deprecated use `CreateBundlesSecurity$inboundSchema` instead. */
+  export const inboundSchema = CreateBundlesSecurity$inboundSchema;
+  /** @deprecated use `CreateBundlesSecurity$outboundSchema` instead. */
+  export const outboundSchema = CreateBundlesSecurity$outboundSchema;
+  /** @deprecated use `CreateBundlesSecurity$Outbound` instead. */
+  export type Outbound = CreateBundlesSecurity$Outbound;
+}
+
+export function createBundlesSecurityToJSON(
+  createBundlesSecurity: CreateBundlesSecurity,
+): string {
+  return JSON.stringify(
+    CreateBundlesSecurity$outboundSchema.parse(createBundlesSecurity),
+  );
+}
+
+export function createBundlesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateBundlesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateBundlesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateBundlesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const CreateBundlesResponseResult$inboundSchema: z.ZodType<

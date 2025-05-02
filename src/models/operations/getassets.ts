@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetAssetsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetAssetsRequest = {
   /**
    * UUID of the Asset
@@ -16,6 +21,63 @@ export type GetAssetsRequest = {
 };
 
 export type GetAssetsResponse = components.ErrorT | components.Asset;
+
+/** @internal */
+export const GetAssetsSecurity$inboundSchema: z.ZodType<
+  GetAssetsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetAssetsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetAssetsSecurity$outboundSchema: z.ZodType<
+  GetAssetsSecurity$Outbound,
+  z.ZodTypeDef,
+  GetAssetsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAssetsSecurity$ {
+  /** @deprecated use `GetAssetsSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetAssetsSecurity$inboundSchema;
+  /** @deprecated use `GetAssetsSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetAssetsSecurity$outboundSchema;
+  /** @deprecated use `GetAssetsSecurity$Outbound` instead. */
+  export type Outbound = GetAssetsSecurity$Outbound;
+}
+
+export function getAssetsSecurityToJSON(
+  getAssetsSecurity: GetAssetsSecurity,
+): string {
+  return JSON.stringify(
+    GetAssetsSecurity$outboundSchema.parse(getAssetsSecurity),
+  );
+}
+
+export function getAssetsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAssetsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAssetsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAssetsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetAssetsRequest$inboundSchema: z.ZodType<

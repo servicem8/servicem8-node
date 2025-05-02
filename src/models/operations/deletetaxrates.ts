@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type DeleteTaxRatesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type DeleteTaxRatesRequest = {
   /**
    * UUID of the Tax Rate
@@ -16,6 +21,63 @@ export type DeleteTaxRatesRequest = {
 };
 
 export type DeleteTaxRatesResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const DeleteTaxRatesSecurity$inboundSchema: z.ZodType<
+  DeleteTaxRatesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteTaxRatesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const DeleteTaxRatesSecurity$outboundSchema: z.ZodType<
+  DeleteTaxRatesSecurity$Outbound,
+  z.ZodTypeDef,
+  DeleteTaxRatesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeleteTaxRatesSecurity$ {
+  /** @deprecated use `DeleteTaxRatesSecurity$inboundSchema` instead. */
+  export const inboundSchema = DeleteTaxRatesSecurity$inboundSchema;
+  /** @deprecated use `DeleteTaxRatesSecurity$outboundSchema` instead. */
+  export const outboundSchema = DeleteTaxRatesSecurity$outboundSchema;
+  /** @deprecated use `DeleteTaxRatesSecurity$Outbound` instead. */
+  export type Outbound = DeleteTaxRatesSecurity$Outbound;
+}
+
+export function deleteTaxRatesSecurityToJSON(
+  deleteTaxRatesSecurity: DeleteTaxRatesSecurity,
+): string {
+  return JSON.stringify(
+    DeleteTaxRatesSecurity$outboundSchema.parse(deleteTaxRatesSecurity),
+  );
+}
+
+export function deleteTaxRatesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<DeleteTaxRatesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeleteTaxRatesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeleteTaxRatesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const DeleteTaxRatesRequest$inboundSchema: z.ZodType<

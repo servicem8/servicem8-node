@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetFormFieldsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetFormFieldsRequest = {
   /**
    * UUID of the Form Field
@@ -16,6 +21,63 @@ export type GetFormFieldsRequest = {
 };
 
 export type GetFormFieldsResponse = components.ErrorT | components.FormField;
+
+/** @internal */
+export const GetFormFieldsSecurity$inboundSchema: z.ZodType<
+  GetFormFieldsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetFormFieldsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetFormFieldsSecurity$outboundSchema: z.ZodType<
+  GetFormFieldsSecurity$Outbound,
+  z.ZodTypeDef,
+  GetFormFieldsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetFormFieldsSecurity$ {
+  /** @deprecated use `GetFormFieldsSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetFormFieldsSecurity$inboundSchema;
+  /** @deprecated use `GetFormFieldsSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetFormFieldsSecurity$outboundSchema;
+  /** @deprecated use `GetFormFieldsSecurity$Outbound` instead. */
+  export type Outbound = GetFormFieldsSecurity$Outbound;
+}
+
+export function getFormFieldsSecurityToJSON(
+  getFormFieldsSecurity: GetFormFieldsSecurity,
+): string {
+  return JSON.stringify(
+    GetFormFieldsSecurity$outboundSchema.parse(getFormFieldsSecurity),
+  );
+}
+
+export function getFormFieldsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetFormFieldsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetFormFieldsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetFormFieldsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetFormFieldsRequest$inboundSchema: z.ZodType<

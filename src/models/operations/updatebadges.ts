@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type UpdateBadgesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type UpdateBadgesRequest = {
   /**
    * UUID of the Badge
@@ -21,6 +26,63 @@ export type UpdateBadgesRequest = {
 };
 
 export type UpdateBadgesResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const UpdateBadgesSecurity$inboundSchema: z.ZodType<
+  UpdateBadgesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type UpdateBadgesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const UpdateBadgesSecurity$outboundSchema: z.ZodType<
+  UpdateBadgesSecurity$Outbound,
+  z.ZodTypeDef,
+  UpdateBadgesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateBadgesSecurity$ {
+  /** @deprecated use `UpdateBadgesSecurity$inboundSchema` instead. */
+  export const inboundSchema = UpdateBadgesSecurity$inboundSchema;
+  /** @deprecated use `UpdateBadgesSecurity$outboundSchema` instead. */
+  export const outboundSchema = UpdateBadgesSecurity$outboundSchema;
+  /** @deprecated use `UpdateBadgesSecurity$Outbound` instead. */
+  export type Outbound = UpdateBadgesSecurity$Outbound;
+}
+
+export function updateBadgesSecurityToJSON(
+  updateBadgesSecurity: UpdateBadgesSecurity,
+): string {
+  return JSON.stringify(
+    UpdateBadgesSecurity$outboundSchema.parse(updateBadgesSecurity),
+  );
+}
+
+export function updateBadgesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateBadgesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateBadgesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateBadgesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const UpdateBadgesRequest$inboundSchema: z.ZodType<

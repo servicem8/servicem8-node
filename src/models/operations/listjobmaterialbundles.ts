@@ -8,9 +8,73 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type ListJobMaterialBundlesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type ListJobMaterialBundlesResponse =
   | components.ErrorT
   | Array<components.JobMaterialBundle>;
+
+/** @internal */
+export const ListJobMaterialBundlesSecurity$inboundSchema: z.ZodType<
+  ListJobMaterialBundlesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type ListJobMaterialBundlesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const ListJobMaterialBundlesSecurity$outboundSchema: z.ZodType<
+  ListJobMaterialBundlesSecurity$Outbound,
+  z.ZodTypeDef,
+  ListJobMaterialBundlesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListJobMaterialBundlesSecurity$ {
+  /** @deprecated use `ListJobMaterialBundlesSecurity$inboundSchema` instead. */
+  export const inboundSchema = ListJobMaterialBundlesSecurity$inboundSchema;
+  /** @deprecated use `ListJobMaterialBundlesSecurity$outboundSchema` instead. */
+  export const outboundSchema = ListJobMaterialBundlesSecurity$outboundSchema;
+  /** @deprecated use `ListJobMaterialBundlesSecurity$Outbound` instead. */
+  export type Outbound = ListJobMaterialBundlesSecurity$Outbound;
+}
+
+export function listJobMaterialBundlesSecurityToJSON(
+  listJobMaterialBundlesSecurity: ListJobMaterialBundlesSecurity,
+): string {
+  return JSON.stringify(
+    ListJobMaterialBundlesSecurity$outboundSchema.parse(
+      listJobMaterialBundlesSecurity,
+    ),
+  );
+}
+
+export function listJobMaterialBundlesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<ListJobMaterialBundlesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListJobMaterialBundlesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListJobMaterialBundlesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const ListJobMaterialBundlesResponse$inboundSchema: z.ZodType<

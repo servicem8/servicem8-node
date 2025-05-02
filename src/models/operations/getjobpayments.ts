@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetJobPaymentsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetJobPaymentsRequest = {
   /**
    * UUID of the Job Payment
@@ -16,6 +21,63 @@ export type GetJobPaymentsRequest = {
 };
 
 export type GetJobPaymentsResponse = components.ErrorT | components.JobPayment;
+
+/** @internal */
+export const GetJobPaymentsSecurity$inboundSchema: z.ZodType<
+  GetJobPaymentsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetJobPaymentsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetJobPaymentsSecurity$outboundSchema: z.ZodType<
+  GetJobPaymentsSecurity$Outbound,
+  z.ZodTypeDef,
+  GetJobPaymentsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetJobPaymentsSecurity$ {
+  /** @deprecated use `GetJobPaymentsSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetJobPaymentsSecurity$inboundSchema;
+  /** @deprecated use `GetJobPaymentsSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetJobPaymentsSecurity$outboundSchema;
+  /** @deprecated use `GetJobPaymentsSecurity$Outbound` instead. */
+  export type Outbound = GetJobPaymentsSecurity$Outbound;
+}
+
+export function getJobPaymentsSecurityToJSON(
+  getJobPaymentsSecurity: GetJobPaymentsSecurity,
+): string {
+  return JSON.stringify(
+    GetJobPaymentsSecurity$outboundSchema.parse(getJobPaymentsSecurity),
+  );
+}
+
+export function getJobPaymentsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetJobPaymentsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetJobPaymentsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetJobPaymentsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetJobPaymentsRequest$inboundSchema: z.ZodType<

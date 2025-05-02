@@ -25,10 +25,12 @@ export class Badges extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_badges**.
    */
   async listBadges(
+    security: operations.ListBadgesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListBadgesResponse> {
     return unwrapAsync(badgesListBadges(
       this,
+      security,
       options,
     ));
   }
@@ -45,11 +47,13 @@ export class Badges extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createBadges(
+    security: operations.CreateBadgesSecurity,
     request: components.BadgeInput,
     options?: RequestOptions,
   ): Promise<operations.CreateBadgesResponse> {
     return unwrapAsync(badgesCreateBadges(
       this,
+      security,
       request,
       options,
     ));
@@ -64,11 +68,13 @@ export class Badges extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_badges**.
    */
   async getBadges(
+    security: operations.GetBadgesSecurity,
     request: operations.GetBadgesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetBadgesResponse> {
     return unwrapAsync(badgesGetBadges(
       this,
+      security,
       request,
       options,
     ));
@@ -78,11 +84,13 @@ export class Badges extends ClientSDK {
    * Update a Badge
    */
   async updateBadges(
+    security: operations.UpdateBadgesSecurity,
     request: operations.UpdateBadgesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateBadgesResponse> {
     return unwrapAsync(badgesUpdateBadges(
       this,
+      security,
       request,
       options,
     ));
@@ -96,11 +104,13 @@ export class Badges extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteBadges(
+    security: operations.DeleteBadgesSecurity,
     request: operations.DeleteBadgesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteBadgesResponse> {
     return unwrapAsync(badgesDeleteBadges(
       this,
+      security,
       request,
       options,
     ));

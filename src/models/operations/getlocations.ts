@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type GetLocationsSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type GetLocationsRequest = {
   /**
    * UUID of the Location
@@ -16,6 +21,63 @@ export type GetLocationsRequest = {
 };
 
 export type GetLocationsResponse = components.ErrorT | components.Location;
+
+/** @internal */
+export const GetLocationsSecurity$inboundSchema: z.ZodType<
+  GetLocationsSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type GetLocationsSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const GetLocationsSecurity$outboundSchema: z.ZodType<
+  GetLocationsSecurity$Outbound,
+  z.ZodTypeDef,
+  GetLocationsSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetLocationsSecurity$ {
+  /** @deprecated use `GetLocationsSecurity$inboundSchema` instead. */
+  export const inboundSchema = GetLocationsSecurity$inboundSchema;
+  /** @deprecated use `GetLocationsSecurity$outboundSchema` instead. */
+  export const outboundSchema = GetLocationsSecurity$outboundSchema;
+  /** @deprecated use `GetLocationsSecurity$Outbound` instead. */
+  export type Outbound = GetLocationsSecurity$Outbound;
+}
+
+export function getLocationsSecurityToJSON(
+  getLocationsSecurity: GetLocationsSecurity,
+): string {
+  return JSON.stringify(
+    GetLocationsSecurity$outboundSchema.parse(getLocationsSecurity),
+  );
+}
+
+export function getLocationsSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<GetLocationsSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetLocationsSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetLocationsSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetLocationsRequest$inboundSchema: z.ZodType<

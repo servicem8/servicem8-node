@@ -22,10 +22,12 @@ export class SecurityRoles extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listSecurityRoles(
+    security: operations.ListSecurityRolesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListSecurityRolesResponse> {
     return unwrapAsync(securityRolesListSecurityRoles(
       this,
+      security,
       options,
     ));
   }
@@ -39,11 +41,13 @@ export class SecurityRoles extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createSecurityRoles(
+    security: operations.CreateSecurityRolesSecurity,
     request: components.SecurityRoleInput,
     options?: RequestOptions,
   ): Promise<operations.CreateSecurityRolesResponse> {
     return unwrapAsync(securityRolesCreateSecurityRoles(
       this,
+      security,
       request,
       options,
     ));
@@ -53,11 +57,13 @@ export class SecurityRoles extends ClientSDK {
    * Retrieve a Security Role
    */
   async getSecurityRoles(
+    security: operations.GetSecurityRolesSecurity,
     request: operations.GetSecurityRolesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetSecurityRolesResponse> {
     return unwrapAsync(securityRolesGetSecurityRoles(
       this,
+      security,
       request,
       options,
     ));
@@ -67,11 +73,13 @@ export class SecurityRoles extends ClientSDK {
    * Update a Security Role
    */
   async updateSecurityRoles(
+    security: operations.UpdateSecurityRolesSecurity,
     request: operations.UpdateSecurityRolesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateSecurityRolesResponse> {
     return unwrapAsync(securityRolesUpdateSecurityRoles(
       this,
+      security,
       request,
       options,
     ));
@@ -85,11 +93,13 @@ export class SecurityRoles extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteSecurityRoles(
+    security: operations.DeleteSecurityRolesSecurity,
     request: operations.DeleteSecurityRolesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteSecurityRolesResponse> {
     return unwrapAsync(securityRolesDeleteSecurityRoles(
       this,
+      security,
       request,
       options,
     ));

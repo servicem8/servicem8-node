@@ -25,10 +25,12 @@ export class Categories extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_job_categories**.
    */
   async listCategories(
+    security: operations.ListCategoriesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListCategoriesResponse> {
     return unwrapAsync(categoriesListCategories(
       this,
+      security,
       options,
     ));
   }
@@ -45,11 +47,13 @@ export class Categories extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createCategories(
+    security: operations.CreateCategoriesSecurity,
     request: components.CategoryInput,
     options?: RequestOptions,
   ): Promise<operations.CreateCategoriesResponse> {
     return unwrapAsync(categoriesCreateCategories(
       this,
+      security,
       request,
       options,
     ));
@@ -64,11 +68,13 @@ export class Categories extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_job_categories**.
    */
   async getCategories(
+    security: operations.GetCategoriesSecurity,
     request: operations.GetCategoriesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetCategoriesResponse> {
     return unwrapAsync(categoriesGetCategories(
       this,
+      security,
       request,
       options,
     ));
@@ -83,11 +89,13 @@ export class Categories extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_job_categories**.
    */
   async updateCategories(
+    security: operations.UpdateCategoriesSecurity,
     request: operations.UpdateCategoriesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateCategoriesResponse> {
     return unwrapAsync(categoriesUpdateCategories(
       this,
+      security,
       request,
       options,
     ));
@@ -104,11 +112,13 @@ export class Categories extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_job_categories**.
    */
   async deleteCategories(
+    security: operations.DeleteCategoriesSecurity,
     request: operations.DeleteCategoriesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteCategoriesResponse> {
     return unwrapAsync(categoriesDeleteCategories(
       this,
+      security,
       request,
       options,
     ));

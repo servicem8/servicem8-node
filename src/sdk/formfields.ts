@@ -22,10 +22,12 @@ export class FormFields extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listFormFields(
+    security: operations.ListFormFieldsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListFormFieldsResponse> {
     return unwrapAsync(formFieldsListFormFields(
       this,
+      security,
       options,
     ));
   }
@@ -39,11 +41,13 @@ export class FormFields extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createFormFields(
+    security: operations.CreateFormFieldsSecurity,
     request: components.FormFieldInput,
     options?: RequestOptions,
   ): Promise<operations.CreateFormFieldsResponse> {
     return unwrapAsync(formFieldsCreateFormFields(
       this,
+      security,
       request,
       options,
     ));
@@ -53,11 +57,13 @@ export class FormFields extends ClientSDK {
    * Retrieve a Form Field
    */
   async getFormFields(
+    security: operations.GetFormFieldsSecurity,
     request: operations.GetFormFieldsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetFormFieldsResponse> {
     return unwrapAsync(formFieldsGetFormFields(
       this,
+      security,
       request,
       options,
     ));
@@ -67,11 +73,13 @@ export class FormFields extends ClientSDK {
    * Update a Form Field
    */
   async updateFormFields(
+    security: operations.UpdateFormFieldsSecurity,
     request: operations.UpdateFormFieldsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateFormFieldsResponse> {
     return unwrapAsync(formFieldsUpdateFormFields(
       this,
+      security,
       request,
       options,
     ));
@@ -85,11 +93,13 @@ export class FormFields extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteFormFields(
+    security: operations.DeleteFormFieldsSecurity,
     request: operations.DeleteFormFieldsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteFormFieldsResponse> {
     return unwrapAsync(formFieldsDeleteFormFields(
       this,
+      security,
       request,
       options,
     ));

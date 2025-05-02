@@ -8,6 +8,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type DeleteJobQueuesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type DeleteJobQueuesRequest = {
   /**
    * UUID of the Job Queue
@@ -16,6 +21,63 @@ export type DeleteJobQueuesRequest = {
 };
 
 export type DeleteJobQueuesResponse = components.Result | components.ErrorT;
+
+/** @internal */
+export const DeleteJobQueuesSecurity$inboundSchema: z.ZodType<
+  DeleteJobQueuesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type DeleteJobQueuesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const DeleteJobQueuesSecurity$outboundSchema: z.ZodType<
+  DeleteJobQueuesSecurity$Outbound,
+  z.ZodTypeDef,
+  DeleteJobQueuesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DeleteJobQueuesSecurity$ {
+  /** @deprecated use `DeleteJobQueuesSecurity$inboundSchema` instead. */
+  export const inboundSchema = DeleteJobQueuesSecurity$inboundSchema;
+  /** @deprecated use `DeleteJobQueuesSecurity$outboundSchema` instead. */
+  export const outboundSchema = DeleteJobQueuesSecurity$outboundSchema;
+  /** @deprecated use `DeleteJobQueuesSecurity$Outbound` instead. */
+  export type Outbound = DeleteJobQueuesSecurity$Outbound;
+}
+
+export function deleteJobQueuesSecurityToJSON(
+  deleteJobQueuesSecurity: DeleteJobQueuesSecurity,
+): string {
+  return JSON.stringify(
+    DeleteJobQueuesSecurity$outboundSchema.parse(deleteJobQueuesSecurity),
+  );
+}
+
+export function deleteJobQueuesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<DeleteJobQueuesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeleteJobQueuesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeleteJobQueuesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const DeleteJobQueuesRequest$inboundSchema: z.ZodType<

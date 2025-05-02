@@ -22,10 +22,12 @@ export class Bundles extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listBundles(
+    security: operations.ListBundlesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListBundlesResponse> {
     return unwrapAsync(bundlesListBundles(
       this,
+      security,
       options,
     ));
   }
@@ -39,11 +41,13 @@ export class Bundles extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createBundles(
+    security: operations.CreateBundlesSecurity,
     request: components.MaterialBundleInput,
     options?: RequestOptions,
   ): Promise<operations.CreateBundlesResponse> {
     return unwrapAsync(bundlesCreateBundles(
       this,
+      security,
       request,
       options,
     ));
@@ -53,11 +57,13 @@ export class Bundles extends ClientSDK {
    * Retrieve a Bundle
    */
   async getBundles(
+    security: operations.GetBundlesSecurity,
     request: operations.GetBundlesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetBundlesResponse> {
     return unwrapAsync(bundlesGetBundles(
       this,
+      security,
       request,
       options,
     ));
@@ -67,11 +73,13 @@ export class Bundles extends ClientSDK {
    * Update a Bundle
    */
   async updateBundles(
+    security: operations.UpdateBundlesSecurity,
     request: operations.UpdateBundlesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateBundlesResponse> {
     return unwrapAsync(bundlesUpdateBundles(
       this,
+      security,
       request,
       options,
     ));
@@ -85,11 +93,13 @@ export class Bundles extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteBundles(
+    security: operations.DeleteBundlesSecurity,
     request: operations.DeleteBundlesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteBundlesResponse> {
     return unwrapAsync(bundlesDeleteBundles(
       this,
+      security,
       request,
       options,
     ));

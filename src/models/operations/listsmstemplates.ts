@@ -8,9 +8,71 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type ListSMSTemplatesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type ListSMSTemplatesResponse =
   | components.ErrorT
   | Array<components.SmsTemplate>;
+
+/** @internal */
+export const ListSMSTemplatesSecurity$inboundSchema: z.ZodType<
+  ListSMSTemplatesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type ListSMSTemplatesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const ListSMSTemplatesSecurity$outboundSchema: z.ZodType<
+  ListSMSTemplatesSecurity$Outbound,
+  z.ZodTypeDef,
+  ListSMSTemplatesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListSMSTemplatesSecurity$ {
+  /** @deprecated use `ListSMSTemplatesSecurity$inboundSchema` instead. */
+  export const inboundSchema = ListSMSTemplatesSecurity$inboundSchema;
+  /** @deprecated use `ListSMSTemplatesSecurity$outboundSchema` instead. */
+  export const outboundSchema = ListSMSTemplatesSecurity$outboundSchema;
+  /** @deprecated use `ListSMSTemplatesSecurity$Outbound` instead. */
+  export type Outbound = ListSMSTemplatesSecurity$Outbound;
+}
+
+export function listSMSTemplatesSecurityToJSON(
+  listSMSTemplatesSecurity: ListSMSTemplatesSecurity,
+): string {
+  return JSON.stringify(
+    ListSMSTemplatesSecurity$outboundSchema.parse(listSMSTemplatesSecurity),
+  );
+}
+
+export function listSMSTemplatesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<ListSMSTemplatesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListSMSTemplatesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListSMSTemplatesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const ListSMSTemplatesResponse$inboundSchema: z.ZodType<

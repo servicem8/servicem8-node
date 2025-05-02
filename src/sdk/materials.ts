@@ -25,10 +25,12 @@ export class Materials extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_inventory**.
    */
   async listMaterials(
+    security: operations.ListMaterialsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListMaterialsResponse> {
     return unwrapAsync(materialsListMaterials(
       this,
+      security,
       options,
     ));
   }
@@ -45,11 +47,13 @@ export class Materials extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createMaterials(
+    security: operations.CreateMaterialsSecurity,
     request: components.MaterialInput,
     options?: RequestOptions,
   ): Promise<operations.CreateMaterialsResponse> {
     return unwrapAsync(materialsCreateMaterials(
       this,
+      security,
       request,
       options,
     ));
@@ -64,11 +68,13 @@ export class Materials extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_inventory**.
    */
   async getMaterials(
+    security: operations.GetMaterialsSecurity,
     request: operations.GetMaterialsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetMaterialsResponse> {
     return unwrapAsync(materialsGetMaterials(
       this,
+      security,
       request,
       options,
     ));
@@ -83,11 +89,13 @@ export class Materials extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_inventory**.
    */
   async updateMaterials(
+    security: operations.UpdateMaterialsSecurity,
     request: operations.UpdateMaterialsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateMaterialsResponse> {
     return unwrapAsync(materialsUpdateMaterials(
       this,
+      security,
       request,
       options,
     ));
@@ -104,11 +112,13 @@ export class Materials extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_inventory**.
    */
   async deleteMaterials(
+    security: operations.DeleteMaterialsSecurity,
     request: operations.DeleteMaterialsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteMaterialsResponse> {
     return unwrapAsync(materialsDeleteMaterials(
       this,
+      security,
       request,
       options,
     ));

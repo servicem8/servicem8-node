@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type CreateCategoriesSecurity = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
 export type CreateCategoriesResponseResult =
   | components.Result
   | components.ErrorT;
@@ -17,6 +22,63 @@ export type CreateCategoriesResponse = {
   headers: { [k: string]: Array<string> };
   result: components.Result | components.ErrorT;
 };
+
+/** @internal */
+export const CreateCategoriesSecurity$inboundSchema: z.ZodType<
+  CreateCategoriesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/** @internal */
+export type CreateCategoriesSecurity$Outbound = {
+  apiKey?: string | undefined;
+  oauth2?: string | undefined;
+};
+
+/** @internal */
+export const CreateCategoriesSecurity$outboundSchema: z.ZodType<
+  CreateCategoriesSecurity$Outbound,
+  z.ZodTypeDef,
+  CreateCategoriesSecurity
+> = z.object({
+  apiKey: z.string().optional(),
+  oauth2: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CreateCategoriesSecurity$ {
+  /** @deprecated use `CreateCategoriesSecurity$inboundSchema` instead. */
+  export const inboundSchema = CreateCategoriesSecurity$inboundSchema;
+  /** @deprecated use `CreateCategoriesSecurity$outboundSchema` instead. */
+  export const outboundSchema = CreateCategoriesSecurity$outboundSchema;
+  /** @deprecated use `CreateCategoriesSecurity$Outbound` instead. */
+  export type Outbound = CreateCategoriesSecurity$Outbound;
+}
+
+export function createCategoriesSecurityToJSON(
+  createCategoriesSecurity: CreateCategoriesSecurity,
+): string {
+  return JSON.stringify(
+    CreateCategoriesSecurity$outboundSchema.parse(createCategoriesSecurity),
+  );
+}
+
+export function createCategoriesSecurityFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateCategoriesSecurity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateCategoriesSecurity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateCategoriesSecurity' from JSON`,
+  );
+}
 
 /** @internal */
 export const CreateCategoriesResponseResult$inboundSchema: z.ZodType<

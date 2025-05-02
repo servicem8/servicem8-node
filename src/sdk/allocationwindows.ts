@@ -22,10 +22,12 @@ export class AllocationWindows extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listAllocationWindows(
+    security: operations.ListAllocationWindowsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListAllocationWindowsResponse> {
     return unwrapAsync(allocationWindowsListAllocationWindows(
       this,
+      security,
       options,
     ));
   }
@@ -39,11 +41,13 @@ export class AllocationWindows extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createAllocationWindows(
+    security: operations.CreateAllocationWindowsSecurity,
     request: components.AllocationWindowInput,
     options?: RequestOptions,
   ): Promise<operations.CreateAllocationWindowsResponse> {
     return unwrapAsync(allocationWindowsCreateAllocationWindows(
       this,
+      security,
       request,
       options,
     ));
@@ -53,11 +57,13 @@ export class AllocationWindows extends ClientSDK {
    * Retrieve an Allocation Window
    */
   async getAllocationWindows(
+    security: operations.GetAllocationWindowsSecurity,
     request: operations.GetAllocationWindowsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetAllocationWindowsResponse> {
     return unwrapAsync(allocationWindowsGetAllocationWindows(
       this,
+      security,
       request,
       options,
     ));
@@ -67,11 +73,13 @@ export class AllocationWindows extends ClientSDK {
    * Update an Allocation Window
    */
   async updateAllocationWindows(
+    security: operations.UpdateAllocationWindowsSecurity,
     request: operations.UpdateAllocationWindowsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateAllocationWindowsResponse> {
     return unwrapAsync(allocationWindowsUpdateAllocationWindows(
       this,
+      security,
       request,
       options,
     ));
@@ -85,11 +93,13 @@ export class AllocationWindows extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteAllocationWindows(
+    security: operations.DeleteAllocationWindowsSecurity,
     request: operations.DeleteAllocationWindowsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteAllocationWindowsResponse> {
     return unwrapAsync(allocationWindowsDeleteAllocationWindows(
       this,
+      security,
       request,
       options,
     ));

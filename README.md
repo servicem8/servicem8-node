@@ -86,92 +86,6 @@ yarn add servicem8 zod
 
 > [!NOTE]
 > This package is published with CommonJS and ES Modules (ESM) support.
-
-
-### Model Context Protocol (MCP) Server
-
-This SDK is also an installable MCP server where the various SDK methods are
-exposed as tools that can be invoked by AI applications.
-
-> Node.js v20 or greater is required to run the MCP server from npm.
-
-<details>
-<summary>Claude installation steps</summary>
-
-Add the following server definition to your `claude_desktop_config.json` file:
-
-```json
-{
-  "mcpServers": {
-    "ServiceM8": {
-      "command": "npx",
-      "args": [
-        "-y", "--package", "servicem8",
-        "--",
-        "mcp", "start",
-        "--api-key-auth", "...",
-        "--oauth2", "..."
-      ]
-    }
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Cursor installation steps</summary>
-
-Create a `.cursor/mcp.json` file in your project root with the following content:
-
-```json
-{
-  "mcpServers": {
-    "ServiceM8": {
-      "command": "npx",
-      "args": [
-        "-y", "--package", "servicem8",
-        "--",
-        "mcp", "start",
-        "--api-key-auth", "...",
-        "--oauth2", "..."
-      ]
-    }
-  }
-}
-```
-
-</details>
-
-You can also run MCP servers as a standalone binary with no additional dependencies. You must pull these binaries from available Github releases:
-
-```bash
-curl -L -o mcp-server \
-    https://github.com/{org}/{repo}/releases/download/{tag}/mcp-server-bun-darwin-arm64 && \
-chmod +x mcp-server
-```
-
-If the repo is a private repo you must add your Github PAT to download a release `-H "Authorization: Bearer {GITHUB_PAT}"`.
-
-
-```json
-{
-  "mcpServers": {
-    "Todos": {
-      "command": "./DOWNLOAD/PATH/mcp-server",
-      "args": [
-        "start"
-      ]
-    }
-  }
-}
-```
-
-For a full list of server arguments, run:
-
-```sh
-npx -y --package servicem8 -- mcp start --help
-```
 <!-- End SDK Installation [installation] -->
 
 <!-- Start Requirements [requirements] -->
@@ -188,14 +102,12 @@ For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
-  const result = await serviceM8.allocationWindows.listAllocationWindows();
+  const result = await serviceM8.allocationWindows.listAllocationWindows({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  });
 
   // Handle the result
   console.log(result);
@@ -219,17 +131,18 @@ This SDK supports the following security schemes globally:
 | `oauth2`     | oauth2 | OAuth2 token | `SERVICEM8_OAUTH2`       |
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
+
+
+### Per-Operation Security Schemes
+
+Some operations in this SDK require the security scheme to be specified at the request level. For example:
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
-  const result = await serviceM8.allocationWindows.listAllocationWindows();
+  const result = await serviceM8.allocationWindows.listAllocationWindows({});
 
   // Handle the result
   console.log(result);
@@ -727,14 +640,12 @@ To change the default retry strategy for a single API call, simply provide a ret
 ```typescript
 import { ServiceM8 } from "servicem8";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   const result = await serviceM8.allocationWindows.listAllocationWindows({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  }, {
     retries: {
       strategy: "backoff",
       backoff: {
@@ -770,13 +681,12 @@ const serviceM8 = new ServiceM8({
     },
     retryConnectionErrors: false,
   },
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
 });
 
 async function run() {
-  const result = await serviceM8.allocationWindows.listAllocationWindows();
+  const result = await serviceM8.allocationWindows.listAllocationWindows({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  });
 
   // Handle the result
   console.log(result);
@@ -803,16 +713,14 @@ If the method throws an error and it is not captured by the known errors, it wil
 import { ServiceM8 } from "servicem8";
 import { ErrorT, SDKValidationError } from "servicem8/models/errors";
 
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
-});
+const serviceM8 = new ServiceM8();
 
 async function run() {
   let result;
   try {
-    result = await serviceM8.allocationWindows.listAllocationWindows();
+    result = await serviceM8.allocationWindows.listAllocationWindows({
+      apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+    });
 
     // Handle the result
     console.log(result);
@@ -867,13 +775,12 @@ import { ServiceM8 } from "servicem8";
 
 const serviceM8 = new ServiceM8({
   serverURL: "https://api.servicem8.com/api_1.0",
-  security: {
-    apiKeyAuth: process.env["SERVICEM8_API_KEY_AUTH"] ?? "",
-  },
 });
 
 async function run() {
-  const result = await serviceM8.allocationWindows.listAllocationWindows();
+  const result = await serviceM8.allocationWindows.listAllocationWindows({
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  });
 
   // Handle the result
   console.log(result);

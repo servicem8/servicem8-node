@@ -22,10 +22,12 @@ export class StaffMessages extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listStaffMessages(
+    security: operations.ListStaffMessagesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListStaffMessagesResponse> {
     return unwrapAsync(staffMessagesListStaffMessages(
       this,
+      security,
       options,
     ));
   }
@@ -39,11 +41,13 @@ export class StaffMessages extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createStaffMessages(
+    security: operations.CreateStaffMessagesSecurity,
     request: components.StaffMessageInput,
     options?: RequestOptions,
   ): Promise<operations.CreateStaffMessagesResponse> {
     return unwrapAsync(staffMessagesCreateStaffMessages(
       this,
+      security,
       request,
       options,
     ));
@@ -53,11 +57,13 @@ export class StaffMessages extends ClientSDK {
    * Retrieve a Staff Message
    */
   async getStaffMessages(
+    security: operations.GetStaffMessagesSecurity,
     request: operations.GetStaffMessagesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetStaffMessagesResponse> {
     return unwrapAsync(staffMessagesGetStaffMessages(
       this,
+      security,
       request,
       options,
     ));
@@ -67,11 +73,13 @@ export class StaffMessages extends ClientSDK {
    * Update a Staff Message
    */
   async updateStaffMessages(
+    security: operations.UpdateStaffMessagesSecurity,
     request: operations.UpdateStaffMessagesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateStaffMessagesResponse> {
     return unwrapAsync(staffMessagesUpdateStaffMessages(
       this,
+      security,
       request,
       options,
     ));
@@ -85,11 +93,13 @@ export class StaffMessages extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteStaffMessages(
+    security: operations.DeleteStaffMessagesSecurity,
     request: operations.DeleteStaffMessagesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteStaffMessagesResponse> {
     return unwrapAsync(staffMessagesDeleteStaffMessages(
       this,
+      security,
       request,
       options,
     ));
