@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 5292d1b1-a456-4df8-b793-88d92b92bb91
 management:
-  docChecksum: 1f4285e46f8c9d3089bf8348f82e40d2
+  docChecksum: 24dce0bfa2d6ceb35d34c5d6c5ef266f
   docVersion: 1.0.0
   speakeasyVersion: 1.542.3
   generationVersion: 2.597.9
-  releaseVersion: 0.5.0
-  configChecksum: 3da3c75d2743587e2cc8aa8777b97a37
+  releaseVersion: 0.5.1
+  configChecksum: 0f950e278fd4ca84a234528a4b104a32
   published: true
 features:
   typescript:
@@ -3112,7 +3112,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-ba90-4c4d-94e9-22bb0f0d450b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "start_time": "string", "end_time": "string", "sort_priority": "string"}]
+          application/json: [{"uuid": "123e4567-709f-48d5-9e8c-22bcb4ba636b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "start_time": "string", "end_time": "string", "sort_priority": "string"}]
     badRequest:
       responses:
         "400":
@@ -3141,7 +3141,7 @@ examples:
           uuid: "4b696862-c2d8-4bfe-936b-d6716d1d97a4"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-8f97-41ff-a004-22bb0af273bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "start_time": "string", "end_time": "string", "sort_priority": "string"}
+          application/json: {"uuid": "123e4567-85c1-4973-a41b-22bcb184b9eb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "start_time": "string", "end_time": "string", "sort_priority": "string"}
     badRequest:
       parameters:
         path:
@@ -3188,7 +3188,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-a289-4714-a1ec-22bb050796bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-28fb-46b5-9104-22bb01cd259b", "asset_code": "string", "asset_type_uuid": "123e4567-85d2-46f7-8e17-22bb08486ebb", "name": "string", "lat": "number", "lng": "number", "geo_timestamp": "2025-05-01 12:00:00", "altitude": "number", "field_data": [{"uuid": "string", "fieldType": "string", "fieldName": "string", "fieldValue": "string", "sortOrder": "number"}]}]
+          application/json: [{"uuid": "123e4567-d029-4f59-9d65-22bcb47dad1b", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-badc-4127-9812-22bcb9cef12b", "asset_code": "string", "asset_type_uuid": "123e4567-2bc0-450f-bd6f-22bcb86e91bb", "name": "string", "lat": "number", "lng": "number", "geo_timestamp": "2025-05-01 12:00:00", "altitude": "number", "field_data": [{"uuid": "string", "fieldType": "string", "fieldName": "string", "fieldValue": "string", "sortOrder": "number"}]}]
     badRequest:
       responses:
         "400":
@@ -3202,7 +3202,7 @@ examples:
           uuid: "8eb1fa27-739c-4946-b465-dfd310714838"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-7da7-40df-b4cc-22bb0bce696b", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-3194-4d51-8ebc-22bb00a8c01b", "asset_code": "string", "asset_type_uuid": "123e4567-cf6e-4865-86cb-22bb011b6b6b", "name": "string", "lat": "number", "lng": "number", "geo_timestamp": "2025-05-01 12:00:00", "altitude": "number", "field_data": [{"uuid": "string", "fieldType": "string", "fieldName": "string", "fieldValue": "string", "sortOrder": "number"}]}
+          application/json: {"uuid": "123e4567-ba54-4b42-94d5-22bcb3a8f9cb", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-2953-4c41-9751-22bcb5d9848b", "asset_code": "string", "asset_type_uuid": "123e4567-9c01-4bb2-b3ff-22bcbc07a42b", "name": "string", "lat": "number", "lng": "number", "geo_timestamp": "2025-05-01 12:00:00", "altitude": "number", "field_data": [{"uuid": "string", "fieldType": "string", "fieldName": "string", "fieldValue": "string", "sortOrder": "number"}]}
     badRequest:
       parameters:
         path:
@@ -3249,7 +3249,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-ee78-4096-840d-22bb0619d68b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string"}]
+          application/json: [{"uuid": "123e4567-e2ca-4ac9-a1bf-22bcba6fab5b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string"}]
     badRequest:
       responses:
         "400":
@@ -3278,7 +3278,7 @@ examples:
           uuid: "60d92c37-ec9f-444d-be47-2661b6ad833a"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-4748-473c-ba48-22bb0c0e5f1b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string"}
+          application/json: {"uuid": "123e4567-e56d-4d61-bd4d-22bcb47c318b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string"}
     badRequest:
       parameters:
         path:
@@ -3325,7 +3325,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-8f4d-4ebf-ba48-22bb0674faeb", "active": 1, "edit_date": "2025-05-01 12:00:00", "asset_type_uuid": "123e4567-7e59-4552-87f5-22bb0452a7fb", "name": "string", "field_data": {"fieldType": "Multiple Choice", "mandatory": "string", "choices": ["string"]}, "sort_order": "string"}]
+          application/json: [{"uuid": "123e4567-25ac-483d-93d5-22bcb555cf2b", "active": 1, "edit_date": "2025-05-01 12:00:00", "asset_type_uuid": "123e4567-bf45-4b77-89a6-22bcb9eed4fb", "name": "string", "field_data": {"fieldType": "Multiple Choice", "mandatory": "string", "choices": ["string"]}, "sort_order": "string"}]
     badRequest:
       responses:
         "400":
@@ -3354,7 +3354,7 @@ examples:
           uuid: "9f043044-07d3-499c-b070-95e848797216"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-6fa1-4987-8a0a-22bb0c23801b", "active": 1, "edit_date": "2025-05-01 12:00:00", "asset_type_uuid": "123e4567-b2c2-4aca-a8c5-22bb0af4ae0b", "name": "string", "field_data": {"fieldType": "Date", "mandatory": "string", "choices": ["string"]}, "sort_order": "string"}
+          application/json: {"uuid": "123e4567-69b4-48d0-a118-22bcb7aab64b", "active": 1, "edit_date": "2025-05-01 12:00:00", "asset_type_uuid": "123e4567-e44e-44db-8b02-22bcbbd2af6b", "name": "string", "field_data": {"fieldType": "Date", "mandatory": "string", "choices": ["string"]}, "sort_order": "string"}
     badRequest:
       parameters:
         path:
@@ -3401,7 +3401,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-f232-4bbe-b072-22bb0ca05fcb", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-c560-470e-95f2-22bb07db615b", "attachment_name": "string", "file_type": "string", "created_by_staff_uuid": "123e4567-96b0-4783-9afc-22bb05d68efb", "timestamp": "string", "attachment_source": "string", "tags": "string", "lng": "number", "lat": "number", "photo_width": "string", "photo_height": "string", "extracted_info": "string", "is_favourite": "string", "class_name": "string", "metadata": "string"}]
+          application/json: [{"uuid": "123e4567-443b-499e-8272-22bcbeb5af0b", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-082b-4ef6-b788-22bcb9dd140b", "attachment_name": "string", "file_type": "string", "created_by_staff_uuid": "123e4567-0f23-4faa-a9a1-22bcba75fa7b", "timestamp": "string", "attachment_source": "string", "tags": "string", "lng": "number", "lat": "number", "photo_width": "string", "photo_height": "string", "extracted_info": "string", "is_favourite": "string", "class_name": "string", "metadata": "string"}]
     badRequest:
       responses:
         "400":
@@ -3430,7 +3430,7 @@ examples:
           uuid: "a2f84c5a-7c7b-498c-98b8-8833efa107b6"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-4d3c-41a9-aae2-22bb05f4272b", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-7b1e-4e79-9e34-22bb0876617b", "attachment_name": "string", "file_type": "string", "created_by_staff_uuid": "123e4567-9e32-477e-8ac5-22bb0e1d8ccb", "timestamp": "string", "attachment_source": "string", "tags": "string", "lng": "number", "lat": "number", "photo_width": "string", "photo_height": "string", "extracted_info": "string", "is_favourite": "string", "class_name": "string", "metadata": "string"}
+          application/json: {"uuid": "123e4567-9c74-450c-8b62-22bcbbcc31bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-d5ee-4db5-b003-22bcbbc66d8b", "attachment_name": "string", "file_type": "string", "created_by_staff_uuid": "123e4567-b56b-4b24-b8a9-22bcb7b622eb", "timestamp": "string", "attachment_source": "string", "tags": "string", "lng": "number", "lat": "number", "photo_width": "string", "photo_height": "string", "extracted_info": "string", "is_favourite": "string", "class_name": "string", "metadata": "string"}
     badRequest:
       parameters:
         path:
@@ -3477,7 +3477,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-92f9-4f3a-a6e7-22bb05da44ab", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "automatically_allocated": "string", "file_name": "string", "regarding_form_uuid": "123e4567-0b74-4405-9881-22bb04e7761b", "regarding_asset_type_uuid": "123e4567-928e-4dd4-9f96-22bb0697263b"}]
+          application/json: [{"uuid": "123e4567-3406-472c-975d-22bcb84378eb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "automatically_allocated": "string", "file_name": "string", "regarding_form_uuid": "123e4567-3ff3-4dc9-ac27-22bcb3ceb8eb", "regarding_asset_type_uuid": "123e4567-dbf4-45a6-a5a5-22bcbe6553eb"}]
     badRequest:
       responses:
         "400":
@@ -3506,7 +3506,7 @@ examples:
           uuid: "c714ee05-601d-45d9-8e91-f4918cce018c"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-c776-4f6c-b211-22bb08a8ce3b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "automatically_allocated": "string", "file_name": "string", "regarding_form_uuid": "123e4567-eeab-4c4c-b8e7-22bb0b3996bb", "regarding_asset_type_uuid": "123e4567-1edf-4095-a387-22bb05715afb"}
+          application/json: {"uuid": "123e4567-89b2-4b5e-9580-22bcb28425fb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "automatically_allocated": "string", "file_name": "string", "regarding_form_uuid": "123e4567-0f69-48ad-bc64-22bcb4892c4b", "regarding_asset_type_uuid": "123e4567-ec13-4948-8dbc-22bcbe2eb30b"}
     badRequest:
       parameters:
         path:
@@ -3553,7 +3553,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "colour": "string", "uuid": "123e4567-dba8-4378-a793-22bb03ea0b1b", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
+          application/json: [{"name": "string", "colour": "string", "uuid": "123e4567-f543-4069-a0f4-22bcb684c9fb", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -3582,7 +3582,7 @@ examples:
           uuid: "c9cb910e-06e5-4dd4-8c13-2eb75ed22e5e"
       responses:
         "200":
-          application/json: {"name": "string", "colour": "string", "uuid": "123e4567-ee4f-47b9-b8f1-22bb01bb682b", "active": 1, "edit_date": "2025-05-01 12:00:00"}
+          application/json: {"name": "string", "colour": "string", "uuid": "123e4567-40ab-41dd-832a-22bcb07bef6b", "active": 1, "edit_date": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -3629,7 +3629,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "abn_number": "string", "address": "string", "billing_address": "string", "parent_company_uuid": "string", "uuid": "123e4567-d82a-45cc-8a2e-22bb0219ad3b", "active": 1, "edit_date": "2025-05-01 12:00:00", "website": "string", "is_individual": "string", "address_street": "string", "address_city": "string", "address_state": "string", "address_postcode": "string", "address_country": "string", "fax_number": "string", "badges": "string", "tax_rate_uuid": "123e4567-3f2e-42e5-b8db-22bb05dbf21b", "billing_attention": "string", "payment_terms": "string"}]
+          application/json: [{"name": "string", "abn_number": "string", "address": "string", "billing_address": "string", "parent_company_uuid": "string", "uuid": "123e4567-7b18-4816-b1b2-22bcb087bedb", "active": 1, "edit_date": "2025-05-01 12:00:00", "website": "string", "is_individual": "string", "address_street": "string", "address_city": "string", "address_state": "string", "address_postcode": "string", "address_country": "string", "fax_number": "string", "badges": "string", "tax_rate_uuid": "123e4567-df55-4937-a725-22bcb1cf165b", "billing_attention": "string", "payment_terms": "string"}]
     badRequest:
       responses:
         "400":
@@ -3658,7 +3658,7 @@ examples:
           uuid: "9c1a0df8-3b93-4256-a5b9-153f2476dca2"
       responses:
         "200":
-          application/json: {"name": "string", "abn_number": "string", "address": "string", "billing_address": "string", "parent_company_uuid": "string", "uuid": "123e4567-971c-4db9-af71-22bb0a50859b", "active": 1, "edit_date": "2025-05-01 12:00:00", "website": "string", "is_individual": "string", "address_street": "string", "address_city": "string", "address_state": "string", "address_postcode": "string", "address_country": "string", "fax_number": "string", "badges": "string", "tax_rate_uuid": "123e4567-4570-4df8-986e-22bb0cbb9fdb", "billing_attention": "string", "payment_terms": "string"}
+          application/json: {"name": "string", "abn_number": "string", "address": "string", "billing_address": "string", "parent_company_uuid": "string", "uuid": "123e4567-8679-40e1-8b33-22bcbc05e3eb", "active": 1, "edit_date": "2025-05-01 12:00:00", "website": "string", "is_individual": "string", "address_street": "string", "address_city": "string", "address_state": "string", "address_postcode": "string", "address_country": "string", "fax_number": "string", "badges": "string", "tax_rate_uuid": "123e4567-a080-4290-9724-22bcb617ef6b", "billing_attention": "string", "payment_terms": "string"}
     badRequest:
       parameters:
         path:
@@ -3705,7 +3705,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-208e-4db4-8fd5-22bb07ededdb", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-b052-4b5d-bb1a-22bb03eeabab", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}]
+          application/json: [{"uuid": "123e4567-b286-4c70-8b49-22bcb3cf4d0b", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-b059-43ac-a754-22bcb4d9d4cb", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}]
     badRequest:
       responses:
         "400":
@@ -3734,7 +3734,7 @@ examples:
           uuid: "5f831978-f7ea-4695-814c-ccb0913baf0a"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-449f-49df-9525-22bb06a5b99b", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-9f9e-4e45-9d7a-22bb0924e78b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}
+          application/json: {"uuid": "123e4567-ff0a-40fe-b7fc-22bcbab6107b", "active": 1, "edit_date": "2025-05-01 12:00:00", "company_uuid": "123e4567-e995-4423-95cf-22bcb39bdf9b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}
     badRequest:
       parameters:
         path:
@@ -3781,7 +3781,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-1ab6-42be-9ae6-22bb0685afeb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "subject": "string", "message": "string"}]
+          application/json: [{"uuid": "123e4567-a486-4c48-bf3e-22bcb43b24ab", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "subject": "string", "message": "string"}]
     badRequest:
       responses:
         "400":
@@ -3810,7 +3810,7 @@ examples:
           uuid: "01e49d7f-64e2-4e6f-b41a-39acd826f9d1"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-c538-40b5-8e42-22bb049b18ab", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "subject": "string", "message": "string"}
+          application/json: {"uuid": "123e4567-fd19-4ce0-a57f-22bcb88d488b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "subject": "string", "message": "string"}
     badRequest:
       parameters:
         path:
@@ -3857,7 +3857,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-4ae9-44e4-b6a1-22bb02ac3b3b", "active": 1, "edit_date": "2025-05-01 12:00:00", "timestamp": "string", "related_object": "string", "related_object_uuid": "123e4567-f52a-483a-90b1-22bb09960d6b", "rating": "string", "comment": "string"}]
+          application/json: [{"uuid": "123e4567-5b2a-48b0-a9ef-22bcbb372a9b", "active": 1, "edit_date": "2025-05-01 12:00:00", "timestamp": "string", "related_object": "string", "related_object_uuid": "123e4567-97cf-4c61-8260-22bcb5f8bffb", "rating": "string", "comment": "string"}]
     badRequest:
       responses:
         "400":
@@ -3886,7 +3886,7 @@ examples:
           uuid: "0b790bbd-e3c4-4110-af59-442137023f8b"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-e546-4608-b9ae-22bb09f6072b", "active": 1, "edit_date": "2025-05-01 12:00:00", "timestamp": "string", "related_object": "string", "related_object_uuid": "123e4567-a4b2-4bab-9195-22bb0b1eed6b", "rating": "string", "comment": "string"}
+          application/json: {"uuid": "123e4567-718d-4efa-9472-22bcb8d861eb", "active": 1, "edit_date": "2025-05-01 12:00:00", "timestamp": "string", "related_object": "string", "related_object_uuid": "123e4567-05ac-494c-90a6-22bcb179ec9b", "rating": "string", "comment": "string"}
     badRequest:
       parameters:
         path:
@@ -3933,7 +3933,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "document_template_uuid": "123e4567-3eb3-45d5-88a4-22bb0bfa78bb", "can_be_used_independently": "string", "badge_mandatory_state": "string", "template_fields": [{"name": "string", "fieldType": "Text", "value": "string", "sortOrder": "string"}], "uuid": "123e4567-8859-4d02-9a7e-22bb04b5042b", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
+          application/json: [{"name": "string", "document_template_uuid": "123e4567-4f62-4862-87e2-22bcb117b05b", "can_be_used_independently": "string", "badge_mandatory_state": "string", "template_fields": [{"name": "string", "fieldType": "Text", "value": "string", "sortOrder": "string"}], "uuid": "123e4567-c73c-436d-86cd-22bcb907ccbb", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -3962,7 +3962,7 @@ examples:
           uuid: "56e285a2-c6af-4c67-87b1-6ba5832617e0"
       responses:
         "200":
-          application/json: {"name": "string", "document_template_uuid": "123e4567-c8d4-4b84-89b5-22bb0fe32dbb", "can_be_used_independently": "string", "badge_mandatory_state": "string", "template_fields": [{"name": "string", "fieldType": "Text", "value": "string", "sortOrder": "string"}], "uuid": "123e4567-9b4c-4ef3-9d08-22bb079d0dfb", "active": 1, "edit_date": "2025-05-01 12:00:00"}
+          application/json: {"name": "string", "document_template_uuid": "123e4567-27ae-4dc2-bb3a-22bcbf2e13bb", "can_be_used_independently": "string", "badge_mandatory_state": "string", "template_fields": [{"name": "string", "fieldType": "Text", "value": "string", "sortOrder": "string"}], "uuid": "123e4567-ae68-48ac-8695-22bcb533571b", "active": 1, "edit_date": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -4009,7 +4009,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-643d-4594-a276-22bb0512be2b", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-2e44-4432-a1ee-22bb0a58e80b", "name": "string", "field_data_json": "string", "sort_order": "string"}]
+          application/json: [{"uuid": "123e4567-553a-4e02-9b9f-22bcb93cab4b", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-de88-43ac-a1dc-22bcbae33b0b", "name": "string", "field_data_json": "string", "sort_order": "string"}]
     badRequest:
       responses:
         "400":
@@ -4038,7 +4038,7 @@ examples:
           uuid: "45a3c3af-9f5d-46a2-b258-7ba29e2086c3"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-ab9f-493d-90c3-22bb0f9294fb", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-2e90-47f1-91a8-22bb0aa909fb", "name": "string", "field_data_json": "string", "sort_order": "string"}
+          application/json: {"uuid": "123e4567-a16d-4db4-b98a-22bcb1afd48b", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-f019-4fb3-880c-22bcb5220f2b", "name": "string", "field_data_json": "string", "sort_order": "string"}
     badRequest:
       parameters:
         path:
@@ -4085,7 +4085,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-fd3d-4bdb-b223-22bb071fd7eb", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-0126-46a4-ab24-22bb0ea34a0b", "staff_uuid": "123e4567-7779-45f9-bcb1-22bb0fab5cab", "regarding_object": "string", "regarding_object_uuid": "123e4567-4bcb-4a9b-a0c0-22bb005ba45b", "field_data": "string", "timestamp": "2025-05-01 12:00:00", "form_by_staff_uuid": "123e4567-a71a-4d5c-b940-22bb0c4c781b", "document_attachment_uuid": "123e4567-c29c-4c4e-b76f-22bb0ba6b7cb", "asset_uuid": "123e4567-27d2-47c7-b953-22bb048f728b"}]
+          application/json: [{"uuid": "123e4567-f39f-4834-93a3-22bcb88761eb", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-a9b6-4e16-aed2-22bcbbc1cb0b", "staff_uuid": "123e4567-7d20-42c2-847a-22bcb9f802db", "regarding_object": "string", "regarding_object_uuid": "123e4567-6024-463d-9d52-22bcbdf58d6b", "field_data": "string", "timestamp": "2025-05-01 12:00:00", "form_by_staff_uuid": "123e4567-6a20-42df-b16b-22bcb51ef63b", "document_attachment_uuid": "123e4567-1490-443f-a911-22bcb8e5de0b", "asset_uuid": "123e4567-97c3-4f65-9d80-22bcb4d137fb"}]
     badRequest:
       responses:
         "400":
@@ -4114,7 +4114,7 @@ examples:
           uuid: "23aea6ea-cca1-4a9f-b754-cf0a7e13a1e5"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-3349-44c0-9677-22bb0500e16b", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-7505-4198-a95f-22bb0daf3b8b", "staff_uuid": "123e4567-25c8-48c5-8de4-22bb0dae953b", "regarding_object": "string", "regarding_object_uuid": "123e4567-dd7e-4fbc-af40-22bb0edc1e5b", "field_data": "string", "timestamp": "2025-05-01 12:00:00", "form_by_staff_uuid": "123e4567-bbcb-43e5-8203-22bb04be453b", "document_attachment_uuid": "123e4567-ad57-4887-8118-22bb0769816b", "asset_uuid": "123e4567-8881-4a42-9f1c-22bb0be25dbb"}
+          application/json: {"uuid": "123e4567-4ae0-44f6-9825-22bcb590fcfb", "active": 1, "edit_date": "2025-05-01 12:00:00", "form_uuid": "123e4567-a872-4e72-9b9d-22bcb8d2fbcb", "staff_uuid": "123e4567-6752-45a8-8b39-22bcbd99981b", "regarding_object": "string", "regarding_object_uuid": "123e4567-b844-4e0c-98a5-22bcb813a51b", "field_data": "string", "timestamp": "2025-05-01 12:00:00", "form_by_staff_uuid": "123e4567-59b5-4c41-83a1-22bcbc4498cb", "document_attachment_uuid": "123e4567-d999-41e8-b044-22bcb0914aab", "asset_uuid": "123e4567-1d57-426b-ae5a-22bcb176b28b"}
     badRequest:
       parameters:
         path:
@@ -4161,7 +4161,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"created_by_staff_uuid": "123e4567-c3d1-49b3-a806-22bb0d16009b", "date": "YYYY-MM-DD", "company_uuid": "123e4567-e00e-4b48-9b14-22bb07f974cb", "billing_address": "string", "status": "Completed", "lng": "number", "lat": "number", "payment_date": "2025-05-01 12:00:00", "payment_actioned_by_uuid": "123e4567-58c2-48e3-b574-22bb06b9c2eb", "payment_method": "string", "payment_amount": "string", "category_uuid": "123e4567-ce14-4b4d-93cc-22bb0306268b", "payment_note": "string", "geo_is_valid": "string", "purchase_order_number": "string", "invoice_sent": "string", "invoice_sent_stamp": "2025-05-01 12:00:00", "ready_to_invoice": "string", "ready_to_invoice_stamp": "string", "geo_country": "string", "geo_postcode": "string", "geo_state": "string", "geo_city": "string", "geo_street": "string", "geo_number": "string", "queue_uuid": "123e4567-e163-4e87-a1bc-22bb0e5b114b", "queue_expiry_date": "2025-05-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-98c5-470a-b575-22bb053a098b", "badges": "string", "quote_date": "2025-05-01 12:00:00", "quote_sent": 0, "quote_sent_stamp": "2025-05-01 12:00:00", "work_order_date": "2025-05-01 12:00:00", "active_network_request_uuid": "string", "related_knowledge_articles": "string", "uuid": "123e4567-f659-43c8-a0f0-22bb067e262b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_address": "string", "job_description": "string", "work_done_description": "string", "generated_job_id": "string", "total_invoice_amount": "string", "payment_processed": "string", "payment_processed_stamp": "2025-05-01 12:00:00", "payment_received": "string", "payment_received_stamp": "2025-05-01 12:00:00", "completion_date": "2025-05-01 12:00:00", "completion_actioned_by_uuid": "123e4567-3e38-4112-aa01-22bb054701eb", "unsuccessful_date": "2025-05-01 12:00:00", "job_is_scheduled_until_stamp": "2025-05-01 12:00:00"}]
+          application/json: [{"created_by_staff_uuid": "123e4567-135c-4e0f-807e-22bcb42843ab", "date": "YYYY-MM-DD", "company_uuid": "123e4567-7d70-4133-8b0e-22bcb44ce7db", "billing_address": "string", "status": "Completed", "lng": "number", "lat": "number", "payment_date": "2025-05-01 12:00:00", "payment_actioned_by_uuid": "123e4567-e0e5-44e5-83f8-22bcbc7f17eb", "payment_method": "string", "payment_amount": "string", "category_uuid": "123e4567-b0a3-4835-884d-22bcb0500c0b", "payment_note": "string", "geo_is_valid": "string", "purchase_order_number": "string", "invoice_sent": "string", "invoice_sent_stamp": "2025-05-01 12:00:00", "ready_to_invoice": "string", "ready_to_invoice_stamp": "string", "geo_country": "string", "geo_postcode": "string", "geo_state": "string", "geo_city": "string", "geo_street": "string", "geo_number": "string", "queue_uuid": "123e4567-7c30-4cbe-85e0-22bcbbbb420b", "queue_expiry_date": "2025-05-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-1771-464c-83b1-22bcb695c57b", "badges": "string", "quote_date": "2025-05-01 12:00:00", "quote_sent": 0, "quote_sent_stamp": "2025-05-01 12:00:00", "work_order_date": "2025-05-01 12:00:00", "active_network_request_uuid": "string", "related_knowledge_articles": "string", "uuid": "123e4567-cb29-4937-aa7b-22bcb301528b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_address": "string", "job_description": "string", "work_done_description": "string", "generated_job_id": "string", "total_invoice_amount": "string", "payment_processed": "string", "payment_processed_stamp": "2025-05-01 12:00:00", "payment_received": "string", "payment_received_stamp": "2025-05-01 12:00:00", "completion_date": "2025-05-01 12:00:00", "completion_actioned_by_uuid": "123e4567-3d13-4b93-85e2-22bcb237404b", "unsuccessful_date": "2025-05-01 12:00:00", "job_is_scheduled_until_stamp": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -4190,7 +4190,7 @@ examples:
           uuid: "e03231ef-9c59-48f0-8dc1-2a1c0a2ec3b8"
       responses:
         "200":
-          application/json: {"created_by_staff_uuid": "123e4567-df94-4741-86f0-22bb02d380cb", "date": "YYYY-MM-DD", "company_uuid": "123e4567-2537-4941-be88-22bb04c9e2cb", "billing_address": "string", "status": "Completed", "lng": "number", "lat": "number", "payment_date": "2025-05-01 12:00:00", "payment_actioned_by_uuid": "123e4567-69df-46ee-87a9-22bb0cb6138b", "payment_method": "string", "payment_amount": "string", "category_uuid": "123e4567-7c20-4076-acaa-22bb06c57b3b", "payment_note": "string", "geo_is_valid": "string", "purchase_order_number": "string", "invoice_sent": "string", "invoice_sent_stamp": "2025-05-01 12:00:00", "ready_to_invoice": "string", "ready_to_invoice_stamp": "string", "geo_country": "string", "geo_postcode": "string", "geo_state": "string", "geo_city": "string", "geo_street": "string", "geo_number": "string", "queue_uuid": "123e4567-f3d4-4946-afc5-22bb006fd32b", "queue_expiry_date": "2025-05-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-f4a7-4046-8be6-22bb02438f2b", "badges": "string", "quote_date": "2025-05-01 12:00:00", "quote_sent": 0, "quote_sent_stamp": "2025-05-01 12:00:00", "work_order_date": "2025-05-01 12:00:00", "active_network_request_uuid": "string", "related_knowledge_articles": "string", "uuid": "123e4567-6249-4ae1-9f6a-22bb08f025db", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_address": "string", "job_description": "string", "work_done_description": "string", "generated_job_id": "string", "total_invoice_amount": "string", "payment_processed": "string", "payment_processed_stamp": "2025-05-01 12:00:00", "payment_received": "string", "payment_received_stamp": "2025-05-01 12:00:00", "completion_date": "2025-05-01 12:00:00", "completion_actioned_by_uuid": "123e4567-ffc8-4755-89cc-22bb0f49c84b", "unsuccessful_date": "2025-05-01 12:00:00", "job_is_scheduled_until_stamp": "2025-05-01 12:00:00"}
+          application/json: {"created_by_staff_uuid": "123e4567-f048-42ca-bc5b-22bcbeffaefb", "date": "YYYY-MM-DD", "company_uuid": "123e4567-4108-43eb-8273-22bcb2bcb2db", "billing_address": "string", "status": "Completed", "lng": "number", "lat": "number", "payment_date": "2025-05-01 12:00:00", "payment_actioned_by_uuid": "123e4567-d7c3-4a9d-99a1-22bcb392da6b", "payment_method": "string", "payment_amount": "string", "category_uuid": "123e4567-7038-458f-a889-22bcb332f88b", "payment_note": "string", "geo_is_valid": "string", "purchase_order_number": "string", "invoice_sent": "string", "invoice_sent_stamp": "2025-05-01 12:00:00", "ready_to_invoice": "string", "ready_to_invoice_stamp": "string", "geo_country": "string", "geo_postcode": "string", "geo_state": "string", "geo_city": "string", "geo_street": "string", "geo_number": "string", "queue_uuid": "123e4567-3b42-4c7a-b78b-22bcb752a16b", "queue_expiry_date": "2025-05-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-432a-4c2c-9193-22bcb35c481b", "badges": "string", "quote_date": "2025-05-01 12:00:00", "quote_sent": 0, "quote_sent_stamp": "2025-05-01 12:00:00", "work_order_date": "2025-05-01 12:00:00", "active_network_request_uuid": "string", "related_knowledge_articles": "string", "uuid": "123e4567-08e4-49e6-85a4-22bcbd23316b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_address": "string", "job_description": "string", "work_done_description": "string", "generated_job_id": "string", "total_invoice_amount": "string", "payment_processed": "string", "payment_processed_stamp": "2025-05-01 12:00:00", "payment_received": "string", "payment_received_stamp": "2025-05-01 12:00:00", "completion_date": "2025-05-01 12:00:00", "completion_actioned_by_uuid": "123e4567-483d-4da3-b1cc-22bcb9257f2b", "unsuccessful_date": "2025-05-01 12:00:00", "job_is_scheduled_until_stamp": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -4237,7 +4237,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-19a4-44b1-8882-22bb0f83e40b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-0473-4955-b898-22bb01092a3b", "staff_uuid": "123e4567-8f9d-4db5-a9ab-22bb03c3d4cb", "start_date": "2025-05-01 12:00:00", "end_date": "2025-05-01 12:00:00", "activity_was_scheduled": "string", "activity_was_recorded": "string", "activity_was_automated": "string", "has_been_opened": "string", "has_been_opened_timestamp": "2025-05-01 12:00:00", "travel_time_in_seconds": "string", "travel_distance_in_meters": "string", "allocated_by_staff_uuid": "123e4567-4765-47f6-982f-22bb01e02e8b", "allocated_timestamp": "2025-05-01 12:00:00", "material_uuid": "123e4567-a229-40e1-b943-22bb0875994b", "edit_by_staff_uuid": "123e4567-0986-4b12-ac9b-22bb0893424b"}]
+          application/json: [{"uuid": "123e4567-8efd-46e5-93b3-22bcbc25963b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-5836-4d1a-a7b7-22bcb470f25b", "staff_uuid": "123e4567-f345-4be8-bdbc-22bcbc22328b", "start_date": "2025-05-01 12:00:00", "end_date": "2025-05-01 12:00:00", "activity_was_scheduled": "string", "activity_was_recorded": "string", "activity_was_automated": "string", "has_been_opened": "string", "has_been_opened_timestamp": "2025-05-01 12:00:00", "travel_time_in_seconds": "string", "travel_distance_in_meters": "string", "allocated_by_staff_uuid": "123e4567-e08d-4772-9cee-22bcb8fc266b", "allocated_timestamp": "2025-05-01 12:00:00", "material_uuid": "123e4567-cc53-429e-a232-22bcb9b5149b", "edit_by_staff_uuid": "123e4567-8c5a-4343-91de-22bcb108b4bb"}]
     badRequest:
       responses:
         "400":
@@ -4266,7 +4266,7 @@ examples:
           uuid: "f32731bb-bb87-4332-b835-cec6ca6ebe5c"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-1fa7-4644-84a6-22bb0d80621b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-4b94-4cb1-b6ff-22bb0050555b", "staff_uuid": "123e4567-1b77-451c-9b5a-22bb0f4b00eb", "start_date": "2025-05-01 12:00:00", "end_date": "2025-05-01 12:00:00", "activity_was_scheduled": "string", "activity_was_recorded": "string", "activity_was_automated": "string", "has_been_opened": "string", "has_been_opened_timestamp": "2025-05-01 12:00:00", "travel_time_in_seconds": "string", "travel_distance_in_meters": "string", "allocated_by_staff_uuid": "123e4567-2964-4b2c-aef1-22bb004520cb", "allocated_timestamp": "2025-05-01 12:00:00", "material_uuid": "123e4567-a0dc-4b76-b35b-22bb0ec769bb", "edit_by_staff_uuid": "123e4567-48a4-4335-a278-22bb04ee3e6b"}
+          application/json: {"uuid": "123e4567-b507-45b5-bc4e-22bcba1fa73b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-57ac-4951-813c-22bcb64aa98b", "staff_uuid": "123e4567-8c90-4d72-87a6-22bcb986fc9b", "start_date": "2025-05-01 12:00:00", "end_date": "2025-05-01 12:00:00", "activity_was_scheduled": "string", "activity_was_recorded": "string", "activity_was_automated": "string", "has_been_opened": "string", "has_been_opened_timestamp": "2025-05-01 12:00:00", "travel_time_in_seconds": "string", "travel_distance_in_meters": "string", "allocated_by_staff_uuid": "123e4567-9cc1-4d8f-9631-22bcb1f6d58b", "allocated_timestamp": "2025-05-01 12:00:00", "material_uuid": "123e4567-178e-4410-8efd-22bcbce641fb", "edit_by_staff_uuid": "123e4567-9c80-4848-9685-22bcb50e0ceb"}
     badRequest:
       parameters:
         path:
@@ -4313,7 +4313,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-b6b6-4124-ac9c-22bb0b6d0bbb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-f535-4e4b-a733-22bb027034bb", "queue_uuid": "123e4567-2f72-48c0-9b41-22bb047ac46b", "staff_uuid": "123e4567-6f63-4c3b-9f84-22bb0d512dbb", "allocation_date": "2025-05-01 12:00:00", "allocation_window_uuid": "123e4567-6b17-4730-bbaf-22bb0973480b", "allocated_by_staff_uuid": "123e4567-b037-4172-96ac-22bb00dc03db", "allocated_timestamp": "2025-05-01 12:00:00", "expiry_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "completion_timestamp": "2025-05-01 12:00:00", "estimated_duration": "string", "revised_duration": "string", "sort_priority": "string", "requires_acceptance": "string", "acceptance_status": "string", "acceptance_timestamp": "2025-05-01 12:00:00"}]
+          application/json: [{"uuid": "123e4567-650f-4076-a9b3-22bcb551edfb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-3fd0-4c2d-8c47-22bcb40c09db", "queue_uuid": "123e4567-3356-45e6-97b7-22bcb686b59b", "staff_uuid": "123e4567-95db-42bf-a764-22bcb292144b", "allocation_date": "2025-05-01 12:00:00", "allocation_window_uuid": "123e4567-c026-4df1-947d-22bcb7671c5b", "allocated_by_staff_uuid": "123e4567-d998-40fc-8655-22bcbe2cebcb", "allocated_timestamp": "2025-05-01 12:00:00", "expiry_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "completion_timestamp": "2025-05-01 12:00:00", "estimated_duration": "string", "revised_duration": "string", "sort_priority": "string", "requires_acceptance": "string", "acceptance_status": "string", "acceptance_timestamp": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -4342,7 +4342,7 @@ examples:
           uuid: "0d05bbd5-edc5-48f5-97dd-9ac71aad761c"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-5b35-4cfb-918d-22bb024d3c3b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-5760-4d5f-8003-22bb00f4c15b", "queue_uuid": "123e4567-87cc-4fce-9ee8-22bb03dec57b", "staff_uuid": "123e4567-edd3-4135-8250-22bb0264cafb", "allocation_date": "2025-05-01 12:00:00", "allocation_window_uuid": "123e4567-a850-4316-bbfc-22bb0ef0a7fb", "allocated_by_staff_uuid": "123e4567-b6e7-49ce-aed3-22bb0eff490b", "allocated_timestamp": "2025-05-01 12:00:00", "expiry_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "completion_timestamp": "2025-05-01 12:00:00", "estimated_duration": "string", "revised_duration": "string", "sort_priority": "string", "requires_acceptance": "string", "acceptance_status": "string", "acceptance_timestamp": "2025-05-01 12:00:00"}
+          application/json: {"uuid": "123e4567-eef1-42c8-a39b-22bcb730692b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-a4bc-458d-b9e1-22bcbbd6729b", "queue_uuid": "123e4567-58e6-4d12-820d-22bcb445cd8b", "staff_uuid": "123e4567-864e-4dde-b952-22bcb083f70b", "allocation_date": "2025-05-01 12:00:00", "allocation_window_uuid": "123e4567-acc6-4c2e-9109-22bcbdc48ffb", "allocated_by_staff_uuid": "123e4567-ca34-4bb5-a1b2-22bcb791488b", "allocated_timestamp": "2025-05-01 12:00:00", "expiry_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "completion_timestamp": "2025-05-01 12:00:00", "estimated_duration": "string", "revised_duration": "string", "sort_priority": "string", "requires_acceptance": "string", "acceptance_status": "string", "acceptance_timestamp": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -4389,7 +4389,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-6ab7-45b5-8456-22bb0e9990bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-d064-411f-b1dd-22bb0da98dfb", "name": "string", "section_name": "string", "item_type": "string", "sort_order": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-257a-41c6-bb9b-22bb0a1d65ab", "completed_during_checkin_uuid": "123e4567-ed82-41d3-b314-22bb0e559d2b", "reminder_type": "string", "reminder_data": {}, "regarding_object": "string", "regarding_object_uuid": "123e4567-219b-4330-ba21-22bb0c01f27b", "fulfilled_by_object_name": "string", "fulfilled_by_object_uuid": "123e4567-2a0d-4eeb-ade6-22bb0fc0616b", "assigned_to_staff_uuids": ["123e4567-c775-45ce-b4cf-22bb091d850b"], "is_locked": 1, "assigned_timestamp": "2025-05-01 12:00:00", "assigned_by_staff_uuid": "123e4567-673d-4131-97e8-22bb015da60b"}]
+          application/json: [{"uuid": "123e4567-34e3-4e31-898b-22bcb4a05d4b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-fe3f-4728-9891-22bcbf2379ab", "name": "string", "section_name": "string", "item_type": "string", "sort_order": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-10e3-4918-a5b9-22bcb85fb0ab", "completed_during_checkin_uuid": "123e4567-6dbb-48af-9f8d-22bcb9d845db", "reminder_type": "string", "reminder_data": {}, "regarding_object": "string", "regarding_object_uuid": "123e4567-9bc8-4a44-9bee-22bcbf7d42cb", "fulfilled_by_object_name": "string", "fulfilled_by_object_uuid": "123e4567-c10f-4110-b6d8-22bcb31dfe1b", "assigned_to_staff_uuids": ["123e4567-49c4-45e2-b18b-22bcb530c3bb"], "is_locked": 1, "assigned_timestamp": "2025-05-01 12:00:00", "assigned_by_staff_uuid": "123e4567-2e29-464c-84ca-22bcb7248a4b"}]
     badRequest:
       responses:
         "400":
@@ -4418,7 +4418,7 @@ examples:
           uuid: "63a0aea3-0abf-4ee8-b0d9-411f9216037e"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-0e45-4fdd-a618-22bb03405a1b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-61ed-4bd6-9e81-22bb0319e7bb", "name": "string", "section_name": "string", "item_type": "string", "sort_order": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-e7cd-43b7-93e5-22bb0ca79cdb", "completed_during_checkin_uuid": "123e4567-b2ca-4e25-a75e-22bb0714410b", "reminder_type": "string", "reminder_data": {}, "regarding_object": "string", "regarding_object_uuid": "123e4567-3794-496a-800c-22bb04c7ccbb", "fulfilled_by_object_name": "string", "fulfilled_by_object_uuid": "123e4567-173a-4ea1-89bd-22bb0be0bb2b", "assigned_to_staff_uuids": ["123e4567-ba8f-40cf-a2b0-22bb03ed09ab"], "is_locked": 1, "assigned_timestamp": "2025-05-01 12:00:00", "assigned_by_staff_uuid": "123e4567-28aa-4876-9bfd-22bb0d57c13b"}
+          application/json: {"uuid": "123e4567-38e4-413c-8b17-22bcbedcf97b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-1c53-463f-9e11-22bcbf75474b", "name": "string", "section_name": "string", "item_type": "string", "sort_order": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-4bfd-4a49-a0f6-22bcbf4c08bb", "completed_during_checkin_uuid": "123e4567-1a4b-4a4c-bf0e-22bcbf79c3cb", "reminder_type": "string", "reminder_data": {}, "regarding_object": "string", "regarding_object_uuid": "123e4567-ae3c-400f-baea-22bcbc005a2b", "fulfilled_by_object_name": "string", "fulfilled_by_object_uuid": "123e4567-c1bd-4bf3-b33a-22bcb0e6375b", "assigned_to_staff_uuids": ["123e4567-fe64-453e-af0b-22bcb9720d4b"], "is_locked": 1, "assigned_timestamp": "2025-05-01 12:00:00", "assigned_by_staff_uuid": "123e4567-d796-40c1-b988-22bcb1bdf8ab"}
     badRequest:
       parameters:
         path:
@@ -4465,7 +4465,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-1948-494f-bf3f-22bb0b603bab", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-61dc-4248-ab21-22bb05564d4b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}]
+          application/json: [{"uuid": "123e4567-0760-441a-81ae-22bcb5d6fbeb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-8933-4561-845b-22bcb28fec6b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}]
     badRequest:
       responses:
         "400":
@@ -4494,7 +4494,7 @@ examples:
           uuid: "307a9624-022f-459d-9dad-a935302ed7d1"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-a4c1-4290-a599-22bb06f9829b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-5a5f-4dca-b25e-22bb08df4b9b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}
+          application/json: {"uuid": "123e4567-4c00-4a1f-bdec-22bcb9ec191b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-e136-4e89-8eb7-22bcb7448c8b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}
     badRequest:
       parameters:
         path:
@@ -4541,7 +4541,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-3bf3-400f-91ff-22bb090cbcab", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-c409-423c-8a42-22bb0339234b", "material_uuid": "123e4567-f0f4-409d-8b51-22bb07cd44bb", "name": "string", "quantity": "string", "price": "string", "displayed_amount": "string", "displayed_amount_is_tax_inclusive": "string", "tax_rate_uuid": "123e4567-b5e0-4953-8a94-22bb0c3358eb", "sort_order": "string", "cost": "string", "displayed_cost": "string", "job_material_bundle_uuid": "123e4567-fa62-4f8e-977a-22bb00a62acb"}]
+          application/json: [{"uuid": "123e4567-5fb1-4fe9-ae4d-22bcb744cc0b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-887a-4efa-9ee2-22bcbd8bac3b", "material_uuid": "123e4567-35b6-4010-97eb-22bcb77a0c3b", "name": "string", "quantity": "string", "price": "string", "displayed_amount": "string", "displayed_amount_is_tax_inclusive": "string", "tax_rate_uuid": "123e4567-1a58-48d2-b7a8-22bcbd547feb", "sort_order": "string", "cost": "string", "displayed_cost": "string", "job_material_bundle_uuid": "123e4567-5ed4-448a-a6bd-22bcb630433b"}]
     badRequest:
       responses:
         "400":
@@ -4570,7 +4570,7 @@ examples:
           uuid: "d79254ce-b994-4a50-8a99-5f1146cac7ca"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-7511-4790-9110-22bb0f85a10b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-fd6d-4d93-a604-22bb0872a84b", "material_uuid": "123e4567-d5de-48ab-ad3f-22bb0104b2db", "name": "string", "quantity": "string", "price": "string", "displayed_amount": "string", "displayed_amount_is_tax_inclusive": "string", "tax_rate_uuid": "123e4567-e13f-47c5-9f9f-22bb03ca0e5b", "sort_order": "string", "cost": "string", "displayed_cost": "string", "job_material_bundle_uuid": "123e4567-ad96-4e4d-86b2-22bb0ed0891b"}
+          application/json: {"uuid": "123e4567-97f5-4682-9cfb-22bcb2d41e4b", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-6294-4d34-a6b1-22bcb79904ab", "material_uuid": "123e4567-9d2c-458d-946a-22bcb005619b", "name": "string", "quantity": "string", "price": "string", "displayed_amount": "string", "displayed_amount_is_tax_inclusive": "string", "tax_rate_uuid": "123e4567-bf5b-492d-a8e1-22bcb40232bb", "sort_order": "string", "cost": "string", "displayed_cost": "string", "job_material_bundle_uuid": "123e4567-3a5b-48a2-8191-22bcb4a05a2b"}
     badRequest:
       parameters:
         path:
@@ -4617,7 +4617,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-c7dd-41bf-8a9a-22bb0049d5fb", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "quantity": "string", "sort_order": "string", "material_bundle_uuid": "123e4567-542d-41be-8469-22bb0b8512db", "job_uuid": "123e4567-084f-4708-819a-22bb02f222bb"}]
+          application/json: [{"uuid": "123e4567-7b40-4c13-9c06-22bcb38a938b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "quantity": "string", "sort_order": "string", "material_bundle_uuid": "123e4567-0383-46fc-a83c-22bcb0a6952b", "job_uuid": "123e4567-77c2-4b4a-b6c6-22bcba1ba4db"}]
     badRequest:
       responses:
         "400":
@@ -4646,7 +4646,7 @@ examples:
           uuid: "a1bdb9d6-9b4c-469e-bcbd-b107a1c475b9"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-356c-43a0-b643-22bb0e07adbb", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "quantity": "string", "sort_order": "string", "material_bundle_uuid": "123e4567-4cd6-4c5d-97fb-22bb010450bb", "job_uuid": "123e4567-61cb-497d-bfe2-22bb0a30eebb"}
+          application/json: {"uuid": "123e4567-7a6b-4d74-98f3-22bcb044d27b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "quantity": "string", "sort_order": "string", "material_bundle_uuid": "123e4567-db77-467c-bf99-22bcb7c59ddb", "job_uuid": "123e4567-42ef-478f-90de-22bcbb41445b"}
     badRequest:
       parameters:
         path:
@@ -4693,7 +4693,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-4f62-4426-8447-22bb013877bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-2039-49d4-9fa0-22bb018c015b", "actioned_by_uuid": "123e4567-136d-4914-9d53-22bb0db40fdb", "timestamp": "string", "amount": "string", "method": "string", "note": "string", "attachment_uuid": "123e4567-61a1-4bc8-b474-22bb0f034e5b", "is_deposit": 0}]
+          application/json: [{"uuid": "123e4567-4a23-452d-bf54-22bcba95e8cb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-0675-41c2-a74d-22bcbed90ddb", "actioned_by_uuid": "123e4567-dc82-4921-9aa4-22bcb93f37bb", "timestamp": "string", "amount": "string", "method": "string", "note": "string", "attachment_uuid": "123e4567-fb34-4a13-99dc-22bcb25c1b6b", "is_deposit": 0}]
     badRequest:
       responses:
         "400":
@@ -4722,7 +4722,7 @@ examples:
           uuid: "552a589e-4936-496e-aab9-3793675d46d1"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-2282-4639-a034-22bb0d0004bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-58e2-4400-a189-22bb078063db", "actioned_by_uuid": "123e4567-d375-4a9a-badf-22bb0a62340b", "timestamp": "string", "amount": "string", "method": "string", "note": "string", "attachment_uuid": "123e4567-b094-40a5-8b39-22bb053cb40b", "is_deposit": 0}
+          application/json: {"uuid": "123e4567-9687-4a21-89ae-22bcb69755bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "job_uuid": "123e4567-ed90-403a-98b0-22bcb9402dbb", "actioned_by_uuid": "123e4567-c23d-42a4-8cd4-22bcbc3bebfb", "timestamp": "string", "amount": "string", "method": "string", "note": "string", "attachment_uuid": "123e4567-e650-4dbb-a0ed-22bcbb30fc3b", "is_deposit": 0}
     badRequest:
       parameters:
         path:
@@ -4769,7 +4769,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-483f-467a-892c-22bb0a74a0cb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "content": "string", "article_type": "string", "tags": "string", "relationships": [{"object_name": "Job", "object_uuid": "string", "object_description": "string", "create_date": "string"}]}]
+          application/json: [{"uuid": "123e4567-2e6a-4013-ae3b-22bcba43aeeb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "content": "string", "article_type": "string", "tags": "string", "relationships": [{"object_name": "Job", "object_uuid": "string", "object_description": "string", "create_date": "string"}]}]
     badRequest:
       responses:
         "400":
@@ -4798,7 +4798,7 @@ examples:
           uuid: "2c7d225f-8f77-49cd-9760-85e9336ff06c"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-99f2-48b1-a879-22bb082c019b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "content": "string", "article_type": "string", "tags": "string", "relationships": [{"object_name": "Job", "object_uuid": "string", "object_description": "string", "create_date": "string"}]}
+          application/json: {"uuid": "123e4567-bfb4-48d9-b036-22bcb460933b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "content": "string", "article_type": "string", "tags": "string", "relationships": [{"object_name": "Job", "object_uuid": "string", "object_description": "string", "create_date": "string"}]}
     badRequest:
       parameters:
         path:
@@ -4845,7 +4845,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "line1": "string", "line2": "string", "line3": "string", "city": "string", "country": "string", "post_code": "string", "phone_1": "string", "state": "string", "lng": "number", "lat": "number", "uuid": "123e4567-a3f2-4e40-8704-22bb004afd7b", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
+          application/json: [{"name": "string", "line1": "string", "line2": "string", "line3": "string", "city": "string", "country": "string", "post_code": "string", "phone_1": "string", "state": "string", "lng": "number", "lat": "number", "uuid": "123e4567-74ac-4d4b-abda-22bcbe1f1e2b", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -4874,7 +4874,7 @@ examples:
           uuid: "7e65687e-03d3-48f0-b0b2-e5b1b278767a"
       responses:
         "200":
-          application/json: {"name": "string", "line1": "string", "line2": "string", "line3": "string", "city": "string", "country": "string", "post_code": "string", "phone_1": "string", "state": "string", "lng": "number", "lat": "number", "uuid": "123e4567-ef4c-4f45-818f-22bb0892b71b", "active": 1, "edit_date": "2025-05-01 12:00:00"}
+          application/json: {"name": "string", "line1": "string", "line2": "string", "line3": "string", "city": "string", "country": "string", "post_code": "string", "phone_1": "string", "state": "string", "lng": "number", "lat": "number", "uuid": "123e4567-4955-4ada-a509-22bcb7c486cb", "active": 1, "edit_date": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -4921,7 +4921,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "item_number": "string", "price": "string", "cost": "string", "quantity_in_stock": "number", "price_includes_taxes": 1, "barcode": "string", "item_is_inventoried": 1, "uuid": "123e4567-ab0e-4c89-881a-22bb09d6eb3b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_description": "string", "use_description_for_invoicing": "string", "tax_rate_uuid": "123e4567-47eb-42a8-84c9-22bb0fe837db"}]
+          application/json: [{"name": "string", "item_number": "string", "price": "string", "cost": "string", "quantity_in_stock": "number", "price_includes_taxes": 1, "barcode": "string", "item_is_inventoried": 1, "uuid": "123e4567-7ebc-44e5-af72-22bcbe3eb2db", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_description": "string", "use_description_for_invoicing": "string", "tax_rate_uuid": "123e4567-aef6-4477-9022-22bcb3589dfb"}]
     badRequest:
       responses:
         "400":
@@ -4950,7 +4950,7 @@ examples:
           uuid: "7dfbb5d7-a043-43e1-bfab-b59b30e6b5c8"
       responses:
         "200":
-          application/json: {"name": "string", "item_number": "string", "price": "string", "cost": "string", "quantity_in_stock": "number", "price_includes_taxes": 0, "barcode": "string", "item_is_inventoried": 1, "uuid": "123e4567-1cd5-45f8-9229-22bb02ce329b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_description": "string", "use_description_for_invoicing": "string", "tax_rate_uuid": "123e4567-d60e-4893-990d-22bb08da410b"}
+          application/json: {"name": "string", "item_number": "string", "price": "string", "cost": "string", "quantity_in_stock": "number", "price_includes_taxes": 0, "barcode": "string", "item_is_inventoried": 1, "uuid": "123e4567-1f50-40c5-92dd-22bcb025bf7b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_description": "string", "use_description_for_invoicing": "string", "tax_rate_uuid": "123e4567-8c96-4e37-b152-22bcbfd1c45b"}
     badRequest:
       parameters:
         path:
@@ -4997,7 +4997,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-e8a1-48c4-b270-22bb0898b33b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "material_list": [{"uuid": "string", "quantity": "number"}]}]
+          application/json: [{"uuid": "123e4567-58b0-4ba3-bae6-22bcb0ee96fb", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "material_list": [{"uuid": "string", "quantity": "number"}]}]
     badRequest:
       responses:
         "400":
@@ -5026,7 +5026,7 @@ examples:
           uuid: "68bf3354-67cb-48c6-a571-688901bf9c51"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-4bda-4460-b53c-22bb0ed1b63b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "material_list": [{"uuid": "string", "quantity": "number"}]}
+          application/json: {"uuid": "123e4567-acc1-4836-b826-22bcbcb75e8b", "active": 1, "edit_date": "2025-05-01 12:00:00", "item_number": "string", "name": "string", "material_list": [{"uuid": "string", "quantity": "number"}]}
     badRequest:
       parameters:
         path:
@@ -5073,7 +5073,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-e762-4b78-8333-22bb08750c8b", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-a828-4830-b58e-22bb08e5eacb", "note": "string", "action_required": "string", "action_completed_by_staff_uuid": "123e4567-cc9b-4c4b-b3b2-22bb039d70ab", "edit_by_staff_uuid": "123e4567-120b-49a2-8196-22bb0e813e4b", "create_date": "2025-05-01 12:00:00"}]
+          application/json: [{"uuid": "123e4567-2699-48dc-a4e5-22bcbc6bcfcb", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-93ae-4754-8072-22bcb51adfab", "note": "string", "action_required": "string", "action_completed_by_staff_uuid": "123e4567-51fb-4c63-90c9-22bcb8aa38cb", "edit_by_staff_uuid": "123e4567-52d6-4eaa-8825-22bcb4be258b", "create_date": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -5102,7 +5102,7 @@ examples:
           uuid: "85c68aeb-6c45-4957-ba02-c526213a6bef"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-4f75-4db3-a495-22bb0f7fda7b", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-b1a4-4bdb-a8a9-22bb068cafdb", "note": "string", "action_required": "string", "action_completed_by_staff_uuid": "123e4567-d646-4362-a31a-22bb0a05330b", "edit_by_staff_uuid": "123e4567-3331-4b8c-a6f1-22bb0b17bddb", "create_date": "2025-05-01 12:00:00"}
+          application/json: {"uuid": "123e4567-9b90-4c00-bc7b-22bcb96882cb", "active": 1, "edit_date": "2025-05-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-2de3-48ed-ad1a-22bcb63dabcb", "note": "string", "action_required": "string", "action_completed_by_staff_uuid": "123e4567-d68e-4e5c-b9f4-22bcb86b227b", "edit_by_staff_uuid": "123e4567-30c3-428a-8a08-22bcb764fa8b", "create_date": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -5149,7 +5149,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-bde4-4e88-845b-22bb0086750b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "default_timeframe": "string", "subscribed_staff": "string", "requires_assignment": 0}]
+          application/json: [{"uuid": "123e4567-e9b7-48b3-b3e3-22bcbcb061eb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "default_timeframe": "string", "subscribed_staff": "string", "requires_assignment": 0}]
     badRequest:
       responses:
         "400":
@@ -5178,7 +5178,7 @@ examples:
           uuid: "01a98529-6f8e-4d0f-a6f8-868464b87282"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-1063-4f3a-84b3-22bb0848260b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "default_timeframe": "string", "subscribed_staff": "string", "requires_assignment": 0}
+          application/json: {"uuid": "123e4567-9a18-4e44-8981-22bcb7cbe60b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "default_timeframe": "string", "subscribed_staff": "string", "requires_assignment": 0}
     badRequest:
       parameters:
         path:
@@ -5225,7 +5225,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "role_description": "string", "uuid": "123e4567-cbed-4a3e-a70f-22bb002590fb", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
+          application/json: [{"name": "string", "role_description": "string", "uuid": "123e4567-4bf6-44f4-a78b-22bcb491fd4b", "active": 1, "edit_date": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -5254,7 +5254,7 @@ examples:
           uuid: "2a2f5d93-2d30-4fff-b709-324e4e335f45"
       responses:
         "200":
-          application/json: {"name": "string", "role_description": "string", "uuid": "123e4567-66ee-4bcd-9b69-22bb015bf90b", "active": 1, "edit_date": "2025-05-01 12:00:00"}
+          application/json: {"name": "string", "role_description": "string", "uuid": "123e4567-9c5f-4547-b1cb-22bcbfa4ab7b", "active": 1, "edit_date": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -5301,7 +5301,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-4d44-453d-a61d-22bb00938e9b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "message": "string"}]
+          application/json: [{"uuid": "123e4567-aa8a-47fd-bc47-22bcbf96992b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "message": "string"}]
     badRequest:
       responses:
         "400":
@@ -5330,7 +5330,7 @@ examples:
           uuid: "a90778f1-08e0-482b-abc7-4697a615eded"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-a273-4c4f-bc39-22bb01b3d1ab", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "message": "string"}
+          application/json: {"uuid": "123e4567-6ab4-46e0-a084-22bcb2b9c49b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "message": "string"}
     badRequest:
       parameters:
         path:
@@ -5377,7 +5377,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"first": "string", "last": "string", "email": "string", "mobile": "string", "lng": "number", "lat": "number", "geo_timestamp": "2025-05-01 12:00:00", "job_title": "string", "navigating_to_job_uuid": "123e4567-21ca-4158-98ed-22bb09b1430b", "navigating_timestamp": "2025-05-01 12:00:00", "navigating_expiry_timestamp": "2025-05-01 12:00:00", "color": "string", "custom_icon_url": "string", "status_message": "string", "status_message_timestamp": "2025-05-01 12:00:00", "hide_from_schedule": 0, "security_role_uuid": "123e4567-a31b-4e5e-9bde-22bb0e5d7d4b", "uuid": "123e4567-0008-42bd-84d3-22bb0a8e9dfb", "active": 1, "edit_date": "2025-05-01 12:00:00", "can_receive_push_notification": "string"}]
+          application/json: [{"first": "string", "last": "string", "email": "string", "mobile": "string", "lng": "number", "lat": "number", "geo_timestamp": "2025-05-01 12:00:00", "job_title": "string", "navigating_to_job_uuid": "123e4567-6d0e-4ff8-9188-22bcb4be5c9b", "navigating_timestamp": "2025-05-01 12:00:00", "navigating_expiry_timestamp": "2025-05-01 12:00:00", "color": "string", "custom_icon_url": "string", "status_message": "string", "status_message_timestamp": "2025-05-01 12:00:00", "hide_from_schedule": 0, "security_role_uuid": "123e4567-a0ab-4fdf-aa42-22bcb25bbd6b", "uuid": "123e4567-519e-4f63-98a8-22bcbb42c45b", "active": 1, "edit_date": "2025-05-01 12:00:00", "can_receive_push_notification": "string"}]
     badRequest:
       responses:
         "400":
@@ -5406,7 +5406,7 @@ examples:
           uuid: "bca073cf-b49a-49ff-a79d-e2af24c8f074"
       responses:
         "200":
-          application/json: {"first": "string", "last": "string", "email": "string", "mobile": "string", "lng": "number", "lat": "number", "geo_timestamp": "2025-05-01 12:00:00", "job_title": "string", "navigating_to_job_uuid": "123e4567-a18c-4503-8179-22bb0f2108cb", "navigating_timestamp": "2025-05-01 12:00:00", "navigating_expiry_timestamp": "2025-05-01 12:00:00", "color": "string", "custom_icon_url": "string", "status_message": "string", "status_message_timestamp": "2025-05-01 12:00:00", "hide_from_schedule": 1, "security_role_uuid": "123e4567-572c-4bda-ad83-22bb00f4bb0b", "uuid": "123e4567-4c11-4cfb-975e-22bb09c052fb", "active": 1, "edit_date": "2025-05-01 12:00:00", "can_receive_push_notification": "string"}
+          application/json: {"first": "string", "last": "string", "email": "string", "mobile": "string", "lng": "number", "lat": "number", "geo_timestamp": "2025-05-01 12:00:00", "job_title": "string", "navigating_to_job_uuid": "123e4567-4967-4ca6-960f-22bcb188ab9b", "navigating_timestamp": "2025-05-01 12:00:00", "navigating_expiry_timestamp": "2025-05-01 12:00:00", "color": "string", "custom_icon_url": "string", "status_message": "string", "status_message_timestamp": "2025-05-01 12:00:00", "hide_from_schedule": 1, "security_role_uuid": "123e4567-e6bd-4395-abf7-22bcb17b477b", "uuid": "123e4567-6249-43e7-a8d8-22bcbc301f9b", "active": 1, "edit_date": "2025-05-01 12:00:00", "can_receive_push_notification": "string"}
     badRequest:
       parameters:
         path:
@@ -5453,7 +5453,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-eae1-48bb-838c-22bb084088eb", "active": 1, "edit_date": "2025-05-01 12:00:00", "from_staff_uuid": "123e4567-5d51-405d-a218-22bb0708f65b", "to_staff_uuid": "123e4567-4f55-4ab2-9c3e-22bb0fea53db", "sent_timestamp": "2025-05-01 12:00:00", "delivered_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "message": "string", "regarding_job_uuid": "123e4567-b854-4395-b08b-22bb05aeda4b", "attached_json": "string"}]
+          application/json: [{"uuid": "123e4567-30c2-49e8-bb25-22bcb64ce54b", "active": 1, "edit_date": "2025-05-01 12:00:00", "from_staff_uuid": "123e4567-8b1f-4d7f-a341-22bcba7960bb", "to_staff_uuid": "123e4567-6804-47c4-8b9b-22bcb6f12b1b", "sent_timestamp": "2025-05-01 12:00:00", "delivered_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "message": "string", "regarding_job_uuid": "123e4567-55c2-4a6c-9605-22bcb120417b", "attached_json": "string"}]
     badRequest:
       responses:
         "400":
@@ -5482,7 +5482,7 @@ examples:
           uuid: "3b5bea69-86fe-4ecc-bd6d-6cf454d8243a"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-d3c7-4672-ac9c-22bb0a68de8b", "active": 1, "edit_date": "2025-05-01 12:00:00", "from_staff_uuid": "123e4567-a062-455f-a1e3-22bb0d95931b", "to_staff_uuid": "123e4567-ec0c-4c79-9ea4-22bb07925bdb", "sent_timestamp": "2025-05-01 12:00:00", "delivered_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "message": "string", "regarding_job_uuid": "123e4567-12d3-4c9e-8cc6-22bb006da93b", "attached_json": "string"}
+          application/json: {"uuid": "123e4567-ab6d-4905-a87d-22bcb7d2d50b", "active": 1, "edit_date": "2025-05-01 12:00:00", "from_staff_uuid": "123e4567-6dc4-4d9c-b404-22bcb000d89b", "to_staff_uuid": "123e4567-ea73-4d7d-bc36-22bcba917ffb", "sent_timestamp": "2025-05-01 12:00:00", "delivered_timestamp": "2025-05-01 12:00:00", "read_timestamp": "2025-05-01 12:00:00", "message": "string", "regarding_job_uuid": "123e4567-a7b4-49e4-a433-22bcbbb950fb", "attached_json": "string"}
     badRequest:
       parameters:
         path:
@@ -5529,7 +5529,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"due_date": "YYYY-MM-DD", "task_details": "string", "name": "string", "related_object": "string", "related_object_uuid": "123e4567-51ea-44c5-88f6-22bb0889cc3b", "task_complete": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-e569-4c8b-8bb8-22bb017b199b", "assigned_to_staff_uuid": "123e4567-5104-4efb-9048-22bb08ad879b", "lng": "string", "lat": "string", "uuid": "123e4567-c9be-42f9-be2e-22bb07df401b", "active": 1, "edit_date": "2025-05-01 12:00:00", "created_by_staff_uuid": "123e4567-da21-4442-ad2c-22bb08934fab", "create_date": "2025-05-01 12:00:00"}]
+          application/json: [{"due_date": "YYYY-MM-DD", "task_details": "string", "name": "string", "related_object": "string", "related_object_uuid": "123e4567-f227-4280-9d51-22bcbf69385b", "task_complete": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-7393-48e4-bd13-22bcb9b75a4b", "assigned_to_staff_uuid": "123e4567-48cc-4769-80f8-22bcb96bb69b", "lng": "string", "lat": "string", "uuid": "123e4567-7e94-4a37-9d08-22bcbebc9f3b", "active": 1, "edit_date": "2025-05-01 12:00:00", "created_by_staff_uuid": "123e4567-89d1-4569-a530-22bcb269b4ab", "create_date": "2025-05-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -5558,7 +5558,7 @@ examples:
           uuid: "89513748-b917-4807-944b-430445ee8621"
       responses:
         "200":
-          application/json: {"due_date": "YYYY-MM-DD", "task_details": "string", "name": "string", "related_object": "string", "related_object_uuid": "123e4567-69b9-4a9a-9a76-22bb0357ac9b", "task_complete": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-6507-4ede-a9b5-22bb075b4f2b", "assigned_to_staff_uuid": "123e4567-fc4d-4399-8e16-22bb004d36bb", "lng": "string", "lat": "string", "uuid": "123e4567-16a4-4ffb-9076-22bb041ad14b", "active": 1, "edit_date": "2025-05-01 12:00:00", "created_by_staff_uuid": "123e4567-7608-4414-b6f3-22bb0beb0d6b", "create_date": "2025-05-01 12:00:00"}
+          application/json: {"due_date": "YYYY-MM-DD", "task_details": "string", "name": "string", "related_object": "string", "related_object_uuid": "123e4567-685c-4b22-a0e5-22bcba9f048b", "task_complete": "string", "completed_timestamp": "2025-05-01 12:00:00", "completed_by_staff_uuid": "123e4567-ce9f-4872-901d-22bcbda0bbeb", "assigned_to_staff_uuid": "123e4567-81ae-4070-a9c5-22bcbdb2eddb", "lng": "string", "lat": "string", "uuid": "123e4567-376c-41b9-a409-22bcbc3a4dab", "active": 1, "edit_date": "2025-05-01 12:00:00", "created_by_staff_uuid": "123e4567-d21b-4d91-8394-22bcb4d9e1ab", "create_date": "2025-05-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -5605,7 +5605,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-436c-47f2-a19f-22bb0d6a3bab", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "amount": "string", "is_default_tax_rate": 1}]
+          application/json: [{"uuid": "123e4567-8291-4063-814e-22bcbea5d6bb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "amount": "string", "is_default_tax_rate": 1}]
     badRequest:
       responses:
         "400":
@@ -5634,7 +5634,7 @@ examples:
           uuid: "67685a70-6660-4003-a677-5c9a2d1afa31"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-30fe-4ce2-9c73-22bb08be0cfb", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "amount": "string", "is_default_tax_rate": 0}
+          application/json: {"uuid": "123e4567-2ffe-4434-8669-22bcbe8dd21b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "amount": "string", "is_default_tax_rate": 0}
     badRequest:
       parameters:
         path:
@@ -5681,7 +5681,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-afae-4643-8d9e-22bb0791226b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "abn_number": "string", "business_number": "string", "website": "string", "email": "string", "email_accounts": "string", "billing_address": "string", "accepted_payment_methods": "string", "default_region": "string", "currency": "string", "opening_time_monday": "string", "closing_time_monday": "string", "opening_time_tuesday": "string", "closing_time_tuesday": "string", "opening_time_wednesday": "string", "closing_time_wednesday": "string", "opening_time_thursday": "string", "closing_time_thursday": "string", "opening_time_friday": "string", "closing_time_friday": "string", "opening_time_saturday": "string", "closing_time_saturday": "string", "opening_time_sunday": "string", "closing_time_sunday": "string", "timezone_name": "string", "invoice_terms": "string", "job_default_status": "string"}]
+          application/json: [{"uuid": "123e4567-140d-4741-bbe2-22bcbab74e8b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "abn_number": "string", "business_number": "string", "website": "string", "email": "string", "email_accounts": "string", "billing_address": "string", "accepted_payment_methods": "string", "default_region": "string", "currency": "string", "opening_time_monday": "string", "closing_time_monday": "string", "opening_time_tuesday": "string", "closing_time_tuesday": "string", "opening_time_wednesday": "string", "closing_time_wednesday": "string", "opening_time_thursday": "string", "closing_time_thursday": "string", "opening_time_friday": "string", "closing_time_friday": "string", "opening_time_saturday": "string", "closing_time_saturday": "string", "opening_time_sunday": "string", "closing_time_sunday": "string", "timezone_name": "string", "invoice_terms": "string", "job_default_status": "string"}]
     badRequest:
       responses:
         "400":
@@ -5695,7 +5695,7 @@ examples:
           uuid: "3856b51a-59e7-4442-afe7-adbe7477e097"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-bbcf-4eeb-8ea1-22bb05ccb43b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "abn_number": "string", "business_number": "string", "website": "string", "email": "string", "email_accounts": "string", "billing_address": "string", "accepted_payment_methods": "string", "default_region": "string", "currency": "string", "opening_time_monday": "string", "closing_time_monday": "string", "opening_time_tuesday": "string", "closing_time_tuesday": "string", "opening_time_wednesday": "string", "closing_time_wednesday": "string", "opening_time_thursday": "string", "closing_time_thursday": "string", "opening_time_friday": "string", "closing_time_friday": "string", "opening_time_saturday": "string", "closing_time_saturday": "string", "opening_time_sunday": "string", "closing_time_sunday": "string", "timezone_name": "string", "invoice_terms": "string", "job_default_status": "string"}
+          application/json: {"uuid": "123e4567-0653-4e2c-98b0-22bcbcad279b", "active": 1, "edit_date": "2025-05-01 12:00:00", "name": "string", "abn_number": "string", "business_number": "string", "website": "string", "email": "string", "email_accounts": "string", "billing_address": "string", "accepted_payment_methods": "string", "default_region": "string", "currency": "string", "opening_time_monday": "string", "closing_time_monday": "string", "opening_time_tuesday": "string", "closing_time_tuesday": "string", "opening_time_wednesday": "string", "closing_time_wednesday": "string", "opening_time_thursday": "string", "closing_time_thursday": "string", "opening_time_friday": "string", "closing_time_friday": "string", "opening_time_saturday": "string", "closing_time_saturday": "string", "opening_time_sunday": "string", "closing_time_sunday": "string", "timezone_name": "string", "invoice_terms": "string", "job_default_status": "string"}
     badRequest:
       parameters:
         path:

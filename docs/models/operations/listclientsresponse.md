@@ -9,9 +9,9 @@
 const value: components.Company[] = [
   {
     name: "<value>",
-    uuid: "123e4567-1036-4daa-b713-22bb0e3798eb",
+    uuid: "123e4567-8566-4947-98ab-22bcb2fdedfb",
     editDate: "2025-05-01 12:00:00",
-    taxRateUuid: "123e4567-8d10-413d-8c36-22bb0e9968eb",
+    taxRateUuid: "123e4567-eef0-48f5-9a93-22bcbe1f663b",
   },
 ];
 ```
