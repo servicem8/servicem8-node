@@ -8,7 +8,7 @@
 ```typescript
 const value: components.Queue[] = [
   {
-    uuid: "123e4567-2588-4029-a38e-22bcba25e61b",
+    uuid: "123e4567-da3d-4340-b6f2-22bcb3cce71b",
     editDate: "2025-05-01 12:00:00",
   },
 ];
