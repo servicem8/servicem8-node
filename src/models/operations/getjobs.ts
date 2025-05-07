@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type GetJobsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type GetJobsRequest = {
   /**
    * UUID of the Job
@@ -21,61 +16,6 @@ export type GetJobsRequest = {
 };
 
 export type GetJobsResponse = components.ErrorT | components.Job;
-
-/** @internal */
-export const GetJobsSecurity$inboundSchema: z.ZodType<
-  GetJobsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type GetJobsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const GetJobsSecurity$outboundSchema: z.ZodType<
-  GetJobsSecurity$Outbound,
-  z.ZodTypeDef,
-  GetJobsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetJobsSecurity$ {
-  /** @deprecated use `GetJobsSecurity$inboundSchema` instead. */
-  export const inboundSchema = GetJobsSecurity$inboundSchema;
-  /** @deprecated use `GetJobsSecurity$outboundSchema` instead. */
-  export const outboundSchema = GetJobsSecurity$outboundSchema;
-  /** @deprecated use `GetJobsSecurity$Outbound` instead. */
-  export type Outbound = GetJobsSecurity$Outbound;
-}
-
-export function getJobsSecurityToJSON(
-  getJobsSecurity: GetJobsSecurity,
-): string {
-  return JSON.stringify(GetJobsSecurity$outboundSchema.parse(getJobsSecurity));
-}
-
-export function getJobsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<GetJobsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetJobsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetJobsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const GetJobsRequest$inboundSchema: z.ZodType<

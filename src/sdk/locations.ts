@@ -25,12 +25,10 @@ export class Locations extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_locations**.
    */
   async listLocations(
-    security: operations.ListLocationsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListLocationsResponse> {
     return unwrapAsync(locationsListLocations(
       this,
-      security,
       options,
     ));
   }
@@ -47,13 +45,11 @@ export class Locations extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createLocations(
-    security: operations.CreateLocationsSecurity,
     request: components.LocationInput,
     options?: RequestOptions,
   ): Promise<operations.CreateLocationsResponse> {
     return unwrapAsync(locationsCreateLocations(
       this,
-      security,
       request,
       options,
     ));
@@ -68,13 +64,11 @@ export class Locations extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_locations**.
    */
   async getLocations(
-    security: operations.GetLocationsSecurity,
     request: operations.GetLocationsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetLocationsResponse> {
     return unwrapAsync(locationsGetLocations(
       this,
-      security,
       request,
       options,
     ));
@@ -89,13 +83,11 @@ export class Locations extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_locations**.
    */
   async updateLocations(
-    security: operations.UpdateLocationsSecurity,
     request: operations.UpdateLocationsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateLocationsResponse> {
     return unwrapAsync(locationsUpdateLocations(
       this,
-      security,
       request,
       options,
     ));
@@ -112,13 +104,11 @@ export class Locations extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_locations**.
    */
   async deleteLocations(
-    security: operations.DeleteLocationsSecurity,
     request: operations.DeleteLocationsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteLocationsResponse> {
     return unwrapAsync(locationsDeleteLocations(
       this,
-      security,
       request,
       options,
     ));

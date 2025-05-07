@@ -25,12 +25,14 @@ import { SDKValidationError } from "servicem8/models/errors/sdkvalidationerror.j
 
 // Use `ServiceM8Core` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core();
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
 
 async function run() {
-  const res = await allocationWindowsListAllocationWindows(serviceM8, {
-    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
-  });
+  const res = await allocationWindowsListAllocationWindows(serviceM8);
 
   switch (true) {
     case res.ok:

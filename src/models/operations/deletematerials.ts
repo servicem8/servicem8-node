@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type DeleteMaterialsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type DeleteMaterialsRequest = {
   /**
    * UUID of the Material
@@ -21,63 +16,6 @@ export type DeleteMaterialsRequest = {
 };
 
 export type DeleteMaterialsResponse = components.Result | components.ErrorT;
-
-/** @internal */
-export const DeleteMaterialsSecurity$inboundSchema: z.ZodType<
-  DeleteMaterialsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type DeleteMaterialsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const DeleteMaterialsSecurity$outboundSchema: z.ZodType<
-  DeleteMaterialsSecurity$Outbound,
-  z.ZodTypeDef,
-  DeleteMaterialsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteMaterialsSecurity$ {
-  /** @deprecated use `DeleteMaterialsSecurity$inboundSchema` instead. */
-  export const inboundSchema = DeleteMaterialsSecurity$inboundSchema;
-  /** @deprecated use `DeleteMaterialsSecurity$outboundSchema` instead. */
-  export const outboundSchema = DeleteMaterialsSecurity$outboundSchema;
-  /** @deprecated use `DeleteMaterialsSecurity$Outbound` instead. */
-  export type Outbound = DeleteMaterialsSecurity$Outbound;
-}
-
-export function deleteMaterialsSecurityToJSON(
-  deleteMaterialsSecurity: DeleteMaterialsSecurity,
-): string {
-  return JSON.stringify(
-    DeleteMaterialsSecurity$outboundSchema.parse(deleteMaterialsSecurity),
-  );
-}
-
-export function deleteMaterialsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteMaterialsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteMaterialsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteMaterialsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const DeleteMaterialsRequest$inboundSchema: z.ZodType<

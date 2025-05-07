@@ -9,11 +9,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type UpdateAttachmentsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type UpdateAttachmentsRequest = {
   /**
    * UUID of the Attachment
@@ -26,63 +21,6 @@ export type UpdateAttachmentsRequest = {
 };
 
 export type UpdateAttachmentsResponse = components.Result | components.ErrorT;
-
-/** @internal */
-export const UpdateAttachmentsSecurity$inboundSchema: z.ZodType<
-  UpdateAttachmentsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type UpdateAttachmentsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const UpdateAttachmentsSecurity$outboundSchema: z.ZodType<
-  UpdateAttachmentsSecurity$Outbound,
-  z.ZodTypeDef,
-  UpdateAttachmentsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAttachmentsSecurity$ {
-  /** @deprecated use `UpdateAttachmentsSecurity$inboundSchema` instead. */
-  export const inboundSchema = UpdateAttachmentsSecurity$inboundSchema;
-  /** @deprecated use `UpdateAttachmentsSecurity$outboundSchema` instead. */
-  export const outboundSchema = UpdateAttachmentsSecurity$outboundSchema;
-  /** @deprecated use `UpdateAttachmentsSecurity$Outbound` instead. */
-  export type Outbound = UpdateAttachmentsSecurity$Outbound;
-}
-
-export function updateAttachmentsSecurityToJSON(
-  updateAttachmentsSecurity: UpdateAttachmentsSecurity,
-): string {
-  return JSON.stringify(
-    UpdateAttachmentsSecurity$outboundSchema.parse(updateAttachmentsSecurity),
-  );
-}
-
-export function updateAttachmentsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAttachmentsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAttachmentsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAttachmentsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const UpdateAttachmentsRequest$inboundSchema: z.ZodType<

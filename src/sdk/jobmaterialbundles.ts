@@ -22,12 +22,10 @@ export class JobMaterialBundles extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listJobMaterialBundles(
-    security: operations.ListJobMaterialBundlesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListJobMaterialBundlesResponse> {
     return unwrapAsync(jobMaterialBundlesListJobMaterialBundles(
       this,
-      security,
       options,
     ));
   }
@@ -41,13 +39,11 @@ export class JobMaterialBundles extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createJobMaterialBundles(
-    security: operations.CreateJobMaterialBundlesSecurity,
     request: components.JobMaterialBundleInput,
     options?: RequestOptions,
   ): Promise<operations.CreateJobMaterialBundlesResponse> {
     return unwrapAsync(jobMaterialBundlesCreateJobMaterialBundles(
       this,
-      security,
       request,
       options,
     ));
@@ -57,13 +53,11 @@ export class JobMaterialBundles extends ClientSDK {
    * Retrieve a Job Material Bundle
    */
   async getJobMaterialBundles(
-    security: operations.GetJobMaterialBundlesSecurity,
     request: operations.GetJobMaterialBundlesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetJobMaterialBundlesResponse> {
     return unwrapAsync(jobMaterialBundlesGetJobMaterialBundles(
       this,
-      security,
       request,
       options,
     ));
@@ -73,13 +67,11 @@ export class JobMaterialBundles extends ClientSDK {
    * Update a Job Material Bundle
    */
   async updateJobMaterialBundles(
-    security: operations.UpdateJobMaterialBundlesSecurity,
     request: operations.UpdateJobMaterialBundlesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateJobMaterialBundlesResponse> {
     return unwrapAsync(jobMaterialBundlesUpdateJobMaterialBundles(
       this,
-      security,
       request,
       options,
     ));
@@ -93,13 +85,11 @@ export class JobMaterialBundles extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteJobMaterialBundles(
-    security: operations.DeleteJobMaterialBundlesSecurity,
     request: operations.DeleteJobMaterialBundlesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteJobMaterialBundlesResponse> {
     return unwrapAsync(jobMaterialBundlesDeleteJobMaterialBundles(
       this,
-      security,
       request,
       options,
     ));

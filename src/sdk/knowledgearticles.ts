@@ -25,12 +25,10 @@ export class KnowledgeArticles extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_knowledge**.
    */
   async listKnowledgeArticles(
-    security: operations.ListKnowledgeArticlesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListKnowledgeArticlesResponse> {
     return unwrapAsync(knowledgeArticlesListKnowledgeArticles(
       this,
-      security,
       options,
     ));
   }
@@ -47,13 +45,11 @@ export class KnowledgeArticles extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createKnowledgeArticles(
-    security: operations.CreateKnowledgeArticlesSecurity,
     request: components.KnowledgeArticleInput,
     options?: RequestOptions,
   ): Promise<operations.CreateKnowledgeArticlesResponse> {
     return unwrapAsync(knowledgeArticlesCreateKnowledgeArticles(
       this,
-      security,
       request,
       options,
     ));
@@ -68,13 +64,11 @@ export class KnowledgeArticles extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_knowledge**.
    */
   async getKnowledgeArticles(
-    security: operations.GetKnowledgeArticlesSecurity,
     request: operations.GetKnowledgeArticlesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetKnowledgeArticlesResponse> {
     return unwrapAsync(knowledgeArticlesGetKnowledgeArticles(
       this,
-      security,
       request,
       options,
     ));
@@ -82,15 +76,18 @@ export class KnowledgeArticles extends ClientSDK {
 
   /**
    * Update a Knowledge Article
+   *
+   * @remarks
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_knowledge**.
    */
   async updateKnowledgeArticles(
-    security: operations.UpdateKnowledgeArticlesSecurity,
     request: operations.UpdateKnowledgeArticlesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateKnowledgeArticlesResponse> {
     return unwrapAsync(knowledgeArticlesUpdateKnowledgeArticles(
       this,
-      security,
       request,
       options,
     ));
@@ -102,15 +99,16 @@ export class KnowledgeArticles extends ClientSDK {
    * @remarks
    *
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_knowledge**.
    */
   async deleteKnowledgeArticles(
-    security: operations.DeleteKnowledgeArticlesSecurity,
     request: operations.DeleteKnowledgeArticlesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteKnowledgeArticlesResponse> {
     return unwrapAsync(knowledgeArticlesDeleteKnowledgeArticles(
       this,
-      security,
       request,
       options,
     ));

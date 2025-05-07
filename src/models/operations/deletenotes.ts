@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type DeleteNotesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type DeleteNotesRequest = {
   /**
    * UUID of the Note
@@ -21,63 +16,6 @@ export type DeleteNotesRequest = {
 };
 
 export type DeleteNotesResponse = components.Result | components.ErrorT;
-
-/** @internal */
-export const DeleteNotesSecurity$inboundSchema: z.ZodType<
-  DeleteNotesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type DeleteNotesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const DeleteNotesSecurity$outboundSchema: z.ZodType<
-  DeleteNotesSecurity$Outbound,
-  z.ZodTypeDef,
-  DeleteNotesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteNotesSecurity$ {
-  /** @deprecated use `DeleteNotesSecurity$inboundSchema` instead. */
-  export const inboundSchema = DeleteNotesSecurity$inboundSchema;
-  /** @deprecated use `DeleteNotesSecurity$outboundSchema` instead. */
-  export const outboundSchema = DeleteNotesSecurity$outboundSchema;
-  /** @deprecated use `DeleteNotesSecurity$Outbound` instead. */
-  export type Outbound = DeleteNotesSecurity$Outbound;
-}
-
-export function deleteNotesSecurityToJSON(
-  deleteNotesSecurity: DeleteNotesSecurity,
-): string {
-  return JSON.stringify(
-    DeleteNotesSecurity$outboundSchema.parse(deleteNotesSecurity),
-  );
-}
-
-export function deleteNotesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteNotesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteNotesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteNotesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const DeleteNotesRequest$inboundSchema: z.ZodType<

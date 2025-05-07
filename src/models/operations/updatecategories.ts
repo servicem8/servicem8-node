@@ -9,11 +9,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type UpdateCategoriesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type UpdateCategoriesRequest = {
   /**
    * UUID of the Category
@@ -26,63 +21,6 @@ export type UpdateCategoriesRequest = {
 };
 
 export type UpdateCategoriesResponse = components.Result | components.ErrorT;
-
-/** @internal */
-export const UpdateCategoriesSecurity$inboundSchema: z.ZodType<
-  UpdateCategoriesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type UpdateCategoriesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const UpdateCategoriesSecurity$outboundSchema: z.ZodType<
-  UpdateCategoriesSecurity$Outbound,
-  z.ZodTypeDef,
-  UpdateCategoriesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateCategoriesSecurity$ {
-  /** @deprecated use `UpdateCategoriesSecurity$inboundSchema` instead. */
-  export const inboundSchema = UpdateCategoriesSecurity$inboundSchema;
-  /** @deprecated use `UpdateCategoriesSecurity$outboundSchema` instead. */
-  export const outboundSchema = UpdateCategoriesSecurity$outboundSchema;
-  /** @deprecated use `UpdateCategoriesSecurity$Outbound` instead. */
-  export type Outbound = UpdateCategoriesSecurity$Outbound;
-}
-
-export function updateCategoriesSecurityToJSON(
-  updateCategoriesSecurity: UpdateCategoriesSecurity,
-): string {
-  return JSON.stringify(
-    UpdateCategoriesSecurity$outboundSchema.parse(updateCategoriesSecurity),
-  );
-}
-
-export function updateCategoriesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateCategoriesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateCategoriesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateCategoriesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const UpdateCategoriesRequest$inboundSchema: z.ZodType<

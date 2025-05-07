@@ -25,12 +25,10 @@ export class Tasks extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_tasks**.
    */
   async listTasks(
-    security: operations.ListTasksSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListTasksResponse> {
     return unwrapAsync(tasksListTasks(
       this,
-      security,
       options,
     ));
   }
@@ -47,13 +45,11 @@ export class Tasks extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createTasks(
-    security: operations.CreateTasksSecurity,
     request: components.TaskInput,
     options?: RequestOptions,
   ): Promise<operations.CreateTasksResponse> {
     return unwrapAsync(tasksCreateTasks(
       this,
-      security,
       request,
       options,
     ));
@@ -68,13 +64,11 @@ export class Tasks extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_tasks**.
    */
   async getTasks(
-    security: operations.GetTasksSecurity,
     request: operations.GetTasksRequest,
     options?: RequestOptions,
   ): Promise<operations.GetTasksResponse> {
     return unwrapAsync(tasksGetTasks(
       this,
-      security,
       request,
       options,
     ));
@@ -89,13 +83,11 @@ export class Tasks extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_tasks**.
    */
   async updateTasks(
-    security: operations.UpdateTasksSecurity,
     request: operations.UpdateTasksRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateTasksResponse> {
     return unwrapAsync(tasksUpdateTasks(
       this,
-      security,
       request,
       options,
     ));
@@ -112,13 +104,11 @@ export class Tasks extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_tasks**.
    */
   async deleteTasks(
-    security: operations.DeleteTasksSecurity,
     request: operations.DeleteTasksRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteTasksResponse> {
     return unwrapAsync(tasksDeleteTasks(
       this,
-      security,
       request,
       options,
     ));

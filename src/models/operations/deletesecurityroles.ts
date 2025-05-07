@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type DeleteSecurityRolesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type DeleteSecurityRolesRequest = {
   /**
    * UUID of the Security Role
@@ -21,65 +16,6 @@ export type DeleteSecurityRolesRequest = {
 };
 
 export type DeleteSecurityRolesResponse = components.Result | components.ErrorT;
-
-/** @internal */
-export const DeleteSecurityRolesSecurity$inboundSchema: z.ZodType<
-  DeleteSecurityRolesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type DeleteSecurityRolesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const DeleteSecurityRolesSecurity$outboundSchema: z.ZodType<
-  DeleteSecurityRolesSecurity$Outbound,
-  z.ZodTypeDef,
-  DeleteSecurityRolesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteSecurityRolesSecurity$ {
-  /** @deprecated use `DeleteSecurityRolesSecurity$inboundSchema` instead. */
-  export const inboundSchema = DeleteSecurityRolesSecurity$inboundSchema;
-  /** @deprecated use `DeleteSecurityRolesSecurity$outboundSchema` instead. */
-  export const outboundSchema = DeleteSecurityRolesSecurity$outboundSchema;
-  /** @deprecated use `DeleteSecurityRolesSecurity$Outbound` instead. */
-  export type Outbound = DeleteSecurityRolesSecurity$Outbound;
-}
-
-export function deleteSecurityRolesSecurityToJSON(
-  deleteSecurityRolesSecurity: DeleteSecurityRolesSecurity,
-): string {
-  return JSON.stringify(
-    DeleteSecurityRolesSecurity$outboundSchema.parse(
-      deleteSecurityRolesSecurity,
-    ),
-  );
-}
-
-export function deleteSecurityRolesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteSecurityRolesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteSecurityRolesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteSecurityRolesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const DeleteSecurityRolesRequest$inboundSchema: z.ZodType<

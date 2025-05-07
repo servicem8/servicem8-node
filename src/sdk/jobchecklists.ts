@@ -22,12 +22,10 @@ export class JobChecklists extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listJobChecklists(
-    security: operations.ListJobChecklistsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListJobChecklistsResponse> {
     return unwrapAsync(jobChecklistsListJobChecklists(
       this,
-      security,
       options,
     ));
   }
@@ -41,13 +39,11 @@ export class JobChecklists extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createJobChecklists(
-    security: operations.CreateJobChecklistsSecurity,
     request: components.JobChecklistInput,
     options?: RequestOptions,
   ): Promise<operations.CreateJobChecklistsResponse> {
     return unwrapAsync(jobChecklistsCreateJobChecklists(
       this,
-      security,
       request,
       options,
     ));
@@ -57,13 +53,11 @@ export class JobChecklists extends ClientSDK {
    * Retrieve a Job Checklist
    */
   async getJobChecklists(
-    security: operations.GetJobChecklistsSecurity,
     request: operations.GetJobChecklistsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetJobChecklistsResponse> {
     return unwrapAsync(jobChecklistsGetJobChecklists(
       this,
-      security,
       request,
       options,
     ));
@@ -73,13 +67,11 @@ export class JobChecklists extends ClientSDK {
    * Update a Job Checklist
    */
   async updateJobChecklists(
-    security: operations.UpdateJobChecklistsSecurity,
     request: operations.UpdateJobChecklistsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateJobChecklistsResponse> {
     return unwrapAsync(jobChecklistsUpdateJobChecklists(
       this,
-      security,
       request,
       options,
     ));
@@ -93,13 +85,11 @@ export class JobChecklists extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteJobChecklists(
-    security: operations.DeleteJobChecklistsSecurity,
     request: operations.DeleteJobChecklistsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteJobChecklistsResponse> {
     return unwrapAsync(jobChecklistsDeleteJobChecklists(
       this,
-      security,
       request,
       options,
     ));

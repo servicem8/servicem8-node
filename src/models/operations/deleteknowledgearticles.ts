@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type DeleteKnowledgeArticlesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type DeleteKnowledgeArticlesRequest = {
   /**
    * UUID of the Knowledge Article
@@ -23,65 +18,6 @@ export type DeleteKnowledgeArticlesRequest = {
 export type DeleteKnowledgeArticlesResponse =
   | components.Result
   | components.ErrorT;
-
-/** @internal */
-export const DeleteKnowledgeArticlesSecurity$inboundSchema: z.ZodType<
-  DeleteKnowledgeArticlesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type DeleteKnowledgeArticlesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const DeleteKnowledgeArticlesSecurity$outboundSchema: z.ZodType<
-  DeleteKnowledgeArticlesSecurity$Outbound,
-  z.ZodTypeDef,
-  DeleteKnowledgeArticlesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteKnowledgeArticlesSecurity$ {
-  /** @deprecated use `DeleteKnowledgeArticlesSecurity$inboundSchema` instead. */
-  export const inboundSchema = DeleteKnowledgeArticlesSecurity$inboundSchema;
-  /** @deprecated use `DeleteKnowledgeArticlesSecurity$outboundSchema` instead. */
-  export const outboundSchema = DeleteKnowledgeArticlesSecurity$outboundSchema;
-  /** @deprecated use `DeleteKnowledgeArticlesSecurity$Outbound` instead. */
-  export type Outbound = DeleteKnowledgeArticlesSecurity$Outbound;
-}
-
-export function deleteKnowledgeArticlesSecurityToJSON(
-  deleteKnowledgeArticlesSecurity: DeleteKnowledgeArticlesSecurity,
-): string {
-  return JSON.stringify(
-    DeleteKnowledgeArticlesSecurity$outboundSchema.parse(
-      deleteKnowledgeArticlesSecurity,
-    ),
-  );
-}
-
-export function deleteKnowledgeArticlesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteKnowledgeArticlesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteKnowledgeArticlesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteKnowledgeArticlesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const DeleteKnowledgeArticlesRequest$inboundSchema: z.ZodType<

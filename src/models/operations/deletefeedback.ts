@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type DeleteFeedbackSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type DeleteFeedbackRequest = {
   /**
    * UUID of the Feedback
@@ -21,63 +16,6 @@ export type DeleteFeedbackRequest = {
 };
 
 export type DeleteFeedbackResponse = components.Result | components.ErrorT;
-
-/** @internal */
-export const DeleteFeedbackSecurity$inboundSchema: z.ZodType<
-  DeleteFeedbackSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type DeleteFeedbackSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const DeleteFeedbackSecurity$outboundSchema: z.ZodType<
-  DeleteFeedbackSecurity$Outbound,
-  z.ZodTypeDef,
-  DeleteFeedbackSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteFeedbackSecurity$ {
-  /** @deprecated use `DeleteFeedbackSecurity$inboundSchema` instead. */
-  export const inboundSchema = DeleteFeedbackSecurity$inboundSchema;
-  /** @deprecated use `DeleteFeedbackSecurity$outboundSchema` instead. */
-  export const outboundSchema = DeleteFeedbackSecurity$outboundSchema;
-  /** @deprecated use `DeleteFeedbackSecurity$Outbound` instead. */
-  export type Outbound = DeleteFeedbackSecurity$Outbound;
-}
-
-export function deleteFeedbackSecurityToJSON(
-  deleteFeedbackSecurity: DeleteFeedbackSecurity,
-): string {
-  return JSON.stringify(
-    DeleteFeedbackSecurity$outboundSchema.parse(deleteFeedbackSecurity),
-  );
-}
-
-export function deleteFeedbackSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteFeedbackSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteFeedbackSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteFeedbackSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const DeleteFeedbackRequest$inboundSchema: z.ZodType<

@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type DeleteJobContactsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type DeleteJobContactsRequest = {
   /**
    * UUID of the Job Contact
@@ -21,63 +16,6 @@ export type DeleteJobContactsRequest = {
 };
 
 export type DeleteJobContactsResponse = components.Result | components.ErrorT;
-
-/** @internal */
-export const DeleteJobContactsSecurity$inboundSchema: z.ZodType<
-  DeleteJobContactsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type DeleteJobContactsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const DeleteJobContactsSecurity$outboundSchema: z.ZodType<
-  DeleteJobContactsSecurity$Outbound,
-  z.ZodTypeDef,
-  DeleteJobContactsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteJobContactsSecurity$ {
-  /** @deprecated use `DeleteJobContactsSecurity$inboundSchema` instead. */
-  export const inboundSchema = DeleteJobContactsSecurity$inboundSchema;
-  /** @deprecated use `DeleteJobContactsSecurity$outboundSchema` instead. */
-  export const outboundSchema = DeleteJobContactsSecurity$outboundSchema;
-  /** @deprecated use `DeleteJobContactsSecurity$Outbound` instead. */
-  export type Outbound = DeleteJobContactsSecurity$Outbound;
-}
-
-export function deleteJobContactsSecurityToJSON(
-  deleteJobContactsSecurity: DeleteJobContactsSecurity,
-): string {
-  return JSON.stringify(
-    DeleteJobContactsSecurity$outboundSchema.parse(deleteJobContactsSecurity),
-  );
-}
-
-export function deleteJobContactsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteJobContactsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteJobContactsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteJobContactsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const DeleteJobContactsRequest$inboundSchema: z.ZodType<

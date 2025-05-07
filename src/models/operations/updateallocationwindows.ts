@@ -9,11 +9,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type UpdateAllocationWindowsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type UpdateAllocationWindowsRequest = {
   /**
    * UUID of the Allocation Window
@@ -28,65 +23,6 @@ export type UpdateAllocationWindowsRequest = {
 export type UpdateAllocationWindowsResponse =
   | components.Result
   | components.ErrorT;
-
-/** @internal */
-export const UpdateAllocationWindowsSecurity$inboundSchema: z.ZodType<
-  UpdateAllocationWindowsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type UpdateAllocationWindowsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const UpdateAllocationWindowsSecurity$outboundSchema: z.ZodType<
-  UpdateAllocationWindowsSecurity$Outbound,
-  z.ZodTypeDef,
-  UpdateAllocationWindowsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAllocationWindowsSecurity$ {
-  /** @deprecated use `UpdateAllocationWindowsSecurity$inboundSchema` instead. */
-  export const inboundSchema = UpdateAllocationWindowsSecurity$inboundSchema;
-  /** @deprecated use `UpdateAllocationWindowsSecurity$outboundSchema` instead. */
-  export const outboundSchema = UpdateAllocationWindowsSecurity$outboundSchema;
-  /** @deprecated use `UpdateAllocationWindowsSecurity$Outbound` instead. */
-  export type Outbound = UpdateAllocationWindowsSecurity$Outbound;
-}
-
-export function updateAllocationWindowsSecurityToJSON(
-  updateAllocationWindowsSecurity: UpdateAllocationWindowsSecurity,
-): string {
-  return JSON.stringify(
-    UpdateAllocationWindowsSecurity$outboundSchema.parse(
-      updateAllocationWindowsSecurity,
-    ),
-  );
-}
-
-export function updateAllocationWindowsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAllocationWindowsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAllocationWindowsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAllocationWindowsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const UpdateAllocationWindowsRequest$inboundSchema: z.ZodType<

@@ -8,69 +8,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListBadgesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type ListBadgesResponse = components.ErrorT | Array<components.Badge>;
-
-/** @internal */
-export const ListBadgesSecurity$inboundSchema: z.ZodType<
-  ListBadgesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type ListBadgesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const ListBadgesSecurity$outboundSchema: z.ZodType<
-  ListBadgesSecurity$Outbound,
-  z.ZodTypeDef,
-  ListBadgesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListBadgesSecurity$ {
-  /** @deprecated use `ListBadgesSecurity$inboundSchema` instead. */
-  export const inboundSchema = ListBadgesSecurity$inboundSchema;
-  /** @deprecated use `ListBadgesSecurity$outboundSchema` instead. */
-  export const outboundSchema = ListBadgesSecurity$outboundSchema;
-  /** @deprecated use `ListBadgesSecurity$Outbound` instead. */
-  export type Outbound = ListBadgesSecurity$Outbound;
-}
-
-export function listBadgesSecurityToJSON(
-  listBadgesSecurity: ListBadgesSecurity,
-): string {
-  return JSON.stringify(
-    ListBadgesSecurity$outboundSchema.parse(listBadgesSecurity),
-  );
-}
-
-export function listBadgesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<ListBadgesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListBadgesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListBadgesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const ListBadgesResponse$inboundSchema: z.ZodType<

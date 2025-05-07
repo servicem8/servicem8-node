@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type GetSMSTemplatesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type GetSMSTemplatesRequest = {
   /**
    * UUID of the SMS Template
@@ -23,63 +18,6 @@ export type GetSMSTemplatesRequest = {
 export type GetSMSTemplatesResponse =
   | components.ErrorT
   | components.SmsTemplate;
-
-/** @internal */
-export const GetSMSTemplatesSecurity$inboundSchema: z.ZodType<
-  GetSMSTemplatesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type GetSMSTemplatesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const GetSMSTemplatesSecurity$outboundSchema: z.ZodType<
-  GetSMSTemplatesSecurity$Outbound,
-  z.ZodTypeDef,
-  GetSMSTemplatesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetSMSTemplatesSecurity$ {
-  /** @deprecated use `GetSMSTemplatesSecurity$inboundSchema` instead. */
-  export const inboundSchema = GetSMSTemplatesSecurity$inboundSchema;
-  /** @deprecated use `GetSMSTemplatesSecurity$outboundSchema` instead. */
-  export const outboundSchema = GetSMSTemplatesSecurity$outboundSchema;
-  /** @deprecated use `GetSMSTemplatesSecurity$Outbound` instead. */
-  export type Outbound = GetSMSTemplatesSecurity$Outbound;
-}
-
-export function getSMSTemplatesSecurityToJSON(
-  getSMSTemplatesSecurity: GetSMSTemplatesSecurity,
-): string {
-  return JSON.stringify(
-    GetSMSTemplatesSecurity$outboundSchema.parse(getSMSTemplatesSecurity),
-  );
-}
-
-export function getSMSTemplatesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<GetSMSTemplatesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetSMSTemplatesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetSMSTemplatesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const GetSMSTemplatesRequest$inboundSchema: z.ZodType<

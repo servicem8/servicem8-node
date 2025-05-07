@@ -25,12 +25,10 @@ export class Jobs extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_jobs**.
    */
   async listJobs(
-    security: operations.ListJobsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListJobsResponse> {
     return unwrapAsync(jobsListJobs(
       this,
-      security,
       options,
     ));
   }
@@ -47,13 +45,11 @@ export class Jobs extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createJobs(
-    security: operations.CreateJobsSecurity,
     request: components.JobInput,
     options?: RequestOptions,
   ): Promise<operations.CreateJobsResponse> {
     return unwrapAsync(jobsCreateJobs(
       this,
-      security,
       request,
       options,
     ));
@@ -68,13 +64,11 @@ export class Jobs extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_jobs**.
    */
   async getJobs(
-    security: operations.GetJobsSecurity,
     request: operations.GetJobsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetJobsResponse> {
     return unwrapAsync(jobsGetJobs(
       this,
-      security,
       request,
       options,
     ));
@@ -89,13 +83,11 @@ export class Jobs extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_jobs**.
    */
   async updateJobs(
-    security: operations.UpdateJobsSecurity,
     request: operations.UpdateJobsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateJobsResponse> {
     return unwrapAsync(jobsUpdateJobs(
       this,
-      security,
       request,
       options,
     ));
@@ -112,13 +104,11 @@ export class Jobs extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_jobs**.
    */
   async deleteJobs(
-    security: operations.DeleteJobsSecurity,
     request: operations.DeleteJobsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteJobsResponse> {
     return unwrapAsync(jobsDeleteJobs(
       this,
-      security,
       request,
       options,
     ));

@@ -8,71 +8,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListEmailTemplatesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type ListEmailTemplatesResponse =
   | components.ErrorT
   | Array<components.EmailTemplate>;
-
-/** @internal */
-export const ListEmailTemplatesSecurity$inboundSchema: z.ZodType<
-  ListEmailTemplatesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type ListEmailTemplatesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const ListEmailTemplatesSecurity$outboundSchema: z.ZodType<
-  ListEmailTemplatesSecurity$Outbound,
-  z.ZodTypeDef,
-  ListEmailTemplatesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListEmailTemplatesSecurity$ {
-  /** @deprecated use `ListEmailTemplatesSecurity$inboundSchema` instead. */
-  export const inboundSchema = ListEmailTemplatesSecurity$inboundSchema;
-  /** @deprecated use `ListEmailTemplatesSecurity$outboundSchema` instead. */
-  export const outboundSchema = ListEmailTemplatesSecurity$outboundSchema;
-  /** @deprecated use `ListEmailTemplatesSecurity$Outbound` instead. */
-  export type Outbound = ListEmailTemplatesSecurity$Outbound;
-}
-
-export function listEmailTemplatesSecurityToJSON(
-  listEmailTemplatesSecurity: ListEmailTemplatesSecurity,
-): string {
-  return JSON.stringify(
-    ListEmailTemplatesSecurity$outboundSchema.parse(listEmailTemplatesSecurity),
-  );
-}
-
-export function listEmailTemplatesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<ListEmailTemplatesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListEmailTemplatesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListEmailTemplatesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const ListEmailTemplatesResponse$inboundSchema: z.ZodType<

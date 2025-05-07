@@ -8,69 +8,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListFormsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type ListFormsResponse = components.ErrorT | Array<components.Form>;
-
-/** @internal */
-export const ListFormsSecurity$inboundSchema: z.ZodType<
-  ListFormsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type ListFormsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const ListFormsSecurity$outboundSchema: z.ZodType<
-  ListFormsSecurity$Outbound,
-  z.ZodTypeDef,
-  ListFormsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListFormsSecurity$ {
-  /** @deprecated use `ListFormsSecurity$inboundSchema` instead. */
-  export const inboundSchema = ListFormsSecurity$inboundSchema;
-  /** @deprecated use `ListFormsSecurity$outboundSchema` instead. */
-  export const outboundSchema = ListFormsSecurity$outboundSchema;
-  /** @deprecated use `ListFormsSecurity$Outbound` instead. */
-  export type Outbound = ListFormsSecurity$Outbound;
-}
-
-export function listFormsSecurityToJSON(
-  listFormsSecurity: ListFormsSecurity,
-): string {
-  return JSON.stringify(
-    ListFormsSecurity$outboundSchema.parse(listFormsSecurity),
-  );
-}
-
-export function listFormsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<ListFormsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListFormsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListFormsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const ListFormsResponse$inboundSchema: z.ZodType<

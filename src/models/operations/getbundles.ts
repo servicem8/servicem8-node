@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type GetBundlesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type GetBundlesRequest = {
   /**
    * UUID of the Bundle
@@ -21,63 +16,6 @@ export type GetBundlesRequest = {
 };
 
 export type GetBundlesResponse = components.ErrorT | components.MaterialBundle;
-
-/** @internal */
-export const GetBundlesSecurity$inboundSchema: z.ZodType<
-  GetBundlesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type GetBundlesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const GetBundlesSecurity$outboundSchema: z.ZodType<
-  GetBundlesSecurity$Outbound,
-  z.ZodTypeDef,
-  GetBundlesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetBundlesSecurity$ {
-  /** @deprecated use `GetBundlesSecurity$inboundSchema` instead. */
-  export const inboundSchema = GetBundlesSecurity$inboundSchema;
-  /** @deprecated use `GetBundlesSecurity$outboundSchema` instead. */
-  export const outboundSchema = GetBundlesSecurity$outboundSchema;
-  /** @deprecated use `GetBundlesSecurity$Outbound` instead. */
-  export type Outbound = GetBundlesSecurity$Outbound;
-}
-
-export function getBundlesSecurityToJSON(
-  getBundlesSecurity: GetBundlesSecurity,
-): string {
-  return JSON.stringify(
-    GetBundlesSecurity$outboundSchema.parse(getBundlesSecurity),
-  );
-}
-
-export function getBundlesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<GetBundlesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetBundlesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetBundlesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const GetBundlesRequest$inboundSchema: z.ZodType<

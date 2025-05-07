@@ -22,12 +22,10 @@ export class SMSTemplates extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listSMSTemplates(
-    security: operations.ListSMSTemplatesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListSMSTemplatesResponse> {
     return unwrapAsync(smsTemplatesListSMSTemplates(
       this,
-      security,
       options,
     ));
   }
@@ -41,13 +39,11 @@ export class SMSTemplates extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createSMSTemplates(
-    security: operations.CreateSMSTemplatesSecurity,
     request: components.SmsTemplateInput,
     options?: RequestOptions,
   ): Promise<operations.CreateSMSTemplatesResponse> {
     return unwrapAsync(smsTemplatesCreateSMSTemplates(
       this,
-      security,
       request,
       options,
     ));
@@ -57,13 +53,11 @@ export class SMSTemplates extends ClientSDK {
    * Retrieve a SMS Template
    */
   async getSMSTemplates(
-    security: operations.GetSMSTemplatesSecurity,
     request: operations.GetSMSTemplatesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetSMSTemplatesResponse> {
     return unwrapAsync(smsTemplatesGetSMSTemplates(
       this,
-      security,
       request,
       options,
     ));
@@ -73,13 +67,11 @@ export class SMSTemplates extends ClientSDK {
    * Update a SMS Template
    */
   async updateSMSTemplates(
-    security: operations.UpdateSMSTemplatesSecurity,
     request: operations.UpdateSMSTemplatesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateSMSTemplatesResponse> {
     return unwrapAsync(smsTemplatesUpdateSMSTemplates(
       this,
-      security,
       request,
       options,
     ));
@@ -93,13 +85,11 @@ export class SMSTemplates extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteSMSTemplates(
-    security: operations.DeleteSMSTemplatesSecurity,
     request: operations.DeleteSMSTemplatesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteSMSTemplatesResponse> {
     return unwrapAsync(smsTemplatesDeleteSMSTemplates(
       this,
-      security,
       request,
       options,
     ));

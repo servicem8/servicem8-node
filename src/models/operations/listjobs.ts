@@ -8,69 +8,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListJobsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type ListJobsResponse = components.ErrorT | Array<components.Job>;
-
-/** @internal */
-export const ListJobsSecurity$inboundSchema: z.ZodType<
-  ListJobsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type ListJobsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const ListJobsSecurity$outboundSchema: z.ZodType<
-  ListJobsSecurity$Outbound,
-  z.ZodTypeDef,
-  ListJobsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListJobsSecurity$ {
-  /** @deprecated use `ListJobsSecurity$inboundSchema` instead. */
-  export const inboundSchema = ListJobsSecurity$inboundSchema;
-  /** @deprecated use `ListJobsSecurity$outboundSchema` instead. */
-  export const outboundSchema = ListJobsSecurity$outboundSchema;
-  /** @deprecated use `ListJobsSecurity$Outbound` instead. */
-  export type Outbound = ListJobsSecurity$Outbound;
-}
-
-export function listJobsSecurityToJSON(
-  listJobsSecurity: ListJobsSecurity,
-): string {
-  return JSON.stringify(
-    ListJobsSecurity$outboundSchema.parse(listJobsSecurity),
-  );
-}
-
-export function listJobsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<ListJobsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListJobsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListJobsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const ListJobsResponse$inboundSchema: z.ZodType<

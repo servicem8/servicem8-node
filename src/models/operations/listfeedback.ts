@@ -8,71 +8,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListFeedbackSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type ListFeedbackResponse =
   | components.ErrorT
   | Array<components.Feedback>;
-
-/** @internal */
-export const ListFeedbackSecurity$inboundSchema: z.ZodType<
-  ListFeedbackSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type ListFeedbackSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const ListFeedbackSecurity$outboundSchema: z.ZodType<
-  ListFeedbackSecurity$Outbound,
-  z.ZodTypeDef,
-  ListFeedbackSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListFeedbackSecurity$ {
-  /** @deprecated use `ListFeedbackSecurity$inboundSchema` instead. */
-  export const inboundSchema = ListFeedbackSecurity$inboundSchema;
-  /** @deprecated use `ListFeedbackSecurity$outboundSchema` instead. */
-  export const outboundSchema = ListFeedbackSecurity$outboundSchema;
-  /** @deprecated use `ListFeedbackSecurity$Outbound` instead. */
-  export type Outbound = ListFeedbackSecurity$Outbound;
-}
-
-export function listFeedbackSecurityToJSON(
-  listFeedbackSecurity: ListFeedbackSecurity,
-): string {
-  return JSON.stringify(
-    ListFeedbackSecurity$outboundSchema.parse(listFeedbackSecurity),
-  );
-}
-
-export function listFeedbackSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<ListFeedbackSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListFeedbackSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListFeedbackSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const ListFeedbackResponse$inboundSchema: z.ZodType<

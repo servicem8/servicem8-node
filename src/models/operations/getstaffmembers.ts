@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type GetStaffMembersSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type GetStaffMembersRequest = {
   /**
    * UUID of the Staff Member
@@ -21,63 +16,6 @@ export type GetStaffMembersRequest = {
 };
 
 export type GetStaffMembersResponse = components.ErrorT | components.Staff;
-
-/** @internal */
-export const GetStaffMembersSecurity$inboundSchema: z.ZodType<
-  GetStaffMembersSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type GetStaffMembersSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const GetStaffMembersSecurity$outboundSchema: z.ZodType<
-  GetStaffMembersSecurity$Outbound,
-  z.ZodTypeDef,
-  GetStaffMembersSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetStaffMembersSecurity$ {
-  /** @deprecated use `GetStaffMembersSecurity$inboundSchema` instead. */
-  export const inboundSchema = GetStaffMembersSecurity$inboundSchema;
-  /** @deprecated use `GetStaffMembersSecurity$outboundSchema` instead. */
-  export const outboundSchema = GetStaffMembersSecurity$outboundSchema;
-  /** @deprecated use `GetStaffMembersSecurity$Outbound` instead. */
-  export type Outbound = GetStaffMembersSecurity$Outbound;
-}
-
-export function getStaffMembersSecurityToJSON(
-  getStaffMembersSecurity: GetStaffMembersSecurity,
-): string {
-  return JSON.stringify(
-    GetStaffMembersSecurity$outboundSchema.parse(getStaffMembersSecurity),
-  );
-}
-
-export function getStaffMembersSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<GetStaffMembersSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetStaffMembersSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetStaffMembersSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const GetStaffMembersRequest$inboundSchema: z.ZodType<

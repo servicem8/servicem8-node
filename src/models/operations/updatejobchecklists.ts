@@ -9,11 +9,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type UpdateJobChecklistsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type UpdateJobChecklistsRequest = {
   /**
    * UUID of the Job Checklist
@@ -26,65 +21,6 @@ export type UpdateJobChecklistsRequest = {
 };
 
 export type UpdateJobChecklistsResponse = components.Result | components.ErrorT;
-
-/** @internal */
-export const UpdateJobChecklistsSecurity$inboundSchema: z.ZodType<
-  UpdateJobChecklistsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type UpdateJobChecklistsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const UpdateJobChecklistsSecurity$outboundSchema: z.ZodType<
-  UpdateJobChecklistsSecurity$Outbound,
-  z.ZodTypeDef,
-  UpdateJobChecklistsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateJobChecklistsSecurity$ {
-  /** @deprecated use `UpdateJobChecklistsSecurity$inboundSchema` instead. */
-  export const inboundSchema = UpdateJobChecklistsSecurity$inboundSchema;
-  /** @deprecated use `UpdateJobChecklistsSecurity$outboundSchema` instead. */
-  export const outboundSchema = UpdateJobChecklistsSecurity$outboundSchema;
-  /** @deprecated use `UpdateJobChecklistsSecurity$Outbound` instead. */
-  export type Outbound = UpdateJobChecklistsSecurity$Outbound;
-}
-
-export function updateJobChecklistsSecurityToJSON(
-  updateJobChecklistsSecurity: UpdateJobChecklistsSecurity,
-): string {
-  return JSON.stringify(
-    UpdateJobChecklistsSecurity$outboundSchema.parse(
-      updateJobChecklistsSecurity,
-    ),
-  );
-}
-
-export function updateJobChecklistsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateJobChecklistsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateJobChecklistsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateJobChecklistsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const UpdateJobChecklistsRequest$inboundSchema: z.ZodType<

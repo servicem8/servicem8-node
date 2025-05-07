@@ -23,12 +23,10 @@ export class Assets extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_assets**.
    */
   async listAssets(
-    security: operations.ListAssetsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListAssetsResponse> {
     return unwrapAsync(assetsListAssets(
       this,
-      security,
       options,
     ));
   }
@@ -42,13 +40,11 @@ export class Assets extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_assets**.
    */
   async getAssets(
-    security: operations.GetAssetsSecurity,
     request: operations.GetAssetsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetAssetsResponse> {
     return unwrapAsync(assetsGetAssets(
       this,
-      security,
       request,
       options,
     ));
@@ -56,15 +52,18 @@ export class Assets extends ClientSDK {
 
   /**
    * Update an Asset
+   *
+   * @remarks
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_assets**.
    */
   async updateAssets(
-    security: operations.UpdateAssetsSecurity,
     request: operations.UpdateAssetsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateAssetsResponse> {
     return unwrapAsync(assetsUpdateAssets(
       this,
-      security,
       request,
       options,
     ));
@@ -76,15 +75,16 @@ export class Assets extends ClientSDK {
    * @remarks
    *
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_assets**.
    */
   async deleteAssets(
-    security: operations.DeleteAssetsSecurity,
     request: operations.DeleteAssetsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteAssetsResponse> {
     return unwrapAsync(assetsDeleteAssets(
       this,
-      security,
       request,
       options,
     ));

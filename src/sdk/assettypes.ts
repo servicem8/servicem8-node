@@ -25,12 +25,10 @@ export class AssetTypes extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_assets**.
    */
   async listAssetTypes(
-    security: operations.ListAssetTypesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListAssetTypesResponse> {
     return unwrapAsync(assetTypesListAssetTypes(
       this,
-      security,
       options,
     ));
   }
@@ -47,13 +45,11 @@ export class AssetTypes extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createAssetTypes(
-    security: operations.CreateAssetTypesSecurity,
     request: components.AssetTypeInput,
     options?: RequestOptions,
   ): Promise<operations.CreateAssetTypesResponse> {
     return unwrapAsync(assetTypesCreateAssetTypes(
       this,
-      security,
       request,
       options,
     ));
@@ -68,13 +64,11 @@ export class AssetTypes extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_assets**.
    */
   async getAssetTypes(
-    security: operations.GetAssetTypesSecurity,
     request: operations.GetAssetTypesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetAssetTypesResponse> {
     return unwrapAsync(assetTypesGetAssetTypes(
       this,
-      security,
       request,
       options,
     ));
@@ -82,15 +76,18 @@ export class AssetTypes extends ClientSDK {
 
   /**
    * Update an Asset Type
+   *
+   * @remarks
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_assets**.
    */
   async updateAssetTypes(
-    security: operations.UpdateAssetTypesSecurity,
     request: operations.UpdateAssetTypesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateAssetTypesResponse> {
     return unwrapAsync(assetTypesUpdateAssetTypes(
       this,
-      security,
       request,
       options,
     ));
@@ -102,15 +99,16 @@ export class AssetTypes extends ClientSDK {
    * @remarks
    *
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_assets**.
    */
   async deleteAssetTypes(
-    security: operations.DeleteAssetTypesSecurity,
     request: operations.DeleteAssetTypesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteAssetTypesResponse> {
     return unwrapAsync(assetTypesDeleteAssetTypes(
       this,
-      security,
       request,
       options,
     ));

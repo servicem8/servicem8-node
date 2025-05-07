@@ -23,12 +23,10 @@ export class Vendors extends ClientSDK {
    * This endpoint requires the following OAuth scope **vendor**.
    */
   async listVendors(
-    security: operations.ListVendorsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListVendorsResponse> {
     return unwrapAsync(vendorsListVendors(
       this,
-      security,
       options,
     ));
   }
@@ -43,13 +41,11 @@ export class Vendors extends ClientSDK {
    * This endpoint requires the following OAuth scope **vendor**.
    */
   async getVendors(
-    security: operations.GetVendorsSecurity,
     request: operations.GetVendorsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetVendorsResponse> {
     return unwrapAsync(vendorsGetVendors(
       this,
-      security,
       request,
       options,
     ));
@@ -62,13 +58,11 @@ export class Vendors extends ClientSDK {
    * Vendor account information
    */
   async updateVendors(
-    security: operations.UpdateVendorsSecurity,
     request: operations.UpdateVendorsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateVendorsResponse> {
     return unwrapAsync(vendorsUpdateVendors(
       this,
-      security,
       request,
       options,
     ));

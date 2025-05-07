@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type GetBadgesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type GetBadgesRequest = {
   /**
    * UUID of the Badge
@@ -21,63 +16,6 @@ export type GetBadgesRequest = {
 };
 
 export type GetBadgesResponse = components.ErrorT | components.Badge;
-
-/** @internal */
-export const GetBadgesSecurity$inboundSchema: z.ZodType<
-  GetBadgesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type GetBadgesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const GetBadgesSecurity$outboundSchema: z.ZodType<
-  GetBadgesSecurity$Outbound,
-  z.ZodTypeDef,
-  GetBadgesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetBadgesSecurity$ {
-  /** @deprecated use `GetBadgesSecurity$inboundSchema` instead. */
-  export const inboundSchema = GetBadgesSecurity$inboundSchema;
-  /** @deprecated use `GetBadgesSecurity$outboundSchema` instead. */
-  export const outboundSchema = GetBadgesSecurity$outboundSchema;
-  /** @deprecated use `GetBadgesSecurity$Outbound` instead. */
-  export type Outbound = GetBadgesSecurity$Outbound;
-}
-
-export function getBadgesSecurityToJSON(
-  getBadgesSecurity: GetBadgesSecurity,
-): string {
-  return JSON.stringify(
-    GetBadgesSecurity$outboundSchema.parse(getBadgesSecurity),
-  );
-}
-
-export function getBadgesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<GetBadgesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetBadgesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetBadgesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const GetBadgesRequest$inboundSchema: z.ZodType<

@@ -25,12 +25,10 @@ export class JobContacts extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_job_contacts**.
    */
   async listJobContacts(
-    security: operations.ListJobContactsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListJobContactsResponse> {
     return unwrapAsync(jobContactsListJobContacts(
       this,
-      security,
       options,
     ));
   }
@@ -47,13 +45,11 @@ export class JobContacts extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createJobContacts(
-    security: operations.CreateJobContactsSecurity,
     request: components.JobContactInput,
     options?: RequestOptions,
   ): Promise<operations.CreateJobContactsResponse> {
     return unwrapAsync(jobContactsCreateJobContacts(
       this,
-      security,
       request,
       options,
     ));
@@ -68,13 +64,11 @@ export class JobContacts extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_job_contacts**.
    */
   async getJobContacts(
-    security: operations.GetJobContactsSecurity,
     request: operations.GetJobContactsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetJobContactsResponse> {
     return unwrapAsync(jobContactsGetJobContacts(
       this,
-      security,
       request,
       options,
     ));
@@ -89,13 +83,11 @@ export class JobContacts extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_job_contacts**.
    */
   async updateJobContacts(
-    security: operations.UpdateJobContactsSecurity,
     request: operations.UpdateJobContactsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateJobContactsResponse> {
     return unwrapAsync(jobContactsUpdateJobContacts(
       this,
-      security,
       request,
       options,
     ));
@@ -112,13 +104,11 @@ export class JobContacts extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_job_contacts**.
    */
   async deleteJobContacts(
-    security: operations.DeleteJobContactsSecurity,
     request: operations.DeleteJobContactsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteJobContactsResponse> {
     return unwrapAsync(jobContactsDeleteJobContacts(
       this,
-      security,
       request,
       options,
     ));

@@ -8,71 +8,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListStaffMessagesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type ListStaffMessagesResponse =
   | components.ErrorT
   | Array<components.StaffMessage>;
-
-/** @internal */
-export const ListStaffMessagesSecurity$inboundSchema: z.ZodType<
-  ListStaffMessagesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type ListStaffMessagesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const ListStaffMessagesSecurity$outboundSchema: z.ZodType<
-  ListStaffMessagesSecurity$Outbound,
-  z.ZodTypeDef,
-  ListStaffMessagesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListStaffMessagesSecurity$ {
-  /** @deprecated use `ListStaffMessagesSecurity$inboundSchema` instead. */
-  export const inboundSchema = ListStaffMessagesSecurity$inboundSchema;
-  /** @deprecated use `ListStaffMessagesSecurity$outboundSchema` instead. */
-  export const outboundSchema = ListStaffMessagesSecurity$outboundSchema;
-  /** @deprecated use `ListStaffMessagesSecurity$Outbound` instead. */
-  export type Outbound = ListStaffMessagesSecurity$Outbound;
-}
-
-export function listStaffMessagesSecurityToJSON(
-  listStaffMessagesSecurity: ListStaffMessagesSecurity,
-): string {
-  return JSON.stringify(
-    ListStaffMessagesSecurity$outboundSchema.parse(listStaffMessagesSecurity),
-  );
-}
-
-export function listStaffMessagesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<ListStaffMessagesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListStaffMessagesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListStaffMessagesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const ListStaffMessagesResponse$inboundSchema: z.ZodType<

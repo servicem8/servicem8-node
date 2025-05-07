@@ -8,71 +8,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListStaffMembersSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type ListStaffMembersResponse =
   | components.ErrorT
   | Array<components.Staff>;
-
-/** @internal */
-export const ListStaffMembersSecurity$inboundSchema: z.ZodType<
-  ListStaffMembersSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type ListStaffMembersSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const ListStaffMembersSecurity$outboundSchema: z.ZodType<
-  ListStaffMembersSecurity$Outbound,
-  z.ZodTypeDef,
-  ListStaffMembersSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListStaffMembersSecurity$ {
-  /** @deprecated use `ListStaffMembersSecurity$inboundSchema` instead. */
-  export const inboundSchema = ListStaffMembersSecurity$inboundSchema;
-  /** @deprecated use `ListStaffMembersSecurity$outboundSchema` instead. */
-  export const outboundSchema = ListStaffMembersSecurity$outboundSchema;
-  /** @deprecated use `ListStaffMembersSecurity$Outbound` instead. */
-  export type Outbound = ListStaffMembersSecurity$Outbound;
-}
-
-export function listStaffMembersSecurityToJSON(
-  listStaffMembersSecurity: ListStaffMembersSecurity,
-): string {
-  return JSON.stringify(
-    ListStaffMembersSecurity$outboundSchema.parse(listStaffMembersSecurity),
-  );
-}
-
-export function listStaffMembersSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<ListStaffMembersSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListStaffMembersSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListStaffMembersSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const ListStaffMembersResponse$inboundSchema: z.ZodType<

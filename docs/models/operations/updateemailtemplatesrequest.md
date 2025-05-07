@@ -8,7 +8,7 @@ import { UpdateEmailTemplatesRequest } from "servicem8/models/operations";
 let value: UpdateEmailTemplatesRequest = {
   uuid: "294097a8-e371-45a8-ad02-d6ffca8fc57b",
   emailTemplate: {
-    uuid: "123e4567-ab0e-43da-a713-22b705d77dfb",
+    uuid: "123e4567-0a44-4965-864f-22bb02633cfb",
     name: "<value>",
   },
 };

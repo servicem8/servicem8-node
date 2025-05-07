@@ -25,12 +25,10 @@ export class JobActivities extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_schedule**.
    */
   async listJobActivities(
-    security: operations.ListJobActivitiesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListJobActivitiesResponse> {
     return unwrapAsync(jobActivitiesListJobActivities(
       this,
-      security,
       options,
     ));
   }
@@ -47,13 +45,11 @@ export class JobActivities extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createJobActivities(
-    security: operations.CreateJobActivitiesSecurity,
     request: components.JobActivityInput,
     options?: RequestOptions,
   ): Promise<operations.CreateJobActivitiesResponse> {
     return unwrapAsync(jobActivitiesCreateJobActivities(
       this,
-      security,
       request,
       options,
     ));
@@ -68,13 +64,11 @@ export class JobActivities extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_schedule**.
    */
   async getJobActivities(
-    security: operations.GetJobActivitiesSecurity,
     request: operations.GetJobActivitiesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetJobActivitiesResponse> {
     return unwrapAsync(jobActivitiesGetJobActivities(
       this,
-      security,
       request,
       options,
     ));
@@ -89,13 +83,11 @@ export class JobActivities extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_schedule**.
    */
   async updateJobActivities(
-    security: operations.UpdateJobActivitiesSecurity,
     request: operations.UpdateJobActivitiesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateJobActivitiesResponse> {
     return unwrapAsync(jobActivitiesUpdateJobActivities(
       this,
-      security,
       request,
       options,
     ));
@@ -112,13 +104,11 @@ export class JobActivities extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_schedule**.
    */
   async deleteJobActivities(
-    security: operations.DeleteJobActivitiesSecurity,
     request: operations.DeleteJobActivitiesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteJobActivitiesResponse> {
     return unwrapAsync(jobActivitiesDeleteJobActivities(
       this,
-      security,
       request,
       options,
     ));

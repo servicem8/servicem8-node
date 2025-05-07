@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type DeleteFormsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type DeleteFormsRequest = {
   /**
    * UUID of the Form
@@ -21,63 +16,6 @@ export type DeleteFormsRequest = {
 };
 
 export type DeleteFormsResponse = components.Result | components.ErrorT;
-
-/** @internal */
-export const DeleteFormsSecurity$inboundSchema: z.ZodType<
-  DeleteFormsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type DeleteFormsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const DeleteFormsSecurity$outboundSchema: z.ZodType<
-  DeleteFormsSecurity$Outbound,
-  z.ZodTypeDef,
-  DeleteFormsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteFormsSecurity$ {
-  /** @deprecated use `DeleteFormsSecurity$inboundSchema` instead. */
-  export const inboundSchema = DeleteFormsSecurity$inboundSchema;
-  /** @deprecated use `DeleteFormsSecurity$outboundSchema` instead. */
-  export const outboundSchema = DeleteFormsSecurity$outboundSchema;
-  /** @deprecated use `DeleteFormsSecurity$Outbound` instead. */
-  export type Outbound = DeleteFormsSecurity$Outbound;
-}
-
-export function deleteFormsSecurityToJSON(
-  deleteFormsSecurity: DeleteFormsSecurity,
-): string {
-  return JSON.stringify(
-    DeleteFormsSecurity$outboundSchema.parse(deleteFormsSecurity),
-  );
-}
-
-export function deleteFormsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteFormsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteFormsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteFormsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const DeleteFormsRequest$inboundSchema: z.ZodType<

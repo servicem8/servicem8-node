@@ -8,69 +8,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListTasksSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type ListTasksResponse = components.ErrorT | Array<components.Task>;
-
-/** @internal */
-export const ListTasksSecurity$inboundSchema: z.ZodType<
-  ListTasksSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type ListTasksSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const ListTasksSecurity$outboundSchema: z.ZodType<
-  ListTasksSecurity$Outbound,
-  z.ZodTypeDef,
-  ListTasksSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListTasksSecurity$ {
-  /** @deprecated use `ListTasksSecurity$inboundSchema` instead. */
-  export const inboundSchema = ListTasksSecurity$inboundSchema;
-  /** @deprecated use `ListTasksSecurity$outboundSchema` instead. */
-  export const outboundSchema = ListTasksSecurity$outboundSchema;
-  /** @deprecated use `ListTasksSecurity$Outbound` instead. */
-  export type Outbound = ListTasksSecurity$Outbound;
-}
-
-export function listTasksSecurityToJSON(
-  listTasksSecurity: ListTasksSecurity,
-): string {
-  return JSON.stringify(
-    ListTasksSecurity$outboundSchema.parse(listTasksSecurity),
-  );
-}
-
-export function listTasksSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<ListTasksSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListTasksSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListTasksSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const ListTasksResponse$inboundSchema: z.ZodType<

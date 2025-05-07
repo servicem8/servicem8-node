@@ -22,12 +22,10 @@ export class EmailTemplates extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listEmailTemplates(
-    security: operations.ListEmailTemplatesSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListEmailTemplatesResponse> {
     return unwrapAsync(emailTemplatesListEmailTemplates(
       this,
-      security,
       options,
     ));
   }
@@ -41,13 +39,11 @@ export class EmailTemplates extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createEmailTemplates(
-    security: operations.CreateEmailTemplatesSecurity,
     request: components.EmailTemplateInput,
     options?: RequestOptions,
   ): Promise<operations.CreateEmailTemplatesResponse> {
     return unwrapAsync(emailTemplatesCreateEmailTemplates(
       this,
-      security,
       request,
       options,
     ));
@@ -57,13 +53,11 @@ export class EmailTemplates extends ClientSDK {
    * Retrieve an Email Template
    */
   async getEmailTemplates(
-    security: operations.GetEmailTemplatesSecurity,
     request: operations.GetEmailTemplatesRequest,
     options?: RequestOptions,
   ): Promise<operations.GetEmailTemplatesResponse> {
     return unwrapAsync(emailTemplatesGetEmailTemplates(
       this,
-      security,
       request,
       options,
     ));
@@ -73,13 +67,11 @@ export class EmailTemplates extends ClientSDK {
    * Update an Email Template
    */
   async updateEmailTemplates(
-    security: operations.UpdateEmailTemplatesSecurity,
     request: operations.UpdateEmailTemplatesRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateEmailTemplatesResponse> {
     return unwrapAsync(emailTemplatesUpdateEmailTemplates(
       this,
-      security,
       request,
       options,
     ));
@@ -93,13 +85,11 @@ export class EmailTemplates extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteEmailTemplates(
-    security: operations.DeleteEmailTemplatesSecurity,
     request: operations.DeleteEmailTemplatesRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteEmailTemplatesResponse> {
     return unwrapAsync(emailTemplatesDeleteEmailTemplates(
       this,
-      security,
       request,
       options,
     ));

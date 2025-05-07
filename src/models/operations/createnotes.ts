@@ -9,74 +9,12 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CreateNotesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type CreateNotesResponseResult = components.Result | components.ErrorT;
 
 export type CreateNotesResponse = {
   headers: { [k: string]: Array<string> };
   result: components.Result | components.ErrorT;
 };
-
-/** @internal */
-export const CreateNotesSecurity$inboundSchema: z.ZodType<
-  CreateNotesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type CreateNotesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const CreateNotesSecurity$outboundSchema: z.ZodType<
-  CreateNotesSecurity$Outbound,
-  z.ZodTypeDef,
-  CreateNotesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateNotesSecurity$ {
-  /** @deprecated use `CreateNotesSecurity$inboundSchema` instead. */
-  export const inboundSchema = CreateNotesSecurity$inboundSchema;
-  /** @deprecated use `CreateNotesSecurity$outboundSchema` instead. */
-  export const outboundSchema = CreateNotesSecurity$outboundSchema;
-  /** @deprecated use `CreateNotesSecurity$Outbound` instead. */
-  export type Outbound = CreateNotesSecurity$Outbound;
-}
-
-export function createNotesSecurityToJSON(
-  createNotesSecurity: CreateNotesSecurity,
-): string {
-  return JSON.stringify(
-    CreateNotesSecurity$outboundSchema.parse(createNotesSecurity),
-  );
-}
-
-export function createNotesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateNotesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateNotesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateNotesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const CreateNotesResponseResult$inboundSchema: z.ZodType<

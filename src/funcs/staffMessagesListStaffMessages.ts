@@ -6,7 +6,7 @@ import { ServiceM8Core } from "../core.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { RequestOptions } from "../lib/sdks.js";
-import { resolveSecurity } from "../lib/security.js";
+import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import { APIError } from "../models/errors/apierror.js";
 import {
@@ -32,7 +32,6 @@ import { Result } from "../types/fp.js";
  */
 export function staffMessagesListStaffMessages(
   client: ServiceM8Core,
-  security: operations.ListStaffMessagesSecurity,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -49,14 +48,12 @@ export function staffMessagesListStaffMessages(
 > {
   return new APIPromise($do(
     client,
-    security,
     options,
   ));
 }
 
 async function $do(
   client: ServiceM8Core,
-  security: operations.ListStaffMessagesSecurity,
   options?: RequestOptions,
 ): Promise<
   [
@@ -80,31 +77,17 @@ async function $do(
     Accept: "application/json",
   }));
 
-  const requestSecurity = resolveSecurity(
-    [
-      {
-        fieldName: "Authorization",
-        type: "apiKey:header",
-        value: security?.apiKey,
-      },
-    ],
-    [
-      {
-        fieldName: "Authorization",
-        type: "oauth2",
-        value: security?.oauth2,
-      },
-    ],
-  );
+  const securityInput = await extractSecurity(client._options.security);
+  const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "listStaffMessages",
-    oAuth2Scopes: null,
+    oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
 
-    securitySource: security,
+    securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig
       || {

@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type GetAllocationWindowsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type GetAllocationWindowsRequest = {
   /**
    * UUID of the Allocation Window
@@ -23,65 +18,6 @@ export type GetAllocationWindowsRequest = {
 export type GetAllocationWindowsResponse =
   | components.ErrorT
   | components.AllocationWindow;
-
-/** @internal */
-export const GetAllocationWindowsSecurity$inboundSchema: z.ZodType<
-  GetAllocationWindowsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type GetAllocationWindowsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const GetAllocationWindowsSecurity$outboundSchema: z.ZodType<
-  GetAllocationWindowsSecurity$Outbound,
-  z.ZodTypeDef,
-  GetAllocationWindowsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAllocationWindowsSecurity$ {
-  /** @deprecated use `GetAllocationWindowsSecurity$inboundSchema` instead. */
-  export const inboundSchema = GetAllocationWindowsSecurity$inboundSchema;
-  /** @deprecated use `GetAllocationWindowsSecurity$outboundSchema` instead. */
-  export const outboundSchema = GetAllocationWindowsSecurity$outboundSchema;
-  /** @deprecated use `GetAllocationWindowsSecurity$Outbound` instead. */
-  export type Outbound = GetAllocationWindowsSecurity$Outbound;
-}
-
-export function getAllocationWindowsSecurityToJSON(
-  getAllocationWindowsSecurity: GetAllocationWindowsSecurity,
-): string {
-  return JSON.stringify(
-    GetAllocationWindowsSecurity$outboundSchema.parse(
-      getAllocationWindowsSecurity,
-    ),
-  );
-}
-
-export function getAllocationWindowsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAllocationWindowsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAllocationWindowsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAllocationWindowsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const GetAllocationWindowsRequest$inboundSchema: z.ZodType<

@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type DeleteCategoriesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type DeleteCategoriesRequest = {
   /**
    * UUID of the Category
@@ -21,63 +16,6 @@ export type DeleteCategoriesRequest = {
 };
 
 export type DeleteCategoriesResponse = components.Result | components.ErrorT;
-
-/** @internal */
-export const DeleteCategoriesSecurity$inboundSchema: z.ZodType<
-  DeleteCategoriesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type DeleteCategoriesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const DeleteCategoriesSecurity$outboundSchema: z.ZodType<
-  DeleteCategoriesSecurity$Outbound,
-  z.ZodTypeDef,
-  DeleteCategoriesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteCategoriesSecurity$ {
-  /** @deprecated use `DeleteCategoriesSecurity$inboundSchema` instead. */
-  export const inboundSchema = DeleteCategoriesSecurity$inboundSchema;
-  /** @deprecated use `DeleteCategoriesSecurity$outboundSchema` instead. */
-  export const outboundSchema = DeleteCategoriesSecurity$outboundSchema;
-  /** @deprecated use `DeleteCategoriesSecurity$Outbound` instead. */
-  export type Outbound = DeleteCategoriesSecurity$Outbound;
-}
-
-export function deleteCategoriesSecurityToJSON(
-  deleteCategoriesSecurity: DeleteCategoriesSecurity,
-): string {
-  return JSON.stringify(
-    DeleteCategoriesSecurity$outboundSchema.parse(deleteCategoriesSecurity),
-  );
-}
-
-export function deleteCategoriesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteCategoriesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteCategoriesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteCategoriesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const DeleteCategoriesRequest$inboundSchema: z.ZodType<

@@ -25,12 +25,10 @@ export class JobMaterials extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_job_materials**.
    */
   async listJobMaterials(
-    security: operations.ListJobMaterialsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListJobMaterialsResponse> {
     return unwrapAsync(jobMaterialsListJobMaterials(
       this,
-      security,
       options,
     ));
   }
@@ -47,13 +45,11 @@ export class JobMaterials extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createJobMaterials(
-    security: operations.CreateJobMaterialsSecurity,
     request: components.JobMaterialInput,
     options?: RequestOptions,
   ): Promise<operations.CreateJobMaterialsResponse> {
     return unwrapAsync(jobMaterialsCreateJobMaterials(
       this,
-      security,
       request,
       options,
     ));
@@ -68,13 +64,11 @@ export class JobMaterials extends ClientSDK {
    * This endpoint requires the following OAuth scope **read_job_materials**.
    */
   async getJobMaterials(
-    security: operations.GetJobMaterialsSecurity,
     request: operations.GetJobMaterialsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetJobMaterialsResponse> {
     return unwrapAsync(jobMaterialsGetJobMaterials(
       this,
-      security,
       request,
       options,
     ));
@@ -89,13 +83,11 @@ export class JobMaterials extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_job_materials**.
    */
   async updateJobMaterials(
-    security: operations.UpdateJobMaterialsSecurity,
     request: operations.UpdateJobMaterialsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateJobMaterialsResponse> {
     return unwrapAsync(jobMaterialsUpdateJobMaterials(
       this,
-      security,
       request,
       options,
     ));
@@ -112,13 +104,11 @@ export class JobMaterials extends ClientSDK {
    * This endpoint requires the following OAuth scope **manage_job_materials**.
    */
   async deleteJobMaterials(
-    security: operations.DeleteJobMaterialsSecurity,
     request: operations.DeleteJobMaterialsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteJobMaterialsResponse> {
     return unwrapAsync(jobMaterialsDeleteJobMaterials(
       this,
-      security,
       request,
       options,
     ));

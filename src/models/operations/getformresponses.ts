@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type GetFormResponsesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type GetFormResponsesRequest = {
   /**
    * UUID of the Form Response
@@ -23,63 +18,6 @@ export type GetFormResponsesRequest = {
 export type GetFormResponsesResponse =
   | components.ErrorT
   | components.FormResponse;
-
-/** @internal */
-export const GetFormResponsesSecurity$inboundSchema: z.ZodType<
-  GetFormResponsesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type GetFormResponsesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const GetFormResponsesSecurity$outboundSchema: z.ZodType<
-  GetFormResponsesSecurity$Outbound,
-  z.ZodTypeDef,
-  GetFormResponsesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetFormResponsesSecurity$ {
-  /** @deprecated use `GetFormResponsesSecurity$inboundSchema` instead. */
-  export const inboundSchema = GetFormResponsesSecurity$inboundSchema;
-  /** @deprecated use `GetFormResponsesSecurity$outboundSchema` instead. */
-  export const outboundSchema = GetFormResponsesSecurity$outboundSchema;
-  /** @deprecated use `GetFormResponsesSecurity$Outbound` instead. */
-  export type Outbound = GetFormResponsesSecurity$Outbound;
-}
-
-export function getFormResponsesSecurityToJSON(
-  getFormResponsesSecurity: GetFormResponsesSecurity,
-): string {
-  return JSON.stringify(
-    GetFormResponsesSecurity$outboundSchema.parse(getFormResponsesSecurity),
-  );
-}
-
-export function getFormResponsesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<GetFormResponsesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetFormResponsesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetFormResponsesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const GetFormResponsesRequest$inboundSchema: z.ZodType<

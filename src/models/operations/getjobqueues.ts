@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type GetJobQueuesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type GetJobQueuesRequest = {
   /**
    * UUID of the Job Queue
@@ -21,63 +16,6 @@ export type GetJobQueuesRequest = {
 };
 
 export type GetJobQueuesResponse = components.ErrorT | components.Queue;
-
-/** @internal */
-export const GetJobQueuesSecurity$inboundSchema: z.ZodType<
-  GetJobQueuesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type GetJobQueuesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const GetJobQueuesSecurity$outboundSchema: z.ZodType<
-  GetJobQueuesSecurity$Outbound,
-  z.ZodTypeDef,
-  GetJobQueuesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetJobQueuesSecurity$ {
-  /** @deprecated use `GetJobQueuesSecurity$inboundSchema` instead. */
-  export const inboundSchema = GetJobQueuesSecurity$inboundSchema;
-  /** @deprecated use `GetJobQueuesSecurity$outboundSchema` instead. */
-  export const outboundSchema = GetJobQueuesSecurity$outboundSchema;
-  /** @deprecated use `GetJobQueuesSecurity$Outbound` instead. */
-  export type Outbound = GetJobQueuesSecurity$Outbound;
-}
-
-export function getJobQueuesSecurityToJSON(
-  getJobQueuesSecurity: GetJobQueuesSecurity,
-): string {
-  return JSON.stringify(
-    GetJobQueuesSecurity$outboundSchema.parse(getJobQueuesSecurity),
-  );
-}
-
-export function getJobQueuesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<GetJobQueuesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetJobQueuesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetJobQueuesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const GetJobQueuesRequest$inboundSchema: z.ZodType<

@@ -22,12 +22,10 @@ export class JobPayments extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listJobPayments(
-    security: operations.ListJobPaymentsSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListJobPaymentsResponse> {
     return unwrapAsync(jobPaymentsListJobPayments(
       this,
-      security,
       options,
     ));
   }
@@ -41,13 +39,11 @@ export class JobPayments extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createJobPayments(
-    security: operations.CreateJobPaymentsSecurity,
     request: components.JobPaymentInput,
     options?: RequestOptions,
   ): Promise<operations.CreateJobPaymentsResponse> {
     return unwrapAsync(jobPaymentsCreateJobPayments(
       this,
-      security,
       request,
       options,
     ));
@@ -57,13 +53,11 @@ export class JobPayments extends ClientSDK {
    * Retrieve a Job Payment
    */
   async getJobPayments(
-    security: operations.GetJobPaymentsSecurity,
     request: operations.GetJobPaymentsRequest,
     options?: RequestOptions,
   ): Promise<operations.GetJobPaymentsResponse> {
     return unwrapAsync(jobPaymentsGetJobPayments(
       this,
-      security,
       request,
       options,
     ));
@@ -73,13 +67,11 @@ export class JobPayments extends ClientSDK {
    * Update a Job Payment
    */
   async updateJobPayments(
-    security: operations.UpdateJobPaymentsSecurity,
     request: operations.UpdateJobPaymentsRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateJobPaymentsResponse> {
     return unwrapAsync(jobPaymentsUpdateJobPayments(
       this,
-      security,
       request,
       options,
     ));
@@ -93,13 +85,11 @@ export class JobPayments extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteJobPayments(
-    security: operations.DeleteJobPaymentsSecurity,
     request: operations.DeleteJobPaymentsRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteJobPaymentsResponse> {
     return unwrapAsync(jobPaymentsDeleteJobPayments(
       this,
-      security,
       request,
       options,
     ));

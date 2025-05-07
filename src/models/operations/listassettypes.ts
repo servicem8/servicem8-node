@@ -8,71 +8,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListAssetTypesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type ListAssetTypesResponse =
   | components.ErrorT
   | Array<components.AssetType>;
-
-/** @internal */
-export const ListAssetTypesSecurity$inboundSchema: z.ZodType<
-  ListAssetTypesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type ListAssetTypesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const ListAssetTypesSecurity$outboundSchema: z.ZodType<
-  ListAssetTypesSecurity$Outbound,
-  z.ZodTypeDef,
-  ListAssetTypesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListAssetTypesSecurity$ {
-  /** @deprecated use `ListAssetTypesSecurity$inboundSchema` instead. */
-  export const inboundSchema = ListAssetTypesSecurity$inboundSchema;
-  /** @deprecated use `ListAssetTypesSecurity$outboundSchema` instead. */
-  export const outboundSchema = ListAssetTypesSecurity$outboundSchema;
-  /** @deprecated use `ListAssetTypesSecurity$Outbound` instead. */
-  export type Outbound = ListAssetTypesSecurity$Outbound;
-}
-
-export function listAssetTypesSecurityToJSON(
-  listAssetTypesSecurity: ListAssetTypesSecurity,
-): string {
-  return JSON.stringify(
-    ListAssetTypesSecurity$outboundSchema.parse(listAssetTypesSecurity),
-  );
-}
-
-export function listAssetTypesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<ListAssetTypesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListAssetTypesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListAssetTypesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const ListAssetTypesResponse$inboundSchema: z.ZodType<

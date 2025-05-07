@@ -9,11 +9,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type UpdateTaxRatesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type UpdateTaxRatesRequest = {
   /**
    * UUID of the Tax Rate
@@ -26,63 +21,6 @@ export type UpdateTaxRatesRequest = {
 };
 
 export type UpdateTaxRatesResponse = components.Result | components.ErrorT;
-
-/** @internal */
-export const UpdateTaxRatesSecurity$inboundSchema: z.ZodType<
-  UpdateTaxRatesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type UpdateTaxRatesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const UpdateTaxRatesSecurity$outboundSchema: z.ZodType<
-  UpdateTaxRatesSecurity$Outbound,
-  z.ZodTypeDef,
-  UpdateTaxRatesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateTaxRatesSecurity$ {
-  /** @deprecated use `UpdateTaxRatesSecurity$inboundSchema` instead. */
-  export const inboundSchema = UpdateTaxRatesSecurity$inboundSchema;
-  /** @deprecated use `UpdateTaxRatesSecurity$outboundSchema` instead. */
-  export const outboundSchema = UpdateTaxRatesSecurity$outboundSchema;
-  /** @deprecated use `UpdateTaxRatesSecurity$Outbound` instead. */
-  export type Outbound = UpdateTaxRatesSecurity$Outbound;
-}
-
-export function updateTaxRatesSecurityToJSON(
-  updateTaxRatesSecurity: UpdateTaxRatesSecurity,
-): string {
-  return JSON.stringify(
-    UpdateTaxRatesSecurity$outboundSchema.parse(updateTaxRatesSecurity),
-  );
-}
-
-export function updateTaxRatesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateTaxRatesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateTaxRatesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateTaxRatesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const UpdateTaxRatesRequest$inboundSchema: z.ZodType<

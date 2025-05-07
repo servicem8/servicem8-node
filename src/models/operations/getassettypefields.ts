@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type GetAssetTypeFieldsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type GetAssetTypeFieldsRequest = {
   /**
    * UUID of the Asset Type Field
@@ -23,63 +18,6 @@ export type GetAssetTypeFieldsRequest = {
 export type GetAssetTypeFieldsResponse =
   | components.ErrorT
   | components.AssetTypeField;
-
-/** @internal */
-export const GetAssetTypeFieldsSecurity$inboundSchema: z.ZodType<
-  GetAssetTypeFieldsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type GetAssetTypeFieldsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const GetAssetTypeFieldsSecurity$outboundSchema: z.ZodType<
-  GetAssetTypeFieldsSecurity$Outbound,
-  z.ZodTypeDef,
-  GetAssetTypeFieldsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAssetTypeFieldsSecurity$ {
-  /** @deprecated use `GetAssetTypeFieldsSecurity$inboundSchema` instead. */
-  export const inboundSchema = GetAssetTypeFieldsSecurity$inboundSchema;
-  /** @deprecated use `GetAssetTypeFieldsSecurity$outboundSchema` instead. */
-  export const outboundSchema = GetAssetTypeFieldsSecurity$outboundSchema;
-  /** @deprecated use `GetAssetTypeFieldsSecurity$Outbound` instead. */
-  export type Outbound = GetAssetTypeFieldsSecurity$Outbound;
-}
-
-export function getAssetTypeFieldsSecurityToJSON(
-  getAssetTypeFieldsSecurity: GetAssetTypeFieldsSecurity,
-): string {
-  return JSON.stringify(
-    GetAssetTypeFieldsSecurity$outboundSchema.parse(getAssetTypeFieldsSecurity),
-  );
-}
-
-export function getAssetTypeFieldsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAssetTypeFieldsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAssetTypeFieldsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAssetTypeFieldsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const GetAssetTypeFieldsRequest$inboundSchema: z.ZodType<

@@ -9,11 +9,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CreateEmailTemplatesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type CreateEmailTemplatesResponseResult =
   | components.Result
   | components.ErrorT;
@@ -22,65 +17,6 @@ export type CreateEmailTemplatesResponse = {
   headers: { [k: string]: Array<string> };
   result: components.Result | components.ErrorT;
 };
-
-/** @internal */
-export const CreateEmailTemplatesSecurity$inboundSchema: z.ZodType<
-  CreateEmailTemplatesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type CreateEmailTemplatesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const CreateEmailTemplatesSecurity$outboundSchema: z.ZodType<
-  CreateEmailTemplatesSecurity$Outbound,
-  z.ZodTypeDef,
-  CreateEmailTemplatesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateEmailTemplatesSecurity$ {
-  /** @deprecated use `CreateEmailTemplatesSecurity$inboundSchema` instead. */
-  export const inboundSchema = CreateEmailTemplatesSecurity$inboundSchema;
-  /** @deprecated use `CreateEmailTemplatesSecurity$outboundSchema` instead. */
-  export const outboundSchema = CreateEmailTemplatesSecurity$outboundSchema;
-  /** @deprecated use `CreateEmailTemplatesSecurity$Outbound` instead. */
-  export type Outbound = CreateEmailTemplatesSecurity$Outbound;
-}
-
-export function createEmailTemplatesSecurityToJSON(
-  createEmailTemplatesSecurity: CreateEmailTemplatesSecurity,
-): string {
-  return JSON.stringify(
-    CreateEmailTemplatesSecurity$outboundSchema.parse(
-      createEmailTemplatesSecurity,
-    ),
-  );
-}
-
-export function createEmailTemplatesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateEmailTemplatesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateEmailTemplatesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateEmailTemplatesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const CreateEmailTemplatesResponseResult$inboundSchema: z.ZodType<

@@ -8,71 +8,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListJobContactsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type ListJobContactsResponse =
   | components.ErrorT
   | Array<components.JobContact>;
-
-/** @internal */
-export const ListJobContactsSecurity$inboundSchema: z.ZodType<
-  ListJobContactsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type ListJobContactsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const ListJobContactsSecurity$outboundSchema: z.ZodType<
-  ListJobContactsSecurity$Outbound,
-  z.ZodTypeDef,
-  ListJobContactsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListJobContactsSecurity$ {
-  /** @deprecated use `ListJobContactsSecurity$inboundSchema` instead. */
-  export const inboundSchema = ListJobContactsSecurity$inboundSchema;
-  /** @deprecated use `ListJobContactsSecurity$outboundSchema` instead. */
-  export const outboundSchema = ListJobContactsSecurity$outboundSchema;
-  /** @deprecated use `ListJobContactsSecurity$Outbound` instead. */
-  export type Outbound = ListJobContactsSecurity$Outbound;
-}
-
-export function listJobContactsSecurityToJSON(
-  listJobContactsSecurity: ListJobContactsSecurity,
-): string {
-  return JSON.stringify(
-    ListJobContactsSecurity$outboundSchema.parse(listJobContactsSecurity),
-  );
-}
-
-export function listJobContactsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<ListJobContactsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListJobContactsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListJobContactsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const ListJobContactsResponse$inboundSchema: z.ZodType<

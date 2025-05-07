@@ -8,69 +8,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListVendorsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type ListVendorsResponse = components.ErrorT | Array<components.Vendor>;
-
-/** @internal */
-export const ListVendorsSecurity$inboundSchema: z.ZodType<
-  ListVendorsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type ListVendorsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const ListVendorsSecurity$outboundSchema: z.ZodType<
-  ListVendorsSecurity$Outbound,
-  z.ZodTypeDef,
-  ListVendorsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListVendorsSecurity$ {
-  /** @deprecated use `ListVendorsSecurity$inboundSchema` instead. */
-  export const inboundSchema = ListVendorsSecurity$inboundSchema;
-  /** @deprecated use `ListVendorsSecurity$outboundSchema` instead. */
-  export const outboundSchema = ListVendorsSecurity$outboundSchema;
-  /** @deprecated use `ListVendorsSecurity$Outbound` instead. */
-  export type Outbound = ListVendorsSecurity$Outbound;
-}
-
-export function listVendorsSecurityToJSON(
-  listVendorsSecurity: ListVendorsSecurity,
-): string {
-  return JSON.stringify(
-    ListVendorsSecurity$outboundSchema.parse(listVendorsSecurity),
-  );
-}
-
-export function listVendorsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<ListVendorsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListVendorsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListVendorsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const ListVendorsResponse$inboundSchema: z.ZodType<

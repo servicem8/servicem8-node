@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type DeleteLocationsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type DeleteLocationsRequest = {
   /**
    * UUID of the Location
@@ -21,63 +16,6 @@ export type DeleteLocationsRequest = {
 };
 
 export type DeleteLocationsResponse = components.Result | components.ErrorT;
-
-/** @internal */
-export const DeleteLocationsSecurity$inboundSchema: z.ZodType<
-  DeleteLocationsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type DeleteLocationsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const DeleteLocationsSecurity$outboundSchema: z.ZodType<
-  DeleteLocationsSecurity$Outbound,
-  z.ZodTypeDef,
-  DeleteLocationsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteLocationsSecurity$ {
-  /** @deprecated use `DeleteLocationsSecurity$inboundSchema` instead. */
-  export const inboundSchema = DeleteLocationsSecurity$inboundSchema;
-  /** @deprecated use `DeleteLocationsSecurity$outboundSchema` instead. */
-  export const outboundSchema = DeleteLocationsSecurity$outboundSchema;
-  /** @deprecated use `DeleteLocationsSecurity$Outbound` instead. */
-  export type Outbound = DeleteLocationsSecurity$Outbound;
-}
-
-export function deleteLocationsSecurityToJSON(
-  deleteLocationsSecurity: DeleteLocationsSecurity,
-): string {
-  return JSON.stringify(
-    DeleteLocationsSecurity$outboundSchema.parse(deleteLocationsSecurity),
-  );
-}
-
-export function deleteLocationsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteLocationsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteLocationsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteLocationsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const DeleteLocationsRequest$inboundSchema: z.ZodType<

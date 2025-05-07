@@ -22,12 +22,10 @@ export class Feedback extends ClientSDK {
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
    */
   async listFeedback(
-    security: operations.ListFeedbackSecurity,
     options?: RequestOptions,
   ): Promise<operations.ListFeedbackResponse> {
     return unwrapAsync(feedbackListFeedback(
       this,
-      security,
       options,
     ));
   }
@@ -41,13 +39,11 @@ export class Feedback extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createFeedback(
-    security: operations.CreateFeedbackSecurity,
     request: components.FeedbackInput,
     options?: RequestOptions,
   ): Promise<operations.CreateFeedbackResponse> {
     return unwrapAsync(feedbackCreateFeedback(
       this,
-      security,
       request,
       options,
     ));
@@ -57,13 +53,11 @@ export class Feedback extends ClientSDK {
    * Retrieve a Feedback
    */
   async getFeedback(
-    security: operations.GetFeedbackSecurity,
     request: operations.GetFeedbackRequest,
     options?: RequestOptions,
   ): Promise<operations.GetFeedbackResponse> {
     return unwrapAsync(feedbackGetFeedback(
       this,
-      security,
       request,
       options,
     ));
@@ -73,13 +67,11 @@ export class Feedback extends ClientSDK {
    * Update a Feedback
    */
   async updateFeedback(
-    security: operations.UpdateFeedbackSecurity,
     request: operations.UpdateFeedbackRequest,
     options?: RequestOptions,
   ): Promise<operations.UpdateFeedbackResponse> {
     return unwrapAsync(feedbackUpdateFeedback(
       this,
-      security,
       request,
       options,
     ));
@@ -93,13 +85,11 @@ export class Feedback extends ClientSDK {
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
    */
   async deleteFeedback(
-    security: operations.DeleteFeedbackSecurity,
     request: operations.DeleteFeedbackRequest,
     options?: RequestOptions,
   ): Promise<operations.DeleteFeedbackResponse> {
     return unwrapAsync(feedbackDeleteFeedback(
       this,
-      security,
       request,
       options,
     ));

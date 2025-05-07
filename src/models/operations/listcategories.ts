@@ -8,71 +8,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListCategoriesSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type ListCategoriesResponse =
   | components.ErrorT
   | Array<components.Category>;
-
-/** @internal */
-export const ListCategoriesSecurity$inboundSchema: z.ZodType<
-  ListCategoriesSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type ListCategoriesSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const ListCategoriesSecurity$outboundSchema: z.ZodType<
-  ListCategoriesSecurity$Outbound,
-  z.ZodTypeDef,
-  ListCategoriesSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCategoriesSecurity$ {
-  /** @deprecated use `ListCategoriesSecurity$inboundSchema` instead. */
-  export const inboundSchema = ListCategoriesSecurity$inboundSchema;
-  /** @deprecated use `ListCategoriesSecurity$outboundSchema` instead. */
-  export const outboundSchema = ListCategoriesSecurity$outboundSchema;
-  /** @deprecated use `ListCategoriesSecurity$Outbound` instead. */
-  export type Outbound = ListCategoriesSecurity$Outbound;
-}
-
-export function listCategoriesSecurityToJSON(
-  listCategoriesSecurity: ListCategoriesSecurity,
-): string {
-  return JSON.stringify(
-    ListCategoriesSecurity$outboundSchema.parse(listCategoriesSecurity),
-  );
-}
-
-export function listCategoriesSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<ListCategoriesSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListCategoriesSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListCategoriesSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const ListCategoriesResponse$inboundSchema: z.ZodType<

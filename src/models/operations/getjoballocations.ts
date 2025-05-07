@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type GetJobAllocationsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type GetJobAllocationsRequest = {
   /**
    * UUID of the Job Allocation
@@ -23,63 +18,6 @@ export type GetJobAllocationsRequest = {
 export type GetJobAllocationsResponse =
   | components.ErrorT
   | components.JobAllocation;
-
-/** @internal */
-export const GetJobAllocationsSecurity$inboundSchema: z.ZodType<
-  GetJobAllocationsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type GetJobAllocationsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const GetJobAllocationsSecurity$outboundSchema: z.ZodType<
-  GetJobAllocationsSecurity$Outbound,
-  z.ZodTypeDef,
-  GetJobAllocationsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetJobAllocationsSecurity$ {
-  /** @deprecated use `GetJobAllocationsSecurity$inboundSchema` instead. */
-  export const inboundSchema = GetJobAllocationsSecurity$inboundSchema;
-  /** @deprecated use `GetJobAllocationsSecurity$outboundSchema` instead. */
-  export const outboundSchema = GetJobAllocationsSecurity$outboundSchema;
-  /** @deprecated use `GetJobAllocationsSecurity$Outbound` instead. */
-  export type Outbound = GetJobAllocationsSecurity$Outbound;
-}
-
-export function getJobAllocationsSecurityToJSON(
-  getJobAllocationsSecurity: GetJobAllocationsSecurity,
-): string {
-  return JSON.stringify(
-    GetJobAllocationsSecurity$outboundSchema.parse(getJobAllocationsSecurity),
-  );
-}
-
-export function getJobAllocationsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<GetJobAllocationsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetJobAllocationsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetJobAllocationsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const GetJobAllocationsRequest$inboundSchema: z.ZodType<

@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type DeleteFormFieldsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type DeleteFormFieldsRequest = {
   /**
    * UUID of the Form Field
@@ -21,63 +16,6 @@ export type DeleteFormFieldsRequest = {
 };
 
 export type DeleteFormFieldsResponse = components.Result | components.ErrorT;
-
-/** @internal */
-export const DeleteFormFieldsSecurity$inboundSchema: z.ZodType<
-  DeleteFormFieldsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type DeleteFormFieldsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const DeleteFormFieldsSecurity$outboundSchema: z.ZodType<
-  DeleteFormFieldsSecurity$Outbound,
-  z.ZodTypeDef,
-  DeleteFormFieldsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteFormFieldsSecurity$ {
-  /** @deprecated use `DeleteFormFieldsSecurity$inboundSchema` instead. */
-  export const inboundSchema = DeleteFormFieldsSecurity$inboundSchema;
-  /** @deprecated use `DeleteFormFieldsSecurity$outboundSchema` instead. */
-  export const outboundSchema = DeleteFormFieldsSecurity$outboundSchema;
-  /** @deprecated use `DeleteFormFieldsSecurity$Outbound` instead. */
-  export type Outbound = DeleteFormFieldsSecurity$Outbound;
-}
-
-export function deleteFormFieldsSecurityToJSON(
-  deleteFormFieldsSecurity: DeleteFormFieldsSecurity,
-): string {
-  return JSON.stringify(
-    DeleteFormFieldsSecurity$outboundSchema.parse(deleteFormFieldsSecurity),
-  );
-}
-
-export function deleteFormFieldsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteFormFieldsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteFormFieldsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteFormFieldsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const DeleteFormFieldsRequest$inboundSchema: z.ZodType<

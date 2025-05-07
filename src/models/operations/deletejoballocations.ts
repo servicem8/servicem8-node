@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type DeleteJobAllocationsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type DeleteJobAllocationsRequest = {
   /**
    * UUID of the Job Allocation
@@ -23,65 +18,6 @@ export type DeleteJobAllocationsRequest = {
 export type DeleteJobAllocationsResponse =
   | components.Result
   | components.ErrorT;
-
-/** @internal */
-export const DeleteJobAllocationsSecurity$inboundSchema: z.ZodType<
-  DeleteJobAllocationsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type DeleteJobAllocationsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const DeleteJobAllocationsSecurity$outboundSchema: z.ZodType<
-  DeleteJobAllocationsSecurity$Outbound,
-  z.ZodTypeDef,
-  DeleteJobAllocationsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteJobAllocationsSecurity$ {
-  /** @deprecated use `DeleteJobAllocationsSecurity$inboundSchema` instead. */
-  export const inboundSchema = DeleteJobAllocationsSecurity$inboundSchema;
-  /** @deprecated use `DeleteJobAllocationsSecurity$outboundSchema` instead. */
-  export const outboundSchema = DeleteJobAllocationsSecurity$outboundSchema;
-  /** @deprecated use `DeleteJobAllocationsSecurity$Outbound` instead. */
-  export type Outbound = DeleteJobAllocationsSecurity$Outbound;
-}
-
-export function deleteJobAllocationsSecurityToJSON(
-  deleteJobAllocationsSecurity: DeleteJobAllocationsSecurity,
-): string {
-  return JSON.stringify(
-    DeleteJobAllocationsSecurity$outboundSchema.parse(
-      deleteJobAllocationsSecurity,
-    ),
-  );
-}
-
-export function deleteJobAllocationsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteJobAllocationsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteJobAllocationsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteJobAllocationsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const DeleteJobAllocationsRequest$inboundSchema: z.ZodType<

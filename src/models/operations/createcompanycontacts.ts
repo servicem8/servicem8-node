@@ -9,11 +9,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CreateCompanyContactsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type CreateCompanyContactsResponseResult =
   | components.Result
   | components.ErrorT;
@@ -22,65 +17,6 @@ export type CreateCompanyContactsResponse = {
   headers: { [k: string]: Array<string> };
   result: components.Result | components.ErrorT;
 };
-
-/** @internal */
-export const CreateCompanyContactsSecurity$inboundSchema: z.ZodType<
-  CreateCompanyContactsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type CreateCompanyContactsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const CreateCompanyContactsSecurity$outboundSchema: z.ZodType<
-  CreateCompanyContactsSecurity$Outbound,
-  z.ZodTypeDef,
-  CreateCompanyContactsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateCompanyContactsSecurity$ {
-  /** @deprecated use `CreateCompanyContactsSecurity$inboundSchema` instead. */
-  export const inboundSchema = CreateCompanyContactsSecurity$inboundSchema;
-  /** @deprecated use `CreateCompanyContactsSecurity$outboundSchema` instead. */
-  export const outboundSchema = CreateCompanyContactsSecurity$outboundSchema;
-  /** @deprecated use `CreateCompanyContactsSecurity$Outbound` instead. */
-  export type Outbound = CreateCompanyContactsSecurity$Outbound;
-}
-
-export function createCompanyContactsSecurityToJSON(
-  createCompanyContactsSecurity: CreateCompanyContactsSecurity,
-): string {
-  return JSON.stringify(
-    CreateCompanyContactsSecurity$outboundSchema.parse(
-      createCompanyContactsSecurity,
-    ),
-  );
-}
-
-export function createCompanyContactsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateCompanyContactsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateCompanyContactsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateCompanyContactsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const CreateCompanyContactsResponseResult$inboundSchema: z.ZodType<

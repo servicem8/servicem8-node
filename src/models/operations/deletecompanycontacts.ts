@@ -8,11 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type DeleteCompanyContactsSecurity = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
 export type DeleteCompanyContactsRequest = {
   /**
    * UUID of the Company Contact
@@ -23,65 +18,6 @@ export type DeleteCompanyContactsRequest = {
 export type DeleteCompanyContactsResponse =
   | components.Result
   | components.ErrorT;
-
-/** @internal */
-export const DeleteCompanyContactsSecurity$inboundSchema: z.ZodType<
-  DeleteCompanyContactsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/** @internal */
-export type DeleteCompanyContactsSecurity$Outbound = {
-  apiKey?: string | undefined;
-  oauth2?: string | undefined;
-};
-
-/** @internal */
-export const DeleteCompanyContactsSecurity$outboundSchema: z.ZodType<
-  DeleteCompanyContactsSecurity$Outbound,
-  z.ZodTypeDef,
-  DeleteCompanyContactsSecurity
-> = z.object({
-  apiKey: z.string().optional(),
-  oauth2: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteCompanyContactsSecurity$ {
-  /** @deprecated use `DeleteCompanyContactsSecurity$inboundSchema` instead. */
-  export const inboundSchema = DeleteCompanyContactsSecurity$inboundSchema;
-  /** @deprecated use `DeleteCompanyContactsSecurity$outboundSchema` instead. */
-  export const outboundSchema = DeleteCompanyContactsSecurity$outboundSchema;
-  /** @deprecated use `DeleteCompanyContactsSecurity$Outbound` instead. */
-  export type Outbound = DeleteCompanyContactsSecurity$Outbound;
-}
-
-export function deleteCompanyContactsSecurityToJSON(
-  deleteCompanyContactsSecurity: DeleteCompanyContactsSecurity,
-): string {
-  return JSON.stringify(
-    DeleteCompanyContactsSecurity$outboundSchema.parse(
-      deleteCompanyContactsSecurity,
-    ),
-  );
-}
-
-export function deleteCompanyContactsSecurityFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteCompanyContactsSecurity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteCompanyContactsSecurity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteCompanyContactsSecurity' from JSON`,
-  );
-}
 
 /** @internal */
 export const DeleteCompanyContactsRequest$inboundSchema: z.ZodType<

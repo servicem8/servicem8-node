@@ -8,7 +8,7 @@ import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
-import { resolveSecurity } from "../lib/security.js";
+import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import { APIError } from "../models/errors/apierror.js";
 import {
@@ -30,10 +30,12 @@ import { Result } from "../types/fp.js";
  * @remarks
  *
  * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **manage_schedule**.
  */
 export function jobAllocationsDeleteJobAllocations(
   client: ServiceM8Core,
-  security: operations.DeleteJobAllocationsSecurity,
   request: operations.DeleteJobAllocationsRequest,
   options?: RequestOptions,
 ): APIPromise<
@@ -51,7 +53,6 @@ export function jobAllocationsDeleteJobAllocations(
 > {
   return new APIPromise($do(
     client,
-    security,
     request,
     options,
   ));
@@ -59,7 +60,6 @@ export function jobAllocationsDeleteJobAllocations(
 
 async function $do(
   client: ServiceM8Core,
-  security: operations.DeleteJobAllocationsSecurity,
   request: operations.DeleteJobAllocationsRequest,
   options?: RequestOptions,
 ): Promise<
@@ -103,31 +103,17 @@ async function $do(
     Accept: "application/json",
   }));
 
-  const requestSecurity = resolveSecurity(
-    [
-      {
-        fieldName: "Authorization",
-        type: "apiKey:header",
-        value: security?.apiKey,
-      },
-    ],
-    [
-      {
-        fieldName: "Authorization",
-        type: "oauth2",
-        value: security?.oauth2,
-      },
-    ],
-  );
+  const securityInput = await extractSecurity(client._options.security);
+  const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "deleteJobAllocations",
-    oAuth2Scopes: null,
+    oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
 
-    securitySource: security,
+    securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig
       || {
