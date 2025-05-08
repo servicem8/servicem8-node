@@ -7,7 +7,7 @@
 
 ```typescript
 const value: components.MaterialBundle = {
-  uuid: "123e4567-ace8-4557-898b-22bcb509ef2b",
+  uuid: "123e4567-1048-4c98-a813-22bcb83e025b",
   editDate: "2025-05-01 12:00:00",
   itemNumber: "<value>",
 };

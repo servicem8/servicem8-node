@@ -6,7 +6,7 @@
 import { AllocationWindow } from "servicem8/models/components";
 
 let value: AllocationWindow = {
-  uuid: "123e4567-0698-4696-ba4a-22bcb7b7e6eb",
+  uuid: "123e4567-5086-4248-bed7-22bcb189e8cb",
   editDate: "2025-05-01 12:00:00",
 };
 ```
@@ -15,7 +15,7 @@ let value: AllocationWindow = {
 
 | Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            | Example                                                                                |
 | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `uuid`                                                                                 | *string*                                                                               | :heavy_minus_sign:                                                                     | Unique identifier for this record                                                      | 123e4567-0698-4696-ba4a-22bcb7b7e6eb                                                   |
+| `uuid`                                                                                 | *string*                                                                               | :heavy_minus_sign:                                                                     | Unique identifier for this record                                                      | 123e4567-5086-4248-bed7-22bcb189e8cb                                                   |
 | `active`                                                                               | [components.AllocationWindowActive](../../models/components/allocationwindowactive.md) | :heavy_minus_sign:                                                                     | Record active/deleted flag.  Valid values are [0,1]                                    |                                                                                        |
 | `editDate`                                                                             | *any*                                                                                  | :heavy_minus_sign:                                                                     | Timestamp at which record was last modified                                            | 2025-05-01 12:00:00                                                                    |
 | `name`                                                                                 | *string*                                                                               | :heavy_minus_sign:                                                                     | N/A                                                                                    |                                                                                        |

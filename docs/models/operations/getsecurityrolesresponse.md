@@ -8,7 +8,7 @@
 ```typescript
 const value: components.SecurityRole = {
   name: "<value>",
-  uuid: "123e4567-dc03-4b5f-9cd2-22bcb3652d5b",
+  uuid: "123e4567-e822-4c11-a36c-22bcbfd7063b",
   editDate: "2025-05-01 12:00:00",
 };
 ```
