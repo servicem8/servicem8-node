@@ -7,14 +7,14 @@
 
 ```typescript
 const value: components.JobAllocation = {
-  uuid: "123e4567-1ff6-43c7-a21a-22bcb9fd543b",
+  uuid: "123e4567-1c79-4fc1-9280-22bdc383a56b",
   editDate: "2025-05-01 12:00:00",
-  jobUuid: "123e4567-4a47-47fa-9a16-22bcb4ee033b",
-  queueUuid: "123e4567-1ada-4138-b674-22bcbca1cc2b",
-  staffUuid: "123e4567-9052-476b-bc91-22bcbc01446b",
+  jobUuid: "123e4567-0318-4bc3-a694-22bdc6ad56eb",
+  queueUuid: "123e4567-87c5-4896-852f-22bdca0a0b4b",
+  staffUuid: "123e4567-dc01-4aec-9427-22bdc6f0ec3b",
   allocationDate: "2025-05-01 12:00:00",
-  allocationWindowUuid: "123e4567-385f-40a7-8a9a-22bcb5d7702b",
-  allocatedByStaffUuid: "123e4567-46a1-47e1-bec3-22bcb1c6700b",
+  allocationWindowUuid: "123e4567-7cf6-4767-8925-22bdc9e1742b",
+  allocatedByStaffUuid: "123e4567-18f9-45ff-bc8f-22bdcdb91f8b",
   allocatedTimestamp: "2025-05-01 12:00:00",
   expiryTimestamp: "2025-05-01 12:00:00",
   readTimestamp: "2025-05-01 12:00:00",
