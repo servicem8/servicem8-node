@@ -35,7 +35,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.jobPayments.listJobPayments();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -60,15 +59,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobPaymentsListJobPayments(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobPaymentsListJobPayments failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -115,13 +111,12 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobPayments.createJobPayments({
-    uuid: "123e4567-5b50-4de2-88f3-22b4d7ea930b",
-    jobUuid: "123e4567-c40f-41fb-99a3-22b4d013729b",
-    actionedByUuid: "123e4567-aa6d-446a-b459-22b4d17361ab",
-    attachmentUuid: "123e4567-80c6-476a-a046-22b4d5cbf27b",
+    uuid: "123e4567-4b49-4bc4-a7c3-22d9d973f61b",
+    jobUuid: "123e4567-97dc-418f-bd9d-22d9d784a22b",
+    actionedByUuid: "123e4567-cedf-4d0a-b223-22d9dff8556b",
+    attachmentUuid: "123e4567-4531-481f-8ce1-22d9debb173b",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -146,20 +141,17 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobPaymentsCreateJobPayments(serviceM8, {
-    uuid: "123e4567-5b50-4de2-88f3-22b4d7ea930b",
-    jobUuid: "123e4567-c40f-41fb-99a3-22b4d013729b",
-    actionedByUuid: "123e4567-aa6d-446a-b459-22b4d17361ab",
-    attachmentUuid: "123e4567-80c6-476a-a046-22b4d5cbf27b",
+    uuid: "123e4567-4b49-4bc4-a7c3-22d9d973f61b",
+    jobUuid: "123e4567-97dc-418f-bd9d-22d9d784a22b",
+    actionedByUuid: "123e4567-cedf-4d0a-b223-22d9dff8556b",
+    attachmentUuid: "123e4567-4531-481f-8ce1-22d9debb173b",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobPaymentsCreateJobPayments failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -202,10 +194,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobPayments.getJobPayments({
-    uuid: "552a589e-4936-496e-aab9-3793675d46d1",
+    uuid: "5bb8d1ff-2928-4f03-a4f7-0cddcd126b36",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -230,17 +221,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobPaymentsGetJobPayments(serviceM8, {
-    uuid: "552a589e-4936-496e-aab9-3793675d46d1",
+    uuid: "5bb8d1ff-2928-4f03-a4f7-0cddcd126b36",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobPaymentsGetJobPayments failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -283,16 +271,15 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobPayments.updateJobPayments({
-    uuid: "36c546b9-82d3-4037-9679-5abf07f6588b",
+    uuid: "11677578-ba16-4ac4-b2d7-62ad0de4655c",
     jobPayment: {
-      uuid: "123e4567-5b50-4de2-88f3-22b4d7ea930b",
-      jobUuid: "123e4567-c40f-41fb-99a3-22b4d013729b",
-      actionedByUuid: "123e4567-aa6d-446a-b459-22b4d17361ab",
-      attachmentUuid: "123e4567-80c6-476a-a046-22b4d5cbf27b",
+      uuid: "123e4567-4b49-4bc4-a7c3-22d9d973f61b",
+      jobUuid: "123e4567-97dc-418f-bd9d-22d9d784a22b",
+      actionedByUuid: "123e4567-cedf-4d0a-b223-22d9dff8556b",
+      attachmentUuid: "123e4567-4531-481f-8ce1-22d9debb173b",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -317,23 +304,20 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobPaymentsUpdateJobPayments(serviceM8, {
-    uuid: "36c546b9-82d3-4037-9679-5abf07f6588b",
+    uuid: "11677578-ba16-4ac4-b2d7-62ad0de4655c",
     jobPayment: {
-      uuid: "123e4567-5b50-4de2-88f3-22b4d7ea930b",
-      jobUuid: "123e4567-c40f-41fb-99a3-22b4d013729b",
-      actionedByUuid: "123e4567-aa6d-446a-b459-22b4d17361ab",
-      attachmentUuid: "123e4567-80c6-476a-a046-22b4d5cbf27b",
+      uuid: "123e4567-4b49-4bc4-a7c3-22d9d973f61b",
+      jobUuid: "123e4567-97dc-418f-bd9d-22d9d784a22b",
+      actionedByUuid: "123e4567-cedf-4d0a-b223-22d9dff8556b",
+      attachmentUuid: "123e4567-4531-481f-8ce1-22d9debb173b",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobPaymentsUpdateJobPayments failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -380,10 +364,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobPayments.deleteJobPayments({
-    uuid: "a8fd9b7a-987c-44bd-8323-5031e735b404",
+    uuid: "b3fa1f8d-5ac1-4702-8c2f-de525c135bb6",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -408,17 +391,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobPaymentsDeleteJobPayments(serviceM8, {
-    uuid: "a8fd9b7a-987c-44bd-8323-5031e735b404",
+    uuid: "b3fa1f8d-5ac1-4702-8c2f-de525c135bb6",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobPaymentsDeleteJobPayments failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

@@ -5,17 +5,7 @@
 ```typescript
 import { CreateSecurityRolesResponse } from "servicem8/models/operations";
 
-let value: CreateSecurityRolesResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: {
-    errorCode: 0,
-    message: "OK",
-  },
-};
+let value: CreateSecurityRolesResponse = {};
 ```
 
 ## Fields

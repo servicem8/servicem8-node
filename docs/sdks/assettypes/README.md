@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.assetTypes.listAssetTypes();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetTypesListAssetTypes(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesListAssetTypes failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -125,10 +121,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.assetTypes.createAssetTypes({
-    uuid: "123e4567-6271-4eaa-9cd3-22b4d8f3e59b",
+    uuid: "123e4567-cbe1-4be2-a1e7-22d9da47be1b",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -153,17 +148,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetTypesCreateAssetTypes(serviceM8, {
-    uuid: "123e4567-6271-4eaa-9cd3-22b4d8f3e59b",
+    uuid: "123e4567-cbe1-4be2-a1e7-22d9da47be1b",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesCreateAssetTypes failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -211,10 +203,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.assetTypes.getAssetTypes({
-    uuid: "60d92c37-ec9f-444d-be47-2661b6ad833a",
+    uuid: "4a994463-c040-44fb-a51e-0f8355140ac6",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -239,17 +230,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetTypesGetAssetTypes(serviceM8, {
-    uuid: "60d92c37-ec9f-444d-be47-2661b6ad833a",
+    uuid: "4a994463-c040-44fb-a51e-0f8355140ac6",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesGetAssetTypes failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -297,13 +285,12 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.assetTypes.updateAssetTypes({
-    uuid: "533258a6-a77b-40f0-81c1-0888e3215102",
+    uuid: "f89ce1c3-90b1-4b51-89a7-5bc9443eac2b",
     assetType: {
-      uuid: "123e4567-6271-4eaa-9cd3-22b4d8f3e59b",
+      uuid: "123e4567-cbe1-4be2-a1e7-22d9da47be1b",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -328,20 +315,17 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetTypesUpdateAssetTypes(serviceM8, {
-    uuid: "533258a6-a77b-40f0-81c1-0888e3215102",
+    uuid: "f89ce1c3-90b1-4b51-89a7-5bc9443eac2b",
     assetType: {
-      uuid: "123e4567-6271-4eaa-9cd3-22b4d8f3e59b",
+      uuid: "123e4567-cbe1-4be2-a1e7-22d9da47be1b",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesUpdateAssetTypes failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -393,10 +377,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.assetTypes.deleteAssetTypes({
-    uuid: "ce66b3b1-ed5d-4c84-bc4a-d2042accb19f",
+    uuid: "c6420a20-835d-4c8e-b297-6844288097ec",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -421,17 +404,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetTypesDeleteAssetTypes(serviceM8, {
-    uuid: "ce66b3b1-ed5d-4c84-bc4a-d2042accb19f",
+    uuid: "c6420a20-835d-4c8e-b297-6844288097ec",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesDeleteAssetTypes failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

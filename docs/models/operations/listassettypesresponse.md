@@ -6,12 +6,7 @@
 ### `components.AssetType[]`
 
 ```typescript
-const value: components.AssetType[] = [
-  {
-    uuid: "123e4567-49ee-4d4f-ae68-22bdc5a22a2b",
-    editDate: "2025-05-01 12:00:00",
-  },
-];
+const value: components.AssetType[] = [];
 ```
 
 ### `components.ErrorT`

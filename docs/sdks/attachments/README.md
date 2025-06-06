@@ -35,7 +35,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.attachments.listAttachments();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -60,15 +59,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await attachmentsListAttachments(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("attachmentsListAttachments failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -115,12 +111,11 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.attachments.createAttachments({
-    uuid: "123e4567-07bc-4698-b15d-22b4d5d1156b",
-    relatedObjectUuid: "123e4567-aa29-4c42-ae6f-22b4d6e7453b",
-    createdByStaffUuid: "123e4567-6df3-4a46-b4ff-22b4d04b5acb",
+    uuid: "123e4567-401c-4fe5-ad11-22d9d8f737ab",
+    relatedObjectUuid: "123e4567-6a6a-4a54-bcdf-22d9d5ca3deb",
+    createdByStaffUuid: "123e4567-54dc-4f5c-a6bf-22d9d57082db",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -145,19 +140,16 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await attachmentsCreateAttachments(serviceM8, {
-    uuid: "123e4567-07bc-4698-b15d-22b4d5d1156b",
-    relatedObjectUuid: "123e4567-aa29-4c42-ae6f-22b4d6e7453b",
-    createdByStaffUuid: "123e4567-6df3-4a46-b4ff-22b4d04b5acb",
+    uuid: "123e4567-401c-4fe5-ad11-22d9d8f737ab",
+    relatedObjectUuid: "123e4567-6a6a-4a54-bcdf-22d9d5ca3deb",
+    createdByStaffUuid: "123e4567-54dc-4f5c-a6bf-22d9d57082db",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("attachmentsCreateAttachments failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -200,10 +192,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.attachments.getAttachments({
-    uuid: "a2f84c5a-7c7b-498c-98b8-8833efa107b6",
+    uuid: "91e684f4-13a9-4d1e-9fc1-8a4280b39409",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -228,17 +219,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await attachmentsGetAttachments(serviceM8, {
-    uuid: "a2f84c5a-7c7b-498c-98b8-8833efa107b6",
+    uuid: "91e684f4-13a9-4d1e-9fc1-8a4280b39409",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("attachmentsGetAttachments failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -281,15 +269,14 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.attachments.updateAttachments({
-    uuid: "e28258ad-72e5-4d18-9280-984c43db4570",
+    uuid: "e104394b-4c20-472c-976c-b9a47147723c",
     attachment: {
-      uuid: "123e4567-07bc-4698-b15d-22b4d5d1156b",
-      relatedObjectUuid: "123e4567-aa29-4c42-ae6f-22b4d6e7453b",
-      createdByStaffUuid: "123e4567-6df3-4a46-b4ff-22b4d04b5acb",
+      uuid: "123e4567-401c-4fe5-ad11-22d9d8f737ab",
+      relatedObjectUuid: "123e4567-6a6a-4a54-bcdf-22d9d5ca3deb",
+      createdByStaffUuid: "123e4567-54dc-4f5c-a6bf-22d9d57082db",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -314,22 +301,19 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await attachmentsUpdateAttachments(serviceM8, {
-    uuid: "e28258ad-72e5-4d18-9280-984c43db4570",
+    uuid: "e104394b-4c20-472c-976c-b9a47147723c",
     attachment: {
-      uuid: "123e4567-07bc-4698-b15d-22b4d5d1156b",
-      relatedObjectUuid: "123e4567-aa29-4c42-ae6f-22b4d6e7453b",
-      createdByStaffUuid: "123e4567-6df3-4a46-b4ff-22b4d04b5acb",
+      uuid: "123e4567-401c-4fe5-ad11-22d9d8f737ab",
+      relatedObjectUuid: "123e4567-6a6a-4a54-bcdf-22d9d5ca3deb",
+      createdByStaffUuid: "123e4567-54dc-4f5c-a6bf-22d9d57082db",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("attachmentsUpdateAttachments failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -376,10 +360,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.attachments.deleteAttachments({
-    uuid: "39745876-b698-4202-be4c-9f2bf94c8294",
+    uuid: "5a0f8131-610b-4310-9f09-35faec6d0d34",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -404,17 +387,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await attachmentsDeleteAttachments(serviceM8, {
-    uuid: "39745876-b698-4202-be4c-9f2bf94c8294",
+    uuid: "5a0f8131-610b-4310-9f09-35faec6d0d34",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("attachmentsDeleteAttachments failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

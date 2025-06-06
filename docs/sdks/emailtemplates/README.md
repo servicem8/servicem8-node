@@ -35,7 +35,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.emailTemplates.listEmailTemplates();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -60,15 +59,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await emailTemplatesListEmailTemplates(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesListEmailTemplates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -115,11 +111,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.emailTemplates.createEmailTemplates({
-    uuid: "123e4567-f545-4db1-a5e8-22b4d7622d0b",
+    uuid: "123e4567-21f2-408c-ad54-22d9d69413bb",
     name: "<value>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -144,18 +139,15 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await emailTemplatesCreateEmailTemplates(serviceM8, {
-    uuid: "123e4567-f545-4db1-a5e8-22b4d7622d0b",
+    uuid: "123e4567-21f2-408c-ad54-22d9d69413bb",
     name: "<value>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesCreateEmailTemplates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -198,10 +190,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.emailTemplates.getEmailTemplates({
-    uuid: "01e49d7f-64e2-4e6f-b41a-39acd826f9d1",
+    uuid: "690a31c0-ced4-437a-b72f-18a12ad13d50",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -226,17 +217,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await emailTemplatesGetEmailTemplates(serviceM8, {
-    uuid: "01e49d7f-64e2-4e6f-b41a-39acd826f9d1",
+    uuid: "690a31c0-ced4-437a-b72f-18a12ad13d50",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesGetEmailTemplates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -279,14 +267,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.emailTemplates.updateEmailTemplates({
-    uuid: "fa27ec4a-b284-4c08-a042-7fd0d943ed6e",
+    uuid: "a3ce5f33-781a-4062-b068-2e3f8605b008",
     emailTemplate: {
-      uuid: "123e4567-f545-4db1-a5e8-22b4d7622d0b",
+      uuid: "123e4567-21f2-408c-ad54-22d9d69413bb",
       name: "<value>",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -311,21 +298,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await emailTemplatesUpdateEmailTemplates(serviceM8, {
-    uuid: "fa27ec4a-b284-4c08-a042-7fd0d943ed6e",
+    uuid: "a3ce5f33-781a-4062-b068-2e3f8605b008",
     emailTemplate: {
-      uuid: "123e4567-f545-4db1-a5e8-22b4d7622d0b",
+      uuid: "123e4567-21f2-408c-ad54-22d9d69413bb",
       name: "<value>",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesUpdateEmailTemplates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -372,10 +356,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.emailTemplates.deleteEmailTemplates({
-    uuid: "dfea2db9-0def-4920-9904-a2b188367027",
+    uuid: "ea5fef23-0eef-42ba-8cec-ce42c90f6d3d",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -400,17 +383,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await emailTemplatesDeleteEmailTemplates(serviceM8, {
-    uuid: "dfea2db9-0def-4920-9904-a2b188367027",
+    uuid: "ea5fef23-0eef-42ba-8cec-ce42c90f6d3d",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesDeleteEmailTemplates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.companyContacts.listCompanyContacts();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await companyContactsListCompanyContacts(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsListCompanyContacts failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -125,11 +121,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.companyContacts.createCompanyContacts({
-    uuid: "123e4567-80e7-4a7d-9576-22b4dbcb654b",
-    companyUuid: "123e4567-bf9d-4ab7-8245-22b4d4b6107b",
+    uuid: "123e4567-b974-498e-8671-22d9d9d43e4b",
+    companyUuid: "123e4567-f650-467f-b4b6-22d9d941d70b",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -154,18 +149,15 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await companyContactsCreateCompanyContacts(serviceM8, {
-    uuid: "123e4567-80e7-4a7d-9576-22b4dbcb654b",
-    companyUuid: "123e4567-bf9d-4ab7-8245-22b4d4b6107b",
+    uuid: "123e4567-b974-498e-8671-22d9d9d43e4b",
+    companyUuid: "123e4567-f650-467f-b4b6-22d9d941d70b",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsCreateCompanyContacts failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -213,10 +205,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.companyContacts.getCompanyContacts({
-    uuid: "5f831978-f7ea-4695-814c-ccb0913baf0a",
+    uuid: "4b4da20e-1856-4f59-8f33-d48ee1a09b0c",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -241,17 +232,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await companyContactsGetCompanyContacts(serviceM8, {
-    uuid: "5f831978-f7ea-4695-814c-ccb0913baf0a",
+    uuid: "4b4da20e-1856-4f59-8f33-d48ee1a09b0c",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsGetCompanyContacts failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -299,14 +287,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.companyContacts.updateCompanyContacts({
-    uuid: "40075815-983f-4e10-9d1f-5c2d0f78c463",
+    uuid: "14a84f05-390e-4d88-ad00-a75bba477a48",
     companyContact: {
-      uuid: "123e4567-80e7-4a7d-9576-22b4dbcb654b",
-      companyUuid: "123e4567-bf9d-4ab7-8245-22b4d4b6107b",
+      uuid: "123e4567-b974-498e-8671-22d9d9d43e4b",
+      companyUuid: "123e4567-f650-467f-b4b6-22d9d941d70b",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -331,21 +318,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await companyContactsUpdateCompanyContacts(serviceM8, {
-    uuid: "40075815-983f-4e10-9d1f-5c2d0f78c463",
+    uuid: "14a84f05-390e-4d88-ad00-a75bba477a48",
     companyContact: {
-      uuid: "123e4567-80e7-4a7d-9576-22b4dbcb654b",
-      companyUuid: "123e4567-bf9d-4ab7-8245-22b4d4b6107b",
+      uuid: "123e4567-b974-498e-8671-22d9d9d43e4b",
+      companyUuid: "123e4567-f650-467f-b4b6-22d9d941d70b",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsUpdateCompanyContacts failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -397,10 +381,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.companyContacts.deleteCompanyContacts({
-    uuid: "73e223ec-7359-4091-995b-dd8c68d493d6",
+    uuid: "39b378bb-1056-4efb-bdf4-279c018bcfc4",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -425,17 +408,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await companyContactsDeleteCompanyContacts(serviceM8, {
-    uuid: "73e223ec-7359-4091-995b-dd8c68d493d6",
+    uuid: "39b378bb-1056-4efb-bdf4-279c018bcfc4",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsDeleteCompanyContacts failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

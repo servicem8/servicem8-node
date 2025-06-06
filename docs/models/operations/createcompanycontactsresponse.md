@@ -5,17 +5,7 @@
 ```typescript
 import { CreateCompanyContactsResponse } from "servicem8/models/operations";
 
-let value: CreateCompanyContactsResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: {
-    errorCode: 1000,
-    message: "An error occurred completing your request",
-  },
-};
+let value: CreateCompanyContactsResponse = {};
 ```
 
 ## Fields

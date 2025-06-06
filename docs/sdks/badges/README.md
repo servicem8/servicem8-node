@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.badges.listBadges();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await badgesListBadges(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesListBadges failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -125,13 +121,12 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.badges.createBadges({
-    uuid: "123e4567-5d12-4ad5-822e-22b4de257e8b",
+    uuid: "123e4567-7495-41b7-a2ea-22d9d5480ddb",
     name: "<value>",
-    regardingFormUuid: "123e4567-7b64-417a-8f17-22b4d3eeb90b",
-    regardingAssetTypeUuid: "123e4567-75ec-4555-8285-22b4d0f6c5bb",
+    regardingFormUuid: "123e4567-cc76-471f-8a27-22d9d8e8a16b",
+    regardingAssetTypeUuid: "123e4567-cd2c-4696-89f6-22d9d80eaf0b",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -156,20 +151,17 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await badgesCreateBadges(serviceM8, {
-    uuid: "123e4567-5d12-4ad5-822e-22b4de257e8b",
+    uuid: "123e4567-7495-41b7-a2ea-22d9d5480ddb",
     name: "<value>",
-    regardingFormUuid: "123e4567-7b64-417a-8f17-22b4d3eeb90b",
-    regardingAssetTypeUuid: "123e4567-75ec-4555-8285-22b4d0f6c5bb",
+    regardingFormUuid: "123e4567-cc76-471f-8a27-22d9d8e8a16b",
+    regardingAssetTypeUuid: "123e4567-cd2c-4696-89f6-22d9d80eaf0b",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesCreateBadges failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -217,10 +209,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.badges.getBadges({
-    uuid: "c714ee05-601d-45d9-8e91-f4918cce018c",
+    uuid: "0da9b72e-d146-4021-bb74-ec08610d82e7",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -245,17 +236,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await badgesGetBadges(serviceM8, {
-    uuid: "c714ee05-601d-45d9-8e91-f4918cce018c",
+    uuid: "0da9b72e-d146-4021-bb74-ec08610d82e7",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesGetBadges failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -303,16 +291,15 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.badges.updateBadges({
-    uuid: "baaf4b5b-290b-4da2-91a9-cd052d299937",
+    uuid: "444f2947-b065-4aac-8159-0ffca6278fd2",
     badge: {
-      uuid: "123e4567-5d12-4ad5-822e-22b4de257e8b",
+      uuid: "123e4567-7495-41b7-a2ea-22d9d5480ddb",
       name: "<value>",
-      regardingFormUuid: "123e4567-7b64-417a-8f17-22b4d3eeb90b",
-      regardingAssetTypeUuid: "123e4567-75ec-4555-8285-22b4d0f6c5bb",
+      regardingFormUuid: "123e4567-cc76-471f-8a27-22d9d8e8a16b",
+      regardingAssetTypeUuid: "123e4567-cd2c-4696-89f6-22d9d80eaf0b",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -337,23 +324,20 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await badgesUpdateBadges(serviceM8, {
-    uuid: "baaf4b5b-290b-4da2-91a9-cd052d299937",
+    uuid: "444f2947-b065-4aac-8159-0ffca6278fd2",
     badge: {
-      uuid: "123e4567-5d12-4ad5-822e-22b4de257e8b",
+      uuid: "123e4567-7495-41b7-a2ea-22d9d5480ddb",
       name: "<value>",
-      regardingFormUuid: "123e4567-7b64-417a-8f17-22b4d3eeb90b",
-      regardingAssetTypeUuid: "123e4567-75ec-4555-8285-22b4d0f6c5bb",
+      regardingFormUuid: "123e4567-cc76-471f-8a27-22d9d8e8a16b",
+      regardingAssetTypeUuid: "123e4567-cd2c-4696-89f6-22d9d80eaf0b",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesUpdateBadges failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -405,10 +389,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.badges.deleteBadges({
-    uuid: "2b2625d6-0f11-4829-b4cc-986b89602c82",
+    uuid: "2aadd91c-6161-4687-9486-a3ad1faa73c6",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -433,17 +416,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await badgesDeleteBadges(serviceM8, {
-    uuid: "2b2625d6-0f11-4829-b4cc-986b89602c82",
+    uuid: "2aadd91c-6161-4687-9486-a3ad1faa73c6",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesDeleteBadges failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

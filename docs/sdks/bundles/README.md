@@ -35,7 +35,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.bundles.listBundles();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -60,15 +59,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await bundlesListBundles(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesListBundles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -115,11 +111,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.bundles.createBundles({
-    uuid: "123e4567-4642-4905-87f6-22b4d7f0f8cb",
+    uuid: "123e4567-fe90-408b-912c-22d9d9c9c22b",
     itemNumber: "<value>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -144,18 +139,15 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await bundlesCreateBundles(serviceM8, {
-    uuid: "123e4567-4642-4905-87f6-22b4d7f0f8cb",
+    uuid: "123e4567-fe90-408b-912c-22d9d9c9c22b",
     itemNumber: "<value>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesCreateBundles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -198,10 +190,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.bundles.getBundles({
-    uuid: "68bf3354-67cb-48c6-a571-688901bf9c51",
+    uuid: "57880096-1497-436b-97fa-02c5300f9e5f",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -226,17 +217,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await bundlesGetBundles(serviceM8, {
-    uuid: "68bf3354-67cb-48c6-a571-688901bf9c51",
+    uuid: "57880096-1497-436b-97fa-02c5300f9e5f",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesGetBundles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -279,14 +267,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.bundles.updateBundles({
-    uuid: "f44b72e5-9236-4f5c-9029-bf9da865f259",
+    uuid: "92d0296e-677d-4cfc-a0ec-84e1809ff960",
     materialBundle: {
-      uuid: "123e4567-4642-4905-87f6-22b4d7f0f8cb",
+      uuid: "123e4567-fe90-408b-912c-22d9d9c9c22b",
       itemNumber: "<value>",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -311,21 +298,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await bundlesUpdateBundles(serviceM8, {
-    uuid: "f44b72e5-9236-4f5c-9029-bf9da865f259",
+    uuid: "92d0296e-677d-4cfc-a0ec-84e1809ff960",
     materialBundle: {
-      uuid: "123e4567-4642-4905-87f6-22b4d7f0f8cb",
+      uuid: "123e4567-fe90-408b-912c-22d9d9c9c22b",
       itemNumber: "<value>",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesUpdateBundles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -372,10 +356,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.bundles.deleteBundles({
-    uuid: "f8c82618-3fcb-4c77-ad0c-411a0423f147",
+    uuid: "a3bf1114-d4d7-4162-bf9d-797e0e4f3234",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -400,17 +383,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await bundlesDeleteBundles(serviceM8, {
-    uuid: "f8c82618-3fcb-4c77-ad0c-411a0423f147",
+    uuid: "a3bf1114-d4d7-4162-bf9d-797e0e4f3234",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesDeleteBundles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

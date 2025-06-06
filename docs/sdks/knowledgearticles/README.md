@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.knowledgeArticles.listKnowledgeArticles();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await knowledgeArticlesListKnowledgeArticles(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesListKnowledgeArticles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -125,11 +121,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.knowledgeArticles.createKnowledgeArticles({
-    uuid: "123e4567-c20a-4706-a59e-22b4da87904b",
+    uuid: "123e4567-afc9-4073-a351-22d9d48e6ffb",
     name: "<value>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -154,18 +149,15 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await knowledgeArticlesCreateKnowledgeArticles(serviceM8, {
-    uuid: "123e4567-c20a-4706-a59e-22b4da87904b",
+    uuid: "123e4567-afc9-4073-a351-22d9d48e6ffb",
     name: "<value>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesCreateKnowledgeArticles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -213,10 +205,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.knowledgeArticles.getKnowledgeArticles({
-    uuid: "2c7d225f-8f77-49cd-9760-85e9336ff06c",
+    uuid: "ac5665f9-00c6-41e6-aa54-1fb76b168e00",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -241,17 +232,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await knowledgeArticlesGetKnowledgeArticles(serviceM8, {
-    uuid: "2c7d225f-8f77-49cd-9760-85e9336ff06c",
+    uuid: "ac5665f9-00c6-41e6-aa54-1fb76b168e00",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesGetKnowledgeArticles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -299,14 +287,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.knowledgeArticles.updateKnowledgeArticles({
-    uuid: "2600c9c1-cf7f-44a6-9750-8ff52ba6b536",
+    uuid: "a643fa14-496b-46a5-88bc-4e67bb92bafd",
     knowledgeArticle: {
-      uuid: "123e4567-c20a-4706-a59e-22b4da87904b",
+      uuid: "123e4567-afc9-4073-a351-22d9d48e6ffb",
       name: "<value>",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -331,21 +318,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await knowledgeArticlesUpdateKnowledgeArticles(serviceM8, {
-    uuid: "2600c9c1-cf7f-44a6-9750-8ff52ba6b536",
+    uuid: "a643fa14-496b-46a5-88bc-4e67bb92bafd",
     knowledgeArticle: {
-      uuid: "123e4567-c20a-4706-a59e-22b4da87904b",
+      uuid: "123e4567-afc9-4073-a351-22d9d48e6ffb",
       name: "<value>",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesUpdateKnowledgeArticles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -397,10 +381,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.knowledgeArticles.deleteKnowledgeArticles({
-    uuid: "cc3da51c-4af1-4c84-9300-0d5b2ceb2ed1",
+    uuid: "b1997617-b7b3-4ad1-9ecd-9b0220317fef",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -425,17 +408,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await knowledgeArticlesDeleteKnowledgeArticles(serviceM8, {
-    uuid: "cc3da51c-4af1-4c84-9300-0d5b2ceb2ed1",
+    uuid: "b1997617-b7b3-4ad1-9ecd-9b0220317fef",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesDeleteKnowledgeArticles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

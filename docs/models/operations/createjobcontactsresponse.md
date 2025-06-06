@@ -5,17 +5,7 @@
 ```typescript
 import { CreateJobContactsResponse } from "servicem8/models/operations";
 
-let value: CreateJobContactsResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: {
-    errorCode: 0,
-    message: "OK",
-  },
-};
+let value: CreateJobContactsResponse = {};
 ```
 
 ## Fields

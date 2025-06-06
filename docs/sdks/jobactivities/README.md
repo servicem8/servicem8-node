@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.jobActivities.listJobActivities();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobActivitiesListJobActivities(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesListJobActivities failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -125,18 +121,17 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobActivities.createJobActivities({
-    uuid: "123e4567-1b48-457f-af8c-22b4d03b6b2b",
-    jobUuid: "123e4567-a197-4fde-9d28-22b4d6697a9b",
-    staffUuid: "123e4567-18e2-47d1-bab5-22b4d5480d6b",
-    startDate: "YYYY-MM-DD HH:MM:SS",
-    endDate: "YYYY-MM-DD HH:MM:SS",
-    hasBeenOpenedTimestamp: "YYYY-MM-DD HH:MM:SS",
-    allocatedByStaffUuid: "123e4567-65b0-480f-9dde-22b4d7935d9b",
-    allocatedTimestamp: "YYYY-MM-DD HH:MM:SS",
-    materialUuid: "123e4567-4d7f-44f4-b6bf-22b4de8f9fcb",
+    uuid: "123e4567-45e1-47e8-959c-22d9d25e878b",
+    jobUuid: "123e4567-c1da-485e-8923-22d9d9607f8b",
+    staffUuid: "123e4567-0c61-4f65-932a-22d9d0a48afb",
+    startDate: "2025-06-01 12:00:00",
+    endDate: "2025-06-01 12:00:00",
+    hasBeenOpenedTimestamp: "2025-06-01 12:00:00",
+    allocatedByStaffUuid: "123e4567-e7f7-4948-bddc-22d9d653edcb",
+    allocatedTimestamp: "2025-06-01 12:00:00",
+    materialUuid: "123e4567-1aee-4c50-b1c5-22d9dfc6fbfb",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -161,25 +156,22 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobActivitiesCreateJobActivities(serviceM8, {
-    uuid: "123e4567-1b48-457f-af8c-22b4d03b6b2b",
-    jobUuid: "123e4567-a197-4fde-9d28-22b4d6697a9b",
-    staffUuid: "123e4567-18e2-47d1-bab5-22b4d5480d6b",
-    startDate: "YYYY-MM-DD HH:MM:SS",
-    endDate: "YYYY-MM-DD HH:MM:SS",
-    hasBeenOpenedTimestamp: "YYYY-MM-DD HH:MM:SS",
-    allocatedByStaffUuid: "123e4567-65b0-480f-9dde-22b4d7935d9b",
-    allocatedTimestamp: "YYYY-MM-DD HH:MM:SS",
-    materialUuid: "123e4567-4d7f-44f4-b6bf-22b4de8f9fcb",
+    uuid: "123e4567-45e1-47e8-959c-22d9d25e878b",
+    jobUuid: "123e4567-c1da-485e-8923-22d9d9607f8b",
+    staffUuid: "123e4567-0c61-4f65-932a-22d9d0a48afb",
+    startDate: "2025-06-01 12:00:00",
+    endDate: "2025-06-01 12:00:00",
+    hasBeenOpenedTimestamp: "2025-06-01 12:00:00",
+    allocatedByStaffUuid: "123e4567-e7f7-4948-bddc-22d9d653edcb",
+    allocatedTimestamp: "2025-06-01 12:00:00",
+    materialUuid: "123e4567-1aee-4c50-b1c5-22d9dfc6fbfb",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesCreateJobActivities failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -227,10 +219,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobActivities.getJobActivities({
-    uuid: "f32731bb-bb87-4332-b835-cec6ca6ebe5c",
+    uuid: "f48752b0-a7a8-46ea-9378-3d9463c64f7d",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -255,17 +246,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobActivitiesGetJobActivities(serviceM8, {
-    uuid: "f32731bb-bb87-4332-b835-cec6ca6ebe5c",
+    uuid: "f48752b0-a7a8-46ea-9378-3d9463c64f7d",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesGetJobActivities failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -313,21 +301,20 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobActivities.updateJobActivities({
-    uuid: "baff6543-b6e3-49f1-98fc-1f6ac89c2a41",
+    uuid: "5ccaaaf0-ee37-4a96-a41a-cc701c3f1a65",
     jobActivity: {
-      uuid: "123e4567-1b48-457f-af8c-22b4d03b6b2b",
-      jobUuid: "123e4567-a197-4fde-9d28-22b4d6697a9b",
-      staffUuid: "123e4567-18e2-47d1-bab5-22b4d5480d6b",
-      startDate: "YYYY-MM-DD HH:MM:SS",
-      endDate: "YYYY-MM-DD HH:MM:SS",
-      hasBeenOpenedTimestamp: "YYYY-MM-DD HH:MM:SS",
-      allocatedByStaffUuid: "123e4567-65b0-480f-9dde-22b4d7935d9b",
-      allocatedTimestamp: "YYYY-MM-DD HH:MM:SS",
-      materialUuid: "123e4567-4d7f-44f4-b6bf-22b4de8f9fcb",
+      uuid: "123e4567-45e1-47e8-959c-22d9d25e878b",
+      jobUuid: "123e4567-c1da-485e-8923-22d9d9607f8b",
+      staffUuid: "123e4567-0c61-4f65-932a-22d9d0a48afb",
+      startDate: "2025-06-01 12:00:00",
+      endDate: "2025-06-01 12:00:00",
+      hasBeenOpenedTimestamp: "2025-06-01 12:00:00",
+      allocatedByStaffUuid: "123e4567-e7f7-4948-bddc-22d9d653edcb",
+      allocatedTimestamp: "2025-06-01 12:00:00",
+      materialUuid: "123e4567-1aee-4c50-b1c5-22d9dfc6fbfb",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -352,28 +339,25 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobActivitiesUpdateJobActivities(serviceM8, {
-    uuid: "baff6543-b6e3-49f1-98fc-1f6ac89c2a41",
+    uuid: "5ccaaaf0-ee37-4a96-a41a-cc701c3f1a65",
     jobActivity: {
-      uuid: "123e4567-1b48-457f-af8c-22b4d03b6b2b",
-      jobUuid: "123e4567-a197-4fde-9d28-22b4d6697a9b",
-      staffUuid: "123e4567-18e2-47d1-bab5-22b4d5480d6b",
-      startDate: "YYYY-MM-DD HH:MM:SS",
-      endDate: "YYYY-MM-DD HH:MM:SS",
-      hasBeenOpenedTimestamp: "YYYY-MM-DD HH:MM:SS",
-      allocatedByStaffUuid: "123e4567-65b0-480f-9dde-22b4d7935d9b",
-      allocatedTimestamp: "YYYY-MM-DD HH:MM:SS",
-      materialUuid: "123e4567-4d7f-44f4-b6bf-22b4de8f9fcb",
+      uuid: "123e4567-45e1-47e8-959c-22d9d25e878b",
+      jobUuid: "123e4567-c1da-485e-8923-22d9d9607f8b",
+      staffUuid: "123e4567-0c61-4f65-932a-22d9d0a48afb",
+      startDate: "2025-06-01 12:00:00",
+      endDate: "2025-06-01 12:00:00",
+      hasBeenOpenedTimestamp: "2025-06-01 12:00:00",
+      allocatedByStaffUuid: "123e4567-e7f7-4948-bddc-22d9d653edcb",
+      allocatedTimestamp: "2025-06-01 12:00:00",
+      materialUuid: "123e4567-1aee-4c50-b1c5-22d9dfc6fbfb",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesUpdateJobActivities failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -425,10 +409,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobActivities.deleteJobActivities({
-    uuid: "09f10d68-7762-4ec3-9513-2a1fb89ff1b5",
+    uuid: "7f63e82c-5f2e-4ef0-b179-544b36e12136",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -453,17 +436,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobActivitiesDeleteJobActivities(serviceM8, {
-    uuid: "09f10d68-7762-4ec3-9513-2a1fb89ff1b5",
+    uuid: "7f63e82c-5f2e-4ef0-b179-544b36e12136",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesDeleteJobActivities failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

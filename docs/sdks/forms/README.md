@@ -35,7 +35,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.forms.listForms();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -60,15 +59,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formsListForms(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsListForms failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -115,11 +111,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.forms.createForms({
-    documentTemplateUuid: "123e4567-d467-40de-924d-22b4da1881bb",
-    uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
+    documentTemplateUuid: "123e4567-9fef-4df6-a481-22d9d803984b",
+    uuid: "123e4567-cc2d-4cec-a911-22d9d1e8bedb",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -144,18 +139,15 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formsCreateForms(serviceM8, {
-    documentTemplateUuid: "123e4567-d467-40de-924d-22b4da1881bb",
-    uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
+    documentTemplateUuid: "123e4567-9fef-4df6-a481-22d9d803984b",
+    uuid: "123e4567-cc2d-4cec-a911-22d9d1e8bedb",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsCreateForms failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -198,10 +190,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.forms.getForms({
-    uuid: "56e285a2-c6af-4c67-87b1-6ba5832617e0",
+    uuid: "da48f5f6-5d8c-4c73-b81b-fc193b56ae21",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -226,17 +217,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formsGetForms(serviceM8, {
-    uuid: "56e285a2-c6af-4c67-87b1-6ba5832617e0",
+    uuid: "da48f5f6-5d8c-4c73-b81b-fc193b56ae21",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsGetForms failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -279,14 +267,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.forms.updateForms({
-    uuid: "bb397553-eb0b-4e65-89e5-bfd6db4fee68",
+    uuid: "2473c622-cde4-4803-b91a-cd7a656f7e3b",
     form: {
-      documentTemplateUuid: "123e4567-d467-40de-924d-22b4da1881bb",
-      uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
+      documentTemplateUuid: "123e4567-9fef-4df6-a481-22d9d803984b",
+      uuid: "123e4567-cc2d-4cec-a911-22d9d1e8bedb",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -311,21 +298,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formsUpdateForms(serviceM8, {
-    uuid: "bb397553-eb0b-4e65-89e5-bfd6db4fee68",
+    uuid: "2473c622-cde4-4803-b91a-cd7a656f7e3b",
     form: {
-      documentTemplateUuid: "123e4567-d467-40de-924d-22b4da1881bb",
-      uuid: "123e4567-5db4-40f4-a301-22b4dd7f402b",
+      documentTemplateUuid: "123e4567-9fef-4df6-a481-22d9d803984b",
+      uuid: "123e4567-cc2d-4cec-a911-22d9d1e8bedb",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsUpdateForms failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -372,10 +356,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.forms.deleteForms({
-    uuid: "eae94b1e-10d9-4270-bca0-cbe1c887f39a",
+    uuid: "2cf6327e-9647-4edd-895a-c234de25ba07",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -400,17 +383,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formsDeleteForms(serviceM8, {
-    uuid: "eae94b1e-10d9-4270-bca0-cbe1c887f39a",
+    uuid: "2cf6327e-9647-4edd-895a-c234de25ba07",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsDeleteForms failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

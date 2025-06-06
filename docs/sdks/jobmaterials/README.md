@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.jobMaterials.listJobMaterials();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialsListJobMaterials(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialsListJobMaterials failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -125,15 +121,14 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterials.createJobMaterials({
-    uuid: "123e4567-334d-4865-92d3-22b4ddcfc3db",
-    jobUuid: "123e4567-951d-4781-a157-22b4dcc3c8db",
-    materialUuid: "123e4567-35d4-4ddd-9169-22b4dce512ab",
+    uuid: "123e4567-89c5-4912-bb1d-22d9dd713ddb",
+    jobUuid: "123e4567-8d8a-4b4c-8e94-22d9d5be0cdb",
+    materialUuid: "123e4567-5a11-4d21-8e96-22d9dcd01b9b",
     quantity: "<value>",
-    taxRateUuid: "123e4567-1dd4-42c2-ad1c-22b4d3f47b6b",
-    jobMaterialBundleUuid: "123e4567-402b-4069-b7c3-22b4d307a2eb",
+    taxRateUuid: "123e4567-f142-4ed2-9fb5-22d9d111fedb",
+    jobMaterialBundleUuid: "123e4567-e2af-49e0-8ba6-22d9ddae02db",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -158,22 +153,19 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialsCreateJobMaterials(serviceM8, {
-    uuid: "123e4567-334d-4865-92d3-22b4ddcfc3db",
-    jobUuid: "123e4567-951d-4781-a157-22b4dcc3c8db",
-    materialUuid: "123e4567-35d4-4ddd-9169-22b4dce512ab",
+    uuid: "123e4567-89c5-4912-bb1d-22d9dd713ddb",
+    jobUuid: "123e4567-8d8a-4b4c-8e94-22d9d5be0cdb",
+    materialUuid: "123e4567-5a11-4d21-8e96-22d9dcd01b9b",
     quantity: "<value>",
-    taxRateUuid: "123e4567-1dd4-42c2-ad1c-22b4d3f47b6b",
-    jobMaterialBundleUuid: "123e4567-402b-4069-b7c3-22b4d307a2eb",
+    taxRateUuid: "123e4567-f142-4ed2-9fb5-22d9d111fedb",
+    jobMaterialBundleUuid: "123e4567-e2af-49e0-8ba6-22d9ddae02db",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialsCreateJobMaterials failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -221,10 +213,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterials.getJobMaterials({
-    uuid: "d79254ce-b994-4a50-8a99-5f1146cac7ca",
+    uuid: "165872a3-a5ba-481d-bfb9-e4fa9614f88b",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -249,17 +240,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialsGetJobMaterials(serviceM8, {
-    uuid: "d79254ce-b994-4a50-8a99-5f1146cac7ca",
+    uuid: "165872a3-a5ba-481d-bfb9-e4fa9614f88b",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialsGetJobMaterials failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -307,18 +295,17 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterials.updateJobMaterials({
-    uuid: "e5cec741-7f2b-410a-bf65-aff4658f1c92",
+    uuid: "0afa4bc5-4269-47e6-81bd-da437fd2e097",
     jobMaterial: {
-      uuid: "123e4567-334d-4865-92d3-22b4ddcfc3db",
-      jobUuid: "123e4567-951d-4781-a157-22b4dcc3c8db",
-      materialUuid: "123e4567-35d4-4ddd-9169-22b4dce512ab",
+      uuid: "123e4567-89c5-4912-bb1d-22d9dd713ddb",
+      jobUuid: "123e4567-8d8a-4b4c-8e94-22d9d5be0cdb",
+      materialUuid: "123e4567-5a11-4d21-8e96-22d9dcd01b9b",
       quantity: "<value>",
-      taxRateUuid: "123e4567-1dd4-42c2-ad1c-22b4d3f47b6b",
-      jobMaterialBundleUuid: "123e4567-402b-4069-b7c3-22b4d307a2eb",
+      taxRateUuid: "123e4567-f142-4ed2-9fb5-22d9d111fedb",
+      jobMaterialBundleUuid: "123e4567-e2af-49e0-8ba6-22d9ddae02db",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -343,25 +330,22 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialsUpdateJobMaterials(serviceM8, {
-    uuid: "e5cec741-7f2b-410a-bf65-aff4658f1c92",
+    uuid: "0afa4bc5-4269-47e6-81bd-da437fd2e097",
     jobMaterial: {
-      uuid: "123e4567-334d-4865-92d3-22b4ddcfc3db",
-      jobUuid: "123e4567-951d-4781-a157-22b4dcc3c8db",
-      materialUuid: "123e4567-35d4-4ddd-9169-22b4dce512ab",
+      uuid: "123e4567-89c5-4912-bb1d-22d9dd713ddb",
+      jobUuid: "123e4567-8d8a-4b4c-8e94-22d9d5be0cdb",
+      materialUuid: "123e4567-5a11-4d21-8e96-22d9dcd01b9b",
       quantity: "<value>",
-      taxRateUuid: "123e4567-1dd4-42c2-ad1c-22b4d3f47b6b",
-      jobMaterialBundleUuid: "123e4567-402b-4069-b7c3-22b4d307a2eb",
+      taxRateUuid: "123e4567-f142-4ed2-9fb5-22d9d111fedb",
+      jobMaterialBundleUuid: "123e4567-e2af-49e0-8ba6-22d9ddae02db",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialsUpdateJobMaterials failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -413,10 +397,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterials.deleteJobMaterials({
-    uuid: "4e8876ca-968b-495e-9f73-d41227fa2e1a",
+    uuid: "23120cd0-03cc-4756-9717-587ac9cce469",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -441,17 +424,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialsDeleteJobMaterials(serviceM8, {
-    uuid: "4e8876ca-968b-495e-9f73-d41227fa2e1a",
+    uuid: "23120cd0-03cc-4756-9717-587ac9cce469",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialsDeleteJobMaterials failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

@@ -5,17 +5,7 @@
 ```typescript
 import { CreateFormFieldsResponse } from "servicem8/models/operations";
 
-let value: CreateFormFieldsResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: {
-    errorCode: 0,
-    message: "OK",
-  },
-};
+let value: CreateFormFieldsResponse = {};
 ```
 
 ## Fields

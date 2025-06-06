@@ -39,7 +39,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.assets.listAssets();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -64,15 +63,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetsListAssets(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetsListAssets failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -119,10 +115,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.assets.getAssets({
-    uuid: "8eb1fa27-739c-4946-b465-dfd310714838",
+    uuid: "ce397d11-5da8-46a0-bca5-9b0f7985e931",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -147,17 +142,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetsGetAssets(serviceM8, {
-    uuid: "8eb1fa27-739c-4946-b465-dfd310714838",
+    uuid: "ce397d11-5da8-46a0-bca5-9b0f7985e931",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetsGetAssets failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -205,17 +197,15 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.assets.updateAssets({
-    uuid: "6722d620-da15-4c25-9986-572ac1041593",
+    uuid: "5b24eb53-3f3d-4b60-b9e9-e44934a80c53",
     asset: {
-      uuid: "123e4567-ae39-46c1-9052-22b4d002e90b",
-      companyUuid: "123e4567-7127-4d5d-968a-22b4d53438eb",
-      assetTypeUuid: "123e4567-41f4-4c6c-934a-22b4d5af612b",
-      name: "<value>",
-      geoTimestamp: "YYYY-MM-DD HH:MM:SS",
+      uuid: "123e4567-0fe9-42f0-80e6-22d9d1aba08b",
+      companyUuid: "123e4567-11d2-4d85-9568-22d9d76552fb",
+      assetTypeUuid: "123e4567-8e13-4927-9103-22d9da7bd11b",
+      geoTimestamp: "2025-06-01 12:00:00",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -240,24 +230,20 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetsUpdateAssets(serviceM8, {
-    uuid: "6722d620-da15-4c25-9986-572ac1041593",
+    uuid: "5b24eb53-3f3d-4b60-b9e9-e44934a80c53",
     asset: {
-      uuid: "123e4567-ae39-46c1-9052-22b4d002e90b",
-      companyUuid: "123e4567-7127-4d5d-968a-22b4d53438eb",
-      assetTypeUuid: "123e4567-41f4-4c6c-934a-22b4d5af612b",
-      name: "<value>",
-      geoTimestamp: "YYYY-MM-DD HH:MM:SS",
+      uuid: "123e4567-0fe9-42f0-80e6-22d9d1aba08b",
+      companyUuid: "123e4567-11d2-4d85-9568-22d9d76552fb",
+      assetTypeUuid: "123e4567-8e13-4927-9103-22d9da7bd11b",
+      geoTimestamp: "2025-06-01 12:00:00",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetsUpdateAssets failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -309,10 +295,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.assets.deleteAssets({
-    uuid: "08c79778-2e1b-42dd-a9de-5ce4bf6cd898",
+    uuid: "89fafae0-683b-4f73-9e16-8809e9f13b66",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -337,17 +322,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetsDeleteAssets(serviceM8, {
-    uuid: "08c79778-2e1b-42dd-a9de-5ce4bf6cd898",
+    uuid: "89fafae0-683b-4f73-9e16-8809e9f13b66",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetsDeleteAssets failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

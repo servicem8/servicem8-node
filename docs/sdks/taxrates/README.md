@@ -35,7 +35,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.taxRates.listTaxRates();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -60,15 +59,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await taxRatesListTaxRates(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesListTaxRates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -115,11 +111,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.taxRates.createTaxRates({
-    uuid: "123e4567-e3d5-4ffa-9b84-22b4dc47075b",
+    uuid: "123e4567-7d0b-41cb-93d3-22d9dfccf82b",
     name: "<value>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -144,18 +139,15 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await taxRatesCreateTaxRates(serviceM8, {
-    uuid: "123e4567-e3d5-4ffa-9b84-22b4dc47075b",
+    uuid: "123e4567-7d0b-41cb-93d3-22d9dfccf82b",
     name: "<value>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesCreateTaxRates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -198,10 +190,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.taxRates.getTaxRates({
-    uuid: "67685a70-6660-4003-a677-5c9a2d1afa31",
+    uuid: "f8fd7d82-41b8-4914-91af-451b3a1468da",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -226,17 +217,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await taxRatesGetTaxRates(serviceM8, {
-    uuid: "67685a70-6660-4003-a677-5c9a2d1afa31",
+    uuid: "f8fd7d82-41b8-4914-91af-451b3a1468da",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesGetTaxRates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -279,14 +267,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.taxRates.updateTaxRates({
-    uuid: "be8ebe99-a72d-4521-b95a-4785eb03f4b8",
+    uuid: "276d45f4-bf8b-41ae-82d4-264af7ec45cc",
     taxRate: {
-      uuid: "123e4567-e3d5-4ffa-9b84-22b4dc47075b",
+      uuid: "123e4567-7d0b-41cb-93d3-22d9dfccf82b",
       name: "<value>",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -311,21 +298,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await taxRatesUpdateTaxRates(serviceM8, {
-    uuid: "be8ebe99-a72d-4521-b95a-4785eb03f4b8",
+    uuid: "276d45f4-bf8b-41ae-82d4-264af7ec45cc",
     taxRate: {
-      uuid: "123e4567-e3d5-4ffa-9b84-22b4dc47075b",
+      uuid: "123e4567-7d0b-41cb-93d3-22d9dfccf82b",
       name: "<value>",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesUpdateTaxRates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -372,10 +356,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.taxRates.deleteTaxRates({
-    uuid: "fa9e97dc-288f-4f18-9f51-12bfc6b18f46",
+    uuid: "75f0f882-068d-4d46-a6e7-9048cb5a168d",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -400,17 +383,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await taxRatesDeleteTaxRates(serviceM8, {
-    uuid: "fa9e97dc-288f-4f18-9f51-12bfc6b18f46",
+    uuid: "75f0f882-068d-4d46-a6e7-9048cb5a168d",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesDeleteTaxRates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

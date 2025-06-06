@@ -35,7 +35,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.staffMessages.listStaffMessages();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -60,15 +59,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await staffMessagesListStaffMessages(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesListStaffMessages failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -115,16 +111,15 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.staffMessages.createStaffMessages({
-    uuid: "123e4567-c5ae-4b7f-bf27-22b4d522b80b",
-    fromStaffUuid: "123e4567-edd0-44db-adc5-22b4d8b4f77b",
-    toStaffUuid: "123e4567-e13c-4b39-8d92-22b4decfb17b",
-    sentTimestamp: "YYYY-MM-DD HH:MM:SS",
-    deliveredTimestamp: "YYYY-MM-DD HH:MM:SS",
-    readTimestamp: "YYYY-MM-DD HH:MM:SS",
-    regardingJobUuid: "123e4567-3eab-41bd-8680-22b4d4ef38ab",
+    uuid: "123e4567-7499-4f60-8fd2-22d9d03e5eab",
+    fromStaffUuid: "123e4567-7f9e-404d-a758-22d9d34c60db",
+    toStaffUuid: "123e4567-6e52-41f7-9737-22d9d6e1aa0b",
+    sentTimestamp: "2025-06-01 12:00:00",
+    deliveredTimestamp: "2025-06-01 12:00:00",
+    readTimestamp: "2025-06-01 12:00:00",
+    regardingJobUuid: "123e4567-65ee-40eb-898b-22d9dd5bc15b",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -149,23 +144,20 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await staffMessagesCreateStaffMessages(serviceM8, {
-    uuid: "123e4567-c5ae-4b7f-bf27-22b4d522b80b",
-    fromStaffUuid: "123e4567-edd0-44db-adc5-22b4d8b4f77b",
-    toStaffUuid: "123e4567-e13c-4b39-8d92-22b4decfb17b",
-    sentTimestamp: "YYYY-MM-DD HH:MM:SS",
-    deliveredTimestamp: "YYYY-MM-DD HH:MM:SS",
-    readTimestamp: "YYYY-MM-DD HH:MM:SS",
-    regardingJobUuid: "123e4567-3eab-41bd-8680-22b4d4ef38ab",
+    uuid: "123e4567-7499-4f60-8fd2-22d9d03e5eab",
+    fromStaffUuid: "123e4567-7f9e-404d-a758-22d9d34c60db",
+    toStaffUuid: "123e4567-6e52-41f7-9737-22d9d6e1aa0b",
+    sentTimestamp: "2025-06-01 12:00:00",
+    deliveredTimestamp: "2025-06-01 12:00:00",
+    readTimestamp: "2025-06-01 12:00:00",
+    regardingJobUuid: "123e4567-65ee-40eb-898b-22d9dd5bc15b",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesCreateStaffMessages failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -208,10 +200,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.staffMessages.getStaffMessages({
-    uuid: "3b5bea69-86fe-4ecc-bd6d-6cf454d8243a",
+    uuid: "31718a39-6feb-45a4-a7f2-f76ec9ecc63c",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -236,17 +227,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await staffMessagesGetStaffMessages(serviceM8, {
-    uuid: "3b5bea69-86fe-4ecc-bd6d-6cf454d8243a",
+    uuid: "31718a39-6feb-45a4-a7f2-f76ec9ecc63c",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesGetStaffMessages failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -289,19 +277,18 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.staffMessages.updateStaffMessages({
-    uuid: "54e8cd62-dfaa-493b-9c99-d85d9f753cf3",
+    uuid: "b5fd0f7a-6810-4261-acdb-e8e543cf4e72",
     staffMessage: {
-      uuid: "123e4567-c5ae-4b7f-bf27-22b4d522b80b",
-      fromStaffUuid: "123e4567-edd0-44db-adc5-22b4d8b4f77b",
-      toStaffUuid: "123e4567-e13c-4b39-8d92-22b4decfb17b",
-      sentTimestamp: "YYYY-MM-DD HH:MM:SS",
-      deliveredTimestamp: "YYYY-MM-DD HH:MM:SS",
-      readTimestamp: "YYYY-MM-DD HH:MM:SS",
-      regardingJobUuid: "123e4567-3eab-41bd-8680-22b4d4ef38ab",
+      uuid: "123e4567-7499-4f60-8fd2-22d9d03e5eab",
+      fromStaffUuid: "123e4567-7f9e-404d-a758-22d9d34c60db",
+      toStaffUuid: "123e4567-6e52-41f7-9737-22d9d6e1aa0b",
+      sentTimestamp: "2025-06-01 12:00:00",
+      deliveredTimestamp: "2025-06-01 12:00:00",
+      readTimestamp: "2025-06-01 12:00:00",
+      regardingJobUuid: "123e4567-65ee-40eb-898b-22d9dd5bc15b",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -326,26 +313,23 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await staffMessagesUpdateStaffMessages(serviceM8, {
-    uuid: "54e8cd62-dfaa-493b-9c99-d85d9f753cf3",
+    uuid: "b5fd0f7a-6810-4261-acdb-e8e543cf4e72",
     staffMessage: {
-      uuid: "123e4567-c5ae-4b7f-bf27-22b4d522b80b",
-      fromStaffUuid: "123e4567-edd0-44db-adc5-22b4d8b4f77b",
-      toStaffUuid: "123e4567-e13c-4b39-8d92-22b4decfb17b",
-      sentTimestamp: "YYYY-MM-DD HH:MM:SS",
-      deliveredTimestamp: "YYYY-MM-DD HH:MM:SS",
-      readTimestamp: "YYYY-MM-DD HH:MM:SS",
-      regardingJobUuid: "123e4567-3eab-41bd-8680-22b4d4ef38ab",
+      uuid: "123e4567-7499-4f60-8fd2-22d9d03e5eab",
+      fromStaffUuid: "123e4567-7f9e-404d-a758-22d9d34c60db",
+      toStaffUuid: "123e4567-6e52-41f7-9737-22d9d6e1aa0b",
+      sentTimestamp: "2025-06-01 12:00:00",
+      deliveredTimestamp: "2025-06-01 12:00:00",
+      readTimestamp: "2025-06-01 12:00:00",
+      regardingJobUuid: "123e4567-65ee-40eb-898b-22d9dd5bc15b",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesUpdateStaffMessages failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -392,10 +376,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.staffMessages.deleteStaffMessages({
-    uuid: "0efc6e9c-501e-4c1e-94db-8216c30a68d8",
+    uuid: "f09dd42b-85e0-454a-8494-c181a7fff788",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -420,17 +403,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await staffMessagesDeleteStaffMessages(serviceM8, {
-    uuid: "0efc6e9c-501e-4c1e-94db-8216c30a68d8",
+    uuid: "f09dd42b-85e0-454a-8494-c181a7fff788",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesDeleteStaffMessages failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

@@ -5,17 +5,7 @@
 ```typescript
 import { CreateJobAllocationsResponse } from "servicem8/models/operations";
 
-let value: CreateJobAllocationsResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: {
-    errorCode: 0,
-    message: "OK",
-  },
-};
+let value: CreateJobAllocationsResponse = {};
 ```
 
 ## Fields

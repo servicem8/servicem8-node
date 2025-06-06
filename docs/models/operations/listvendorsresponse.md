@@ -6,13 +6,7 @@
 ### `components.Vendor[]`
 
 ```typescript
-const value: components.Vendor[] = [
-  {
-    uuid: "123e4567-ba6f-4fc6-a5a9-22bdc62132eb",
-    editDate: "2025-05-01 12:00:00",
-    name: "<value>",
-  },
-];
+const value: components.Vendor[] = [];
 ```
 
 ### `components.ErrorT`

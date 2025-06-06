@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.vendors.listVendors();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await vendorsListVendors(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("vendorsListVendors failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -122,10 +118,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.vendors.getVendors({
-    uuid: "3856b51a-59e7-4442-afe7-adbe7477e097",
+    uuid: "261b9a97-0bc3-44a1-a310-6bd58c6fb91b",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -150,17 +145,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await vendorsGetVendors(serviceM8, {
-    uuid: "3856b51a-59e7-4442-afe7-adbe7477e097",
+    uuid: "261b9a97-0bc3-44a1-a310-6bd58c6fb91b",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("vendorsGetVendors failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -205,14 +197,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.vendors.updateVendors({
-    uuid: "c0aa77d3-51eb-4609-a7d4-c4293b2c471e",
+    uuid: "d90cffed-8677-4cbe-ab38-b734ac463633",
     vendor: {
-      uuid: "123e4567-f6a5-4b6c-b79f-22b4db05a84b",
+      uuid: "123e4567-5941-412e-8a86-22d9dc82ae7b",
       name: "<value>",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -237,21 +228,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await vendorsUpdateVendors(serviceM8, {
-    uuid: "c0aa77d3-51eb-4609-a7d4-c4293b2c471e",
+    uuid: "d90cffed-8677-4cbe-ab38-b734ac463633",
     vendor: {
-      uuid: "123e4567-f6a5-4b6c-b79f-22b4db05a84b",
+      uuid: "123e4567-5941-412e-8a86-22d9dc82ae7b",
       name: "<value>",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("vendorsUpdateVendors failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

@@ -5,17 +5,7 @@
 ```typescript
 import { CreateBadgesResponse } from "servicem8/models/operations";
 
-let value: CreateBadgesResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: {
-    errorCode: 1000,
-    message: "An error occurred completing your request",
-  },
-};
+let value: CreateBadgesResponse = {};
 ```
 
 ## Fields

@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.clients.listClients();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await clientsListClients(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsListClients failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -126,11 +122,10 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.clients.createClients({
     name: "<value>",
-    uuid: "123e4567-7bbb-4453-af74-22b4d21656ab",
-    taxRateUuid: "123e4567-f0d3-4396-a609-22b4d94f07fb",
+    uuid: "123e4567-1c95-455d-9b31-22d9df1f870b",
+    taxRateUuid: "123e4567-57ad-4313-a991-22d9d144ba4b",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -156,18 +151,15 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await clientsCreateClients(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-7bbb-4453-af74-22b4d21656ab",
-    taxRateUuid: "123e4567-f0d3-4396-a609-22b4d94f07fb",
+    uuid: "123e4567-1c95-455d-9b31-22d9df1f870b",
+    taxRateUuid: "123e4567-57ad-4313-a991-22d9d144ba4b",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsCreateClients failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -215,10 +207,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.clients.getClients({
-    uuid: "9c1a0df8-3b93-4256-a5b9-153f2476dca2",
+    uuid: "b03d0f3d-1aad-4864-9438-b712398e900f",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -243,17 +234,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await clientsGetClients(serviceM8, {
-    uuid: "9c1a0df8-3b93-4256-a5b9-153f2476dca2",
+    uuid: "b03d0f3d-1aad-4864-9438-b712398e900f",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsGetClients failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -301,15 +289,14 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.clients.updateClients({
-    uuid: "f11a55dd-2ac9-459f-be84-6c4d35c68836",
+    uuid: "55f6bcc0-3bb7-4509-b13b-98c02374f910",
     company: {
       name: "<value>",
-      uuid: "123e4567-7bbb-4453-af74-22b4d21656ab",
-      taxRateUuid: "123e4567-f0d3-4396-a609-22b4d94f07fb",
+      uuid: "123e4567-1c95-455d-9b31-22d9df1f870b",
+      taxRateUuid: "123e4567-57ad-4313-a991-22d9d144ba4b",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -334,22 +321,19 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await clientsUpdateClients(serviceM8, {
-    uuid: "f11a55dd-2ac9-459f-be84-6c4d35c68836",
+    uuid: "55f6bcc0-3bb7-4509-b13b-98c02374f910",
     company: {
       name: "<value>",
-      uuid: "123e4567-7bbb-4453-af74-22b4d21656ab",
-      taxRateUuid: "123e4567-f0d3-4396-a609-22b4d94f07fb",
+      uuid: "123e4567-1c95-455d-9b31-22d9df1f870b",
+      taxRateUuid: "123e4567-57ad-4313-a991-22d9d144ba4b",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsUpdateClients failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -401,10 +385,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.clients.deleteClients({
-    uuid: "a3243f68-15f9-42b3-85b8-657620337aea",
+    uuid: "20083386-8c13-40ad-bb88-251f970d7f87",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -429,17 +412,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await clientsDeleteClients(serviceM8, {
-    uuid: "a3243f68-15f9-42b3-85b8-657620337aea",
+    uuid: "20083386-8c13-40ad-bb88-251f970d7f87",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsDeleteClients failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

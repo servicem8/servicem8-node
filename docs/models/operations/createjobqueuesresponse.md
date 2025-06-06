@@ -5,17 +5,7 @@
 ```typescript
 import { CreateJobQueuesResponse } from "servicem8/models/operations";
 
-let value: CreateJobQueuesResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: {
-    errorCode: 1000,
-    message: "An error occurred completing your request",
-  },
-};
+let value: CreateJobQueuesResponse = {};
 ```
 
 ## Fields

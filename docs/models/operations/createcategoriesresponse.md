@@ -5,17 +5,7 @@
 ```typescript
 import { CreateCategoriesResponse } from "servicem8/models/operations";
 
-let value: CreateCategoriesResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: {
-    errorCode: 1000,
-    message: "An error occurred completing your request",
-  },
-};
+let value: CreateCategoriesResponse = {};
 ```
 
 ## Fields

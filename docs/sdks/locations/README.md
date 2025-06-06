@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.locations.listLocations();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await locationsListLocations(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsListLocations failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -126,10 +122,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.locations.createLocations({
     name: "<value>",
-    uuid: "123e4567-05e7-48cd-a7e5-22b4d5838b3b",
+    uuid: "123e4567-1ef9-4c17-ab5b-22d9d99b145b",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -155,17 +150,14 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await locationsCreateLocations(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-05e7-48cd-a7e5-22b4d5838b3b",
+    uuid: "123e4567-1ef9-4c17-ab5b-22d9d99b145b",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsCreateLocations failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -213,10 +205,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.locations.getLocations({
-    uuid: "7e65687e-03d3-48f0-b0b2-e5b1b278767a",
+    uuid: "69800e36-6ed2-4dd7-a1c2-a528eb2d8a8e",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -241,17 +232,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await locationsGetLocations(serviceM8, {
-    uuid: "7e65687e-03d3-48f0-b0b2-e5b1b278767a",
+    uuid: "69800e36-6ed2-4dd7-a1c2-a528eb2d8a8e",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsGetLocations failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -299,14 +287,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.locations.updateLocations({
-    uuid: "f05b34ba-ce1d-4329-a6e7-836cc33d661d",
+    uuid: "fee3b1fa-ab4e-4094-823d-0885a2f7b69f",
     location: {
       name: "<value>",
-      uuid: "123e4567-05e7-48cd-a7e5-22b4d5838b3b",
+      uuid: "123e4567-1ef9-4c17-ab5b-22d9d99b145b",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -331,21 +318,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await locationsUpdateLocations(serviceM8, {
-    uuid: "f05b34ba-ce1d-4329-a6e7-836cc33d661d",
+    uuid: "fee3b1fa-ab4e-4094-823d-0885a2f7b69f",
     location: {
       name: "<value>",
-      uuid: "123e4567-05e7-48cd-a7e5-22b4d5838b3b",
+      uuid: "123e4567-1ef9-4c17-ab5b-22d9d99b145b",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsUpdateLocations failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -397,10 +381,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.locations.deleteLocations({
-    uuid: "937c6a5c-952a-4249-930e-2950d7cc01d7",
+    uuid: "2dde052b-5e99-4559-ab12-f1e0f2fade12",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -425,17 +408,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await locationsDeleteLocations(serviceM8, {
-    uuid: "937c6a5c-952a-4249-930e-2950d7cc01d7",
+    uuid: "2dde052b-5e99-4559-ab12-f1e0f2fade12",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsDeleteLocations failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

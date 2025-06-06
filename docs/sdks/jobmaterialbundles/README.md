@@ -35,7 +35,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.jobMaterialBundles.listJobMaterialBundles();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -60,15 +59,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialBundlesListJobMaterialBundles(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesListJobMaterialBundles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -115,12 +111,11 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterialBundles.createJobMaterialBundles({
-    uuid: "123e4567-3de1-4e96-b98f-22b4dcb5161b",
-    materialBundleUuid: "123e4567-582b-4410-854d-22b4db23321b",
-    jobUuid: "123e4567-b723-4245-875a-22b4d0fe962b",
+    uuid: "123e4567-4154-4fc7-81ef-22d9d1621feb",
+    materialBundleUuid: "123e4567-6eda-4d29-8aa0-22d9dbf4674b",
+    jobUuid: "123e4567-3961-458b-a24b-22d9dcceaafb",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -145,19 +140,16 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialBundlesCreateJobMaterialBundles(serviceM8, {
-    uuid: "123e4567-3de1-4e96-b98f-22b4dcb5161b",
-    materialBundleUuid: "123e4567-582b-4410-854d-22b4db23321b",
-    jobUuid: "123e4567-b723-4245-875a-22b4d0fe962b",
+    uuid: "123e4567-4154-4fc7-81ef-22d9d1621feb",
+    materialBundleUuid: "123e4567-6eda-4d29-8aa0-22d9dbf4674b",
+    jobUuid: "123e4567-3961-458b-a24b-22d9dcceaafb",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesCreateJobMaterialBundles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -200,10 +192,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterialBundles.getJobMaterialBundles({
-    uuid: "a1bdb9d6-9b4c-469e-bcbd-b107a1c475b9",
+    uuid: "4b05de2b-985c-4234-8750-f6c74bc66676",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -228,17 +219,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialBundlesGetJobMaterialBundles(serviceM8, {
-    uuid: "a1bdb9d6-9b4c-469e-bcbd-b107a1c475b9",
+    uuid: "4b05de2b-985c-4234-8750-f6c74bc66676",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesGetJobMaterialBundles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -281,15 +269,14 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterialBundles.updateJobMaterialBundles({
-    uuid: "f4334f5f-e9f1-4143-8254-72dc0262645a",
+    uuid: "6419b5e7-8edd-4c69-9648-b6ed7431256b",
     jobMaterialBundle: {
-      uuid: "123e4567-3de1-4e96-b98f-22b4dcb5161b",
-      materialBundleUuid: "123e4567-582b-4410-854d-22b4db23321b",
-      jobUuid: "123e4567-b723-4245-875a-22b4d0fe962b",
+      uuid: "123e4567-4154-4fc7-81ef-22d9d1621feb",
+      materialBundleUuid: "123e4567-6eda-4d29-8aa0-22d9dbf4674b",
+      jobUuid: "123e4567-3961-458b-a24b-22d9dcceaafb",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -314,22 +301,19 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialBundlesUpdateJobMaterialBundles(serviceM8, {
-    uuid: "f4334f5f-e9f1-4143-8254-72dc0262645a",
+    uuid: "6419b5e7-8edd-4c69-9648-b6ed7431256b",
     jobMaterialBundle: {
-      uuid: "123e4567-3de1-4e96-b98f-22b4dcb5161b",
-      materialBundleUuid: "123e4567-582b-4410-854d-22b4db23321b",
-      jobUuid: "123e4567-b723-4245-875a-22b4d0fe962b",
+      uuid: "123e4567-4154-4fc7-81ef-22d9d1621feb",
+      materialBundleUuid: "123e4567-6eda-4d29-8aa0-22d9dbf4674b",
+      jobUuid: "123e4567-3961-458b-a24b-22d9dcceaafb",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesUpdateJobMaterialBundles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -376,10 +360,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterialBundles.deleteJobMaterialBundles({
-    uuid: "9441ddfb-9767-471b-b858-ec2ce127451a",
+    uuid: "de14d2a2-d699-45b1-b285-ef95425eb853",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -404,17 +387,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialBundlesDeleteJobMaterialBundles(serviceM8, {
-    uuid: "9441ddfb-9767-471b-b858-ec2ce127451a",
+    uuid: "de14d2a2-d699-45b1-b285-ef95425eb853",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesDeleteJobMaterialBundles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

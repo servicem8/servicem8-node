@@ -5,17 +5,7 @@
 ```typescript
 import { CreateJobMaterialBundlesResponse } from "servicem8/models/operations";
 
-let value: CreateJobMaterialBundlesResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: {
-    errorCode: 0,
-    message: "OK",
-  },
-};
+let value: CreateJobMaterialBundlesResponse = {};
 ```
 
 ## Fields

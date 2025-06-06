@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.staffMembers.listStaffMembers();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await staffMembersListStaffMembers(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersListStaffMembers failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -127,17 +123,16 @@ async function run() {
   const result = await serviceM8.staffMembers.createStaffMembers({
     first: "<value>",
     last: "<value>",
-    email: "Percy_Mohr@gmail.com",
-    geoTimestamp: "YYYY-MM-DD HH:MM:SS",
-    navigatingToJobUuid: "123e4567-38c4-4a7f-b4bc-22b4d7e301eb",
-    navigatingTimestamp: "YYYY-MM-DD HH:MM:SS",
-    navigatingExpiryTimestamp: "YYYY-MM-DD HH:MM:SS",
-    statusMessageTimestamp: "YYYY-MM-DD HH:MM:SS",
-    securityRoleUuid: "123e4567-8382-4695-8066-22b4d256355b",
-    uuid: "123e4567-cae1-4f3e-a379-22b4db118b0b",
+    email: "Larissa_Pfannerstill75@hotmail.com",
+    geoTimestamp: "2025-06-01 12:00:00",
+    navigatingToJobUuid: "123e4567-2cc4-45c6-b499-22d9d53a058b",
+    navigatingTimestamp: "2025-06-01 12:00:00",
+    navigatingExpiryTimestamp: "2025-06-01 12:00:00",
+    statusMessageTimestamp: "2025-06-01 12:00:00",
+    securityRoleUuid: "123e4567-f77d-478d-bd00-22d9d5a57edb",
+    uuid: "123e4567-f006-473c-8d19-22d9d86f51ab",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -164,24 +159,21 @@ async function run() {
   const res = await staffMembersCreateStaffMembers(serviceM8, {
     first: "<value>",
     last: "<value>",
-    email: "Percy_Mohr@gmail.com",
-    geoTimestamp: "YYYY-MM-DD HH:MM:SS",
-    navigatingToJobUuid: "123e4567-38c4-4a7f-b4bc-22b4d7e301eb",
-    navigatingTimestamp: "YYYY-MM-DD HH:MM:SS",
-    navigatingExpiryTimestamp: "YYYY-MM-DD HH:MM:SS",
-    statusMessageTimestamp: "YYYY-MM-DD HH:MM:SS",
-    securityRoleUuid: "123e4567-8382-4695-8066-22b4d256355b",
-    uuid: "123e4567-cae1-4f3e-a379-22b4db118b0b",
+    email: "Larissa_Pfannerstill75@hotmail.com",
+    geoTimestamp: "2025-06-01 12:00:00",
+    navigatingToJobUuid: "123e4567-2cc4-45c6-b499-22d9d53a058b",
+    navigatingTimestamp: "2025-06-01 12:00:00",
+    navigatingExpiryTimestamp: "2025-06-01 12:00:00",
+    statusMessageTimestamp: "2025-06-01 12:00:00",
+    securityRoleUuid: "123e4567-f77d-478d-bd00-22d9d5a57edb",
+    uuid: "123e4567-f006-473c-8d19-22d9d86f51ab",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersCreateStaffMembers failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -229,10 +221,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.staffMembers.getStaffMembers({
-    uuid: "bca073cf-b49a-49ff-a79d-e2af24c8f074",
+    uuid: "59423093-3ee4-4d9a-b26f-3a2b4ea4e466",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -257,17 +248,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await staffMembersGetStaffMembers(serviceM8, {
-    uuid: "bca073cf-b49a-49ff-a79d-e2af24c8f074",
+    uuid: "59423093-3ee4-4d9a-b26f-3a2b4ea4e466",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersGetStaffMembers failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -315,22 +303,21 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.staffMembers.updateStaffMembers({
-    uuid: "dde350a8-169f-4f86-a7d6-d3853076bb89",
+    uuid: "6cd534f3-6271-46ec-8887-e8e6e8cea57e",
     staff: {
       first: "<value>",
       last: "<value>",
-      email: "Kylee.Medhurst@hotmail.com",
-      geoTimestamp: "YYYY-MM-DD HH:MM:SS",
-      navigatingToJobUuid: "123e4567-38c4-4a7f-b4bc-22b4d7e301eb",
-      navigatingTimestamp: "YYYY-MM-DD HH:MM:SS",
-      navigatingExpiryTimestamp: "YYYY-MM-DD HH:MM:SS",
-      statusMessageTimestamp: "YYYY-MM-DD HH:MM:SS",
-      securityRoleUuid: "123e4567-8382-4695-8066-22b4d256355b",
-      uuid: "123e4567-cae1-4f3e-a379-22b4db118b0b",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2025-06-01 12:00:00",
+      navigatingToJobUuid: "123e4567-2cc4-45c6-b499-22d9d53a058b",
+      navigatingTimestamp: "2025-06-01 12:00:00",
+      navigatingExpiryTimestamp: "2025-06-01 12:00:00",
+      statusMessageTimestamp: "2025-06-01 12:00:00",
+      securityRoleUuid: "123e4567-f77d-478d-bd00-22d9d5a57edb",
+      uuid: "123e4567-f006-473c-8d19-22d9d86f51ab",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -355,29 +342,26 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await staffMembersUpdateStaffMembers(serviceM8, {
-    uuid: "dde350a8-169f-4f86-a7d6-d3853076bb89",
+    uuid: "6cd534f3-6271-46ec-8887-e8e6e8cea57e",
     staff: {
       first: "<value>",
       last: "<value>",
-      email: "Kylee.Medhurst@hotmail.com",
-      geoTimestamp: "YYYY-MM-DD HH:MM:SS",
-      navigatingToJobUuid: "123e4567-38c4-4a7f-b4bc-22b4d7e301eb",
-      navigatingTimestamp: "YYYY-MM-DD HH:MM:SS",
-      navigatingExpiryTimestamp: "YYYY-MM-DD HH:MM:SS",
-      statusMessageTimestamp: "YYYY-MM-DD HH:MM:SS",
-      securityRoleUuid: "123e4567-8382-4695-8066-22b4d256355b",
-      uuid: "123e4567-cae1-4f3e-a379-22b4db118b0b",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2025-06-01 12:00:00",
+      navigatingToJobUuid: "123e4567-2cc4-45c6-b499-22d9d53a058b",
+      navigatingTimestamp: "2025-06-01 12:00:00",
+      navigatingExpiryTimestamp: "2025-06-01 12:00:00",
+      statusMessageTimestamp: "2025-06-01 12:00:00",
+      securityRoleUuid: "123e4567-f77d-478d-bd00-22d9d5a57edb",
+      uuid: "123e4567-f006-473c-8d19-22d9d86f51ab",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersUpdateStaffMembers failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -429,10 +413,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.staffMembers.deleteStaffMembers({
-    uuid: "467343ef-cfe0-4096-898f-c13758cb5107",
+    uuid: "bb8b6692-aeb0-46b4-af85-7349ebc7cfc6",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -457,17 +440,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await staffMembersDeleteStaffMembers(serviceM8, {
-    uuid: "467343ef-cfe0-4096-898f-c13758cb5107",
+    uuid: "bb8b6692-aeb0-46b4-af85-7349ebc7cfc6",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersDeleteStaffMembers failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

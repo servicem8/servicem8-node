@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.tasks.listTasks();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await tasksListTasks(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksListTasks failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -127,16 +123,15 @@ async function run() {
   const result = await serviceM8.tasks.createTasks({
     dueDate: "YYYY-MM-DD",
     name: "<value>",
-    relatedObjectUuid: "123e4567-ea7a-418d-8bc7-22b4d6f88e8b",
-    completedTimestamp: "YYYY-MM-DD HH:MM:SS",
-    completedByStaffUuid: "123e4567-1596-433b-8657-22b4d1913aab",
-    assignedToStaffUuid: "123e4567-299b-4b50-b21f-22b4d1057ebb",
-    uuid: "123e4567-a72d-4a44-883e-22b4dc3e260b",
-    createdByStaffUuid: "123e4567-dd10-49af-ba90-22b4d80f729b",
-    createDate: "YYYY-MM-DD HH:MM:SS",
+    relatedObjectUuid: "123e4567-201d-4f61-a032-22d9d2855ccb",
+    completedTimestamp: "2025-06-01 12:00:00",
+    completedByStaffUuid: "123e4567-6014-42d4-b7e6-22d9d6a3d26b",
+    assignedToStaffUuid: "123e4567-acce-4868-ba31-22d9d3b56cfb",
+    uuid: "123e4567-d77c-4e3c-9eae-22d9d5d48b3b",
+    createdByStaffUuid: "123e4567-6dd3-441c-80b5-22d9d771061b",
+    createDate: "2025-06-01 12:00:00",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -163,23 +158,20 @@ async function run() {
   const res = await tasksCreateTasks(serviceM8, {
     dueDate: "YYYY-MM-DD",
     name: "<value>",
-    relatedObjectUuid: "123e4567-ea7a-418d-8bc7-22b4d6f88e8b",
-    completedTimestamp: "YYYY-MM-DD HH:MM:SS",
-    completedByStaffUuid: "123e4567-1596-433b-8657-22b4d1913aab",
-    assignedToStaffUuid: "123e4567-299b-4b50-b21f-22b4d1057ebb",
-    uuid: "123e4567-a72d-4a44-883e-22b4dc3e260b",
-    createdByStaffUuid: "123e4567-dd10-49af-ba90-22b4d80f729b",
-    createDate: "YYYY-MM-DD HH:MM:SS",
+    relatedObjectUuid: "123e4567-201d-4f61-a032-22d9d2855ccb",
+    completedTimestamp: "2025-06-01 12:00:00",
+    completedByStaffUuid: "123e4567-6014-42d4-b7e6-22d9d6a3d26b",
+    assignedToStaffUuid: "123e4567-acce-4868-ba31-22d9d3b56cfb",
+    uuid: "123e4567-d77c-4e3c-9eae-22d9d5d48b3b",
+    createdByStaffUuid: "123e4567-6dd3-441c-80b5-22d9d771061b",
+    createDate: "2025-06-01 12:00:00",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksCreateTasks failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -227,10 +219,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.tasks.getTasks({
-    uuid: "89513748-b917-4807-944b-430445ee8621",
+    uuid: "dea1a941-63b2-47a9-b647-4a69729205f1",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -255,17 +246,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await tasksGetTasks(serviceM8, {
-    uuid: "89513748-b917-4807-944b-430445ee8621",
+    uuid: "dea1a941-63b2-47a9-b647-4a69729205f1",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksGetTasks failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -313,21 +301,20 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.tasks.updateTasks({
-    uuid: "63b2819d-65b6-4785-8dec-6cc2953e2c97",
+    uuid: "fc5a7972-ff2f-4bbb-a4fb-c4e583b9d183",
     task: {
       dueDate: "YYYY-MM-DD",
       name: "<value>",
-      relatedObjectUuid: "123e4567-ea7a-418d-8bc7-22b4d6f88e8b",
-      completedTimestamp: "YYYY-MM-DD HH:MM:SS",
-      completedByStaffUuid: "123e4567-1596-433b-8657-22b4d1913aab",
-      assignedToStaffUuid: "123e4567-299b-4b50-b21f-22b4d1057ebb",
-      uuid: "123e4567-a72d-4a44-883e-22b4dc3e260b",
-      createdByStaffUuid: "123e4567-dd10-49af-ba90-22b4d80f729b",
-      createDate: "YYYY-MM-DD HH:MM:SS",
+      relatedObjectUuid: "123e4567-201d-4f61-a032-22d9d2855ccb",
+      completedTimestamp: "2025-06-01 12:00:00",
+      completedByStaffUuid: "123e4567-6014-42d4-b7e6-22d9d6a3d26b",
+      assignedToStaffUuid: "123e4567-acce-4868-ba31-22d9d3b56cfb",
+      uuid: "123e4567-d77c-4e3c-9eae-22d9d5d48b3b",
+      createdByStaffUuid: "123e4567-6dd3-441c-80b5-22d9d771061b",
+      createDate: "2025-06-01 12:00:00",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -352,28 +339,25 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await tasksUpdateTasks(serviceM8, {
-    uuid: "63b2819d-65b6-4785-8dec-6cc2953e2c97",
+    uuid: "fc5a7972-ff2f-4bbb-a4fb-c4e583b9d183",
     task: {
       dueDate: "YYYY-MM-DD",
       name: "<value>",
-      relatedObjectUuid: "123e4567-ea7a-418d-8bc7-22b4d6f88e8b",
-      completedTimestamp: "YYYY-MM-DD HH:MM:SS",
-      completedByStaffUuid: "123e4567-1596-433b-8657-22b4d1913aab",
-      assignedToStaffUuid: "123e4567-299b-4b50-b21f-22b4d1057ebb",
-      uuid: "123e4567-a72d-4a44-883e-22b4dc3e260b",
-      createdByStaffUuid: "123e4567-dd10-49af-ba90-22b4d80f729b",
-      createDate: "YYYY-MM-DD HH:MM:SS",
+      relatedObjectUuid: "123e4567-201d-4f61-a032-22d9d2855ccb",
+      completedTimestamp: "2025-06-01 12:00:00",
+      completedByStaffUuid: "123e4567-6014-42d4-b7e6-22d9d6a3d26b",
+      assignedToStaffUuid: "123e4567-acce-4868-ba31-22d9d3b56cfb",
+      uuid: "123e4567-d77c-4e3c-9eae-22d9d5d48b3b",
+      createdByStaffUuid: "123e4567-6dd3-441c-80b5-22d9d771061b",
+      createDate: "2025-06-01 12:00:00",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksUpdateTasks failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -425,10 +409,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.tasks.deleteTasks({
-    uuid: "b2f94108-940f-438b-b838-58e70df1ddb2",
+    uuid: "4698d569-8682-4816-bb70-4aa60b247ed4",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -453,17 +436,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await tasksDeleteTasks(serviceM8, {
-    uuid: "b2f94108-940f-438b-b838-58e70df1ddb2",
+    uuid: "4698d569-8682-4816-bb70-4aa60b247ed4",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksDeleteTasks failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

@@ -5,17 +5,7 @@
 ```typescript
 import { CreateLocationsResponse } from "servicem8/models/operations";
 
-let value: CreateLocationsResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: {
-    errorCode: 0,
-    message: "OK",
-  },
-};
+let value: CreateLocationsResponse = {};
 ```
 
 ## Fields

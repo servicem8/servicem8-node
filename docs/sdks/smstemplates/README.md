@@ -35,7 +35,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.smsTemplates.listSMSTemplates();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -60,15 +59,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await smsTemplatesListSMSTemplates(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("smsTemplatesListSMSTemplates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -115,11 +111,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.smsTemplates.createSMSTemplates({
-    uuid: "123e4567-82d9-4197-80e2-22b4d7c8dbbb",
+    uuid: "123e4567-e7db-4cd1-a778-22d9d5dc6e4b",
     name: "<value>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -144,18 +139,15 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await smsTemplatesCreateSMSTemplates(serviceM8, {
-    uuid: "123e4567-82d9-4197-80e2-22b4d7c8dbbb",
+    uuid: "123e4567-e7db-4cd1-a778-22d9d5dc6e4b",
     name: "<value>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("smsTemplatesCreateSMSTemplates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -198,10 +190,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.smsTemplates.getSMSTemplates({
-    uuid: "a90778f1-08e0-482b-abc7-4697a615eded",
+    uuid: "e7d961f0-a541-46d1-9122-9b360d0c48f1",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -226,17 +217,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await smsTemplatesGetSMSTemplates(serviceM8, {
-    uuid: "a90778f1-08e0-482b-abc7-4697a615eded",
+    uuid: "e7d961f0-a541-46d1-9122-9b360d0c48f1",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("smsTemplatesGetSMSTemplates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -279,14 +267,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.smsTemplates.updateSMSTemplates({
-    uuid: "52f5faef-aabd-4df1-9455-ba3f4281c661",
+    uuid: "2ea183b5-88e4-4168-a975-1820b2711ae4",
     smsTemplate: {
-      uuid: "123e4567-82d9-4197-80e2-22b4d7c8dbbb",
+      uuid: "123e4567-e7db-4cd1-a778-22d9d5dc6e4b",
       name: "<value>",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -311,21 +298,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await smsTemplatesUpdateSMSTemplates(serviceM8, {
-    uuid: "52f5faef-aabd-4df1-9455-ba3f4281c661",
+    uuid: "2ea183b5-88e4-4168-a975-1820b2711ae4",
     smsTemplate: {
-      uuid: "123e4567-82d9-4197-80e2-22b4d7c8dbbb",
+      uuid: "123e4567-e7db-4cd1-a778-22d9d5dc6e4b",
       name: "<value>",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("smsTemplatesUpdateSMSTemplates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -372,10 +356,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.smsTemplates.deleteSMSTemplates({
-    uuid: "ce5dbcdf-dcae-4aaa-8190-2f06795c45d7",
+    uuid: "4329ad8c-f6fa-4361-ba83-0638b17cb240",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -400,17 +383,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await smsTemplatesDeleteSMSTemplates(serviceM8, {
-    uuid: "ce5dbcdf-dcae-4aaa-8190-2f06795c45d7",
+    uuid: "4329ad8c-f6fa-4361-ba83-0638b17cb240",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("smsTemplatesDeleteSMSTemplates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.jobQueues.listJobQueues();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobQueuesListJobQueues(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesListJobQueues failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -125,10 +121,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobQueues.createJobQueues({
-    uuid: "123e4567-f486-4258-ba96-22b4d5701abb",
+    uuid: "123e4567-b38d-4fba-9188-22d9d54ecb8b",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -153,17 +148,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobQueuesCreateJobQueues(serviceM8, {
-    uuid: "123e4567-f486-4258-ba96-22b4d5701abb",
+    uuid: "123e4567-b38d-4fba-9188-22d9d54ecb8b",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesCreateJobQueues failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -211,10 +203,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobQueues.getJobQueues({
-    uuid: "01a98529-6f8e-4d0f-a6f8-868464b87282",
+    uuid: "24e97bd9-5ea4-4356-af91-302e1fa4d502",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -239,17 +230,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobQueuesGetJobQueues(serviceM8, {
-    uuid: "01a98529-6f8e-4d0f-a6f8-868464b87282",
+    uuid: "24e97bd9-5ea4-4356-af91-302e1fa4d502",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesGetJobQueues failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -297,13 +285,12 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobQueues.updateJobQueues({
-    uuid: "d287af2c-d1ab-4ee5-b67b-edcd853636ea",
+    uuid: "d5fb31ee-995a-4e2f-8fa6-92068fea17a2",
     queue: {
-      uuid: "123e4567-f486-4258-ba96-22b4d5701abb",
+      uuid: "123e4567-b38d-4fba-9188-22d9d54ecb8b",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -328,20 +315,17 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobQueuesUpdateJobQueues(serviceM8, {
-    uuid: "d287af2c-d1ab-4ee5-b67b-edcd853636ea",
+    uuid: "d5fb31ee-995a-4e2f-8fa6-92068fea17a2",
     queue: {
-      uuid: "123e4567-f486-4258-ba96-22b4d5701abb",
+      uuid: "123e4567-b38d-4fba-9188-22d9d54ecb8b",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesUpdateJobQueues failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -393,10 +377,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobQueues.deleteJobQueues({
-    uuid: "612f531f-f06f-4ccc-994e-07e0a67d569f",
+    uuid: "5793b0b5-4e38-4b0f-af8f-c1d444e15e00",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -421,17 +404,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobQueuesDeleteJobQueues(serviceM8, {
-    uuid: "612f531f-f06f-4ccc-994e-07e0a67d569f",
+    uuid: "5793b0b5-4e38-4b0f-af8f-c1d444e15e00",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesDeleteJobQueues failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

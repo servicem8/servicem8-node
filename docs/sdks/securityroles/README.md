@@ -35,7 +35,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.securityRoles.listSecurityRoles();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -60,15 +59,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await securityRolesListSecurityRoles(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("securityRolesListSecurityRoles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -116,10 +112,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.securityRoles.createSecurityRoles({
     name: "<value>",
-    uuid: "123e4567-d954-4b9b-8be2-22b4d944127b",
+    uuid: "123e4567-ff84-4d9b-8b75-22d9d7864f9b",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -145,17 +140,14 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await securityRolesCreateSecurityRoles(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-d954-4b9b-8be2-22b4d944127b",
+    uuid: "123e4567-ff84-4d9b-8b75-22d9d7864f9b",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("securityRolesCreateSecurityRoles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -198,10 +190,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.securityRoles.getSecurityRoles({
-    uuid: "2a2f5d93-2d30-4fff-b709-324e4e335f45",
+    uuid: "fd2808d6-8d7a-4b4f-abd5-18b0b97e4d26",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -226,17 +217,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await securityRolesGetSecurityRoles(serviceM8, {
-    uuid: "2a2f5d93-2d30-4fff-b709-324e4e335f45",
+    uuid: "fd2808d6-8d7a-4b4f-abd5-18b0b97e4d26",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("securityRolesGetSecurityRoles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -279,14 +267,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.securityRoles.updateSecurityRoles({
-    uuid: "7f8646db-7cfb-450f-9a66-0807f786f55f",
+    uuid: "f0a90dcf-f873-4a05-b043-1b34fcb5507e",
     securityRole: {
       name: "<value>",
-      uuid: "123e4567-d954-4b9b-8be2-22b4d944127b",
+      uuid: "123e4567-ff84-4d9b-8b75-22d9d7864f9b",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -311,21 +298,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await securityRolesUpdateSecurityRoles(serviceM8, {
-    uuid: "7f8646db-7cfb-450f-9a66-0807f786f55f",
+    uuid: "f0a90dcf-f873-4a05-b043-1b34fcb5507e",
     securityRole: {
       name: "<value>",
-      uuid: "123e4567-d954-4b9b-8be2-22b4d944127b",
+      uuid: "123e4567-ff84-4d9b-8b75-22d9d7864f9b",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("securityRolesUpdateSecurityRoles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -372,10 +356,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.securityRoles.deleteSecurityRoles({
-    uuid: "c93e08c8-ef3e-4c90-9316-a563244629ef",
+    uuid: "7f558e42-4a9f-4f52-9b8b-77e8619aae16",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -400,17 +383,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await securityRolesDeleteSecurityRoles(serviceM8, {
-    uuid: "c93e08c8-ef3e-4c90-9316-a563244629ef",
+    uuid: "7f558e42-4a9f-4f52-9b8b-77e8619aae16",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("securityRolesDeleteSecurityRoles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

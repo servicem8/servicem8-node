@@ -9,7 +9,7 @@ import { FieldData } from "servicem8/models/components";
 
 let value: FieldData = {
   fieldType: "Date",
-  mandatory: false,
+  mandatory: true,
 };
 ```
 

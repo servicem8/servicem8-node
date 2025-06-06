@@ -5,17 +5,7 @@
 ```typescript
 import { CreateJobChecklistsResponse } from "servicem8/models/operations";
 
-let value: CreateJobChecklistsResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: {
-    errorCode: 1000,
-    message: "An error occurred completing your request",
-  },
-};
+let value: CreateJobChecklistsResponse = {};
 ```
 
 ## Fields

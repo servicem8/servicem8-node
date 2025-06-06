@@ -35,7 +35,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.notes.listNotes();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -60,15 +59,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await notesListNotes(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesListNotes failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -115,13 +111,12 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.notes.createNotes({
-    uuid: "123e4567-bade-4d2c-b113-22b4deeebc3b",
-    relatedObjectUuid: "123e4567-ebcf-4e6f-9804-22b4db6e0e0b",
-    actionCompletedByStaffUuid: "123e4567-c1e0-4488-bcde-22b4dc11f47b",
-    createDate: "YYYY-MM-DD HH:MM:SS",
+    uuid: "123e4567-a39b-407f-be0f-22d9d2de1f7b",
+    relatedObjectUuid: "123e4567-4fa6-4046-b1b6-22d9d51dfc2b",
+    actionCompletedByStaffUuid: "123e4567-59a4-481c-88aa-22d9db02130b",
+    createDate: "2025-06-01 12:00:00",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -146,20 +141,17 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await notesCreateNotes(serviceM8, {
-    uuid: "123e4567-bade-4d2c-b113-22b4deeebc3b",
-    relatedObjectUuid: "123e4567-ebcf-4e6f-9804-22b4db6e0e0b",
-    actionCompletedByStaffUuid: "123e4567-c1e0-4488-bcde-22b4dc11f47b",
-    createDate: "YYYY-MM-DD HH:MM:SS",
+    uuid: "123e4567-a39b-407f-be0f-22d9d2de1f7b",
+    relatedObjectUuid: "123e4567-4fa6-4046-b1b6-22d9d51dfc2b",
+    actionCompletedByStaffUuid: "123e4567-59a4-481c-88aa-22d9db02130b",
+    createDate: "2025-06-01 12:00:00",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesCreateNotes failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -202,10 +194,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.notes.getNotes({
-    uuid: "85c68aeb-6c45-4957-ba02-c526213a6bef",
+    uuid: "01b2840f-8871-41fb-9541-b7786f78a1ef",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -230,17 +221,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await notesGetNotes(serviceM8, {
-    uuid: "85c68aeb-6c45-4957-ba02-c526213a6bef",
+    uuid: "01b2840f-8871-41fb-9541-b7786f78a1ef",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesGetNotes failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -283,16 +271,15 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.notes.updateNotes({
-    uuid: "515bb5a8-019e-4873-ae0b-d28fa11e75eb",
+    uuid: "1607abff-6202-4423-ae91-39b08699f830",
     note: {
-      uuid: "123e4567-bade-4d2c-b113-22b4deeebc3b",
-      relatedObjectUuid: "123e4567-ebcf-4e6f-9804-22b4db6e0e0b",
-      actionCompletedByStaffUuid: "123e4567-c1e0-4488-bcde-22b4dc11f47b",
-      createDate: "YYYY-MM-DD HH:MM:SS",
+      uuid: "123e4567-a39b-407f-be0f-22d9d2de1f7b",
+      relatedObjectUuid: "123e4567-4fa6-4046-b1b6-22d9d51dfc2b",
+      actionCompletedByStaffUuid: "123e4567-59a4-481c-88aa-22d9db02130b",
+      createDate: "2025-06-01 12:00:00",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -317,23 +304,20 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await notesUpdateNotes(serviceM8, {
-    uuid: "515bb5a8-019e-4873-ae0b-d28fa11e75eb",
+    uuid: "1607abff-6202-4423-ae91-39b08699f830",
     note: {
-      uuid: "123e4567-bade-4d2c-b113-22b4deeebc3b",
-      relatedObjectUuid: "123e4567-ebcf-4e6f-9804-22b4db6e0e0b",
-      actionCompletedByStaffUuid: "123e4567-c1e0-4488-bcde-22b4dc11f47b",
-      createDate: "YYYY-MM-DD HH:MM:SS",
+      uuid: "123e4567-a39b-407f-be0f-22d9d2de1f7b",
+      relatedObjectUuid: "123e4567-4fa6-4046-b1b6-22d9d51dfc2b",
+      actionCompletedByStaffUuid: "123e4567-59a4-481c-88aa-22d9db02130b",
+      createDate: "2025-06-01 12:00:00",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesUpdateNotes failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -380,10 +364,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.notes.deleteNotes({
-    uuid: "8a42a1ef-2cb3-44e9-a15b-f8fcdc0b4560",
+    uuid: "bf7b8c20-ea6f-4b05-a965-aa00a489df04",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -408,17 +391,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await notesDeleteNotes(serviceM8, {
-    uuid: "8a42a1ef-2cb3-44e9-a15b-f8fcdc0b4560",
+    uuid: "bf7b8c20-ea6f-4b05-a965-aa00a489df04",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesDeleteNotes failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.jobs.listJobs();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobsListJobs(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsListJobs failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -125,32 +121,29 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobs.createJobs({
-    createdByStaffUuid: "123e4567-a308-44ce-a0e1-22b4d0829b3b",
+    createdByStaffUuid: "123e4567-0e90-4f39-9801-22d9df66e0cb",
     date: "YYYY-MM-DD",
-    companyUuid: "123e4567-db1c-45f1-b8d3-22b4d70ec70b",
+    companyUuid: "123e4567-5267-491b-a326-22d9d02c848b",
     status: "Unsuccessful",
-    paymentDate: "YYYY-MM-DD HH:MM:SS",
-    paymentActionedByUuid: "123e4567-79d7-4031-8216-22b4d90caa2b",
-    categoryUuid: "123e4567-1e98-4f7e-b691-22b4d501e20b",
-    invoiceSentStamp: "YYYY-MM-DD HH:MM:SS",
-    readyToInvoiceStamp: "YYYY-MM-DD HH:MM:SS",
-    queueUuid: "123e4567-4eca-4c40-ae6d-22b4d3576c7b",
-    queueExpiryDate: "YYYY-MM-DD HH:MM:SS",
-    queueAssignedStaffUuid: "123e4567-b6b5-4aee-9f2e-22b4d13f676b",
-    quoteDate: "YYYY-MM-DD HH:MM:SS",
-    quoteSentStamp: "YYYY-MM-DD HH:MM:SS",
-    workOrderDate: "YYYY-MM-DD HH:MM:SS",
-    activeNetworkRequestUuid: "123e4567-bf1f-4806-b2ac-22b4d33ee99b",
-    uuid: "123e4567-9443-40f8-a097-22b4d1d047fb",
-    paymentProcessedStamp: "YYYY-MM-DD HH:MM:SS",
-    paymentReceivedStamp: "YYYY-MM-DD HH:MM:SS",
-    completionDate: "YYYY-MM-DD HH:MM:SS",
-    completionActionedByUuid: "123e4567-ced8-4c56-90ff-22b4deca2cdb",
-    unsuccessfulDate: "YYYY-MM-DD HH:MM:SS",
-    jobIsScheduledUntilStamp: "YYYY-MM-DD HH:MM:SS",
+    paymentDate: "2025-06-01 12:00:00",
+    paymentActionedByUuid: "123e4567-4b7a-491b-a9a3-22d9d4298c2b",
+    categoryUuid: "123e4567-c9dd-41ce-9c51-22d9d4e23f1b",
+    invoiceSentStamp: "2025-06-01 12:00:00",
+    queueUuid: "123e4567-abc7-40f5-aa3a-22d9d59a949b",
+    queueExpiryDate: "2025-06-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-e456-48ed-8c5b-22d9de5680bb",
+    quoteDate: "2025-06-01 12:00:00",
+    quoteSentStamp: "2025-06-01 12:00:00",
+    workOrderDate: "2025-06-01 12:00:00",
+    uuid: "123e4567-2324-41b8-afd6-22d9db6dc37b",
+    paymentProcessedStamp: "2025-06-01 12:00:00",
+    paymentReceivedStamp: "2025-06-01 12:00:00",
+    completionDate: "2025-06-01 12:00:00",
+    completionActionedByUuid: "123e4567-34f6-4136-83d7-22d9da11feab",
+    unsuccessfulDate: "2025-06-01 12:00:00",
+    jobIsScheduledUntilStamp: "2025-06-01 12:00:00",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -175,39 +168,34 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobsCreateJobs(serviceM8, {
-    createdByStaffUuid: "123e4567-a308-44ce-a0e1-22b4d0829b3b",
+    createdByStaffUuid: "123e4567-0e90-4f39-9801-22d9df66e0cb",
     date: "YYYY-MM-DD",
-    companyUuid: "123e4567-db1c-45f1-b8d3-22b4d70ec70b",
+    companyUuid: "123e4567-5267-491b-a326-22d9d02c848b",
     status: "Unsuccessful",
-    paymentDate: "YYYY-MM-DD HH:MM:SS",
-    paymentActionedByUuid: "123e4567-79d7-4031-8216-22b4d90caa2b",
-    categoryUuid: "123e4567-1e98-4f7e-b691-22b4d501e20b",
-    invoiceSentStamp: "YYYY-MM-DD HH:MM:SS",
-    readyToInvoiceStamp: "YYYY-MM-DD HH:MM:SS",
-    queueUuid: "123e4567-4eca-4c40-ae6d-22b4d3576c7b",
-    queueExpiryDate: "YYYY-MM-DD HH:MM:SS",
-    queueAssignedStaffUuid: "123e4567-b6b5-4aee-9f2e-22b4d13f676b",
-    quoteDate: "YYYY-MM-DD HH:MM:SS",
-    quoteSentStamp: "YYYY-MM-DD HH:MM:SS",
-    workOrderDate: "YYYY-MM-DD HH:MM:SS",
-    activeNetworkRequestUuid: "123e4567-bf1f-4806-b2ac-22b4d33ee99b",
-    uuid: "123e4567-9443-40f8-a097-22b4d1d047fb",
-    paymentProcessedStamp: "YYYY-MM-DD HH:MM:SS",
-    paymentReceivedStamp: "YYYY-MM-DD HH:MM:SS",
-    completionDate: "YYYY-MM-DD HH:MM:SS",
-    completionActionedByUuid: "123e4567-ced8-4c56-90ff-22b4deca2cdb",
-    unsuccessfulDate: "YYYY-MM-DD HH:MM:SS",
-    jobIsScheduledUntilStamp: "YYYY-MM-DD HH:MM:SS",
+    paymentDate: "2025-06-01 12:00:00",
+    paymentActionedByUuid: "123e4567-4b7a-491b-a9a3-22d9d4298c2b",
+    categoryUuid: "123e4567-c9dd-41ce-9c51-22d9d4e23f1b",
+    invoiceSentStamp: "2025-06-01 12:00:00",
+    queueUuid: "123e4567-abc7-40f5-aa3a-22d9d59a949b",
+    queueExpiryDate: "2025-06-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-e456-48ed-8c5b-22d9de5680bb",
+    quoteDate: "2025-06-01 12:00:00",
+    quoteSentStamp: "2025-06-01 12:00:00",
+    workOrderDate: "2025-06-01 12:00:00",
+    uuid: "123e4567-2324-41b8-afd6-22d9db6dc37b",
+    paymentProcessedStamp: "2025-06-01 12:00:00",
+    paymentReceivedStamp: "2025-06-01 12:00:00",
+    completionDate: "2025-06-01 12:00:00",
+    completionActionedByUuid: "123e4567-34f6-4136-83d7-22d9da11feab",
+    unsuccessfulDate: "2025-06-01 12:00:00",
+    jobIsScheduledUntilStamp: "2025-06-01 12:00:00",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsCreateJobs failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -255,10 +243,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobs.getJobs({
-    uuid: "e03231ef-9c59-48f0-8dc1-2a1c0a2ec3b8",
+    uuid: "4a01abee-06c6-4545-ba27-6a47619cf9bc",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -283,17 +270,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobsGetJobs(serviceM8, {
-    uuid: "e03231ef-9c59-48f0-8dc1-2a1c0a2ec3b8",
+    uuid: "4a01abee-06c6-4545-ba27-6a47619cf9bc",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsGetJobs failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -341,35 +325,32 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobs.updateJobs({
-    uuid: "4f33e04f-a386-479f-8e76-bf95913d83ac",
+    uuid: "f751bf5c-f1f2-4a20-8df3-7628082340b1",
     job: {
-      createdByStaffUuid: "123e4567-a308-44ce-a0e1-22b4d0829b3b",
+      createdByStaffUuid: "123e4567-0e90-4f39-9801-22d9df66e0cb",
       date: "YYYY-MM-DD",
-      companyUuid: "123e4567-db1c-45f1-b8d3-22b4d70ec70b",
+      companyUuid: "123e4567-5267-491b-a326-22d9d02c848b",
       status: "Work Order",
-      paymentDate: "YYYY-MM-DD HH:MM:SS",
-      paymentActionedByUuid: "123e4567-79d7-4031-8216-22b4d90caa2b",
-      categoryUuid: "123e4567-1e98-4f7e-b691-22b4d501e20b",
-      invoiceSentStamp: "YYYY-MM-DD HH:MM:SS",
-      readyToInvoiceStamp: "YYYY-MM-DD HH:MM:SS",
-      queueUuid: "123e4567-4eca-4c40-ae6d-22b4d3576c7b",
-      queueExpiryDate: "YYYY-MM-DD HH:MM:SS",
-      queueAssignedStaffUuid: "123e4567-b6b5-4aee-9f2e-22b4d13f676b",
-      quoteDate: "YYYY-MM-DD HH:MM:SS",
-      quoteSentStamp: "YYYY-MM-DD HH:MM:SS",
-      workOrderDate: "YYYY-MM-DD HH:MM:SS",
-      activeNetworkRequestUuid: "123e4567-bf1f-4806-b2ac-22b4d33ee99b",
-      uuid: "123e4567-9443-40f8-a097-22b4d1d047fb",
-      paymentProcessedStamp: "YYYY-MM-DD HH:MM:SS",
-      paymentReceivedStamp: "YYYY-MM-DD HH:MM:SS",
-      completionDate: "YYYY-MM-DD HH:MM:SS",
-      completionActionedByUuid: "123e4567-ced8-4c56-90ff-22b4deca2cdb",
-      unsuccessfulDate: "YYYY-MM-DD HH:MM:SS",
-      jobIsScheduledUntilStamp: "YYYY-MM-DD HH:MM:SS",
+      paymentDate: "2025-06-01 12:00:00",
+      paymentActionedByUuid: "123e4567-4b7a-491b-a9a3-22d9d4298c2b",
+      categoryUuid: "123e4567-c9dd-41ce-9c51-22d9d4e23f1b",
+      invoiceSentStamp: "2025-06-01 12:00:00",
+      queueUuid: "123e4567-abc7-40f5-aa3a-22d9d59a949b",
+      queueExpiryDate: "2025-06-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-e456-48ed-8c5b-22d9de5680bb",
+      quoteDate: "2025-06-01 12:00:00",
+      quoteSentStamp: "2025-06-01 12:00:00",
+      workOrderDate: "2025-06-01 12:00:00",
+      uuid: "123e4567-2324-41b8-afd6-22d9db6dc37b",
+      paymentProcessedStamp: "2025-06-01 12:00:00",
+      paymentReceivedStamp: "2025-06-01 12:00:00",
+      completionDate: "2025-06-01 12:00:00",
+      completionActionedByUuid: "123e4567-34f6-4136-83d7-22d9da11feab",
+      unsuccessfulDate: "2025-06-01 12:00:00",
+      jobIsScheduledUntilStamp: "2025-06-01 12:00:00",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -394,42 +375,37 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobsUpdateJobs(serviceM8, {
-    uuid: "4f33e04f-a386-479f-8e76-bf95913d83ac",
+    uuid: "f751bf5c-f1f2-4a20-8df3-7628082340b1",
     job: {
-      createdByStaffUuid: "123e4567-a308-44ce-a0e1-22b4d0829b3b",
+      createdByStaffUuid: "123e4567-0e90-4f39-9801-22d9df66e0cb",
       date: "YYYY-MM-DD",
-      companyUuid: "123e4567-db1c-45f1-b8d3-22b4d70ec70b",
+      companyUuid: "123e4567-5267-491b-a326-22d9d02c848b",
       status: "Work Order",
-      paymentDate: "YYYY-MM-DD HH:MM:SS",
-      paymentActionedByUuid: "123e4567-79d7-4031-8216-22b4d90caa2b",
-      categoryUuid: "123e4567-1e98-4f7e-b691-22b4d501e20b",
-      invoiceSentStamp: "YYYY-MM-DD HH:MM:SS",
-      readyToInvoiceStamp: "YYYY-MM-DD HH:MM:SS",
-      queueUuid: "123e4567-4eca-4c40-ae6d-22b4d3576c7b",
-      queueExpiryDate: "YYYY-MM-DD HH:MM:SS",
-      queueAssignedStaffUuid: "123e4567-b6b5-4aee-9f2e-22b4d13f676b",
-      quoteDate: "YYYY-MM-DD HH:MM:SS",
-      quoteSentStamp: "YYYY-MM-DD HH:MM:SS",
-      workOrderDate: "YYYY-MM-DD HH:MM:SS",
-      activeNetworkRequestUuid: "123e4567-bf1f-4806-b2ac-22b4d33ee99b",
-      uuid: "123e4567-9443-40f8-a097-22b4d1d047fb",
-      paymentProcessedStamp: "YYYY-MM-DD HH:MM:SS",
-      paymentReceivedStamp: "YYYY-MM-DD HH:MM:SS",
-      completionDate: "YYYY-MM-DD HH:MM:SS",
-      completionActionedByUuid: "123e4567-ced8-4c56-90ff-22b4deca2cdb",
-      unsuccessfulDate: "YYYY-MM-DD HH:MM:SS",
-      jobIsScheduledUntilStamp: "YYYY-MM-DD HH:MM:SS",
+      paymentDate: "2025-06-01 12:00:00",
+      paymentActionedByUuid: "123e4567-4b7a-491b-a9a3-22d9d4298c2b",
+      categoryUuid: "123e4567-c9dd-41ce-9c51-22d9d4e23f1b",
+      invoiceSentStamp: "2025-06-01 12:00:00",
+      queueUuid: "123e4567-abc7-40f5-aa3a-22d9d59a949b",
+      queueExpiryDate: "2025-06-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-e456-48ed-8c5b-22d9de5680bb",
+      quoteDate: "2025-06-01 12:00:00",
+      quoteSentStamp: "2025-06-01 12:00:00",
+      workOrderDate: "2025-06-01 12:00:00",
+      uuid: "123e4567-2324-41b8-afd6-22d9db6dc37b",
+      paymentProcessedStamp: "2025-06-01 12:00:00",
+      paymentReceivedStamp: "2025-06-01 12:00:00",
+      completionDate: "2025-06-01 12:00:00",
+      completionActionedByUuid: "123e4567-34f6-4136-83d7-22d9da11feab",
+      unsuccessfulDate: "2025-06-01 12:00:00",
+      jobIsScheduledUntilStamp: "2025-06-01 12:00:00",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsUpdateJobs failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -481,10 +457,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobs.deleteJobs({
-    uuid: "485f3e02-d99b-43c9-9f25-d27243291361",
+    uuid: "27a28378-8b49-429f-8eea-6ad387310fd9",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -509,17 +484,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobsDeleteJobs(serviceM8, {
-    uuid: "485f3e02-d99b-43c9-9f25-d27243291361",
+    uuid: "27a28378-8b49-429f-8eea-6ad387310fd9",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsDeleteJobs failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

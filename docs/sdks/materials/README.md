@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.materials.listMaterials();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await materialsListMaterials(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("materialsListMaterials failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -126,11 +122,10 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.materials.createMaterials({
     name: "<value>",
-    uuid: "123e4567-429f-42f8-99b2-22b4d99c01fb",
-    taxRateUuid: "123e4567-a383-44b3-9a26-22b4d8639acb",
+    uuid: "123e4567-63be-4dd8-8f0d-22d9d7b7d18b",
+    taxRateUuid: "123e4567-1f92-4c9e-a06b-22d9d81301db",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -156,18 +151,15 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await materialsCreateMaterials(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-429f-42f8-99b2-22b4d99c01fb",
-    taxRateUuid: "123e4567-a383-44b3-9a26-22b4d8639acb",
+    uuid: "123e4567-63be-4dd8-8f0d-22d9d7b7d18b",
+    taxRateUuid: "123e4567-1f92-4c9e-a06b-22d9d81301db",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("materialsCreateMaterials failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -215,10 +207,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.materials.getMaterials({
-    uuid: "7dfbb5d7-a043-43e1-bfab-b59b30e6b5c8",
+    uuid: "640d9b9e-7443-43f8-a3fe-aef4b9d4e20c",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -243,17 +234,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await materialsGetMaterials(serviceM8, {
-    uuid: "7dfbb5d7-a043-43e1-bfab-b59b30e6b5c8",
+    uuid: "640d9b9e-7443-43f8-a3fe-aef4b9d4e20c",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("materialsGetMaterials failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -301,15 +289,14 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.materials.updateMaterials({
-    uuid: "f79ab30e-0472-4cdf-a61f-508f28b33d8e",
+    uuid: "8a4aa688-8b41-4ab3-b862-24327504b606",
     material: {
       name: "<value>",
-      uuid: "123e4567-429f-42f8-99b2-22b4d99c01fb",
-      taxRateUuid: "123e4567-a383-44b3-9a26-22b4d8639acb",
+      uuid: "123e4567-63be-4dd8-8f0d-22d9d7b7d18b",
+      taxRateUuid: "123e4567-1f92-4c9e-a06b-22d9d81301db",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -334,22 +321,19 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await materialsUpdateMaterials(serviceM8, {
-    uuid: "f79ab30e-0472-4cdf-a61f-508f28b33d8e",
+    uuid: "8a4aa688-8b41-4ab3-b862-24327504b606",
     material: {
       name: "<value>",
-      uuid: "123e4567-429f-42f8-99b2-22b4d99c01fb",
-      taxRateUuid: "123e4567-a383-44b3-9a26-22b4d8639acb",
+      uuid: "123e4567-63be-4dd8-8f0d-22d9d7b7d18b",
+      taxRateUuid: "123e4567-1f92-4c9e-a06b-22d9d81301db",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("materialsUpdateMaterials failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -401,10 +385,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.materials.deleteMaterials({
-    uuid: "11c19fa1-5bba-4c81-821c-b2f88cede528",
+    uuid: "0ab78c62-e6d1-43ab-a2aa-23fcefb4f993",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -429,17 +412,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await materialsDeleteMaterials(serviceM8, {
-    uuid: "11c19fa1-5bba-4c81-821c-b2f88cede528",
+    uuid: "0ab78c62-e6d1-43ab-a2aa-23fcefb4f993",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("materialsDeleteMaterials failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

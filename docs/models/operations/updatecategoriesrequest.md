@@ -7,10 +7,6 @@ import { UpdateCategoriesRequest } from "servicem8/models/operations";
 
 let value: UpdateCategoriesRequest = {
   uuid: "a91e8171-6ae0-4f6a-8b4c-d78c5601e0a9",
-  category: {
-    name: "<value>",
-    uuid: "123e4567-a575-48ad-9f8d-22bdc36d9a8b",
-  },
 };
 ```
 

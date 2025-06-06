@@ -35,7 +35,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.formFields.listFormFields();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -60,15 +59,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formFieldsListFormFields(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsListFormFields failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -115,11 +111,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.formFields.createFormFields({
-    uuid: "123e4567-4523-42ac-8cda-22b4d2c367eb",
-    formUuid: "123e4567-e70d-45d9-b32f-22b4db7cb5ab",
+    uuid: "123e4567-d64d-40ff-99ec-22d9dda9f84b",
+    formUuid: "123e4567-0f61-4039-861f-22d9de0de6db",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -144,18 +139,15 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formFieldsCreateFormFields(serviceM8, {
-    uuid: "123e4567-4523-42ac-8cda-22b4d2c367eb",
-    formUuid: "123e4567-e70d-45d9-b32f-22b4db7cb5ab",
+    uuid: "123e4567-d64d-40ff-99ec-22d9dda9f84b",
+    formUuid: "123e4567-0f61-4039-861f-22d9de0de6db",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsCreateFormFields failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -198,10 +190,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.formFields.getFormFields({
-    uuid: "45a3c3af-9f5d-46a2-b258-7ba29e2086c3",
+    uuid: "182fe595-a8a8-49fe-a209-530eedbbf7f4",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -226,17 +217,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formFieldsGetFormFields(serviceM8, {
-    uuid: "45a3c3af-9f5d-46a2-b258-7ba29e2086c3",
+    uuid: "182fe595-a8a8-49fe-a209-530eedbbf7f4",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsGetFormFields failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -279,14 +267,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.formFields.updateFormFields({
-    uuid: "16f818d5-0155-43f2-8227-7d5e671996c5",
+    uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
     formField: {
-      uuid: "123e4567-4523-42ac-8cda-22b4d2c367eb",
-      formUuid: "123e4567-e70d-45d9-b32f-22b4db7cb5ab",
+      uuid: "123e4567-d64d-40ff-99ec-22d9dda9f84b",
+      formUuid: "123e4567-0f61-4039-861f-22d9de0de6db",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -311,21 +298,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formFieldsUpdateFormFields(serviceM8, {
-    uuid: "16f818d5-0155-43f2-8227-7d5e671996c5",
+    uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
     formField: {
-      uuid: "123e4567-4523-42ac-8cda-22b4d2c367eb",
-      formUuid: "123e4567-e70d-45d9-b32f-22b4db7cb5ab",
+      uuid: "123e4567-d64d-40ff-99ec-22d9dda9f84b",
+      formUuid: "123e4567-0f61-4039-861f-22d9de0de6db",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsUpdateFormFields failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -372,10 +356,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.formFields.deleteFormFields({
-    uuid: "4f152d41-bb83-4ea7-8e94-f5eb7756ae7a",
+    uuid: "afcda784-c51c-48f6-ae10-9f19be5be120",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -400,17 +383,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formFieldsDeleteFormFields(serviceM8, {
-    uuid: "4f152d41-bb83-4ea7-8e94-f5eb7756ae7a",
+    uuid: "afcda784-c51c-48f6-ae10-9f19be5be120",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsDeleteFormFields failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

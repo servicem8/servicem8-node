@@ -35,7 +35,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.allocationWindows.listAllocationWindows();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -60,15 +59,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await allocationWindowsListAllocationWindows(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsListAllocationWindows failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -115,10 +111,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.allocationWindows.createAllocationWindows({
-    uuid: "123e4567-9668-4a12-bc72-22b4d86a47db",
+    uuid: "123e4567-77a5-412c-8ed9-22d9d46c529b",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -143,17 +138,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await allocationWindowsCreateAllocationWindows(serviceM8, {
-    uuid: "123e4567-9668-4a12-bc72-22b4d86a47db",
+    uuid: "123e4567-77a5-412c-8ed9-22d9d46c529b",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsCreateAllocationWindows failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -196,10 +188,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.allocationWindows.getAllocationWindows({
-    uuid: "4b696862-c2d8-4bfe-936b-d6716d1d97a4",
+    uuid: "49ae7469-e649-4dd3-b8ff-e2583aa922b9",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -224,17 +215,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await allocationWindowsGetAllocationWindows(serviceM8, {
-    uuid: "4b696862-c2d8-4bfe-936b-d6716d1d97a4",
+    uuid: "49ae7469-e649-4dd3-b8ff-e2583aa922b9",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsGetAllocationWindows failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -277,13 +265,12 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.allocationWindows.updateAllocationWindows({
-    uuid: "c0cdf698-ce1e-4a18-8dc8-7753e239240e",
+    uuid: "4cd38297-8da6-4b29-8742-4f293110085d",
     allocationWindow: {
-      uuid: "123e4567-9668-4a12-bc72-22b4d86a47db",
+      uuid: "123e4567-77a5-412c-8ed9-22d9d46c529b",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -308,20 +295,17 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await allocationWindowsUpdateAllocationWindows(serviceM8, {
-    uuid: "c0cdf698-ce1e-4a18-8dc8-7753e239240e",
+    uuid: "4cd38297-8da6-4b29-8742-4f293110085d",
     allocationWindow: {
-      uuid: "123e4567-9668-4a12-bc72-22b4d86a47db",
+      uuid: "123e4567-77a5-412c-8ed9-22d9d46c529b",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsUpdateAllocationWindows failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -368,10 +352,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.allocationWindows.deleteAllocationWindows({
-    uuid: "e4f73706-6c1c-46f5-b319-113193db25ca",
+    uuid: "c764044e-f672-4659-933d-d02bc55cf253",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -396,17 +379,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await allocationWindowsDeleteAllocationWindows(serviceM8, {
-    uuid: "e4f73706-6c1c-46f5-b319-113193db25ca",
+    uuid: "c764044e-f672-4659-933d-d02bc55cf253",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsDeleteAllocationWindows failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

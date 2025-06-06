@@ -5,17 +5,7 @@
 ```typescript
 import { CreateFeedbackResponse } from "servicem8/models/operations";
 
-let value: CreateFeedbackResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: {
-    errorCode: 0,
-    message: "OK",
-  },
-};
+let value: CreateFeedbackResponse = {};
 ```
 
 ## Fields

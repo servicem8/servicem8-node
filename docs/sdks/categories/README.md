@@ -40,7 +40,6 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.categories.listCategories();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await categoriesListCategories(serviceM8);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesListCategories failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -126,10 +122,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.categories.createCategories({
     name: "<value>",
-    uuid: "123e4567-98bf-4be0-a1e2-22b4df5815fb",
+    uuid: "123e4567-44a0-423f-bcf4-22d9d1153b2b",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -155,17 +150,14 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await categoriesCreateCategories(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-98bf-4be0-a1e2-22b4df5815fb",
+    uuid: "123e4567-44a0-423f-bcf4-22d9d1153b2b",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesCreateCategories failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -213,10 +205,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.categories.getCategories({
-    uuid: "c9cb910e-06e5-4dd4-8c13-2eb75ed22e5e",
+    uuid: "0b63d819-8bf4-4941-9468-a93a94fb9a3d",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -241,17 +232,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await categoriesGetCategories(serviceM8, {
-    uuid: "c9cb910e-06e5-4dd4-8c13-2eb75ed22e5e",
+    uuid: "0b63d819-8bf4-4941-9468-a93a94fb9a3d",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesGetCategories failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -299,14 +287,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.categories.updateCategories({
-    uuid: "0df8dc3e-e812-4eef-84de-4148f1a1dc58",
+    uuid: "c830c901-e3ae-427d-8f08-cf28c94b319f",
     category: {
       name: "<value>",
-      uuid: "123e4567-98bf-4be0-a1e2-22b4df5815fb",
+      uuid: "123e4567-44a0-423f-bcf4-22d9d1153b2b",
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -331,21 +318,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await categoriesUpdateCategories(serviceM8, {
-    uuid: "0df8dc3e-e812-4eef-84de-4148f1a1dc58",
+    uuid: "c830c901-e3ae-427d-8f08-cf28c94b319f",
     category: {
       name: "<value>",
-      uuid: "123e4567-98bf-4be0-a1e2-22b4df5815fb",
+      uuid: "123e4567-44a0-423f-bcf4-22d9d1153b2b",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesUpdateCategories failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -397,10 +381,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.categories.deleteCategories({
-    uuid: "a49d4a74-f44b-43dd-bd72-06c0dc9bc4bb",
+    uuid: "e321ac6b-97f3-4559-b830-512f7c66dc4a",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -425,17 +408,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await categoriesDeleteCategories(serviceM8, {
-    uuid: "a49d4a74-f44b-43dd-bd72-06c0dc9bc4bb",
+    uuid: "e321ac6b-97f3-4559-b830-512f7c66dc4a",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesDeleteCategories failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
