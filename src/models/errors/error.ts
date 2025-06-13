@@ -3,25 +3,28 @@
  */
 
 import * as z from "zod";
+import { ServiceM8Error } from "./servicem8error.js";
 
 export type ErrorTData = {
   errorCode?: number | undefined;
   message?: string | undefined;
 };
 
-export class ErrorT extends Error {
+export class ErrorT extends ServiceM8Error {
   errorCode?: number | undefined;
 
   /** The original data that was passed to this error instance. */
   data$: ErrorTData;
 
-  constructor(err: ErrorTData) {
+  constructor(
+    err: ErrorTData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    super(message, httpMeta);
     this.data$ = err;
-
     if (err.errorCode != null) this.errorCode = err.errorCode;
 
     this.name = "ErrorT";
@@ -33,9 +36,16 @@ export const ErrorT$inboundSchema: z.ZodType<ErrorT, z.ZodTypeDef, unknown> = z
   .object({
     errorCode: z.number().optional(),
     message: z.string().optional(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
   .transform((v) => {
-    return new ErrorT(v);
+    return new ErrorT(v, {
+      request: v.request$,
+      response: v.response$,
+      body: v.body$,
+    });
   });
 
 /** @internal */
