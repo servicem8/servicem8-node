@@ -6,7 +6,7 @@
 import { VendorInput } from "servicem8/models/components";
 
 let value: VendorInput = {
-  uuid: "123e4567-50c3-4210-beae-22e07105397b",
+  uuid: "123e4567-6c69-42c8-87a9-22e4788287cb",
   name: "<value>",
 };
 ```
@@ -15,7 +15,7 @@ let value: VendorInput = {
 
 | Field                                                              | Type                                                               | Required                                                           | Description                                                        | Example                                                            |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `uuid`                                                             | *string*                                                           | :heavy_minus_sign:                                                 | Unique identifier for this record                                  | 123e4567-50c3-4210-beae-22e07105397b                               |
+| `uuid`                                                             | *string*                                                           | :heavy_minus_sign:                                                 | Unique identifier for this record                                  | 123e4567-6c69-42c8-87a9-22e4788287cb                               |
 | `active`                                                           | [components.VendorActive](../../models/components/vendoractive.md) | :heavy_minus_sign:                                                 | Record active/deleted flag.  Valid values are [0,1]                |                                                                    |
 | `name`                                                             | *string*                                                           | :heavy_check_mark:                                                 | Company Name                                                       |                                                                    |
 | `abnNumber`                                                        | *string*                                                           | :heavy_minus_sign:                                                 | N/A                                                                |                                                                    |

@@ -8,7 +8,7 @@
 ```typescript
 const value: components.Category = {
   name: "<value>",
-  uuid: "123e4567-1223-4ef5-9d83-22e07e51b0ab",
+  uuid: "123e4567-c8a9-4359-ba61-22e476200e1b",
   editDate: "2025-06-01 12:00:00",
 };
 ```

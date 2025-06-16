@@ -122,7 +122,7 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.categories.createCategories({
     name: "<value>",
-    uuid: "123e4567-1223-4ef5-9d83-22e07e51b0ab",
+    uuid: "123e4567-c8a9-4359-ba61-22e476200e1b",
   });
 
   console.log(result);
@@ -150,7 +150,7 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await categoriesCreateCategories(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-1223-4ef5-9d83-22e07e51b0ab",
+    uuid: "123e4567-c8a9-4359-ba61-22e476200e1b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -290,7 +290,7 @@ async function run() {
     uuid: "c830c901-e3ae-427d-8f08-cf28c94b319f",
     category: {
       name: "<value>",
-      uuid: "123e4567-1223-4ef5-9d83-22e07e51b0ab",
+      uuid: "123e4567-c8a9-4359-ba61-22e476200e1b",
     },
   });
 
@@ -321,7 +321,7 @@ async function run() {
     uuid: "c830c901-e3ae-427d-8f08-cf28c94b319f",
     category: {
       name: "<value>",
-      uuid: "123e4567-1223-4ef5-9d83-22e07e51b0ab",
+      uuid: "123e4567-c8a9-4359-ba61-22e476200e1b",
     },
   });
   if (res.ok) {
