@@ -16,8 +16,8 @@ export type GetEmailTemplatesRequest = {
 };
 
 export type GetEmailTemplatesResponse =
-  | components.ErrorT
-  | components.EmailTemplate;
+  | components.EmailTemplate
+  | components.ErrorT;
 
 /** @internal */
 export const GetEmailTemplatesRequest$inboundSchema: z.ZodType<
@@ -79,14 +79,14 @@ export const GetEmailTemplatesResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.EmailTemplate$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetEmailTemplatesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.EmailTemplate$Outbound;
+  | components.EmailTemplate$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetEmailTemplatesResponse$outboundSchema: z.ZodType<
@@ -94,8 +94,8 @@ export const GetEmailTemplatesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetEmailTemplatesResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.EmailTemplate$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

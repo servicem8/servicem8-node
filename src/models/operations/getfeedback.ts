@@ -15,7 +15,7 @@ export type GetFeedbackRequest = {
   uuid: string;
 };
 
-export type GetFeedbackResponse = components.ErrorT | components.Feedback;
+export type GetFeedbackResponse = components.Feedback | components.ErrorT;
 
 /** @internal */
 export const GetFeedbackRequest$inboundSchema: z.ZodType<
@@ -77,14 +77,14 @@ export const GetFeedbackResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.Feedback$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetFeedbackResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Feedback$Outbound;
+  | components.Feedback$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetFeedbackResponse$outboundSchema: z.ZodType<
@@ -92,8 +92,8 @@ export const GetFeedbackResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetFeedbackResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.Feedback$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

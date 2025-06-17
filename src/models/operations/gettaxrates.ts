@@ -15,7 +15,7 @@ export type GetTaxRatesRequest = {
   uuid: string;
 };
 
-export type GetTaxRatesResponse = components.ErrorT | components.TaxRate;
+export type GetTaxRatesResponse = components.TaxRate | components.ErrorT;
 
 /** @internal */
 export const GetTaxRatesRequest$inboundSchema: z.ZodType<
@@ -77,14 +77,14 @@ export const GetTaxRatesResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.TaxRate$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetTaxRatesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.TaxRate$Outbound;
+  | components.TaxRate$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetTaxRatesResponse$outboundSchema: z.ZodType<
@@ -92,8 +92,8 @@ export const GetTaxRatesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetTaxRatesResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.TaxRate$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

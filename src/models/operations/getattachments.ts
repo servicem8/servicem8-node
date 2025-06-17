@@ -15,7 +15,7 @@ export type GetAttachmentsRequest = {
   uuid: string;
 };
 
-export type GetAttachmentsResponse = components.ErrorT | components.Attachment;
+export type GetAttachmentsResponse = components.Attachment | components.ErrorT;
 
 /** @internal */
 export const GetAttachmentsRequest$inboundSchema: z.ZodType<
@@ -77,14 +77,14 @@ export const GetAttachmentsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.Attachment$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetAttachmentsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Attachment$Outbound;
+  | components.Attachment$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetAttachmentsResponse$outboundSchema: z.ZodType<
@@ -92,8 +92,8 @@ export const GetAttachmentsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetAttachmentsResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.Attachment$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

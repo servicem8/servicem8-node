@@ -15,7 +15,7 @@ export type GetCategoriesRequest = {
   uuid: string;
 };
 
-export type GetCategoriesResponse = components.ErrorT | components.Category;
+export type GetCategoriesResponse = components.Category | components.ErrorT;
 
 /** @internal */
 export const GetCategoriesRequest$inboundSchema: z.ZodType<
@@ -77,14 +77,14 @@ export const GetCategoriesResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.Category$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetCategoriesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Category$Outbound;
+  | components.Category$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetCategoriesResponse$outboundSchema: z.ZodType<
@@ -92,8 +92,8 @@ export const GetCategoriesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetCategoriesResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.Category$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

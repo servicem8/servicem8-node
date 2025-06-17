@@ -16,8 +16,8 @@ export type GetJobMaterialBundlesRequest = {
 };
 
 export type GetJobMaterialBundlesResponse =
-  | components.ErrorT
-  | components.JobMaterialBundle;
+  | components.JobMaterialBundle
+  | components.ErrorT;
 
 /** @internal */
 export const GetJobMaterialBundlesRequest$inboundSchema: z.ZodType<
@@ -81,14 +81,14 @@ export const GetJobMaterialBundlesResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.JobMaterialBundle$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetJobMaterialBundlesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.JobMaterialBundle$Outbound;
+  | components.JobMaterialBundle$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetJobMaterialBundlesResponse$outboundSchema: z.ZodType<
@@ -96,8 +96,8 @@ export const GetJobMaterialBundlesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetJobMaterialBundlesResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.JobMaterialBundle$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

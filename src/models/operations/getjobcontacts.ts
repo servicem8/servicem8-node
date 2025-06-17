@@ -15,7 +15,7 @@ export type GetJobContactsRequest = {
   uuid: string;
 };
 
-export type GetJobContactsResponse = components.ErrorT | components.JobContact;
+export type GetJobContactsResponse = components.JobContact | components.ErrorT;
 
 /** @internal */
 export const GetJobContactsRequest$inboundSchema: z.ZodType<
@@ -77,14 +77,14 @@ export const GetJobContactsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.JobContact$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetJobContactsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.JobContact$Outbound;
+  | components.JobContact$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetJobContactsResponse$outboundSchema: z.ZodType<
@@ -92,8 +92,8 @@ export const GetJobContactsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetJobContactsResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.JobContact$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

@@ -15,7 +15,7 @@ export type GetTasksRequest = {
   uuid: string;
 };
 
-export type GetTasksResponse = components.ErrorT | components.Task;
+export type GetTasksResponse = components.Task | components.ErrorT;
 
 /** @internal */
 export const GetTasksRequest$inboundSchema: z.ZodType<
@@ -74,19 +74,19 @@ export const GetTasksResponse$inboundSchema: z.ZodType<
   GetTasksResponse,
   z.ZodTypeDef,
   unknown
-> = z.union([components.ErrorT$inboundSchema, components.Task$inboundSchema]);
+> = z.union([components.Task$inboundSchema, components.ErrorT$inboundSchema]);
 
 /** @internal */
 export type GetTasksResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Task$Outbound;
+  | components.Task$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetTasksResponse$outboundSchema: z.ZodType<
   GetTasksResponse$Outbound,
   z.ZodTypeDef,
   GetTasksResponse
-> = z.union([components.ErrorT$outboundSchema, components.Task$outboundSchema]);
+> = z.union([components.Task$outboundSchema, components.ErrorT$outboundSchema]);
 
 /**
  * @internal

@@ -16,8 +16,8 @@ export type GetCompanyContactsRequest = {
 };
 
 export type GetCompanyContactsResponse =
-  | components.ErrorT
-  | components.CompanyContact;
+  | components.CompanyContact
+  | components.ErrorT;
 
 /** @internal */
 export const GetCompanyContactsRequest$inboundSchema: z.ZodType<
@@ -79,14 +79,14 @@ export const GetCompanyContactsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.CompanyContact$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetCompanyContactsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.CompanyContact$Outbound;
+  | components.CompanyContact$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetCompanyContactsResponse$outboundSchema: z.ZodType<
@@ -94,8 +94,8 @@ export const GetCompanyContactsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetCompanyContactsResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.CompanyContact$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

@@ -15,7 +15,7 @@ export type GetBadgesRequest = {
   uuid: string;
 };
 
-export type GetBadgesResponse = components.ErrorT | components.Badge;
+export type GetBadgesResponse = components.Badge | components.ErrorT;
 
 /** @internal */
 export const GetBadgesRequest$inboundSchema: z.ZodType<
@@ -76,12 +76,12 @@ export const GetBadgesResponse$inboundSchema: z.ZodType<
   GetBadgesResponse,
   z.ZodTypeDef,
   unknown
-> = z.union([components.ErrorT$inboundSchema, components.Badge$inboundSchema]);
+> = z.union([components.Badge$inboundSchema, components.ErrorT$inboundSchema]);
 
 /** @internal */
 export type GetBadgesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Badge$Outbound;
+  | components.Badge$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetBadgesResponse$outboundSchema: z.ZodType<
@@ -89,8 +89,8 @@ export const GetBadgesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetBadgesResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.Badge$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

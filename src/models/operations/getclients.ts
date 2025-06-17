@@ -15,7 +15,7 @@ export type GetClientsRequest = {
   uuid: string;
 };
 
-export type GetClientsResponse = components.ErrorT | components.Company;
+export type GetClientsResponse = components.Company | components.ErrorT;
 
 /** @internal */
 export const GetClientsRequest$inboundSchema: z.ZodType<
@@ -77,14 +77,14 @@ export const GetClientsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.Company$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetClientsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Company$Outbound;
+  | components.Company$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetClientsResponse$outboundSchema: z.ZodType<
@@ -92,8 +92,8 @@ export const GetClientsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetClientsResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.Company$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

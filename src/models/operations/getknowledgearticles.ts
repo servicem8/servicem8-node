@@ -16,8 +16,8 @@ export type GetKnowledgeArticlesRequest = {
 };
 
 export type GetKnowledgeArticlesResponse =
-  | components.ErrorT
-  | components.KnowledgeArticle;
+  | components.KnowledgeArticle
+  | components.ErrorT;
 
 /** @internal */
 export const GetKnowledgeArticlesRequest$inboundSchema: z.ZodType<
@@ -81,14 +81,14 @@ export const GetKnowledgeArticlesResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.KnowledgeArticle$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetKnowledgeArticlesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.KnowledgeArticle$Outbound;
+  | components.KnowledgeArticle$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetKnowledgeArticlesResponse$outboundSchema: z.ZodType<
@@ -96,8 +96,8 @@ export const GetKnowledgeArticlesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetKnowledgeArticlesResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.KnowledgeArticle$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

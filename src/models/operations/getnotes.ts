@@ -15,7 +15,7 @@ export type GetNotesRequest = {
   uuid: string;
 };
 
-export type GetNotesResponse = components.ErrorT | components.Note;
+export type GetNotesResponse = components.Note | components.ErrorT;
 
 /** @internal */
 export const GetNotesRequest$inboundSchema: z.ZodType<
@@ -74,19 +74,19 @@ export const GetNotesResponse$inboundSchema: z.ZodType<
   GetNotesResponse,
   z.ZodTypeDef,
   unknown
-> = z.union([components.ErrorT$inboundSchema, components.Note$inboundSchema]);
+> = z.union([components.Note$inboundSchema, components.ErrorT$inboundSchema]);
 
 /** @internal */
 export type GetNotesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Note$Outbound;
+  | components.Note$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetNotesResponse$outboundSchema: z.ZodType<
   GetNotesResponse$Outbound,
   z.ZodTypeDef,
   GetNotesResponse
-> = z.union([components.ErrorT$outboundSchema, components.Note$outboundSchema]);
+> = z.union([components.Note$outboundSchema, components.ErrorT$outboundSchema]);
 
 /**
  * @internal

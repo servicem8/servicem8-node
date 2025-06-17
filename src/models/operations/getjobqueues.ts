@@ -15,7 +15,7 @@ export type GetJobQueuesRequest = {
   uuid: string;
 };
 
-export type GetJobQueuesResponse = components.ErrorT | components.Queue;
+export type GetJobQueuesResponse = components.Queue | components.ErrorT;
 
 /** @internal */
 export const GetJobQueuesRequest$inboundSchema: z.ZodType<
@@ -76,12 +76,12 @@ export const GetJobQueuesResponse$inboundSchema: z.ZodType<
   GetJobQueuesResponse,
   z.ZodTypeDef,
   unknown
-> = z.union([components.ErrorT$inboundSchema, components.Queue$inboundSchema]);
+> = z.union([components.Queue$inboundSchema, components.ErrorT$inboundSchema]);
 
 /** @internal */
 export type GetJobQueuesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Queue$Outbound;
+  | components.Queue$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetJobQueuesResponse$outboundSchema: z.ZodType<
@@ -89,8 +89,8 @@ export const GetJobQueuesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetJobQueuesResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.Queue$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

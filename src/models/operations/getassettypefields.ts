@@ -16,8 +16,8 @@ export type GetAssetTypeFieldsRequest = {
 };
 
 export type GetAssetTypeFieldsResponse =
-  | components.ErrorT
-  | components.AssetTypeField;
+  | components.AssetTypeField
+  | components.ErrorT;
 
 /** @internal */
 export const GetAssetTypeFieldsRequest$inboundSchema: z.ZodType<
@@ -79,14 +79,14 @@ export const GetAssetTypeFieldsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.AssetTypeField$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetAssetTypeFieldsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.AssetTypeField$Outbound;
+  | components.AssetTypeField$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetAssetTypeFieldsResponse$outboundSchema: z.ZodType<
@@ -94,8 +94,8 @@ export const GetAssetTypeFieldsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetAssetTypeFieldsResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.AssetTypeField$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

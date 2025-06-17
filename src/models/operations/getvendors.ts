@@ -15,7 +15,7 @@ export type GetVendorsRequest = {
   uuid: string;
 };
 
-export type GetVendorsResponse = components.ErrorT | components.Vendor;
+export type GetVendorsResponse = components.Vendor | components.ErrorT;
 
 /** @internal */
 export const GetVendorsRequest$inboundSchema: z.ZodType<
@@ -76,12 +76,12 @@ export const GetVendorsResponse$inboundSchema: z.ZodType<
   GetVendorsResponse,
   z.ZodTypeDef,
   unknown
-> = z.union([components.ErrorT$inboundSchema, components.Vendor$inboundSchema]);
+> = z.union([components.Vendor$inboundSchema, components.ErrorT$inboundSchema]);
 
 /** @internal */
 export type GetVendorsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Vendor$Outbound;
+  | components.Vendor$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetVendorsResponse$outboundSchema: z.ZodType<
@@ -89,8 +89,8 @@ export const GetVendorsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetVendorsResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.Vendor$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

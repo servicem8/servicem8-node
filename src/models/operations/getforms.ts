@@ -15,7 +15,7 @@ export type GetFormsRequest = {
   uuid: string;
 };
 
-export type GetFormsResponse = components.ErrorT | components.Form;
+export type GetFormsResponse = components.Form | components.ErrorT;
 
 /** @internal */
 export const GetFormsRequest$inboundSchema: z.ZodType<
@@ -74,19 +74,19 @@ export const GetFormsResponse$inboundSchema: z.ZodType<
   GetFormsResponse,
   z.ZodTypeDef,
   unknown
-> = z.union([components.ErrorT$inboundSchema, components.Form$inboundSchema]);
+> = z.union([components.Form$inboundSchema, components.ErrorT$inboundSchema]);
 
 /** @internal */
 export type GetFormsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Form$Outbound;
+  | components.Form$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetFormsResponse$outboundSchema: z.ZodType<
   GetFormsResponse$Outbound,
   z.ZodTypeDef,
   GetFormsResponse
-> = z.union([components.ErrorT$outboundSchema, components.Form$outboundSchema]);
+> = z.union([components.Form$outboundSchema, components.ErrorT$outboundSchema]);
 
 /**
  * @internal

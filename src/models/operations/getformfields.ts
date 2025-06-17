@@ -15,7 +15,7 @@ export type GetFormFieldsRequest = {
   uuid: string;
 };
 
-export type GetFormFieldsResponse = components.ErrorT | components.FormField;
+export type GetFormFieldsResponse = components.FormField | components.ErrorT;
 
 /** @internal */
 export const GetFormFieldsRequest$inboundSchema: z.ZodType<
@@ -77,14 +77,14 @@ export const GetFormFieldsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.FormField$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetFormFieldsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.FormField$Outbound;
+  | components.FormField$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetFormFieldsResponse$outboundSchema: z.ZodType<
@@ -92,8 +92,8 @@ export const GetFormFieldsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetFormFieldsResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.FormField$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

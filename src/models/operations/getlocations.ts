@@ -15,7 +15,7 @@ export type GetLocationsRequest = {
   uuid: string;
 };
 
-export type GetLocationsResponse = components.ErrorT | components.Location;
+export type GetLocationsResponse = components.Location | components.ErrorT;
 
 /** @internal */
 export const GetLocationsRequest$inboundSchema: z.ZodType<
@@ -77,14 +77,14 @@ export const GetLocationsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.Location$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetLocationsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Location$Outbound;
+  | components.Location$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetLocationsResponse$outboundSchema: z.ZodType<
@@ -92,8 +92,8 @@ export const GetLocationsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetLocationsResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.Location$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

@@ -16,8 +16,8 @@ export type GetJobActivitiesRequest = {
 };
 
 export type GetJobActivitiesResponse =
-  | components.ErrorT
-  | components.JobActivity;
+  | components.JobActivity
+  | components.ErrorT;
 
 /** @internal */
 export const GetJobActivitiesRequest$inboundSchema: z.ZodType<
@@ -79,14 +79,14 @@ export const GetJobActivitiesResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.JobActivity$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetJobActivitiesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.JobActivity$Outbound;
+  | components.JobActivity$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetJobActivitiesResponse$outboundSchema: z.ZodType<
@@ -94,8 +94,8 @@ export const GetJobActivitiesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetJobActivitiesResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.JobActivity$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

@@ -16,8 +16,8 @@ export type GetStaffMessagesRequest = {
 };
 
 export type GetStaffMessagesResponse =
-  | components.ErrorT
-  | components.StaffMessage;
+  | components.StaffMessage
+  | components.ErrorT;
 
 /** @internal */
 export const GetStaffMessagesRequest$inboundSchema: z.ZodType<
@@ -79,14 +79,14 @@ export const GetStaffMessagesResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.StaffMessage$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetStaffMessagesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.StaffMessage$Outbound;
+  | components.StaffMessage$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetStaffMessagesResponse$outboundSchema: z.ZodType<
@@ -94,8 +94,8 @@ export const GetStaffMessagesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetStaffMessagesResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.StaffMessage$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

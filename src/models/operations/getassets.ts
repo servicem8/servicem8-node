@@ -15,7 +15,7 @@ export type GetAssetsRequest = {
   uuid: string;
 };
 
-export type GetAssetsResponse = components.ErrorT | components.Asset;
+export type GetAssetsResponse = components.Asset | components.ErrorT;
 
 /** @internal */
 export const GetAssetsRequest$inboundSchema: z.ZodType<
@@ -76,12 +76,12 @@ export const GetAssetsResponse$inboundSchema: z.ZodType<
   GetAssetsResponse,
   z.ZodTypeDef,
   unknown
-> = z.union([components.ErrorT$inboundSchema, components.Asset$inboundSchema]);
+> = z.union([components.Asset$inboundSchema, components.ErrorT$inboundSchema]);
 
 /** @internal */
 export type GetAssetsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Asset$Outbound;
+  | components.Asset$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetAssetsResponse$outboundSchema: z.ZodType<
@@ -89,8 +89,8 @@ export const GetAssetsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetAssetsResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.Asset$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

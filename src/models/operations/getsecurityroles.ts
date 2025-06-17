@@ -16,8 +16,8 @@ export type GetSecurityRolesRequest = {
 };
 
 export type GetSecurityRolesResponse =
-  | components.ErrorT
-  | components.SecurityRole;
+  | components.SecurityRole
+  | components.ErrorT;
 
 /** @internal */
 export const GetSecurityRolesRequest$inboundSchema: z.ZodType<
@@ -79,14 +79,14 @@ export const GetSecurityRolesResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.SecurityRole$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetSecurityRolesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.SecurityRole$Outbound;
+  | components.SecurityRole$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetSecurityRolesResponse$outboundSchema: z.ZodType<
@@ -94,8 +94,8 @@ export const GetSecurityRolesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetSecurityRolesResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.SecurityRole$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

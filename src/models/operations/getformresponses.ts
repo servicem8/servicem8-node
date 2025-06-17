@@ -16,8 +16,8 @@ export type GetFormResponsesRequest = {
 };
 
 export type GetFormResponsesResponse =
-  | components.ErrorT
-  | components.FormResponse;
+  | components.FormResponse
+  | components.ErrorT;
 
 /** @internal */
 export const GetFormResponsesRequest$inboundSchema: z.ZodType<
@@ -79,14 +79,14 @@ export const GetFormResponsesResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.FormResponse$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetFormResponsesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.FormResponse$Outbound;
+  | components.FormResponse$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetFormResponsesResponse$outboundSchema: z.ZodType<
@@ -94,8 +94,8 @@ export const GetFormResponsesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetFormResponsesResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.FormResponse$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

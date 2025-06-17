@@ -16,8 +16,8 @@ export type GetAllocationWindowsRequest = {
 };
 
 export type GetAllocationWindowsResponse =
-  | components.ErrorT
-  | components.AllocationWindow;
+  | components.AllocationWindow
+  | components.ErrorT;
 
 /** @internal */
 export const GetAllocationWindowsRequest$inboundSchema: z.ZodType<
@@ -81,14 +81,14 @@ export const GetAllocationWindowsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.AllocationWindow$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetAllocationWindowsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.AllocationWindow$Outbound;
+  | components.AllocationWindow$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetAllocationWindowsResponse$outboundSchema: z.ZodType<
@@ -96,8 +96,8 @@ export const GetAllocationWindowsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetAllocationWindowsResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.AllocationWindow$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

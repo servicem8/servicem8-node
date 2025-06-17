@@ -15,7 +15,7 @@ export type GetBundlesRequest = {
   uuid: string;
 };
 
-export type GetBundlesResponse = components.ErrorT | components.MaterialBundle;
+export type GetBundlesResponse = components.MaterialBundle | components.ErrorT;
 
 /** @internal */
 export const GetBundlesRequest$inboundSchema: z.ZodType<
@@ -77,14 +77,14 @@ export const GetBundlesResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.MaterialBundle$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetBundlesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.MaterialBundle$Outbound;
+  | components.MaterialBundle$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetBundlesResponse$outboundSchema: z.ZodType<
@@ -92,8 +92,8 @@ export const GetBundlesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetBundlesResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.MaterialBundle$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

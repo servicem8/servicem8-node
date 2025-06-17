@@ -15,7 +15,7 @@ export type GetMaterialsRequest = {
   uuid: string;
 };
 
-export type GetMaterialsResponse = components.ErrorT | components.Material;
+export type GetMaterialsResponse = components.Material | components.ErrorT;
 
 /** @internal */
 export const GetMaterialsRequest$inboundSchema: z.ZodType<
@@ -77,14 +77,14 @@ export const GetMaterialsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.Material$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetMaterialsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Material$Outbound;
+  | components.Material$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetMaterialsResponse$outboundSchema: z.ZodType<
@@ -92,8 +92,8 @@ export const GetMaterialsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetMaterialsResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.Material$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

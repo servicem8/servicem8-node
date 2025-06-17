@@ -16,8 +16,8 @@ export type GetJobChecklistsRequest = {
 };
 
 export type GetJobChecklistsResponse =
-  | components.ErrorT
-  | components.JobChecklist;
+  | components.JobChecklist
+  | components.ErrorT;
 
 /** @internal */
 export const GetJobChecklistsRequest$inboundSchema: z.ZodType<
@@ -79,14 +79,14 @@ export const GetJobChecklistsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.JobChecklist$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetJobChecklistsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.JobChecklist$Outbound;
+  | components.JobChecklist$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetJobChecklistsResponse$outboundSchema: z.ZodType<
@@ -94,8 +94,8 @@ export const GetJobChecklistsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetJobChecklistsResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.JobChecklist$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

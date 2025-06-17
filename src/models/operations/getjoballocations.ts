@@ -16,8 +16,8 @@ export type GetJobAllocationsRequest = {
 };
 
 export type GetJobAllocationsResponse =
-  | components.ErrorT
-  | components.JobAllocation;
+  | components.JobAllocation
+  | components.ErrorT;
 
 /** @internal */
 export const GetJobAllocationsRequest$inboundSchema: z.ZodType<
@@ -79,14 +79,14 @@ export const GetJobAllocationsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.JobAllocation$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetJobAllocationsResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.JobAllocation$Outbound;
+  | components.JobAllocation$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetJobAllocationsResponse$outboundSchema: z.ZodType<
@@ -94,8 +94,8 @@ export const GetJobAllocationsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetJobAllocationsResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.JobAllocation$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

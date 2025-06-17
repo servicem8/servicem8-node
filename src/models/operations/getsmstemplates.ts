@@ -16,8 +16,8 @@ export type GetSMSTemplatesRequest = {
 };
 
 export type GetSMSTemplatesResponse =
-  | components.ErrorT
-  | components.SmsTemplate;
+  | components.SmsTemplate
+  | components.ErrorT;
 
 /** @internal */
 export const GetSMSTemplatesRequest$inboundSchema: z.ZodType<
@@ -79,14 +79,14 @@ export const GetSMSTemplatesResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ErrorT$inboundSchema,
   components.SmsTemplate$inboundSchema,
+  components.ErrorT$inboundSchema,
 ]);
 
 /** @internal */
 export type GetSMSTemplatesResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.SmsTemplate$Outbound;
+  | components.SmsTemplate$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetSMSTemplatesResponse$outboundSchema: z.ZodType<
@@ -94,8 +94,8 @@ export const GetSMSTemplatesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetSMSTemplatesResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.SmsTemplate$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**

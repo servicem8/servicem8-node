@@ -15,7 +15,7 @@ export type GetStaffMembersRequest = {
   uuid: string;
 };
 
-export type GetStaffMembersResponse = components.ErrorT | components.Staff;
+export type GetStaffMembersResponse = components.Staff | components.ErrorT;
 
 /** @internal */
 export const GetStaffMembersRequest$inboundSchema: z.ZodType<
@@ -76,12 +76,12 @@ export const GetStaffMembersResponse$inboundSchema: z.ZodType<
   GetStaffMembersResponse,
   z.ZodTypeDef,
   unknown
-> = z.union([components.ErrorT$inboundSchema, components.Staff$inboundSchema]);
+> = z.union([components.Staff$inboundSchema, components.ErrorT$inboundSchema]);
 
 /** @internal */
 export type GetStaffMembersResponse$Outbound =
-  | components.ErrorT$Outbound
-  | components.Staff$Outbound;
+  | components.Staff$Outbound
+  | components.ErrorT$Outbound;
 
 /** @internal */
 export const GetStaffMembersResponse$outboundSchema: z.ZodType<
@@ -89,8 +89,8 @@ export const GetStaffMembersResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetStaffMembersResponse
 > = z.union([
-  components.ErrorT$outboundSchema,
   components.Staff$outboundSchema,
+  components.ErrorT$outboundSchema,
 ]);
 
 /**
