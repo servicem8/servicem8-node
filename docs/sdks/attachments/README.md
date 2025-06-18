@@ -111,9 +111,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.attachments.createAttachments({
-    uuid: "123e4567-9266-4bc6-8b64-22e47b86b7ab",
-    relatedObjectUuid: "123e4567-dce2-4a0d-87d9-22e47684f10b",
-    createdByStaffUuid: "123e4567-3e02-425e-9f3e-22e47c4b651b",
+    uuid: "123e4567-246c-4a4b-a1a8-22e6efbc7b1b",
+    relatedObjectUuid: "123e4567-025e-4e90-9165-22e6e24ee52b",
+    createdByStaffUuid: "123e4567-a5dc-44da-9f08-22e6e1a68c9b",
   });
 
   console.log(result);
@@ -140,9 +140,9 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await attachmentsCreateAttachments(serviceM8, {
-    uuid: "123e4567-9266-4bc6-8b64-22e47b86b7ab",
-    relatedObjectUuid: "123e4567-dce2-4a0d-87d9-22e47684f10b",
-    createdByStaffUuid: "123e4567-3e02-425e-9f3e-22e47c4b651b",
+    uuid: "123e4567-246c-4a4b-a1a8-22e6efbc7b1b",
+    relatedObjectUuid: "123e4567-025e-4e90-9165-22e6e24ee52b",
+    createdByStaffUuid: "123e4567-a5dc-44da-9f08-22e6e1a68c9b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -271,9 +271,9 @@ async function run() {
   const result = await serviceM8.attachments.updateAttachments({
     uuid: "e104394b-4c20-472c-976c-b9a47147723c",
     attachment: {
-      uuid: "123e4567-9266-4bc6-8b64-22e47b86b7ab",
-      relatedObjectUuid: "123e4567-dce2-4a0d-87d9-22e47684f10b",
-      createdByStaffUuid: "123e4567-3e02-425e-9f3e-22e47c4b651b",
+      uuid: "123e4567-246c-4a4b-a1a8-22e6efbc7b1b",
+      relatedObjectUuid: "123e4567-025e-4e90-9165-22e6e24ee52b",
+      createdByStaffUuid: "123e4567-a5dc-44da-9f08-22e6e1a68c9b",
     },
   });
 
@@ -303,9 +303,9 @@ async function run() {
   const res = await attachmentsUpdateAttachments(serviceM8, {
     uuid: "e104394b-4c20-472c-976c-b9a47147723c",
     attachment: {
-      uuid: "123e4567-9266-4bc6-8b64-22e47b86b7ab",
-      relatedObjectUuid: "123e4567-dce2-4a0d-87d9-22e47684f10b",
-      createdByStaffUuid: "123e4567-3e02-425e-9f3e-22e47c4b651b",
+      uuid: "123e4567-246c-4a4b-a1a8-22e6efbc7b1b",
+      relatedObjectUuid: "123e4567-025e-4e90-9165-22e6e24ee52b",
+      createdByStaffUuid: "123e4567-a5dc-44da-9f08-22e6e1a68c9b",
     },
   });
   if (res.ok) {

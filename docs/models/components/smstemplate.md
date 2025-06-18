@@ -6,7 +6,7 @@
 import { SmsTemplate } from "servicem8/models/components";
 
 let value: SmsTemplate = {
-  uuid: "123e4567-e766-4c9e-affa-22e47e150fab",
+  uuid: "123e4567-887a-4a4b-a7c4-22e6e1ec84bb",
   editDate: "2025-06-01 12:00:00",
   name: "<value>",
 };
@@ -16,7 +16,7 @@ let value: SmsTemplate = {
 
 | Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  | Example                                                                      |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `uuid`                                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | Unique identifier for this record                                            | 123e4567-e766-4c9e-affa-22e47e150fab                                         |
+| `uuid`                                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | Unique identifier for this record                                            | 123e4567-887a-4a4b-a7c4-22e6e1ec84bb                                         |
 | `active`                                                                     | [components.SmsTemplateActive](../../models/components/smstemplateactive.md) | :heavy_minus_sign:                                                           | Record active/deleted flag.  Valid values are [0,1]                          |                                                                              |
 | `editDate`                                                                   | *any*                                                                        | :heavy_minus_sign:                                                           | Timestamp at which record was last modified                                  | 2025-06-01 12:00:00                                                          |
 | `name`                                                                       | *string*                                                                     | :heavy_check_mark:                                                           | N/A                                                                          |                                                                              |

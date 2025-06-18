@@ -6,8 +6,8 @@
 import { JobContactInput } from "servicem8/models/components";
 
 let value: JobContactInput = {
-  uuid: "123e4567-e0c5-417c-bbb0-22e4784946db",
-  jobUuid: "123e4567-c9a7-4185-94e9-22e471426f2b",
+  uuid: "123e4567-834b-42d8-a049-22e6ee088c8b",
+  jobUuid: "123e4567-975c-41f1-881b-22e6e4c3fd0b",
 };
 ```
 
@@ -15,9 +15,9 @@ let value: JobContactInput = {
 
 | Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                | Example                                                                    |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `uuid`                                                                     | *string*                                                                   | :heavy_minus_sign:                                                         | Unique identifier for this record                                          | 123e4567-e0c5-417c-bbb0-22e4784946db                                       |
+| `uuid`                                                                     | *string*                                                                   | :heavy_minus_sign:                                                         | Unique identifier for this record                                          | 123e4567-834b-42d8-a049-22e6ee088c8b                                       |
 | `active`                                                                   | [components.JobContactActive](../../models/components/jobcontactactive.md) | :heavy_minus_sign:                                                         | Record active/deleted flag.  Valid values are [0,1]                        |                                                                            |
-| `jobUuid`                                                                  | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | 123e4567-c9a7-4185-94e9-22e471426f2b                                       |
+| `jobUuid`                                                                  | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        | 123e4567-975c-41f1-881b-22e6e4c3fd0b                                       |
 | `first`                                                                    | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
 | `last`                                                                     | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
 | `phone`                                                                    | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
