@@ -11,12 +11,12 @@ const value: components.Staff = {
   last: "<value>",
   email: "Shanelle_Morar@gmail.com",
   geoTimestamp: "2025-06-01 12:00:00",
-  navigatingToJobUuid: "123e4567-be05-4bd8-bfc7-22e6e5d2506b",
+  navigatingToJobUuid: "123e4567-f5ee-4546-afc0-22e737fd254b",
   navigatingTimestamp: "2025-06-01 12:00:00",
   navigatingExpiryTimestamp: "2025-06-01 12:00:00",
   statusMessageTimestamp: "2025-06-01 12:00:00",
-  securityRoleUuid: "123e4567-98aa-4038-bd6f-22e6edf7f04b",
-  uuid: "123e4567-f3a8-4c2f-86cc-22e6e43f441b",
+  securityRoleUuid: "123e4567-c479-4ca2-a798-22e73bea467b",
+  uuid: "123e4567-ba8c-44c8-9526-22e7303b257b",
   editDate: "2025-06-01 12:00:00",
 };
 ```

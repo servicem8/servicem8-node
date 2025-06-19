@@ -9,7 +9,7 @@
 const value: components.Location[] = [
   {
     name: "<value>",
-    uuid: "123e4567-0e2d-4d62-b123-22e6ef3b695b",
+    uuid: "123e4567-ac3b-4cf8-8fac-22e7343e5f9b",
     editDate: "2025-06-01 12:00:00",
   },
 ];
