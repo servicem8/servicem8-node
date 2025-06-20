@@ -121,8 +121,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.assetTypeFields.createAssetTypeFields({
-    uuid: "123e4567-5226-4e16-b8ae-22e736cad88b",
-    assetTypeUuid: "123e4567-1e99-484a-8f6f-22e734a8d86b",
+    uuid: "123e4567-9e69-40ff-9b3d-22e82738518b",
+    assetTypeUuid: "123e4567-63ba-4796-b33f-22e82314527b",
     name: "<value>",
   });
 
@@ -150,8 +150,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetTypeFieldsCreateAssetTypeFields(serviceM8, {
-    uuid: "123e4567-5226-4e16-b8ae-22e736cad88b",
-    assetTypeUuid: "123e4567-1e99-484a-8f6f-22e734a8d86b",
+    uuid: "123e4567-9e69-40ff-9b3d-22e82738518b",
+    assetTypeUuid: "123e4567-63ba-4796-b33f-22e82314527b",
     name: "<value>",
   });
   if (res.ok) {
@@ -291,8 +291,8 @@ async function run() {
   const result = await serviceM8.assetTypeFields.updateAssetTypeFields({
     uuid: "1d8d7fd0-4d09-4955-a484-0cd4add08b25",
     assetTypeField: {
-      uuid: "123e4567-5226-4e16-b8ae-22e736cad88b",
-      assetTypeUuid: "123e4567-1e99-484a-8f6f-22e734a8d86b",
+      uuid: "123e4567-9e69-40ff-9b3d-22e82738518b",
+      assetTypeUuid: "123e4567-63ba-4796-b33f-22e82314527b",
       name: "<value>",
     },
   });
@@ -323,8 +323,8 @@ async function run() {
   const res = await assetTypeFieldsUpdateAssetTypeFields(serviceM8, {
     uuid: "1d8d7fd0-4d09-4955-a484-0cd4add08b25",
     assetTypeField: {
-      uuid: "123e4567-5226-4e16-b8ae-22e736cad88b",
-      assetTypeUuid: "123e4567-1e99-484a-8f6f-22e734a8d86b",
+      uuid: "123e4567-9e69-40ff-9b3d-22e82738518b",
+      assetTypeUuid: "123e4567-63ba-4796-b33f-22e82314527b",
       name: "<value>",
     },
   });
