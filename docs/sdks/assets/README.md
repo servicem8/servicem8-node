@@ -199,9 +199,9 @@ async function run() {
   const result = await serviceM8.assets.updateAssets({
     uuid: "5b24eb53-3f3d-4b60-b9e9-e44934a80c53",
     asset: {
-      uuid: "123e4567-bec7-425a-9ec9-22e82710679b",
-      companyUuid: "123e4567-5af3-467c-8429-22e82d305f0b",
-      assetTypeUuid: "123e4567-2964-4bfd-bf88-22e82c483ceb",
+      uuid: "123e4567-c2d1-4e1c-9ccb-22ec74a89f1b",
+      companyUuid: "123e4567-6e62-49e4-bf5c-22ec751a72cb",
+      assetTypeUuid: "123e4567-d4bb-48c3-b114-22ec72e2f66b",
       geoTimestamp: "2025-06-01 12:00:00",
     },
   });
@@ -232,9 +232,9 @@ async function run() {
   const res = await assetsUpdateAssets(serviceM8, {
     uuid: "5b24eb53-3f3d-4b60-b9e9-e44934a80c53",
     asset: {
-      uuid: "123e4567-bec7-425a-9ec9-22e82710679b",
-      companyUuid: "123e4567-5af3-467c-8429-22e82d305f0b",
-      assetTypeUuid: "123e4567-2964-4bfd-bf88-22e82c483ceb",
+      uuid: "123e4567-c2d1-4e1c-9ccb-22ec74a89f1b",
+      companyUuid: "123e4567-6e62-49e4-bf5c-22ec751a72cb",
+      assetTypeUuid: "123e4567-d4bb-48c3-b114-22ec72e2f66b",
       geoTimestamp: "2025-06-01 12:00:00",
     },
   });
