@@ -7,19 +7,19 @@
 
 ```typescript
 const value: components.JobChecklist = {
-  uuid: "123e4567-a276-4e7c-bdd8-22ed3cef52db",
+  uuid: "123e4567-9297-41f3-a158-22ef2d8885bb",
   editDate: "2025-06-01 12:00:00",
-  jobUuid: "123e4567-5c4c-4251-bf5c-22ed3953374b",
+  jobUuid: "123e4567-ef86-4537-983b-22ef2f9be30b",
   completedTimestamp: "2025-06-01 12:00:00",
-  completedByStaffUuid: "123e4567-237e-492e-8419-22ed30c8a4bb",
-  completedDuringCheckinUuid: "123e4567-f349-433c-b972-22ed359e07bb",
-  regardingObjectUuid: "123e4567-effc-4f25-886b-22ed3b5f52eb",
-  fulfilledByObjectUuid: "123e4567-7079-4e82-a9a9-22ed39bbe58b",
+  completedByStaffUuid: "123e4567-b626-412a-8a2b-22ef2f6c984b",
+  completedDuringCheckinUuid: "123e4567-11bc-4352-aac7-22ef21e9847b",
+  regardingObjectUuid: "123e4567-0b30-4225-bbf6-22ef2061312b",
+  fulfilledByObjectUuid: "123e4567-66a0-4325-8f4f-22ef2564927b",
   assignedToStaffUuids: [
-    "123e4567-52fc-47a1-951f-22ed3ff79fcb",
+    "123e4567-d971-4187-ad26-22ef29705a3b",
   ],
   assignedTimestamp: "2025-06-01 12:00:00",
-  assignedByStaffUuid: "123e4567-047a-44de-851e-22ed36770adb",
+  assignedByStaffUuid: "123e4567-6f64-44b3-a622-22ef220e4a9b",
 };
 ```
 

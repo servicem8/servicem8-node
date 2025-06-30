@@ -7,9 +7,9 @@
 
 ```typescript
 const value: components.AssetTypeField = {
-  uuid: "123e4567-ffa1-4707-8cf4-22ed37bcb0ab",
+  uuid: "123e4567-8454-49e4-8cd1-22ef2b9514fb",
   editDate: "2025-06-01 12:00:00",
-  assetTypeUuid: "123e4567-0905-4e71-a87b-22ed3a3172bb",
+  assetTypeUuid: "123e4567-991b-4dda-9c29-22ef224e2aeb",
   name: "<value>",
 };
 ```

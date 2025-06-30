@@ -121,10 +121,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.badges.createBadges({
-    uuid: "123e4567-4fe9-4a3a-93c9-22ed3cc6523b",
+    uuid: "123e4567-4735-4338-aa8f-22ef27ba490b",
     name: "<value>",
-    regardingFormUuid: "123e4567-91a7-446b-95f9-22ed32fdbf9b",
-    regardingAssetTypeUuid: "123e4567-460f-4750-9059-22ed3d5ee5db",
+    regardingFormUuid: "123e4567-0873-495c-bab7-22ef22d7d76b",
+    regardingAssetTypeUuid: "123e4567-38eb-40da-8bac-22ef22ac41fb",
   });
 
   console.log(result);
@@ -151,10 +151,10 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await badgesCreateBadges(serviceM8, {
-    uuid: "123e4567-4fe9-4a3a-93c9-22ed3cc6523b",
+    uuid: "123e4567-4735-4338-aa8f-22ef27ba490b",
     name: "<value>",
-    regardingFormUuid: "123e4567-91a7-446b-95f9-22ed32fdbf9b",
-    regardingAssetTypeUuid: "123e4567-460f-4750-9059-22ed3d5ee5db",
+    regardingFormUuid: "123e4567-0873-495c-bab7-22ef22d7d76b",
+    regardingAssetTypeUuid: "123e4567-38eb-40da-8bac-22ef22ac41fb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -293,10 +293,10 @@ async function run() {
   const result = await serviceM8.badges.updateBadges({
     uuid: "444f2947-b065-4aac-8159-0ffca6278fd2",
     badge: {
-      uuid: "123e4567-4fe9-4a3a-93c9-22ed3cc6523b",
+      uuid: "123e4567-4735-4338-aa8f-22ef27ba490b",
       name: "<value>",
-      regardingFormUuid: "123e4567-91a7-446b-95f9-22ed32fdbf9b",
-      regardingAssetTypeUuid: "123e4567-460f-4750-9059-22ed3d5ee5db",
+      regardingFormUuid: "123e4567-0873-495c-bab7-22ef22d7d76b",
+      regardingAssetTypeUuid: "123e4567-38eb-40da-8bac-22ef22ac41fb",
     },
   });
 
@@ -326,10 +326,10 @@ async function run() {
   const res = await badgesUpdateBadges(serviceM8, {
     uuid: "444f2947-b065-4aac-8159-0ffca6278fd2",
     badge: {
-      uuid: "123e4567-4fe9-4a3a-93c9-22ed3cc6523b",
+      uuid: "123e4567-4735-4338-aa8f-22ef27ba490b",
       name: "<value>",
-      regardingFormUuid: "123e4567-91a7-446b-95f9-22ed32fdbf9b",
-      regardingAssetTypeUuid: "123e4567-460f-4750-9059-22ed3d5ee5db",
+      regardingFormUuid: "123e4567-0873-495c-bab7-22ef22d7d76b",
+      regardingAssetTypeUuid: "123e4567-38eb-40da-8bac-22ef22ac41fb",
     },
   });
   if (res.ok) {
