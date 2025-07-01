@@ -7,8 +7,8 @@
 
 ```typescript
 const value: components.Vendor = {
-  uuid: "123e4567-5d71-4ebc-be2d-22ef2a6139fb",
-  editDate: "2025-06-01 12:00:00",
+  uuid: "123e4567-bfca-4236-8f96-22f38828ecab",
+  editDate: "2025-07-01 12:00:00",
   name: "<value>",
 };
 ```
