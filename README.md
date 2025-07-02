@@ -837,7 +837,7 @@ run();
 ### Error Classes
 **Primary errors:**
 * [`ServiceM8Error`](./src/models/errors/servicem8error.ts): The base class for HTTP error responses.
-  * [`ErrorT`](docs/models/errors/errort.md): Bad Request. Status code `400`.
+  * [`ErrorT`](./src/models/errors/errort.ts): Bad Request. Status code `400`.
 
 <details><summary>Less common errors (6)</summary>
 

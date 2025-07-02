@@ -9,7 +9,7 @@
 const value: components.Category[] = [
   {
     name: "<value>",
-    uuid: "123e4567-3aac-4204-9515-22f38c97209b",
+    uuid: "123e4567-c461-4031-b2de-22f452d6c28b",
     editDate: "2025-07-01 12:00:00",
   },
 ];

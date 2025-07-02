@@ -7,10 +7,10 @@
 
 ```typescript
 const value: components.Asset = {
-  uuid: "123e4567-4af7-41f6-943d-22f38f31ca4b",
+  uuid: "123e4567-f372-4028-815e-22f4558b301b",
   editDate: "2025-07-01 12:00:00",
-  companyUuid: "123e4567-a3f3-49de-a606-22f387416a9b",
-  assetTypeUuid: "123e4567-0081-46d2-9761-22f386ba863b",
+  companyUuid: "123e4567-645b-43bf-b4f0-22f45026a86b",
+  assetTypeUuid: "123e4567-cbed-42f1-8ab0-22f45375624b",
   geoTimestamp: "2025-07-01 12:00:00",
 };
 ```
