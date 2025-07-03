@@ -7,13 +7,13 @@
 
 ```typescript
 const value: components.JobMaterial = {
-  uuid: "123e4567-ee0a-44fe-8fde-22f45347bdeb",
+  uuid: "123e4567-f243-4511-84db-22f455a2309b",
   editDate: "2025-07-01 12:00:00",
-  jobUuid: "123e4567-2fa5-48f4-8449-22f459b06b2b",
-  materialUuid: "123e4567-dc75-4a43-adf6-22f4519d4e4b",
+  jobUuid: "123e4567-abea-430f-bab1-22f45079665b",
+  materialUuid: "123e4567-3f39-459a-ba8e-22f4564f8ddb",
   quantity: "<value>",
-  taxRateUuid: "123e4567-4509-4ade-aca0-22f453fb5c4b",
-  jobMaterialBundleUuid: "123e4567-9d1c-40af-9534-22f4500393fb",
+  taxRateUuid: "123e4567-8494-4fe0-ac77-22f456ad663b",
+  jobMaterialBundleUuid: "123e4567-afdf-4cc5-b43a-22f45ae27efb",
 };
 ```
 
