@@ -5,7 +5,16 @@
 ```typescript
 import { CreateAllocationWindowsResponse } from "servicem8/models/operations";
 
-let value: CreateAllocationWindowsResponse = {};
+let value: CreateAllocationWindowsResponse = {
+  headers: {
+    "key": [],
+    "key1": [],
+  },
+  result: {
+    errorCode: 1000,
+    message: "An error occurred completing your request",
+  },
+};
 ```
 
 ## Fields

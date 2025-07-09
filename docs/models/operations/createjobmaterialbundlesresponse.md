@@ -5,7 +5,13 @@
 ```typescript
 import { CreateJobMaterialBundlesResponse } from "servicem8/models/operations";
 
-let value: CreateJobMaterialBundlesResponse = {};
+let value: CreateJobMaterialBundlesResponse = {
+  headers: {},
+  result: {
+    errorCode: 1000,
+    message: "An error occurred completing your request",
+  },
+};
 ```
 
 ## Fields

@@ -5,7 +5,20 @@
 ```typescript
 import { CreateJobAllocationsResponse } from "servicem8/models/operations";
 
-let value: CreateJobAllocationsResponse = {};
+let value: CreateJobAllocationsResponse = {
+  headers: {
+    "key": [],
+    "key1": [
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
+    ],
+  },
+  result: {
+    errorCode: 0,
+    message: "OK",
+  },
+};
 ```
 
 ## Fields

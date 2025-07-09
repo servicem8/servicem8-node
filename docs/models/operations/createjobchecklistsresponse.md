@@ -5,7 +5,17 @@
 ```typescript
 import { CreateJobChecklistsResponse } from "servicem8/models/operations";
 
-let value: CreateJobChecklistsResponse = {};
+let value: CreateJobChecklistsResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+    ],
+  },
+  result: {
+    errorCode: 0,
+    message: "OK",
+  },
+};
 ```
 
 ## Fields

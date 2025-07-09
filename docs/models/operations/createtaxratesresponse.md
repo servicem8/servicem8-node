@@ -5,7 +5,27 @@
 ```typescript
 import { CreateTaxRatesResponse } from "servicem8/models/operations";
 
-let value: CreateTaxRatesResponse = {};
+let value: CreateTaxRatesResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+      "<value 2>",
+    ],
+    "key1": [
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
+    ],
+    "key2": [
+      "<value 1>",
+      "<value 2>",
+    ],
+  },
+  result: {
+    errorCode: 1000,
+    message: "An error occurred completing your request",
+  },
+};
 ```
 
 ## Fields

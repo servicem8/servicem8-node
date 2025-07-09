@@ -5,7 +5,13 @@
 ```typescript
 import { CreateStaffMessagesResponse } from "servicem8/models/operations";
 
-let value: CreateStaffMessagesResponse = {};
+let value: CreateStaffMessagesResponse = {
+  headers: {},
+  result: {
+    errorCode: 1000,
+    message: "An error occurred completing your request",
+  },
+};
 ```
 
 ## Fields

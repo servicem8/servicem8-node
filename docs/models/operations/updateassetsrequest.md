@@ -7,6 +7,12 @@ import { UpdateAssetsRequest } from "servicem8/models/operations";
 
 let value: UpdateAssetsRequest = {
   uuid: "abc96d81-74c1-442a-8b78-ad1771514a44",
+  asset: {
+    uuid: "123e4567-7499-4b1c-91c3-22fb2654a24b",
+    companyUuid: "123e4567-b758-4bc8-b2b6-22fb2c38084b",
+    assetTypeUuid: "123e4567-ece3-4efc-bff6-22fb2614867b",
+    geoTimestamp: "2025-07-01 12:00:00",
+  },
 };
 ```
 

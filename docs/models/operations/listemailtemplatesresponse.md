@@ -8,7 +8,7 @@
 ```typescript
 const value: components.EmailTemplate[] = [
   {
-    uuid: "123e4567-eaa6-4d9a-904a-22f4585f5eeb",
+    uuid: "123e4567-3882-489a-b3be-22fb24598bbb",
     editDate: "2025-07-01 12:00:00",
     name: "<value>",
   },

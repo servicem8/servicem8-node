@@ -5,7 +5,23 @@
 ```typescript
 import { CreateSecurityRolesResponse } from "servicem8/models/operations";
 
-let value: CreateSecurityRolesResponse = {};
+let value: CreateSecurityRolesResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+    ],
+    "key1": [
+      "<value 1>",
+    ],
+    "key2": [
+      "<value 1>",
+    ],
+  },
+  result: {
+    errorCode: 1000,
+    message: "An error occurred completing your request",
+  },
+};
 ```
 
 ## Fields

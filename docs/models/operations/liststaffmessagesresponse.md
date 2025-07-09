@@ -8,14 +8,14 @@
 ```typescript
 const value: components.StaffMessage[] = [
   {
-    uuid: "123e4567-1559-4a58-b3fa-22f45a641eab",
+    uuid: "123e4567-2967-49a0-87f7-22fb2ef4673b",
     editDate: "2025-07-01 12:00:00",
-    fromStaffUuid: "123e4567-9046-4c71-b9af-22f45e175feb",
-    toStaffUuid: "123e4567-7a13-4f71-8c36-22f45718212b",
+    fromStaffUuid: "123e4567-626b-4101-a3f4-22fb2f2dd79b",
+    toStaffUuid: "123e4567-d72a-47f9-92e4-22fb25ca6abb",
     sentTimestamp: "2025-07-01 12:00:00",
     deliveredTimestamp: "2025-07-01 12:00:00",
     readTimestamp: "2025-07-01 12:00:00",
-    regardingJobUuid: "123e4567-5feb-4135-bd2d-22f45f47dddb",
+    regardingJobUuid: "123e4567-f7af-435d-b596-22fb282eedfb",
   },
 ];
 ```

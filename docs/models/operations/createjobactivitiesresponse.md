@@ -5,7 +5,13 @@
 ```typescript
 import { CreateJobActivitiesResponse } from "servicem8/models/operations";
 
-let value: CreateJobActivitiesResponse = {};
+let value: CreateJobActivitiesResponse = {
+  headers: {},
+  result: {
+    errorCode: 1000,
+    message: "An error occurred completing your request",
+  },
+};
 ```
 
 ## Fields

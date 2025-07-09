@@ -5,7 +5,13 @@
 ```typescript
 import { CreateAttachmentsResponse } from "servicem8/models/operations";
 
-let value: CreateAttachmentsResponse = {};
+let value: CreateAttachmentsResponse = {
+  headers: {},
+  result: {
+    errorCode: 1000,
+    message: "An error occurred completing your request",
+  },
+};
 ```
 
 ## Fields

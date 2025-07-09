@@ -5,7 +5,15 @@
 ```typescript
 import { CreateKnowledgeArticlesResponse } from "servicem8/models/operations";
 
-let value: CreateKnowledgeArticlesResponse = {};
+let value: CreateKnowledgeArticlesResponse = {
+  headers: {
+    "key": [],
+  },
+  result: {
+    errorCode: 1000,
+    message: "An error occurred completing your request",
+  },
+};
 ```
 
 ## Fields

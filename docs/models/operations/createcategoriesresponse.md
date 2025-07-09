@@ -5,7 +5,24 @@
 ```typescript
 import { CreateCategoriesResponse } from "servicem8/models/operations";
 
-let value: CreateCategoriesResponse = {};
+let value: CreateCategoriesResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
+    ],
+    "key1": [
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
+    ],
+  },
+  result: {
+    errorCode: 0,
+    message: "OK",
+  },
+};
 ```
 
 ## Fields

@@ -5,7 +5,17 @@
 ```typescript
 import { CreateEmailTemplatesResponse } from "servicem8/models/operations";
 
-let value: CreateEmailTemplatesResponse = {};
+let value: CreateEmailTemplatesResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+    ],
+  },
+  result: {
+    errorCode: 1000,
+    message: "An error occurred completing your request",
+  },
+};
 ```
 
 ## Fields

@@ -5,7 +5,13 @@
 ```typescript
 import { CreateAssetTypeFieldsResponse } from "servicem8/models/operations";
 
-let value: CreateAssetTypeFieldsResponse = {};
+let value: CreateAssetTypeFieldsResponse = {
+  headers: {},
+  result: {
+    errorCode: 0,
+    message: "OK",
+  },
+};
 ```
 
 ## Fields

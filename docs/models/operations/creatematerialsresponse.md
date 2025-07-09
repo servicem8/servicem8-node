@@ -5,7 +5,18 @@
 ```typescript
 import { CreateMaterialsResponse } from "servicem8/models/operations";
 
-let value: CreateMaterialsResponse = {};
+let value: CreateMaterialsResponse = {
+  headers: {
+    "key": [],
+    "key1": [
+      "<value 1>",
+    ],
+  },
+  result: {
+    errorCode: 0,
+    message: "OK",
+  },
+};
 ```
 
 ## Fields

@@ -5,7 +5,20 @@
 ```typescript
 import { CreateTasksResponse } from "servicem8/models/operations";
 
-let value: CreateTasksResponse = {};
+let value: CreateTasksResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+    ],
+    "key1": [
+      "<value 1>",
+    ],
+  },
+  result: {
+    errorCode: 1000,
+    message: "An error occurred completing your request",
+  },
+};
 ```
 
 ## Fields

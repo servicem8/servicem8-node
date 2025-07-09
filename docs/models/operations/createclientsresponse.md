@@ -5,7 +5,26 @@
 ```typescript
 import { CreateClientsResponse } from "servicem8/models/operations";
 
-let value: CreateClientsResponse = {};
+let value: CreateClientsResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+      "<value 2>",
+    ],
+    "key1": [
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
+    ],
+    "key2": [
+      "<value 1>",
+    ],
+  },
+  result: {
+    errorCode: 1000,
+    message: "An error occurred completing your request",
+  },
+};
 ```
 
 ## Fields
