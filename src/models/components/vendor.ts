@@ -38,10 +38,10 @@ export type Vendor = {
    * Company Name
    */
   name: string;
-  /**
-   * Company ABN Number (Australian Accounts Only)
-   */
   abnNumber?: string | undefined;
+  /**
+   * Company Business Number
+   */
   businessNumber?: string | undefined;
   /**
    * Company Website address
@@ -85,10 +85,10 @@ export type VendorInput = {
    * Company Name
    */
   name: string;
-  /**
-   * Company ABN Number (Australian Accounts Only)
-   */
   abnNumber?: string | undefined;
+  /**
+   * Company Business Number
+   */
   businessNumber?: string | undefined;
   /**
    * Company Website address

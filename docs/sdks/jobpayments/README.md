@@ -111,10 +111,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobPayments.createJobPayments({
-    uuid: "123e4567-cae2-4a16-b56d-22fb2a414e6b",
-    jobUuid: "123e4567-c004-490e-88e5-22fb2ac804cb",
-    actionedByUuid: "123e4567-6f3f-49b1-91e6-22fb2c83509b",
-    attachmentUuid: "123e4567-a1a0-4cf7-a926-22fb24b229eb",
+    uuid: "123e4567-d76d-42c1-ae03-22fb2631789b",
+    jobUuid: "123e4567-9722-4f93-adcb-22fb2c7acecb",
+    actionedByUuid: "123e4567-ba20-401f-91d5-22fb22bce9fb",
+    attachmentUuid: "123e4567-2bd4-4fc8-aed1-22fb2b83cdbb",
   });
 
   console.log(result);
@@ -141,10 +141,10 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobPaymentsCreateJobPayments(serviceM8, {
-    uuid: "123e4567-cae2-4a16-b56d-22fb2a414e6b",
-    jobUuid: "123e4567-c004-490e-88e5-22fb2ac804cb",
-    actionedByUuid: "123e4567-6f3f-49b1-91e6-22fb2c83509b",
-    attachmentUuid: "123e4567-a1a0-4cf7-a926-22fb24b229eb",
+    uuid: "123e4567-d76d-42c1-ae03-22fb2631789b",
+    jobUuid: "123e4567-9722-4f93-adcb-22fb2c7acecb",
+    actionedByUuid: "123e4567-ba20-401f-91d5-22fb22bce9fb",
+    attachmentUuid: "123e4567-2bd4-4fc8-aed1-22fb2b83cdbb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -273,10 +273,10 @@ async function run() {
   const result = await serviceM8.jobPayments.updateJobPayments({
     uuid: "11677578-ba16-4ac4-b2d7-62ad0de4655c",
     jobPayment: {
-      uuid: "123e4567-cae2-4a16-b56d-22fb2a414e6b",
-      jobUuid: "123e4567-c004-490e-88e5-22fb2ac804cb",
-      actionedByUuid: "123e4567-6f3f-49b1-91e6-22fb2c83509b",
-      attachmentUuid: "123e4567-a1a0-4cf7-a926-22fb24b229eb",
+      uuid: "123e4567-d76d-42c1-ae03-22fb2631789b",
+      jobUuid: "123e4567-9722-4f93-adcb-22fb2c7acecb",
+      actionedByUuid: "123e4567-ba20-401f-91d5-22fb22bce9fb",
+      attachmentUuid: "123e4567-2bd4-4fc8-aed1-22fb2b83cdbb",
     },
   });
 
@@ -306,10 +306,10 @@ async function run() {
   const res = await jobPaymentsUpdateJobPayments(serviceM8, {
     uuid: "11677578-ba16-4ac4-b2d7-62ad0de4655c",
     jobPayment: {
-      uuid: "123e4567-cae2-4a16-b56d-22fb2a414e6b",
-      jobUuid: "123e4567-c004-490e-88e5-22fb2ac804cb",
-      actionedByUuid: "123e4567-6f3f-49b1-91e6-22fb2c83509b",
-      attachmentUuid: "123e4567-a1a0-4cf7-a926-22fb24b229eb",
+      uuid: "123e4567-d76d-42c1-ae03-22fb2631789b",
+      jobUuid: "123e4567-9722-4f93-adcb-22fb2c7acecb",
+      actionedByUuid: "123e4567-ba20-401f-91d5-22fb22bce9fb",
+      attachmentUuid: "123e4567-2bd4-4fc8-aed1-22fb2b83cdbb",
     },
   });
   if (res.ok) {

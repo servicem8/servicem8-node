@@ -8,10 +8,10 @@ import { UpdateJobPaymentsRequest } from "servicem8/models/operations";
 let value: UpdateJobPaymentsRequest = {
   uuid: "c98a4d70-9131-4595-bcdd-b5a6b68bee7c",
   jobPayment: {
-    uuid: "123e4567-cae2-4a16-b56d-22fb2a414e6b",
-    jobUuid: "123e4567-c004-490e-88e5-22fb2ac804cb",
-    actionedByUuid: "123e4567-6f3f-49b1-91e6-22fb2c83509b",
-    attachmentUuid: "123e4567-a1a0-4cf7-a926-22fb24b229eb",
+    uuid: "123e4567-d76d-42c1-ae03-22fb2631789b",
+    jobUuid: "123e4567-9722-4f93-adcb-22fb2c7acecb",
+    actionedByUuid: "123e4567-ba20-401f-91d5-22fb22bce9fb",
+    attachmentUuid: "123e4567-2bd4-4fc8-aed1-22fb2b83cdbb",
   },
 };
 ```

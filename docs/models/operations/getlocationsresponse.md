@@ -8,7 +8,7 @@
 ```typescript
 const value: components.Location = {
   name: "<value>",
-  uuid: "123e4567-ce5b-4ee3-b0dc-22fb2ae9c67b",
+  uuid: "123e4567-c289-4f7a-a6cc-22fb2057901b",
   editDate: "2025-07-01 12:00:00",
 };
 ```
