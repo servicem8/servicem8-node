@@ -363,6 +363,17 @@ run();
 * [updateForms](docs/sdks/forms/README.md#updateforms) - Update a Form
 * [deleteForms](docs/sdks/forms/README.md#deleteforms) - Delete a Form
 
+### [inbox](docs/sdks/inbox/README.md)
+
+* [listInboxMessages](docs/sdks/inbox/README.md#listinboxmessages) - List inbox messages
+* [getInboxMessage](docs/sdks/inbox/README.md#getinboxmessage) - Get inbox message details
+* [markInboxMessageAsRead](docs/sdks/inbox/README.md#markinboxmessageasread) - Mark message as read
+* [archiveInboxMessage](docs/sdks/inbox/README.md#archiveinboxmessage) - Archive or unarchive message
+* [snoozeInboxMessage](docs/sdks/inbox/README.md#snoozeinboxmessage) - Snooze or unsnooze message
+* [convertInboxMessageToJob](docs/sdks/inbox/README.md#convertinboxmessagetojob) - Convert message to job
+* [attachInboxMessageToJob](docs/sdks/inbox/README.md#attachinboxmessagetojob) - Attach message to existing job
+* [addNoteToInboxMessage](docs/sdks/inbox/README.md#addnotetoinboxmessage) - Add note to message
+
 ### [jobActivities](docs/sdks/jobactivities/README.md)
 
 * [listJobActivities](docs/sdks/jobactivities/README.md#listjobactivities) - List all Job Activities
@@ -435,6 +446,15 @@ run();
 * [updateJobs](docs/sdks/jobs/README.md#updatejobs) - Update a Job
 * [deleteJobs](docs/sdks/jobs/README.md#deletejobs) - Delete a Job
 
+### [jobTemplates](docs/sdks/jobtemplates/README.md)
+
+* [listJobTemplates](docs/sdks/jobtemplates/README.md#listjobtemplates) - List all Job Templates
+* [createJobTemplates](docs/sdks/jobtemplates/README.md#createjobtemplates) - Create a new Job Template
+* [getJobTemplates](docs/sdks/jobtemplates/README.md#getjobtemplates) - Retrieve a Job Template
+* [updateJobTemplates](docs/sdks/jobtemplates/README.md#updatejobtemplates) - Update a Job Template
+* [deleteJobTemplates](docs/sdks/jobtemplates/README.md#deletejobtemplates) - Delete a Job Template
+* [createJobFromTemplate](docs/sdks/jobtemplates/README.md#createjobfromtemplate) - Create a job from a template
+
 ### [knowledgeArticles](docs/sdks/knowledgearticles/README.md)
 
 * [listKnowledgeArticles](docs/sdks/knowledgearticles/README.md#listknowledgearticles) - List all Knowledge Articles
@@ -466,6 +486,12 @@ run();
 * [getNotes](docs/sdks/notes/README.md#getnotes) - Retrieve a Note
 * [updateNotes](docs/sdks/notes/README.md#updatenotes) - Update a Note
 * [deleteNotes](docs/sdks/notes/README.md#deletenotes) - Delete a Note
+
+### [search](docs/sdks/search/README.md)
+
+* [generalSearch](docs/sdks/search/README.md#generalsearch) - Search across multiple object types
+* [objectSearch](docs/sdks/search/README.md#objectsearch) - Search within a specific object type
+* [jobEmbeddingSearch](docs/sdks/search/README.md#jobembeddingsearch) - Semantic search for jobs
 
 ### [securityRoles](docs/sdks/securityroles/README.md)
 
@@ -614,6 +640,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`formsGetForms`](docs/sdks/forms/README.md#getforms) - Retrieve a Form
 - [`formsListForms`](docs/sdks/forms/README.md#listforms) - List all Forms
 - [`formsUpdateForms`](docs/sdks/forms/README.md#updateforms) - Update a Form
+- [`inboxAddNoteToInboxMessage`](docs/sdks/inbox/README.md#addnotetoinboxmessage) - Add note to message
+- [`inboxArchiveInboxMessage`](docs/sdks/inbox/README.md#archiveinboxmessage) - Archive or unarchive message
+- [`inboxAttachInboxMessageToJob`](docs/sdks/inbox/README.md#attachinboxmessagetojob) - Attach message to existing job
+- [`inboxConvertInboxMessageToJob`](docs/sdks/inbox/README.md#convertinboxmessagetojob) - Convert message to job
+- [`inboxGetInboxMessage`](docs/sdks/inbox/README.md#getinboxmessage) - Get inbox message details
+- [`inboxListInboxMessages`](docs/sdks/inbox/README.md#listinboxmessages) - List inbox messages
+- [`inboxMarkInboxMessageAsRead`](docs/sdks/inbox/README.md#markinboxmessageasread) - Mark message as read
+- [`inboxSnoozeInboxMessage`](docs/sdks/inbox/README.md#snoozeinboxmessage) - Snooze or unsnooze message
 - [`jobActivitiesCreateJobActivities`](docs/sdks/jobactivities/README.md#createjobactivities) - Create a new Job Activity
 - [`jobActivitiesDeleteJobActivities`](docs/sdks/jobactivities/README.md#deletejobactivities) - Delete a Job Activity
 - [`jobActivitiesGetJobActivities`](docs/sdks/jobactivities/README.md#getjobactivities) - Retrieve a Job Activity
@@ -659,6 +693,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`jobsGetJobs`](docs/sdks/jobs/README.md#getjobs) - Retrieve a Job
 - [`jobsListJobs`](docs/sdks/jobs/README.md#listjobs) - List all Jobs
 - [`jobsUpdateJobs`](docs/sdks/jobs/README.md#updatejobs) - Update a Job
+- [`jobTemplatesCreateJobFromTemplate`](docs/sdks/jobtemplates/README.md#createjobfromtemplate) - Create a job from a template
+- [`jobTemplatesCreateJobTemplates`](docs/sdks/jobtemplates/README.md#createjobtemplates) - Create a new Job Template
+- [`jobTemplatesDeleteJobTemplates`](docs/sdks/jobtemplates/README.md#deletejobtemplates) - Delete a Job Template
+- [`jobTemplatesGetJobTemplates`](docs/sdks/jobtemplates/README.md#getjobtemplates) - Retrieve a Job Template
+- [`jobTemplatesListJobTemplates`](docs/sdks/jobtemplates/README.md#listjobtemplates) - List all Job Templates
+- [`jobTemplatesUpdateJobTemplates`](docs/sdks/jobtemplates/README.md#updatejobtemplates) - Update a Job Template
 - [`knowledgeArticlesCreateKnowledgeArticles`](docs/sdks/knowledgearticles/README.md#createknowledgearticles) - Create a new Knowledge Article
 - [`knowledgeArticlesDeleteKnowledgeArticles`](docs/sdks/knowledgearticles/README.md#deleteknowledgearticles) - Delete a Knowledge Article
 - [`knowledgeArticlesGetKnowledgeArticles`](docs/sdks/knowledgearticles/README.md#getknowledgearticles) - Retrieve a Knowledge Article
@@ -679,6 +719,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`notesGetNotes`](docs/sdks/notes/README.md#getnotes) - Retrieve a Note
 - [`notesListNotes`](docs/sdks/notes/README.md#listnotes) - List all Notes
 - [`notesUpdateNotes`](docs/sdks/notes/README.md#updatenotes) - Update a Note
+- [`searchGeneralSearch`](docs/sdks/search/README.md#generalsearch) - Search across multiple object types
+- [`searchJobEmbeddingSearch`](docs/sdks/search/README.md#jobembeddingsearch) - Semantic search for jobs
+- [`searchObjectSearch`](docs/sdks/search/README.md#objectsearch) - Search within a specific object type
 - [`securityRolesCreateSecurityRoles`](docs/sdks/securityroles/README.md#createsecurityroles) - Create a new Security Role
 - [`securityRolesDeleteSecurityRoles`](docs/sdks/securityroles/README.md#deletesecurityroles) - Delete a Security Role
 - [`securityRolesGetSecurityRoles`](docs/sdks/securityroles/README.md#getsecurityroles) - Retrieve a Security Role
@@ -837,7 +880,7 @@ run();
 ### Error Classes
 **Primary errors:**
 * [`ServiceM8Error`](./src/models/errors/servicem8error.ts): The base class for HTTP error responses.
-  * [`ErrorT`](./src/models/errors/errort.ts): Bad Request. Status code `400`.
+  * [`ErrorT`](./src/models/errors/errort.ts): *
 
 <details><summary>Less common errors (6)</summary>
 
@@ -855,6 +898,8 @@ run();
 * [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
 
 </details>
+
+\* Check [the method documentation](#available-resources-and-operations) to see if the error is applicable.
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
