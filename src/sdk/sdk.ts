@@ -18,6 +18,7 @@ import { Feedback } from "./feedback.js";
 import { FormFields } from "./formfields.js";
 import { FormResponses } from "./formresponses.js";
 import { Forms } from "./forms.js";
+import { Inbox } from "./inbox.js";
 import { JobActivities } from "./jobactivities.js";
 import { JobAllocations } from "./joballocations.js";
 import { JobChecklists } from "./jobchecklists.js";
@@ -27,10 +28,12 @@ import { JobMaterials } from "./jobmaterials.js";
 import { JobPayments } from "./jobpayments.js";
 import { JobQueues } from "./jobqueues.js";
 import { Jobs } from "./jobs.js";
+import { JobTemplates } from "./jobtemplates.js";
 import { KnowledgeArticles } from "./knowledgearticles.js";
 import { Locations } from "./locations.js";
 import { Materials } from "./materials.js";
 import { Notes } from "./notes.js";
+import { Search } from "./search.js";
 import { SecurityRoles } from "./securityroles.js";
 import { SMSTemplates } from "./smstemplates.js";
 import { StaffMembers } from "./staffmembers.js";
@@ -213,5 +216,20 @@ export class ServiceM8 extends ClientSDK {
   private _vendors?: Vendors;
   get vendors(): Vendors {
     return (this._vendors ??= new Vendors(this._options));
+  }
+
+  private _inbox?: Inbox;
+  get inbox(): Inbox {
+    return (this._inbox ??= new Inbox(this._options));
+  }
+
+  private _jobTemplates?: JobTemplates;
+  get jobTemplates(): JobTemplates {
+    return (this._jobTemplates ??= new JobTemplates(this._options));
+  }
+
+  private _search?: Search;
+  get search(): Search {
+    return (this._search ??= new Search(this._options));
   }
 }

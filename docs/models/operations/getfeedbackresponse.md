@@ -7,9 +7,9 @@
 
 ```typescript
 const value: components.Feedback = {
-  uuid: "123e4567-f67f-4c6f-9afd-22fc016a731b",
+  uuid: "123e4567-711a-4b5e-b117-22fd89dbcf6b",
   editDate: "2025-07-01 12:00:00",
-  relatedObjectUuid: "123e4567-d6a4-4be7-b7c6-22fc06a5a68b",
+  relatedObjectUuid: "123e4567-41d1-41f5-958a-22fd8694994b",
 };
 ```
 

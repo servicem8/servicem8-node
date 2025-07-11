@@ -87,6 +87,14 @@ import { tool$formsDeleteForms } from "./tools/formsDeleteForms.js";
 import { tool$formsGetForms } from "./tools/formsGetForms.js";
 import { tool$formsListForms } from "./tools/formsListForms.js";
 import { tool$formsUpdateForms } from "./tools/formsUpdateForms.js";
+import { tool$inboxAddNoteToInboxMessage } from "./tools/inboxAddNoteToInboxMessage.js";
+import { tool$inboxArchiveInboxMessage } from "./tools/inboxArchiveInboxMessage.js";
+import { tool$inboxAttachInboxMessageToJob } from "./tools/inboxAttachInboxMessageToJob.js";
+import { tool$inboxConvertInboxMessageToJob } from "./tools/inboxConvertInboxMessageToJob.js";
+import { tool$inboxGetInboxMessage } from "./tools/inboxGetInboxMessage.js";
+import { tool$inboxListInboxMessages } from "./tools/inboxListInboxMessages.js";
+import { tool$inboxMarkInboxMessageAsRead } from "./tools/inboxMarkInboxMessageAsRead.js";
+import { tool$inboxSnoozeInboxMessage } from "./tools/inboxSnoozeInboxMessage.js";
 import { tool$jobActivitiesCreateJobActivities } from "./tools/jobActivitiesCreateJobActivities.js";
 import { tool$jobActivitiesDeleteJobActivities } from "./tools/jobActivitiesDeleteJobActivities.js";
 import { tool$jobActivitiesGetJobActivities } from "./tools/jobActivitiesGetJobActivities.js";
@@ -132,6 +140,7 @@ import { tool$jobsDeleteJobs } from "./tools/jobsDeleteJobs.js";
 import { tool$jobsGetJobs } from "./tools/jobsGetJobs.js";
 import { tool$jobsListJobs } from "./tools/jobsListJobs.js";
 import { tool$jobsUpdateJobs } from "./tools/jobsUpdateJobs.js";
+import { tool$jobTemplatesCreateJobFromTemplate } from "./tools/jobTemplatesCreateJobFromTemplate.js";
 import { tool$knowledgeArticlesCreateKnowledgeArticles } from "./tools/knowledgeArticlesCreateKnowledgeArticles.js";
 import { tool$knowledgeArticlesDeleteKnowledgeArticles } from "./tools/knowledgeArticlesDeleteKnowledgeArticles.js";
 import { tool$knowledgeArticlesGetKnowledgeArticles } from "./tools/knowledgeArticlesGetKnowledgeArticles.js";
@@ -152,6 +161,9 @@ import { tool$notesDeleteNotes } from "./tools/notesDeleteNotes.js";
 import { tool$notesGetNotes } from "./tools/notesGetNotes.js";
 import { tool$notesListNotes } from "./tools/notesListNotes.js";
 import { tool$notesUpdateNotes } from "./tools/notesUpdateNotes.js";
+import { tool$searchGeneralSearch } from "./tools/searchGeneralSearch.js";
+import { tool$searchJobEmbeddingSearch } from "./tools/searchJobEmbeddingSearch.js";
+import { tool$searchObjectSearch } from "./tools/searchObjectSearch.js";
 import { tool$securityRolesCreateSecurityRoles } from "./tools/securityRolesCreateSecurityRoles.js";
 import { tool$securityRolesDeleteSecurityRoles } from "./tools/securityRolesDeleteSecurityRoles.js";
 import { tool$securityRolesGetSecurityRoles } from "./tools/securityRolesGetSecurityRoles.js";
@@ -196,7 +208,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "ServiceM8",
-    version: "0.8.0",
+    version: "0.9.0",
   });
 
   const client = new ServiceM8Core({
@@ -398,6 +410,18 @@ export function createMCPServer(deps: {
   tool(tool$vendorsListVendors);
   tool(tool$vendorsGetVendors);
   tool(tool$vendorsUpdateVendors);
+  tool(tool$inboxListInboxMessages);
+  tool(tool$inboxGetInboxMessage);
+  tool(tool$inboxMarkInboxMessageAsRead);
+  tool(tool$inboxArchiveInboxMessage);
+  tool(tool$inboxSnoozeInboxMessage);
+  tool(tool$inboxConvertInboxMessageToJob);
+  tool(tool$inboxAttachInboxMessageToJob);
+  tool(tool$inboxAddNoteToInboxMessage);
+  tool(tool$jobTemplatesCreateJobFromTemplate);
+  tool(tool$searchGeneralSearch);
+  tool(tool$searchObjectSearch);
+  tool(tool$searchJobEmbeddingSearch);
 
   return server;
 }

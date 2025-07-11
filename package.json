@@ -1,6 +1,6 @@
 {
   "name": "servicem8",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "author": "ServiceM8",
   "type": "module",
   "bin": {
