@@ -8,9 +8,9 @@
 ```typescript
 const value: components.AssetTypeField[] = [
   {
-    uuid: "123e4567-7d7a-47c7-914b-22fd839db70b",
+    uuid: "123e4567-283f-4c7f-9908-23004f2bb34b",
     editDate: "2025-07-01 12:00:00",
-    assetTypeUuid: "123e4567-e073-429c-a2da-22fd8220480b",
+    assetTypeUuid: "123e4567-efa5-41fb-9038-23004b95b27b",
     name: "<value>",
   },
 ];

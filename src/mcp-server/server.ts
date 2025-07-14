@@ -141,6 +141,11 @@ import { tool$jobsGetJobs } from "./tools/jobsGetJobs.js";
 import { tool$jobsListJobs } from "./tools/jobsListJobs.js";
 import { tool$jobsUpdateJobs } from "./tools/jobsUpdateJobs.js";
 import { tool$jobTemplatesCreateJobFromTemplate } from "./tools/jobTemplatesCreateJobFromTemplate.js";
+import { tool$jobTemplatesCreateJobTemplates } from "./tools/jobTemplatesCreateJobTemplates.js";
+import { tool$jobTemplatesDeleteJobTemplates } from "./tools/jobTemplatesDeleteJobTemplates.js";
+import { tool$jobTemplatesGetJobTemplates } from "./tools/jobTemplatesGetJobTemplates.js";
+import { tool$jobTemplatesListJobTemplates } from "./tools/jobTemplatesListJobTemplates.js";
+import { tool$jobTemplatesUpdateJobTemplates } from "./tools/jobTemplatesUpdateJobTemplates.js";
 import { tool$knowledgeArticlesCreateKnowledgeArticles } from "./tools/knowledgeArticlesCreateKnowledgeArticles.js";
 import { tool$knowledgeArticlesDeleteKnowledgeArticles } from "./tools/knowledgeArticlesDeleteKnowledgeArticles.js";
 import { tool$knowledgeArticlesGetKnowledgeArticles } from "./tools/knowledgeArticlesGetKnowledgeArticles.js";
@@ -208,7 +213,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "ServiceM8",
-    version: "0.9.0",
+    version: "0.9.1",
   });
 
   const client = new ServiceM8Core({
@@ -307,6 +312,14 @@ export function createMCPServer(deps: {
   tool(tool$formResponsesGetFormResponses);
   tool(tool$formResponsesUpdateFormResponses);
   tool(tool$formResponsesDeleteFormResponses);
+  tool(tool$inboxListInboxMessages);
+  tool(tool$inboxGetInboxMessage);
+  tool(tool$inboxMarkInboxMessageAsRead);
+  tool(tool$inboxArchiveInboxMessage);
+  tool(tool$inboxSnoozeInboxMessage);
+  tool(tool$inboxConvertInboxMessageToJob);
+  tool(tool$inboxAttachInboxMessageToJob);
+  tool(tool$inboxAddNoteToInboxMessage);
   tool(tool$jobsListJobs);
   tool(tool$jobsCreateJobs);
   tool(tool$jobsGetJobs);
@@ -347,6 +360,12 @@ export function createMCPServer(deps: {
   tool(tool$jobPaymentsGetJobPayments);
   tool(tool$jobPaymentsUpdateJobPayments);
   tool(tool$jobPaymentsDeleteJobPayments);
+  tool(tool$jobTemplatesListJobTemplates);
+  tool(tool$jobTemplatesCreateJobTemplates);
+  tool(tool$jobTemplatesGetJobTemplates);
+  tool(tool$jobTemplatesUpdateJobTemplates);
+  tool(tool$jobTemplatesDeleteJobTemplates);
+  tool(tool$jobTemplatesCreateJobFromTemplate);
   tool(tool$knowledgeArticlesListKnowledgeArticles);
   tool(tool$knowledgeArticlesCreateKnowledgeArticles);
   tool(tool$knowledgeArticlesGetKnowledgeArticles);
@@ -410,15 +429,6 @@ export function createMCPServer(deps: {
   tool(tool$vendorsListVendors);
   tool(tool$vendorsGetVendors);
   tool(tool$vendorsUpdateVendors);
-  tool(tool$inboxListInboxMessages);
-  tool(tool$inboxGetInboxMessage);
-  tool(tool$inboxMarkInboxMessageAsRead);
-  tool(tool$inboxArchiveInboxMessage);
-  tool(tool$inboxSnoozeInboxMessage);
-  tool(tool$inboxConvertInboxMessageToJob);
-  tool(tool$inboxAttachInboxMessageToJob);
-  tool(tool$inboxAddNoteToInboxMessage);
-  tool(tool$jobTemplatesCreateJobFromTemplate);
   tool(tool$searchGeneralSearch);
   tool(tool$searchObjectSearch);
   tool(tool$searchJobEmbeddingSearch);

@@ -36,6 +36,7 @@ export * from "./jobcontact.js";
 export * from "./jobmaterial.js";
 export * from "./jobmaterialbundle.js";
 export * from "./jobpayment.js";
+export * from "./jobtemplate.js";
 export * from "./jobtemplateoverrides.js";
 export * from "./knowledgearticle.js";
 export * from "./location.js";

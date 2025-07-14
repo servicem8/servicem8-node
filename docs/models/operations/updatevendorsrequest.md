@@ -8,7 +8,7 @@ import { UpdateVendorsRequest } from "servicem8/models/operations";
 let value: UpdateVendorsRequest = {
   uuid: "2aadd6fd-2ed6-4ac7-b6dc-8ebe5cf1d32a",
   vendor: {
-    uuid: "123e4567-b82c-4c1e-bd63-22fd85cd889b",
+    uuid: "123e4567-011b-4cc1-aa49-230045ed755b",
     name: "<value>",
   },
 };

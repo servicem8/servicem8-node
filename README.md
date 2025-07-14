@@ -448,6 +448,11 @@ run();
 
 ### [jobTemplates](docs/sdks/jobtemplates/README.md)
 
+* [listJobTemplates](docs/sdks/jobtemplates/README.md#listjobtemplates) - List all Job Templates
+* [createJobTemplates](docs/sdks/jobtemplates/README.md#createjobtemplates) - Create a new Job Template
+* [getJobTemplates](docs/sdks/jobtemplates/README.md#getjobtemplates) - Retrieve a Job Template
+* [updateJobTemplates](docs/sdks/jobtemplates/README.md#updatejobtemplates) - Update a Job Template
+* [deleteJobTemplates](docs/sdks/jobtemplates/README.md#deletejobtemplates) - Delete a Job Template
 * [createJobFromTemplate](docs/sdks/jobtemplates/README.md#createjobfromtemplate) - Create a job from a template
 
 ### [knowledgeArticles](docs/sdks/knowledgearticles/README.md)
@@ -689,6 +694,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`jobsListJobs`](docs/sdks/jobs/README.md#listjobs) - List all Jobs
 - [`jobsUpdateJobs`](docs/sdks/jobs/README.md#updatejobs) - Update a Job
 - [`jobTemplatesCreateJobFromTemplate`](docs/sdks/jobtemplates/README.md#createjobfromtemplate) - Create a job from a template
+- [`jobTemplatesCreateJobTemplates`](docs/sdks/jobtemplates/README.md#createjobtemplates) - Create a new Job Template
+- [`jobTemplatesDeleteJobTemplates`](docs/sdks/jobtemplates/README.md#deletejobtemplates) - Delete a Job Template
+- [`jobTemplatesGetJobTemplates`](docs/sdks/jobtemplates/README.md#getjobtemplates) - Retrieve a Job Template
+- [`jobTemplatesListJobTemplates`](docs/sdks/jobtemplates/README.md#listjobtemplates) - List all Job Templates
+- [`jobTemplatesUpdateJobTemplates`](docs/sdks/jobtemplates/README.md#updatejobtemplates) - Update a Job Template
 - [`knowledgeArticlesCreateKnowledgeArticles`](docs/sdks/knowledgearticles/README.md#createknowledgearticles) - Create a new Knowledge Article
 - [`knowledgeArticlesDeleteKnowledgeArticles`](docs/sdks/knowledgearticles/README.md#deleteknowledgearticles) - Delete a Knowledge Article
 - [`knowledgeArticlesGetKnowledgeArticles`](docs/sdks/knowledgearticles/README.md#getknowledgearticles) - Retrieve a Knowledge Article

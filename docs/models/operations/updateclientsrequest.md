@@ -9,8 +9,8 @@ let value: UpdateClientsRequest = {
   uuid: "706de9fc-6f51-44a6-a14d-628b91da42cd",
   company: {
     name: "<value>",
-    uuid: "123e4567-0792-4abc-a9a0-22fd8bd5e04b",
-    taxRateUuid: "123e4567-d02c-4d30-823f-22fd8497f6cb",
+    uuid: "123e4567-0e2f-4a5a-b33c-230047c55b0b",
+    taxRateUuid: "123e4567-f183-4d91-846f-230044faebdb",
   },
 };
 ```
