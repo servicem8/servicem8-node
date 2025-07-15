@@ -8,9 +8,9 @@ import { UpdateNotesRequest } from "servicem8/models/operations";
 let value: UpdateNotesRequest = {
   uuid: "da4cc607-8f1e-4a8a-a47c-29f7971019e7",
   note: {
-    uuid: "123e4567-f208-4370-9f0e-23004cc5173b",
-    relatedObjectUuid: "123e4567-054e-4288-8ec0-23004bd6938b",
-    actionCompletedByStaffUuid: "123e4567-cc45-4b40-a3a9-23004dc38d7b",
+    uuid: "123e4567-881d-4a5e-9450-23012aef12cb",
+    relatedObjectUuid: "123e4567-52f4-4517-bbe1-23012d105bbb",
+    actionCompletedByStaffUuid: "123e4567-8b4f-4621-bf2a-23012972785b",
     createDate: "2025-07-01 12:00:00",
   },
 };

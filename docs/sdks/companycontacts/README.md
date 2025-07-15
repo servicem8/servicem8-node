@@ -121,8 +121,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.companyContacts.createCompanyContacts({
-    uuid: "123e4567-155e-482d-95b4-23004417bfdb",
-    companyUuid: "123e4567-2f08-4bd1-90b4-23004742a8cb",
+    uuid: "123e4567-1af4-44e5-bdc8-230121ccbcdb",
+    companyUuid: "123e4567-a6e8-4cf5-87ec-2301209908eb",
   });
 
   console.log(result);
@@ -149,8 +149,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await companyContactsCreateCompanyContacts(serviceM8, {
-    uuid: "123e4567-155e-482d-95b4-23004417bfdb",
-    companyUuid: "123e4567-2f08-4bd1-90b4-23004742a8cb",
+    uuid: "123e4567-1af4-44e5-bdc8-230121ccbcdb",
+    companyUuid: "123e4567-a6e8-4cf5-87ec-2301209908eb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -289,8 +289,8 @@ async function run() {
   const result = await serviceM8.companyContacts.updateCompanyContacts({
     uuid: "14a84f05-390e-4d88-ad00-a75bba477a48",
     companyContact: {
-      uuid: "123e4567-155e-482d-95b4-23004417bfdb",
-      companyUuid: "123e4567-2f08-4bd1-90b4-23004742a8cb",
+      uuid: "123e4567-1af4-44e5-bdc8-230121ccbcdb",
+      companyUuid: "123e4567-a6e8-4cf5-87ec-2301209908eb",
     },
   });
 
@@ -320,8 +320,8 @@ async function run() {
   const res = await companyContactsUpdateCompanyContacts(serviceM8, {
     uuid: "14a84f05-390e-4d88-ad00-a75bba477a48",
     companyContact: {
-      uuid: "123e4567-155e-482d-95b4-23004417bfdb",
-      companyUuid: "123e4567-2f08-4bd1-90b4-23004742a8cb",
+      uuid: "123e4567-1af4-44e5-bdc8-230121ccbcdb",
+      companyUuid: "123e4567-a6e8-4cf5-87ec-2301209908eb",
     },
   });
   if (res.ok) {

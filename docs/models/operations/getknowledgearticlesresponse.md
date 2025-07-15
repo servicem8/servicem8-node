@@ -7,7 +7,7 @@
 
 ```typescript
 const value: components.KnowledgeArticle = {
-  uuid: "123e4567-3d7b-4b3b-84e7-2300405547eb",
+  uuid: "123e4567-ebc1-4c7e-b1b2-2301207e6a1b",
   editDate: "2025-07-01 12:00:00",
   name: "<value>",
 };

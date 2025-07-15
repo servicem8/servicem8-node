@@ -8,9 +8,9 @@ import { UpdateAssetsRequest } from "servicem8/models/operations";
 let value: UpdateAssetsRequest = {
   uuid: "abc96d81-74c1-442a-8b78-ad1771514a44",
   asset: {
-    uuid: "123e4567-8c87-43c8-9465-23004d21b3ab",
-    companyUuid: "123e4567-e416-49c6-86e9-230044b6e00b",
-    assetTypeUuid: "123e4567-6385-4b8b-b29d-2300435ce1ab",
+    uuid: "123e4567-57a5-4433-a0c3-23012bf50dcb",
+    companyUuid: "123e4567-3e12-49ef-8e0e-23012446d6bb",
+    assetTypeUuid: "123e4567-52fe-4156-a17b-23012bcc8b4b",
     geoTimestamp: "2025-07-01 12:00:00",
   },
 };

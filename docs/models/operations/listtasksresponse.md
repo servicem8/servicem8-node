@@ -10,13 +10,13 @@ const value: components.Task[] = [
   {
     dueDate: "YYYY-MM-DD",
     name: "<value>",
-    relatedObjectUuid: "123e4567-38d7-46f7-95f5-23004c88dd1b",
+    relatedObjectUuid: "123e4567-03f4-460f-85bf-230129e0471b",
     completedTimestamp: "2025-07-01 12:00:00",
-    completedByStaffUuid: "123e4567-9801-4614-a246-230041ea594b",
-    assignedToStaffUuid: "123e4567-9b51-453d-a000-2300478c32db",
-    uuid: "123e4567-65e9-4aa0-9b2d-23004a1d872b",
+    completedByStaffUuid: "123e4567-32bd-436d-978e-23012233399b",
+    assignedToStaffUuid: "123e4567-7df0-4aa5-8614-23012faca9db",
+    uuid: "123e4567-7dd7-47d5-aed8-23012efe97bb",
     editDate: "2025-07-01 12:00:00",
-    createdByStaffUuid: "123e4567-6f1b-419c-bba9-230049629bab",
+    createdByStaffUuid: "123e4567-44bf-43b9-96d8-23012660164b",
     createDate: "2025-07-01 12:00:00",
   },
 ];
