@@ -22,7 +22,10 @@ Creates a new job by cloning an existing job template. All template entities (ta
 Only the following fields can be overridden when creating a job from a template:
 - \`job_description\` - Job description
 - \`company_uuid\` - UUID of the company/client
+- \`company_name\` - Name of the company/client (will lookup existing or create new)
 - \`job_address\` - Street address for the job
+
+**Note:** You cannot specify both \`company_uuid\` and \`company_name\`. If \`company_name\` is provided, the system will first search for an existing company with that name. If found, it will use that company's UUID. If not found, a new company will be created.
 
 Any other fields in the request body will be ignored.
 

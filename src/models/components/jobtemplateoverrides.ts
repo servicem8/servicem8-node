@@ -9,7 +9,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
- * Optional field overrides when creating a job from a template. Only the following fields can be overridden: job_description, company_uuid, and job_address.
+ * Optional field overrides when creating a job from a template. Only the following fields can be overridden: job_description, company_uuid, company_name, and job_address. Note: You cannot specify both company_uuid and company_name.
  */
 export type JobTemplateOverrides = {
   /**
@@ -17,9 +17,13 @@ export type JobTemplateOverrides = {
    */
   jobDescription?: string | undefined;
   /**
-   * UUID of the company/client
+   * UUID of the company/client. Cannot be used together with company_name.
    */
   companyUuid?: string | undefined;
+  /**
+   * Name of the company/client. If a company with this name exists, it will be used. Otherwise, a new company will be created. Cannot be used together with company_uuid.
+   */
+  companyName?: string | undefined;
   /**
    * Street address for the job
    */
@@ -34,11 +38,13 @@ export const JobTemplateOverrides$inboundSchema: z.ZodType<
 > = z.object({
   job_description: z.string().optional(),
   company_uuid: z.string().optional(),
+  company_name: z.string().optional(),
   job_address: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "job_description": "jobDescription",
     "company_uuid": "companyUuid",
+    "company_name": "companyName",
     "job_address": "jobAddress",
   });
 });
@@ -47,6 +53,7 @@ export const JobTemplateOverrides$inboundSchema: z.ZodType<
 export type JobTemplateOverrides$Outbound = {
   job_description?: string | undefined;
   company_uuid?: string | undefined;
+  company_name?: string | undefined;
   job_address?: string | undefined;
 };
 
@@ -58,11 +65,13 @@ export const JobTemplateOverrides$outboundSchema: z.ZodType<
 > = z.object({
   jobDescription: z.string().optional(),
   companyUuid: z.string().optional(),
+  companyName: z.string().optional(),
   jobAddress: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     jobDescription: "job_description",
     companyUuid: "company_uuid",
+    companyName: "company_name",
     jobAddress: "job_address",
   });
 });
