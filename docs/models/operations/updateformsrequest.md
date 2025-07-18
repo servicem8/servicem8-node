@@ -8,8 +8,8 @@ import { UpdateFormsRequest } from "servicem8/models/operations";
 let value: UpdateFormsRequest = {
   uuid: "feddab1b-64a7-45ae-b8b7-3858d302f9ad",
   form: {
-    documentTemplateUuid: "123e4567-8a92-4277-a8c2-230127fc1dab",
-    uuid: "123e4567-c7ac-4c37-acdd-230120567cfb",
+    documentTemplateUuid: "123e4567-d4ed-4a5f-8523-2302fc6fe47b",
+    uuid: "123e4567-ca0c-46b7-a806-2302f5973b2b",
   },
 };
 ```

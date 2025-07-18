@@ -51,7 +51,7 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-25bb-4551-b0fc-230126b6cf6b",
+                                                "uuid": "123e4567-89a4-47b3-a9d1-2302f6ae733b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "name": "string",
@@ -220,7 +220,7 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-8446-4d49-916d-230123a14c1b",
+                                            "uuid": "123e4567-648e-4045-8817-2302fa617beb",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "name": "string",
@@ -460,12 +460,12 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-a9c3-485c-92cf-23012fe5bb6b",
+                                                "uuid": "123e4567-24fb-4a51-bada-2302f2b8a62b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
-                                                "company_uuid": "123e4567-2cdd-4a11-b75b-230121edad8b",
+                                                "company_uuid": "123e4567-946c-4eb2-b55f-2302faa5d20b",
                                                 "asset_code": "string",
-                                                "asset_type_uuid": "123e4567-7224-44c6-9a61-23012b5e32ab",
+                                                "asset_type_uuid": "123e4567-deff-4e70-9b28-2302f06f3cdb",
                                                 "name": "string",
                                                 "lat": "number",
                                                 "lng": "number",
@@ -559,12 +559,12 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-ab75-42e8-92bd-23012a71e6db",
+                                            "uuid": "123e4567-34b6-4aa3-af83-2302f563e0db",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
-                                            "company_uuid": "123e4567-6f8b-4440-ad3e-23012a20e2cb",
+                                            "company_uuid": "123e4567-738b-4ec8-b749-2302f1803d2b",
                                             "asset_code": "string",
-                                            "asset_type_uuid": "123e4567-aaa1-490d-82ae-230129c9bc3b",
+                                            "asset_type_uuid": "123e4567-7105-405d-98bc-2302fdc65cdb",
                                             "name": "string",
                                             "lat": "number",
                                             "lng": "number",
@@ -816,7 +816,7 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-5eb6-4c8e-8561-230126aae8fb",
+                                                "uuid": "123e4567-23a0-4669-9d62-2302f0e9bedb",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "name": "string"
@@ -986,7 +986,7 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-1133-48e0-bf16-23012115554b",
+                                            "uuid": "123e4567-bdbd-4bda-8749-2302f895910b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "name": "string"
@@ -1227,10 +1227,10 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-f027-4e31-a266-2301290a470b",
+                                                "uuid": "123e4567-cc13-4e86-aba8-2302f9c4811b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
-                                                "asset_type_uuid": "123e4567-1325-4913-9e40-2301224fbdcb",
+                                                "asset_type_uuid": "123e4567-53d3-4eea-b6f1-2302fe3205ab",
                                                 "name": "string",
                                                 "field_data": {
                                                     "fieldType": "string",
@@ -1406,10 +1406,10 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-2bcd-484a-a21a-230125da48eb",
+                                            "uuid": "123e4567-b89b-4092-9d57-2302f3c5962b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
-                                            "asset_type_uuid": "123e4567-f9cd-492b-b119-2301254724ab",
+                                            "asset_type_uuid": "123e4567-0883-4a9c-abcb-2302faaa06bb",
                                             "name": "string",
                                             "field_data": {
                                                 "fieldType": "string",
@@ -1654,14 +1654,14 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-daeb-4a85-b975-230124ccc31b",
+                                                "uuid": "123e4567-bc49-4389-b49a-2302fb25692b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "related_object": "string",
-                                                "related_object_uuid": "123e4567-90d2-41c9-be4a-2301268c9feb",
+                                                "related_object_uuid": "123e4567-18b2-4bed-87f3-2302f384b58b",
                                                 "attachment_name": "string",
                                                 "file_type": "string",
-                                                "created_by_staff_uuid": "123e4567-3060-4c0e-82cf-2301211c2f6b",
+                                                "created_by_staff_uuid": "123e4567-abc9-4c2f-8c6c-2302fdbe279b",
                                                 "timestamp": "string",
                                                 "attachment_source": "string",
                                                 "tags": "string",
@@ -1835,14 +1835,14 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-6c5e-492c-971c-23012fc7a70b",
+                                            "uuid": "123e4567-fc91-4df0-a550-2302fccc880b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "related_object": "string",
-                                            "related_object_uuid": "123e4567-b7be-4cd7-adb2-230126ce6e9b",
+                                            "related_object_uuid": "123e4567-b009-4c1c-96e5-2302f1f8066b",
                                             "attachment_name": "string",
                                             "file_type": "string",
-                                            "created_by_staff_uuid": "123e4567-f2f7-4943-a878-2301291c6edb",
+                                            "created_by_staff_uuid": "123e4567-50cd-4d56-a155-2302ff1e0d0b",
                                             "timestamp": "string",
                                             "attachment_source": "string",
                                             "tags": "string",
@@ -2087,14 +2087,14 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-51b4-40b1-b75b-2301252e479b",
+                                                "uuid": "123e4567-f766-42de-a689-2302f023d3cb",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "name": "string",
                                                 "automatically_allocated": "string",
                                                 "file_name": "string",
-                                                "regarding_form_uuid": "123e4567-d55f-425b-b2bf-23012cac2c4b",
-                                                "regarding_asset_type_uuid": "123e4567-ed82-4076-9ba1-230125b8c6eb"
+                                                "regarding_form_uuid": "123e4567-f776-4f94-bbd8-2302ff3c0beb",
+                                                "regarding_asset_type_uuid": "123e4567-9721-42c3-9acc-2302f08fa2db"
                                             }
                                         ]
                                     }
@@ -2261,14 +2261,14 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-d49a-4c12-b8c9-230128dbab0b",
+                                            "uuid": "123e4567-645d-4fc6-b2cd-2302f6276dab",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "name": "string",
                                             "automatically_allocated": "string",
                                             "file_name": "string",
-                                            "regarding_form_uuid": "123e4567-5370-4d47-914f-23012e4f9a4b",
-                                            "regarding_asset_type_uuid": "123e4567-3652-4a5e-bd87-23012c10e1cb"
+                                            "regarding_form_uuid": "123e4567-02e2-4081-8ef9-2302f32cfbdb",
+                                            "regarding_asset_type_uuid": "123e4567-56bf-45b3-864f-2302f2a585cb"
                                         }
                                     }
                                 }
@@ -2508,7 +2508,7 @@
                                             {
                                                 "name": "string",
                                                 "colour": "string",
-                                                "uuid": "123e4567-6ba8-4d89-bae2-2301215b7b5b",
+                                                "uuid": "123e4567-11fa-437d-9109-2302fbba692b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00"
                                             }
@@ -2679,7 +2679,7 @@
                                         "value": {
                                             "name": "string",
                                             "colour": "string",
-                                            "uuid": "123e4567-fc2a-4f13-b6ca-23012ba7805b",
+                                            "uuid": "123e4567-1308-46ae-a782-2302fa2c17bb",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00"
                                         }
@@ -2924,7 +2924,7 @@
                                                 "address": "string",
                                                 "billing_address": "string",
                                                 "parent_company_uuid": "string",
-                                                "uuid": "123e4567-0f0c-48a5-83ec-2301261d88fb",
+                                                "uuid": "123e4567-5a32-494d-ad69-2302fe7ea4eb",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "website": "string",
@@ -2936,7 +2936,7 @@
                                                 "address_country": "string",
                                                 "fax_number": "string",
                                                 "badges": "string",
-                                                "tax_rate_uuid": "123e4567-67b0-4c37-afb5-23012f742a6b",
+                                                "tax_rate_uuid": "123e4567-a2a7-4397-81ec-2302f6cfe1eb",
                                                 "billing_attention": "string",
                                                 "payment_terms": "string"
                                             }
@@ -3110,7 +3110,7 @@
                                             "address": "string",
                                             "billing_address": "string",
                                             "parent_company_uuid": "string",
-                                            "uuid": "123e4567-725a-4683-9d2b-2301291bf7db",
+                                            "uuid": "123e4567-0cfb-4390-94fa-2302ff4f346b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "website": "string",
@@ -3122,7 +3122,7 @@
                                             "address_country": "string",
                                             "fax_number": "string",
                                             "badges": "string",
-                                            "tax_rate_uuid": "123e4567-12ef-41e6-8100-23012ba913db",
+                                            "tax_rate_uuid": "123e4567-2ef6-49fc-8075-2302fa59a34b",
                                             "billing_attention": "string",
                                             "payment_terms": "string"
                                         }
@@ -3362,10 +3362,10 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-2939-4036-902b-23012e743f6b",
+                                                "uuid": "123e4567-5899-4207-9b37-2302fa2a007b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
-                                                "company_uuid": "123e4567-a09e-48db-9b1c-230124fe23cb",
+                                                "company_uuid": "123e4567-9277-40aa-aa7c-2302f1b3475b",
                                                 "first": "string",
                                                 "last": "string",
                                                 "phone": "string",
@@ -3539,10 +3539,10 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-bfff-4ae9-a788-23012ad7e2cb",
+                                            "uuid": "123e4567-f3ff-4882-8301-2302fcdc90bb",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
-                                            "company_uuid": "123e4567-c35e-4d8e-8fe9-230124e58c0b",
+                                            "company_uuid": "123e4567-9fff-4cd8-9a62-2302f38a1f8b",
                                             "first": "string",
                                             "last": "string",
                                             "phone": "string",
@@ -3785,7 +3785,7 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-bae6-4157-abc7-230125bfe42b",
+                                                "uuid": "123e4567-26ae-4371-9074-2302f6d0556b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "name": "string",
@@ -3953,7 +3953,7 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-ad52-4831-9988-23012062301b",
+                                            "uuid": "123e4567-81c3-4788-bbe0-2302f5ba278b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "name": "string",
@@ -4190,12 +4190,12 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-13d0-48c6-bd1c-23012d76255b",
+                                                "uuid": "123e4567-3aea-4c99-8ad0-2302fdcbccab",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "timestamp": "string",
                                                 "related_object": "string",
-                                                "related_object_uuid": "123e4567-8c1f-4f5b-8d18-2301251142fb",
+                                                "related_object_uuid": "123e4567-6cc5-4d9e-9795-2302f7bfe2cb",
                                                 "rating": "string",
                                                 "comment": "string"
                                             }
@@ -4360,12 +4360,12 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-18e9-4801-b35f-2301213d9cab",
+                                            "uuid": "123e4567-d652-4d28-9ce1-2302f30d020b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "timestamp": "string",
                                             "related_object": "string",
-                                            "related_object_uuid": "123e4567-cf69-411a-85ee-23012f61c17b",
+                                            "related_object_uuid": "123e4567-99ac-481c-a777-2302f91ce3cb",
                                             "rating": "string",
                                             "comment": "string"
                                         }
@@ -4600,7 +4600,7 @@
                                         "value": [
                                             {
                                                 "name": "string",
-                                                "document_template_uuid": "123e4567-94a5-4003-8883-23012068782b",
+                                                "document_template_uuid": "123e4567-6c3a-4573-872c-2302fb1a18ab",
                                                 "can_be_used_independently": "string",
                                                 "badge_mandatory_state": "string",
                                                 "template_fields": [
@@ -4611,7 +4611,7 @@
                                                         "sortOrder": "string"
                                                     }
                                                 ],
-                                                "uuid": "123e4567-0240-4327-a59b-230128e84d0b",
+                                                "uuid": "123e4567-0ec7-4fdd-83f7-2302f942cc2b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00"
                                             }
@@ -4777,7 +4777,7 @@
                                     "success": {
                                         "value": {
                                             "name": "string",
-                                            "document_template_uuid": "123e4567-a05b-44a1-992d-23012244f8eb",
+                                            "document_template_uuid": "123e4567-87e9-47a9-8c54-2302f629638b",
                                             "can_be_used_independently": "string",
                                             "badge_mandatory_state": "string",
                                             "template_fields": [
@@ -4788,7 +4788,7 @@
                                                     "sortOrder": "string"
                                                 }
                                             ],
-                                            "uuid": "123e4567-e640-4544-9269-230121e2640b",
+                                            "uuid": "123e4567-ffcf-4f03-8cf4-2302f5008f6b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00"
                                         }
@@ -5022,10 +5022,10 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-8dd2-49ca-9e1f-23012b97d1fb",
+                                                "uuid": "123e4567-e0b0-45a7-b5df-2302fa41ac5b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
-                                                "form_uuid": "123e4567-5fdd-44c5-84f2-23012f2d9a6b",
+                                                "form_uuid": "123e4567-ef65-4e74-ae05-2302f43ed1eb",
                                                 "name": "string",
                                                 "field_data_json": "string",
                                                 "sort_order": "string"
@@ -5191,10 +5191,10 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-472c-4e72-a0af-2301236b005b",
+                                            "uuid": "123e4567-b256-44d4-a0c7-2302ff69813b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
-                                            "form_uuid": "123e4567-ec10-4bb4-8737-2301222e5fcb",
+                                            "form_uuid": "123e4567-dd27-41b3-adf7-2302fe7a3e3b",
                                             "name": "string",
                                             "field_data_json": "string",
                                             "sort_order": "string"
@@ -5429,18 +5429,18 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-e047-4078-90c4-230124f30a9b",
+                                                "uuid": "123e4567-c3ef-46c1-b708-2302f23a02db",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
-                                                "form_uuid": "123e4567-6cec-411d-939e-23012097188b",
-                                                "staff_uuid": "123e4567-21ba-4ed2-98d2-23012ad2e03b",
+                                                "form_uuid": "123e4567-7bb7-456b-8272-2302fb0f3d8b",
+                                                "staff_uuid": "123e4567-91f9-4df4-9f2c-2302f17867bb",
                                                 "regarding_object": "string",
-                                                "regarding_object_uuid": "123e4567-b50a-48b5-bfcb-23012829e2bb",
+                                                "regarding_object_uuid": "123e4567-dfa6-4d58-8b77-2302f24e9c3b",
                                                 "field_data": "string",
                                                 "timestamp": "2025-07-01 12:00:00",
-                                                "form_by_staff_uuid": "123e4567-3be0-488e-ae85-230124d157fb",
-                                                "document_attachment_uuid": "123e4567-dfe6-4da2-8e85-23012ea3387b",
-                                                "asset_uuid": "123e4567-ea3e-4dae-9264-23012c7e7d9b"
+                                                "form_by_staff_uuid": "123e4567-9b03-4652-91da-2302f71011db",
+                                                "document_attachment_uuid": "123e4567-cd79-460e-92a3-2302f3542c9b",
+                                                "asset_uuid": "123e4567-8e91-419c-9cbb-2302fa108dfb"
                                             }
                                         ]
                                     }
@@ -5603,18 +5603,18 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-ebca-41f9-9171-23012380c9ab",
+                                            "uuid": "123e4567-6f23-42cc-bfc3-2302f2af7c5b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
-                                            "form_uuid": "123e4567-eb79-4f4b-82d3-23012c9ccfab",
-                                            "staff_uuid": "123e4567-fac6-457b-8a42-23012670c72b",
+                                            "form_uuid": "123e4567-3ef3-4907-9ace-2302f98facdb",
+                                            "staff_uuid": "123e4567-1001-420d-86df-2302f52f6d5b",
                                             "regarding_object": "string",
-                                            "regarding_object_uuid": "123e4567-f620-4ab4-bc61-230120bc3acb",
+                                            "regarding_object_uuid": "123e4567-7dbe-4672-bd5b-2302ff09b32b",
                                             "field_data": "string",
                                             "timestamp": "2025-07-01 12:00:00",
-                                            "form_by_staff_uuid": "123e4567-e133-4c45-abe9-2301215f2e1b",
-                                            "document_attachment_uuid": "123e4567-936e-4c10-a0d4-23012aeacb2b",
-                                            "asset_uuid": "123e4567-3a94-4178-a978-230129eeda7b"
+                                            "form_by_staff_uuid": "123e4567-b6b9-48da-8818-2302f48e639b",
+                                            "document_attachment_uuid": "123e4567-f218-43a6-ad4e-2302fd87951b",
+                                            "asset_uuid": "123e4567-e32b-45e9-beaf-2302fb8e07cb"
                                         }
                                     }
                                 }
@@ -6000,18 +6000,18 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "created_by_staff_uuid": "123e4567-e655-409a-ba6b-230126d2b1db",
+                                                "created_by_staff_uuid": "123e4567-8bd8-4c9f-a78d-2302f820c03b",
                                                 "date": "YYYY-MM-DD",
-                                                "company_uuid": "123e4567-f981-430c-954b-23012cbfca9b",
+                                                "company_uuid": "123e4567-28c7-4b23-b560-2302ff4b07db",
                                                 "billing_address": "string",
                                                 "status": "string",
                                                 "lng": "number",
                                                 "lat": "number",
                                                 "payment_date": "2025-07-01 12:00:00",
-                                                "payment_actioned_by_uuid": "123e4567-d4fa-4c94-b47d-23012b8aba2b",
+                                                "payment_actioned_by_uuid": "123e4567-02e7-40d7-89c9-2302f6e96a8b",
                                                 "payment_method": "string",
                                                 "payment_amount": "string",
-                                                "category_uuid": "123e4567-98b9-456c-bf76-2301256407ab",
+                                                "category_uuid": "123e4567-0c78-4455-8c16-2302fec0f42b",
                                                 "payment_note": "string",
                                                 "geo_is_valid": "string",
                                                 "purchase_order_number": "string",
@@ -6025,9 +6025,9 @@
                                                 "geo_city": "string",
                                                 "geo_street": "string",
                                                 "geo_number": "string",
-                                                "queue_uuid": "123e4567-fe8f-4582-811e-23012fb6e7cb",
+                                                "queue_uuid": "123e4567-3d23-40d3-969f-2302f9724fbb",
                                                 "queue_expiry_date": "2025-07-01 12:00:00",
-                                                "queue_assigned_staff_uuid": "123e4567-62e5-404f-aea4-23012a3a13eb",
+                                                "queue_assigned_staff_uuid": "123e4567-2c83-4432-921e-2302f1cce82b",
                                                 "badges": "string",
                                                 "quote_date": "2025-07-01 12:00:00",
                                                 "quote_sent": "string",
@@ -6035,7 +6035,7 @@
                                                 "work_order_date": "2025-07-01 12:00:00",
                                                 "active_network_request_uuid": "string",
                                                 "related_knowledge_articles": "string",
-                                                "uuid": "123e4567-bde2-41b1-b40c-23012713b18b",
+                                                "uuid": "123e4567-be50-4799-b48f-2302fc09c8cb",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "job_address": "string",
@@ -6048,7 +6048,7 @@
                                                 "payment_received": "string",
                                                 "payment_received_stamp": "2025-07-01 12:00:00",
                                                 "completion_date": "2025-07-01 12:00:00",
-                                                "completion_actioned_by_uuid": "123e4567-a17c-46ce-909f-2301228defab",
+                                                "completion_actioned_by_uuid": "123e4567-0670-4f75-aa65-2302f13f0d9b",
                                                 "unsuccessful_date": "2025-07-01 12:00:00",
                                                 "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"
                                             }
@@ -6217,18 +6217,18 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "created_by_staff_uuid": "123e4567-4d43-4cd4-9502-230122ae9f3b",
+                                            "created_by_staff_uuid": "123e4567-9bd8-4f36-806a-2302ff8b10db",
                                             "date": "YYYY-MM-DD",
-                                            "company_uuid": "123e4567-ec2b-45a4-9f12-230129d5f0cb",
+                                            "company_uuid": "123e4567-4e5c-4f88-a7e9-2302ff8249ab",
                                             "billing_address": "string",
                                             "status": "string",
                                             "lng": "number",
                                             "lat": "number",
                                             "payment_date": "2025-07-01 12:00:00",
-                                            "payment_actioned_by_uuid": "123e4567-7809-4391-a10d-230123b6c1eb",
+                                            "payment_actioned_by_uuid": "123e4567-bd3c-4913-b9bb-2302f31742db",
                                             "payment_method": "string",
                                             "payment_amount": "string",
-                                            "category_uuid": "123e4567-602b-48fd-a52a-23012ea1b24b",
+                                            "category_uuid": "123e4567-6a01-49f8-8bd8-2302f71e9fcb",
                                             "payment_note": "string",
                                             "geo_is_valid": "string",
                                             "purchase_order_number": "string",
@@ -6242,9 +6242,9 @@
                                             "geo_city": "string",
                                             "geo_street": "string",
                                             "geo_number": "string",
-                                            "queue_uuid": "123e4567-4bac-460e-979d-2301246aafbb",
+                                            "queue_uuid": "123e4567-a824-496d-82b8-2302f6177b2b",
                                             "queue_expiry_date": "2025-07-01 12:00:00",
-                                            "queue_assigned_staff_uuid": "123e4567-5ae4-441f-92c9-230121a9f7eb",
+                                            "queue_assigned_staff_uuid": "123e4567-f2f5-4b05-96f7-2302f3bd220b",
                                             "badges": "string",
                                             "quote_date": "2025-07-01 12:00:00",
                                             "quote_sent": "string",
@@ -6252,7 +6252,7 @@
                                             "work_order_date": "2025-07-01 12:00:00",
                                             "active_network_request_uuid": "string",
                                             "related_knowledge_articles": "string",
-                                            "uuid": "123e4567-62b7-4791-88f6-230124ea22eb",
+                                            "uuid": "123e4567-bfe8-4ca3-87da-2302f66f268b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "job_address": "string",
@@ -6265,7 +6265,7 @@
                                             "payment_received": "string",
                                             "payment_received_stamp": "2025-07-01 12:00:00",
                                             "completion_date": "2025-07-01 12:00:00",
-                                            "completion_actioned_by_uuid": "123e4567-617a-4a62-91fc-2301261a26db",
+                                            "completion_actioned_by_uuid": "123e4567-cac6-4080-8c59-2302f573e7eb",
                                             "unsuccessful_date": "2025-07-01 12:00:00",
                                             "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"
                                         }
@@ -6505,11 +6505,11 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-7f19-41a4-b8bb-230123a469bb",
+                                                "uuid": "123e4567-2367-4807-9855-2302f9de8abb",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
-                                                "job_uuid": "123e4567-bb89-4449-bcaa-2301257ee3eb",
-                                                "staff_uuid": "123e4567-bc69-4741-94c7-23012ce0622b",
+                                                "job_uuid": "123e4567-6563-4d28-8b48-2302f49e59bb",
+                                                "staff_uuid": "123e4567-fea0-44f3-8da6-2302f0458e2b",
                                                 "start_date": "2025-07-01 12:00:00",
                                                 "end_date": "2025-07-01 12:00:00",
                                                 "activity_was_scheduled": "string",
@@ -6519,10 +6519,10 @@
                                                 "has_been_opened_timestamp": "2025-07-01 12:00:00",
                                                 "travel_time_in_seconds": "string",
                                                 "travel_distance_in_meters": "string",
-                                                "allocated_by_staff_uuid": "123e4567-9722-4bb9-be48-230121a2a0fb",
+                                                "allocated_by_staff_uuid": "123e4567-851d-46bf-afec-2302ffb0df9b",
                                                 "allocated_timestamp": "2025-07-01 12:00:00",
-                                                "material_uuid": "123e4567-1c92-4da6-aa6e-23012eb7039b",
-                                                "edit_by_staff_uuid": "123e4567-9fd1-4e5c-a1d8-23012465dd2b"
+                                                "material_uuid": "123e4567-9709-4d93-868f-2302f2acd4bb",
+                                                "edit_by_staff_uuid": "123e4567-6599-4039-8f49-2302fb4e6b8b"
                                             }
                                         ]
                                     }
@@ -6689,11 +6689,11 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-fb30-4c68-9b7e-23012eb9c0db",
+                                            "uuid": "123e4567-a8a4-408f-95a2-2302fa7a065b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
-                                            "job_uuid": "123e4567-0e7b-43d1-aa5a-2301213dda7b",
-                                            "staff_uuid": "123e4567-bb30-440b-86f3-2301231fe51b",
+                                            "job_uuid": "123e4567-1c31-4837-9651-2302f9057e5b",
+                                            "staff_uuid": "123e4567-2d30-4e0c-bdc6-2302f667830b",
                                             "start_date": "2025-07-01 12:00:00",
                                             "end_date": "2025-07-01 12:00:00",
                                             "activity_was_scheduled": "string",
@@ -6703,10 +6703,10 @@
                                             "has_been_opened_timestamp": "2025-07-01 12:00:00",
                                             "travel_time_in_seconds": "string",
                                             "travel_distance_in_meters": "string",
-                                            "allocated_by_staff_uuid": "123e4567-ea8d-4617-b5ef-2301247320db",
+                                            "allocated_by_staff_uuid": "123e4567-b5d4-427c-8c3b-2302f0ffb32b",
                                             "allocated_timestamp": "2025-07-01 12:00:00",
-                                            "material_uuid": "123e4567-5f9d-470b-8f96-23012be872eb",
-                                            "edit_by_staff_uuid": "123e4567-2b84-4acf-8d09-230121655b5b"
+                                            "material_uuid": "123e4567-6e87-4d5d-a3c3-2302f476ab1b",
+                                            "edit_by_staff_uuid": "123e4567-1269-45ef-b6af-2302fb2426cb"
                                         }
                                     }
                                 }
@@ -6944,15 +6944,15 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-91f8-43ca-a600-230125d7166b",
+                                                "uuid": "123e4567-9e82-452d-8579-2302f412c74b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
-                                                "job_uuid": "123e4567-a9da-4c0e-a9ef-230123bbc28b",
-                                                "queue_uuid": "123e4567-5f1e-4a49-8917-230124db3e7b",
-                                                "staff_uuid": "123e4567-e4d2-44d1-a68c-23012216ef3b",
+                                                "job_uuid": "123e4567-2590-4607-831e-2302fdb309cb",
+                                                "queue_uuid": "123e4567-37bd-4709-aa22-2302f7402b2b",
+                                                "staff_uuid": "123e4567-f4c2-4d71-908e-2302ffa7fdbb",
                                                 "allocation_date": "2025-07-01 12:00:00",
-                                                "allocation_window_uuid": "123e4567-8a07-4d6f-ae46-230121003f0b",
-                                                "allocated_by_staff_uuid": "123e4567-0ecd-4866-b4c6-230123f2689b",
+                                                "allocation_window_uuid": "123e4567-d6d3-4340-ae01-2302f81ea25b",
+                                                "allocated_by_staff_uuid": "123e4567-1f4a-4ffd-9a32-2302fc473e8b",
                                                 "allocated_timestamp": "2025-07-01 12:00:00",
                                                 "expiry_timestamp": "2025-07-01 12:00:00",
                                                 "read_timestamp": "2025-07-01 12:00:00",
@@ -7129,15 +7129,15 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-8fd4-4b78-a194-23012023328b",
+                                            "uuid": "123e4567-f882-4c1a-a69c-2302f719bd4b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
-                                            "job_uuid": "123e4567-8114-4b46-87ed-23012acfe9ab",
-                                            "queue_uuid": "123e4567-ca86-49bf-a970-230125a46d0b",
-                                            "staff_uuid": "123e4567-0481-47e0-b9d1-23012044566b",
+                                            "job_uuid": "123e4567-2d4c-4ef4-8441-2302f1e4c5db",
+                                            "queue_uuid": "123e4567-cfe7-4e85-b3e3-2302f2306fcb",
+                                            "staff_uuid": "123e4567-64e3-4532-a01b-2302fe8c6d2b",
                                             "allocation_date": "2025-07-01 12:00:00",
-                                            "allocation_window_uuid": "123e4567-a9fa-4644-a2ee-2301265c80fb",
-                                            "allocated_by_staff_uuid": "123e4567-7413-4418-b673-230127839a4b",
+                                            "allocation_window_uuid": "123e4567-cb3a-47cb-ab26-2302f98f86fb",
+                                            "allocated_by_staff_uuid": "123e4567-810b-4321-9bf9-2302fc4088bb",
                                             "allocated_timestamp": "2025-07-01 12:00:00",
                                             "expiry_timestamp": "2025-07-01 12:00:00",
                                             "read_timestamp": "2025-07-01 12:00:00",
@@ -7383,27 +7383,27 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-5a9b-4810-8216-230121a30adb",
+                                                "uuid": "123e4567-9804-44e7-a306-2302f797a85b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
-                                                "job_uuid": "123e4567-3459-4111-abd3-23012f122b3b",
+                                                "job_uuid": "123e4567-6b87-48c9-a1a4-2302f347d98b",
                                                 "name": "string",
                                                 "section_name": "string",
                                                 "item_type": "string",
                                                 "sort_order": "string",
                                                 "completed_timestamp": "2025-07-01 12:00:00",
-                                                "completed_by_staff_uuid": "123e4567-c615-4e46-aec0-230127ab8ffb",
-                                                "completed_during_checkin_uuid": "123e4567-0105-4a27-b082-230123b8539b",
+                                                "completed_by_staff_uuid": "123e4567-97f8-4476-ae79-2302f09df08b",
+                                                "completed_during_checkin_uuid": "123e4567-7afd-4280-881e-2302f6d5450b",
                                                 "reminder_type": "string",
                                                 "reminder_data": "string",
                                                 "regarding_object": "string",
-                                                "regarding_object_uuid": "123e4567-bab7-4df7-bdb5-23012fd92b3b",
+                                                "regarding_object_uuid": "123e4567-e13c-4d1d-aac1-2302f1a6663b",
                                                 "fulfilled_by_object_name": "string",
-                                                "fulfilled_by_object_uuid": "123e4567-288b-41c5-9656-23012da8d8bb",
-                                                "assigned_to_staff_uuids": "123e4567-62bc-48ab-ad22-23012379ee5b",
+                                                "fulfilled_by_object_uuid": "123e4567-4a44-4895-920f-2302ff604f4b",
+                                                "assigned_to_staff_uuids": "123e4567-5e8c-407a-9fdb-2302fdeea65b",
                                                 "is_locked": "string",
                                                 "assigned_timestamp": "2025-07-01 12:00:00",
-                                                "assigned_by_staff_uuid": "123e4567-8356-4373-ab47-23012bd968db"
+                                                "assigned_by_staff_uuid": "123e4567-9284-4537-9954-2302f015341b"
                                             }
                                         ]
                                     }
@@ -7566,27 +7566,27 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-f986-4c73-b1f8-23012d3ab30b",
+                                            "uuid": "123e4567-4ac7-4724-981b-2302f4442e8b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
-                                            "job_uuid": "123e4567-e334-4f51-8a70-230129e9809b",
+                                            "job_uuid": "123e4567-b3c3-48ce-a116-2302fd8b2b0b",
                                             "name": "string",
                                             "section_name": "string",
                                             "item_type": "string",
                                             "sort_order": "string",
                                             "completed_timestamp": "2025-07-01 12:00:00",
-                                            "completed_by_staff_uuid": "123e4567-5fe7-49a9-b3a5-23012f3d990b",
-                                            "completed_during_checkin_uuid": "123e4567-2a36-4c6a-a432-23012de5beab",
+                                            "completed_by_staff_uuid": "123e4567-f7db-48ea-803d-2302fac57d8b",
+                                            "completed_during_checkin_uuid": "123e4567-c5fc-4719-80b4-2302f5ae8fcb",
                                             "reminder_type": "string",
                                             "reminder_data": "string",
                                             "regarding_object": "string",
-                                            "regarding_object_uuid": "123e4567-cf17-4a17-a9c9-230120b1892b",
+                                            "regarding_object_uuid": "123e4567-b9de-4fa5-b378-2302ff8df51b",
                                             "fulfilled_by_object_name": "string",
-                                            "fulfilled_by_object_uuid": "123e4567-2872-41af-b3a4-230125b6fb2b",
-                                            "assigned_to_staff_uuids": "123e4567-2c02-43a9-9ee8-23012c10055b",
+                                            "fulfilled_by_object_uuid": "123e4567-470e-49da-97a5-2302f8ad838b",
+                                            "assigned_to_staff_uuids": "123e4567-3ac2-4220-9366-2302f466090b",
                                             "is_locked": "string",
                                             "assigned_timestamp": "2025-07-01 12:00:00",
-                                            "assigned_by_staff_uuid": "123e4567-4e55-4884-af68-230124bf904b"
+                                            "assigned_by_staff_uuid": "123e4567-8846-4f74-b166-2302f3a6e12b"
                                         }
                                     }
                                 }
@@ -7820,10 +7820,10 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-e402-4128-ab09-230123db7aeb",
+                                                "uuid": "123e4567-329e-4bfb-8e50-2302fa8a0feb",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
-                                                "job_uuid": "123e4567-32d8-41c9-b69f-230128d73fab",
+                                                "job_uuid": "123e4567-e04b-4e32-b714-2302f60e73fb",
                                                 "first": "string",
                                                 "last": "string",
                                                 "phone": "string",
@@ -7997,10 +7997,10 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-560a-4694-9d6d-23012d8ed75b",
+                                            "uuid": "123e4567-b520-4e47-a849-2302f91e379b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
-                                            "job_uuid": "123e4567-006d-43fc-8de0-230123dfd31b",
+                                            "job_uuid": "123e4567-d2ad-46b9-afd6-2302f544079b",
                                             "first": "string",
                                             "last": "string",
                                             "phone": "string",
@@ -8245,21 +8245,21 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-ceb2-4a27-a7e2-23012f8fc0bb",
+                                                "uuid": "123e4567-b790-4162-b59e-2302f4d011cb",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
-                                                "job_uuid": "123e4567-601f-4e10-be40-23012096582b",
-                                                "material_uuid": "123e4567-564f-4429-a1be-23012296454b",
+                                                "job_uuid": "123e4567-c9d6-410f-b518-2302f379b5db",
+                                                "material_uuid": "123e4567-57e9-485b-950f-2302fd98f6cb",
                                                 "name": "string",
                                                 "quantity": "string",
                                                 "price": "string",
                                                 "displayed_amount": "string",
                                                 "displayed_amount_is_tax_inclusive": "string",
-                                                "tax_rate_uuid": "123e4567-649a-42e0-bdac-23012efcdafb",
+                                                "tax_rate_uuid": "123e4567-61bd-41ba-b565-2302fdd390fb",
                                                 "sort_order": "string",
                                                 "cost": "string",
                                                 "displayed_cost": "string",
-                                                "job_material_bundle_uuid": "123e4567-7a37-4f55-9854-2301226f319b"
+                                                "job_material_bundle_uuid": "123e4567-b59f-4581-9a5f-2302fc315b9b"
                                             }
                                         ]
                                     }
@@ -8426,21 +8426,21 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-b0e7-42de-8cfe-23012d04e85b",
+                                            "uuid": "123e4567-8235-410f-9ac5-2302fd24911b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
-                                            "job_uuid": "123e4567-83fb-45e5-afd1-230124d4423b",
-                                            "material_uuid": "123e4567-7d9d-417b-aaf0-23012a299cab",
+                                            "job_uuid": "123e4567-59f6-4228-b995-2302f01e92fb",
+                                            "material_uuid": "123e4567-f074-4d26-ae4a-2302f2d8c92b",
                                             "name": "string",
                                             "quantity": "string",
                                             "price": "string",
                                             "displayed_amount": "string",
                                             "displayed_amount_is_tax_inclusive": "string",
-                                            "tax_rate_uuid": "123e4567-9343-45af-ae57-23012f23361b",
+                                            "tax_rate_uuid": "123e4567-e3a8-4825-ab2b-2302f9d3cd5b",
                                             "sort_order": "string",
                                             "cost": "string",
                                             "displayed_cost": "string",
-                                            "job_material_bundle_uuid": "123e4567-adee-46fd-87e6-2301202b499b"
+                                            "job_material_bundle_uuid": "123e4567-0d00-4fe5-9f51-2302fa42200b"
                                         }
                                     }
                                 }
@@ -8676,15 +8676,15 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-a395-46e1-bd04-23012bb8304b",
+                                                "uuid": "123e4567-8624-445d-997a-2302fddd699b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "item_number": "string",
                                                 "name": "string",
                                                 "quantity": "string",
                                                 "sort_order": "string",
-                                                "material_bundle_uuid": "123e4567-e5cf-45fd-b714-23012ef0d3eb",
-                                                "job_uuid": "123e4567-463a-44d7-bcde-23012bf785eb"
+                                                "material_bundle_uuid": "123e4567-f460-4324-8eb2-2302f585470b",
+                                                "job_uuid": "123e4567-2b7f-4c3e-b65e-2302f00a4c1b"
                                             }
                                         ]
                                     }
@@ -8847,15 +8847,15 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-28a0-4098-aca4-2301271c866b",
+                                            "uuid": "123e4567-a99e-4793-bad4-2302f832838b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "item_number": "string",
                                             "name": "string",
                                             "quantity": "string",
                                             "sort_order": "string",
-                                            "material_bundle_uuid": "123e4567-ada0-4818-9842-23012511dfcb",
-                                            "job_uuid": "123e4567-763e-423d-9dec-230122a1b95b"
+                                            "material_bundle_uuid": "123e4567-7554-466d-bef0-2302f5fbdc0b",
+                                            "job_uuid": "123e4567-23e7-46f7-8a98-2302f3bbee9b"
                                         }
                                     }
                                 }
@@ -9087,16 +9087,16 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-2641-4ccb-b2b9-230125a21cdb",
+                                                "uuid": "123e4567-6919-4517-be2a-2302f5e5779b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
-                                                "job_uuid": "123e4567-36cf-42f7-81a0-23012e02320b",
-                                                "actioned_by_uuid": "123e4567-0d0e-4f23-b716-23012a3f179b",
+                                                "job_uuid": "123e4567-25da-450b-ad78-2302f94304bb",
+                                                "actioned_by_uuid": "123e4567-9aba-4264-a6eb-2302fd9ff86b",
                                                 "timestamp": "string",
                                                 "amount": "string",
                                                 "method": "string",
                                                 "note": "string",
-                                                "attachment_uuid": "123e4567-1e18-4868-a128-2301231de2ab",
+                                                "attachment_uuid": "123e4567-f812-4f5e-926f-2302f0192a2b",
                                                 "is_deposit": "string"
                                             }
                                         ]
@@ -9260,16 +9260,16 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-163e-4f23-bdc1-23012dded7ab",
+                                            "uuid": "123e4567-b518-4fb0-910c-2302f364b05b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
-                                            "job_uuid": "123e4567-0b8c-4ff9-aa86-2301223664ab",
-                                            "actioned_by_uuid": "123e4567-2924-497a-ac6f-23012488f29b",
+                                            "job_uuid": "123e4567-09fe-462d-8b2f-2302fd10659b",
+                                            "actioned_by_uuid": "123e4567-7a58-43bb-8c78-2302f5f899bb",
                                             "timestamp": "string",
                                             "amount": "string",
                                             "method": "string",
                                             "note": "string",
-                                            "attachment_uuid": "123e4567-c817-488e-b8fb-230121f11ebb",
+                                            "attachment_uuid": "123e4567-d53e-439d-a1de-2302f5199b7b",
                                             "is_deposit": "string"
                                         }
                                     }
@@ -9504,7 +9504,7 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-8586-423a-b8bc-2301230b720b",
+                                                "uuid": "123e4567-053a-40e4-9a98-2302f0b566ab",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "name": "string"
@@ -9674,7 +9674,7 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-8b65-414c-b344-23012698837b",
+                                            "uuid": "123e4567-4b5b-4cd6-b01c-2302f11634eb",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "name": "string"
@@ -9915,7 +9915,7 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-a2da-4873-bd5b-23012ce8950b",
+                                                "uuid": "123e4567-ae8d-41ff-8354-2302f6c9b7db",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "name": "string",
@@ -10096,7 +10096,7 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-6acc-4e8f-a28b-23012ef303bb",
+                                            "uuid": "123e4567-40c5-4844-bbc1-2302ff4fa05b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "name": "string",
@@ -10359,7 +10359,7 @@
                                                 "state": "string",
                                                 "lng": "number",
                                                 "lat": "number",
-                                                "uuid": "123e4567-eee0-4723-ad80-230126ce78eb",
+                                                "uuid": "123e4567-35d1-49e0-987a-2302fa62052b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00"
                                             }
@@ -10539,7 +10539,7 @@
                                             "state": "string",
                                             "lng": "number",
                                             "lat": "number",
-                                            "uuid": "123e4567-5678-4462-ae6c-230129b6649b",
+                                            "uuid": "123e4567-bfae-4811-83cb-2302fbc1120b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00"
                                         }
@@ -10787,12 +10787,12 @@
                                                 "price_includes_taxes": "string",
                                                 "barcode": "string",
                                                 "item_is_inventoried": "string",
-                                                "uuid": "123e4567-bfe5-47d0-b0c3-23012d6deb2b",
+                                                "uuid": "123e4567-68d9-431a-8813-2302f89cd34b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "item_description": "string",
                                                 "use_description_for_invoicing": "string",
-                                                "tax_rate_uuid": "123e4567-6013-46f3-94f9-230121929bfb"
+                                                "tax_rate_uuid": "123e4567-206b-48bd-8b41-2302f475451b"
                                             }
                                         ]
                                     }
@@ -10967,12 +10967,12 @@
                                             "price_includes_taxes": "string",
                                             "barcode": "string",
                                             "item_is_inventoried": "string",
-                                            "uuid": "123e4567-c647-4790-9959-230124ed4bdb",
+                                            "uuid": "123e4567-efc0-4671-84b2-2302f30ffd2b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "item_description": "string",
                                             "use_description_for_invoicing": "string",
-                                            "tax_rate_uuid": "123e4567-9bb7-48c9-ae6e-2301236a036b"
+                                            "tax_rate_uuid": "123e4567-a38b-4172-9003-2302f5d6309b"
                                         }
                                     }
                                 }
@@ -11208,7 +11208,7 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-f070-4727-89e8-230124d238ab",
+                                                "uuid": "123e4567-8e9a-4fd0-9b82-2302f76d538b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "item_number": "string",
@@ -11381,7 +11381,7 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-ba75-4599-870b-2301224a874b",
+                                            "uuid": "123e4567-146e-41fa-8aa1-2302fa1fc59b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "item_number": "string",
@@ -11623,15 +11623,15 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-5033-49bb-86c2-23012fac03eb",
+                                                "uuid": "123e4567-62b5-445f-a5f3-2302f9c3532b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "related_object": "string",
-                                                "related_object_uuid": "123e4567-0abd-489e-9832-230127e0ffdb",
+                                                "related_object_uuid": "123e4567-6d1e-4ee2-bd8d-2302f4c3615b",
                                                 "note": "string",
                                                 "action_required": "string",
-                                                "action_completed_by_staff_uuid": "123e4567-286c-417e-9cf0-2301226bb54b",
-                                                "edit_by_staff_uuid": "123e4567-9fb1-447f-a6e5-23012e6312fb",
+                                                "action_completed_by_staff_uuid": "123e4567-4ec7-4c7e-a383-2302f836635b",
+                                                "edit_by_staff_uuid": "123e4567-d581-4346-a224-2302f2c872fb",
                                                 "create_date": "2025-07-01 12:00:00"
                                             }
                                         ]
@@ -11795,15 +11795,15 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-d26c-4570-9799-2301283adf0b",
+                                            "uuid": "123e4567-2171-4f37-97b8-2302f59dce8b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "related_object": "string",
-                                            "related_object_uuid": "123e4567-03eb-430b-a399-2301283ecfdb",
+                                            "related_object_uuid": "123e4567-0e81-4005-a8f8-2302fe25f5cb",
                                             "note": "string",
                                             "action_required": "string",
-                                            "action_completed_by_staff_uuid": "123e4567-5d01-4ef0-a0f5-23012de15b2b",
-                                            "edit_by_staff_uuid": "123e4567-996d-4220-a9eb-2301217334ab",
+                                            "action_completed_by_staff_uuid": "123e4567-63cd-47ac-9863-2302fd408a8b",
+                                            "edit_by_staff_uuid": "123e4567-fdcb-4957-8f32-2302f5cff42b",
                                             "create_date": "2025-07-01 12:00:00"
                                         }
                                     }
@@ -12038,7 +12038,7 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-d866-4023-97cb-23012d52d7fb",
+                                                "uuid": "123e4567-486c-4e76-bf4c-2302f880f0db",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "name": "string",
@@ -12211,7 +12211,7 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-614e-496b-af05-230120b8208b",
+                                            "uuid": "123e4567-96aa-47e1-86c6-2302f346783b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "name": "string",
@@ -12455,7 +12455,7 @@
                                             {
                                                 "name": "string",
                                                 "role_description": "string",
-                                                "uuid": "123e4567-c136-48e4-88fa-23012efc537b",
+                                                "uuid": "123e4567-0662-4829-8ac4-2302f2b8b42b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00"
                                             }
@@ -12622,7 +12622,7 @@
                                         "value": {
                                             "name": "string",
                                             "role_description": "string",
-                                            "uuid": "123e4567-dd7e-40dc-85f1-230129270d7b",
+                                            "uuid": "123e4567-0f51-4e57-96af-2302f7f1349b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00"
                                         }
@@ -12856,7 +12856,7 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-e22b-49b6-97f1-230121b5df0b",
+                                                "uuid": "123e4567-da87-4959-beb5-2302f80756cb",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "name": "string",
@@ -13023,7 +13023,7 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-d7fc-41c5-9d80-23012e26df2b",
+                                            "uuid": "123e4567-8b7e-48d2-9c62-2302fdb7011b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "name": "string",
@@ -13269,7 +13269,7 @@
                                                 "lat": "number",
                                                 "geo_timestamp": "2025-07-01 12:00:00",
                                                 "job_title": "string",
-                                                "navigating_to_job_uuid": "123e4567-0185-4f50-8e5a-23012782f9bb",
+                                                "navigating_to_job_uuid": "123e4567-70fb-442a-95f9-2302fe0be57b",
                                                 "navigating_timestamp": "2025-07-01 12:00:00",
                                                 "navigating_expiry_timestamp": "2025-07-01 12:00:00",
                                                 "color": "string",
@@ -13277,8 +13277,8 @@
                                                 "status_message": "string",
                                                 "status_message_timestamp": "2025-07-01 12:00:00",
                                                 "hide_from_schedule": "string",
-                                                "security_role_uuid": "123e4567-0860-4b2a-a4e6-23012f0d1ddb",
-                                                "uuid": "123e4567-5e19-4f29-a8d7-230124ecc6cb",
+                                                "security_role_uuid": "123e4567-5e10-4fec-b6fa-2302fcdba9bb",
+                                                "uuid": "123e4567-5d74-4894-a8cf-2302f2ca6b1b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "can_receive_push_notification": "string"
@@ -13456,7 +13456,7 @@
                                             "lat": "number",
                                             "geo_timestamp": "2025-07-01 12:00:00",
                                             "job_title": "string",
-                                            "navigating_to_job_uuid": "123e4567-1430-4480-aee2-230128353f0b",
+                                            "navigating_to_job_uuid": "123e4567-f9c2-448c-b535-2302fab9811b",
                                             "navigating_timestamp": "2025-07-01 12:00:00",
                                             "navigating_expiry_timestamp": "2025-07-01 12:00:00",
                                             "color": "string",
@@ -13464,8 +13464,8 @@
                                             "status_message": "string",
                                             "status_message_timestamp": "2025-07-01 12:00:00",
                                             "hide_from_schedule": "string",
-                                            "security_role_uuid": "123e4567-07af-4014-8700-23012a8ef95b",
-                                            "uuid": "123e4567-cfff-4470-ad99-230122659beb",
+                                            "security_role_uuid": "123e4567-296b-454c-b01c-2302fd709c5b",
+                                            "uuid": "123e4567-9d37-4917-b877-2302fa8c187b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "can_receive_push_notification": "string"
@@ -13704,16 +13704,16 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-2341-4969-af1c-23012f0bda0b",
+                                                "uuid": "123e4567-228b-4f25-b2ca-2302f2552afb",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
-                                                "from_staff_uuid": "123e4567-5bb7-4f10-88d1-23012874be9b",
-                                                "to_staff_uuid": "123e4567-71cd-43a5-928f-2301299e78fb",
+                                                "from_staff_uuid": "123e4567-ec8f-485e-971f-2302fd5ada1b",
+                                                "to_staff_uuid": "123e4567-9f65-4666-b6e1-2302f0967c3b",
                                                 "sent_timestamp": "2025-07-01 12:00:00",
                                                 "delivered_timestamp": "2025-07-01 12:00:00",
                                                 "read_timestamp": "2025-07-01 12:00:00",
                                                 "message": "string",
-                                                "regarding_job_uuid": "123e4567-f262-4f77-aa8e-2301260c7c4b",
+                                                "regarding_job_uuid": "123e4567-f6e7-48a8-b1f6-2302f46caaeb",
                                                 "attached_json": "string"
                                             }
                                         ]
@@ -13877,16 +13877,16 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-ae45-41a1-86d0-23012e0bbeeb",
+                                            "uuid": "123e4567-729b-49f4-b325-2302f2ddbc7b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
-                                            "from_staff_uuid": "123e4567-003d-4183-8654-23012a4def2b",
-                                            "to_staff_uuid": "123e4567-c60a-47b0-8715-230125a214db",
+                                            "from_staff_uuid": "123e4567-1d24-488d-b013-2302f6f5d4cb",
+                                            "to_staff_uuid": "123e4567-22fa-4429-b3d7-2302f3aeac2b",
                                             "sent_timestamp": "2025-07-01 12:00:00",
                                             "delivered_timestamp": "2025-07-01 12:00:00",
                                             "read_timestamp": "2025-07-01 12:00:00",
                                             "message": "string",
-                                            "regarding_job_uuid": "123e4567-6cda-47c7-92a0-230122c3733b",
+                                            "regarding_job_uuid": "123e4567-f22d-426e-8d0b-2302fb57c02b",
                                             "attached_json": "string"
                                         }
                                     }
@@ -14125,17 +14125,17 @@
                                                 "task_details": "string",
                                                 "name": "string",
                                                 "related_object": "string",
-                                                "related_object_uuid": "123e4567-e0aa-4b8a-b826-23012302b0db",
+                                                "related_object_uuid": "123e4567-627e-4348-b154-2302ff32c2eb",
                                                 "task_complete": "string",
                                                 "completed_timestamp": "2025-07-01 12:00:00",
-                                                "completed_by_staff_uuid": "123e4567-8cca-41b5-ab87-230127311bdb",
-                                                "assigned_to_staff_uuid": "123e4567-d3cf-4fae-87ac-230122eda26b",
+                                                "completed_by_staff_uuid": "123e4567-f092-419e-9ee1-2302fef819ab",
+                                                "assigned_to_staff_uuid": "123e4567-a1ed-4922-939a-2302f29b012b",
                                                 "lng": "string",
                                                 "lat": "string",
-                                                "uuid": "123e4567-c0e3-401c-8bb3-230128e4bfcb",
+                                                "uuid": "123e4567-5180-4e9f-b12b-2302fcd04d3b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
-                                                "created_by_staff_uuid": "123e4567-b074-4a98-833f-23012b5e1d1b",
+                                                "created_by_staff_uuid": "123e4567-5e3e-4366-9c98-2302fa419f8b",
                                                 "create_date": "2025-07-01 12:00:00"
                                             }
                                         ]
@@ -14307,17 +14307,17 @@
                                             "task_details": "string",
                                             "name": "string",
                                             "related_object": "string",
-                                            "related_object_uuid": "123e4567-4bcb-4ffa-a6d6-2301299761db",
+                                            "related_object_uuid": "123e4567-6ac9-42bd-a67b-2302fc8425fb",
                                             "task_complete": "string",
                                             "completed_timestamp": "2025-07-01 12:00:00",
-                                            "completed_by_staff_uuid": "123e4567-53c3-4ed8-86e5-23012364697b",
-                                            "assigned_to_staff_uuid": "123e4567-0771-451e-a4be-23012cdf99fb",
+                                            "completed_by_staff_uuid": "123e4567-9c89-49bf-90f7-2302f9bb729b",
+                                            "assigned_to_staff_uuid": "123e4567-e610-45e9-bcfd-2302f752d76b",
                                             "lng": "string",
                                             "lat": "string",
-                                            "uuid": "123e4567-18a4-4d4d-a235-2301274eae8b",
+                                            "uuid": "123e4567-8cab-429f-84cf-2302f9b7975b",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
-                                            "created_by_staff_uuid": "123e4567-80f5-4247-aff3-230125ad59fb",
+                                            "created_by_staff_uuid": "123e4567-f623-4cba-aa6d-2302fec82ecb",
                                             "create_date": "2025-07-01 12:00:00"
                                         }
                                     }
@@ -14554,7 +14554,7 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-b5ea-4d41-a1eb-2301235946eb",
+                                                "uuid": "123e4567-5106-4f27-bfc2-2302fccd439b",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "name": "string",
@@ -14722,7 +14722,7 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-87ef-4035-9a21-23012d1cd58b",
+                                            "uuid": "123e4567-2f5f-49d0-a594-2302f26703cb",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "name": "string",
@@ -14961,7 +14961,7 @@
                                     "success": {
                                         "value": [
                                             {
-                                                "uuid": "123e4567-521a-4db4-ac18-2301256a34fb",
+                                                "uuid": "123e4567-5218-4f5a-9bb6-2302f7a060db",
                                                 "active": 1,
                                                 "edit_date": "2025-07-01 12:00:00",
                                                 "name": "string",
@@ -15070,7 +15070,7 @@
                                 "examples": {
                                     "success": {
                                         "value": {
-                                            "uuid": "123e4567-ea6e-49d6-a03e-23012d1ff8cb",
+                                            "uuid": "123e4567-ef22-4375-a45a-2302f78bbfdb",
                                             "active": 1,
                                             "edit_date": "2025-07-01 12:00:00",
                                             "name": "string",
@@ -15213,359 +15213,6 @@
                     },
                     "default": {
                         "description": "Unexpected error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/inboxmessage/{uuid}/read.json": {
-            "put": {
-                "tags": [
-                    "Inbox"
-                ],
-                "operationId": "markInboxMessageAsRead",
-                "summary": "Mark message as read",
-                "description": "Marks an inbox message as read",
-                "security": [
-                    {
-                        "apiKey": []
-                    },
-                    {
-                        "oauth2": [
-                            "manage_inbox"
-                        ]
-                    }
-                ],
-                "parameters": [
-                    {
-                        "name": "uuid",
-                        "in": "path",
-                        "required": true,
-                        "description": "UUID of the inbox message",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Message marked as read",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/SuccessResponse"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Message not found",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/inboxmessage/{uuid}/archive.json": {
-            "put": {
-                "tags": [
-                    "Inbox"
-                ],
-                "operationId": "archiveInboxMessage",
-                "summary": "Archive or unarchive message",
-                "description": "Archives or unarchives an inbox message",
-                "security": [
-                    {
-                        "apiKey": []
-                    },
-                    {
-                        "oauth2": [
-                            "manage_inbox"
-                        ]
-                    }
-                ],
-                "parameters": [
-                    {
-                        "name": "uuid",
-                        "in": "path",
-                        "required": true,
-                        "description": "UUID of the inbox message",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ArchiveRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Message archived/unarchived",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/SuccessResponse"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/inboxmessage/{uuid}/snooze.json": {
-            "put": {
-                "tags": [
-                    "Inbox"
-                ],
-                "operationId": "snoozeInboxMessage",
-                "summary": "Snooze or unsnooze message",
-                "description": "Snoozes a message until a specified date/time or unsnoozes it",
-                "security": [
-                    {
-                        "apiKey": []
-                    },
-                    {
-                        "oauth2": [
-                            "manage_inbox"
-                        ]
-                    }
-                ],
-                "parameters": [
-                    {
-                        "name": "uuid",
-                        "in": "path",
-                        "required": true,
-                        "description": "UUID of the inbox message",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/SnoozeRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Message snoozed/unsnoozed",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/SuccessResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad request - Invalid snooze date",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/inboxmessage/{uuid}/convert-to-job.json": {
-            "post": {
-                "tags": [
-                    "Inbox"
-                ],
-                "operationId": "convertInboxMessageToJob",
-                "summary": "Convert message to job",
-                "description": "Converts an inbox message into a new job, optionally using a job template",
-                "security": [
-                    {
-                        "apiKey": []
-                    },
-                    {
-                        "oauth2": [
-                            "manage_inbox"
-                        ]
-                    }
-                ],
-                "parameters": [
-                    {
-                        "name": "uuid",
-                        "in": "path",
-                        "required": true,
-                        "description": "UUID of the inbox message",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ConvertToJobRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": "Job created successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ConvertToJobResponse"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/inboxmessage/{uuid}/attach-to-job.json": {
-            "post": {
-                "tags": [
-                    "Inbox"
-                ],
-                "operationId": "attachInboxMessageToJob",
-                "summary": "Attach message to existing job",
-                "description": "Attaches an inbox message to an existing job",
-                "security": [
-                    {
-                        "apiKey": []
-                    },
-                    {
-                        "oauth2": [
-                            "manage_inbox"
-                        ]
-                    }
-                ],
-                "parameters": [
-                    {
-                        "name": "uuid",
-                        "in": "path",
-                        "required": true,
-                        "description": "UUID of the inbox message",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AttachToJobRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Message attached to job",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/AttachToJobResponse"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Job not found",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/inboxmessage/{uuid}/notes.json": {
-            "post": {
-                "tags": [
-                    "Inbox"
-                ],
-                "operationId": "addNoteToInboxMessage",
-                "summary": "Add note to message",
-                "description": "Adds a note to an inbox message",
-                "security": [
-                    {
-                        "apiKey": []
-                    },
-                    {
-                        "oauth2": [
-                            "manage_inbox"
-                        ]
-                    }
-                ],
-                "parameters": [
-                    {
-                        "name": "uuid",
-                        "in": "path",
-                        "required": true,
-                        "description": "UUID of the inbox message",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AddNoteRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": "Note added successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/SuccessResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad request - Empty note",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -16057,6 +15704,359 @@
                     }
                 }
             }
+        },
+        "/inboxmessage/{uuid}/read.json": {
+            "put": {
+                "tags": [
+                    "Inbox"
+                ],
+                "operationId": "markInboxMessageAsRead",
+                "summary": "Mark message as read",
+                "description": "Marks an inbox message as read",
+                "security": [
+                    {
+                        "apiKey": []
+                    },
+                    {
+                        "oauth2": [
+                            "manage_inbox"
+                        ]
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "description": "UUID of the inbox message",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Message marked as read",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Message not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/inboxmessage/{uuid}/archive.json": {
+            "put": {
+                "tags": [
+                    "Inbox"
+                ],
+                "operationId": "archiveInboxMessage",
+                "summary": "Archive or unarchive message",
+                "description": "Archives or unarchives an inbox message",
+                "security": [
+                    {
+                        "apiKey": []
+                    },
+                    {
+                        "oauth2": [
+                            "manage_inbox"
+                        ]
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "description": "UUID of the inbox message",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ArchiveRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Message archived/unarchived",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/inboxmessage/{uuid}/snooze.json": {
+            "put": {
+                "tags": [
+                    "Inbox"
+                ],
+                "operationId": "snoozeInboxMessage",
+                "summary": "Snooze or unsnooze message",
+                "description": "Snoozes a message until a specified date/time or unsnoozes it",
+                "security": [
+                    {
+                        "apiKey": []
+                    },
+                    {
+                        "oauth2": [
+                            "manage_inbox"
+                        ]
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "description": "UUID of the inbox message",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SnoozeRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Message snoozed/unsnoozed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid snooze date",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/inboxmessage/{uuid}/convert-to-job.json": {
+            "post": {
+                "tags": [
+                    "Inbox"
+                ],
+                "operationId": "convertInboxMessageToJob",
+                "summary": "Convert message to job",
+                "description": "Converts an inbox message into a new job, optionally using a job template",
+                "security": [
+                    {
+                        "apiKey": []
+                    },
+                    {
+                        "oauth2": [
+                            "manage_inbox"
+                        ]
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "description": "UUID of the inbox message",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ConvertToJobRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Job created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ConvertToJobResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/inboxmessage/{uuid}/attach-to-job.json": {
+            "post": {
+                "tags": [
+                    "Inbox"
+                ],
+                "operationId": "attachInboxMessageToJob",
+                "summary": "Attach message to existing job",
+                "description": "Attaches an inbox message to an existing job",
+                "security": [
+                    {
+                        "apiKey": []
+                    },
+                    {
+                        "oauth2": [
+                            "manage_inbox"
+                        ]
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "description": "UUID of the inbox message",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AttachToJobRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Message attached to job",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AttachToJobResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Job not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/inboxmessage/{uuid}/notes.json": {
+            "post": {
+                "tags": [
+                    "Inbox"
+                ],
+                "operationId": "addNoteToInboxMessage",
+                "summary": "Add note to message",
+                "description": "Adds a note to an inbox message",
+                "security": [
+                    {
+                        "apiKey": []
+                    },
+                    {
+                        "oauth2": [
+                            "manage_inbox"
+                        ]
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "description": "UUID of the inbox message",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddNoteRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Note added successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request - Empty note",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -16199,7 +16199,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-988f-4a12-ac4f-230125d7cb8b",
+                        "example": "123e4567-08b8-4e2f-b2e8-2302fba013db",
                         "type": "string"
                     },
                     "active": {
@@ -16236,7 +16236,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-57a5-4433-a0c3-23012bf50dcb",
+                        "example": "123e4567-96f4-4b8a-bccb-2302fb7f0cab",
                         "type": "string"
                     },
                     "active": {
@@ -16255,7 +16255,7 @@
                     },
                     "company_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-3e12-49ef-8e0e-23012446d6bb",
+                        "example": "123e4567-ed3c-404d-9bfc-2302f954facb",
                         "type": "string",
                         "description": "UUID of the Client to which this Asset is attached"
                     },
@@ -16265,7 +16265,7 @@
                     },
                     "asset_type_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-52fe-4156-a17b-23012bcc8b4b",
+                        "example": "123e4567-f9c3-4d2e-8945-2302f593d7bb",
                         "type": "string",
                         "description": "UUID of an Asset Type which defines the fields that can be stored for this Asset (read only)"
                     },
@@ -16335,7 +16335,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-20f1-4090-bd43-230121f69ccb",
+                        "example": "123e4567-b9a1-4bfe-855e-2302fdca841b",
                         "type": "string"
                     },
                     "active": {
@@ -16364,7 +16364,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-c162-4079-bf5a-23012ce7b04b",
+                        "example": "123e4567-1ca8-48ed-9480-2302fc0389db",
                         "type": "string"
                     },
                     "active": {
@@ -16383,7 +16383,7 @@
                     },
                     "asset_type_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-79cf-47e8-952d-2301239e288b",
+                        "example": "123e4567-2f6c-4e0a-8208-2302fa291e0b",
                         "type": "string",
                         "description": "UUID of the Asset Type to which this field belongs. This field is read-only in the API. (Read only)"
                     },
@@ -16434,7 +16434,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-17c4-40d1-af78-23012ce86dab",
+                        "example": "123e4567-6e69-4bc5-8a82-2302f839a37b",
                         "type": "string"
                     },
                     "active": {
@@ -16456,7 +16456,7 @@
                     },
                     "related_object_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-0d82-4c94-92c9-2301249bb67b",
+                        "example": "123e4567-2f32-4d73-865d-2302fa7fc5ab",
                         "type": "string"
                     },
                     "attachment_name": {
@@ -16471,7 +16471,7 @@
                     },
                     "created_by_staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-6461-4425-99d4-230129a5607b",
+                        "example": "123e4567-28a2-4c12-bdb8-2302fc23497b",
                         "type": "string"
                     },
                     "timestamp": {
@@ -16517,7 +16517,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-54b4-4739-b29b-23012017d76b",
+                        "example": "123e4567-ef60-48e0-975f-2302f0d19dcb",
                         "type": "string"
                     },
                     "active": {
@@ -16547,12 +16547,12 @@
                     },
                     "regarding_form_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-3e03-4b07-9982-23012164298b",
+                        "example": "123e4567-0edd-4c91-9026-2302f62a8fbb",
                         "type": "string"
                     },
                     "regarding_asset_type_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-a798-474f-8cc5-2301273ab6fb",
+                        "example": "123e4567-d91e-45e3-8569-2302f26c362b",
                         "type": "string",
                         "description": "UUID of the asset type that this badge is associated with. Only applicable for asset-based badges. When set, the badge represents a specific asset type in the system and will appear on assets of this type."
                     }
@@ -16575,7 +16575,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-d644-401e-97b7-23012ee6c50b",
+                        "example": "123e4567-742e-4342-8925-2302f23dce8b",
                         "type": "string"
                     },
                     "active": {
@@ -16625,7 +16625,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-1dc7-4320-839f-23012d83dbeb",
+                        "example": "123e4567-2526-41ca-8443-2302ff2f991b",
                         "type": "string"
                     },
                     "active": {
@@ -16672,7 +16672,7 @@
                     },
                     "tax_rate_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-a8c9-4d4e-878e-23012fc20a6b",
+                        "example": "123e4567-8b47-4b2c-9f60-2302f4c80acb",
                         "type": "string"
                     },
                     "billing_attention": {
@@ -16692,7 +16692,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-1af4-44e5-bdc8-230121ccbcdb",
+                        "example": "123e4567-09e1-4567-a44f-2302f84388ab",
                         "type": "string"
                     },
                     "active": {
@@ -16711,7 +16711,7 @@
                     },
                     "company_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-a6e8-4cf5-87ec-2301209908eb",
+                        "example": "123e4567-4540-4f58-b559-2302fdfd6f9b",
                         "type": "string"
                     },
                     "first": {
@@ -16744,7 +16744,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-8795-47bb-8ada-23012ca7ce5b",
+                        "example": "123e4567-3cf2-4c95-9f39-2302f2bf2cfb",
                         "type": "string"
                     },
                     "active": {
@@ -16784,7 +16784,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-8178-4586-b01c-23012569136b",
+                        "example": "123e4567-eb9f-4f9f-819e-2302f76ee0fb",
                         "type": "string"
                     },
                     "active": {
@@ -16809,7 +16809,7 @@
                     },
                     "related_object_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-f209-4f16-aff3-23012bc5e99b",
+                        "example": "123e4567-cace-4a88-b29c-2302f736e42b",
                         "type": "string"
                     },
                     "rating": {
@@ -16830,7 +16830,7 @@
                     "document_template_uuid": {
                         "description": "UUID of the document template associated with this form. The template defines the layout and appearance of the form when it's generated as a document. References a document template object in the system.",
                         "format": "uuid",
-                        "example": "123e4567-8a92-4277-a8c2-230127fc1dab",
+                        "example": "123e4567-d4ed-4a5f-8523-2302fc6fe47b",
                         "type": "string"
                     },
                     "can_be_used_independently": {
@@ -16876,7 +16876,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-c7ac-4c37-acdd-230120567cfb",
+                        "example": "123e4567-ca0c-46b7-a806-2302f5973b2b",
                         "type": "string"
                     },
                     "active": {
@@ -16901,7 +16901,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-20aa-4459-9050-23012a32a57b",
+                        "example": "123e4567-d9db-4d13-813f-2302fa94d5bb",
                         "type": "string"
                     },
                     "active": {
@@ -16920,7 +16920,7 @@
                     },
                     "form_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-73c6-417e-ba4a-23012c5dfe2b",
+                        "example": "123e4567-2793-44ff-b2a7-2302f1cb830b",
                         "type": "string"
                     },
                     "name": {
@@ -16940,7 +16940,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-f336-4b50-a93d-2301206cf38b",
+                        "example": "123e4567-649d-4d7c-9e0d-2302f430d40b",
                         "type": "string"
                     },
                     "active": {
@@ -16959,12 +16959,12 @@
                     },
                     "form_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-e755-415e-b1f2-2301253f535b",
+                        "example": "123e4567-9127-4e2b-8e94-2302fd62c26b",
                         "type": "string"
                     },
                     "staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-6f28-4707-a987-23012b3c1dcb",
+                        "example": "123e4567-c463-4590-9082-2302fefb23bb",
                         "type": "string"
                     },
                     "regarding_object": {
@@ -16972,7 +16972,7 @@
                     },
                     "regarding_object_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-c6e1-436a-a5af-2301202bb2fb",
+                        "example": "123e4567-a1be-4da1-a01c-2302fd546cfb",
                         "type": "string"
                     },
                     "field_data": {
@@ -16984,17 +16984,17 @@
                     },
                     "form_by_staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-9ec0-4895-8592-23012ad8d1db",
+                        "example": "123e4567-5587-4416-938c-2302f8aeffeb",
                         "type": "string"
                     },
                     "document_attachment_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-2ec9-41f4-851c-23012adc7d1b",
+                        "example": "123e4567-54c3-490d-a2e4-2302f70dc2fb",
                         "type": "string"
                     },
                     "asset_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-d20d-403a-960d-230125b4449b",
+                        "example": "123e4567-3097-4422-917e-2302fa4853bb",
                         "type": "string"
                     }
                 }
@@ -17107,7 +17107,7 @@
                     "created_by_staff_uuid": {
                         "description": "UUID of the staff member who created this job. Records which staff member initially added the job to the system.",
                         "format": "uuid",
-                        "example": "123e4567-5dec-4c00-9bf9-23012d17ea9b",
+                        "example": "123e4567-eb9e-49e2-a948-2302f479fc9b",
                         "type": "string"
                     },
                     "date": {
@@ -17118,7 +17118,7 @@
                     "company_uuid": {
                         "description": "UUID reference to the client/company record associated with this job. Links the job to a client in the system, establishing the client-job relationship for billing and contact purposes.",
                         "format": "uuid",
-                        "example": "123e4567-1dde-4665-b630-23012a9ef35b",
+                        "example": "123e4567-74df-4409-b8bc-2302f733632b",
                         "type": "string"
                     },
                     "billing_address": {
@@ -17155,7 +17155,7 @@
                     "payment_actioned_by_uuid": {
                         "description": "Not used. Refer to JobPayment endpoint.",
                         "format": "uuid",
-                        "example": "123e4567-211b-4365-9347-230128816a5b",
+                        "example": "123e4567-db04-4f49-ae72-2302f1dd2feb",
                         "type": "string"
                     },
                     "payment_method": {
@@ -17169,7 +17169,7 @@
                     "category_uuid": {
                         "description": "UUID reference to the job category this job belongs to. Categories help organize jobs by type of work or department.",
                         "format": "uuid",
-                        "example": "123e4567-905d-4c36-897f-23012c84b9cb",
+                        "example": "123e4567-ce8e-434f-b688-2302fcee82cb",
                         "type": "string"
                     },
                     "payment_note": {
@@ -17227,7 +17227,7 @@
                     "queue_uuid": {
                         "description": "UUID reference to the queue this job is assigned to. Jobs can be organized into queues for workflow management.",
                         "format": "uuid",
-                        "example": "123e4567-e6d0-4d2a-90af-230129e9be9b",
+                        "example": "123e4567-45b4-4673-9bbb-2302fb8dc6cb",
                         "type": "string"
                     },
                     "queue_expiry_date": {
@@ -17238,7 +17238,7 @@
                     "queue_assigned_staff_uuid": {
                         "description": "UUID of a Staff Member who is responsible for managing this job while it is in the queue. Only populated when the job is in a Queue which tracks Staff assignment.",
                         "format": "uuid",
-                        "example": "123e4567-bce6-456d-aed0-23012cba4cbb",
+                        "example": "123e4567-ec25-49de-bf04-2302f33441db",
                         "type": "string"
                     },
                     "badges": {
@@ -17277,7 +17277,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-7cbe-4df9-97c5-230128211d8b",
+                        "example": "123e4567-4b49-4bfd-a48e-2302f323bc4b",
                         "type": "string"
                     },
                     "active": {
@@ -17333,7 +17333,7 @@
                     },
                     "completion_actioned_by_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-c77b-4c20-88e7-23012b78513b",
+                        "example": "123e4567-bc10-40bd-948c-2302f616f12b",
                         "type": "string",
                         "description": "UUID of the staff member who marked this job as completed. References a staff record in the system."
                     },
@@ -17356,7 +17356,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-a160-42a4-a8ab-2301297e62cb",
+                        "example": "123e4567-3642-44ed-ad29-2302ff4cbc2b",
                         "type": "string"
                     },
                     "active": {
@@ -17375,12 +17375,12 @@
                     },
                     "job_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-5bd4-42ec-9c9c-23012398265b",
+                        "example": "123e4567-a6c7-4358-a0c4-2302f494443b",
                         "type": "string"
                     },
                     "staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-1ba4-4595-bb14-2301290d565b",
+                        "example": "123e4567-2271-40e5-8e54-2302f815f11b",
                         "type": "string"
                     },
                     "start_date": {
@@ -17415,7 +17415,7 @@
                     },
                     "allocated_by_staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-26da-4010-8913-230124aa8f1b",
+                        "example": "123e4567-39bc-4d2b-821b-2302f24bf27b",
                         "type": "string"
                     },
                     "allocated_timestamp": {
@@ -17424,12 +17424,12 @@
                     },
                     "material_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-85d5-4dfd-917f-23012c26214b",
+                        "example": "123e4567-3fcb-4c42-89f2-2302fe677cfb",
                         "type": "string"
                     },
                     "edit_by_staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-a638-41c5-b7a5-2301207083cb",
+                        "example": "123e4567-d883-4e06-98e7-2302f3b32bdb",
                         "readOnly": true,
                         "description": "UUID of Staff Member who last modified record"
                     }
@@ -17441,7 +17441,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-0c43-49d7-814a-230125ed207b",
+                        "example": "123e4567-5210-408e-9537-2302fcd0801b",
                         "type": "string"
                     },
                     "active": {
@@ -17460,17 +17460,17 @@
                     },
                     "job_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-b0e7-4479-8734-230125f55deb",
+                        "example": "123e4567-43d2-4326-8539-2302f1f0a0eb",
                         "type": "string"
                     },
                     "queue_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-2168-4602-9cd2-230126340d4b",
+                        "example": "123e4567-a4e5-4f8e-a755-2302fd04ee3b",
                         "type": "string"
                     },
                     "staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-a35b-4d40-9594-23012f9d117b",
+                        "example": "123e4567-5983-4f61-ae2f-2302f1cafbcb",
                         "type": "string"
                     },
                     "allocation_date": {
@@ -17479,12 +17479,12 @@
                     },
                     "allocation_window_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-788e-4f63-9a7b-230122cc101b",
+                        "example": "123e4567-af94-44ab-a91e-2302fca87e6b",
                         "type": "string"
                     },
                     "allocated_by_staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-e2a9-42cd-8b59-23012e70683b",
+                        "example": "123e4567-b3d4-4d16-86b7-2302f7243a8b",
                         "type": "string"
                     },
                     "allocated_timestamp": {
@@ -17530,7 +17530,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-fb36-47ce-b2c8-23012e17725b",
+                        "example": "123e4567-3aa2-4e6b-9f4b-2302f248029b",
                         "type": "string"
                     },
                     "active": {
@@ -17549,7 +17549,7 @@
                     },
                     "job_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-bbc5-4b57-a212-230127bf9bfb",
+                        "example": "123e4567-c499-4d7d-bd23-2302f54a041b",
                         "type": "string",
                         "description": "UUID of the job this checklist item belongs to. This links the checklist item to a specific job in the system."
                     },
@@ -17578,13 +17578,13 @@
                     },
                     "completed_by_staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-4d34-46f4-a3b8-23012c5d35fb",
+                        "example": "123e4567-b761-4a58-8e4a-2302f9e7778b",
                         "type": "string",
                         "description": "UUID of the staff member who completed this checklist item. References a Staff object. Empty if the item is not completed."
                     },
                     "completed_during_checkin_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-4d52-4cd2-824f-230127157e6b",
+                        "example": "123e4567-85fc-411e-b2d5-2302f611ad9b",
                         "type": "string",
                         "description": "UUID of the job check-in during which this checklist item was completed. This links the checklist completion to a specific check-in event in the job history."
                     },
@@ -17655,7 +17655,7 @@
                     },
                     "regarding_object_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-0587-4826-a6a1-230128e5d3ab",
+                        "example": "123e4567-28f0-401f-a34b-2302f68739bb",
                         "type": "string",
                         "description": "The UUID of the object which this checklists item is related to. For example, for Form checklists, this is the UUID of the Form that must be completed to complete the checklist item."
                     },
@@ -17665,13 +17665,13 @@
                     },
                     "fulfilled_by_object_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-98df-4103-bfb7-2301255d254b",
+                        "example": "123e4567-baf3-422a-8d58-2302f7ba820b",
                         "type": "string",
                         "description": "The UUID of the object which completes this checklist item. For example, for Form checklists, this references the UUID of a FormResponse record."
                     },
                     "assigned_to_staff_uuids": {
                         "format": "uuid",
-                        "example": "123e4567-be24-4d4f-9984-23012da8c74b",
+                        "example": "123e4567-3226-43b9-aeee-2302f4404a2b",
                         "type": "array",
                         "description": "JSON array of staff UUIDs to whom this checklist item is assigned. Determines which staff members are responsible for completing this checklist item. Currently limited to a maximum of 1 staff member.",
                         "items": {
@@ -17696,7 +17696,7 @@
                     },
                     "assigned_by_staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-8e8d-455c-9f4f-230129f915cb",
+                        "example": "123e4567-44cc-4069-855d-2302fe9ef22b",
                         "type": "string",
                         "description": "The UUID of the staff member who assigned the checklist item to the staff member. (Read only)"
                     }
@@ -17708,7 +17708,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-1a20-468c-bf50-230124ab5a5b",
+                        "example": "123e4567-a874-4639-af5d-2302fb27bb8b",
                         "type": "string"
                     },
                     "active": {
@@ -17727,7 +17727,7 @@
                     },
                     "job_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-5828-40cd-9d10-2301217edf2b",
+                        "example": "123e4567-7e3e-409c-9796-2302f0755d4b",
                         "type": "string"
                     },
                     "first": {
@@ -17760,7 +17760,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-140b-471a-a9aa-23012b7d317b",
+                        "example": "123e4567-c7f1-4ea4-84ed-2302ffb3987b",
                         "type": "string"
                     },
                     "active": {
@@ -17779,12 +17779,12 @@
                     },
                     "job_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-6778-4604-9582-230124433f3b",
+                        "example": "123e4567-e8da-48cb-93df-2302f9b1910b",
                         "type": "string"
                     },
                     "material_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-b263-433a-817a-2301223414eb",
+                        "example": "123e4567-0c42-4d98-91f6-2302fa6f274b",
                         "type": "string"
                     },
                     "name": {
@@ -17806,7 +17806,7 @@
                     },
                     "tax_rate_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-63da-4a3d-a94e-23012f01163b",
+                        "example": "123e4567-df18-4693-a3db-2302f470a72b",
                         "type": "string"
                     },
                     "sort_order": {
@@ -17820,7 +17820,7 @@
                     },
                     "job_material_bundle_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-342a-4a2d-9a4b-23012914788b",
+                        "example": "123e4567-8d60-45fd-a234-2302f93707db",
                         "type": "string",
                         "description": "UUID of a JobMaterialBundle which this JobMaterial belongs to. The default value is blank, which means that the JobMaterial is not part of a JobMaterialBundle."
                     }
@@ -17835,7 +17835,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-daf5-49e0-9d2a-23012883825b",
+                        "example": "123e4567-62b6-4d4e-8e51-2302f480420b",
                         "type": "string"
                     },
                     "active": {
@@ -17870,13 +17870,13 @@
                     },
                     "material_bundle_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-93a3-4c80-bd61-2301204b9cdb",
+                        "example": "123e4567-99a5-46d1-8aff-2302f68b282b",
                         "type": "string",
                         "description": "UUID of the MaterialBundle which this JobMaterialBundle was originally created from."
                     },
                     "job_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-a49d-4d57-98ab-2301235d461b",
+                        "example": "123e4567-e388-4df0-9b8e-2302fbc9dc7b",
                         "type": "string",
                         "description": "UUID of the job that this material bundle is associated with. Links the bundle to a specific job record."
                     }
@@ -17888,7 +17888,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-7d40-479c-b0e7-23012067823b",
+                        "example": "123e4567-56e8-4c84-af64-2302ffbbb70b",
                         "type": "string"
                     },
                     "active": {
@@ -17907,12 +17907,12 @@
                     },
                     "job_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-4f10-4c31-9e4e-2301227b307b",
+                        "example": "123e4567-189e-42ba-8e29-2302fb8b50eb",
                         "type": "string"
                     },
                     "actioned_by_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-19ac-4c2b-8913-23012e3c035b",
+                        "example": "123e4567-a31e-4276-9a5d-2302f48d349b",
                         "type": "string"
                     },
                     "timestamp": {
@@ -17929,7 +17929,7 @@
                     },
                     "attachment_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-2b21-4bd9-a9ff-23012c09223b",
+                        "example": "123e4567-4273-4757-b921-2302fe5b574b",
                         "type": "string"
                     },
                     "is_deposit": {
@@ -17948,7 +17948,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-026a-499d-b0a7-230129a5454b",
+                        "example": "123e4567-ff21-4c07-9ac4-2302fcd805ab",
                         "type": "string"
                     },
                     "active": {
@@ -17976,7 +17976,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-ebc1-4c7e-b1b2-2301207e6a1b",
+                        "example": "123e4567-aa25-43f0-b5fa-2302f2982adb",
                         "type": "string"
                     },
                     "active": {
@@ -18106,7 +18106,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-a7a3-4d36-a933-23012114f07b",
+                        "example": "123e4567-ec39-4703-9745-2302f99ee7db",
                         "type": "string"
                     },
                     "active": {
@@ -18176,7 +18176,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-9cf5-4325-8e01-23012a27a29b",
+                        "example": "123e4567-ed78-40af-969b-2302f176ee6b",
                         "type": "string"
                     },
                     "active": {
@@ -18201,7 +18201,7 @@
                     },
                     "tax_rate_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-1e77-48ed-a7e9-2301204df9bb",
+                        "example": "123e4567-982a-4b94-9392-2302f51f185b",
                         "type": "string"
                     }
                 },
@@ -18215,7 +18215,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-1934-48d2-ac92-2301204cb50b",
+                        "example": "123e4567-837f-4a91-98bc-2302f412997b",
                         "type": "string"
                     },
                     "active": {
@@ -18276,7 +18276,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-881d-4a5e-9450-23012aef12cb",
+                        "example": "123e4567-831e-4d3d-8c4e-2302ffb37ecb",
                         "type": "string"
                     },
                     "active": {
@@ -18298,7 +18298,7 @@
                     },
                     "related_object_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-52f4-4517-bbe1-23012d105bbb",
+                        "example": "123e4567-2fa4-401a-8a87-2302f6e070bb",
                         "type": "string"
                     },
                     "note": {
@@ -18309,12 +18309,12 @@
                     },
                     "action_completed_by_staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-8b4f-4621-bf2a-23012972785b",
+                        "example": "123e4567-89a2-4e03-90d5-2302fd24755b",
                         "type": "string"
                     },
                     "edit_by_staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-4ae2-4ffa-8531-230129bbbf0b",
+                        "example": "123e4567-ec2d-404f-808f-2302f700f71b",
                         "readOnly": true,
                         "description": "UUID of Staff Member who last modified record"
                     },
@@ -18330,7 +18330,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-7fe2-466f-9f97-230127bc151b",
+                        "example": "123e4567-621d-442e-9058-2302ff5e439b",
                         "type": "string"
                     },
                     "active": {
@@ -18384,7 +18384,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-1b79-409d-81be-230128d15fdb",
+                        "example": "123e4567-77ae-4794-90ea-2302fbc9044b",
                         "type": "string"
                     },
                     "active": {
@@ -18412,7 +18412,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-fc62-4376-a340-230128a53c4b",
+                        "example": "123e4567-6f4d-4f4a-9d4c-2302f1a55ccb",
                         "type": "string"
                     },
                     "active": {
@@ -18486,7 +18486,7 @@
                     "navigating_to_job_uuid": {
                         "description": "UUID of the job the staff member is currently navigating to. Used to track which job a staff member is traveling toward.",
                         "format": "uuid",
-                        "example": "123e4567-8443-42a5-bc16-2301238eaabb",
+                        "example": "123e4567-b248-4d25-8c62-2302fcf1a3bb",
                         "type": "string"
                     },
                     "navigating_timestamp": {
@@ -18526,13 +18526,13 @@
                     "security_role_uuid": {
                         "description": "UUID of the primary security role assigned to this staff member. Controls the staff member's permissions and access levels throughout the system.",
                         "format": "uuid",
-                        "example": "123e4567-fe80-45aa-9432-23012474b95b",
+                        "example": "123e4567-efdc-4961-9f97-2302fbbac10b",
                         "type": "string"
                     },
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-3dcb-44cb-841f-23012ed24dcb",
+                        "example": "123e4567-d600-4c64-8364-2302fcdd158b",
                         "type": "string"
                     },
                     "active": {
@@ -18565,7 +18565,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-16f6-454b-90ee-230129f204bb",
+                        "example": "123e4567-1746-4168-8eba-2302faa9d68b",
                         "type": "string"
                     },
                     "active": {
@@ -18584,12 +18584,12 @@
                     },
                     "from_staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-0644-407f-825b-2301280f6edb",
+                        "example": "123e4567-a75a-47f8-84e1-2302fcc6fc0b",
                         "type": "string"
                     },
                     "to_staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-473e-4940-b952-23012c04176b",
+                        "example": "123e4567-9817-481c-866e-2302fbf750cb",
                         "type": "string"
                     },
                     "sent_timestamp": {
@@ -18609,7 +18609,7 @@
                     },
                     "regarding_job_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-1f35-490e-a330-23012e57e27b",
+                        "example": "123e4567-dfaa-4aac-8366-2302f62d79cb",
                         "type": "string"
                     },
                     "attached_json": {
@@ -18640,7 +18640,7 @@
                     "related_object_uuid": {
                         "description": "UUID of the specific object instance this task is related to. Must be a valid UUID corresponding to an existing object of the type specified in related_object.",
                         "format": "uuid",
-                        "example": "123e4567-03f4-460f-85bf-230129e0471b",
+                        "example": "123e4567-8b93-42b2-afa8-2302f0211bdb",
                         "type": "string"
                     },
                     "task_complete": {
@@ -18655,13 +18655,13 @@
                     "completed_by_staff_uuid": {
                         "description": "UUID of the staff member who marked the task as complete. Automatically set to the current staff member's UUID when task_complete is changed to 1.",
                         "format": "uuid",
-                        "example": "123e4567-32bd-436d-978e-23012233399b",
+                        "example": "123e4567-d770-426b-83ce-2302f687351b",
                         "type": "string"
                     },
                     "assigned_to_staff_uuid": {
                         "description": "UUID of the staff member assigned to complete this task. Must be a valid staff UUID in the system.",
                         "format": "uuid",
-                        "example": "123e4567-7df0-4aa5-8614-23012faca9db",
+                        "example": "123e4567-c86c-4fff-99e6-2302f02a659b",
                         "type": "string"
                     },
                     "lng": {
@@ -18673,7 +18673,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-7dd7-47d5-aed8-23012efe97bb",
+                        "example": "123e4567-036d-4036-b688-2302f1e5302b",
                         "type": "string"
                     },
                     "active": {
@@ -18692,7 +18692,7 @@
                     },
                     "created_by_staff_uuid": {
                         "format": "uuid",
-                        "example": "123e4567-44bf-43b9-96d8-23012660164b",
+                        "example": "123e4567-39ff-4481-97fa-2302f0dd6a8b",
                         "type": "string"
                     },
                     "create_date": {
@@ -18710,7 +18710,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-c5ee-4cf5-99da-230122ff5c3b",
+                        "example": "123e4567-b1da-42fa-98cc-2302fd03fb2b",
                         "type": "string"
                     },
                     "active": {
@@ -18753,7 +18753,7 @@
                     "uuid": {
                         "format": "uuid",
                         "description": "Unique identifier for this record",
-                        "example": "123e4567-292d-4c82-98a4-2301235f001b",
+                        "example": "123e4567-f9f7-484f-8c2b-2302fb08094b",
                         "type": "string"
                     },
                     "active": {
@@ -18861,177 +18861,6 @@
                 "required": [
                     "name"
                 ]
-            },
-            "InboxMessageDetail": {
-                "allOf": [
-                    {
-                        "$ref": "#/components/schemas/InboxMessage"
-                    },
-                    {
-                        "type": "object",
-                        "properties": {}
-                    }
-                ]
-            },
-            "InboxMessagesResponse": {
-                "type": "object",
-                "properties": {
-                    "messages": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/InboxMessage"
-                        }
-                    },
-                    "pagination": {
-                        "type": "object",
-                        "properties": {
-                            "offset": {
-                                "type": "integer"
-                            },
-                            "limit": {
-                                "type": "integer"
-                            },
-                            "total": {
-                                "type": "integer"
-                            },
-                            "has_more": {
-                                "type": "boolean"
-                            }
-                        }
-                    }
-                }
-            },
-            "ArchiveRequest": {
-                "type": "object",
-                "properties": {
-                    "archived": {
-                        "type": "boolean",
-                        "default": true
-                    },
-                    "reason": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                }
-            },
-            "SnoozeRequest": {
-                "type": "object",
-                "properties": {
-                    "snooze_until": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true,
-                        "description": "ISO 8601 datetime to snooze until, or null to unsnooze"
-                    },
-                    "note": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                }
-            },
-            "ConvertToJobRequest": {
-                "type": "object",
-                "properties": {
-                    "template_uuid": {
-                        "type": "string",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "note": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                }
-            },
-            "ConvertToJobResponse": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean"
-                    },
-                    "job": {
-                        "type": "object",
-                        "properties": {
-                            "uuid": {
-                                "type": "string",
-                                "format": "uuid"
-                            },
-                            "id": {
-                                "type": "integer"
-                            },
-                            "job_number": {
-                                "type": "string"
-                            },
-                            "location": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "message": {
-                        "type": "string"
-                    }
-                }
-            },
-            "AttachToJobRequest": {
-                "type": "object",
-                "required": [
-                    "job_uuid"
-                ],
-                "properties": {
-                    "job_uuid": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                }
-            },
-            "AttachToJobResponse": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean"
-                    },
-                    "job": {
-                        "type": "object",
-                        "properties": {
-                            "uuid": {
-                                "type": "string",
-                                "format": "uuid"
-                            },
-                            "id": {
-                                "type": "integer"
-                            },
-                            "location": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "message": {
-                        "type": "string"
-                    }
-                }
-            },
-            "AddNoteRequest": {
-                "type": "object",
-                "required": [
-                    "note"
-                ],
-                "properties": {
-                    "note": {
-                        "type": "string",
-                        "minLength": 1
-                    }
-                }
-            },
-            "SuccessResponse": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean"
-                    },
-                    "message": {
-                        "type": "string"
-                    }
-                }
             },
             "JobTemplateOverrides": {
                 "type": "object",
@@ -19212,6 +19041,177 @@
                     "title",
                     "similarity_score"
                 ]
+            },
+            "InboxMessageDetail": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/InboxMessage"
+                    },
+                    {
+                        "type": "object",
+                        "properties": {}
+                    }
+                ]
+            },
+            "InboxMessagesResponse": {
+                "type": "object",
+                "properties": {
+                    "messages": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/InboxMessage"
+                        }
+                    },
+                    "pagination": {
+                        "type": "object",
+                        "properties": {
+                            "offset": {
+                                "type": "integer"
+                            },
+                            "limit": {
+                                "type": "integer"
+                            },
+                            "total": {
+                                "type": "integer"
+                            },
+                            "has_more": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "ArchiveRequest": {
+                "type": "object",
+                "properties": {
+                    "archived": {
+                        "type": "boolean",
+                        "default": true
+                    },
+                    "reason": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                }
+            },
+            "SnoozeRequest": {
+                "type": "object",
+                "properties": {
+                    "snooze_until": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true,
+                        "description": "ISO 8601 datetime to snooze until, or null to unsnooze"
+                    },
+                    "note": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                }
+            },
+            "ConvertToJobRequest": {
+                "type": "object",
+                "properties": {
+                    "template_uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "note": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                }
+            },
+            "ConvertToJobResponse": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean"
+                    },
+                    "job": {
+                        "type": "object",
+                        "properties": {
+                            "uuid": {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            "id": {
+                                "type": "integer"
+                            },
+                            "job_number": {
+                                "type": "string"
+                            },
+                            "location": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AttachToJobRequest": {
+                "type": "object",
+                "required": [
+                    "job_uuid"
+                ],
+                "properties": {
+                    "job_uuid": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                }
+            },
+            "AttachToJobResponse": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean"
+                    },
+                    "job": {
+                        "type": "object",
+                        "properties": {
+                            "uuid": {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            "id": {
+                                "type": "integer"
+                            },
+                            "location": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AddNoteRequest": {
+                "type": "object",
+                "required": [
+                    "note"
+                ],
+                "properties": {
+                    "note": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                }
+            },
+            "SuccessResponse": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
             }
         }
     },

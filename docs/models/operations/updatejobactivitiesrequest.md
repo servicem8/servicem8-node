@@ -8,15 +8,15 @@ import { UpdateJobActivitiesRequest } from "servicem8/models/operations";
 let value: UpdateJobActivitiesRequest = {
   uuid: "eb4aaa37-123b-4044-9b26-0ebf7f5ddba5",
   jobActivity: {
-    uuid: "123e4567-a160-42a4-a8ab-2301297e62cb",
-    jobUuid: "123e4567-5bd4-42ec-9c9c-23012398265b",
-    staffUuid: "123e4567-1ba4-4595-bb14-2301290d565b",
+    uuid: "123e4567-3642-44ed-ad29-2302ff4cbc2b",
+    jobUuid: "123e4567-a6c7-4358-a0c4-2302f494443b",
+    staffUuid: "123e4567-2271-40e5-8e54-2302f815f11b",
     startDate: "2025-07-01 12:00:00",
     endDate: "2025-07-01 12:00:00",
     hasBeenOpenedTimestamp: "2025-07-01 12:00:00",
-    allocatedByStaffUuid: "123e4567-26da-4010-8913-230124aa8f1b",
+    allocatedByStaffUuid: "123e4567-39bc-4d2b-821b-2302f24bf27b",
     allocatedTimestamp: "2025-07-01 12:00:00",
-    materialUuid: "123e4567-85d5-4dfd-917f-23012c26214b",
+    materialUuid: "123e4567-3fcb-4c42-89f2-2302fe677cfb",
   },
 };
 ```

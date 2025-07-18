@@ -6,7 +6,7 @@
 import { JobTemplate } from "servicem8/models/components";
 
 let value: JobTemplate = {
-  uuid: "123e4567-026a-499d-b0a7-230129a5454b",
+  uuid: "123e4567-ff21-4c07-9ac4-2302fcd805ab",
   editDate: "2025-07-01 12:00:00",
 };
 ```
@@ -15,7 +15,7 @@ let value: JobTemplate = {
 
 | Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  | Example                                                                      |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `uuid`                                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | Unique identifier for this record                                            | 123e4567-026a-499d-b0a7-230129a5454b                                         |
+| `uuid`                                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | Unique identifier for this record                                            | 123e4567-ff21-4c07-9ac4-2302fcd805ab                                         |
 | `active`                                                                     | [components.JobTemplateActive](../../models/components/jobtemplateactive.md) | :heavy_minus_sign:                                                           | Record active/deleted flag.  Valid values are [0,1]                          |                                                                              |
 | `editDate`                                                                   | *any*                                                                        | :heavy_minus_sign:                                                           | Timestamp at which record was last modified                                  | 2025-07-01 12:00:00                                                          |
 | `name`                                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |                                                                              |
