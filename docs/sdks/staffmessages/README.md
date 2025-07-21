@@ -111,13 +111,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.staffMessages.createStaffMessages({
-    uuid: "123e4567-1746-4168-8eba-2302faa9d68b",
-    fromStaffUuid: "123e4567-a75a-47f8-84e1-2302fcc6fc0b",
-    toStaffUuid: "123e4567-9817-481c-866e-2302fbf750cb",
+    uuid: "123e4567-718f-41e4-b7d1-2306fbeff2ab",
+    fromStaffUuid: "123e4567-7204-4f01-a8dd-2306f7d4ddeb",
+    toStaffUuid: "123e4567-d532-47f4-b118-2306f21490ab",
     sentTimestamp: "2025-07-01 12:00:00",
     deliveredTimestamp: "2025-07-01 12:00:00",
     readTimestamp: "2025-07-01 12:00:00",
-    regardingJobUuid: "123e4567-dfaa-4aac-8366-2302f62d79cb",
+    regardingJobUuid: "123e4567-6425-4d9b-ac7f-2306f7def75b",
   });
 
   console.log(result);
@@ -144,13 +144,13 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await staffMessagesCreateStaffMessages(serviceM8, {
-    uuid: "123e4567-1746-4168-8eba-2302faa9d68b",
-    fromStaffUuid: "123e4567-a75a-47f8-84e1-2302fcc6fc0b",
-    toStaffUuid: "123e4567-9817-481c-866e-2302fbf750cb",
+    uuid: "123e4567-718f-41e4-b7d1-2306fbeff2ab",
+    fromStaffUuid: "123e4567-7204-4f01-a8dd-2306f7d4ddeb",
+    toStaffUuid: "123e4567-d532-47f4-b118-2306f21490ab",
     sentTimestamp: "2025-07-01 12:00:00",
     deliveredTimestamp: "2025-07-01 12:00:00",
     readTimestamp: "2025-07-01 12:00:00",
-    regardingJobUuid: "123e4567-dfaa-4aac-8366-2302f62d79cb",
+    regardingJobUuid: "123e4567-6425-4d9b-ac7f-2306f7def75b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -279,13 +279,13 @@ async function run() {
   const result = await serviceM8.staffMessages.updateStaffMessages({
     uuid: "b5fd0f7a-6810-4261-acdb-e8e543cf4e72",
     staffMessage: {
-      uuid: "123e4567-1746-4168-8eba-2302faa9d68b",
-      fromStaffUuid: "123e4567-a75a-47f8-84e1-2302fcc6fc0b",
-      toStaffUuid: "123e4567-9817-481c-866e-2302fbf750cb",
+      uuid: "123e4567-718f-41e4-b7d1-2306fbeff2ab",
+      fromStaffUuid: "123e4567-7204-4f01-a8dd-2306f7d4ddeb",
+      toStaffUuid: "123e4567-d532-47f4-b118-2306f21490ab",
       sentTimestamp: "2025-07-01 12:00:00",
       deliveredTimestamp: "2025-07-01 12:00:00",
       readTimestamp: "2025-07-01 12:00:00",
-      regardingJobUuid: "123e4567-dfaa-4aac-8366-2302f62d79cb",
+      regardingJobUuid: "123e4567-6425-4d9b-ac7f-2306f7def75b",
     },
   });
 
@@ -315,13 +315,13 @@ async function run() {
   const res = await staffMessagesUpdateStaffMessages(serviceM8, {
     uuid: "b5fd0f7a-6810-4261-acdb-e8e543cf4e72",
     staffMessage: {
-      uuid: "123e4567-1746-4168-8eba-2302faa9d68b",
-      fromStaffUuid: "123e4567-a75a-47f8-84e1-2302fcc6fc0b",
-      toStaffUuid: "123e4567-9817-481c-866e-2302fbf750cb",
+      uuid: "123e4567-718f-41e4-b7d1-2306fbeff2ab",
+      fromStaffUuid: "123e4567-7204-4f01-a8dd-2306f7d4ddeb",
+      toStaffUuid: "123e4567-d532-47f4-b118-2306f21490ab",
       sentTimestamp: "2025-07-01 12:00:00",
       deliveredTimestamp: "2025-07-01 12:00:00",
       readTimestamp: "2025-07-01 12:00:00",
-      regardingJobUuid: "123e4567-dfaa-4aac-8366-2302f62d79cb",
+      regardingJobUuid: "123e4567-6425-4d9b-ac7f-2306f7def75b",
     },
   });
   if (res.ok) {

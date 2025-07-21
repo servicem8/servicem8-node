@@ -8,7 +8,7 @@ import { UpdateAllocationWindowsRequest } from "servicem8/models/operations";
 let value: UpdateAllocationWindowsRequest = {
   uuid: "5b363be4-e15a-4061-8b85-d88f298d8e24",
   allocationWindow: {
-    uuid: "123e4567-08b8-4e2f-b2e8-2302fba013db",
+    uuid: "123e4567-ebed-44b7-8ad9-2306ffa6d9eb",
   },
 };
 ```
