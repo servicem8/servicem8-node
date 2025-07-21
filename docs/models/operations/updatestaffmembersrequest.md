@@ -12,12 +12,12 @@ let value: UpdateStaffMembersRequest = {
     last: "<value>",
     email: "Haskell_Mosciski1@hotmail.com",
     geoTimestamp: "2025-07-01 12:00:00",
-    navigatingToJobUuid: "123e4567-d29e-4014-9cd3-2306f27a2c5b",
+    navigatingToJobUuid: "123e4567-5400-4d45-9d43-2307698d177b",
     navigatingTimestamp: "2025-07-01 12:00:00",
     navigatingExpiryTimestamp: "2025-07-01 12:00:00",
     statusMessageTimestamp: "2025-07-01 12:00:00",
-    securityRoleUuid: "123e4567-73da-4303-ab30-2306f219051b",
-    uuid: "123e4567-fb72-4cad-a20f-2306fafc49bb",
+    securityRoleUuid: "123e4567-a4ff-416f-9ab6-23076e6ab3db",
+    uuid: "123e4567-7f3e-4f63-8c95-23076ef124bb",
   },
 };
 ```
