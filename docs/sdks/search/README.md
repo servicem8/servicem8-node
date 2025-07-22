@@ -169,7 +169,19 @@ run();
 
 ## jobEmbeddingSearch
 
-Performs semantic/embedding-based search on job content. This uses AI to find jobs with similar meaning, not just exact text matches.
+Harness the power of advanced AI embeddings to revolutionise how you search through job data. This endpoint transforms your search query into high-dimensional vector embeddings, then intelligently matches it against our entire job database using semantic similarity algorithms.
+
+How it works:
+1. AI Query Understanding - Your search terms are processed through neural embedding models that understand context, intent, and meaning
+2. Vector-Based Matching - The system compares your query against vector representations of all job content in real-time
+3. Intelligent Ranking - Returns results ranked by semantic similarity, not just keyword matching
+
+Why this matters:
+- Find jobs about "plumbing repairs" even when searching for "fixing pipes"
+- Discover relevant work orders that use different terminology but share the same intent
+- Uncover hidden patterns and connections in your job data that traditional search would miss
+
+This isn't just search—it's AI that truly understands what you're looking for and delivers the most relevant results, even when the exact words don't match.
 
 ### Example Usage
 
