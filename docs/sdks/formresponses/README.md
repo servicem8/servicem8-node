@@ -111,14 +111,14 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.formResponses.createFormResponses({
-    uuid: "123e4567-e9b4-42b3-b4f4-2308e8f73f8b",
-    formUuid: "123e4567-9737-4041-83df-2308e25423fb",
-    staffUuid: "123e4567-7796-48a2-8115-2308e2603bdb",
-    regardingObjectUuid: "123e4567-9a66-4275-b49a-2308eda5e52b",
+    uuid: "123e4567-d9a7-4c42-a098-2308e92ed9bb",
+    formUuid: "123e4567-c9db-4ae0-87e6-2308eb63bc8b",
+    staffUuid: "123e4567-9142-4c09-b389-2308e036781b",
+    regardingObjectUuid: "123e4567-c775-460d-b64c-2308e88c751b",
     timestamp: "2025-07-01 12:00:00",
-    formByStaffUuid: "123e4567-e048-4e13-96d8-2308e0762b7b",
-    documentAttachmentUuid: "123e4567-6325-4009-98ef-2308e45a7d3b",
-    assetUuid: "123e4567-9c73-437a-82ea-2308e904267b",
+    formByStaffUuid: "123e4567-6fcf-49ff-a480-2308e0b4e5fb",
+    documentAttachmentUuid: "123e4567-a7b4-495d-ae93-2308ead314cb",
+    assetUuid: "123e4567-1823-4322-997d-2308e507684b",
   });
 
   console.log(result);
@@ -145,14 +145,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formResponsesCreateFormResponses(serviceM8, {
-    uuid: "123e4567-e9b4-42b3-b4f4-2308e8f73f8b",
-    formUuid: "123e4567-9737-4041-83df-2308e25423fb",
-    staffUuid: "123e4567-7796-48a2-8115-2308e2603bdb",
-    regardingObjectUuid: "123e4567-9a66-4275-b49a-2308eda5e52b",
+    uuid: "123e4567-d9a7-4c42-a098-2308e92ed9bb",
+    formUuid: "123e4567-c9db-4ae0-87e6-2308eb63bc8b",
+    staffUuid: "123e4567-9142-4c09-b389-2308e036781b",
+    regardingObjectUuid: "123e4567-c775-460d-b64c-2308e88c751b",
     timestamp: "2025-07-01 12:00:00",
-    formByStaffUuid: "123e4567-e048-4e13-96d8-2308e0762b7b",
-    documentAttachmentUuid: "123e4567-6325-4009-98ef-2308e45a7d3b",
-    assetUuid: "123e4567-9c73-437a-82ea-2308e904267b",
+    formByStaffUuid: "123e4567-6fcf-49ff-a480-2308e0b4e5fb",
+    documentAttachmentUuid: "123e4567-a7b4-495d-ae93-2308ead314cb",
+    assetUuid: "123e4567-1823-4322-997d-2308e507684b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -281,14 +281,14 @@ async function run() {
   const result = await serviceM8.formResponses.updateFormResponses({
     uuid: "5f593a3c-772d-4259-856d-86a8df7ae53d",
     formResponse: {
-      uuid: "123e4567-e9b4-42b3-b4f4-2308e8f73f8b",
-      formUuid: "123e4567-9737-4041-83df-2308e25423fb",
-      staffUuid: "123e4567-7796-48a2-8115-2308e2603bdb",
-      regardingObjectUuid: "123e4567-9a66-4275-b49a-2308eda5e52b",
+      uuid: "123e4567-d9a7-4c42-a098-2308e92ed9bb",
+      formUuid: "123e4567-c9db-4ae0-87e6-2308eb63bc8b",
+      staffUuid: "123e4567-9142-4c09-b389-2308e036781b",
+      regardingObjectUuid: "123e4567-c775-460d-b64c-2308e88c751b",
       timestamp: "2025-07-01 12:00:00",
-      formByStaffUuid: "123e4567-e048-4e13-96d8-2308e0762b7b",
-      documentAttachmentUuid: "123e4567-6325-4009-98ef-2308e45a7d3b",
-      assetUuid: "123e4567-9c73-437a-82ea-2308e904267b",
+      formByStaffUuid: "123e4567-6fcf-49ff-a480-2308e0b4e5fb",
+      documentAttachmentUuid: "123e4567-a7b4-495d-ae93-2308ead314cb",
+      assetUuid: "123e4567-1823-4322-997d-2308e507684b",
     },
   });
 
@@ -318,14 +318,14 @@ async function run() {
   const res = await formResponsesUpdateFormResponses(serviceM8, {
     uuid: "5f593a3c-772d-4259-856d-86a8df7ae53d",
     formResponse: {
-      uuid: "123e4567-e9b4-42b3-b4f4-2308e8f73f8b",
-      formUuid: "123e4567-9737-4041-83df-2308e25423fb",
-      staffUuid: "123e4567-7796-48a2-8115-2308e2603bdb",
-      regardingObjectUuid: "123e4567-9a66-4275-b49a-2308eda5e52b",
+      uuid: "123e4567-d9a7-4c42-a098-2308e92ed9bb",
+      formUuid: "123e4567-c9db-4ae0-87e6-2308eb63bc8b",
+      staffUuid: "123e4567-9142-4c09-b389-2308e036781b",
+      regardingObjectUuid: "123e4567-c775-460d-b64c-2308e88c751b",
       timestamp: "2025-07-01 12:00:00",
-      formByStaffUuid: "123e4567-e048-4e13-96d8-2308e0762b7b",
-      documentAttachmentUuid: "123e4567-6325-4009-98ef-2308e45a7d3b",
-      assetUuid: "123e4567-9c73-437a-82ea-2308e904267b",
+      formByStaffUuid: "123e4567-6fcf-49ff-a480-2308e0b4e5fb",
+      documentAttachmentUuid: "123e4567-a7b4-495d-ae93-2308ead314cb",
+      assetUuid: "123e4567-1823-4322-997d-2308e507684b",
     },
   });
   if (res.ok) {

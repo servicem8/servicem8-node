@@ -8,13 +8,13 @@ import { UpdateStaffMessagesRequest } from "servicem8/models/operations";
 let value: UpdateStaffMessagesRequest = {
   uuid: "fdf2ae97-7688-4ff5-98a8-a0839e15b781",
   staffMessage: {
-    uuid: "123e4567-3ef0-4e12-b4ac-2308eb1f84db",
-    fromStaffUuid: "123e4567-5c8e-4456-9c01-2308ef60b03b",
-    toStaffUuid: "123e4567-2fd6-40c9-a3a3-2308eba8043b",
+    uuid: "123e4567-f2e7-4117-b612-2308e1f97f9b",
+    fromStaffUuid: "123e4567-d5c8-4adb-8356-2308edbbe2ab",
+    toStaffUuid: "123e4567-77b7-4217-8a79-2308e7e16e7b",
     sentTimestamp: "2025-07-01 12:00:00",
     deliveredTimestamp: "2025-07-01 12:00:00",
     readTimestamp: "2025-07-01 12:00:00",
-    regardingJobUuid: "123e4567-7401-4c54-ae89-2308ee1b1b1b",
+    regardingJobUuid: "123e4567-dfb7-469e-bcff-2308e97efd0b",
   },
 };
 ```
