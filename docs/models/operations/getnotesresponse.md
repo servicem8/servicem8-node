@@ -7,11 +7,11 @@
 
 ```typescript
 const value: components.Note = {
-  uuid: "123e4567-3807-4349-abff-2308ee2e83eb",
+  uuid: "123e4567-1458-4837-a4d2-2308e25b3b6b",
   editDate: "2025-07-01 12:00:00",
-  relatedObjectUuid: "123e4567-601c-4835-a265-2308ec0debcb",
-  actionCompletedByStaffUuid: "123e4567-e2ee-40b8-8725-2308e3cac9eb",
-  editByStaffUuid: "123e4567-aa9a-45de-aa7f-2308ec85345b",
+  relatedObjectUuid: "123e4567-84e6-43c1-80cc-2308eaf1d94b",
+  actionCompletedByStaffUuid: "123e4567-c130-4248-8279-2308e9f5198b",
+  editByStaffUuid: "123e4567-6b2b-4d26-8504-2308e893f44b",
   createDate: "2025-07-01 12:00:00",
 };
 ```

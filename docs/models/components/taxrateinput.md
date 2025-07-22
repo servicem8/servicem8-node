@@ -6,7 +6,7 @@
 import { TaxRateInput } from "servicem8/models/components";
 
 let value: TaxRateInput = {
-  uuid: "123e4567-c91d-4e4c-bf46-2308eb7b205b",
+  uuid: "123e4567-038d-4415-87ed-2308e60b3f9b",
   name: "<value>",
 };
 ```
@@ -15,7 +15,7 @@ let value: TaxRateInput = {
 
 | Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                | Example                                                                    |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `uuid`                                                                     | *string*                                                                   | :heavy_minus_sign:                                                         | Unique identifier for this record                                          | 123e4567-c91d-4e4c-bf46-2308eb7b205b                                       |
+| `uuid`                                                                     | *string*                                                                   | :heavy_minus_sign:                                                         | Unique identifier for this record                                          | 123e4567-038d-4415-87ed-2308e60b3f9b                                       |
 | `active`                                                                   | [components.TaxRateActive](../../models/components/taxrateactive.md)       | :heavy_minus_sign:                                                         | Record active/deleted flag.  Valid values are [0,1]                        |                                                                            |
 | `name`                                                                     | *string*                                                                   | :heavy_check_mark:                                                         | N/A                                                                        |                                                                            |
 | `amount`                                                                   | *string*                                                                   | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |

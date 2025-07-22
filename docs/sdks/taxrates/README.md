@@ -111,7 +111,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.taxRates.createTaxRates({
-    uuid: "123e4567-c91d-4e4c-bf46-2308eb7b205b",
+    uuid: "123e4567-038d-4415-87ed-2308e60b3f9b",
     name: "<value>",
   });
 
@@ -139,7 +139,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await taxRatesCreateTaxRates(serviceM8, {
-    uuid: "123e4567-c91d-4e4c-bf46-2308eb7b205b",
+    uuid: "123e4567-038d-4415-87ed-2308e60b3f9b",
     name: "<value>",
   });
   if (res.ok) {
@@ -269,7 +269,7 @@ async function run() {
   const result = await serviceM8.taxRates.updateTaxRates({
     uuid: "276d45f4-bf8b-41ae-82d4-264af7ec45cc",
     taxRate: {
-      uuid: "123e4567-c91d-4e4c-bf46-2308eb7b205b",
+      uuid: "123e4567-038d-4415-87ed-2308e60b3f9b",
       name: "<value>",
     },
   });
@@ -300,7 +300,7 @@ async function run() {
   const res = await taxRatesUpdateTaxRates(serviceM8, {
     uuid: "276d45f4-bf8b-41ae-82d4-264af7ec45cc",
     taxRate: {
-      uuid: "123e4567-c91d-4e4c-bf46-2308eb7b205b",
+      uuid: "123e4567-038d-4415-87ed-2308e60b3f9b",
       name: "<value>",
     },
   });
