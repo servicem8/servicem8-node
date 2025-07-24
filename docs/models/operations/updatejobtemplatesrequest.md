@@ -8,7 +8,7 @@ import { UpdateJobTemplatesRequest } from "servicem8/models/operations";
 let value: UpdateJobTemplatesRequest = {
   uuid: "c030e7d9-027a-4e4b-999d-3a99b7a67f7c",
   jobTemplate: {
-    uuid: "123e4567-9898-442a-909c-2308e5438f3b",
+    uuid: "123e4567-27bc-462a-af07-230a621e5e2b",
   },
 };
 ```

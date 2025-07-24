@@ -7,7 +7,7 @@
 
 ```typescript
 const value: components.JobTemplate = {
-  uuid: "123e4567-9898-442a-909c-2308e5438f3b",
+  uuid: "123e4567-27bc-462a-af07-230a621e5e2b",
   editDate: "2025-07-01 12:00:00",
 };
 ```

@@ -8,10 +8,10 @@
 ```typescript
 const value: components.Asset[] = [
   {
-    uuid: "123e4567-f553-41eb-8eb1-2308edebcbfb",
+    uuid: "123e4567-a8a5-48cd-a040-230a67fe782b",
     editDate: "2025-07-01 12:00:00",
-    companyUuid: "123e4567-bfc2-4204-ae34-2308eb6be86b",
-    assetTypeUuid: "123e4567-9ef3-4953-918b-2308e46f155b",
+    companyUuid: "123e4567-587b-498c-85ef-230a67c1afdb",
+    assetTypeUuid: "123e4567-e08c-46c7-8626-230a656ea14b",
     geoTimestamp: "2025-07-01 12:00:00",
   },
 ];
