@@ -8,9 +8,9 @@
 ```typescript
 const value: components.Company = {
   name: "<value>",
-  uuid: "123e4567-6225-4d61-9c7f-230b7f38ffbb",
+  uuid: "123e4567-918c-45ad-9543-230b79179cdb",
   editDate: "2025-07-01 12:00:00",
-  taxRateUuid: "123e4567-fe37-4042-8f36-230b7fee599b",
+  taxRateUuid: "123e4567-f887-4785-9c32-230b7d97aeeb",
 };
 ```
 

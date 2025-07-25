@@ -9,7 +9,7 @@ let value: UpdateLocationsRequest = {
   uuid: "ac85e73d-8f41-4f46-8322-919804d725ea",
   location: {
     name: "<value>",
-    uuid: "123e4567-2d6a-4a10-a1ac-230b7cf662fb",
+    uuid: "123e4567-6a01-45f8-9b38-230b7e705b3b",
   },
 };
 ```

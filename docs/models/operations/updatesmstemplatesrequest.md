@@ -8,7 +8,7 @@ import { UpdateSMSTemplatesRequest } from "servicem8/models/operations";
 let value: UpdateSMSTemplatesRequest = {
   uuid: "148094e8-1776-4912-988b-3fdd8fc6b61c",
   smsTemplate: {
-    uuid: "123e4567-730b-4b61-8596-230b72fd100b",
+    uuid: "123e4567-9498-4e39-af7f-230b7d27586b",
     name: "<value>",
   },
 };
