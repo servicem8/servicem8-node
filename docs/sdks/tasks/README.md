@@ -123,12 +123,12 @@ async function run() {
   const result = await serviceM8.tasks.createTasks({
     dueDate: "YYYY-MM-DD",
     name: "<value>",
-    relatedObjectUuid: "123e4567-86fc-45a5-ac7c-230a65d9ddbb",
+    relatedObjectUuid: "123e4567-7fba-4431-a230-230a6eecac7b",
     completedTimestamp: "2025-07-01 12:00:00",
-    completedByStaffUuid: "123e4567-86b3-4cd9-b011-230a65fb72db",
-    assignedToStaffUuid: "123e4567-96eb-4bf9-a1f6-230a6c5f406b",
-    uuid: "123e4567-4106-4491-986e-230a602c3eab",
-    createdByStaffUuid: "123e4567-9d5d-4282-8d32-230a6d0bdadb",
+    completedByStaffUuid: "123e4567-f7c3-4ece-b165-230a62994afb",
+    assignedToStaffUuid: "123e4567-2425-4be3-ad99-230a6d4f67bb",
+    uuid: "123e4567-9d3b-4065-90fa-230a68ade0cb",
+    createdByStaffUuid: "123e4567-ef9b-471e-834e-230a6d509a5b",
     createDate: "2025-07-01 12:00:00",
   });
 
@@ -158,12 +158,12 @@ async function run() {
   const res = await tasksCreateTasks(serviceM8, {
     dueDate: "YYYY-MM-DD",
     name: "<value>",
-    relatedObjectUuid: "123e4567-86fc-45a5-ac7c-230a65d9ddbb",
+    relatedObjectUuid: "123e4567-7fba-4431-a230-230a6eecac7b",
     completedTimestamp: "2025-07-01 12:00:00",
-    completedByStaffUuid: "123e4567-86b3-4cd9-b011-230a65fb72db",
-    assignedToStaffUuid: "123e4567-96eb-4bf9-a1f6-230a6c5f406b",
-    uuid: "123e4567-4106-4491-986e-230a602c3eab",
-    createdByStaffUuid: "123e4567-9d5d-4282-8d32-230a6d0bdadb",
+    completedByStaffUuid: "123e4567-f7c3-4ece-b165-230a62994afb",
+    assignedToStaffUuid: "123e4567-2425-4be3-ad99-230a6d4f67bb",
+    uuid: "123e4567-9d3b-4065-90fa-230a68ade0cb",
+    createdByStaffUuid: "123e4567-ef9b-471e-834e-230a6d509a5b",
     createDate: "2025-07-01 12:00:00",
   });
   if (res.ok) {
@@ -305,12 +305,12 @@ async function run() {
     task: {
       dueDate: "YYYY-MM-DD",
       name: "<value>",
-      relatedObjectUuid: "123e4567-86fc-45a5-ac7c-230a65d9ddbb",
+      relatedObjectUuid: "123e4567-7fba-4431-a230-230a6eecac7b",
       completedTimestamp: "2025-07-01 12:00:00",
-      completedByStaffUuid: "123e4567-86b3-4cd9-b011-230a65fb72db",
-      assignedToStaffUuid: "123e4567-96eb-4bf9-a1f6-230a6c5f406b",
-      uuid: "123e4567-4106-4491-986e-230a602c3eab",
-      createdByStaffUuid: "123e4567-9d5d-4282-8d32-230a6d0bdadb",
+      completedByStaffUuid: "123e4567-f7c3-4ece-b165-230a62994afb",
+      assignedToStaffUuid: "123e4567-2425-4be3-ad99-230a6d4f67bb",
+      uuid: "123e4567-9d3b-4065-90fa-230a68ade0cb",
+      createdByStaffUuid: "123e4567-ef9b-471e-834e-230a6d509a5b",
       createDate: "2025-07-01 12:00:00",
     },
   });
@@ -343,12 +343,12 @@ async function run() {
     task: {
       dueDate: "YYYY-MM-DD",
       name: "<value>",
-      relatedObjectUuid: "123e4567-86fc-45a5-ac7c-230a65d9ddbb",
+      relatedObjectUuid: "123e4567-7fba-4431-a230-230a6eecac7b",
       completedTimestamp: "2025-07-01 12:00:00",
-      completedByStaffUuid: "123e4567-86b3-4cd9-b011-230a65fb72db",
-      assignedToStaffUuid: "123e4567-96eb-4bf9-a1f6-230a6c5f406b",
-      uuid: "123e4567-4106-4491-986e-230a602c3eab",
-      createdByStaffUuid: "123e4567-9d5d-4282-8d32-230a6d0bdadb",
+      completedByStaffUuid: "123e4567-f7c3-4ece-b165-230a62994afb",
+      assignedToStaffUuid: "123e4567-2425-4be3-ad99-230a6d4f67bb",
+      uuid: "123e4567-9d3b-4065-90fa-230a68ade0cb",
+      createdByStaffUuid: "123e4567-ef9b-471e-834e-230a6d509a5b",
       createDate: "2025-07-01 12:00:00",
     },
   });

@@ -7,11 +7,11 @@
 
 ```typescript
 const value: components.Badge = {
-  uuid: "123e4567-f89f-4e01-9d92-230a624bcecb",
+  uuid: "123e4567-99f4-4f6a-b748-230a6903f1eb",
   editDate: "2025-07-01 12:00:00",
   name: "<value>",
-  regardingFormUuid: "123e4567-ab53-4523-8608-230a6ffdc01b",
-  regardingAssetTypeUuid: "123e4567-28ef-45ad-bddb-230a68ddbd2b",
+  regardingFormUuid: "123e4567-29dc-44c0-996a-230a6426016b",
+  regardingAssetTypeUuid: "123e4567-0ae0-41e1-86ac-230a698c0bcb",
 };
 ```
 

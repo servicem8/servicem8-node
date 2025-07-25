@@ -6,7 +6,7 @@
 import { JobTemplateInput } from "servicem8/models/components";
 
 let value: JobTemplateInput = {
-  uuid: "123e4567-27bc-462a-af07-230a621e5e2b",
+  uuid: "123e4567-038f-487a-a938-230a6b6d2e5b",
 };
 ```
 
@@ -14,6 +14,6 @@ let value: JobTemplateInput = {
 
 | Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  | Example                                                                      |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `uuid`                                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | Unique identifier for this record                                            | 123e4567-27bc-462a-af07-230a621e5e2b                                         |
+| `uuid`                                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | Unique identifier for this record                                            | 123e4567-038f-487a-a938-230a6b6d2e5b                                         |
 | `active`                                                                     | [components.JobTemplateActive](../../models/components/jobtemplateactive.md) | :heavy_minus_sign:                                                           | Record active/deleted flag.  Valid values are [0,1]                          |                                                                              |
 | `name`                                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |                                                                              |

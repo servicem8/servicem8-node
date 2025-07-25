@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 5292d1b1-a456-4df8-b793-88d92b92bb91
 management:
-  docChecksum: 8512ae389382e2c8266dc5e1b3f00bc4
+  docChecksum: db1c6fa69837e4eb9ed8ce6d9fd534ef
   docVersion: 1.0.0
-  speakeasyVersion: 1.587.1
-  generationVersion: 2.662.0
-  releaseVersion: 0.9.10
-  configChecksum: 8cc2b95d8abc859d635abaa2beb02fde
+  speakeasyVersion: 1.589.0
+  generationVersion: 2.664.0
+  releaseVersion: 0.9.11
+  configChecksum: 6d3deb04054dc810bd104791e8891fb3
   published: true
 features:
   typescript:
@@ -1294,7 +1294,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-805e-4dbd-82f4-230a6c49ce6b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "start_time": null, "end_time": null, "sort_priority": null}]
+          application/json: [{"uuid": "123e4567-28f7-44a3-badd-230a66c3174b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "start_time": null, "end_time": null, "sort_priority": null}]
     badRequest:
       responses:
         "400":
@@ -1304,13 +1304,13 @@ examples:
   createAllocationWindows:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-bafb-4b32-8e53-230a6dd3c69b", "active": 1}
+        application/json: {"uuid": "123e4567-c8e2-4bce-9c0a-230a6c408c4b", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-bafb-4b32-8e53-230a6dd3c69b", "active": 1}
+        application/json: {"uuid": "123e4567-c8e2-4bce-9c0a-230a6c408c4b", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1323,7 +1323,7 @@ examples:
           uuid: "49ae7469-e649-4dd3-b8ff-e2583aa922b9"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-ec63-4e97-96ce-230a651a291b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "start_time": null, "end_time": null, "sort_priority": null}
+          application/json: {"uuid": "123e4567-1c16-4b99-acdd-230a698ed9fb", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "start_time": null, "end_time": null, "sort_priority": null}
     badRequest:
       parameters:
         path:
@@ -1339,7 +1339,7 @@ examples:
         path:
           uuid: "4cd38297-8da6-4b29-8742-4f293110085d"
       requestBody:
-        application/json: {"uuid": "123e4567-bafb-4b32-8e53-230a6dd3c69b", "active": 1}
+        application/json: {"uuid": "123e4567-c8e2-4bce-9c0a-230a6c408c4b", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -1348,7 +1348,7 @@ examples:
         path:
           uuid: "435a8b6f-2a26-4ca0-98a1-ad77b8fc1324"
       requestBody:
-        application/json: {"uuid": "123e4567-bafb-4b32-8e53-230a6dd3c69b", "active": 1}
+        application/json: {"uuid": "123e4567-c8e2-4bce-9c0a-230a6c408c4b", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1370,7 +1370,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-e7ed-4978-a1d1-230a661cbbcb", "active": 1, "edit_date": "2025-07-01 12:00:00", "company_uuid": "123e4567-7154-4093-a0a1-230a606ef67b", "asset_code": "string", "asset_type_uuid": "123e4567-86ce-4682-b57e-230a64011a6b", "name": "string", "lat": null, "lng": null, "geo_timestamp": "2025-07-01 12:00:00", "altitude": null, "field_data": [{"uuid": "string", "fieldType": "string", "fieldName": "string", "fieldValue": "string", "sortOrder": null}]}]
+          application/json: [{"uuid": "123e4567-356a-4000-a216-230a642c82db", "active": 1, "edit_date": "2025-07-01 12:00:00", "company_uuid": "123e4567-7ca3-4c6b-858c-230a6bd5e50b", "asset_code": "string", "asset_type_uuid": "123e4567-0807-4c85-94be-230a6ab9bcdb", "name": "string", "lat": null, "lng": null, "geo_timestamp": "2025-07-01 12:00:00", "altitude": null, "field_data": [{"uuid": "string", "fieldType": "string", "fieldName": "string", "fieldValue": "string", "sortOrder": null}]}]
     badRequest:
       responses:
         "400":
@@ -1384,7 +1384,7 @@ examples:
           uuid: "ce397d11-5da8-46a0-bca5-9b0f7985e931"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-f47b-469f-915d-230a60b2c1ab", "active": 1, "edit_date": "2025-07-01 12:00:00", "company_uuid": "123e4567-4b0f-42e0-8964-230a65024e8b", "asset_code": "string", "asset_type_uuid": "123e4567-2831-45c7-830b-230a673b7dcb", "name": "string", "lat": null, "lng": null, "geo_timestamp": "2025-07-01 12:00:00", "altitude": null, "field_data": [{"uuid": "string", "fieldType": "string", "fieldName": "string", "fieldValue": "string", "sortOrder": null}]}
+          application/json: {"uuid": "123e4567-125e-44bf-8c18-230a6d9eadab", "active": 1, "edit_date": "2025-07-01 12:00:00", "company_uuid": "123e4567-1c4b-4875-bb7a-230a636ce45b", "asset_code": "string", "asset_type_uuid": "123e4567-f06b-4ec2-af84-230a666f742b", "name": "string", "lat": null, "lng": null, "geo_timestamp": "2025-07-01 12:00:00", "altitude": null, "field_data": [{"uuid": "string", "fieldType": "string", "fieldName": "string", "fieldValue": "string", "sortOrder": null}]}
     badRequest:
       parameters:
         path:
@@ -1400,7 +1400,7 @@ examples:
         path:
           uuid: "5b24eb53-3f3d-4b60-b9e9-e44934a80c53"
       requestBody:
-        application/json: {"uuid": "123e4567-a8a5-48cd-a040-230a67fe782b", "active": 1, "company_uuid": "123e4567-587b-498c-85ef-230a67c1afdb", "asset_type_uuid": "123e4567-e08c-46c7-8626-230a656ea14b", "geo_timestamp": "2025-07-01 12:00:00"}
+        application/json: {"uuid": "123e4567-e553-43f4-a4b3-230a60e8a4db", "active": 1, "company_uuid": "123e4567-8517-4f82-9157-230a67c25aeb", "asset_type_uuid": "123e4567-378f-41bb-b4bc-230a619483cb", "geo_timestamp": "2025-07-01 12:00:00"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -1409,7 +1409,7 @@ examples:
         path:
           uuid: "30150d4d-c528-43ec-aba4-539d782a6148"
       requestBody:
-        application/json: {"uuid": "123e4567-a8a5-48cd-a040-230a67fe782b", "active": 1, "company_uuid": "123e4567-587b-498c-85ef-230a67c1afdb", "asset_type_uuid": "123e4567-e08c-46c7-8626-230a656ea14b", "geo_timestamp": "2025-07-01 12:00:00"}
+        application/json: {"uuid": "123e4567-e553-43f4-a4b3-230a60e8a4db", "active": 1, "company_uuid": "123e4567-8517-4f82-9157-230a67c25aeb", "asset_type_uuid": "123e4567-378f-41bb-b4bc-230a619483cb", "geo_timestamp": "2025-07-01 12:00:00"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1431,7 +1431,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-74e4-4c02-977a-230a6aa9349b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string"}]
+          application/json: [{"uuid": "123e4567-0258-4182-a688-230a6501b31b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string"}]
     badRequest:
       responses:
         "400":
@@ -1441,13 +1441,13 @@ examples:
   createAssetTypes:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-9997-4f45-b035-230a684161ab", "active": 1}
+        application/json: {"uuid": "123e4567-8f93-444a-abf7-230a68f5152b", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-9997-4f45-b035-230a684161ab", "active": 1}
+        application/json: {"uuid": "123e4567-8f93-444a-abf7-230a68f5152b", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1460,7 +1460,7 @@ examples:
           uuid: "4a994463-c040-44fb-a51e-0f8355140ac6"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-977b-49c2-a285-230a63c8bd0b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string"}
+          application/json: {"uuid": "123e4567-c0ed-4836-97fb-230a686421fb", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string"}
     badRequest:
       parameters:
         path:
@@ -1476,7 +1476,7 @@ examples:
         path:
           uuid: "f89ce1c3-90b1-4b51-89a7-5bc9443eac2b"
       requestBody:
-        application/json: {"uuid": "123e4567-9997-4f45-b035-230a684161ab", "active": 1}
+        application/json: {"uuid": "123e4567-8f93-444a-abf7-230a68f5152b", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -1485,7 +1485,7 @@ examples:
         path:
           uuid: "fba3f624-7b55-47fe-b75c-663b46160d94"
       requestBody:
-        application/json: {"uuid": "123e4567-9997-4f45-b035-230a684161ab", "active": 1}
+        application/json: {"uuid": "123e4567-8f93-444a-abf7-230a68f5152b", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1507,7 +1507,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-558e-4f58-9a14-230a64e590db", "active": 1, "edit_date": "2025-07-01 12:00:00", "asset_type_uuid": "123e4567-be9e-48a7-8be6-230a6cb5627b", "name": "string", "field_data": {"fieldType": "Multiple Choice", "mandatory": false, "choices": ["string"]}, "sort_order": null}]
+          application/json: [{"uuid": "123e4567-c4c0-4723-af9e-230a6c3e4dab", "active": 1, "edit_date": "2025-07-01 12:00:00", "asset_type_uuid": "123e4567-5d05-4c4e-bb20-230a6bfd8edb", "name": "string", "field_data": {"fieldType": "Multiple Choice", "mandatory": false, "choices": ["string"]}, "sort_order": null}]
     badRequest:
       responses:
         "400":
@@ -1517,13 +1517,13 @@ examples:
   createAssetTypeFields:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-fea9-4bea-b7bd-230a6594777b", "active": 1, "asset_type_uuid": "123e4567-8da5-4473-8d18-230a69e9eb1b", "name": "<value>"}
+        application/json: {"uuid": "123e4567-d976-4099-bc3d-230a66a3d9fb", "active": 1, "asset_type_uuid": "123e4567-cd5a-4e50-aef2-230a6bd0cc4b", "name": "<value>"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-fea9-4bea-b7bd-230a6594777b", "active": 1, "asset_type_uuid": "123e4567-8da5-4473-8d18-230a69e9eb1b", "name": "<value>"}
+        application/json: {"uuid": "123e4567-d976-4099-bc3d-230a66a3d9fb", "active": 1, "asset_type_uuid": "123e4567-cd5a-4e50-aef2-230a6bd0cc4b", "name": "<value>"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1536,7 +1536,7 @@ examples:
           uuid: "aca8d173-e0f2-4517-ac45-4f4571997d2b"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-7c6a-4063-9d0f-230a65cad31b", "active": 1, "edit_date": "2025-07-01 12:00:00", "asset_type_uuid": "123e4567-9803-4f43-8215-230a63a995eb", "name": "string", "field_data": {"fieldType": "Date", "mandatory": false, "choices": ["string"]}, "sort_order": null}
+          application/json: {"uuid": "123e4567-a99f-4c9f-8411-230a6a782e4b", "active": 1, "edit_date": "2025-07-01 12:00:00", "asset_type_uuid": "123e4567-32ec-4f8a-b7d8-230a64c97bbb", "name": "string", "field_data": {"fieldType": "Date", "mandatory": false, "choices": ["string"]}, "sort_order": null}
     badRequest:
       parameters:
         path:
@@ -1552,7 +1552,7 @@ examples:
         path:
           uuid: "1d8d7fd0-4d09-4955-a484-0cd4add08b25"
       requestBody:
-        application/json: {"uuid": "123e4567-fea9-4bea-b7bd-230a6594777b", "active": 1, "asset_type_uuid": "123e4567-8da5-4473-8d18-230a69e9eb1b", "name": "<value>"}
+        application/json: {"uuid": "123e4567-d976-4099-bc3d-230a66a3d9fb", "active": 1, "asset_type_uuid": "123e4567-cd5a-4e50-aef2-230a6bd0cc4b", "name": "<value>"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -1561,7 +1561,7 @@ examples:
         path:
           uuid: "4772083f-08d5-4724-bfb4-ffff6fb1531d"
       requestBody:
-        application/json: {"uuid": "123e4567-fea9-4bea-b7bd-230a6594777b", "active": 1, "asset_type_uuid": "123e4567-8da5-4473-8d18-230a69e9eb1b", "name": "<value>"}
+        application/json: {"uuid": "123e4567-d976-4099-bc3d-230a66a3d9fb", "active": 1, "asset_type_uuid": "123e4567-cd5a-4e50-aef2-230a6bd0cc4b", "name": "<value>"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1583,7 +1583,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-fd5c-43ce-b893-230a6c45faab", "active": 1, "edit_date": "2025-07-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-1fe3-4a0f-8941-230a68496e2b", "attachment_name": "string", "file_type": "string", "created_by_staff_uuid": "123e4567-ad00-43a2-98d0-230a6f350dab", "timestamp": "string", "attachment_source": "string", "tags": "string", "lng": null, "lat": null, "photo_width": "string", "photo_height": "string", "extracted_info": "string", "is_favourite": "string", "class_name": "string", "metadata": "string"}]
+          application/json: [{"uuid": "123e4567-a083-4c29-9845-230a6b0cd61b", "active": 1, "edit_date": "2025-07-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-643e-4a9c-868d-230a6a6b050b", "attachment_name": "string", "file_type": "string", "created_by_staff_uuid": "123e4567-d17a-4293-ab0e-230a6e4c826b", "timestamp": "string", "attachment_source": "string", "tags": "string", "lng": null, "lat": null, "photo_width": "string", "photo_height": "string", "extracted_info": "string", "is_favourite": "string", "class_name": "string", "metadata": "string"}]
     badRequest:
       responses:
         "400":
@@ -1593,13 +1593,13 @@ examples:
   createAttachments:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-b3bb-46ce-8da0-230a6358c80b", "active": 1, "related_object_uuid": "123e4567-de9c-4a5c-a1d0-230a636f686b", "created_by_staff_uuid": "123e4567-c872-4216-995a-230a6ec91d6b"}
+        application/json: {"uuid": "123e4567-5ab3-4574-a6fa-230a692574eb", "active": 1, "related_object_uuid": "123e4567-3487-49d1-bcbd-230a6e00a05b", "created_by_staff_uuid": "123e4567-09d0-43ba-b481-230a6477024b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-b3bb-46ce-8da0-230a6358c80b", "active": 1, "related_object_uuid": "123e4567-de9c-4a5c-a1d0-230a636f686b", "created_by_staff_uuid": "123e4567-c872-4216-995a-230a6ec91d6b"}
+        application/json: {"uuid": "123e4567-5ab3-4574-a6fa-230a692574eb", "active": 1, "related_object_uuid": "123e4567-3487-49d1-bcbd-230a6e00a05b", "created_by_staff_uuid": "123e4567-09d0-43ba-b481-230a6477024b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1612,7 +1612,7 @@ examples:
           uuid: "91e684f4-13a9-4d1e-9fc1-8a4280b39409"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-f86d-4d80-89ae-230a6922f37b", "active": 1, "edit_date": "2025-07-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-441f-4cf0-8f66-230a60272f7b", "attachment_name": "string", "file_type": "string", "created_by_staff_uuid": "123e4567-2a85-405e-8282-230a6c4cc72b", "timestamp": "string", "attachment_source": "string", "tags": "string", "lng": null, "lat": null, "photo_width": "string", "photo_height": "string", "extracted_info": "string", "is_favourite": "string", "class_name": "string", "metadata": "string"}
+          application/json: {"uuid": "123e4567-9f03-4937-af45-230a65ce5eeb", "active": 1, "edit_date": "2025-07-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-a23a-4734-9206-230a6b3c2c5b", "attachment_name": "string", "file_type": "string", "created_by_staff_uuid": "123e4567-e349-4995-a3c1-230a6e1c465b", "timestamp": "string", "attachment_source": "string", "tags": "string", "lng": null, "lat": null, "photo_width": "string", "photo_height": "string", "extracted_info": "string", "is_favourite": "string", "class_name": "string", "metadata": "string"}
     badRequest:
       parameters:
         path:
@@ -1628,7 +1628,7 @@ examples:
         path:
           uuid: "e104394b-4c20-472c-976c-b9a47147723c"
       requestBody:
-        application/json: {"uuid": "123e4567-b3bb-46ce-8da0-230a6358c80b", "active": 1, "related_object_uuid": "123e4567-de9c-4a5c-a1d0-230a636f686b", "created_by_staff_uuid": "123e4567-c872-4216-995a-230a6ec91d6b"}
+        application/json: {"uuid": "123e4567-5ab3-4574-a6fa-230a692574eb", "active": 1, "related_object_uuid": "123e4567-3487-49d1-bcbd-230a6e00a05b", "created_by_staff_uuid": "123e4567-09d0-43ba-b481-230a6477024b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -1637,7 +1637,7 @@ examples:
         path:
           uuid: "e30972e2-98da-4533-91a7-3bccc922926f"
       requestBody:
-        application/json: {"uuid": "123e4567-b3bb-46ce-8da0-230a6358c80b", "active": 1, "related_object_uuid": "123e4567-de9c-4a5c-a1d0-230a636f686b", "created_by_staff_uuid": "123e4567-c872-4216-995a-230a6ec91d6b"}
+        application/json: {"uuid": "123e4567-5ab3-4574-a6fa-230a692574eb", "active": 1, "related_object_uuid": "123e4567-3487-49d1-bcbd-230a6e00a05b", "created_by_staff_uuid": "123e4567-09d0-43ba-b481-230a6477024b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1659,7 +1659,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-3224-4ce6-9735-230a6973983b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "automatically_allocated": "string", "file_name": "string", "regarding_form_uuid": "123e4567-81ce-4f02-b6e0-230a6f19a07b", "regarding_asset_type_uuid": "123e4567-ef05-4c51-9d5e-230a6ada5fcb"}]
+          application/json: [{"uuid": "123e4567-45bb-4370-b0e5-230a6333bb6b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "automatically_allocated": "string", "file_name": "string", "regarding_form_uuid": "123e4567-121e-4b6d-8506-230a65875c5b", "regarding_asset_type_uuid": "123e4567-f7cc-489e-825a-230a6e04efeb"}]
     badRequest:
       responses:
         "400":
@@ -1669,13 +1669,13 @@ examples:
   createBadges:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-f89f-4e01-9d92-230a624bcecb", "active": 1, "name": "<value>", "regarding_form_uuid": "123e4567-ab53-4523-8608-230a6ffdc01b", "regarding_asset_type_uuid": "123e4567-28ef-45ad-bddb-230a68ddbd2b"}
+        application/json: {"uuid": "123e4567-99f4-4f6a-b748-230a6903f1eb", "active": 1, "name": "<value>", "regarding_form_uuid": "123e4567-29dc-44c0-996a-230a6426016b", "regarding_asset_type_uuid": "123e4567-0ae0-41e1-86ac-230a698c0bcb"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-f89f-4e01-9d92-230a624bcecb", "active": 1, "name": "<value>", "regarding_form_uuid": "123e4567-ab53-4523-8608-230a6ffdc01b", "regarding_asset_type_uuid": "123e4567-28ef-45ad-bddb-230a68ddbd2b"}
+        application/json: {"uuid": "123e4567-99f4-4f6a-b748-230a6903f1eb", "active": 1, "name": "<value>", "regarding_form_uuid": "123e4567-29dc-44c0-996a-230a6426016b", "regarding_asset_type_uuid": "123e4567-0ae0-41e1-86ac-230a698c0bcb"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1688,7 +1688,7 @@ examples:
           uuid: "0da9b72e-d146-4021-bb74-ec08610d82e7"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-96b5-43cf-9936-230a6079ecdb", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "automatically_allocated": "string", "file_name": "string", "regarding_form_uuid": "123e4567-2996-4080-b2ef-230a6c1476cb", "regarding_asset_type_uuid": "123e4567-2ac3-4e4c-b14a-230a6cf71fab"}
+          application/json: {"uuid": "123e4567-fe6d-4794-a667-230a61df44bb", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "automatically_allocated": "string", "file_name": "string", "regarding_form_uuid": "123e4567-b749-41fa-b73d-230a6e8f8cdb", "regarding_asset_type_uuid": "123e4567-63da-4d4b-b689-230a6ca362ab"}
     badRequest:
       parameters:
         path:
@@ -1704,7 +1704,7 @@ examples:
         path:
           uuid: "444f2947-b065-4aac-8159-0ffca6278fd2"
       requestBody:
-        application/json: {"uuid": "123e4567-f89f-4e01-9d92-230a624bcecb", "active": 1, "name": "<value>", "regarding_form_uuid": "123e4567-ab53-4523-8608-230a6ffdc01b", "regarding_asset_type_uuid": "123e4567-28ef-45ad-bddb-230a68ddbd2b"}
+        application/json: {"uuid": "123e4567-99f4-4f6a-b748-230a6903f1eb", "active": 1, "name": "<value>", "regarding_form_uuid": "123e4567-29dc-44c0-996a-230a6426016b", "regarding_asset_type_uuid": "123e4567-0ae0-41e1-86ac-230a698c0bcb"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -1713,7 +1713,7 @@ examples:
         path:
           uuid: "8c59ce59-d7c2-4a7d-9e1d-52fc4838161c"
       requestBody:
-        application/json: {"uuid": "123e4567-f89f-4e01-9d92-230a624bcecb", "active": 1, "name": "<value>", "regarding_form_uuid": "123e4567-ab53-4523-8608-230a6ffdc01b", "regarding_asset_type_uuid": "123e4567-28ef-45ad-bddb-230a68ddbd2b"}
+        application/json: {"uuid": "123e4567-99f4-4f6a-b748-230a6903f1eb", "active": 1, "name": "<value>", "regarding_form_uuid": "123e4567-29dc-44c0-996a-230a6426016b", "regarding_asset_type_uuid": "123e4567-0ae0-41e1-86ac-230a698c0bcb"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1735,7 +1735,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "colour": "string", "uuid": "123e4567-1593-4cbb-9f12-230a660e256b", "active": 1, "edit_date": "2025-07-01 12:00:00"}]
+          application/json: [{"name": "string", "colour": "string", "uuid": "123e4567-da76-4a2f-9e58-230a6369eb0b", "active": 1, "edit_date": "2025-07-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -1745,13 +1745,13 @@ examples:
   createCategories:
     success:
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-996e-4157-a9a9-230a6614e94b", "active": 1}
+        application/json: {"name": "<value>", "uuid": "123e4567-c863-4660-9485-230a60fab9ab", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-996e-4157-a9a9-230a6614e94b", "active": 1}
+        application/json: {"name": "<value>", "uuid": "123e4567-c863-4660-9485-230a60fab9ab", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1764,7 +1764,7 @@ examples:
           uuid: "0b63d819-8bf4-4941-9468-a93a94fb9a3d"
       responses:
         "200":
-          application/json: {"name": "string", "colour": "string", "uuid": "123e4567-c9c5-4d94-b989-230a6d672ddb", "active": 1, "edit_date": "2025-07-01 12:00:00"}
+          application/json: {"name": "string", "colour": "string", "uuid": "123e4567-d2a9-4192-85cb-230a6d60152b", "active": 1, "edit_date": "2025-07-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -1780,7 +1780,7 @@ examples:
         path:
           uuid: "c830c901-e3ae-427d-8f08-cf28c94b319f"
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-996e-4157-a9a9-230a6614e94b", "active": 1}
+        application/json: {"name": "<value>", "uuid": "123e4567-c863-4660-9485-230a60fab9ab", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -1789,7 +1789,7 @@ examples:
         path:
           uuid: "433bef58-ff15-4e7b-b9be-3a21b7c5efda"
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-996e-4157-a9a9-230a6614e94b", "active": 1}
+        application/json: {"name": "<value>", "uuid": "123e4567-c863-4660-9485-230a60fab9ab", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1811,7 +1811,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "abn_number": "string", "address": "string", "billing_address": "string", "parent_company_uuid": "string", "uuid": "123e4567-2fdd-4c46-9526-230a6c923d8b", "active": 1, "edit_date": "2025-07-01 12:00:00", "website": "string", "is_individual": "string", "address_street": "string", "address_city": "string", "address_state": "string", "address_postcode": "string", "address_country": "string", "fax_number": "string", "badges": "string", "tax_rate_uuid": "123e4567-59c3-448a-9c34-230a689763bb", "billing_attention": "string", "payment_terms": "string"}]
+          application/json: [{"name": "string", "abn_number": "string", "address": "string", "billing_address": "string", "parent_company_uuid": "string", "uuid": "123e4567-a0c5-4710-bf64-230a6eb860fb", "active": 1, "edit_date": "2025-07-01 12:00:00", "website": "string", "is_individual": "string", "address_street": "string", "address_city": "string", "address_state": "string", "address_postcode": "string", "address_country": "string", "fax_number": "string", "badges": "string", "tax_rate_uuid": "123e4567-42f5-4aaf-9c8f-230a6a21416b", "billing_attention": "string", "payment_terms": "string"}]
     badRequest:
       responses:
         "400":
@@ -1821,13 +1821,13 @@ examples:
   createClients:
     success:
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-ccbf-4926-acfe-230a6be316cb", "active": 1, "tax_rate_uuid": "123e4567-0588-4f2e-9217-230a6bb1999b"}
+        application/json: {"name": "<value>", "uuid": "123e4567-e734-42a3-82a9-230a6a710bfb", "active": 1, "tax_rate_uuid": "123e4567-07b7-47a9-b4e9-230a6953733b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-ccbf-4926-acfe-230a6be316cb", "active": 1, "tax_rate_uuid": "123e4567-0588-4f2e-9217-230a6bb1999b"}
+        application/json: {"name": "<value>", "uuid": "123e4567-e734-42a3-82a9-230a6a710bfb", "active": 1, "tax_rate_uuid": "123e4567-07b7-47a9-b4e9-230a6953733b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1840,7 +1840,7 @@ examples:
           uuid: "b03d0f3d-1aad-4864-9438-b712398e900f"
       responses:
         "200":
-          application/json: {"name": "string", "abn_number": "string", "address": "string", "billing_address": "string", "parent_company_uuid": "string", "uuid": "123e4567-6f8e-48c9-978a-230a6846f8cb", "active": 1, "edit_date": "2025-07-01 12:00:00", "website": "string", "is_individual": "string", "address_street": "string", "address_city": "string", "address_state": "string", "address_postcode": "string", "address_country": "string", "fax_number": "string", "badges": "string", "tax_rate_uuid": "123e4567-b063-4304-bf00-230a6292c48b", "billing_attention": "string", "payment_terms": "string"}
+          application/json: {"name": "string", "abn_number": "string", "address": "string", "billing_address": "string", "parent_company_uuid": "string", "uuid": "123e4567-2a74-47e6-bbf8-230a6487a8cb", "active": 1, "edit_date": "2025-07-01 12:00:00", "website": "string", "is_individual": "string", "address_street": "string", "address_city": "string", "address_state": "string", "address_postcode": "string", "address_country": "string", "fax_number": "string", "badges": "string", "tax_rate_uuid": "123e4567-592c-4079-a2ab-230a60318dfb", "billing_attention": "string", "payment_terms": "string"}
     badRequest:
       parameters:
         path:
@@ -1856,7 +1856,7 @@ examples:
         path:
           uuid: "55f6bcc0-3bb7-4509-b13b-98c02374f910"
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-ccbf-4926-acfe-230a6be316cb", "active": 1, "tax_rate_uuid": "123e4567-0588-4f2e-9217-230a6bb1999b"}
+        application/json: {"name": "<value>", "uuid": "123e4567-e734-42a3-82a9-230a6a710bfb", "active": 1, "tax_rate_uuid": "123e4567-07b7-47a9-b4e9-230a6953733b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -1865,7 +1865,7 @@ examples:
         path:
           uuid: "8c1cd729-b04a-4f32-bc60-a0a48fac184a"
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-ccbf-4926-acfe-230a6be316cb", "active": 1, "tax_rate_uuid": "123e4567-0588-4f2e-9217-230a6bb1999b"}
+        application/json: {"name": "<value>", "uuid": "123e4567-e734-42a3-82a9-230a6a710bfb", "active": 1, "tax_rate_uuid": "123e4567-07b7-47a9-b4e9-230a6953733b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1887,7 +1887,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-469c-4a6c-9d9b-230a626de09b", "active": 1, "edit_date": "2025-07-01 12:00:00", "company_uuid": "123e4567-4882-410e-aefd-230a67a8704b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}]
+          application/json: [{"uuid": "123e4567-9881-4358-bdc9-230a66578fdb", "active": 1, "edit_date": "2025-07-01 12:00:00", "company_uuid": "123e4567-6187-450d-8b2f-230a6e7ee24b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}]
     badRequest:
       responses:
         "400":
@@ -1897,13 +1897,13 @@ examples:
   createCompanyContacts:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-a4bd-4030-baca-230a691e2bfb", "active": 1, "company_uuid": "123e4567-3753-4586-a9e4-230a675344bb"}
+        application/json: {"uuid": "123e4567-b151-435f-88c4-230a653d73ab", "active": 1, "company_uuid": "123e4567-5f9b-4bf6-8ed2-230a646ed0db"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-a4bd-4030-baca-230a691e2bfb", "active": 1, "company_uuid": "123e4567-3753-4586-a9e4-230a675344bb"}
+        application/json: {"uuid": "123e4567-b151-435f-88c4-230a653d73ab", "active": 1, "company_uuid": "123e4567-5f9b-4bf6-8ed2-230a646ed0db"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1916,7 +1916,7 @@ examples:
           uuid: "4b4da20e-1856-4f59-8f33-d48ee1a09b0c"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-a2ce-4ab7-a83b-230a6e778dfb", "active": 1, "edit_date": "2025-07-01 12:00:00", "company_uuid": "123e4567-2cc1-4573-ba7d-230a6219b54b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}
+          application/json: {"uuid": "123e4567-45bf-4c7c-a968-230a6463c66b", "active": 1, "edit_date": "2025-07-01 12:00:00", "company_uuid": "123e4567-562c-4a79-aaf3-230a67afaa1b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}
     badRequest:
       parameters:
         path:
@@ -1932,7 +1932,7 @@ examples:
         path:
           uuid: "14a84f05-390e-4d88-ad00-a75bba477a48"
       requestBody:
-        application/json: {"uuid": "123e4567-a4bd-4030-baca-230a691e2bfb", "active": 1, "company_uuid": "123e4567-3753-4586-a9e4-230a675344bb"}
+        application/json: {"uuid": "123e4567-b151-435f-88c4-230a653d73ab", "active": 1, "company_uuid": "123e4567-5f9b-4bf6-8ed2-230a646ed0db"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -1941,7 +1941,7 @@ examples:
         path:
           uuid: "0abfbd07-4bd7-4197-beb6-63c14b0d07bf"
       requestBody:
-        application/json: {"uuid": "123e4567-a4bd-4030-baca-230a691e2bfb", "active": 1, "company_uuid": "123e4567-3753-4586-a9e4-230a675344bb"}
+        application/json: {"uuid": "123e4567-b151-435f-88c4-230a653d73ab", "active": 1, "company_uuid": "123e4567-5f9b-4bf6-8ed2-230a646ed0db"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1963,7 +1963,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-a10f-4e01-942f-230a6c1608cb", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "subject": "string", "message": "string"}]
+          application/json: [{"uuid": "123e4567-14f9-4460-bc9e-230a6f95c78b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "subject": "string", "message": "string"}]
     badRequest:
       responses:
         "400":
@@ -1973,13 +1973,13 @@ examples:
   createEmailTemplates:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-2f02-4e67-b1b9-230a6290ecbb", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-3cd8-457d-856e-230a60022e7b", "active": 1, "name": "<value>"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-2f02-4e67-b1b9-230a6290ecbb", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-3cd8-457d-856e-230a60022e7b", "active": 1, "name": "<value>"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -1992,7 +1992,7 @@ examples:
           uuid: "690a31c0-ced4-437a-b72f-18a12ad13d50"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-7c81-4ae9-9f69-230a60c16c4b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "subject": "string", "message": "string"}
+          application/json: {"uuid": "123e4567-c949-4f58-a8ca-230a65bd702b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "subject": "string", "message": "string"}
     badRequest:
       parameters:
         path:
@@ -2008,7 +2008,7 @@ examples:
         path:
           uuid: "a3ce5f33-781a-4062-b068-2e3f8605b008"
       requestBody:
-        application/json: {"uuid": "123e4567-2f02-4e67-b1b9-230a6290ecbb", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-3cd8-457d-856e-230a60022e7b", "active": 1, "name": "<value>"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -2017,7 +2017,7 @@ examples:
         path:
           uuid: "a7e844a4-6303-4f97-b1cc-21f38f44b3c8"
       requestBody:
-        application/json: {"uuid": "123e4567-2f02-4e67-b1b9-230a6290ecbb", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-3cd8-457d-856e-230a60022e7b", "active": 1, "name": "<value>"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2039,7 +2039,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-f355-4f2d-832c-230a66dd7fab", "active": 1, "edit_date": "2025-07-01 12:00:00", "timestamp": "string", "related_object": "string", "related_object_uuid": "123e4567-3c44-490b-8d6f-230a61a7e58b", "rating": "string", "comment": "string"}]
+          application/json: [{"uuid": "123e4567-5c5a-4b7a-b370-230a6d506fab", "active": 1, "edit_date": "2025-07-01 12:00:00", "timestamp": "string", "related_object": "string", "related_object_uuid": "123e4567-fab6-4940-ba73-230a6e42bfdb", "rating": "string", "comment": "string"}]
     badRequest:
       responses:
         "400":
@@ -2049,13 +2049,13 @@ examples:
   createFeedback:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-a277-491b-8151-230a62cb98db", "active": 1, "related_object_uuid": "123e4567-89e3-4417-a034-230a6fba7fab"}
+        application/json: {"uuid": "123e4567-1eeb-4ae3-82a0-230a60fb097b", "active": 1, "related_object_uuid": "123e4567-d948-4398-8ad5-230a6254582b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-a277-491b-8151-230a62cb98db", "active": 1, "related_object_uuid": "123e4567-89e3-4417-a034-230a6fba7fab"}
+        application/json: {"uuid": "123e4567-1eeb-4ae3-82a0-230a60fb097b", "active": 1, "related_object_uuid": "123e4567-d948-4398-8ad5-230a6254582b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2068,7 +2068,7 @@ examples:
           uuid: "b6ddae86-77cc-4bf6-a38b-8ad53cefc915"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-6f3a-4eda-ba27-230a6df3fafb", "active": 1, "edit_date": "2025-07-01 12:00:00", "timestamp": "string", "related_object": "string", "related_object_uuid": "123e4567-341f-42e1-8fa2-230a6d7935bb", "rating": "string", "comment": "string"}
+          application/json: {"uuid": "123e4567-0d6d-40f5-8ea5-230a61db0b1b", "active": 1, "edit_date": "2025-07-01 12:00:00", "timestamp": "string", "related_object": "string", "related_object_uuid": "123e4567-4df8-4f3d-8a1f-230a634330eb", "rating": "string", "comment": "string"}
     badRequest:
       parameters:
         path:
@@ -2084,7 +2084,7 @@ examples:
         path:
           uuid: "4b9b8627-caa7-402a-94b0-02cb8641823c"
       requestBody:
-        application/json: {"uuid": "123e4567-a277-491b-8151-230a62cb98db", "active": 1, "related_object_uuid": "123e4567-89e3-4417-a034-230a6fba7fab"}
+        application/json: {"uuid": "123e4567-1eeb-4ae3-82a0-230a60fb097b", "active": 1, "related_object_uuid": "123e4567-d948-4398-8ad5-230a6254582b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -2093,7 +2093,7 @@ examples:
         path:
           uuid: "777086b6-20a1-4ef9-b306-874fd4dd014b"
       requestBody:
-        application/json: {"uuid": "123e4567-a277-491b-8151-230a62cb98db", "active": 1, "related_object_uuid": "123e4567-89e3-4417-a034-230a6fba7fab"}
+        application/json: {"uuid": "123e4567-1eeb-4ae3-82a0-230a60fb097b", "active": 1, "related_object_uuid": "123e4567-d948-4398-8ad5-230a6254582b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2115,7 +2115,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "document_template_uuid": "123e4567-2620-48ed-a969-230a65ee5d8b", "can_be_used_independently": "string", "badge_mandatory_state": "string", "template_fields": [{"name": "string", "fieldType": "Text", "value": "string", "sortOrder": null}], "uuid": "123e4567-1e73-4011-89f3-230a669c9b6b", "active": 1, "edit_date": "2025-07-01 12:00:00"}]
+          application/json: [{"name": "string", "document_template_uuid": "123e4567-b14c-452d-896a-230a6c13b1fb", "can_be_used_independently": "string", "badge_mandatory_state": "string", "template_fields": [{"name": "string", "fieldType": "Text", "value": "string", "sortOrder": null}], "uuid": "123e4567-f87e-4ea2-af3d-230a613f5a4b", "active": 1, "edit_date": "2025-07-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -2125,13 +2125,13 @@ examples:
   createForms:
     success:
       requestBody:
-        application/json: {"document_template_uuid": "123e4567-60b8-486d-865a-230a642fb6bb", "uuid": "123e4567-6ec8-47f2-9047-230a63a266cb", "active": 1}
+        application/json: {"document_template_uuid": "123e4567-faa8-4d50-b837-230a640b2b1b", "uuid": "123e4567-900e-471a-b06b-230a6ed2d6fb", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"document_template_uuid": "123e4567-60b8-486d-865a-230a642fb6bb", "uuid": "123e4567-6ec8-47f2-9047-230a63a266cb", "active": 1}
+        application/json: {"document_template_uuid": "123e4567-faa8-4d50-b837-230a640b2b1b", "uuid": "123e4567-900e-471a-b06b-230a6ed2d6fb", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2144,7 +2144,7 @@ examples:
           uuid: "da48f5f6-5d8c-4c73-b81b-fc193b56ae21"
       responses:
         "200":
-          application/json: {"name": "string", "document_template_uuid": "123e4567-c993-4616-856a-230a6387179b", "can_be_used_independently": "string", "badge_mandatory_state": "string", "template_fields": [{"name": "string", "fieldType": "Text", "value": "string", "sortOrder": null}], "uuid": "123e4567-d3c3-43e4-80bc-230a62aa481b", "active": 1, "edit_date": "2025-07-01 12:00:00"}
+          application/json: {"name": "string", "document_template_uuid": "123e4567-450e-43d4-95a1-230a6578771b", "can_be_used_independently": "string", "badge_mandatory_state": "string", "template_fields": [{"name": "string", "fieldType": "Text", "value": "string", "sortOrder": null}], "uuid": "123e4567-ed27-4ef5-ad71-230a6917be6b", "active": 1, "edit_date": "2025-07-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -2160,7 +2160,7 @@ examples:
         path:
           uuid: "2473c622-cde4-4803-b91a-cd7a656f7e3b"
       requestBody:
-        application/json: {"document_template_uuid": "123e4567-60b8-486d-865a-230a642fb6bb", "uuid": "123e4567-6ec8-47f2-9047-230a63a266cb", "active": 1}
+        application/json: {"document_template_uuid": "123e4567-faa8-4d50-b837-230a640b2b1b", "uuid": "123e4567-900e-471a-b06b-230a6ed2d6fb", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -2169,7 +2169,7 @@ examples:
         path:
           uuid: "820ca91a-aae8-4f84-8ed0-b42d677309ed"
       requestBody:
-        application/json: {"document_template_uuid": "123e4567-60b8-486d-865a-230a642fb6bb", "uuid": "123e4567-6ec8-47f2-9047-230a63a266cb", "active": 1}
+        application/json: {"document_template_uuid": "123e4567-faa8-4d50-b837-230a640b2b1b", "uuid": "123e4567-900e-471a-b06b-230a6ed2d6fb", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2191,7 +2191,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-0572-4c79-8323-230a6cded9db", "active": 1, "edit_date": "2025-07-01 12:00:00", "form_uuid": "123e4567-fa5e-43e5-8cf5-230a6ee0e00b", "name": "string", "field_data_json": "string", "sort_order": "string"}]
+          application/json: [{"uuid": "123e4567-66d4-435a-92ee-230a609f0afb", "active": 1, "edit_date": "2025-07-01 12:00:00", "form_uuid": "123e4567-c10e-452a-b17d-230a6c5a10eb", "name": "string", "field_data_json": "string", "sort_order": "string"}]
     badRequest:
       responses:
         "400":
@@ -2201,13 +2201,13 @@ examples:
   createFormFields:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-f09a-4ca8-9834-230a6bce376b", "active": 1, "form_uuid": "123e4567-41e1-408a-92d9-230a67e897eb"}
+        application/json: {"uuid": "123e4567-c875-46c2-88aa-230a675b517b", "active": 1, "form_uuid": "123e4567-afaf-42e8-969f-230a6f81bd9b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-f09a-4ca8-9834-230a6bce376b", "active": 1, "form_uuid": "123e4567-41e1-408a-92d9-230a67e897eb"}
+        application/json: {"uuid": "123e4567-c875-46c2-88aa-230a675b517b", "active": 1, "form_uuid": "123e4567-afaf-42e8-969f-230a6f81bd9b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2220,7 +2220,7 @@ examples:
           uuid: "182fe595-a8a8-49fe-a209-530eedbbf7f4"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-0374-447d-91d2-230a6365cf6b", "active": 1, "edit_date": "2025-07-01 12:00:00", "form_uuid": "123e4567-85f9-4989-babb-230a6469725b", "name": "string", "field_data_json": "string", "sort_order": "string"}
+          application/json: {"uuid": "123e4567-3f82-47d7-9fd9-230a688e3acb", "active": 1, "edit_date": "2025-07-01 12:00:00", "form_uuid": "123e4567-b0d5-4cf0-931d-230a663a8c3b", "name": "string", "field_data_json": "string", "sort_order": "string"}
     badRequest:
       parameters:
         path:
@@ -2236,7 +2236,7 @@ examples:
         path:
           uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3"
       requestBody:
-        application/json: {"uuid": "123e4567-f09a-4ca8-9834-230a6bce376b", "active": 1, "form_uuid": "123e4567-41e1-408a-92d9-230a67e897eb"}
+        application/json: {"uuid": "123e4567-c875-46c2-88aa-230a675b517b", "active": 1, "form_uuid": "123e4567-afaf-42e8-969f-230a6f81bd9b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -2245,7 +2245,7 @@ examples:
         path:
           uuid: "2bece24d-e210-45c0-83fa-64c64041bb06"
       requestBody:
-        application/json: {"uuid": "123e4567-f09a-4ca8-9834-230a6bce376b", "active": 1, "form_uuid": "123e4567-41e1-408a-92d9-230a67e897eb"}
+        application/json: {"uuid": "123e4567-c875-46c2-88aa-230a675b517b", "active": 1, "form_uuid": "123e4567-afaf-42e8-969f-230a6f81bd9b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2267,7 +2267,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-dfb9-4328-a521-230a6b7a41fb", "active": 1, "edit_date": "2025-07-01 12:00:00", "form_uuid": "123e4567-1805-4a83-a070-230a6eeb3b5b", "staff_uuid": "123e4567-5b69-4154-9ff7-230a6a4b738b", "regarding_object": "string", "regarding_object_uuid": "123e4567-ef83-44b1-85da-230a63b528ab", "field_data": "string", "timestamp": "2025-07-01 12:00:00", "form_by_staff_uuid": "123e4567-3789-4843-a84a-230a612f2f9b", "document_attachment_uuid": "123e4567-393e-4a21-bbbc-230a6f39b0ab", "asset_uuid": "123e4567-06a5-4f9a-962a-230a6bc6badb"}]
+          application/json: [{"uuid": "123e4567-1290-4d06-b844-230a6718a65b", "active": 1, "edit_date": "2025-07-01 12:00:00", "form_uuid": "123e4567-1a7c-46b7-aaf7-230a6e9c7adb", "staff_uuid": "123e4567-c64b-4b5c-991b-230a6344e95b", "regarding_object": "string", "regarding_object_uuid": "123e4567-865e-4b32-85a5-230a66963d8b", "field_data": "string", "timestamp": "2025-07-01 12:00:00", "form_by_staff_uuid": "123e4567-4d5d-4a8d-8a7f-230a6fbf7eeb", "document_attachment_uuid": "123e4567-7b3a-407c-95da-230a627637cb", "asset_uuid": "123e4567-4f65-4b8a-8bc7-230a692b861b"}]
     badRequest:
       responses:
         "400":
@@ -2277,13 +2277,13 @@ examples:
   createFormResponses:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-ea25-48c3-b77a-230a6b97fd6b", "active": 1, "form_uuid": "123e4567-3b18-473a-916d-230a66849b3b", "staff_uuid": "123e4567-26d4-4394-8dc2-230a625f51db", "regarding_object_uuid": "123e4567-e396-4d97-9986-230a6ae7147b", "timestamp": "2025-07-01 12:00:00", "form_by_staff_uuid": "123e4567-f556-45a5-83e2-230a6c3cf0fb", "document_attachment_uuid": "123e4567-1a1d-46ba-913c-230a6e89e1eb", "asset_uuid": "123e4567-746b-4270-bf4a-230a6a2b0adb"}
+        application/json: {"uuid": "123e4567-bd97-4aa7-88ec-230a653c87cb", "active": 1, "form_uuid": "123e4567-38a3-4b9f-97d8-230a6bfaf8ab", "staff_uuid": "123e4567-2fa5-44c4-a607-230a6d93d38b", "regarding_object_uuid": "123e4567-ff1c-438d-8579-230a6a3a8ecb", "timestamp": "2025-07-01 12:00:00", "form_by_staff_uuid": "123e4567-3ede-44e1-b637-230a6e0a19eb", "document_attachment_uuid": "123e4567-d100-4458-9340-230a6708769b", "asset_uuid": "123e4567-c4b7-488b-aae4-230a6f96c4eb"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-ea25-48c3-b77a-230a6b97fd6b", "active": 1, "form_uuid": "123e4567-3b18-473a-916d-230a66849b3b", "staff_uuid": "123e4567-26d4-4394-8dc2-230a625f51db", "regarding_object_uuid": "123e4567-e396-4d97-9986-230a6ae7147b", "timestamp": "2025-07-01 12:00:00", "form_by_staff_uuid": "123e4567-f556-45a5-83e2-230a6c3cf0fb", "document_attachment_uuid": "123e4567-1a1d-46ba-913c-230a6e89e1eb", "asset_uuid": "123e4567-746b-4270-bf4a-230a6a2b0adb"}
+        application/json: {"uuid": "123e4567-bd97-4aa7-88ec-230a653c87cb", "active": 1, "form_uuid": "123e4567-38a3-4b9f-97d8-230a6bfaf8ab", "staff_uuid": "123e4567-2fa5-44c4-a607-230a6d93d38b", "regarding_object_uuid": "123e4567-ff1c-438d-8579-230a6a3a8ecb", "timestamp": "2025-07-01 12:00:00", "form_by_staff_uuid": "123e4567-3ede-44e1-b637-230a6e0a19eb", "document_attachment_uuid": "123e4567-d100-4458-9340-230a6708769b", "asset_uuid": "123e4567-c4b7-488b-aae4-230a6f96c4eb"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2296,7 +2296,7 @@ examples:
           uuid: "63cee341-62a5-4e5b-9f51-caacc962fe3f"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-c7fb-4071-bd14-230a66aa14cb", "active": 1, "edit_date": "2025-07-01 12:00:00", "form_uuid": "123e4567-2bc1-429e-b6a5-230a6dd84e0b", "staff_uuid": "123e4567-2a3a-41d8-be33-230a61ac213b", "regarding_object": "string", "regarding_object_uuid": "123e4567-00c3-450d-b258-230a691153fb", "field_data": "string", "timestamp": "2025-07-01 12:00:00", "form_by_staff_uuid": "123e4567-2b02-4d2b-801e-230a6a2673bb", "document_attachment_uuid": "123e4567-019b-4acc-8c88-230a6d3c153b", "asset_uuid": "123e4567-6f65-4844-bda0-230a672e75cb"}
+          application/json: {"uuid": "123e4567-3687-4d9f-9bd6-230a65d1765b", "active": 1, "edit_date": "2025-07-01 12:00:00", "form_uuid": "123e4567-82e8-4766-b26e-230a63a5b8cb", "staff_uuid": "123e4567-a8fe-404d-ad46-230a6cd4d6fb", "regarding_object": "string", "regarding_object_uuid": "123e4567-e3a3-4c0e-9b54-230a60dd7eeb", "field_data": "string", "timestamp": "2025-07-01 12:00:00", "form_by_staff_uuid": "123e4567-e661-43b4-81f8-230a69b18dcb", "document_attachment_uuid": "123e4567-ac22-49a3-a6c2-230a68838c3b", "asset_uuid": "123e4567-0493-4af5-b22a-230a6cfa7d4b"}
     badRequest:
       parameters:
         path:
@@ -2312,7 +2312,7 @@ examples:
         path:
           uuid: "5f593a3c-772d-4259-856d-86a8df7ae53d"
       requestBody:
-        application/json: {"uuid": "123e4567-ea25-48c3-b77a-230a6b97fd6b", "active": 1, "form_uuid": "123e4567-3b18-473a-916d-230a66849b3b", "staff_uuid": "123e4567-26d4-4394-8dc2-230a625f51db", "regarding_object_uuid": "123e4567-e396-4d97-9986-230a6ae7147b", "timestamp": "2025-07-01 12:00:00", "form_by_staff_uuid": "123e4567-f556-45a5-83e2-230a6c3cf0fb", "document_attachment_uuid": "123e4567-1a1d-46ba-913c-230a6e89e1eb", "asset_uuid": "123e4567-746b-4270-bf4a-230a6a2b0adb"}
+        application/json: {"uuid": "123e4567-bd97-4aa7-88ec-230a653c87cb", "active": 1, "form_uuid": "123e4567-38a3-4b9f-97d8-230a6bfaf8ab", "staff_uuid": "123e4567-2fa5-44c4-a607-230a6d93d38b", "regarding_object_uuid": "123e4567-ff1c-438d-8579-230a6a3a8ecb", "timestamp": "2025-07-01 12:00:00", "form_by_staff_uuid": "123e4567-3ede-44e1-b637-230a6e0a19eb", "document_attachment_uuid": "123e4567-d100-4458-9340-230a6708769b", "asset_uuid": "123e4567-c4b7-488b-aae4-230a6f96c4eb"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -2321,7 +2321,7 @@ examples:
         path:
           uuid: "251eb54f-b088-474c-8772-10efe987e2a1"
       requestBody:
-        application/json: {"uuid": "123e4567-ea25-48c3-b77a-230a6b97fd6b", "active": 1, "form_uuid": "123e4567-3b18-473a-916d-230a66849b3b", "staff_uuid": "123e4567-26d4-4394-8dc2-230a625f51db", "regarding_object_uuid": "123e4567-e396-4d97-9986-230a6ae7147b", "timestamp": "2025-07-01 12:00:00", "form_by_staff_uuid": "123e4567-f556-45a5-83e2-230a6c3cf0fb", "document_attachment_uuid": "123e4567-1a1d-46ba-913c-230a6e89e1eb", "asset_uuid": "123e4567-746b-4270-bf4a-230a6a2b0adb"}
+        application/json: {"uuid": "123e4567-bd97-4aa7-88ec-230a653c87cb", "active": 1, "form_uuid": "123e4567-38a3-4b9f-97d8-230a6bfaf8ab", "staff_uuid": "123e4567-2fa5-44c4-a607-230a6d93d38b", "regarding_object_uuid": "123e4567-ff1c-438d-8579-230a6a3a8ecb", "timestamp": "2025-07-01 12:00:00", "form_by_staff_uuid": "123e4567-3ede-44e1-b637-230a6e0a19eb", "document_attachment_uuid": "123e4567-d100-4458-9340-230a6708769b", "asset_uuid": "123e4567-c4b7-488b-aae4-230a6f96c4eb"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2343,7 +2343,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"created_by_staff_uuid": "123e4567-b258-4f31-9182-230a6d14604b", "date": "YYYY-MM-DD", "company_uuid": "123e4567-728a-4c0e-902f-230a6b5b965b", "billing_address": "string", "status": "Unsuccessful", "lng": null, "lat": null, "payment_date": "2025-07-01 12:00:00", "payment_actioned_by_uuid": "123e4567-3f4e-4abc-984e-230a665a3c9b", "payment_method": "string", "payment_amount": "string", "category_uuid": "123e4567-b81c-4cae-8fca-230a67420b3b", "payment_note": "string", "geo_is_valid": "string", "purchase_order_number": "string", "invoice_sent": "string", "invoice_sent_stamp": "2025-07-01 12:00:00", "ready_to_invoice": "string", "ready_to_invoice_stamp": "string", "geo_country": "string", "geo_postcode": "string", "geo_state": "string", "geo_city": "string", "geo_street": "string", "geo_number": "string", "queue_uuid": "123e4567-1523-43b7-a66e-230a6350a7bb", "queue_expiry_date": "2025-07-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-454b-400b-8fd8-230a6494ddbb", "badges": "string", "quote_date": "2025-07-01 12:00:00", "quote_sent": 0, "quote_sent_stamp": "2025-07-01 12:00:00", "work_order_date": "2025-07-01 12:00:00", "active_network_request_uuid": "string", "related_knowledge_articles": "string", "uuid": "123e4567-83e3-489e-a6a1-230a6d79e0ab", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_address": "string", "job_description": "string", "work_done_description": "string", "generated_job_id": "string", "total_invoice_amount": "string", "payment_processed": "string", "payment_processed_stamp": "2025-07-01 12:00:00", "payment_received": "string", "payment_received_stamp": "2025-07-01 12:00:00", "completion_date": "2025-07-01 12:00:00", "completion_actioned_by_uuid": "123e4567-1566-4bdd-94ca-230a60b1db5b", "unsuccessful_date": "2025-07-01 12:00:00", "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"}]
+          application/json: [{"created_by_staff_uuid": "123e4567-af22-4f83-afed-230a661139cb", "date": "YYYY-MM-DD", "company_uuid": "123e4567-9778-4de2-acb5-230a610d364b", "billing_address": "string", "status": "Unsuccessful", "lng": null, "lat": null, "payment_date": "2025-07-01 12:00:00", "payment_actioned_by_uuid": "123e4567-c146-48c5-9a08-230a611cf2bb", "payment_method": "string", "payment_amount": "string", "category_uuid": "123e4567-e98b-4bba-b83f-230a694e441b", "payment_note": "string", "geo_is_valid": "string", "purchase_order_number": "string", "invoice_sent": "string", "invoice_sent_stamp": "2025-07-01 12:00:00", "ready_to_invoice": "string", "ready_to_invoice_stamp": "string", "geo_country": "string", "geo_postcode": "string", "geo_state": "string", "geo_city": "string", "geo_street": "string", "geo_number": "string", "queue_uuid": "123e4567-469f-4cf4-9d45-230a665ec94b", "queue_expiry_date": "2025-07-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-4dc5-4f9c-92fb-230a605826cb", "badges": "string", "quote_date": "2025-07-01 12:00:00", "quote_sent": 0, "quote_sent_stamp": "2025-07-01 12:00:00", "work_order_date": "2025-07-01 12:00:00", "active_network_request_uuid": "string", "related_knowledge_articles": "string", "uuid": "123e4567-521b-4518-8597-230a65c3df2b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_address": "string", "job_description": "string", "work_done_description": "string", "generated_job_id": "string", "total_invoice_amount": "string", "payment_processed": "string", "payment_processed_stamp": "2025-07-01 12:00:00", "payment_received": "string", "payment_received_stamp": "2025-07-01 12:00:00", "completion_date": "2025-07-01 12:00:00", "completion_actioned_by_uuid": "123e4567-3c54-4dfd-a925-230a670e560b", "unsuccessful_date": "2025-07-01 12:00:00", "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -2353,13 +2353,13 @@ examples:
   createJobs:
     success:
       requestBody:
-        application/json: {"created_by_staff_uuid": "123e4567-4c65-438f-b918-230a6c12665b", "date": "YYYY-MM-DD", "company_uuid": "123e4567-6b6c-4813-9f5f-230a6edffe9b", "status": "Unsuccessful", "payment_date": "2025-07-01 12:00:00", "payment_actioned_by_uuid": "123e4567-0d43-471c-909d-230a63fc646b", "category_uuid": "123e4567-470d-4b73-a872-230a67166e1b", "invoice_sent_stamp": "2025-07-01 12:00:00", "queue_uuid": "123e4567-f31a-443e-ad1f-230a661aed8b", "queue_expiry_date": "2025-07-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-4618-43ba-b53a-230a6895410b", "quote_date": "2025-07-01 12:00:00", "quote_sent_stamp": "2025-07-01 12:00:00", "work_order_date": "2025-07-01 12:00:00", "uuid": "123e4567-82a3-4a29-b50a-230a6b68279b", "active": 1, "payment_processed_stamp": "2025-07-01 12:00:00", "payment_received_stamp": "2025-07-01 12:00:00", "completion_date": "2025-07-01 12:00:00", "completion_actioned_by_uuid": "123e4567-f54e-477e-894b-230a6c11807b", "unsuccessful_date": "2025-07-01 12:00:00", "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"}
+        application/json: {"created_by_staff_uuid": "123e4567-179a-4c7e-bc8a-230a648b75cb", "date": "YYYY-MM-DD", "company_uuid": "123e4567-a4a9-46cd-b06f-230a6aa0f20b", "status": "Unsuccessful", "payment_date": "2025-07-01 12:00:00", "payment_actioned_by_uuid": "123e4567-b9de-4873-9de7-230a6554922b", "category_uuid": "123e4567-f1bb-427a-a2c3-230a6f760e1b", "invoice_sent_stamp": "2025-07-01 12:00:00", "queue_uuid": "123e4567-b2f6-4ac9-906a-230a690b19eb", "queue_expiry_date": "2025-07-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-5fac-4941-93b1-230a627756ab", "quote_date": "2025-07-01 12:00:00", "quote_sent_stamp": "2025-07-01 12:00:00", "work_order_date": "2025-07-01 12:00:00", "uuid": "123e4567-1576-449f-8e35-230a6546f14b", "active": 1, "payment_processed_stamp": "2025-07-01 12:00:00", "payment_received_stamp": "2025-07-01 12:00:00", "completion_date": "2025-07-01 12:00:00", "completion_actioned_by_uuid": "123e4567-8381-4b30-808c-230a62afedbb", "unsuccessful_date": "2025-07-01 12:00:00", "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"created_by_staff_uuid": "123e4567-4c65-438f-b918-230a6c12665b", "date": "YYYY-MM-DD", "company_uuid": "123e4567-6b6c-4813-9f5f-230a6edffe9b", "status": "Unsuccessful", "payment_date": "2025-07-01 12:00:00", "payment_actioned_by_uuid": "123e4567-0d43-471c-909d-230a63fc646b", "category_uuid": "123e4567-470d-4b73-a872-230a67166e1b", "invoice_sent_stamp": "2025-07-01 12:00:00", "queue_uuid": "123e4567-f31a-443e-ad1f-230a661aed8b", "queue_expiry_date": "2025-07-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-4618-43ba-b53a-230a6895410b", "quote_date": "2025-07-01 12:00:00", "quote_sent_stamp": "2025-07-01 12:00:00", "work_order_date": "2025-07-01 12:00:00", "uuid": "123e4567-82a3-4a29-b50a-230a6b68279b", "active": 1, "payment_processed_stamp": "2025-07-01 12:00:00", "payment_received_stamp": "2025-07-01 12:00:00", "completion_date": "2025-07-01 12:00:00", "completion_actioned_by_uuid": "123e4567-f54e-477e-894b-230a6c11807b", "unsuccessful_date": "2025-07-01 12:00:00", "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"}
+        application/json: {"created_by_staff_uuid": "123e4567-179a-4c7e-bc8a-230a648b75cb", "date": "YYYY-MM-DD", "company_uuid": "123e4567-a4a9-46cd-b06f-230a6aa0f20b", "status": "Unsuccessful", "payment_date": "2025-07-01 12:00:00", "payment_actioned_by_uuid": "123e4567-b9de-4873-9de7-230a6554922b", "category_uuid": "123e4567-f1bb-427a-a2c3-230a6f760e1b", "invoice_sent_stamp": "2025-07-01 12:00:00", "queue_uuid": "123e4567-b2f6-4ac9-906a-230a690b19eb", "queue_expiry_date": "2025-07-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-5fac-4941-93b1-230a627756ab", "quote_date": "2025-07-01 12:00:00", "quote_sent_stamp": "2025-07-01 12:00:00", "work_order_date": "2025-07-01 12:00:00", "uuid": "123e4567-1576-449f-8e35-230a6546f14b", "active": 1, "payment_processed_stamp": "2025-07-01 12:00:00", "payment_received_stamp": "2025-07-01 12:00:00", "completion_date": "2025-07-01 12:00:00", "completion_actioned_by_uuid": "123e4567-8381-4b30-808c-230a62afedbb", "unsuccessful_date": "2025-07-01 12:00:00", "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2372,7 +2372,7 @@ examples:
           uuid: "4a01abee-06c6-4545-ba27-6a47619cf9bc"
       responses:
         "200":
-          application/json: {"created_by_staff_uuid": "123e4567-0049-4017-b316-230a6c39d3eb", "date": "YYYY-MM-DD", "company_uuid": "123e4567-c140-4baf-85ce-230a6679a3bb", "billing_address": "string", "status": "Unsuccessful", "lng": null, "lat": null, "payment_date": "2025-07-01 12:00:00", "payment_actioned_by_uuid": "123e4567-8a24-4e6d-b7bd-230a616766cb", "payment_method": "string", "payment_amount": "string", "category_uuid": "123e4567-e8a6-42f1-9830-230a6836886b", "payment_note": "string", "geo_is_valid": "string", "purchase_order_number": "string", "invoice_sent": "string", "invoice_sent_stamp": "2025-07-01 12:00:00", "ready_to_invoice": "string", "ready_to_invoice_stamp": "string", "geo_country": "string", "geo_postcode": "string", "geo_state": "string", "geo_city": "string", "geo_street": "string", "geo_number": "string", "queue_uuid": "123e4567-9e00-4453-a4b6-230a6cf4f92b", "queue_expiry_date": "2025-07-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-79b7-4d0b-b8aa-230a6c3b737b", "badges": "string", "quote_date": "2025-07-01 12:00:00", "quote_sent": 1, "quote_sent_stamp": "2025-07-01 12:00:00", "work_order_date": "2025-07-01 12:00:00", "active_network_request_uuid": "string", "related_knowledge_articles": "string", "uuid": "123e4567-3da5-46cd-9177-230a6b16d30b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_address": "string", "job_description": "string", "work_done_description": "string", "generated_job_id": "string", "total_invoice_amount": "string", "payment_processed": "string", "payment_processed_stamp": "2025-07-01 12:00:00", "payment_received": "string", "payment_received_stamp": "2025-07-01 12:00:00", "completion_date": "2025-07-01 12:00:00", "completion_actioned_by_uuid": "123e4567-37f2-4f22-a65b-230a686b919b", "unsuccessful_date": "2025-07-01 12:00:00", "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"}
+          application/json: {"created_by_staff_uuid": "123e4567-f255-4de6-8c31-230a67622ccb", "date": "YYYY-MM-DD", "company_uuid": "123e4567-2ace-4df8-b5c5-230a69da224b", "billing_address": "string", "status": "Unsuccessful", "lng": null, "lat": null, "payment_date": "2025-07-01 12:00:00", "payment_actioned_by_uuid": "123e4567-4bfb-428a-8178-230a67ce05ab", "payment_method": "string", "payment_amount": "string", "category_uuid": "123e4567-091f-4317-bdb3-230a6bb5d5cb", "payment_note": "string", "geo_is_valid": "string", "purchase_order_number": "string", "invoice_sent": "string", "invoice_sent_stamp": "2025-07-01 12:00:00", "ready_to_invoice": "string", "ready_to_invoice_stamp": "string", "geo_country": "string", "geo_postcode": "string", "geo_state": "string", "geo_city": "string", "geo_street": "string", "geo_number": "string", "queue_uuid": "123e4567-2cdd-4820-aa5a-230a6abdac0b", "queue_expiry_date": "2025-07-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-1639-4432-8831-230a6b5eaa8b", "badges": "string", "quote_date": "2025-07-01 12:00:00", "quote_sent": 1, "quote_sent_stamp": "2025-07-01 12:00:00", "work_order_date": "2025-07-01 12:00:00", "active_network_request_uuid": "string", "related_knowledge_articles": "string", "uuid": "123e4567-3ed8-4ec8-bdfd-230a6dc590eb", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_address": "string", "job_description": "string", "work_done_description": "string", "generated_job_id": "string", "total_invoice_amount": "string", "payment_processed": "string", "payment_processed_stamp": "2025-07-01 12:00:00", "payment_received": "string", "payment_received_stamp": "2025-07-01 12:00:00", "completion_date": "2025-07-01 12:00:00", "completion_actioned_by_uuid": "123e4567-1c36-4df5-b5ed-230a604260bb", "unsuccessful_date": "2025-07-01 12:00:00", "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -2388,7 +2388,7 @@ examples:
         path:
           uuid: "f751bf5c-f1f2-4a20-8df3-7628082340b1"
       requestBody:
-        application/json: {"created_by_staff_uuid": "123e4567-4c65-438f-b918-230a6c12665b", "date": "YYYY-MM-DD", "company_uuid": "123e4567-6b6c-4813-9f5f-230a6edffe9b", "status": "Work Order", "payment_date": "2025-07-01 12:00:00", "payment_actioned_by_uuid": "123e4567-0d43-471c-909d-230a63fc646b", "category_uuid": "123e4567-470d-4b73-a872-230a67166e1b", "invoice_sent_stamp": "2025-07-01 12:00:00", "queue_uuid": "123e4567-f31a-443e-ad1f-230a661aed8b", "queue_expiry_date": "2025-07-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-4618-43ba-b53a-230a6895410b", "quote_date": "2025-07-01 12:00:00", "quote_sent_stamp": "2025-07-01 12:00:00", "work_order_date": "2025-07-01 12:00:00", "uuid": "123e4567-82a3-4a29-b50a-230a6b68279b", "active": 1, "payment_processed_stamp": "2025-07-01 12:00:00", "payment_received_stamp": "2025-07-01 12:00:00", "completion_date": "2025-07-01 12:00:00", "completion_actioned_by_uuid": "123e4567-f54e-477e-894b-230a6c11807b", "unsuccessful_date": "2025-07-01 12:00:00", "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"}
+        application/json: {"created_by_staff_uuid": "123e4567-179a-4c7e-bc8a-230a648b75cb", "date": "YYYY-MM-DD", "company_uuid": "123e4567-a4a9-46cd-b06f-230a6aa0f20b", "status": "Work Order", "payment_date": "2025-07-01 12:00:00", "payment_actioned_by_uuid": "123e4567-b9de-4873-9de7-230a6554922b", "category_uuid": "123e4567-f1bb-427a-a2c3-230a6f760e1b", "invoice_sent_stamp": "2025-07-01 12:00:00", "queue_uuid": "123e4567-b2f6-4ac9-906a-230a690b19eb", "queue_expiry_date": "2025-07-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-5fac-4941-93b1-230a627756ab", "quote_date": "2025-07-01 12:00:00", "quote_sent_stamp": "2025-07-01 12:00:00", "work_order_date": "2025-07-01 12:00:00", "uuid": "123e4567-1576-449f-8e35-230a6546f14b", "active": 1, "payment_processed_stamp": "2025-07-01 12:00:00", "payment_received_stamp": "2025-07-01 12:00:00", "completion_date": "2025-07-01 12:00:00", "completion_actioned_by_uuid": "123e4567-8381-4b30-808c-230a62afedbb", "unsuccessful_date": "2025-07-01 12:00:00", "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -2397,7 +2397,7 @@ examples:
         path:
           uuid: "39a5c5ce-872d-415a-a370-5dcc9c893641"
       requestBody:
-        application/json: {"created_by_staff_uuid": "123e4567-4c65-438f-b918-230a6c12665b", "date": "YYYY-MM-DD", "company_uuid": "123e4567-6b6c-4813-9f5f-230a6edffe9b", "status": "Work Order", "payment_date": "2025-07-01 12:00:00", "payment_actioned_by_uuid": "123e4567-0d43-471c-909d-230a63fc646b", "category_uuid": "123e4567-470d-4b73-a872-230a67166e1b", "invoice_sent_stamp": "2025-07-01 12:00:00", "queue_uuid": "123e4567-f31a-443e-ad1f-230a661aed8b", "queue_expiry_date": "2025-07-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-4618-43ba-b53a-230a6895410b", "quote_date": "2025-07-01 12:00:00", "quote_sent_stamp": "2025-07-01 12:00:00", "work_order_date": "2025-07-01 12:00:00", "uuid": "123e4567-82a3-4a29-b50a-230a6b68279b", "active": 1, "payment_processed_stamp": "2025-07-01 12:00:00", "payment_received_stamp": "2025-07-01 12:00:00", "completion_date": "2025-07-01 12:00:00", "completion_actioned_by_uuid": "123e4567-f54e-477e-894b-230a6c11807b", "unsuccessful_date": "2025-07-01 12:00:00", "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"}
+        application/json: {"created_by_staff_uuid": "123e4567-179a-4c7e-bc8a-230a648b75cb", "date": "YYYY-MM-DD", "company_uuid": "123e4567-a4a9-46cd-b06f-230a6aa0f20b", "status": "Work Order", "payment_date": "2025-07-01 12:00:00", "payment_actioned_by_uuid": "123e4567-b9de-4873-9de7-230a6554922b", "category_uuid": "123e4567-f1bb-427a-a2c3-230a6f760e1b", "invoice_sent_stamp": "2025-07-01 12:00:00", "queue_uuid": "123e4567-b2f6-4ac9-906a-230a690b19eb", "queue_expiry_date": "2025-07-01 12:00:00", "queue_assigned_staff_uuid": "123e4567-5fac-4941-93b1-230a627756ab", "quote_date": "2025-07-01 12:00:00", "quote_sent_stamp": "2025-07-01 12:00:00", "work_order_date": "2025-07-01 12:00:00", "uuid": "123e4567-1576-449f-8e35-230a6546f14b", "active": 1, "payment_processed_stamp": "2025-07-01 12:00:00", "payment_received_stamp": "2025-07-01 12:00:00", "completion_date": "2025-07-01 12:00:00", "completion_actioned_by_uuid": "123e4567-8381-4b30-808c-230a62afedbb", "unsuccessful_date": "2025-07-01 12:00:00", "job_is_scheduled_until_stamp": "2025-07-01 12:00:00"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2419,7 +2419,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-5cf5-4ee5-a0b2-230a6ee4c05b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-b2f2-47fc-8f2f-230a663a259b", "staff_uuid": "123e4567-d2d7-49b6-90af-230a67cf53ab", "start_date": "2025-07-01 12:00:00", "end_date": "2025-07-01 12:00:00", "activity_was_scheduled": "string", "activity_was_recorded": "string", "activity_was_automated": "string", "has_been_opened": "string", "has_been_opened_timestamp": "2025-07-01 12:00:00", "travel_time_in_seconds": "string", "travel_distance_in_meters": "string", "allocated_by_staff_uuid": "123e4567-21c3-45c9-8466-230a612aa70b", "allocated_timestamp": "2025-07-01 12:00:00", "material_uuid": "123e4567-e26b-4888-aeb9-230a63c9b0cb", "edit_by_staff_uuid": "123e4567-3303-4ffb-a3c0-230a6524ab2b"}]
+          application/json: [{"uuid": "123e4567-d634-402e-8ba3-230a628372cb", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-ccfe-440c-af95-230a63f41dcb", "staff_uuid": "123e4567-ac3a-45b9-8a7f-230a60caa59b", "start_date": "2025-07-01 12:00:00", "end_date": "2025-07-01 12:00:00", "activity_was_scheduled": "string", "activity_was_recorded": "string", "activity_was_automated": "string", "has_been_opened": "string", "has_been_opened_timestamp": "2025-07-01 12:00:00", "travel_time_in_seconds": "string", "travel_distance_in_meters": "string", "allocated_by_staff_uuid": "123e4567-18a8-4e92-83e6-230a6cf30fdb", "allocated_timestamp": "2025-07-01 12:00:00", "material_uuid": "123e4567-96fa-4e53-84a5-230a6326b44b", "edit_by_staff_uuid": "123e4567-67a3-4366-ae80-230a688b1b6b"}]
     badRequest:
       responses:
         "400":
@@ -2429,13 +2429,13 @@ examples:
   createJobActivities:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-250c-4d37-8786-230a6f8b726b", "active": 1, "job_uuid": "123e4567-cae7-47cf-9325-230a6f7c252b", "staff_uuid": "123e4567-557a-4fc6-9a5e-230a627f0a4b", "start_date": "2025-07-01 12:00:00", "end_date": "2025-07-01 12:00:00", "has_been_opened_timestamp": "2025-07-01 12:00:00", "allocated_by_staff_uuid": "123e4567-6bfb-41cc-8c8f-230a6a6d86fb", "allocated_timestamp": "2025-07-01 12:00:00", "material_uuid": "123e4567-f018-4d7b-8cb4-230a6984392b"}
+        application/json: {"uuid": "123e4567-8138-4649-ad2b-230a635d4e2b", "active": 1, "job_uuid": "123e4567-0534-4b0f-9ef4-230a659c968b", "staff_uuid": "123e4567-a741-4185-98be-230a6e395e4b", "start_date": "2025-07-01 12:00:00", "end_date": "2025-07-01 12:00:00", "has_been_opened_timestamp": "2025-07-01 12:00:00", "allocated_by_staff_uuid": "123e4567-3623-4d30-8704-230a67cd91db", "allocated_timestamp": "2025-07-01 12:00:00", "material_uuid": "123e4567-9672-46ad-a207-230a6483f3eb"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-250c-4d37-8786-230a6f8b726b", "active": 1, "job_uuid": "123e4567-cae7-47cf-9325-230a6f7c252b", "staff_uuid": "123e4567-557a-4fc6-9a5e-230a627f0a4b", "start_date": "2025-07-01 12:00:00", "end_date": "2025-07-01 12:00:00", "has_been_opened_timestamp": "2025-07-01 12:00:00", "allocated_by_staff_uuid": "123e4567-6bfb-41cc-8c8f-230a6a6d86fb", "allocated_timestamp": "2025-07-01 12:00:00", "material_uuid": "123e4567-f018-4d7b-8cb4-230a6984392b"}
+        application/json: {"uuid": "123e4567-8138-4649-ad2b-230a635d4e2b", "active": 1, "job_uuid": "123e4567-0534-4b0f-9ef4-230a659c968b", "staff_uuid": "123e4567-a741-4185-98be-230a6e395e4b", "start_date": "2025-07-01 12:00:00", "end_date": "2025-07-01 12:00:00", "has_been_opened_timestamp": "2025-07-01 12:00:00", "allocated_by_staff_uuid": "123e4567-3623-4d30-8704-230a67cd91db", "allocated_timestamp": "2025-07-01 12:00:00", "material_uuid": "123e4567-9672-46ad-a207-230a6483f3eb"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2448,7 +2448,7 @@ examples:
           uuid: "f48752b0-a7a8-46ea-9378-3d9463c64f7d"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-c635-4aa8-858a-230a65b4bf3b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-c452-4a15-9528-230a64e14fcb", "staff_uuid": "123e4567-3bf4-4210-8019-230a620e1ceb", "start_date": "2025-07-01 12:00:00", "end_date": "2025-07-01 12:00:00", "activity_was_scheduled": "string", "activity_was_recorded": "string", "activity_was_automated": "string", "has_been_opened": "string", "has_been_opened_timestamp": "2025-07-01 12:00:00", "travel_time_in_seconds": "string", "travel_distance_in_meters": "string", "allocated_by_staff_uuid": "123e4567-9fdd-4363-9fd3-230a661cec7b", "allocated_timestamp": "2025-07-01 12:00:00", "material_uuid": "123e4567-2d40-4c3a-9b20-230a61272acb", "edit_by_staff_uuid": "123e4567-0fb5-47b0-98f2-230a61a45f9b"}
+          application/json: {"uuid": "123e4567-c192-4b0a-9a54-230a633475fb", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-3151-4350-8c0e-230a61181f2b", "staff_uuid": "123e4567-12ae-4c97-bf39-230a67f0177b", "start_date": "2025-07-01 12:00:00", "end_date": "2025-07-01 12:00:00", "activity_was_scheduled": "string", "activity_was_recorded": "string", "activity_was_automated": "string", "has_been_opened": "string", "has_been_opened_timestamp": "2025-07-01 12:00:00", "travel_time_in_seconds": "string", "travel_distance_in_meters": "string", "allocated_by_staff_uuid": "123e4567-1ae1-418b-abb3-230a6c2d217b", "allocated_timestamp": "2025-07-01 12:00:00", "material_uuid": "123e4567-269f-4352-869f-230a630c799b", "edit_by_staff_uuid": "123e4567-ab32-4fa6-9e81-230a643fc17b"}
     badRequest:
       parameters:
         path:
@@ -2464,7 +2464,7 @@ examples:
         path:
           uuid: "5ccaaaf0-ee37-4a96-a41a-cc701c3f1a65"
       requestBody:
-        application/json: {"uuid": "123e4567-250c-4d37-8786-230a6f8b726b", "active": 1, "job_uuid": "123e4567-cae7-47cf-9325-230a6f7c252b", "staff_uuid": "123e4567-557a-4fc6-9a5e-230a627f0a4b", "start_date": "2025-07-01 12:00:00", "end_date": "2025-07-01 12:00:00", "has_been_opened_timestamp": "2025-07-01 12:00:00", "allocated_by_staff_uuid": "123e4567-6bfb-41cc-8c8f-230a6a6d86fb", "allocated_timestamp": "2025-07-01 12:00:00", "material_uuid": "123e4567-f018-4d7b-8cb4-230a6984392b"}
+        application/json: {"uuid": "123e4567-8138-4649-ad2b-230a635d4e2b", "active": 1, "job_uuid": "123e4567-0534-4b0f-9ef4-230a659c968b", "staff_uuid": "123e4567-a741-4185-98be-230a6e395e4b", "start_date": "2025-07-01 12:00:00", "end_date": "2025-07-01 12:00:00", "has_been_opened_timestamp": "2025-07-01 12:00:00", "allocated_by_staff_uuid": "123e4567-3623-4d30-8704-230a67cd91db", "allocated_timestamp": "2025-07-01 12:00:00", "material_uuid": "123e4567-9672-46ad-a207-230a6483f3eb"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -2473,7 +2473,7 @@ examples:
         path:
           uuid: "98c7dad8-4688-447e-b9a1-e0808cdf5d27"
       requestBody:
-        application/json: {"uuid": "123e4567-250c-4d37-8786-230a6f8b726b", "active": 1, "job_uuid": "123e4567-cae7-47cf-9325-230a6f7c252b", "staff_uuid": "123e4567-557a-4fc6-9a5e-230a627f0a4b", "start_date": "2025-07-01 12:00:00", "end_date": "2025-07-01 12:00:00", "has_been_opened_timestamp": "2025-07-01 12:00:00", "allocated_by_staff_uuid": "123e4567-6bfb-41cc-8c8f-230a6a6d86fb", "allocated_timestamp": "2025-07-01 12:00:00", "material_uuid": "123e4567-f018-4d7b-8cb4-230a6984392b"}
+        application/json: {"uuid": "123e4567-8138-4649-ad2b-230a635d4e2b", "active": 1, "job_uuid": "123e4567-0534-4b0f-9ef4-230a659c968b", "staff_uuid": "123e4567-a741-4185-98be-230a6e395e4b", "start_date": "2025-07-01 12:00:00", "end_date": "2025-07-01 12:00:00", "has_been_opened_timestamp": "2025-07-01 12:00:00", "allocated_by_staff_uuid": "123e4567-3623-4d30-8704-230a67cd91db", "allocated_timestamp": "2025-07-01 12:00:00", "material_uuid": "123e4567-9672-46ad-a207-230a6483f3eb"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2495,7 +2495,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-7fcf-44f9-a13c-230a633379cb", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-359c-49e8-9bc7-230a6d33933b", "queue_uuid": "123e4567-28e4-478b-9fe1-230a64f4082b", "staff_uuid": "123e4567-c734-40e7-b3d7-230a66e5b91b", "allocation_date": "2025-07-01 12:00:00", "allocation_window_uuid": "123e4567-77c6-41cc-98cc-230a6756637b", "allocated_by_staff_uuid": "123e4567-ccfc-4b27-8d33-230a6c88394b", "allocated_timestamp": "2025-07-01 12:00:00", "expiry_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "completion_timestamp": "2025-07-01 12:00:00", "estimated_duration": "string", "revised_duration": "string", "sort_priority": "string", "requires_acceptance": "string", "acceptance_status": "string", "acceptance_timestamp": "2025-07-01 12:00:00"}]
+          application/json: [{"uuid": "123e4567-73a9-4ee6-9650-230a6a0fbf9b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-240c-4820-8a16-230a65046b7b", "queue_uuid": "123e4567-c62d-4077-b1ed-230a6e94284b", "staff_uuid": "123e4567-6030-4372-ae9c-230a6daaa80b", "allocation_date": "2025-07-01 12:00:00", "allocation_window_uuid": "123e4567-b330-497e-a5f3-230a6714494b", "allocated_by_staff_uuid": "123e4567-3185-47b0-bfe7-230a6a79d21b", "allocated_timestamp": "2025-07-01 12:00:00", "expiry_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "completion_timestamp": "2025-07-01 12:00:00", "estimated_duration": "string", "revised_duration": "string", "sort_priority": "string", "requires_acceptance": "string", "acceptance_status": "string", "acceptance_timestamp": "2025-07-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -2505,13 +2505,13 @@ examples:
   createJobAllocations:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-6a09-4941-bffc-230a6683df9b", "active": 1, "job_uuid": "123e4567-21e8-4a0a-b94b-230a64d1b61b", "queue_uuid": "123e4567-d612-49c9-847c-230a65341f3b", "staff_uuid": "123e4567-010f-4427-939b-230a6ea02e0b", "allocation_date": "2025-07-01 12:00:00", "allocation_window_uuid": "123e4567-5725-4e95-9009-230a6d89ce9b", "allocated_by_staff_uuid": "123e4567-2003-4447-9ced-230a633f01db", "allocated_timestamp": "2025-07-01 12:00:00", "expiry_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "completion_timestamp": "2025-07-01 12:00:00", "acceptance_timestamp": "2025-07-01 12:00:00"}
+        application/json: {"uuid": "123e4567-d3b4-4bd9-b867-230a693878eb", "active": 1, "job_uuid": "123e4567-8ad3-42eb-8e32-230a6bd6079b", "queue_uuid": "123e4567-a65c-49df-94ae-230a66f2695b", "staff_uuid": "123e4567-e2e0-4ba2-bc86-230a644a435b", "allocation_date": "2025-07-01 12:00:00", "allocation_window_uuid": "123e4567-14a6-40e7-bc5c-230a6a0d02fb", "allocated_by_staff_uuid": "123e4567-3411-486e-a20e-230a67e2a75b", "allocated_timestamp": "2025-07-01 12:00:00", "expiry_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "completion_timestamp": "2025-07-01 12:00:00", "acceptance_timestamp": "2025-07-01 12:00:00"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-6a09-4941-bffc-230a6683df9b", "active": 1, "job_uuid": "123e4567-21e8-4a0a-b94b-230a64d1b61b", "queue_uuid": "123e4567-d612-49c9-847c-230a65341f3b", "staff_uuid": "123e4567-010f-4427-939b-230a6ea02e0b", "allocation_date": "2025-07-01 12:00:00", "allocation_window_uuid": "123e4567-5725-4e95-9009-230a6d89ce9b", "allocated_by_staff_uuid": "123e4567-2003-4447-9ced-230a633f01db", "allocated_timestamp": "2025-07-01 12:00:00", "expiry_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "completion_timestamp": "2025-07-01 12:00:00", "acceptance_timestamp": "2025-07-01 12:00:00"}
+        application/json: {"uuid": "123e4567-d3b4-4bd9-b867-230a693878eb", "active": 1, "job_uuid": "123e4567-8ad3-42eb-8e32-230a6bd6079b", "queue_uuid": "123e4567-a65c-49df-94ae-230a66f2695b", "staff_uuid": "123e4567-e2e0-4ba2-bc86-230a644a435b", "allocation_date": "2025-07-01 12:00:00", "allocation_window_uuid": "123e4567-14a6-40e7-bc5c-230a6a0d02fb", "allocated_by_staff_uuid": "123e4567-3411-486e-a20e-230a67e2a75b", "allocated_timestamp": "2025-07-01 12:00:00", "expiry_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "completion_timestamp": "2025-07-01 12:00:00", "acceptance_timestamp": "2025-07-01 12:00:00"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2524,7 +2524,7 @@ examples:
           uuid: "8def42b6-b874-4e43-b905-2857edb00c09"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-9508-4db7-818f-230a6706b3db", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-6a1e-45a1-a1ca-230a646d3e4b", "queue_uuid": "123e4567-a4f2-4f11-a09d-230a6a2d269b", "staff_uuid": "123e4567-ee13-4a0a-95db-230a6ccfd77b", "allocation_date": "2025-07-01 12:00:00", "allocation_window_uuid": "123e4567-1ddf-4692-841b-230a6b44bffb", "allocated_by_staff_uuid": "123e4567-b6c7-422f-a60b-230a6028269b", "allocated_timestamp": "2025-07-01 12:00:00", "expiry_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "completion_timestamp": "2025-07-01 12:00:00", "estimated_duration": "string", "revised_duration": "string", "sort_priority": "string", "requires_acceptance": "string", "acceptance_status": "string", "acceptance_timestamp": "2025-07-01 12:00:00"}
+          application/json: {"uuid": "123e4567-aeb7-456a-9bd6-230a6c9a4eeb", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-251e-403a-90e7-230a6f5415fb", "queue_uuid": "123e4567-9062-4b4b-9c29-230a617f73eb", "staff_uuid": "123e4567-792f-4873-bb86-230a60a4281b", "allocation_date": "2025-07-01 12:00:00", "allocation_window_uuid": "123e4567-196f-4f4c-b6b3-230a646d19eb", "allocated_by_staff_uuid": "123e4567-f6a7-47b2-bb27-230a68264b1b", "allocated_timestamp": "2025-07-01 12:00:00", "expiry_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "completion_timestamp": "2025-07-01 12:00:00", "estimated_duration": "string", "revised_duration": "string", "sort_priority": "string", "requires_acceptance": "string", "acceptance_status": "string", "acceptance_timestamp": "2025-07-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -2540,7 +2540,7 @@ examples:
         path:
           uuid: "583058ca-b387-4a2b-86cf-ca46e5b89aba"
       requestBody:
-        application/json: {"uuid": "123e4567-6a09-4941-bffc-230a6683df9b", "active": 1, "job_uuid": "123e4567-21e8-4a0a-b94b-230a64d1b61b", "queue_uuid": "123e4567-d612-49c9-847c-230a65341f3b", "staff_uuid": "123e4567-010f-4427-939b-230a6ea02e0b", "allocation_date": "2025-07-01 12:00:00", "allocation_window_uuid": "123e4567-5725-4e95-9009-230a6d89ce9b", "allocated_by_staff_uuid": "123e4567-2003-4447-9ced-230a633f01db", "allocated_timestamp": "2025-07-01 12:00:00", "expiry_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "completion_timestamp": "2025-07-01 12:00:00", "acceptance_timestamp": "2025-07-01 12:00:00"}
+        application/json: {"uuid": "123e4567-d3b4-4bd9-b867-230a693878eb", "active": 1, "job_uuid": "123e4567-8ad3-42eb-8e32-230a6bd6079b", "queue_uuid": "123e4567-a65c-49df-94ae-230a66f2695b", "staff_uuid": "123e4567-e2e0-4ba2-bc86-230a644a435b", "allocation_date": "2025-07-01 12:00:00", "allocation_window_uuid": "123e4567-14a6-40e7-bc5c-230a6a0d02fb", "allocated_by_staff_uuid": "123e4567-3411-486e-a20e-230a67e2a75b", "allocated_timestamp": "2025-07-01 12:00:00", "expiry_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "completion_timestamp": "2025-07-01 12:00:00", "acceptance_timestamp": "2025-07-01 12:00:00"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -2549,7 +2549,7 @@ examples:
         path:
           uuid: "0747c9dc-c74b-43eb-814a-ae1a214754a4"
       requestBody:
-        application/json: {"uuid": "123e4567-6a09-4941-bffc-230a6683df9b", "active": 1, "job_uuid": "123e4567-21e8-4a0a-b94b-230a64d1b61b", "queue_uuid": "123e4567-d612-49c9-847c-230a65341f3b", "staff_uuid": "123e4567-010f-4427-939b-230a6ea02e0b", "allocation_date": "2025-07-01 12:00:00", "allocation_window_uuid": "123e4567-5725-4e95-9009-230a6d89ce9b", "allocated_by_staff_uuid": "123e4567-2003-4447-9ced-230a633f01db", "allocated_timestamp": "2025-07-01 12:00:00", "expiry_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "completion_timestamp": "2025-07-01 12:00:00", "acceptance_timestamp": "2025-07-01 12:00:00"}
+        application/json: {"uuid": "123e4567-d3b4-4bd9-b867-230a693878eb", "active": 1, "job_uuid": "123e4567-8ad3-42eb-8e32-230a6bd6079b", "queue_uuid": "123e4567-a65c-49df-94ae-230a66f2695b", "staff_uuid": "123e4567-e2e0-4ba2-bc86-230a644a435b", "allocation_date": "2025-07-01 12:00:00", "allocation_window_uuid": "123e4567-14a6-40e7-bc5c-230a6a0d02fb", "allocated_by_staff_uuid": "123e4567-3411-486e-a20e-230a67e2a75b", "allocated_timestamp": "2025-07-01 12:00:00", "expiry_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "completion_timestamp": "2025-07-01 12:00:00", "acceptance_timestamp": "2025-07-01 12:00:00"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2571,7 +2571,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-b336-4eee-a5ba-230a6c1edb1b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-3904-4754-8653-230a63d7570b", "name": "string", "section_name": "string", "item_type": "string", "sort_order": null, "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-5593-4488-8714-230a6a10773b", "completed_during_checkin_uuid": "123e4567-d6d0-45fd-bf8b-230a61fcc10b", "reminder_type": "string", "reminder_data": "string", "regarding_object": "string", "regarding_object_uuid": "123e4567-0388-4635-a0fd-230a60c56b2b", "fulfilled_by_object_name": "string", "fulfilled_by_object_uuid": "123e4567-2a2f-483a-b26d-230a6543941b", "assigned_to_staff_uuids": ["123e4567-5a55-40e4-a6aa-230a6ecd9ecb"], "is_locked": 0, "assigned_timestamp": "2025-07-01 12:00:00", "assigned_by_staff_uuid": "123e4567-a250-401b-b355-230a698965bb"}]
+          application/json: [{"uuid": "123e4567-5faa-4c44-8dd7-230a6b0e250b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-9833-42b6-9cfe-230a64e4a40b", "name": "string", "section_name": "string", "item_type": "string", "sort_order": null, "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-190e-4fcc-9015-230a6da9d41b", "completed_during_checkin_uuid": "123e4567-a8ae-4765-98e7-230a6084315b", "reminder_type": "string", "reminder_data": "string", "regarding_object": "string", "regarding_object_uuid": "123e4567-90c2-4157-8fdd-230a682be63b", "fulfilled_by_object_name": "string", "fulfilled_by_object_uuid": "123e4567-a795-4dbf-b253-230a663b8f4b", "assigned_to_staff_uuids": ["123e4567-1d91-4eeb-a1dc-230a689be2cb"], "is_locked": 0, "assigned_timestamp": "2025-07-01 12:00:00", "assigned_by_staff_uuid": "123e4567-8433-4049-b4cd-230a6c4283cb"}]
     badRequest:
       responses:
         "400":
@@ -2581,13 +2581,13 @@ examples:
   createJobChecklists:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-f362-4e71-ae35-230a6d0102db", "active": 1, "job_uuid": "123e4567-d999-40ca-af2f-230a6e46f4fb", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-5bce-445f-95cf-230a6d5f60eb", "completed_during_checkin_uuid": "123e4567-420f-49fe-a68c-230a6f4a115b", "regarding_object_uuid": "123e4567-0ade-4436-811c-230a62ed91ab", "fulfilled_by_object_uuid": "123e4567-8406-4e38-9ba2-230a67112bbb", "assigned_to_staff_uuids": ["123e4567-901c-414c-b018-230a6a9503bb"], "assigned_timestamp": "2025-07-01 12:00:00", "assigned_by_staff_uuid": "123e4567-84b1-4b1a-8b0d-230a6efcb2ab"}
+        application/json: {"uuid": "123e4567-eb50-42a8-a043-230a67d8c30b", "active": 1, "job_uuid": "123e4567-1f3c-418e-a6f9-230a6687c49b", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-98a9-4fdf-92a7-230a6974a01b", "completed_during_checkin_uuid": "123e4567-fe58-4856-94d0-230a63e008ab", "regarding_object_uuid": "123e4567-9707-4231-be91-230a68cb942b", "fulfilled_by_object_uuid": "123e4567-c9d0-41d3-adf6-230a6bc43a1b", "assigned_to_staff_uuids": ["123e4567-2b0f-45aa-91c7-230a6a0d089b"], "assigned_timestamp": "2025-07-01 12:00:00", "assigned_by_staff_uuid": "123e4567-7761-4ee8-aef1-230a606d7a9b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-f362-4e71-ae35-230a6d0102db", "active": 1, "job_uuid": "123e4567-d999-40ca-af2f-230a6e46f4fb", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-5bce-445f-95cf-230a6d5f60eb", "completed_during_checkin_uuid": "123e4567-420f-49fe-a68c-230a6f4a115b", "regarding_object_uuid": "123e4567-0ade-4436-811c-230a62ed91ab", "fulfilled_by_object_uuid": "123e4567-8406-4e38-9ba2-230a67112bbb", "assigned_to_staff_uuids": ["123e4567-901c-414c-b018-230a6a9503bb"], "assigned_timestamp": "2025-07-01 12:00:00", "assigned_by_staff_uuid": "123e4567-84b1-4b1a-8b0d-230a6efcb2ab"}
+        application/json: {"uuid": "123e4567-eb50-42a8-a043-230a67d8c30b", "active": 1, "job_uuid": "123e4567-1f3c-418e-a6f9-230a6687c49b", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-98a9-4fdf-92a7-230a6974a01b", "completed_during_checkin_uuid": "123e4567-fe58-4856-94d0-230a63e008ab", "regarding_object_uuid": "123e4567-9707-4231-be91-230a68cb942b", "fulfilled_by_object_uuid": "123e4567-c9d0-41d3-adf6-230a6bc43a1b", "assigned_to_staff_uuids": ["123e4567-2b0f-45aa-91c7-230a6a0d089b"], "assigned_timestamp": "2025-07-01 12:00:00", "assigned_by_staff_uuid": "123e4567-7761-4ee8-aef1-230a606d7a9b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2600,7 +2600,7 @@ examples:
           uuid: "ea127416-d976-4053-b23c-cf463b2ad884"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-978d-49d2-9a7e-230a671cc1cb", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-962b-4ab9-98a8-230a689bd04b", "name": "string", "section_name": "string", "item_type": "string", "sort_order": null, "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-37fa-4048-a27c-230a64d9b84b", "completed_during_checkin_uuid": "123e4567-5f6b-4d09-9e0b-230a68cea24b", "reminder_type": "string", "reminder_data": "string", "regarding_object": "string", "regarding_object_uuid": "123e4567-1cd2-47b4-b45b-230a695ce34b", "fulfilled_by_object_name": "string", "fulfilled_by_object_uuid": "123e4567-898f-4042-9437-230a6870505b", "assigned_to_staff_uuids": ["123e4567-2f2e-433b-8a54-230a6561f09b"], "is_locked": 1, "assigned_timestamp": "2025-07-01 12:00:00", "assigned_by_staff_uuid": "123e4567-3c59-4170-a497-230a668fcd4b"}
+          application/json: {"uuid": "123e4567-bb92-4931-a356-230a62f1a9ab", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-0bba-428b-b442-230a6c1ebb5b", "name": "string", "section_name": "string", "item_type": "string", "sort_order": null, "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-8704-472a-b030-230a641fed2b", "completed_during_checkin_uuid": "123e4567-1643-4942-8d61-230a672bb3eb", "reminder_type": "string", "reminder_data": "string", "regarding_object": "string", "regarding_object_uuid": "123e4567-cc7b-4936-a9e4-230a6eff3c0b", "fulfilled_by_object_name": "string", "fulfilled_by_object_uuid": "123e4567-0ac9-4602-8db4-230a6096c16b", "assigned_to_staff_uuids": ["123e4567-99cd-4b89-95d4-230a6faff89b"], "is_locked": 1, "assigned_timestamp": "2025-07-01 12:00:00", "assigned_by_staff_uuid": "123e4567-64cb-47c0-827a-230a6aa9767b"}
     badRequest:
       parameters:
         path:
@@ -2616,7 +2616,7 @@ examples:
         path:
           uuid: "cd24d8b9-7620-4771-805e-b96a73214740"
       requestBody:
-        application/json: {"uuid": "123e4567-f362-4e71-ae35-230a6d0102db", "active": 1, "job_uuid": "123e4567-d999-40ca-af2f-230a6e46f4fb", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-5bce-445f-95cf-230a6d5f60eb", "completed_during_checkin_uuid": "123e4567-420f-49fe-a68c-230a6f4a115b", "regarding_object_uuid": "123e4567-0ade-4436-811c-230a62ed91ab", "fulfilled_by_object_uuid": "123e4567-8406-4e38-9ba2-230a67112bbb", "assigned_to_staff_uuids": ["123e4567-901c-414c-b018-230a6a9503bb"], "assigned_timestamp": "2025-07-01 12:00:00", "assigned_by_staff_uuid": "123e4567-84b1-4b1a-8b0d-230a6efcb2ab"}
+        application/json: {"uuid": "123e4567-eb50-42a8-a043-230a67d8c30b", "active": 1, "job_uuid": "123e4567-1f3c-418e-a6f9-230a6687c49b", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-98a9-4fdf-92a7-230a6974a01b", "completed_during_checkin_uuid": "123e4567-fe58-4856-94d0-230a63e008ab", "regarding_object_uuid": "123e4567-9707-4231-be91-230a68cb942b", "fulfilled_by_object_uuid": "123e4567-c9d0-41d3-adf6-230a6bc43a1b", "assigned_to_staff_uuids": ["123e4567-2b0f-45aa-91c7-230a6a0d089b"], "assigned_timestamp": "2025-07-01 12:00:00", "assigned_by_staff_uuid": "123e4567-7761-4ee8-aef1-230a606d7a9b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -2625,7 +2625,7 @@ examples:
         path:
           uuid: "1fe0ae77-64ce-461a-9aec-81b1b9caba84"
       requestBody:
-        application/json: {"uuid": "123e4567-f362-4e71-ae35-230a6d0102db", "active": 1, "job_uuid": "123e4567-d999-40ca-af2f-230a6e46f4fb", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-5bce-445f-95cf-230a6d5f60eb", "completed_during_checkin_uuid": "123e4567-420f-49fe-a68c-230a6f4a115b", "regarding_object_uuid": "123e4567-0ade-4436-811c-230a62ed91ab", "fulfilled_by_object_uuid": "123e4567-8406-4e38-9ba2-230a67112bbb", "assigned_to_staff_uuids": ["123e4567-901c-414c-b018-230a6a9503bb"], "assigned_timestamp": "2025-07-01 12:00:00", "assigned_by_staff_uuid": "123e4567-84b1-4b1a-8b0d-230a6efcb2ab"}
+        application/json: {"uuid": "123e4567-eb50-42a8-a043-230a67d8c30b", "active": 1, "job_uuid": "123e4567-1f3c-418e-a6f9-230a6687c49b", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-98a9-4fdf-92a7-230a6974a01b", "completed_during_checkin_uuid": "123e4567-fe58-4856-94d0-230a63e008ab", "regarding_object_uuid": "123e4567-9707-4231-be91-230a68cb942b", "fulfilled_by_object_uuid": "123e4567-c9d0-41d3-adf6-230a6bc43a1b", "assigned_to_staff_uuids": ["123e4567-2b0f-45aa-91c7-230a6a0d089b"], "assigned_timestamp": "2025-07-01 12:00:00", "assigned_by_staff_uuid": "123e4567-7761-4ee8-aef1-230a606d7a9b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2647,7 +2647,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-e0ab-4c06-9207-230a67df53fb", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-4f82-4607-bc08-230a69252a1b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}]
+          application/json: [{"uuid": "123e4567-53c5-4c6c-9093-230a693020bb", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-c9a0-45b7-b216-230a691d991b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}]
     badRequest:
       responses:
         "400":
@@ -2657,13 +2657,13 @@ examples:
   createJobContacts:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-28e8-4d82-83ce-230a6534375b", "active": 1, "job_uuid": "123e4567-e318-4e04-ab0c-230a6dd600eb"}
+        application/json: {"uuid": "123e4567-ab60-4259-b8b8-230a64272e6b", "active": 1, "job_uuid": "123e4567-6dda-4c14-b3fc-230a604acd2b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-28e8-4d82-83ce-230a6534375b", "active": 1, "job_uuid": "123e4567-e318-4e04-ab0c-230a6dd600eb"}
+        application/json: {"uuid": "123e4567-ab60-4259-b8b8-230a64272e6b", "active": 1, "job_uuid": "123e4567-6dda-4c14-b3fc-230a604acd2b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2676,7 +2676,7 @@ examples:
           uuid: "fa73746b-865f-45cd-8153-d024d7fc5b72"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-d068-407a-b714-230a6d5defbb", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-f3ed-4ed4-a79e-230a6ed72d3b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}
+          application/json: {"uuid": "123e4567-e871-4aa7-adad-230a6f0c740b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-82c6-41bb-817b-230a69e2c23b", "first": "string", "last": "string", "phone": "string", "mobile": "string", "email": "string", "type": "string", "is_primary_contact": "string"}
     badRequest:
       parameters:
         path:
@@ -2692,7 +2692,7 @@ examples:
         path:
           uuid: "9ce8245c-9fb9-4361-8f7f-25eba557ff71"
       requestBody:
-        application/json: {"uuid": "123e4567-28e8-4d82-83ce-230a6534375b", "active": 1, "job_uuid": "123e4567-e318-4e04-ab0c-230a6dd600eb"}
+        application/json: {"uuid": "123e4567-ab60-4259-b8b8-230a64272e6b", "active": 1, "job_uuid": "123e4567-6dda-4c14-b3fc-230a604acd2b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -2701,7 +2701,7 @@ examples:
         path:
           uuid: "b3b61b18-8cbc-4034-b615-082857d01211"
       requestBody:
-        application/json: {"uuid": "123e4567-28e8-4d82-83ce-230a6534375b", "active": 1, "job_uuid": "123e4567-e318-4e04-ab0c-230a6dd600eb"}
+        application/json: {"uuid": "123e4567-ab60-4259-b8b8-230a64272e6b", "active": 1, "job_uuid": "123e4567-6dda-4c14-b3fc-230a604acd2b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2723,7 +2723,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-c549-4ed5-9e8e-230a65ac9b1b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-bd94-48fe-8d50-230a65958c8b", "material_uuid": "123e4567-6527-4f47-9d70-230a65097e5b", "name": "string", "quantity": "string", "price": "string", "displayed_amount": "string", "displayed_amount_is_tax_inclusive": "string", "tax_rate_uuid": "123e4567-1f92-4c55-82c0-230a61be64eb", "sort_order": "string", "cost": "string", "displayed_cost": "string", "job_material_bundle_uuid": "123e4567-f169-4669-857d-230a63c61dbb"}]
+          application/json: [{"uuid": "123e4567-e9f8-40f0-a31a-230a65fa551b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-092d-474a-b532-230a62f058db", "material_uuid": "123e4567-3a62-45ea-9a26-230a6babd4ab", "name": "string", "quantity": "string", "price": "string", "displayed_amount": "string", "displayed_amount_is_tax_inclusive": "string", "tax_rate_uuid": "123e4567-0173-4148-99fc-230a6e84ee9b", "sort_order": "string", "cost": "string", "displayed_cost": "string", "job_material_bundle_uuid": "123e4567-8e32-4b33-af3f-230a6acf68db"}]
     badRequest:
       responses:
         "400":
@@ -2733,13 +2733,13 @@ examples:
   createJobMaterials:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-96ce-4ef0-9025-230a631078fb", "active": 1, "job_uuid": "123e4567-cadb-4667-83cd-230a6e9aec8b", "material_uuid": "123e4567-9f42-4477-9eac-230a6295ff3b", "quantity": "<value>", "tax_rate_uuid": "123e4567-e072-44c8-968d-230a6ecd636b", "job_material_bundle_uuid": "123e4567-ab08-436a-9c75-230a6f87f55b"}
+        application/json: {"uuid": "123e4567-a9c6-4655-b123-230a6b6ae1fb", "active": 1, "job_uuid": "123e4567-e49d-477c-bd20-230a6c75142b", "material_uuid": "123e4567-d45e-47c6-a4d4-230a62264ebb", "quantity": "<value>", "tax_rate_uuid": "123e4567-050f-4f00-87e7-230a6b35c37b", "job_material_bundle_uuid": "123e4567-c6bc-4ae8-8117-230a6145b6ab"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-96ce-4ef0-9025-230a631078fb", "active": 1, "job_uuid": "123e4567-cadb-4667-83cd-230a6e9aec8b", "material_uuid": "123e4567-9f42-4477-9eac-230a6295ff3b", "quantity": "<value>", "tax_rate_uuid": "123e4567-e072-44c8-968d-230a6ecd636b", "job_material_bundle_uuid": "123e4567-ab08-436a-9c75-230a6f87f55b"}
+        application/json: {"uuid": "123e4567-a9c6-4655-b123-230a6b6ae1fb", "active": 1, "job_uuid": "123e4567-e49d-477c-bd20-230a6c75142b", "material_uuid": "123e4567-d45e-47c6-a4d4-230a62264ebb", "quantity": "<value>", "tax_rate_uuid": "123e4567-050f-4f00-87e7-230a6b35c37b", "job_material_bundle_uuid": "123e4567-c6bc-4ae8-8117-230a6145b6ab"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2752,7 +2752,7 @@ examples:
           uuid: "165872a3-a5ba-481d-bfb9-e4fa9614f88b"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-5c36-4f04-8748-230a65cd594b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-959e-4ce1-af79-230a68ff2a2b", "material_uuid": "123e4567-ec53-4bfb-a266-230a66488a9b", "name": "string", "quantity": "string", "price": "string", "displayed_amount": "string", "displayed_amount_is_tax_inclusive": "string", "tax_rate_uuid": "123e4567-8cbe-42b4-be6c-230a6f18599b", "sort_order": "string", "cost": "string", "displayed_cost": "string", "job_material_bundle_uuid": "123e4567-059e-4614-bd26-230a6edd00fb"}
+          application/json: {"uuid": "123e4567-8a9e-40fe-bb34-230a6bb05e5b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-4cfb-46c6-bdca-230a66397beb", "material_uuid": "123e4567-f176-42c3-9538-230a695e0e0b", "name": "string", "quantity": "string", "price": "string", "displayed_amount": "string", "displayed_amount_is_tax_inclusive": "string", "tax_rate_uuid": "123e4567-2316-4304-91e2-230a62a3e9ab", "sort_order": "string", "cost": "string", "displayed_cost": "string", "job_material_bundle_uuid": "123e4567-8012-41cf-b481-230a6ff7e1db"}
     badRequest:
       parameters:
         path:
@@ -2768,7 +2768,7 @@ examples:
         path:
           uuid: "0afa4bc5-4269-47e6-81bd-da437fd2e097"
       requestBody:
-        application/json: {"uuid": "123e4567-96ce-4ef0-9025-230a631078fb", "active": 1, "job_uuid": "123e4567-cadb-4667-83cd-230a6e9aec8b", "material_uuid": "123e4567-9f42-4477-9eac-230a6295ff3b", "quantity": "<value>", "tax_rate_uuid": "123e4567-e072-44c8-968d-230a6ecd636b", "job_material_bundle_uuid": "123e4567-ab08-436a-9c75-230a6f87f55b"}
+        application/json: {"uuid": "123e4567-a9c6-4655-b123-230a6b6ae1fb", "active": 1, "job_uuid": "123e4567-e49d-477c-bd20-230a6c75142b", "material_uuid": "123e4567-d45e-47c6-a4d4-230a62264ebb", "quantity": "<value>", "tax_rate_uuid": "123e4567-050f-4f00-87e7-230a6b35c37b", "job_material_bundle_uuid": "123e4567-c6bc-4ae8-8117-230a6145b6ab"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -2777,7 +2777,7 @@ examples:
         path:
           uuid: "2c7d2bfb-a6a3-4d6a-8c14-7551623c35c1"
       requestBody:
-        application/json: {"uuid": "123e4567-96ce-4ef0-9025-230a631078fb", "active": 1, "job_uuid": "123e4567-cadb-4667-83cd-230a6e9aec8b", "material_uuid": "123e4567-9f42-4477-9eac-230a6295ff3b", "quantity": "<value>", "tax_rate_uuid": "123e4567-e072-44c8-968d-230a6ecd636b", "job_material_bundle_uuid": "123e4567-ab08-436a-9c75-230a6f87f55b"}
+        application/json: {"uuid": "123e4567-a9c6-4655-b123-230a6b6ae1fb", "active": 1, "job_uuid": "123e4567-e49d-477c-bd20-230a6c75142b", "material_uuid": "123e4567-d45e-47c6-a4d4-230a62264ebb", "quantity": "<value>", "tax_rate_uuid": "123e4567-050f-4f00-87e7-230a6b35c37b", "job_material_bundle_uuid": "123e4567-c6bc-4ae8-8117-230a6145b6ab"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2799,7 +2799,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-93cb-4005-9dda-230a6a38612b", "active": 1, "edit_date": "2025-07-01 12:00:00", "item_number": "string", "name": "string", "quantity": "string", "sort_order": null, "material_bundle_uuid": "123e4567-b7b7-41f5-b3f7-230a6097337b", "job_uuid": "123e4567-b28a-41bd-b12d-230a6eae3dfb"}]
+          application/json: [{"uuid": "123e4567-5c3f-448f-bd5d-230a606c6afb", "active": 1, "edit_date": "2025-07-01 12:00:00", "item_number": "string", "name": "string", "quantity": "string", "sort_order": null, "material_bundle_uuid": "123e4567-f918-4051-8195-230a6e38783b", "job_uuid": "123e4567-8ad8-4532-a66b-230a6c820c8b"}]
     badRequest:
       responses:
         "400":
@@ -2809,13 +2809,13 @@ examples:
   createJobMaterialBundles:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-7dfe-48d7-8e00-230a6f2cd5eb", "active": 1, "material_bundle_uuid": "123e4567-c4c5-4c53-a31d-230a6cfdbf2b", "job_uuid": "123e4567-c665-4755-b4e6-230a65ee012b"}
+        application/json: {"uuid": "123e4567-7cbb-472e-b67f-230a62e35a4b", "active": 1, "material_bundle_uuid": "123e4567-963d-448e-8fa6-230a67a9cadb", "job_uuid": "123e4567-aedc-4042-b920-230a620f9bab"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-7dfe-48d7-8e00-230a6f2cd5eb", "active": 1, "material_bundle_uuid": "123e4567-c4c5-4c53-a31d-230a6cfdbf2b", "job_uuid": "123e4567-c665-4755-b4e6-230a65ee012b"}
+        application/json: {"uuid": "123e4567-7cbb-472e-b67f-230a62e35a4b", "active": 1, "material_bundle_uuid": "123e4567-963d-448e-8fa6-230a67a9cadb", "job_uuid": "123e4567-aedc-4042-b920-230a620f9bab"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2828,7 +2828,7 @@ examples:
           uuid: "4b05de2b-985c-4234-8750-f6c74bc66676"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-c7e4-46f2-afc5-230a6888a3cb", "active": 1, "edit_date": "2025-07-01 12:00:00", "item_number": "string", "name": "string", "quantity": "string", "sort_order": null, "material_bundle_uuid": "123e4567-25b6-4f3a-bbd0-230a6da9580b", "job_uuid": "123e4567-761d-4104-9277-230a602b3c0b"}
+          application/json: {"uuid": "123e4567-9c60-47a3-a7ce-230a62f4c40b", "active": 1, "edit_date": "2025-07-01 12:00:00", "item_number": "string", "name": "string", "quantity": "string", "sort_order": null, "material_bundle_uuid": "123e4567-11b0-48e8-9be6-230a6a264acb", "job_uuid": "123e4567-f69c-42ee-a917-230a6d4a9f2b"}
     badRequest:
       parameters:
         path:
@@ -2844,7 +2844,7 @@ examples:
         path:
           uuid: "6419b5e7-8edd-4c69-9648-b6ed7431256b"
       requestBody:
-        application/json: {"uuid": "123e4567-7dfe-48d7-8e00-230a6f2cd5eb", "active": 1, "material_bundle_uuid": "123e4567-c4c5-4c53-a31d-230a6cfdbf2b", "job_uuid": "123e4567-c665-4755-b4e6-230a65ee012b"}
+        application/json: {"uuid": "123e4567-7cbb-472e-b67f-230a62e35a4b", "active": 1, "material_bundle_uuid": "123e4567-963d-448e-8fa6-230a67a9cadb", "job_uuid": "123e4567-aedc-4042-b920-230a620f9bab"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -2853,7 +2853,7 @@ examples:
         path:
           uuid: "31e80e90-8d48-4802-a175-d4e8861bb7fc"
       requestBody:
-        application/json: {"uuid": "123e4567-7dfe-48d7-8e00-230a6f2cd5eb", "active": 1, "material_bundle_uuid": "123e4567-c4c5-4c53-a31d-230a6cfdbf2b", "job_uuid": "123e4567-c665-4755-b4e6-230a65ee012b"}
+        application/json: {"uuid": "123e4567-7cbb-472e-b67f-230a62e35a4b", "active": 1, "material_bundle_uuid": "123e4567-963d-448e-8fa6-230a67a9cadb", "job_uuid": "123e4567-aedc-4042-b920-230a620f9bab"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2875,7 +2875,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-149d-491b-aab9-230a6bff5abb", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-2634-47cf-892d-230a6d50768b", "actioned_by_uuid": "123e4567-3153-479e-9ec5-230a6d8acc3b", "timestamp": "string", "amount": "string", "method": "string", "note": "string", "attachment_uuid": "123e4567-a001-47c1-9022-230a6a6e8c2b", "is_deposit": 0}]
+          application/json: [{"uuid": "123e4567-dca4-41ba-bc8b-230a67bd15eb", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-ee4c-44c8-bacb-230a618c1bab", "actioned_by_uuid": "123e4567-1c37-49c4-82b7-230a6bb8b53b", "timestamp": "string", "amount": "string", "method": "string", "note": "string", "attachment_uuid": "123e4567-69f5-4d47-b8dc-230a697e2eab", "is_deposit": 0}]
     badRequest:
       responses:
         "400":
@@ -2885,13 +2885,13 @@ examples:
   createJobPayments:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-e5ee-480b-b97b-230a679cf05b", "active": 1, "job_uuid": "123e4567-b5b5-463e-88d7-230a6759d03b", "actioned_by_uuid": "123e4567-2b91-4a8a-9443-230a672f1e3b", "attachment_uuid": "123e4567-01ec-4443-886f-230a6c317eeb"}
+        application/json: {"uuid": "123e4567-75d8-4668-9a67-230a6a5434db", "active": 1, "job_uuid": "123e4567-f6d1-4142-be01-230a6e329b5b", "actioned_by_uuid": "123e4567-fec9-4a54-b062-230a6f563adb", "attachment_uuid": "123e4567-0e06-4227-be7a-230a600e484b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-e5ee-480b-b97b-230a679cf05b", "active": 1, "job_uuid": "123e4567-b5b5-463e-88d7-230a6759d03b", "actioned_by_uuid": "123e4567-2b91-4a8a-9443-230a672f1e3b", "attachment_uuid": "123e4567-01ec-4443-886f-230a6c317eeb"}
+        application/json: {"uuid": "123e4567-75d8-4668-9a67-230a6a5434db", "active": 1, "job_uuid": "123e4567-f6d1-4142-be01-230a6e329b5b", "actioned_by_uuid": "123e4567-fec9-4a54-b062-230a6f563adb", "attachment_uuid": "123e4567-0e06-4227-be7a-230a600e484b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2904,7 +2904,7 @@ examples:
           uuid: "5bb8d1ff-2928-4f03-a4f7-0cddcd126b36"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-cedf-4c50-aaca-230a6c5f367b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-da59-4a95-895f-230a63d7d83b", "actioned_by_uuid": "123e4567-687f-45ed-992d-230a65aec69b", "timestamp": "string", "amount": "string", "method": "string", "note": "string", "attachment_uuid": "123e4567-0a51-4c9b-80d7-230a681dc25b", "is_deposit": 1}
+          application/json: {"uuid": "123e4567-d676-4b4e-bfe5-230a662ea56b", "active": 1, "edit_date": "2025-07-01 12:00:00", "job_uuid": "123e4567-1005-48f0-a071-230a66907a7b", "actioned_by_uuid": "123e4567-21bd-4d04-b52e-230a639d55fb", "timestamp": "string", "amount": "string", "method": "string", "note": "string", "attachment_uuid": "123e4567-c0ac-4b5e-aea0-230a6eeff1cb", "is_deposit": 1}
     badRequest:
       parameters:
         path:
@@ -2920,7 +2920,7 @@ examples:
         path:
           uuid: "11677578-ba16-4ac4-b2d7-62ad0de4655c"
       requestBody:
-        application/json: {"uuid": "123e4567-e5ee-480b-b97b-230a679cf05b", "active": 1, "job_uuid": "123e4567-b5b5-463e-88d7-230a6759d03b", "actioned_by_uuid": "123e4567-2b91-4a8a-9443-230a672f1e3b", "attachment_uuid": "123e4567-01ec-4443-886f-230a6c317eeb"}
+        application/json: {"uuid": "123e4567-75d8-4668-9a67-230a6a5434db", "active": 1, "job_uuid": "123e4567-f6d1-4142-be01-230a6e329b5b", "actioned_by_uuid": "123e4567-fec9-4a54-b062-230a6f563adb", "attachment_uuid": "123e4567-0e06-4227-be7a-230a600e484b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -2929,7 +2929,7 @@ examples:
         path:
           uuid: "ba56045d-67e8-4ddd-a235-c89eabc03df2"
       requestBody:
-        application/json: {"uuid": "123e4567-e5ee-480b-b97b-230a679cf05b", "active": 1, "job_uuid": "123e4567-b5b5-463e-88d7-230a6759d03b", "actioned_by_uuid": "123e4567-2b91-4a8a-9443-230a672f1e3b", "attachment_uuid": "123e4567-01ec-4443-886f-230a6c317eeb"}
+        application/json: {"uuid": "123e4567-75d8-4668-9a67-230a6a5434db", "active": 1, "job_uuid": "123e4567-f6d1-4142-be01-230a6e329b5b", "actioned_by_uuid": "123e4567-fec9-4a54-b062-230a6f563adb", "attachment_uuid": "123e4567-0e06-4227-be7a-230a600e484b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2951,7 +2951,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-ad58-40d2-b1d6-230a64b7ec2b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "content": "string", "article_type": "string", "tags": "string", "relationships": [{"object_name": "Job", "object_uuid": "string", "object_description": "string", "create_date": "string"}]}]
+          application/json: [{"uuid": "123e4567-4732-4273-9195-230a6feca26b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "content": "string", "article_type": "string", "tags": "string", "relationships": [{"object_name": "Job", "object_uuid": "string", "object_description": "string", "create_date": "string"}]}]
     badRequest:
       responses:
         "400":
@@ -2961,13 +2961,13 @@ examples:
   createKnowledgeArticles:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-bad2-4f30-b998-230a676a8cab", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-9e0e-40cf-be35-230a63705e9b", "active": 1, "name": "<value>"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-bad2-4f30-b998-230a676a8cab", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-9e0e-40cf-be35-230a63705e9b", "active": 1, "name": "<value>"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -2980,7 +2980,7 @@ examples:
           uuid: "ac5665f9-00c6-41e6-aa54-1fb76b168e00"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-bbb4-4f30-99af-230a663da63b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "content": "string", "article_type": "string", "tags": "string", "relationships": [{"object_name": "job", "object_uuid": "string", "object_description": "string", "create_date": "string"}]}
+          application/json: {"uuid": "123e4567-684b-4696-a1ed-230a636be02b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "content": "string", "article_type": "string", "tags": "string", "relationships": [{"object_name": "job", "object_uuid": "string", "object_description": "string", "create_date": "string"}]}
     badRequest:
       parameters:
         path:
@@ -2996,7 +2996,7 @@ examples:
         path:
           uuid: "a643fa14-496b-46a5-88bc-4e67bb92bafd"
       requestBody:
-        application/json: {"uuid": "123e4567-bad2-4f30-b998-230a676a8cab", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-9e0e-40cf-be35-230a63705e9b", "active": 1, "name": "<value>"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -3005,7 +3005,7 @@ examples:
         path:
           uuid: "88dd5ca4-b609-4ab0-9824-45ad96100237"
       requestBody:
-        application/json: {"uuid": "123e4567-bad2-4f30-b998-230a676a8cab", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-9e0e-40cf-be35-230a63705e9b", "active": 1, "name": "<value>"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3027,7 +3027,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "line1": "string", "line2": "string", "line3": "string", "city": "string", "country": "string", "post_code": "string", "phone_1": "string", "state": "string", "lng": null, "lat": null, "uuid": "123e4567-3992-4696-a90b-230a63a9de9b", "active": 1, "edit_date": "2025-07-01 12:00:00"}]
+          application/json: [{"name": "string", "line1": "string", "line2": "string", "line3": "string", "city": "string", "country": "string", "post_code": "string", "phone_1": "string", "state": "string", "lng": null, "lat": null, "uuid": "123e4567-9952-4434-99d0-230a65dfc52b", "active": 1, "edit_date": "2025-07-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -3037,13 +3037,13 @@ examples:
   createLocations:
     success:
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-aa4d-4e47-a90f-230a6d4e596b", "active": 1}
+        application/json: {"name": "<value>", "uuid": "123e4567-3cc5-4195-b045-230a60bbe25b", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-aa4d-4e47-a90f-230a6d4e596b", "active": 1}
+        application/json: {"name": "<value>", "uuid": "123e4567-3cc5-4195-b045-230a60bbe25b", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3056,7 +3056,7 @@ examples:
           uuid: "69800e36-6ed2-4dd7-a1c2-a528eb2d8a8e"
       responses:
         "200":
-          application/json: {"name": "string", "line1": "string", "line2": "string", "line3": "string", "city": "string", "country": "string", "post_code": "string", "phone_1": "string", "state": "string", "lng": null, "lat": null, "uuid": "123e4567-226b-4b3c-a141-230a6f013f8b", "active": 1, "edit_date": "2025-07-01 12:00:00"}
+          application/json: {"name": "string", "line1": "string", "line2": "string", "line3": "string", "city": "string", "country": "string", "post_code": "string", "phone_1": "string", "state": "string", "lng": null, "lat": null, "uuid": "123e4567-2cde-4e81-8bf7-230a6562cc9b", "active": 1, "edit_date": "2025-07-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -3072,7 +3072,7 @@ examples:
         path:
           uuid: "fee3b1fa-ab4e-4094-823d-0885a2f7b69f"
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-aa4d-4e47-a90f-230a6d4e596b", "active": 1}
+        application/json: {"name": "<value>", "uuid": "123e4567-3cc5-4195-b045-230a60bbe25b", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -3081,7 +3081,7 @@ examples:
         path:
           uuid: "ed8fdfb5-cd7a-4553-94ee-fb5e7e71e103"
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-aa4d-4e47-a90f-230a6d4e596b", "active": 1}
+        application/json: {"name": "<value>", "uuid": "123e4567-3cc5-4195-b045-230a60bbe25b", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3103,7 +3103,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "item_number": "string", "price": "string", "cost": "string", "quantity_in_stock": null, "price_includes_taxes": 1, "barcode": "string", "item_is_inventoried": 0, "uuid": "123e4567-91e5-40e4-bc55-230a6f3ecc9b", "active": 1, "edit_date": "2025-07-01 12:00:00", "item_description": "string", "use_description_for_invoicing": "string", "tax_rate_uuid": "123e4567-c163-4a9d-9265-230a61cc673b"}]
+          application/json: [{"name": "string", "item_number": "string", "price": "string", "cost": "string", "quantity_in_stock": null, "price_includes_taxes": 1, "barcode": "string", "item_is_inventoried": 0, "uuid": "123e4567-5b4c-41e3-8296-230a62a0fadb", "active": 1, "edit_date": "2025-07-01 12:00:00", "item_description": "string", "use_description_for_invoicing": "string", "tax_rate_uuid": "123e4567-3566-4b60-a445-230a69f4b44b"}]
     badRequest:
       responses:
         "400":
@@ -3113,13 +3113,13 @@ examples:
   createMaterials:
     success:
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-1272-4695-8bd8-230a6b30308b", "active": 1, "tax_rate_uuid": "123e4567-6e3d-4673-8a00-230a6d1a76eb"}
+        application/json: {"name": "<value>", "uuid": "123e4567-be95-4b60-852e-230a626e714b", "active": 1, "tax_rate_uuid": "123e4567-1788-4a02-9512-230a6cf4098b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-1272-4695-8bd8-230a6b30308b", "active": 1, "tax_rate_uuid": "123e4567-6e3d-4673-8a00-230a6d1a76eb"}
+        application/json: {"name": "<value>", "uuid": "123e4567-be95-4b60-852e-230a626e714b", "active": 1, "tax_rate_uuid": "123e4567-1788-4a02-9512-230a6cf4098b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3132,7 +3132,7 @@ examples:
           uuid: "640d9b9e-7443-43f8-a3fe-aef4b9d4e20c"
       responses:
         "200":
-          application/json: {"name": "string", "item_number": "string", "price": "string", "cost": "string", "quantity_in_stock": null, "price_includes_taxes": 1, "barcode": "string", "item_is_inventoried": 1, "uuid": "123e4567-8004-4050-b755-230a6681cbfb", "active": 1, "edit_date": "2025-07-01 12:00:00", "item_description": "string", "use_description_for_invoicing": "string", "tax_rate_uuid": "123e4567-3520-43d0-8dc2-230a63ee31db"}
+          application/json: {"name": "string", "item_number": "string", "price": "string", "cost": "string", "quantity_in_stock": null, "price_includes_taxes": 1, "barcode": "string", "item_is_inventoried": 1, "uuid": "123e4567-cc0d-4ace-827b-230a6314a33b", "active": 1, "edit_date": "2025-07-01 12:00:00", "item_description": "string", "use_description_for_invoicing": "string", "tax_rate_uuid": "123e4567-85d8-4c9c-bdcb-230a6ba9171b"}
     badRequest:
       parameters:
         path:
@@ -3148,7 +3148,7 @@ examples:
         path:
           uuid: "8a4aa688-8b41-4ab3-b862-24327504b606"
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-1272-4695-8bd8-230a6b30308b", "active": 1, "tax_rate_uuid": "123e4567-6e3d-4673-8a00-230a6d1a76eb"}
+        application/json: {"name": "<value>", "uuid": "123e4567-be95-4b60-852e-230a626e714b", "active": 1, "tax_rate_uuid": "123e4567-1788-4a02-9512-230a6cf4098b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -3157,7 +3157,7 @@ examples:
         path:
           uuid: "4289034d-009a-4d11-8ffb-fd1b20903c07"
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-1272-4695-8bd8-230a6b30308b", "active": 1, "tax_rate_uuid": "123e4567-6e3d-4673-8a00-230a6d1a76eb"}
+        application/json: {"name": "<value>", "uuid": "123e4567-be95-4b60-852e-230a626e714b", "active": 1, "tax_rate_uuid": "123e4567-1788-4a02-9512-230a6cf4098b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3179,7 +3179,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-5455-4e78-8862-230a619f209b", "active": 1, "edit_date": "2025-07-01 12:00:00", "item_number": "string", "name": "string", "material_list": [{"uuid": "string", "quantity": null}]}]
+          application/json: [{"uuid": "123e4567-6a0d-4d03-8c62-230a641d57eb", "active": 1, "edit_date": "2025-07-01 12:00:00", "item_number": "string", "name": "string", "material_list": [{"uuid": "string", "quantity": null}]}]
     badRequest:
       responses:
         "400":
@@ -3189,13 +3189,13 @@ examples:
   createBundles:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-963f-4f6f-bea2-230a62abb13b", "active": 1, "item_number": "<value>"}
+        application/json: {"uuid": "123e4567-0f3d-49de-a167-230a679efa1b", "active": 1, "item_number": "<value>"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-963f-4f6f-bea2-230a62abb13b", "active": 1, "item_number": "<value>"}
+        application/json: {"uuid": "123e4567-0f3d-49de-a167-230a679efa1b", "active": 1, "item_number": "<value>"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3208,7 +3208,7 @@ examples:
           uuid: "57880096-1497-436b-97fa-02c5300f9e5f"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-9123-499b-9112-230a6a81aaeb", "active": 1, "edit_date": "2025-07-01 12:00:00", "item_number": "string", "name": "string", "material_list": [{"uuid": "string", "quantity": null}]}
+          application/json: {"uuid": "123e4567-f6d0-45de-bc89-230a6c76bdbb", "active": 1, "edit_date": "2025-07-01 12:00:00", "item_number": "string", "name": "string", "material_list": [{"uuid": "string", "quantity": null}]}
     badRequest:
       parameters:
         path:
@@ -3224,7 +3224,7 @@ examples:
         path:
           uuid: "92d0296e-677d-4cfc-a0ec-84e1809ff960"
       requestBody:
-        application/json: {"uuid": "123e4567-963f-4f6f-bea2-230a62abb13b", "active": 1, "item_number": "<value>"}
+        application/json: {"uuid": "123e4567-0f3d-49de-a167-230a679efa1b", "active": 1, "item_number": "<value>"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -3233,7 +3233,7 @@ examples:
         path:
           uuid: "04c59a6d-27d1-4e79-8ad6-8951bdc7f38a"
       requestBody:
-        application/json: {"uuid": "123e4567-963f-4f6f-bea2-230a62abb13b", "active": 1, "item_number": "<value>"}
+        application/json: {"uuid": "123e4567-0f3d-49de-a167-230a679efa1b", "active": 1, "item_number": "<value>"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3255,7 +3255,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-e33b-4f46-998b-230a65a53a5b", "active": 1, "edit_date": "2025-07-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-c6ef-4e8e-81e1-230a69fa912b", "note": "string", "action_required": "string", "action_completed_by_staff_uuid": "123e4567-a235-4157-a561-230a62d54a1b", "edit_by_staff_uuid": "123e4567-3a94-497c-a3a3-230a6a3491bb", "create_date": "2025-07-01 12:00:00"}]
+          application/json: [{"uuid": "123e4567-0e43-4448-876a-230a6c400c7b", "active": 1, "edit_date": "2025-07-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-526b-4f5f-a528-230a62682bbb", "note": "string", "action_required": "string", "action_completed_by_staff_uuid": "123e4567-a04b-4ef9-a429-230a62f5b72b", "edit_by_staff_uuid": "123e4567-dfa9-4051-88c8-230a60dde6ab", "create_date": "2025-07-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -3265,13 +3265,13 @@ examples:
   createNotes:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-cd50-44ff-bf18-230a665f0c7b", "active": 1, "related_object_uuid": "123e4567-7efc-47c8-90a9-230a6a3f0eab", "action_completed_by_staff_uuid": "123e4567-4d0b-4bb4-a6c3-230a6df17f2b", "create_date": "2025-07-01 12:00:00"}
+        application/json: {"uuid": "123e4567-b3ab-4873-b4c8-230a6dc2581b", "active": 1, "related_object_uuid": "123e4567-f281-4583-af36-230a601ff63b", "action_completed_by_staff_uuid": "123e4567-8dc3-4fb2-8c67-230a6968224b", "create_date": "2025-07-01 12:00:00"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-cd50-44ff-bf18-230a665f0c7b", "active": 1, "related_object_uuid": "123e4567-7efc-47c8-90a9-230a6a3f0eab", "action_completed_by_staff_uuid": "123e4567-4d0b-4bb4-a6c3-230a6df17f2b", "create_date": "2025-07-01 12:00:00"}
+        application/json: {"uuid": "123e4567-b3ab-4873-b4c8-230a6dc2581b", "active": 1, "related_object_uuid": "123e4567-f281-4583-af36-230a601ff63b", "action_completed_by_staff_uuid": "123e4567-8dc3-4fb2-8c67-230a6968224b", "create_date": "2025-07-01 12:00:00"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3284,7 +3284,7 @@ examples:
           uuid: "01b2840f-8871-41fb-9541-b7786f78a1ef"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-cf56-44b9-b1b5-230a6c6fc24b", "active": 1, "edit_date": "2025-07-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-689e-4bd3-b042-230a6e1ca2db", "note": "string", "action_required": "string", "action_completed_by_staff_uuid": "123e4567-dd7d-429d-8312-230a6d10b8db", "edit_by_staff_uuid": "123e4567-67e7-4446-bc14-230a6962d5bb", "create_date": "2025-07-01 12:00:00"}
+          application/json: {"uuid": "123e4567-9ea8-4b7a-9cf3-230a6e1e368b", "active": 1, "edit_date": "2025-07-01 12:00:00", "related_object": "string", "related_object_uuid": "123e4567-d706-475c-a8af-230a6e9d11cb", "note": "string", "action_required": "string", "action_completed_by_staff_uuid": "123e4567-6cb8-4c49-a86b-230a684375fb", "edit_by_staff_uuid": "123e4567-2918-400c-8cf6-230a6d72496b", "create_date": "2025-07-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -3300,7 +3300,7 @@ examples:
         path:
           uuid: "1607abff-6202-4423-ae91-39b08699f830"
       requestBody:
-        application/json: {"uuid": "123e4567-cd50-44ff-bf18-230a665f0c7b", "active": 1, "related_object_uuid": "123e4567-7efc-47c8-90a9-230a6a3f0eab", "action_completed_by_staff_uuid": "123e4567-4d0b-4bb4-a6c3-230a6df17f2b", "create_date": "2025-07-01 12:00:00"}
+        application/json: {"uuid": "123e4567-b3ab-4873-b4c8-230a6dc2581b", "active": 1, "related_object_uuid": "123e4567-f281-4583-af36-230a601ff63b", "action_completed_by_staff_uuid": "123e4567-8dc3-4fb2-8c67-230a6968224b", "create_date": "2025-07-01 12:00:00"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -3309,7 +3309,7 @@ examples:
         path:
           uuid: "c30d61ce-eaed-4c05-878e-10131d660f54"
       requestBody:
-        application/json: {"uuid": "123e4567-cd50-44ff-bf18-230a665f0c7b", "active": 1, "related_object_uuid": "123e4567-7efc-47c8-90a9-230a6a3f0eab", "action_completed_by_staff_uuid": "123e4567-4d0b-4bb4-a6c3-230a6df17f2b", "create_date": "2025-07-01 12:00:00"}
+        application/json: {"uuid": "123e4567-b3ab-4873-b4c8-230a6dc2581b", "active": 1, "related_object_uuid": "123e4567-f281-4583-af36-230a601ff63b", "action_completed_by_staff_uuid": "123e4567-8dc3-4fb2-8c67-230a6968224b", "create_date": "2025-07-01 12:00:00"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3331,7 +3331,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-fda9-4036-9f5c-230a68d4067b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "default_timeframe": null, "subscribed_staff": "string", "requires_assignment": 0}]
+          application/json: [{"uuid": "123e4567-a786-44e6-8106-230a653ce8fb", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "default_timeframe": null, "subscribed_staff": "string", "requires_assignment": 0}]
     badRequest:
       responses:
         "400":
@@ -3341,13 +3341,13 @@ examples:
   createJobQueues:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-e573-44ed-8921-230a6505b4eb", "active": 1}
+        application/json: {"uuid": "123e4567-b8c1-4279-9a42-230a609cefab", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-e573-44ed-8921-230a6505b4eb", "active": 1}
+        application/json: {"uuid": "123e4567-b8c1-4279-9a42-230a609cefab", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3360,7 +3360,7 @@ examples:
           uuid: "24e97bd9-5ea4-4356-af91-302e1fa4d502"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-09a4-42ce-ada1-230a6d61639b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "default_timeframe": null, "subscribed_staff": "string", "requires_assignment": 0}
+          application/json: {"uuid": "123e4567-4ca0-471d-8b67-230a6774691b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "default_timeframe": null, "subscribed_staff": "string", "requires_assignment": 0}
     badRequest:
       parameters:
         path:
@@ -3376,7 +3376,7 @@ examples:
         path:
           uuid: "d5fb31ee-995a-4e2f-8fa6-92068fea17a2"
       requestBody:
-        application/json: {"uuid": "123e4567-e573-44ed-8921-230a6505b4eb", "active": 1}
+        application/json: {"uuid": "123e4567-b8c1-4279-9a42-230a609cefab", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -3385,7 +3385,7 @@ examples:
         path:
           uuid: "46d4a0f6-2489-4703-a77b-72c8100be1b5"
       requestBody:
-        application/json: {"uuid": "123e4567-e573-44ed-8921-230a6505b4eb", "active": 1}
+        application/json: {"uuid": "123e4567-b8c1-4279-9a42-230a609cefab", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3407,7 +3407,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"name": "string", "role_description": "string", "uuid": "123e4567-fb0e-45f7-9281-230a637a130b", "active": 1, "edit_date": "2025-07-01 12:00:00"}]
+          application/json: [{"name": "string", "role_description": "string", "uuid": "123e4567-14fd-4cbf-9a8d-230a6280e5cb", "active": 1, "edit_date": "2025-07-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -3417,13 +3417,13 @@ examples:
   createSecurityRoles:
     success:
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-187a-4ea6-878c-230a67b986cb", "active": 1}
+        application/json: {"name": "<value>", "uuid": "123e4567-c30a-461a-b85d-230a6ed20feb", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-187a-4ea6-878c-230a67b986cb", "active": 1}
+        application/json: {"name": "<value>", "uuid": "123e4567-c30a-461a-b85d-230a6ed20feb", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3436,7 +3436,7 @@ examples:
           uuid: "fd2808d6-8d7a-4b4f-abd5-18b0b97e4d26"
       responses:
         "200":
-          application/json: {"name": "string", "role_description": "string", "uuid": "123e4567-c9b5-41fd-a574-230a632ba78b", "active": 1, "edit_date": "2025-07-01 12:00:00"}
+          application/json: {"name": "string", "role_description": "string", "uuid": "123e4567-1f0d-49e6-9e09-230a61cd3fbb", "active": 1, "edit_date": "2025-07-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -3452,7 +3452,7 @@ examples:
         path:
           uuid: "f0a90dcf-f873-4a05-b043-1b34fcb5507e"
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-187a-4ea6-878c-230a67b986cb", "active": 1}
+        application/json: {"name": "<value>", "uuid": "123e4567-c30a-461a-b85d-230a6ed20feb", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -3461,7 +3461,7 @@ examples:
         path:
           uuid: "e07010a4-c5b9-4540-98cb-1e10e0712c0e"
       requestBody:
-        application/json: {"name": "<value>", "uuid": "123e4567-187a-4ea6-878c-230a67b986cb", "active": 1}
+        application/json: {"name": "<value>", "uuid": "123e4567-c30a-461a-b85d-230a6ed20feb", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3483,7 +3483,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-29da-4f3c-bb00-230a6f11724b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "message": "string"}]
+          application/json: [{"uuid": "123e4567-7e81-48f1-808b-230a679f76bb", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "message": "string"}]
     badRequest:
       responses:
         "400":
@@ -3493,13 +3493,13 @@ examples:
   createSMSTemplates:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-e582-4133-b4b8-230a61bb9e8b", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-0c7e-4032-8187-230a622164fb", "active": 1, "name": "<value>"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-e582-4133-b4b8-230a61bb9e8b", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-0c7e-4032-8187-230a622164fb", "active": 1, "name": "<value>"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3512,7 +3512,7 @@ examples:
           uuid: "e7d961f0-a541-46d1-9122-9b360d0c48f1"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-5ec2-4d41-a86f-230a6f996f3b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "message": "string"}
+          application/json: {"uuid": "123e4567-e9e9-4ecb-bf52-230a6b0865eb", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "message": "string"}
     badRequest:
       parameters:
         path:
@@ -3528,7 +3528,7 @@ examples:
         path:
           uuid: "2ea183b5-88e4-4168-a975-1820b2711ae4"
       requestBody:
-        application/json: {"uuid": "123e4567-e582-4133-b4b8-230a61bb9e8b", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-0c7e-4032-8187-230a622164fb", "active": 1, "name": "<value>"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -3537,7 +3537,7 @@ examples:
         path:
           uuid: "7a3c1773-93cb-42a0-b398-7d86fe5fa7a7"
       requestBody:
-        application/json: {"uuid": "123e4567-e582-4133-b4b8-230a61bb9e8b", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-0c7e-4032-8187-230a622164fb", "active": 1, "name": "<value>"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3559,7 +3559,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"first": "string", "last": "string", "email": "string", "mobile": "string", "lng": null, "lat": null, "geo_timestamp": "2025-07-01 12:00:00", "job_title": "string", "navigating_to_job_uuid": "123e4567-786a-4e4e-a9f3-230a6207e1bb", "navigating_timestamp": "2025-07-01 12:00:00", "navigating_expiry_timestamp": "2025-07-01 12:00:00", "color": "string", "custom_icon_url": "string", "status_message": "string", "status_message_timestamp": "2025-07-01 12:00:00", "hide_from_schedule": 0, "security_role_uuid": "123e4567-8307-40d9-8542-230a6d606c9b", "uuid": "123e4567-e409-4b6e-a6e5-230a6a942f6b", "active": 1, "edit_date": "2025-07-01 12:00:00", "can_receive_push_notification": "string"}]
+          application/json: [{"first": "string", "last": "string", "email": "string", "mobile": "string", "lng": null, "lat": null, "geo_timestamp": "2025-07-01 12:00:00", "job_title": "string", "navigating_to_job_uuid": "123e4567-2428-4f82-b732-230a6de580fb", "navigating_timestamp": "2025-07-01 12:00:00", "navigating_expiry_timestamp": "2025-07-01 12:00:00", "color": "string", "custom_icon_url": "string", "status_message": "string", "status_message_timestamp": "2025-07-01 12:00:00", "hide_from_schedule": 0, "security_role_uuid": "123e4567-60b6-482d-8370-230a6808327b", "uuid": "123e4567-0b23-4ad0-afc7-230a6cac2b8b", "active": 1, "edit_date": "2025-07-01 12:00:00", "can_receive_push_notification": "string"}]
     badRequest:
       responses:
         "400":
@@ -3569,13 +3569,13 @@ examples:
   createStaffMembers:
     success:
       requestBody:
-        application/json: {"first": "<value>", "last": "<value>", "email": "Larissa_Pfannerstill75@hotmail.com", "geo_timestamp": "2025-07-01 12:00:00", "navigating_to_job_uuid": "123e4567-1f74-4dfe-a6ff-230a662f09eb", "navigating_timestamp": "2025-07-01 12:00:00", "navigating_expiry_timestamp": "2025-07-01 12:00:00", "status_message_timestamp": "2025-07-01 12:00:00", "security_role_uuid": "123e4567-1b45-4389-a2a3-230a664e830b", "uuid": "123e4567-0a82-46ba-85f7-230a680319bb", "active": 1}
+        application/json: {"first": "<value>", "last": "<value>", "email": "Larissa_Pfannerstill75@hotmail.com", "geo_timestamp": "2025-07-01 12:00:00", "navigating_to_job_uuid": "123e4567-f685-443f-90e6-230a6d69441b", "navigating_timestamp": "2025-07-01 12:00:00", "navigating_expiry_timestamp": "2025-07-01 12:00:00", "status_message_timestamp": "2025-07-01 12:00:00", "security_role_uuid": "123e4567-4ca9-4f07-8142-230a6202084b", "uuid": "123e4567-4dbe-4086-b9ec-230a66791fcb", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"first": "<value>", "last": "<value>", "email": "Larissa_Pfannerstill75@hotmail.com", "geo_timestamp": "2025-07-01 12:00:00", "navigating_to_job_uuid": "123e4567-1f74-4dfe-a6ff-230a662f09eb", "navigating_timestamp": "2025-07-01 12:00:00", "navigating_expiry_timestamp": "2025-07-01 12:00:00", "status_message_timestamp": "2025-07-01 12:00:00", "security_role_uuid": "123e4567-1b45-4389-a2a3-230a664e830b", "uuid": "123e4567-0a82-46ba-85f7-230a680319bb", "active": 1}
+        application/json: {"first": "<value>", "last": "<value>", "email": "Larissa_Pfannerstill75@hotmail.com", "geo_timestamp": "2025-07-01 12:00:00", "navigating_to_job_uuid": "123e4567-f685-443f-90e6-230a6d69441b", "navigating_timestamp": "2025-07-01 12:00:00", "navigating_expiry_timestamp": "2025-07-01 12:00:00", "status_message_timestamp": "2025-07-01 12:00:00", "security_role_uuid": "123e4567-4ca9-4f07-8142-230a6202084b", "uuid": "123e4567-4dbe-4086-b9ec-230a66791fcb", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3588,7 +3588,7 @@ examples:
           uuid: "59423093-3ee4-4d9a-b26f-3a2b4ea4e466"
       responses:
         "200":
-          application/json: {"first": "string", "last": "string", "email": "string", "mobile": "string", "lng": null, "lat": null, "geo_timestamp": "2025-07-01 12:00:00", "job_title": "string", "navigating_to_job_uuid": "123e4567-8434-4d53-8f0f-230a6e34915b", "navigating_timestamp": "2025-07-01 12:00:00", "navigating_expiry_timestamp": "2025-07-01 12:00:00", "color": "string", "custom_icon_url": "string", "status_message": "string", "status_message_timestamp": "2025-07-01 12:00:00", "hide_from_schedule": 0, "security_role_uuid": "123e4567-024e-4ae4-a9ef-230a6bc969ab", "uuid": "123e4567-af79-493c-8797-230a6847716b", "active": 1, "edit_date": "2025-07-01 12:00:00", "can_receive_push_notification": "string"}
+          application/json: {"first": "string", "last": "string", "email": "string", "mobile": "string", "lng": null, "lat": null, "geo_timestamp": "2025-07-01 12:00:00", "job_title": "string", "navigating_to_job_uuid": "123e4567-15c6-4618-9f6f-230a6322e99b", "navigating_timestamp": "2025-07-01 12:00:00", "navigating_expiry_timestamp": "2025-07-01 12:00:00", "color": "string", "custom_icon_url": "string", "status_message": "string", "status_message_timestamp": "2025-07-01 12:00:00", "hide_from_schedule": 0, "security_role_uuid": "123e4567-1fbf-4065-b193-230a6c46557b", "uuid": "123e4567-dc29-4f95-bd8f-230a63a40acb", "active": 1, "edit_date": "2025-07-01 12:00:00", "can_receive_push_notification": "string"}
     badRequest:
       parameters:
         path:
@@ -3604,7 +3604,7 @@ examples:
         path:
           uuid: "6cd534f3-6271-46ec-8887-e8e6e8cea57e"
       requestBody:
-        application/json: {"first": "<value>", "last": "<value>", "email": "Mckenna_Yundt@hotmail.com", "geo_timestamp": "2025-07-01 12:00:00", "navigating_to_job_uuid": "123e4567-1f74-4dfe-a6ff-230a662f09eb", "navigating_timestamp": "2025-07-01 12:00:00", "navigating_expiry_timestamp": "2025-07-01 12:00:00", "status_message_timestamp": "2025-07-01 12:00:00", "security_role_uuid": "123e4567-1b45-4389-a2a3-230a664e830b", "uuid": "123e4567-0a82-46ba-85f7-230a680319bb", "active": 1}
+        application/json: {"first": "<value>", "last": "<value>", "email": "Mckenna_Yundt@hotmail.com", "geo_timestamp": "2025-07-01 12:00:00", "navigating_to_job_uuid": "123e4567-f685-443f-90e6-230a6d69441b", "navigating_timestamp": "2025-07-01 12:00:00", "navigating_expiry_timestamp": "2025-07-01 12:00:00", "status_message_timestamp": "2025-07-01 12:00:00", "security_role_uuid": "123e4567-4ca9-4f07-8142-230a6202084b", "uuid": "123e4567-4dbe-4086-b9ec-230a66791fcb", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -3613,7 +3613,7 @@ examples:
         path:
           uuid: "fe6f0c12-505f-402b-9926-ce0b5097e694"
       requestBody:
-        application/json: {"first": "<value>", "last": "<value>", "email": "Mckenna_Yundt@hotmail.com", "geo_timestamp": "2025-07-01 12:00:00", "navigating_to_job_uuid": "123e4567-1f74-4dfe-a6ff-230a662f09eb", "navigating_timestamp": "2025-07-01 12:00:00", "navigating_expiry_timestamp": "2025-07-01 12:00:00", "status_message_timestamp": "2025-07-01 12:00:00", "security_role_uuid": "123e4567-1b45-4389-a2a3-230a664e830b", "uuid": "123e4567-0a82-46ba-85f7-230a680319bb", "active": 1}
+        application/json: {"first": "<value>", "last": "<value>", "email": "Mckenna_Yundt@hotmail.com", "geo_timestamp": "2025-07-01 12:00:00", "navigating_to_job_uuid": "123e4567-f685-443f-90e6-230a6d69441b", "navigating_timestamp": "2025-07-01 12:00:00", "navigating_expiry_timestamp": "2025-07-01 12:00:00", "status_message_timestamp": "2025-07-01 12:00:00", "security_role_uuid": "123e4567-4ca9-4f07-8142-230a6202084b", "uuid": "123e4567-4dbe-4086-b9ec-230a66791fcb", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3635,7 +3635,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-7588-4eac-8b3e-230a6a4e1bab", "active": 1, "edit_date": "2025-07-01 12:00:00", "from_staff_uuid": "123e4567-ff0f-4978-be02-230a6d8709fb", "to_staff_uuid": "123e4567-843d-4bc4-bfb3-230a6608aadb", "sent_timestamp": "2025-07-01 12:00:00", "delivered_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "message": "string", "regarding_job_uuid": "123e4567-2a48-44f2-a7e2-230a68a17b2b", "attached_json": "string"}]
+          application/json: [{"uuid": "123e4567-8814-49b2-86c4-230a6a6186cb", "active": 1, "edit_date": "2025-07-01 12:00:00", "from_staff_uuid": "123e4567-84a3-464e-b926-230a659a583b", "to_staff_uuid": "123e4567-a24e-4d52-a871-230a6c20a07b", "sent_timestamp": "2025-07-01 12:00:00", "delivered_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "message": "string", "regarding_job_uuid": "123e4567-9ef3-4fb5-9f2f-230a62383aab", "attached_json": "string"}]
     badRequest:
       responses:
         "400":
@@ -3645,13 +3645,13 @@ examples:
   createStaffMessages:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-f310-4e5c-a0fc-230a65d2526b", "active": 1, "from_staff_uuid": "123e4567-6ee7-48f6-a2b3-230a6e449ffb", "to_staff_uuid": "123e4567-f527-4861-9711-230a6979e20b", "sent_timestamp": "2025-07-01 12:00:00", "delivered_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "regarding_job_uuid": "123e4567-045e-49a1-a6f9-230a6de3125b"}
+        application/json: {"uuid": "123e4567-b250-4cb4-9349-230a6469775b", "active": 1, "from_staff_uuid": "123e4567-a657-4a19-81c1-230a6f7190cb", "to_staff_uuid": "123e4567-87ce-4543-b980-230a6702b41b", "sent_timestamp": "2025-07-01 12:00:00", "delivered_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "regarding_job_uuid": "123e4567-01bb-4845-aa3f-230a6fe3768b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-f310-4e5c-a0fc-230a65d2526b", "active": 1, "from_staff_uuid": "123e4567-6ee7-48f6-a2b3-230a6e449ffb", "to_staff_uuid": "123e4567-f527-4861-9711-230a6979e20b", "sent_timestamp": "2025-07-01 12:00:00", "delivered_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "regarding_job_uuid": "123e4567-045e-49a1-a6f9-230a6de3125b"}
+        application/json: {"uuid": "123e4567-b250-4cb4-9349-230a6469775b", "active": 1, "from_staff_uuid": "123e4567-a657-4a19-81c1-230a6f7190cb", "to_staff_uuid": "123e4567-87ce-4543-b980-230a6702b41b", "sent_timestamp": "2025-07-01 12:00:00", "delivered_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "regarding_job_uuid": "123e4567-01bb-4845-aa3f-230a6fe3768b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3664,7 +3664,7 @@ examples:
           uuid: "31718a39-6feb-45a4-a7f2-f76ec9ecc63c"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-d292-40be-97b0-230a6e541b4b", "active": 1, "edit_date": "2025-07-01 12:00:00", "from_staff_uuid": "123e4567-e9b8-468e-ba66-230a6e16097b", "to_staff_uuid": "123e4567-6ab5-4d9d-ba4a-230a67302d4b", "sent_timestamp": "2025-07-01 12:00:00", "delivered_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "message": "string", "regarding_job_uuid": "123e4567-a038-4d1a-b0ab-230a682424eb", "attached_json": "string"}
+          application/json: {"uuid": "123e4567-2001-4a43-be31-230a65f0a0fb", "active": 1, "edit_date": "2025-07-01 12:00:00", "from_staff_uuid": "123e4567-b74a-43b3-8f11-230a629a66bb", "to_staff_uuid": "123e4567-fc51-495a-806d-230a6d60c43b", "sent_timestamp": "2025-07-01 12:00:00", "delivered_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "message": "string", "regarding_job_uuid": "123e4567-151a-4383-b1a1-230a6d5385bb", "attached_json": "string"}
     badRequest:
       parameters:
         path:
@@ -3680,7 +3680,7 @@ examples:
         path:
           uuid: "b5fd0f7a-6810-4261-acdb-e8e543cf4e72"
       requestBody:
-        application/json: {"uuid": "123e4567-f310-4e5c-a0fc-230a65d2526b", "active": 1, "from_staff_uuid": "123e4567-6ee7-48f6-a2b3-230a6e449ffb", "to_staff_uuid": "123e4567-f527-4861-9711-230a6979e20b", "sent_timestamp": "2025-07-01 12:00:00", "delivered_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "regarding_job_uuid": "123e4567-045e-49a1-a6f9-230a6de3125b"}
+        application/json: {"uuid": "123e4567-b250-4cb4-9349-230a6469775b", "active": 1, "from_staff_uuid": "123e4567-a657-4a19-81c1-230a6f7190cb", "to_staff_uuid": "123e4567-87ce-4543-b980-230a6702b41b", "sent_timestamp": "2025-07-01 12:00:00", "delivered_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "regarding_job_uuid": "123e4567-01bb-4845-aa3f-230a6fe3768b"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -3689,7 +3689,7 @@ examples:
         path:
           uuid: "7a8b58d7-937e-4a2b-b266-ed496ee62b75"
       requestBody:
-        application/json: {"uuid": "123e4567-f310-4e5c-a0fc-230a65d2526b", "active": 1, "from_staff_uuid": "123e4567-6ee7-48f6-a2b3-230a6e449ffb", "to_staff_uuid": "123e4567-f527-4861-9711-230a6979e20b", "sent_timestamp": "2025-07-01 12:00:00", "delivered_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "regarding_job_uuid": "123e4567-045e-49a1-a6f9-230a6de3125b"}
+        application/json: {"uuid": "123e4567-b250-4cb4-9349-230a6469775b", "active": 1, "from_staff_uuid": "123e4567-a657-4a19-81c1-230a6f7190cb", "to_staff_uuid": "123e4567-87ce-4543-b980-230a6702b41b", "sent_timestamp": "2025-07-01 12:00:00", "delivered_timestamp": "2025-07-01 12:00:00", "read_timestamp": "2025-07-01 12:00:00", "regarding_job_uuid": "123e4567-01bb-4845-aa3f-230a6fe3768b"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3711,7 +3711,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"due_date": "YYYY-MM-DD", "task_details": "string", "name": "string", "related_object": "string", "related_object_uuid": "123e4567-6c66-4325-bcab-230a6d42867b", "task_complete": "string", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-b211-43f8-9a44-230a65ca73ab", "assigned_to_staff_uuid": "123e4567-b5fb-40d0-a9be-230a6257427b", "lng": "string", "lat": "string", "uuid": "123e4567-8089-42dc-9e3e-230a66a0707b", "active": 1, "edit_date": "2025-07-01 12:00:00", "created_by_staff_uuid": "123e4567-6b7d-46f3-95fc-230a61916b8b", "create_date": "2025-07-01 12:00:00"}]
+          application/json: [{"due_date": "YYYY-MM-DD", "task_details": "string", "name": "string", "related_object": "string", "related_object_uuid": "123e4567-d785-456d-bb3d-230a67c5c75b", "task_complete": "string", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-da2d-409f-b2da-230a61a8212b", "assigned_to_staff_uuid": "123e4567-43ab-4a57-9cb8-230a6d88705b", "lng": "string", "lat": "string", "uuid": "123e4567-225b-45ab-9921-230a61a9644b", "active": 1, "edit_date": "2025-07-01 12:00:00", "created_by_staff_uuid": "123e4567-a7a9-4bae-b01b-230a69032b9b", "create_date": "2025-07-01 12:00:00"}]
     badRequest:
       responses:
         "400":
@@ -3721,13 +3721,13 @@ examples:
   createTasks:
     success:
       requestBody:
-        application/json: {"due_date": "YYYY-MM-DD", "name": "<value>", "related_object_uuid": "123e4567-86fc-45a5-ac7c-230a65d9ddbb", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-86b3-4cd9-b011-230a65fb72db", "assigned_to_staff_uuid": "123e4567-96eb-4bf9-a1f6-230a6c5f406b", "uuid": "123e4567-4106-4491-986e-230a602c3eab", "active": 1, "created_by_staff_uuid": "123e4567-9d5d-4282-8d32-230a6d0bdadb", "create_date": "2025-07-01 12:00:00"}
+        application/json: {"due_date": "YYYY-MM-DD", "name": "<value>", "related_object_uuid": "123e4567-7fba-4431-a230-230a6eecac7b", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-f7c3-4ece-b165-230a62994afb", "assigned_to_staff_uuid": "123e4567-2425-4be3-ad99-230a6d4f67bb", "uuid": "123e4567-9d3b-4065-90fa-230a68ade0cb", "active": 1, "created_by_staff_uuid": "123e4567-ef9b-471e-834e-230a6d509a5b", "create_date": "2025-07-01 12:00:00"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"due_date": "YYYY-MM-DD", "name": "<value>", "related_object_uuid": "123e4567-86fc-45a5-ac7c-230a65d9ddbb", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-86b3-4cd9-b011-230a65fb72db", "assigned_to_staff_uuid": "123e4567-96eb-4bf9-a1f6-230a6c5f406b", "uuid": "123e4567-4106-4491-986e-230a602c3eab", "active": 1, "created_by_staff_uuid": "123e4567-9d5d-4282-8d32-230a6d0bdadb", "create_date": "2025-07-01 12:00:00"}
+        application/json: {"due_date": "YYYY-MM-DD", "name": "<value>", "related_object_uuid": "123e4567-7fba-4431-a230-230a6eecac7b", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-f7c3-4ece-b165-230a62994afb", "assigned_to_staff_uuid": "123e4567-2425-4be3-ad99-230a6d4f67bb", "uuid": "123e4567-9d3b-4065-90fa-230a68ade0cb", "active": 1, "created_by_staff_uuid": "123e4567-ef9b-471e-834e-230a6d509a5b", "create_date": "2025-07-01 12:00:00"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3740,7 +3740,7 @@ examples:
           uuid: "dea1a941-63b2-47a9-b647-4a69729205f1"
       responses:
         "200":
-          application/json: {"due_date": "YYYY-MM-DD", "task_details": "string", "name": "string", "related_object": "string", "related_object_uuid": "123e4567-b95d-434b-97a9-230a6a7a3afb", "task_complete": "string", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-6d0f-47ca-a2c7-230a69cf9d6b", "assigned_to_staff_uuid": "123e4567-45da-4d1c-9615-230a6afe4f9b", "lng": "string", "lat": "string", "uuid": "123e4567-d17b-4394-9d8c-230a612017ab", "active": 1, "edit_date": "2025-07-01 12:00:00", "created_by_staff_uuid": "123e4567-92e1-4636-8478-230a6473424b", "create_date": "2025-07-01 12:00:00"}
+          application/json: {"due_date": "YYYY-MM-DD", "task_details": "string", "name": "string", "related_object": "string", "related_object_uuid": "123e4567-cfd5-41f7-8627-230a6f00bb8b", "task_complete": "string", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-3f7e-47ad-a8fd-230a695066bb", "assigned_to_staff_uuid": "123e4567-c595-4c6a-bcdf-230a6b86654b", "lng": "string", "lat": "string", "uuid": "123e4567-4328-4667-8164-230a6808bd3b", "active": 1, "edit_date": "2025-07-01 12:00:00", "created_by_staff_uuid": "123e4567-da3a-47a3-9d31-230a66a1666b", "create_date": "2025-07-01 12:00:00"}
     badRequest:
       parameters:
         path:
@@ -3756,7 +3756,7 @@ examples:
         path:
           uuid: "fc5a7972-ff2f-4bbb-a4fb-c4e583b9d183"
       requestBody:
-        application/json: {"due_date": "YYYY-MM-DD", "name": "<value>", "related_object_uuid": "123e4567-86fc-45a5-ac7c-230a65d9ddbb", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-86b3-4cd9-b011-230a65fb72db", "assigned_to_staff_uuid": "123e4567-96eb-4bf9-a1f6-230a6c5f406b", "uuid": "123e4567-4106-4491-986e-230a602c3eab", "active": 1, "created_by_staff_uuid": "123e4567-9d5d-4282-8d32-230a6d0bdadb", "create_date": "2025-07-01 12:00:00"}
+        application/json: {"due_date": "YYYY-MM-DD", "name": "<value>", "related_object_uuid": "123e4567-7fba-4431-a230-230a6eecac7b", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-f7c3-4ece-b165-230a62994afb", "assigned_to_staff_uuid": "123e4567-2425-4be3-ad99-230a6d4f67bb", "uuid": "123e4567-9d3b-4065-90fa-230a68ade0cb", "active": 1, "created_by_staff_uuid": "123e4567-ef9b-471e-834e-230a6d509a5b", "create_date": "2025-07-01 12:00:00"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -3765,7 +3765,7 @@ examples:
         path:
           uuid: "cea8cd10-c866-4b19-8512-eaac32cffaea"
       requestBody:
-        application/json: {"due_date": "YYYY-MM-DD", "name": "<value>", "related_object_uuid": "123e4567-86fc-45a5-ac7c-230a65d9ddbb", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-86b3-4cd9-b011-230a65fb72db", "assigned_to_staff_uuid": "123e4567-96eb-4bf9-a1f6-230a6c5f406b", "uuid": "123e4567-4106-4491-986e-230a602c3eab", "active": 1, "created_by_staff_uuid": "123e4567-9d5d-4282-8d32-230a6d0bdadb", "create_date": "2025-07-01 12:00:00"}
+        application/json: {"due_date": "YYYY-MM-DD", "name": "<value>", "related_object_uuid": "123e4567-7fba-4431-a230-230a6eecac7b", "completed_timestamp": "2025-07-01 12:00:00", "completed_by_staff_uuid": "123e4567-f7c3-4ece-b165-230a62994afb", "assigned_to_staff_uuid": "123e4567-2425-4be3-ad99-230a6d4f67bb", "uuid": "123e4567-9d3b-4065-90fa-230a68ade0cb", "active": 1, "created_by_staff_uuid": "123e4567-ef9b-471e-834e-230a6d509a5b", "create_date": "2025-07-01 12:00:00"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3787,7 +3787,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-9146-47ec-a290-230a60fefeab", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "amount": "string", "is_default_tax_rate": 1}]
+          application/json: [{"uuid": "123e4567-be7f-4c57-a253-230a653967db", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "amount": "string", "is_default_tax_rate": 1}]
     badRequest:
       responses:
         "400":
@@ -3797,13 +3797,13 @@ examples:
   createTaxRates:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-0389-4e7f-b6a9-230a6ebfdadb", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-f6fc-42ee-b22f-230a6e1d75eb", "active": 1, "name": "<value>"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-0389-4e7f-b6a9-230a6ebfdadb", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-f6fc-42ee-b22f-230a6e1d75eb", "active": 1, "name": "<value>"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3816,7 +3816,7 @@ examples:
           uuid: "f8fd7d82-41b8-4914-91af-451b3a1468da"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-6553-4e6d-81e7-230a6b36e5eb", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "amount": "string", "is_default_tax_rate": 1}
+          application/json: {"uuid": "123e4567-211c-4cda-8f71-230a6ea6a0eb", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "amount": "string", "is_default_tax_rate": 1}
     badRequest:
       parameters:
         path:
@@ -3832,7 +3832,7 @@ examples:
         path:
           uuid: "276d45f4-bf8b-41ae-82d4-264af7ec45cc"
       requestBody:
-        application/json: {"uuid": "123e4567-0389-4e7f-b6a9-230a6ebfdadb", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-f6fc-42ee-b22f-230a6e1d75eb", "active": 1, "name": "<value>"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -3841,7 +3841,7 @@ examples:
         path:
           uuid: "1698625d-cf9e-4b2d-b5ef-bb9580502169"
       requestBody:
-        application/json: {"uuid": "123e4567-0389-4e7f-b6a9-230a6ebfdadb", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-f6fc-42ee-b22f-230a6e1d75eb", "active": 1, "name": "<value>"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3863,7 +3863,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-7366-40cc-aa01-230a60f3d12b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "abn_number": "string", "business_number": "string", "website": "string", "email": "string", "email_accounts": "string", "billing_address": "string", "accepted_payment_methods": "string", "default_region": "string", "currency": "string", "opening_time_monday": "string", "closing_time_monday": "string", "opening_time_tuesday": "string", "closing_time_tuesday": "string", "opening_time_wednesday": "string", "closing_time_wednesday": "string", "opening_time_thursday": "string", "closing_time_thursday": "string", "opening_time_friday": "string", "closing_time_friday": "string", "opening_time_saturday": "string", "closing_time_saturday": "string", "opening_time_sunday": "string", "closing_time_sunday": "string", "timezone_name": "string", "invoice_terms": "string", "job_default_status": "string"}]
+          application/json: [{"uuid": "123e4567-72a9-4945-b33c-230a687270db", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "abn_number": "string", "business_number": "string", "website": "string", "email": "string", "email_accounts": "string", "billing_address": "string", "accepted_payment_methods": "string", "default_region": "string", "currency": "string", "opening_time_monday": "string", "closing_time_monday": "string", "opening_time_tuesday": "string", "closing_time_tuesday": "string", "opening_time_wednesday": "string", "closing_time_wednesday": "string", "opening_time_thursday": "string", "closing_time_thursday": "string", "opening_time_friday": "string", "closing_time_friday": "string", "opening_time_saturday": "string", "closing_time_saturday": "string", "opening_time_sunday": "string", "closing_time_sunday": "string", "timezone_name": "string", "invoice_terms": "string", "job_default_status": "string"}]
     badRequest:
       responses:
         "400":
@@ -3877,7 +3877,7 @@ examples:
           uuid: "261b9a97-0bc3-44a1-a310-6bd58c6fb91b"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-b2b6-4801-b2ad-230a6fd0973b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "abn_number": "string", "business_number": "string", "website": "string", "email": "string", "email_accounts": "string", "billing_address": "string", "accepted_payment_methods": "string", "default_region": "string", "currency": "string", "opening_time_monday": "string", "closing_time_monday": "string", "opening_time_tuesday": "string", "closing_time_tuesday": "string", "opening_time_wednesday": "string", "closing_time_wednesday": "string", "opening_time_thursday": "string", "closing_time_thursday": "string", "opening_time_friday": "string", "closing_time_friday": "string", "opening_time_saturday": "string", "closing_time_saturday": "string", "opening_time_sunday": "string", "closing_time_sunday": "string", "timezone_name": "string", "invoice_terms": "string", "job_default_status": "string"}
+          application/json: {"uuid": "123e4567-6fac-4df3-ae13-230a61d4e32b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string", "abn_number": "string", "business_number": "string", "website": "string", "email": "string", "email_accounts": "string", "billing_address": "string", "accepted_payment_methods": "string", "default_region": "string", "currency": "string", "opening_time_monday": "string", "closing_time_monday": "string", "opening_time_tuesday": "string", "closing_time_tuesday": "string", "opening_time_wednesday": "string", "closing_time_wednesday": "string", "opening_time_thursday": "string", "closing_time_thursday": "string", "opening_time_friday": "string", "closing_time_friday": "string", "opening_time_saturday": "string", "closing_time_saturday": "string", "opening_time_sunday": "string", "closing_time_sunday": "string", "timezone_name": "string", "invoice_terms": "string", "job_default_status": "string"}
     badRequest:
       parameters:
         path:
@@ -3893,7 +3893,7 @@ examples:
         path:
           uuid: "d90cffed-8677-4cbe-ab38-b734ac463633"
       requestBody:
-        application/json: {"uuid": "123e4567-7814-43e3-8b97-230a6eb6269b", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-a376-48d3-a170-230a6d39163b", "active": 1, "name": "<value>"}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -3902,7 +3902,7 @@ examples:
         path:
           uuid: "571ee3d8-b49b-4a90-abd6-bfd29d5ac358"
       requestBody:
-        application/json: {"uuid": "123e4567-7814-43e3-8b97-230a6eb6269b", "active": 1, "name": "<value>"}
+        application/json: {"uuid": "123e4567-a376-48d3-a170-230a6d39163b", "active": 1, "name": "<value>"}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -3998,7 +3998,7 @@ examples:
     success:
       responses:
         "200":
-          application/json: [{"uuid": "123e4567-5914-457d-8e06-230a65e7070b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string"}]
+          application/json: [{"uuid": "123e4567-ab0e-476e-b870-230a61c99dfb", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string"}]
     badRequest:
       responses:
         "400":
@@ -4008,13 +4008,13 @@ examples:
   createJobTemplates:
     success:
       requestBody:
-        application/json: {"uuid": "123e4567-27bc-462a-af07-230a621e5e2b", "active": 1}
+        application/json: {"uuid": "123e4567-038f-487a-a938-230a6b6d2e5b", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
     badRequest:
       requestBody:
-        application/json: {"uuid": "123e4567-27bc-462a-af07-230a621e5e2b", "active": 1}
+        application/json: {"uuid": "123e4567-038f-487a-a938-230a6b6d2e5b", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}
@@ -4027,7 +4027,7 @@ examples:
           uuid: "e49a9f4e-3739-4ad4-9990-80e39f58eba8"
       responses:
         "200":
-          application/json: {"uuid": "123e4567-75ac-49c6-bc06-230a6a5a504b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string"}
+          application/json: {"uuid": "123e4567-b1d2-42c0-a735-230a6f511f2b", "active": 1, "edit_date": "2025-07-01 12:00:00", "name": "string"}
     badRequest:
       parameters:
         path:
@@ -4043,7 +4043,7 @@ examples:
         path:
           uuid: "c3cda462-77ac-4f6b-96fc-278f0e8e4121"
       requestBody:
-        application/json: {"uuid": "123e4567-27bc-462a-af07-230a621e5e2b", "active": 1}
+        application/json: {"uuid": "123e4567-038f-487a-a938-230a6b6d2e5b", "active": 1}
       responses:
         "200":
           application/json: {"errorCode": 0, "message": "OK"}
@@ -4052,7 +4052,7 @@ examples:
         path:
           uuid: "768770ff-9683-4b54-b158-f270c8c641d8"
       requestBody:
-        application/json: {"uuid": "123e4567-27bc-462a-af07-230a621e5e2b", "active": 1}
+        application/json: {"uuid": "123e4567-038f-487a-a938-230a6b6d2e5b", "active": 1}
       responses:
         "400":
           application/json: {"errorCode": 1000, "message": "An error occurred completing your request"}

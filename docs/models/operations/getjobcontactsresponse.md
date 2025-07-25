@@ -7,9 +7,9 @@
 
 ```typescript
 const value: components.JobContact = {
-  uuid: "123e4567-28e8-4d82-83ce-230a6534375b",
+  uuid: "123e4567-ab60-4259-b8b8-230a64272e6b",
   editDate: "2025-07-01 12:00:00",
-  jobUuid: "123e4567-e318-4e04-ab0c-230a6dd600eb",
+  jobUuid: "123e4567-6dda-4c14-b3fc-230a604acd2b",
 };
 ```
 
