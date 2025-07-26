@@ -8,8 +8,8 @@ import { UpdateCompanyContactsRequest } from "servicem8/models/operations";
 let value: UpdateCompanyContactsRequest = {
   uuid: "41cd5a6a-2702-43c6-9509-6c2790a58843",
   companyContact: {
-    uuid: "123e4567-52a3-450b-bf31-230b7bf39ecb",
-    companyUuid: "123e4567-844d-41fe-a5c5-230b70a76e8b",
+    uuid: "123e4567-86e6-417d-8881-230c40118edb",
+    companyUuid: "123e4567-c4b8-40ca-8da0-230c4533fa3b",
   },
 };
 ```

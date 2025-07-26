@@ -6,7 +6,7 @@
 import { SmsTemplateInput } from "servicem8/models/components";
 
 let value: SmsTemplateInput = {
-  uuid: "123e4567-9a1e-4f29-8fd3-230b7ed85d5b",
+  uuid: "123e4567-81e4-416b-9cfd-230c47334f7b",
   name: "<value>",
 };
 ```
@@ -15,7 +15,7 @@ let value: SmsTemplateInput = {
 
 | Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  | Example                                                                      |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `uuid`                                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | Unique identifier for this record                                            | 123e4567-9a1e-4f29-8fd3-230b7ed85d5b                                         |
+| `uuid`                                                                       | *string*                                                                     | :heavy_minus_sign:                                                           | Unique identifier for this record                                            | 123e4567-81e4-416b-9cfd-230c47334f7b                                         |
 | `active`                                                                     | [components.SmsTemplateActive](../../models/components/smstemplateactive.md) | :heavy_minus_sign:                                                           | Record active/deleted flag.  Valid values are [0,1]                          |                                                                              |
 | `name`                                                                       | *string*                                                                     | :heavy_check_mark:                                                           | N/A                                                                          |                                                                              |
 | `message`                                                                    | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |                                                                              |

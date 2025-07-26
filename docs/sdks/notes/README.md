@@ -111,9 +111,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.notes.createNotes({
-    uuid: "123e4567-737d-44dd-b7e4-230b7552094b",
-    relatedObjectUuid: "123e4567-f5d1-450b-845a-230b7763292b",
-    actionCompletedByStaffUuid: "123e4567-0d27-4cdf-8778-230b71458dab",
+    uuid: "123e4567-5aae-4315-b68e-230c4b448f3b",
+    relatedObjectUuid: "123e4567-62f7-4c3a-89ae-230c4c3d67db",
+    actionCompletedByStaffUuid: "123e4567-241a-4351-a101-230c4827532b",
     createDate: "2025-07-01 12:00:00",
   });
 
@@ -141,9 +141,9 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await notesCreateNotes(serviceM8, {
-    uuid: "123e4567-737d-44dd-b7e4-230b7552094b",
-    relatedObjectUuid: "123e4567-f5d1-450b-845a-230b7763292b",
-    actionCompletedByStaffUuid: "123e4567-0d27-4cdf-8778-230b71458dab",
+    uuid: "123e4567-5aae-4315-b68e-230c4b448f3b",
+    relatedObjectUuid: "123e4567-62f7-4c3a-89ae-230c4c3d67db",
+    actionCompletedByStaffUuid: "123e4567-241a-4351-a101-230c4827532b",
     createDate: "2025-07-01 12:00:00",
   });
   if (res.ok) {
@@ -273,9 +273,9 @@ async function run() {
   const result = await serviceM8.notes.updateNotes({
     uuid: "1607abff-6202-4423-ae91-39b08699f830",
     note: {
-      uuid: "123e4567-737d-44dd-b7e4-230b7552094b",
-      relatedObjectUuid: "123e4567-f5d1-450b-845a-230b7763292b",
-      actionCompletedByStaffUuid: "123e4567-0d27-4cdf-8778-230b71458dab",
+      uuid: "123e4567-5aae-4315-b68e-230c4b448f3b",
+      relatedObjectUuid: "123e4567-62f7-4c3a-89ae-230c4c3d67db",
+      actionCompletedByStaffUuid: "123e4567-241a-4351-a101-230c4827532b",
       createDate: "2025-07-01 12:00:00",
     },
   });
@@ -306,9 +306,9 @@ async function run() {
   const res = await notesUpdateNotes(serviceM8, {
     uuid: "1607abff-6202-4423-ae91-39b08699f830",
     note: {
-      uuid: "123e4567-737d-44dd-b7e4-230b7552094b",
-      relatedObjectUuid: "123e4567-f5d1-450b-845a-230b7763292b",
-      actionCompletedByStaffUuid: "123e4567-0d27-4cdf-8778-230b71458dab",
+      uuid: "123e4567-5aae-4315-b68e-230c4b448f3b",
+      relatedObjectUuid: "123e4567-62f7-4c3a-89ae-230c4c3d67db",
+      actionCompletedByStaffUuid: "123e4567-241a-4351-a101-230c4827532b",
       createDate: "2025-07-01 12:00:00",
     },
   });
