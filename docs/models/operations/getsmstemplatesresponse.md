@@ -7,7 +7,7 @@
 
 ```typescript
 const value: components.SmsTemplate = {
-  uuid: "123e4567-8581-4277-8f1b-230c414acbfb",
+  uuid: "123e4567-b292-4140-a50d-230ef00f1fab",
   editDate: "2025-07-01 12:00:00",
   name: "<value>",
 };
