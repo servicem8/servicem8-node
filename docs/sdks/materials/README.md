@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **read_inventory**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listMaterials" method="get" path="/material.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,6 +111,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createMaterials" method="post" path="/material.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -122,8 +124,8 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.materials.createMaterials({
     name: "<value>",
-    uuid: "123e4567-f0d4-4ac1-ad89-230ef502a5fb",
-    taxRateUuid: "123e4567-f6ca-404c-8b31-230ef6ed40db",
+    uuid: "123e4567-283d-4cd5-b01e-230fe90fb87b",
+    taxRateUuid: "123e4567-3184-4a51-a28c-230fe0df3f1b",
   });
 
   console.log(result);
@@ -151,8 +153,8 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await materialsCreateMaterials(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-f0d4-4ac1-ad89-230ef502a5fb",
-    taxRateUuid: "123e4567-f6ca-404c-8b31-230ef6ed40db",
+    uuid: "123e4567-283d-4cd5-b01e-230fe90fb87b",
+    taxRateUuid: "123e4567-3184-4a51-a28c-230fe0df3f1b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -196,6 +198,7 @@ This endpoint requires the following OAuth scope **read_inventory**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getMaterials" method="get" path="/material/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -278,6 +281,7 @@ This endpoint requires the following OAuth scope **manage_inventory**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateMaterials" method="post" path="/material/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -292,8 +296,8 @@ async function run() {
     uuid: "8a4aa688-8b41-4ab3-b862-24327504b606",
     material: {
       name: "<value>",
-      uuid: "123e4567-f0d4-4ac1-ad89-230ef502a5fb",
-      taxRateUuid: "123e4567-f6ca-404c-8b31-230ef6ed40db",
+      uuid: "123e4567-283d-4cd5-b01e-230fe90fb87b",
+      taxRateUuid: "123e4567-3184-4a51-a28c-230fe0df3f1b",
     },
   });
 
@@ -324,8 +328,8 @@ async function run() {
     uuid: "8a4aa688-8b41-4ab3-b862-24327504b606",
     material: {
       name: "<value>",
-      uuid: "123e4567-f0d4-4ac1-ad89-230ef502a5fb",
-      taxRateUuid: "123e4567-f6ca-404c-8b31-230ef6ed40db",
+      uuid: "123e4567-283d-4cd5-b01e-230fe90fb87b",
+      taxRateUuid: "123e4567-3184-4a51-a28c-230fe0df3f1b",
     },
   });
   if (res.ok) {
@@ -374,6 +378,7 @@ This endpoint requires the following OAuth scope **manage_inventory**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteMaterials" method="delete" path="/material/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

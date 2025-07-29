@@ -23,6 +23,7 @@ This endpoint supports result filtering. For more information on how to filter t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listTaxRates" method="get" path="/taxrate.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -100,6 +101,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createTaxRates" method="post" path="/taxrate.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -111,7 +113,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.taxRates.createTaxRates({
-    uuid: "123e4567-b775-4fa0-8d4a-230efe833adb",
+    uuid: "123e4567-a092-48bc-a77c-230fe28fc65b",
     name: "<value>",
   });
 
@@ -139,7 +141,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await taxRatesCreateTaxRates(serviceM8, {
-    uuid: "123e4567-b775-4fa0-8d4a-230efe833adb",
+    uuid: "123e4567-a092-48bc-a77c-230fe28fc65b",
     name: "<value>",
   });
   if (res.ok) {
@@ -179,6 +181,7 @@ Retrieve a Tax Rate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getTaxRates" method="get" path="/taxrate/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -256,6 +259,7 @@ Update a Tax Rate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateTaxRates" method="post" path="/taxrate/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -269,7 +273,7 @@ async function run() {
   const result = await serviceM8.taxRates.updateTaxRates({
     uuid: "276d45f4-bf8b-41ae-82d4-264af7ec45cc",
     taxRate: {
-      uuid: "123e4567-b775-4fa0-8d4a-230efe833adb",
+      uuid: "123e4567-a092-48bc-a77c-230fe28fc65b",
       name: "<value>",
     },
   });
@@ -300,7 +304,7 @@ async function run() {
   const res = await taxRatesUpdateTaxRates(serviceM8, {
     uuid: "276d45f4-bf8b-41ae-82d4-264af7ec45cc",
     taxRate: {
-      uuid: "123e4567-b775-4fa0-8d4a-230efe833adb",
+      uuid: "123e4567-a092-48bc-a77c-230fe28fc65b",
       name: "<value>",
     },
   });
@@ -345,6 +349,7 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteTaxRates" method="delete" path="/taxrate/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

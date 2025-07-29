@@ -43,7 +43,7 @@ import { Result } from "../types/fp.js";
  * Any other fields in the request body will be ignored.
  *
  * #### OAuth Scope
- * This endpoint requires the following OAuth scope **manage_jobs**.
+ * This endpoint requires the following OAuth scope **create_jobs**.
  */
 export function jobTemplatesCreateJobFromTemplate(
   client: ServiceM8Core,

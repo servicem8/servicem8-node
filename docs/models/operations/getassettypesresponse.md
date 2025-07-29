@@ -7,7 +7,7 @@
 
 ```typescript
 const value: components.AssetType = {
-  uuid: "123e4567-dabc-41f3-9025-230efa3574eb",
+  uuid: "123e4567-6974-4736-aad7-230fea00745b",
   editDate: "2025-07-01 12:00:00",
 };
 ```

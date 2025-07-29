@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **read_assets**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAssetTypeFields" method="get" path="/assettypefield.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,6 +111,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAssetTypeFields" method="post" path="/assettypefield.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -121,8 +123,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.assetTypeFields.createAssetTypeFields({
-    uuid: "123e4567-8d23-4675-9cae-230ef5cfc54b",
-    assetTypeUuid: "123e4567-90d3-40c0-a9dc-230efff1840b",
+    uuid: "123e4567-f455-4efe-9af4-230fe43d3f6b",
+    assetTypeUuid: "123e4567-25d6-4e70-9f92-230fe856965b",
     name: "<value>",
   });
 
@@ -150,8 +152,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetTypeFieldsCreateAssetTypeFields(serviceM8, {
-    uuid: "123e4567-8d23-4675-9cae-230ef5cfc54b",
-    assetTypeUuid: "123e4567-90d3-40c0-a9dc-230efff1840b",
+    uuid: "123e4567-f455-4efe-9af4-230fe43d3f6b",
+    assetTypeUuid: "123e4567-25d6-4e70-9f92-230fe856965b",
     name: "<value>",
   });
   if (res.ok) {
@@ -196,6 +198,7 @@ This endpoint requires the following OAuth scope **read_assets**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAssetTypeFields" method="get" path="/assettypefield/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -278,6 +281,7 @@ This endpoint requires the following OAuth scope **manage_assets**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAssetTypeFields" method="post" path="/assettypefield/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -291,8 +295,8 @@ async function run() {
   const result = await serviceM8.assetTypeFields.updateAssetTypeFields({
     uuid: "1d8d7fd0-4d09-4955-a484-0cd4add08b25",
     assetTypeField: {
-      uuid: "123e4567-8d23-4675-9cae-230ef5cfc54b",
-      assetTypeUuid: "123e4567-90d3-40c0-a9dc-230efff1840b",
+      uuid: "123e4567-f455-4efe-9af4-230fe43d3f6b",
+      assetTypeUuid: "123e4567-25d6-4e70-9f92-230fe856965b",
       name: "<value>",
     },
   });
@@ -323,8 +327,8 @@ async function run() {
   const res = await assetTypeFieldsUpdateAssetTypeFields(serviceM8, {
     uuid: "1d8d7fd0-4d09-4955-a484-0cd4add08b25",
     assetTypeField: {
-      uuid: "123e4567-8d23-4675-9cae-230ef5cfc54b",
-      assetTypeUuid: "123e4567-90d3-40c0-a9dc-230efff1840b",
+      uuid: "123e4567-f455-4efe-9af4-230fe43d3f6b",
+      assetTypeUuid: "123e4567-25d6-4e70-9f92-230fe856965b",
       name: "<value>",
     },
   });
@@ -374,6 +378,7 @@ This endpoint requires the following OAuth scope **manage_assets**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteAssetTypeFields" method="delete" path="/assettypefield/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

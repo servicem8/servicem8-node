@@ -13,14 +13,7 @@ const args = {
 export const tool$jobTemplatesUpdateJobTemplates: ToolDefinition<typeof args> =
   {
     name: "job-templates-update-job-templates",
-    description: `Update a Job Template
-
-
-			
-#### OAuth Scope
-This endpoint requires the following OAuth scope **manage_jobs**.
-
-			`,
+    description: `Update a Job Template`,
     args,
     tool: async (client, args, ctx) => {
       const [result, apiCall] = await jobTemplatesUpdateJobTemplates(

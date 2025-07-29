@@ -19,11 +19,6 @@ export const tool$jobTemplatesDeleteJobTemplates: ToolDefinition<typeof args> =
 			
 In ServiceM8, deleting a record sets its \`active\` field to \`0\`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their \`active\` field to \`1\`.
 
-			
-			
-#### OAuth Scope
-This endpoint requires the following OAuth scope **manage_jobs**.
-
 			`,
     args,
     tool: async (client, args, ctx) => {

@@ -30,7 +30,7 @@ Only the following fields can be overridden when creating a job from a template:
 Any other fields in the request body will be ignored.
 
 #### OAuth Scope
-This endpoint requires the following OAuth scope **manage_jobs**.`,
+This endpoint requires the following OAuth scope **create_jobs**.`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await jobTemplatesCreateJobFromTemplate(

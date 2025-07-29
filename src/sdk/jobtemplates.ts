@@ -39,9 +39,6 @@ export class JobTemplates extends ClientSDK {
    *
    * @remarks
    *
-   * #### OAuth Scope
-   * This endpoint requires the following OAuth scope **manage_jobs**.
-   *
    * #### Record UUID
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
@@ -77,11 +74,6 @@ export class JobTemplates extends ClientSDK {
 
   /**
    * Update a Job Template
-   *
-   * @remarks
-   *
-   * #### OAuth Scope
-   * This endpoint requires the following OAuth scope **manage_jobs**.
    */
   async updateJobTemplates(
     request: operations.UpdateJobTemplatesRequest,
@@ -100,9 +92,6 @@ export class JobTemplates extends ClientSDK {
    * @remarks
    *
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
-   *
-   * #### OAuth Scope
-   * This endpoint requires the following OAuth scope **manage_jobs**.
    */
   async deleteJobTemplates(
     request: operations.DeleteJobTemplatesRequest,
@@ -133,7 +122,7 @@ export class JobTemplates extends ClientSDK {
    * Any other fields in the request body will be ignored.
    *
    * #### OAuth Scope
-   * This endpoint requires the following OAuth scope **manage_jobs**.
+   * This endpoint requires the following OAuth scope **create_jobs**.
    */
   async createJobFromTemplate(
     request: operations.CreateJobFromTemplateRequest,

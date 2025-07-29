@@ -27,6 +27,7 @@ This endpoint requires the following OAuth scope **read_assets**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAssets" method="get" path="/asset.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -104,6 +105,7 @@ This endpoint requires the following OAuth scope **read_assets**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAssets" method="get" path="/asset/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -186,6 +188,7 @@ This endpoint requires the following OAuth scope **manage_assets**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAssets" method="post" path="/asset/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -199,9 +202,9 @@ async function run() {
   const result = await serviceM8.assets.updateAssets({
     uuid: "5b24eb53-3f3d-4b60-b9e9-e44934a80c53",
     asset: {
-      uuid: "123e4567-528d-480b-8d3f-230efff26efb",
-      companyUuid: "123e4567-547c-4173-825c-230ef73ade8b",
-      assetTypeUuid: "123e4567-a5d5-4af2-9f2a-230ef1108c2b",
+      uuid: "123e4567-fb9a-4db6-b3a1-230fe1aa196b",
+      companyUuid: "123e4567-4321-441f-8a18-230fed8c7f2b",
+      assetTypeUuid: "123e4567-4c71-472c-9526-230fed48eeeb",
       geoTimestamp: "2025-07-01 12:00:00",
     },
   });
@@ -232,9 +235,9 @@ async function run() {
   const res = await assetsUpdateAssets(serviceM8, {
     uuid: "5b24eb53-3f3d-4b60-b9e9-e44934a80c53",
     asset: {
-      uuid: "123e4567-528d-480b-8d3f-230efff26efb",
-      companyUuid: "123e4567-547c-4173-825c-230ef73ade8b",
-      assetTypeUuid: "123e4567-a5d5-4af2-9f2a-230ef1108c2b",
+      uuid: "123e4567-fb9a-4db6-b3a1-230fe1aa196b",
+      companyUuid: "123e4567-4321-441f-8a18-230fed8c7f2b",
+      assetTypeUuid: "123e4567-4c71-472c-9526-230fed48eeeb",
       geoTimestamp: "2025-07-01 12:00:00",
     },
   });
@@ -284,6 +287,7 @@ This endpoint requires the following OAuth scope **manage_assets**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteAssets" method="delete" path="/asset/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

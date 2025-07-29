@@ -20,6 +20,7 @@ Retrieves a paginated list of inbox messages with optional filtering
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listInboxMessages" method="get" path="/inboxmessage.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -93,6 +94,7 @@ Retrieves detailed information about a specific inbox message including attachme
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getInboxMessage" method="get" path="/inboxmessage/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -170,6 +172,7 @@ Marks an inbox message as read
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="markInboxMessageAsRead" method="put" path="/inboxmessage/{uuid}/read.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -247,6 +250,7 @@ Archives or unarchives an inbox message
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="archiveInboxMessage" method="put" path="/inboxmessage/{uuid}/archive.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -325,6 +329,7 @@ Snoozes a message until a specified date/time or unsnoozes it
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="snoozeInboxMessage" method="put" path="/inboxmessage/{uuid}/snooze.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -404,6 +409,7 @@ Converts an inbox message into a new job, optionally using a job template
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="convertInboxMessageToJob" method="post" path="/inboxmessage/{uuid}/convert-to-job.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -480,6 +486,7 @@ Attaches an inbox message to an existing job
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="attachInboxMessageToJob" method="post" path="/inboxmessage/{uuid}/attach-to-job.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -563,6 +570,7 @@ Adds a note to an inbox message
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="addNoteToInboxMessage" method="post" path="/inboxmessage/{uuid}/notes.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

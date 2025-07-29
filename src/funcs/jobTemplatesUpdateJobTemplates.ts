@@ -27,11 +27,6 @@ import { Result } from "../types/fp.js";
 
 /**
  * Update a Job Template
- *
- * @remarks
- *
- * #### OAuth Scope
- * This endpoint requires the following OAuth scope **manage_jobs**.
  */
 export function jobTemplatesUpdateJobTemplates(
   client: ServiceM8Core,

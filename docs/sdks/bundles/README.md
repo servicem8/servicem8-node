@@ -23,6 +23,7 @@ This endpoint supports result filtering. For more information on how to filter t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listBundles" method="get" path="/materialbundle.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -100,6 +101,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createBundles" method="post" path="/materialbundle.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -111,7 +113,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.bundles.createBundles({
-    uuid: "123e4567-33d2-462e-886f-230ef9445c9b",
+    uuid: "123e4567-4627-4e3a-b9fd-230fef0f550b",
     itemNumber: "<value>",
   });
 
@@ -139,7 +141,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await bundlesCreateBundles(serviceM8, {
-    uuid: "123e4567-33d2-462e-886f-230ef9445c9b",
+    uuid: "123e4567-4627-4e3a-b9fd-230fef0f550b",
     itemNumber: "<value>",
   });
   if (res.ok) {
@@ -179,6 +181,7 @@ Retrieve a Bundle
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getBundles" method="get" path="/materialbundle/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -256,6 +259,7 @@ Update a Bundle
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateBundles" method="post" path="/materialbundle/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -269,7 +273,7 @@ async function run() {
   const result = await serviceM8.bundles.updateBundles({
     uuid: "92d0296e-677d-4cfc-a0ec-84e1809ff960",
     materialBundle: {
-      uuid: "123e4567-33d2-462e-886f-230ef9445c9b",
+      uuid: "123e4567-4627-4e3a-b9fd-230fef0f550b",
       itemNumber: "<value>",
     },
   });
@@ -300,7 +304,7 @@ async function run() {
   const res = await bundlesUpdateBundles(serviceM8, {
     uuid: "92d0296e-677d-4cfc-a0ec-84e1809ff960",
     materialBundle: {
-      uuid: "123e4567-33d2-462e-886f-230ef9445c9b",
+      uuid: "123e4567-4627-4e3a-b9fd-230fef0f550b",
       itemNumber: "<value>",
     },
   });
@@ -345,6 +349,7 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteBundles" method="delete" path="/materialbundle/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

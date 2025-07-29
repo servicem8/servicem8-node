@@ -15,6 +15,7 @@ Performs a text search across jobs, companies, and materials. Returns combined r
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="generalSearch" method="get" path="/search.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -93,6 +94,7 @@ Performs a text search within a specific object type. Supported types: job, comp
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="objectSearch" method="get" path="/search/{objectType}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -185,6 +187,7 @@ This isn't just search—it's AI that truly understands what you're looking for 
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="jobEmbeddingSearch" method="get" path="/search/job/embedding.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

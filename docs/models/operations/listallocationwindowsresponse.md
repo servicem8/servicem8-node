@@ -8,7 +8,7 @@
 ```typescript
 const value: components.AllocationWindow[] = [
   {
-    uuid: "123e4567-3aa4-4d7c-b3ad-230efce861fb",
+    uuid: "123e4567-0898-4d03-a862-230fe4c81a7b",
     editDate: "2025-07-01 12:00:00",
   },
 ];

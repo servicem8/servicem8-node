@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **read_customers**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listClients" method="get" path="/company.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,6 +111,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createClients" method="post" path="/company.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -122,8 +124,8 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.clients.createClients({
     name: "<value>",
-    uuid: "123e4567-eb7d-4cfe-8cac-230ef81aea8b",
-    taxRateUuid: "123e4567-35e1-46bc-b3c8-230ef940b6ab",
+    uuid: "123e4567-69da-435b-98c6-230fe9f0aabb",
+    taxRateUuid: "123e4567-8739-443e-9b78-230fe442890b",
   });
 
   console.log(result);
@@ -151,8 +153,8 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await clientsCreateClients(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-eb7d-4cfe-8cac-230ef81aea8b",
-    taxRateUuid: "123e4567-35e1-46bc-b3c8-230ef940b6ab",
+    uuid: "123e4567-69da-435b-98c6-230fe9f0aabb",
+    taxRateUuid: "123e4567-8739-443e-9b78-230fe442890b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -196,6 +198,7 @@ This endpoint requires the following OAuth scope **read_customers**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getClients" method="get" path="/company/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -278,6 +281,7 @@ This endpoint requires the following OAuth scope **manage_customers**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateClients" method="post" path="/company/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -292,8 +296,8 @@ async function run() {
     uuid: "55f6bcc0-3bb7-4509-b13b-98c02374f910",
     company: {
       name: "<value>",
-      uuid: "123e4567-eb7d-4cfe-8cac-230ef81aea8b",
-      taxRateUuid: "123e4567-35e1-46bc-b3c8-230ef940b6ab",
+      uuid: "123e4567-69da-435b-98c6-230fe9f0aabb",
+      taxRateUuid: "123e4567-8739-443e-9b78-230fe442890b",
     },
   });
 
@@ -324,8 +328,8 @@ async function run() {
     uuid: "55f6bcc0-3bb7-4509-b13b-98c02374f910",
     company: {
       name: "<value>",
-      uuid: "123e4567-eb7d-4cfe-8cac-230ef81aea8b",
-      taxRateUuid: "123e4567-35e1-46bc-b3c8-230ef940b6ab",
+      uuid: "123e4567-69da-435b-98c6-230fe9f0aabb",
+      taxRateUuid: "123e4567-8739-443e-9b78-230fe442890b",
     },
   });
   if (res.ok) {
@@ -374,6 +378,7 @@ This endpoint requires the following OAuth scope **manage_customers**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteClients" method="delete" path="/company/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **read_knowledge**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listKnowledgeArticles" method="get" path="/knowledgearticle.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,6 +111,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createKnowledgeArticles" method="post" path="/knowledgearticle.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -121,7 +123,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.knowledgeArticles.createKnowledgeArticles({
-    uuid: "123e4567-7245-400a-9412-230ef616f1db",
+    uuid: "123e4567-bba5-4f75-b771-230fee21aefb",
     name: "<value>",
   });
 
@@ -149,7 +151,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await knowledgeArticlesCreateKnowledgeArticles(serviceM8, {
-    uuid: "123e4567-7245-400a-9412-230ef616f1db",
+    uuid: "123e4567-bba5-4f75-b771-230fee21aefb",
     name: "<value>",
   });
   if (res.ok) {
@@ -194,6 +196,7 @@ This endpoint requires the following OAuth scope **read_knowledge**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getKnowledgeArticles" method="get" path="/knowledgearticle/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -276,6 +279,7 @@ This endpoint requires the following OAuth scope **manage_knowledge**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateKnowledgeArticles" method="post" path="/knowledgearticle/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,7 +293,7 @@ async function run() {
   const result = await serviceM8.knowledgeArticles.updateKnowledgeArticles({
     uuid: "a643fa14-496b-46a5-88bc-4e67bb92bafd",
     knowledgeArticle: {
-      uuid: "123e4567-7245-400a-9412-230ef616f1db",
+      uuid: "123e4567-bba5-4f75-b771-230fee21aefb",
       name: "<value>",
     },
   });
@@ -320,7 +324,7 @@ async function run() {
   const res = await knowledgeArticlesUpdateKnowledgeArticles(serviceM8, {
     uuid: "a643fa14-496b-46a5-88bc-4e67bb92bafd",
     knowledgeArticle: {
-      uuid: "123e4567-7245-400a-9412-230ef616f1db",
+      uuid: "123e4567-bba5-4f75-b771-230fee21aefb",
       name: "<value>",
     },
   });
@@ -370,6 +374,7 @@ This endpoint requires the following OAuth scope **manage_knowledge**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteKnowledgeArticles" method="delete" path="/knowledgearticle/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

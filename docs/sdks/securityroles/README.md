@@ -23,6 +23,7 @@ This endpoint supports result filtering. For more information on how to filter t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listSecurityRoles" method="get" path="/securityrole.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -100,6 +101,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createSecurityRoles" method="post" path="/securityrole.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,7 +114,7 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.securityRoles.createSecurityRoles({
     name: "<value>",
-    uuid: "123e4567-8b53-4950-b440-230efe22fd2b",
+    uuid: "123e4567-0f56-4ce9-b141-230fe59bfdbb",
   });
 
   console.log(result);
@@ -140,7 +142,7 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await securityRolesCreateSecurityRoles(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-8b53-4950-b440-230efe22fd2b",
+    uuid: "123e4567-0f56-4ce9-b141-230fe59bfdbb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -179,6 +181,7 @@ Retrieve a Security Role
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getSecurityRoles" method="get" path="/securityrole/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -256,6 +259,7 @@ Update a Security Role
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateSecurityRoles" method="post" path="/securityrole/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -270,7 +274,7 @@ async function run() {
     uuid: "f0a90dcf-f873-4a05-b043-1b34fcb5507e",
     securityRole: {
       name: "<value>",
-      uuid: "123e4567-8b53-4950-b440-230efe22fd2b",
+      uuid: "123e4567-0f56-4ce9-b141-230fe59bfdbb",
     },
   });
 
@@ -301,7 +305,7 @@ async function run() {
     uuid: "f0a90dcf-f873-4a05-b043-1b34fcb5507e",
     securityRole: {
       name: "<value>",
-      uuid: "123e4567-8b53-4950-b440-230efe22fd2b",
+      uuid: "123e4567-0f56-4ce9-b141-230fe59bfdbb",
     },
   });
   if (res.ok) {
@@ -345,6 +349,7 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteSecurityRoles" method="delete" path="/securityrole/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

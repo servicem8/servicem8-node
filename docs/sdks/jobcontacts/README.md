@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **read_job_contacts**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listJobContacts" method="get" path="/jobcontact.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,6 +111,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createJobContacts" method="post" path="/jobcontact.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -121,8 +123,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobContacts.createJobContacts({
-    uuid: "123e4567-93c7-4bdc-8a73-230ef4aa220b",
-    jobUuid: "123e4567-41c6-46e5-a501-230ef76f6b0b",
+    uuid: "123e4567-9f7c-44e7-b067-230fe54d967b",
+    jobUuid: "123e4567-96ca-4427-a4df-230fe277d45b",
   });
 
   console.log(result);
@@ -149,8 +151,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobContactsCreateJobContacts(serviceM8, {
-    uuid: "123e4567-93c7-4bdc-8a73-230ef4aa220b",
-    jobUuid: "123e4567-41c6-46e5-a501-230ef76f6b0b",
+    uuid: "123e4567-9f7c-44e7-b067-230fe54d967b",
+    jobUuid: "123e4567-96ca-4427-a4df-230fe277d45b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -194,6 +196,7 @@ This endpoint requires the following OAuth scope **read_job_contacts**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getJobContacts" method="get" path="/jobcontact/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -276,6 +279,7 @@ This endpoint requires the following OAuth scope **manage_job_contacts**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateJobContacts" method="post" path="/jobcontact/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,8 +293,8 @@ async function run() {
   const result = await serviceM8.jobContacts.updateJobContacts({
     uuid: "9ce8245c-9fb9-4361-8f7f-25eba557ff71",
     jobContact: {
-      uuid: "123e4567-93c7-4bdc-8a73-230ef4aa220b",
-      jobUuid: "123e4567-41c6-46e5-a501-230ef76f6b0b",
+      uuid: "123e4567-9f7c-44e7-b067-230fe54d967b",
+      jobUuid: "123e4567-96ca-4427-a4df-230fe277d45b",
     },
   });
 
@@ -320,8 +324,8 @@ async function run() {
   const res = await jobContactsUpdateJobContacts(serviceM8, {
     uuid: "9ce8245c-9fb9-4361-8f7f-25eba557ff71",
     jobContact: {
-      uuid: "123e4567-93c7-4bdc-8a73-230ef4aa220b",
-      jobUuid: "123e4567-41c6-46e5-a501-230ef76f6b0b",
+      uuid: "123e4567-9f7c-44e7-b067-230fe54d967b",
+      jobUuid: "123e4567-96ca-4427-a4df-230fe277d45b",
     },
   });
   if (res.ok) {
@@ -370,6 +374,7 @@ This endpoint requires the following OAuth scope **manage_job_contacts**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteJobContacts" method="delete" path="/jobcontact/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

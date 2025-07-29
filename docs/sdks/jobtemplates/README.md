@@ -29,6 +29,7 @@ This endpoint requires the following OAuth scope **read_jobs**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listJobTemplates" method="get" path="/jobtemplate.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -99,11 +100,6 @@ run();
 
 
 			
-#### OAuth Scope
-This endpoint requires the following OAuth scope **manage_jobs**.
-
-			
-			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
@@ -111,6 +107,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createJobTemplates" method="post" path="/jobtemplate.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -122,7 +119,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobTemplates.createJobTemplates({
-    uuid: "123e4567-6a4c-43d4-bb89-230ef320642b",
+    uuid: "123e4567-5198-4d58-9f3b-230fe1ff240b",
   });
 
   console.log(result);
@@ -149,7 +146,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobTemplatesCreateJobTemplates(serviceM8, {
-    uuid: "123e4567-6a4c-43d4-bb89-230ef320642b",
+    uuid: "123e4567-5198-4d58-9f3b-230fe1ff240b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -193,6 +190,7 @@ This endpoint requires the following OAuth scope **read_jobs**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getJobTemplates" method="get" path="/jobtemplate/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -266,15 +264,11 @@ run();
 
 ## updateJobTemplates
 
-
-			
-#### OAuth Scope
-This endpoint requires the following OAuth scope **manage_jobs**.
-
-			
+Update a Job Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateJobTemplates" method="post" path="/jobtemplate/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -288,7 +282,7 @@ async function run() {
   const result = await serviceM8.jobTemplates.updateJobTemplates({
     uuid: "c3cda462-77ac-4f6b-96fc-278f0e8e4121",
     jobTemplate: {
-      uuid: "123e4567-6a4c-43d4-bb89-230ef320642b",
+      uuid: "123e4567-5198-4d58-9f3b-230fe1ff240b",
     },
   });
 
@@ -318,7 +312,7 @@ async function run() {
   const res = await jobTemplatesUpdateJobTemplates(serviceM8, {
     uuid: "c3cda462-77ac-4f6b-96fc-278f0e8e4121",
     jobTemplate: {
-      uuid: "123e4567-6a4c-43d4-bb89-230ef320642b",
+      uuid: "123e4567-5198-4d58-9f3b-230fe1ff240b",
     },
   });
   if (res.ok) {
@@ -359,14 +353,10 @@ run();
 In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
 
 			
-			
-#### OAuth Scope
-This endpoint requires the following OAuth scope **manage_jobs**.
-
-			
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteJobTemplates" method="delete" path="/jobtemplate/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -454,10 +444,11 @@ Only the following fields can be overridden when creating a job from a template:
 Any other fields in the request body will be ignored.
 
 #### OAuth Scope
-This endpoint requires the following OAuth scope **manage_jobs**.
+This endpoint requires the following OAuth scope **create_jobs**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createJobFromTemplate" method="post" path="/jobtemplate/{uuid}/job.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

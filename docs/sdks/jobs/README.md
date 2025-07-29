@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **read_jobs**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listJobs" method="get" path="/job.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,6 +111,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createJobs" method="post" path="/job.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -121,25 +123,25 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobs.createJobs({
-    createdByStaffUuid: "123e4567-8521-4ed2-b37f-230ef650592b",
+    createdByStaffUuid: "123e4567-4057-4a83-844b-230fef0ac94b",
     date: "YYYY-MM-DD",
-    companyUuid: "123e4567-3772-4eab-bfd1-230efd2b4dfb",
+    companyUuid: "123e4567-9907-41d4-adc7-230fe5ce573b",
     status: "Unsuccessful",
     paymentDate: "2025-07-01 12:00:00",
-    paymentActionedByUuid: "123e4567-038b-451e-8909-230ef498b44b",
-    categoryUuid: "123e4567-e98e-4839-a2ab-230ef0df73fb",
+    paymentActionedByUuid: "123e4567-57de-41ae-81fd-230fe1c62a4b",
+    categoryUuid: "123e4567-d0e8-4fbe-9bec-230fe274116b",
     invoiceSentStamp: "2025-07-01 12:00:00",
-    queueUuid: "123e4567-5f1c-4959-ba25-230ef5e4576b",
+    queueUuid: "123e4567-7deb-405b-aeab-230fe120d4fb",
     queueExpiryDate: "2025-07-01 12:00:00",
-    queueAssignedStaffUuid: "123e4567-6b60-484d-aa31-230ef05fb92b",
+    queueAssignedStaffUuid: "123e4567-ad48-4bee-af18-230fe174423b",
     quoteDate: "2025-07-01 12:00:00",
     quoteSentStamp: "2025-07-01 12:00:00",
     workOrderDate: "2025-07-01 12:00:00",
-    uuid: "123e4567-7bae-4ed0-9c6e-230ef148febb",
+    uuid: "123e4567-57d3-4385-87e9-230febc4384b",
     paymentProcessedStamp: "2025-07-01 12:00:00",
     paymentReceivedStamp: "2025-07-01 12:00:00",
     completionDate: "2025-07-01 12:00:00",
-    completionActionedByUuid: "123e4567-6645-4b13-a439-230ef8a8073b",
+    completionActionedByUuid: "123e4567-ec7e-4a1a-b65c-230fed7f5feb",
     unsuccessfulDate: "2025-07-01 12:00:00",
     jobIsScheduledUntilStamp: "2025-07-01 12:00:00",
   });
@@ -168,25 +170,25 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobsCreateJobs(serviceM8, {
-    createdByStaffUuid: "123e4567-8521-4ed2-b37f-230ef650592b",
+    createdByStaffUuid: "123e4567-4057-4a83-844b-230fef0ac94b",
     date: "YYYY-MM-DD",
-    companyUuid: "123e4567-3772-4eab-bfd1-230efd2b4dfb",
+    companyUuid: "123e4567-9907-41d4-adc7-230fe5ce573b",
     status: "Unsuccessful",
     paymentDate: "2025-07-01 12:00:00",
-    paymentActionedByUuid: "123e4567-038b-451e-8909-230ef498b44b",
-    categoryUuid: "123e4567-e98e-4839-a2ab-230ef0df73fb",
+    paymentActionedByUuid: "123e4567-57de-41ae-81fd-230fe1c62a4b",
+    categoryUuid: "123e4567-d0e8-4fbe-9bec-230fe274116b",
     invoiceSentStamp: "2025-07-01 12:00:00",
-    queueUuid: "123e4567-5f1c-4959-ba25-230ef5e4576b",
+    queueUuid: "123e4567-7deb-405b-aeab-230fe120d4fb",
     queueExpiryDate: "2025-07-01 12:00:00",
-    queueAssignedStaffUuid: "123e4567-6b60-484d-aa31-230ef05fb92b",
+    queueAssignedStaffUuid: "123e4567-ad48-4bee-af18-230fe174423b",
     quoteDate: "2025-07-01 12:00:00",
     quoteSentStamp: "2025-07-01 12:00:00",
     workOrderDate: "2025-07-01 12:00:00",
-    uuid: "123e4567-7bae-4ed0-9c6e-230ef148febb",
+    uuid: "123e4567-57d3-4385-87e9-230febc4384b",
     paymentProcessedStamp: "2025-07-01 12:00:00",
     paymentReceivedStamp: "2025-07-01 12:00:00",
     completionDate: "2025-07-01 12:00:00",
-    completionActionedByUuid: "123e4567-6645-4b13-a439-230ef8a8073b",
+    completionActionedByUuid: "123e4567-ec7e-4a1a-b65c-230fed7f5feb",
     unsuccessfulDate: "2025-07-01 12:00:00",
     jobIsScheduledUntilStamp: "2025-07-01 12:00:00",
   });
@@ -232,6 +234,7 @@ This endpoint requires the following OAuth scope **read_jobs**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getJobs" method="get" path="/job/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -314,6 +317,7 @@ This endpoint requires the following OAuth scope **manage_jobs**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateJobs" method="post" path="/job/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -327,25 +331,25 @@ async function run() {
   const result = await serviceM8.jobs.updateJobs({
     uuid: "f751bf5c-f1f2-4a20-8df3-7628082340b1",
     job: {
-      createdByStaffUuid: "123e4567-8521-4ed2-b37f-230ef650592b",
+      createdByStaffUuid: "123e4567-4057-4a83-844b-230fef0ac94b",
       date: "YYYY-MM-DD",
-      companyUuid: "123e4567-3772-4eab-bfd1-230efd2b4dfb",
+      companyUuid: "123e4567-9907-41d4-adc7-230fe5ce573b",
       status: "Work Order",
       paymentDate: "2025-07-01 12:00:00",
-      paymentActionedByUuid: "123e4567-038b-451e-8909-230ef498b44b",
-      categoryUuid: "123e4567-e98e-4839-a2ab-230ef0df73fb",
+      paymentActionedByUuid: "123e4567-57de-41ae-81fd-230fe1c62a4b",
+      categoryUuid: "123e4567-d0e8-4fbe-9bec-230fe274116b",
       invoiceSentStamp: "2025-07-01 12:00:00",
-      queueUuid: "123e4567-5f1c-4959-ba25-230ef5e4576b",
+      queueUuid: "123e4567-7deb-405b-aeab-230fe120d4fb",
       queueExpiryDate: "2025-07-01 12:00:00",
-      queueAssignedStaffUuid: "123e4567-6b60-484d-aa31-230ef05fb92b",
+      queueAssignedStaffUuid: "123e4567-ad48-4bee-af18-230fe174423b",
       quoteDate: "2025-07-01 12:00:00",
       quoteSentStamp: "2025-07-01 12:00:00",
       workOrderDate: "2025-07-01 12:00:00",
-      uuid: "123e4567-7bae-4ed0-9c6e-230ef148febb",
+      uuid: "123e4567-57d3-4385-87e9-230febc4384b",
       paymentProcessedStamp: "2025-07-01 12:00:00",
       paymentReceivedStamp: "2025-07-01 12:00:00",
       completionDate: "2025-07-01 12:00:00",
-      completionActionedByUuid: "123e4567-6645-4b13-a439-230ef8a8073b",
+      completionActionedByUuid: "123e4567-ec7e-4a1a-b65c-230fed7f5feb",
       unsuccessfulDate: "2025-07-01 12:00:00",
       jobIsScheduledUntilStamp: "2025-07-01 12:00:00",
     },
@@ -377,25 +381,25 @@ async function run() {
   const res = await jobsUpdateJobs(serviceM8, {
     uuid: "f751bf5c-f1f2-4a20-8df3-7628082340b1",
     job: {
-      createdByStaffUuid: "123e4567-8521-4ed2-b37f-230ef650592b",
+      createdByStaffUuid: "123e4567-4057-4a83-844b-230fef0ac94b",
       date: "YYYY-MM-DD",
-      companyUuid: "123e4567-3772-4eab-bfd1-230efd2b4dfb",
+      companyUuid: "123e4567-9907-41d4-adc7-230fe5ce573b",
       status: "Work Order",
       paymentDate: "2025-07-01 12:00:00",
-      paymentActionedByUuid: "123e4567-038b-451e-8909-230ef498b44b",
-      categoryUuid: "123e4567-e98e-4839-a2ab-230ef0df73fb",
+      paymentActionedByUuid: "123e4567-57de-41ae-81fd-230fe1c62a4b",
+      categoryUuid: "123e4567-d0e8-4fbe-9bec-230fe274116b",
       invoiceSentStamp: "2025-07-01 12:00:00",
-      queueUuid: "123e4567-5f1c-4959-ba25-230ef5e4576b",
+      queueUuid: "123e4567-7deb-405b-aeab-230fe120d4fb",
       queueExpiryDate: "2025-07-01 12:00:00",
-      queueAssignedStaffUuid: "123e4567-6b60-484d-aa31-230ef05fb92b",
+      queueAssignedStaffUuid: "123e4567-ad48-4bee-af18-230fe174423b",
       quoteDate: "2025-07-01 12:00:00",
       quoteSentStamp: "2025-07-01 12:00:00",
       workOrderDate: "2025-07-01 12:00:00",
-      uuid: "123e4567-7bae-4ed0-9c6e-230ef148febb",
+      uuid: "123e4567-57d3-4385-87e9-230febc4384b",
       paymentProcessedStamp: "2025-07-01 12:00:00",
       paymentReceivedStamp: "2025-07-01 12:00:00",
       completionDate: "2025-07-01 12:00:00",
-      completionActionedByUuid: "123e4567-6645-4b13-a439-230ef8a8073b",
+      completionActionedByUuid: "123e4567-ec7e-4a1a-b65c-230fed7f5feb",
       unsuccessfulDate: "2025-07-01 12:00:00",
       jobIsScheduledUntilStamp: "2025-07-01 12:00:00",
     },
@@ -446,6 +450,7 @@ This endpoint requires the following OAuth scope **manage_jobs**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteJobs" method="delete" path="/job/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

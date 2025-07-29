@@ -23,6 +23,7 @@ This endpoint supports result filtering. For more information on how to filter t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listJobMaterialBundles" method="get" path="/jobmaterialbundle.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -100,6 +101,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createJobMaterialBundles" method="post" path="/jobmaterialbundle.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -111,9 +113,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterialBundles.createJobMaterialBundles({
-    uuid: "123e4567-32ee-4e74-87e6-230efd9e7fcb",
-    materialBundleUuid: "123e4567-d90d-4238-a6f4-230ef2a2502b",
-    jobUuid: "123e4567-7a1f-40d7-8a02-230efb2f871b",
+    uuid: "123e4567-c6a0-4dde-ab6a-230fe2794feb",
+    materialBundleUuid: "123e4567-46e9-4fe2-be72-230feaa74f9b",
+    jobUuid: "123e4567-027a-4e3c-8eba-230feef8b12b",
   });
 
   console.log(result);
@@ -140,9 +142,9 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialBundlesCreateJobMaterialBundles(serviceM8, {
-    uuid: "123e4567-32ee-4e74-87e6-230efd9e7fcb",
-    materialBundleUuid: "123e4567-d90d-4238-a6f4-230ef2a2502b",
-    jobUuid: "123e4567-7a1f-40d7-8a02-230efb2f871b",
+    uuid: "123e4567-c6a0-4dde-ab6a-230fe2794feb",
+    materialBundleUuid: "123e4567-46e9-4fe2-be72-230feaa74f9b",
+    jobUuid: "123e4567-027a-4e3c-8eba-230feef8b12b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -181,6 +183,7 @@ Retrieve a Job Material Bundle
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getJobMaterialBundles" method="get" path="/jobmaterialbundle/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -258,6 +261,7 @@ Update a Job Material Bundle
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateJobMaterialBundles" method="post" path="/jobmaterialbundle/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -271,9 +275,9 @@ async function run() {
   const result = await serviceM8.jobMaterialBundles.updateJobMaterialBundles({
     uuid: "6419b5e7-8edd-4c69-9648-b6ed7431256b",
     jobMaterialBundle: {
-      uuid: "123e4567-32ee-4e74-87e6-230efd9e7fcb",
-      materialBundleUuid: "123e4567-d90d-4238-a6f4-230ef2a2502b",
-      jobUuid: "123e4567-7a1f-40d7-8a02-230efb2f871b",
+      uuid: "123e4567-c6a0-4dde-ab6a-230fe2794feb",
+      materialBundleUuid: "123e4567-46e9-4fe2-be72-230feaa74f9b",
+      jobUuid: "123e4567-027a-4e3c-8eba-230feef8b12b",
     },
   });
 
@@ -303,9 +307,9 @@ async function run() {
   const res = await jobMaterialBundlesUpdateJobMaterialBundles(serviceM8, {
     uuid: "6419b5e7-8edd-4c69-9648-b6ed7431256b",
     jobMaterialBundle: {
-      uuid: "123e4567-32ee-4e74-87e6-230efd9e7fcb",
-      materialBundleUuid: "123e4567-d90d-4238-a6f4-230ef2a2502b",
-      jobUuid: "123e4567-7a1f-40d7-8a02-230efb2f871b",
+      uuid: "123e4567-c6a0-4dde-ab6a-230fe2794feb",
+      materialBundleUuid: "123e4567-46e9-4fe2-be72-230feaa74f9b",
+      jobUuid: "123e4567-027a-4e3c-8eba-230feef8b12b",
     },
   });
   if (res.ok) {
@@ -349,6 +353,7 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteJobMaterialBundles" method="delete" path="/jobmaterialbundle/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

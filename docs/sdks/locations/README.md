@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **read_locations**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listLocations" method="get" path="/location.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,6 +111,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createLocations" method="post" path="/location.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -122,7 +124,7 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.locations.createLocations({
     name: "<value>",
-    uuid: "123e4567-9424-413c-9e41-230eff73abfb",
+    uuid: "123e4567-7a18-48fd-b1f3-230fea0c330b",
   });
 
   console.log(result);
@@ -150,7 +152,7 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await locationsCreateLocations(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-9424-413c-9e41-230eff73abfb",
+    uuid: "123e4567-7a18-48fd-b1f3-230fea0c330b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -194,6 +196,7 @@ This endpoint requires the following OAuth scope **read_locations**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getLocations" method="get" path="/location/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -276,6 +279,7 @@ This endpoint requires the following OAuth scope **manage_locations**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateLocations" method="post" path="/location/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -290,7 +294,7 @@ async function run() {
     uuid: "fee3b1fa-ab4e-4094-823d-0885a2f7b69f",
     location: {
       name: "<value>",
-      uuid: "123e4567-9424-413c-9e41-230eff73abfb",
+      uuid: "123e4567-7a18-48fd-b1f3-230fea0c330b",
     },
   });
 
@@ -321,7 +325,7 @@ async function run() {
     uuid: "fee3b1fa-ab4e-4094-823d-0885a2f7b69f",
     location: {
       name: "<value>",
-      uuid: "123e4567-9424-413c-9e41-230eff73abfb",
+      uuid: "123e4567-7a18-48fd-b1f3-230fea0c330b",
     },
   });
   if (res.ok) {
@@ -370,6 +374,7 @@ This endpoint requires the following OAuth scope **manage_locations**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteLocations" method="delete" path="/location/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

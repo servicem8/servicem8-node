@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **read_job_queues**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listJobQueues" method="get" path="/queue.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,6 +111,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createJobQueues" method="post" path="/queue.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -121,7 +123,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobQueues.createJobQueues({
-    uuid: "123e4567-029e-4937-8e13-230ef65ea03b",
+    uuid: "123e4567-dc23-42e2-ba77-230fe3e4264b",
   });
 
   console.log(result);
@@ -148,7 +150,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobQueuesCreateJobQueues(serviceM8, {
-    uuid: "123e4567-029e-4937-8e13-230ef65ea03b",
+    uuid: "123e4567-dc23-42e2-ba77-230fe3e4264b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -192,6 +194,7 @@ This endpoint requires the following OAuth scope **read_job_queues**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getJobQueues" method="get" path="/queue/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -274,6 +277,7 @@ This endpoint requires the following OAuth scope **manage_job_queues**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateJobQueues" method="post" path="/queue/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -287,7 +291,7 @@ async function run() {
   const result = await serviceM8.jobQueues.updateJobQueues({
     uuid: "d5fb31ee-995a-4e2f-8fa6-92068fea17a2",
     queue: {
-      uuid: "123e4567-029e-4937-8e13-230ef65ea03b",
+      uuid: "123e4567-dc23-42e2-ba77-230fe3e4264b",
     },
   });
 
@@ -317,7 +321,7 @@ async function run() {
   const res = await jobQueuesUpdateJobQueues(serviceM8, {
     uuid: "d5fb31ee-995a-4e2f-8fa6-92068fea17a2",
     queue: {
-      uuid: "123e4567-029e-4937-8e13-230ef65ea03b",
+      uuid: "123e4567-dc23-42e2-ba77-230fe3e4264b",
     },
   });
   if (res.ok) {
@@ -366,6 +370,7 @@ This endpoint requires the following OAuth scope **manage_job_queues**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteJobQueues" method="delete" path="/queue/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

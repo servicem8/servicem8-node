@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **vendor**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listVendors" method="get" path="/vendor.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -107,6 +108,7 @@ This endpoint requires the following OAuth scope **vendor**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getVendors" method="get" path="/vendor/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -186,6 +188,7 @@ Vendor account information
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateVendors" method="post" path="/vendor/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -199,7 +202,7 @@ async function run() {
   const result = await serviceM8.vendors.updateVendors({
     uuid: "d90cffed-8677-4cbe-ab38-b734ac463633",
     vendor: {
-      uuid: "123e4567-c34e-4043-8dbb-230efb5aed3b",
+      uuid: "123e4567-3d1f-4e71-b154-230fef80747b",
       name: "<value>",
     },
   });
@@ -230,7 +233,7 @@ async function run() {
   const res = await vendorsUpdateVendors(serviceM8, {
     uuid: "d90cffed-8677-4cbe-ab38-b734ac463633",
     vendor: {
-      uuid: "123e4567-c34e-4043-8dbb-230efb5aed3b",
+      uuid: "123e4567-3d1f-4e71-b154-230fef80747b",
       name: "<value>",
     },
   });

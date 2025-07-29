@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **read_tasks**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listTasks" method="get" path="/task.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,6 +111,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createTasks" method="post" path="/task.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -123,12 +125,12 @@ async function run() {
   const result = await serviceM8.tasks.createTasks({
     dueDate: "YYYY-MM-DD",
     name: "<value>",
-    relatedObjectUuid: "123e4567-f62b-467f-992f-230efb238e4b",
+    relatedObjectUuid: "123e4567-e699-48bf-b010-230fe081a49b",
     completedTimestamp: "2025-07-01 12:00:00",
-    completedByStaffUuid: "123e4567-4fb4-43da-8bb4-230efb266a2b",
-    assignedToStaffUuid: "123e4567-506d-4f11-8069-230efa689e7b",
-    uuid: "123e4567-db75-4d5c-8d71-230ef75a709b",
-    createdByStaffUuid: "123e4567-1ce7-4bcc-8cd4-230ef66a55eb",
+    completedByStaffUuid: "123e4567-2c9b-4ee4-8690-230fe129c02b",
+    assignedToStaffUuid: "123e4567-9759-4edf-be35-230fe9d3657b",
+    uuid: "123e4567-4ff3-4cf8-9c1b-230fe572e3db",
+    createdByStaffUuid: "123e4567-3517-490b-8845-230fe238b27b",
     createDate: "2025-07-01 12:00:00",
   });
 
@@ -158,12 +160,12 @@ async function run() {
   const res = await tasksCreateTasks(serviceM8, {
     dueDate: "YYYY-MM-DD",
     name: "<value>",
-    relatedObjectUuid: "123e4567-f62b-467f-992f-230efb238e4b",
+    relatedObjectUuid: "123e4567-e699-48bf-b010-230fe081a49b",
     completedTimestamp: "2025-07-01 12:00:00",
-    completedByStaffUuid: "123e4567-4fb4-43da-8bb4-230efb266a2b",
-    assignedToStaffUuid: "123e4567-506d-4f11-8069-230efa689e7b",
-    uuid: "123e4567-db75-4d5c-8d71-230ef75a709b",
-    createdByStaffUuid: "123e4567-1ce7-4bcc-8cd4-230ef66a55eb",
+    completedByStaffUuid: "123e4567-2c9b-4ee4-8690-230fe129c02b",
+    assignedToStaffUuid: "123e4567-9759-4edf-be35-230fe9d3657b",
+    uuid: "123e4567-4ff3-4cf8-9c1b-230fe572e3db",
+    createdByStaffUuid: "123e4567-3517-490b-8845-230fe238b27b",
     createDate: "2025-07-01 12:00:00",
   });
   if (res.ok) {
@@ -208,6 +210,7 @@ This endpoint requires the following OAuth scope **read_tasks**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getTasks" method="get" path="/task/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -290,6 +293,7 @@ This endpoint requires the following OAuth scope **manage_tasks**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateTasks" method="post" path="/task/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -305,12 +309,12 @@ async function run() {
     task: {
       dueDate: "YYYY-MM-DD",
       name: "<value>",
-      relatedObjectUuid: "123e4567-f62b-467f-992f-230efb238e4b",
+      relatedObjectUuid: "123e4567-e699-48bf-b010-230fe081a49b",
       completedTimestamp: "2025-07-01 12:00:00",
-      completedByStaffUuid: "123e4567-4fb4-43da-8bb4-230efb266a2b",
-      assignedToStaffUuid: "123e4567-506d-4f11-8069-230efa689e7b",
-      uuid: "123e4567-db75-4d5c-8d71-230ef75a709b",
-      createdByStaffUuid: "123e4567-1ce7-4bcc-8cd4-230ef66a55eb",
+      completedByStaffUuid: "123e4567-2c9b-4ee4-8690-230fe129c02b",
+      assignedToStaffUuid: "123e4567-9759-4edf-be35-230fe9d3657b",
+      uuid: "123e4567-4ff3-4cf8-9c1b-230fe572e3db",
+      createdByStaffUuid: "123e4567-3517-490b-8845-230fe238b27b",
       createDate: "2025-07-01 12:00:00",
     },
   });
@@ -343,12 +347,12 @@ async function run() {
     task: {
       dueDate: "YYYY-MM-DD",
       name: "<value>",
-      relatedObjectUuid: "123e4567-f62b-467f-992f-230efb238e4b",
+      relatedObjectUuid: "123e4567-e699-48bf-b010-230fe081a49b",
       completedTimestamp: "2025-07-01 12:00:00",
-      completedByStaffUuid: "123e4567-4fb4-43da-8bb4-230efb266a2b",
-      assignedToStaffUuid: "123e4567-506d-4f11-8069-230efa689e7b",
-      uuid: "123e4567-db75-4d5c-8d71-230ef75a709b",
-      createdByStaffUuid: "123e4567-1ce7-4bcc-8cd4-230ef66a55eb",
+      completedByStaffUuid: "123e4567-2c9b-4ee4-8690-230fe129c02b",
+      assignedToStaffUuid: "123e4567-9759-4edf-be35-230fe9d3657b",
+      uuid: "123e4567-4ff3-4cf8-9c1b-230fe572e3db",
+      createdByStaffUuid: "123e4567-3517-490b-8845-230fe238b27b",
       createDate: "2025-07-01 12:00:00",
     },
   });
@@ -398,6 +402,7 @@ This endpoint requires the following OAuth scope **manage_tasks**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteTasks" method="delete" path="/task/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

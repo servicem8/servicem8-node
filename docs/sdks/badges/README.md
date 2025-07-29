@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **manage_badges**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listBadges" method="get" path="/badge.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,6 +111,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createBadges" method="post" path="/badge.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -121,10 +123,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.badges.createBadges({
-    uuid: "123e4567-c779-48ee-a624-230ef7b8ebab",
+    uuid: "123e4567-08e6-458b-ba61-230fe33a77bb",
     name: "<value>",
-    regardingFormUuid: "123e4567-d138-4f38-b69e-230ef89a4acb",
-    regardingAssetTypeUuid: "123e4567-573a-48a8-a5a2-230ef184b04b",
+    regardingFormUuid: "123e4567-68da-4367-bf55-230fe94c5bfb",
+    regardingAssetTypeUuid: "123e4567-36ba-4e01-8120-230fe19fbe6b",
   });
 
   console.log(result);
@@ -151,10 +153,10 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await badgesCreateBadges(serviceM8, {
-    uuid: "123e4567-c779-48ee-a624-230ef7b8ebab",
+    uuid: "123e4567-08e6-458b-ba61-230fe33a77bb",
     name: "<value>",
-    regardingFormUuid: "123e4567-d138-4f38-b69e-230ef89a4acb",
-    regardingAssetTypeUuid: "123e4567-573a-48a8-a5a2-230ef184b04b",
+    regardingFormUuid: "123e4567-68da-4367-bf55-230fe94c5bfb",
+    regardingAssetTypeUuid: "123e4567-36ba-4e01-8120-230fe19fbe6b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -198,6 +200,7 @@ This endpoint requires the following OAuth scope **manage_badges**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getBadges" method="get" path="/badge/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -280,6 +283,7 @@ This endpoint requires the following OAuth scope **manage_badges**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateBadges" method="post" path="/badge/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -293,10 +297,10 @@ async function run() {
   const result = await serviceM8.badges.updateBadges({
     uuid: "444f2947-b065-4aac-8159-0ffca6278fd2",
     badge: {
-      uuid: "123e4567-c779-48ee-a624-230ef7b8ebab",
+      uuid: "123e4567-08e6-458b-ba61-230fe33a77bb",
       name: "<value>",
-      regardingFormUuid: "123e4567-d138-4f38-b69e-230ef89a4acb",
-      regardingAssetTypeUuid: "123e4567-573a-48a8-a5a2-230ef184b04b",
+      regardingFormUuid: "123e4567-68da-4367-bf55-230fe94c5bfb",
+      regardingAssetTypeUuid: "123e4567-36ba-4e01-8120-230fe19fbe6b",
     },
   });
 
@@ -326,10 +330,10 @@ async function run() {
   const res = await badgesUpdateBadges(serviceM8, {
     uuid: "444f2947-b065-4aac-8159-0ffca6278fd2",
     badge: {
-      uuid: "123e4567-c779-48ee-a624-230ef7b8ebab",
+      uuid: "123e4567-08e6-458b-ba61-230fe33a77bb",
       name: "<value>",
-      regardingFormUuid: "123e4567-d138-4f38-b69e-230ef89a4acb",
-      regardingAssetTypeUuid: "123e4567-573a-48a8-a5a2-230ef184b04b",
+      regardingFormUuid: "123e4567-68da-4367-bf55-230fe94c5bfb",
+      regardingAssetTypeUuid: "123e4567-36ba-4e01-8120-230fe19fbe6b",
     },
   });
   if (res.ok) {
@@ -378,6 +382,7 @@ This endpoint requires the following OAuth scope **manage_badges**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteBadges" method="delete" path="/badge/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

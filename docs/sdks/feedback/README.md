@@ -23,6 +23,7 @@ This endpoint supports result filtering. For more information on how to filter t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listFeedback" method="get" path="/feedback.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -100,6 +101,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createFeedback" method="post" path="/feedback.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -111,8 +113,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.feedback.createFeedback({
-    uuid: "123e4567-d154-4085-8061-230efefdb68b",
-    relatedObjectUuid: "123e4567-2518-44b5-b1f1-230ef2b4254b",
+    uuid: "123e4567-59ff-490e-96c3-230fe4d8f08b",
+    relatedObjectUuid: "123e4567-bcac-4403-854b-230fe744c5cb",
   });
 
   console.log(result);
@@ -139,8 +141,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await feedbackCreateFeedback(serviceM8, {
-    uuid: "123e4567-d154-4085-8061-230efefdb68b",
-    relatedObjectUuid: "123e4567-2518-44b5-b1f1-230ef2b4254b",
+    uuid: "123e4567-59ff-490e-96c3-230fe4d8f08b",
+    relatedObjectUuid: "123e4567-bcac-4403-854b-230fe744c5cb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -179,6 +181,7 @@ Retrieve a Feedback
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getFeedback" method="get" path="/feedback/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -256,6 +259,7 @@ Update a Feedback
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateFeedback" method="post" path="/feedback/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -269,8 +273,8 @@ async function run() {
   const result = await serviceM8.feedback.updateFeedback({
     uuid: "4b9b8627-caa7-402a-94b0-02cb8641823c",
     feedback: {
-      uuid: "123e4567-d154-4085-8061-230efefdb68b",
-      relatedObjectUuid: "123e4567-2518-44b5-b1f1-230ef2b4254b",
+      uuid: "123e4567-59ff-490e-96c3-230fe4d8f08b",
+      relatedObjectUuid: "123e4567-bcac-4403-854b-230fe744c5cb",
     },
   });
 
@@ -300,8 +304,8 @@ async function run() {
   const res = await feedbackUpdateFeedback(serviceM8, {
     uuid: "4b9b8627-caa7-402a-94b0-02cb8641823c",
     feedback: {
-      uuid: "123e4567-d154-4085-8061-230efefdb68b",
-      relatedObjectUuid: "123e4567-2518-44b5-b1f1-230ef2b4254b",
+      uuid: "123e4567-59ff-490e-96c3-230fe4d8f08b",
+      relatedObjectUuid: "123e4567-bcac-4403-854b-230fe744c5cb",
     },
   });
   if (res.ok) {
@@ -345,6 +349,7 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteFeedback" method="delete" path="/feedback/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

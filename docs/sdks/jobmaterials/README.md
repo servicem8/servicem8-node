@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **read_job_materials**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listJobMaterials" method="get" path="/jobmaterial.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,6 +111,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createJobMaterials" method="post" path="/jobmaterial.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -121,12 +123,12 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterials.createJobMaterials({
-    uuid: "123e4567-8941-48f5-b9c8-230ef61c4a6b",
-    jobUuid: "123e4567-451b-483f-852b-230efaae14ab",
-    materialUuid: "123e4567-5c91-4ab1-be3d-230ef723a4db",
+    uuid: "123e4567-0275-4a8c-9096-230fe9ab8c1b",
+    jobUuid: "123e4567-f9bf-461a-b943-230fe35fa24b",
+    materialUuid: "123e4567-4cd7-43c0-837a-230fe17f9e5b",
     quantity: "<value>",
-    taxRateUuid: "123e4567-a1df-450c-bc18-230efc96b08b",
-    jobMaterialBundleUuid: "123e4567-a3fe-4ad6-9f55-230ef136a87b",
+    taxRateUuid: "123e4567-5e92-4920-8302-230fea73e15b",
+    jobMaterialBundleUuid: "123e4567-be37-452a-8e53-230fe495888b",
   });
 
   console.log(result);
@@ -153,12 +155,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialsCreateJobMaterials(serviceM8, {
-    uuid: "123e4567-8941-48f5-b9c8-230ef61c4a6b",
-    jobUuid: "123e4567-451b-483f-852b-230efaae14ab",
-    materialUuid: "123e4567-5c91-4ab1-be3d-230ef723a4db",
+    uuid: "123e4567-0275-4a8c-9096-230fe9ab8c1b",
+    jobUuid: "123e4567-f9bf-461a-b943-230fe35fa24b",
+    materialUuid: "123e4567-4cd7-43c0-837a-230fe17f9e5b",
     quantity: "<value>",
-    taxRateUuid: "123e4567-a1df-450c-bc18-230efc96b08b",
-    jobMaterialBundleUuid: "123e4567-a3fe-4ad6-9f55-230ef136a87b",
+    taxRateUuid: "123e4567-5e92-4920-8302-230fea73e15b",
+    jobMaterialBundleUuid: "123e4567-be37-452a-8e53-230fe495888b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -202,6 +204,7 @@ This endpoint requires the following OAuth scope **read_job_materials**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getJobMaterials" method="get" path="/jobmaterial/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -284,6 +287,7 @@ This endpoint requires the following OAuth scope **manage_job_materials**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateJobMaterials" method="post" path="/jobmaterial/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -297,12 +301,12 @@ async function run() {
   const result = await serviceM8.jobMaterials.updateJobMaterials({
     uuid: "0afa4bc5-4269-47e6-81bd-da437fd2e097",
     jobMaterial: {
-      uuid: "123e4567-8941-48f5-b9c8-230ef61c4a6b",
-      jobUuid: "123e4567-451b-483f-852b-230efaae14ab",
-      materialUuid: "123e4567-5c91-4ab1-be3d-230ef723a4db",
+      uuid: "123e4567-0275-4a8c-9096-230fe9ab8c1b",
+      jobUuid: "123e4567-f9bf-461a-b943-230fe35fa24b",
+      materialUuid: "123e4567-4cd7-43c0-837a-230fe17f9e5b",
       quantity: "<value>",
-      taxRateUuid: "123e4567-a1df-450c-bc18-230efc96b08b",
-      jobMaterialBundleUuid: "123e4567-a3fe-4ad6-9f55-230ef136a87b",
+      taxRateUuid: "123e4567-5e92-4920-8302-230fea73e15b",
+      jobMaterialBundleUuid: "123e4567-be37-452a-8e53-230fe495888b",
     },
   });
 
@@ -332,12 +336,12 @@ async function run() {
   const res = await jobMaterialsUpdateJobMaterials(serviceM8, {
     uuid: "0afa4bc5-4269-47e6-81bd-da437fd2e097",
     jobMaterial: {
-      uuid: "123e4567-8941-48f5-b9c8-230ef61c4a6b",
-      jobUuid: "123e4567-451b-483f-852b-230efaae14ab",
-      materialUuid: "123e4567-5c91-4ab1-be3d-230ef723a4db",
+      uuid: "123e4567-0275-4a8c-9096-230fe9ab8c1b",
+      jobUuid: "123e4567-f9bf-461a-b943-230fe35fa24b",
+      materialUuid: "123e4567-4cd7-43c0-837a-230fe17f9e5b",
       quantity: "<value>",
-      taxRateUuid: "123e4567-a1df-450c-bc18-230efc96b08b",
-      jobMaterialBundleUuid: "123e4567-a3fe-4ad6-9f55-230ef136a87b",
+      taxRateUuid: "123e4567-5e92-4920-8302-230fea73e15b",
+      jobMaterialBundleUuid: "123e4567-be37-452a-8e53-230fe495888b",
     },
   });
   if (res.ok) {
@@ -386,6 +390,7 @@ This endpoint requires the following OAuth scope **manage_job_materials**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteJobMaterials" method="delete" path="/jobmaterial/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

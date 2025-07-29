@@ -23,6 +23,7 @@ This endpoint supports result filtering. For more information on how to filter t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listJobPayments" method="get" path="/jobpayment.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -100,6 +101,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createJobPayments" method="post" path="/jobpayment.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -111,10 +113,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobPayments.createJobPayments({
-    uuid: "123e4567-aced-4e39-b362-230ef417f80b",
-    jobUuid: "123e4567-59d8-4644-b7ee-230ef8af34eb",
-    actionedByUuid: "123e4567-879c-48f7-9dbe-230ef6932ddb",
-    attachmentUuid: "123e4567-a6f9-47b7-a99d-230ef4ffe55b",
+    uuid: "123e4567-3f06-435f-bbf6-230feda2990b",
+    jobUuid: "123e4567-3c3c-4296-8572-230fea473a7b",
+    actionedByUuid: "123e4567-78d5-4963-a398-230fe8f75d7b",
+    attachmentUuid: "123e4567-5f4f-40b7-8d32-230fec16a67b",
   });
 
   console.log(result);
@@ -141,10 +143,10 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobPaymentsCreateJobPayments(serviceM8, {
-    uuid: "123e4567-aced-4e39-b362-230ef417f80b",
-    jobUuid: "123e4567-59d8-4644-b7ee-230ef8af34eb",
-    actionedByUuid: "123e4567-879c-48f7-9dbe-230ef6932ddb",
-    attachmentUuid: "123e4567-a6f9-47b7-a99d-230ef4ffe55b",
+    uuid: "123e4567-3f06-435f-bbf6-230feda2990b",
+    jobUuid: "123e4567-3c3c-4296-8572-230fea473a7b",
+    actionedByUuid: "123e4567-78d5-4963-a398-230fe8f75d7b",
+    attachmentUuid: "123e4567-5f4f-40b7-8d32-230fec16a67b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -183,6 +185,7 @@ Retrieve a Job Payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getJobPayments" method="get" path="/jobpayment/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -260,6 +263,7 @@ Update a Job Payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateJobPayments" method="post" path="/jobpayment/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -273,10 +277,10 @@ async function run() {
   const result = await serviceM8.jobPayments.updateJobPayments({
     uuid: "11677578-ba16-4ac4-b2d7-62ad0de4655c",
     jobPayment: {
-      uuid: "123e4567-aced-4e39-b362-230ef417f80b",
-      jobUuid: "123e4567-59d8-4644-b7ee-230ef8af34eb",
-      actionedByUuid: "123e4567-879c-48f7-9dbe-230ef6932ddb",
-      attachmentUuid: "123e4567-a6f9-47b7-a99d-230ef4ffe55b",
+      uuid: "123e4567-3f06-435f-bbf6-230feda2990b",
+      jobUuid: "123e4567-3c3c-4296-8572-230fea473a7b",
+      actionedByUuid: "123e4567-78d5-4963-a398-230fe8f75d7b",
+      attachmentUuid: "123e4567-5f4f-40b7-8d32-230fec16a67b",
     },
   });
 
@@ -306,10 +310,10 @@ async function run() {
   const res = await jobPaymentsUpdateJobPayments(serviceM8, {
     uuid: "11677578-ba16-4ac4-b2d7-62ad0de4655c",
     jobPayment: {
-      uuid: "123e4567-aced-4e39-b362-230ef417f80b",
-      jobUuid: "123e4567-59d8-4644-b7ee-230ef8af34eb",
-      actionedByUuid: "123e4567-879c-48f7-9dbe-230ef6932ddb",
-      attachmentUuid: "123e4567-a6f9-47b7-a99d-230ef4ffe55b",
+      uuid: "123e4567-3f06-435f-bbf6-230feda2990b",
+      jobUuid: "123e4567-3c3c-4296-8572-230fea473a7b",
+      actionedByUuid: "123e4567-78d5-4963-a398-230fe8f75d7b",
+      attachmentUuid: "123e4567-5f4f-40b7-8d32-230fec16a67b",
     },
   });
   if (res.ok) {
@@ -353,6 +357,7 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteJobPayments" method="delete" path="/jobpayment/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

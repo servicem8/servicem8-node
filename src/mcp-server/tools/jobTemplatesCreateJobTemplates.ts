@@ -17,11 +17,6 @@ export const tool$jobTemplatesCreateJobTemplates: ToolDefinition<typeof args> =
 
 
 			
-#### OAuth Scope
-This endpoint requires the following OAuth scope **manage_jobs**.
-
-			
-			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the \`x-record-uuid\` response header.
 

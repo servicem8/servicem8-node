@@ -23,6 +23,7 @@ This endpoint supports result filtering. For more information on how to filter t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listEmailTemplates" method="get" path="/emailtemplate.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -100,6 +101,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createEmailTemplates" method="post" path="/emailtemplate.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -111,7 +113,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.emailTemplates.createEmailTemplates({
-    uuid: "123e4567-2cb7-46bf-bd34-230ef4f68d2b",
+    uuid: "123e4567-ecfe-488e-b56c-230fe30c10bb",
     name: "<value>",
   });
 
@@ -139,7 +141,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await emailTemplatesCreateEmailTemplates(serviceM8, {
-    uuid: "123e4567-2cb7-46bf-bd34-230ef4f68d2b",
+    uuid: "123e4567-ecfe-488e-b56c-230fe30c10bb",
     name: "<value>",
   });
   if (res.ok) {
@@ -179,6 +181,7 @@ Retrieve an Email Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getEmailTemplates" method="get" path="/emailtemplate/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -256,6 +259,7 @@ Update an Email Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateEmailTemplates" method="post" path="/emailtemplate/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -269,7 +273,7 @@ async function run() {
   const result = await serviceM8.emailTemplates.updateEmailTemplates({
     uuid: "a3ce5f33-781a-4062-b068-2e3f8605b008",
     emailTemplate: {
-      uuid: "123e4567-2cb7-46bf-bd34-230ef4f68d2b",
+      uuid: "123e4567-ecfe-488e-b56c-230fe30c10bb",
       name: "<value>",
     },
   });
@@ -300,7 +304,7 @@ async function run() {
   const res = await emailTemplatesUpdateEmailTemplates(serviceM8, {
     uuid: "a3ce5f33-781a-4062-b068-2e3f8605b008",
     emailTemplate: {
-      uuid: "123e4567-2cb7-46bf-bd34-230ef4f68d2b",
+      uuid: "123e4567-ecfe-488e-b56c-230fe30c10bb",
       name: "<value>",
     },
   });
@@ -345,6 +349,7 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteEmailTemplates" method="delete" path="/emailtemplate/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

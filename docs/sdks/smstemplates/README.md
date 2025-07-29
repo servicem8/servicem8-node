@@ -23,6 +23,7 @@ This endpoint supports result filtering. For more information on how to filter t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listSMSTemplates" method="get" path="/smstemplate.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -100,6 +101,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createSMSTemplates" method="post" path="/smstemplate.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -111,7 +113,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.smsTemplates.createSMSTemplates({
-    uuid: "123e4567-b292-4140-a50d-230ef00f1fab",
+    uuid: "123e4567-20c4-4d44-bd27-230fe78654eb",
     name: "<value>",
   });
 
@@ -139,7 +141,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await smsTemplatesCreateSMSTemplates(serviceM8, {
-    uuid: "123e4567-b292-4140-a50d-230ef00f1fab",
+    uuid: "123e4567-20c4-4d44-bd27-230fe78654eb",
     name: "<value>",
   });
   if (res.ok) {
@@ -179,6 +181,7 @@ Retrieve a SMS Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getSMSTemplates" method="get" path="/smstemplate/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -256,6 +259,7 @@ Update a SMS Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateSMSTemplates" method="post" path="/smstemplate/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -269,7 +273,7 @@ async function run() {
   const result = await serviceM8.smsTemplates.updateSMSTemplates({
     uuid: "2ea183b5-88e4-4168-a975-1820b2711ae4",
     smsTemplate: {
-      uuid: "123e4567-b292-4140-a50d-230ef00f1fab",
+      uuid: "123e4567-20c4-4d44-bd27-230fe78654eb",
       name: "<value>",
     },
   });
@@ -300,7 +304,7 @@ async function run() {
   const res = await smsTemplatesUpdateSMSTemplates(serviceM8, {
     uuid: "2ea183b5-88e4-4168-a975-1820b2711ae4",
     smsTemplate: {
-      uuid: "123e4567-b292-4140-a50d-230ef00f1fab",
+      uuid: "123e4567-20c4-4d44-bd27-230fe78654eb",
       name: "<value>",
     },
   });
@@ -345,6 +349,7 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteSMSTemplates" method="delete" path="/smstemplate/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **read_job_categories**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCategories" method="get" path="/category.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,6 +111,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCategories" method="post" path="/category.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -122,7 +124,7 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.categories.createCategories({
     name: "<value>",
-    uuid: "123e4567-392b-4617-b4fe-230efe38cc0b",
+    uuid: "123e4567-6a08-457f-9d99-230fe0ef8efb",
   });
 
   console.log(result);
@@ -150,7 +152,7 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await categoriesCreateCategories(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-392b-4617-b4fe-230efe38cc0b",
+    uuid: "123e4567-6a08-457f-9d99-230fe0ef8efb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -194,6 +196,7 @@ This endpoint requires the following OAuth scope **read_job_categories**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCategories" method="get" path="/category/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -276,6 +279,7 @@ This endpoint requires the following OAuth scope **manage_job_categories**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCategories" method="post" path="/category/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -290,7 +294,7 @@ async function run() {
     uuid: "c830c901-e3ae-427d-8f08-cf28c94b319f",
     category: {
       name: "<value>",
-      uuid: "123e4567-392b-4617-b4fe-230efe38cc0b",
+      uuid: "123e4567-6a08-457f-9d99-230fe0ef8efb",
     },
   });
 
@@ -321,7 +325,7 @@ async function run() {
     uuid: "c830c901-e3ae-427d-8f08-cf28c94b319f",
     category: {
       name: "<value>",
-      uuid: "123e4567-392b-4617-b4fe-230efe38cc0b",
+      uuid: "123e4567-6a08-457f-9d99-230fe0ef8efb",
     },
   });
   if (res.ok) {
@@ -370,6 +374,7 @@ This endpoint requires the following OAuth scope **manage_job_categories**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteCategories" method="delete" path="/category/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

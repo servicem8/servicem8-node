@@ -23,6 +23,7 @@ This endpoint supports result filtering. For more information on how to filter t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAllocationWindows" method="get" path="/allocationwindow.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -100,6 +101,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAllocationWindows" method="post" path="/allocationwindow.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -111,7 +113,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.allocationWindows.createAllocationWindows({
-    uuid: "123e4567-3aa4-4d7c-b3ad-230efce861fb",
+    uuid: "123e4567-0898-4d03-a862-230fe4c81a7b",
   });
 
   console.log(result);
@@ -138,7 +140,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await allocationWindowsCreateAllocationWindows(serviceM8, {
-    uuid: "123e4567-3aa4-4d7c-b3ad-230efce861fb",
+    uuid: "123e4567-0898-4d03-a862-230fe4c81a7b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -177,6 +179,7 @@ Retrieve an Allocation Window
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAllocationWindows" method="get" path="/allocationwindow/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -254,6 +257,7 @@ Update an Allocation Window
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAllocationWindows" method="post" path="/allocationwindow/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -267,7 +271,7 @@ async function run() {
   const result = await serviceM8.allocationWindows.updateAllocationWindows({
     uuid: "4cd38297-8da6-4b29-8742-4f293110085d",
     allocationWindow: {
-      uuid: "123e4567-3aa4-4d7c-b3ad-230efce861fb",
+      uuid: "123e4567-0898-4d03-a862-230fe4c81a7b",
     },
   });
 
@@ -297,7 +301,7 @@ async function run() {
   const res = await allocationWindowsUpdateAllocationWindows(serviceM8, {
     uuid: "4cd38297-8da6-4b29-8742-4f293110085d",
     allocationWindow: {
-      uuid: "123e4567-3aa4-4d7c-b3ad-230efce861fb",
+      uuid: "123e4567-0898-4d03-a862-230fe4c81a7b",
     },
   });
   if (res.ok) {
@@ -341,6 +345,7 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteAllocationWindows" method="delete" path="/allocationwindow/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

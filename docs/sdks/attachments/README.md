@@ -23,6 +23,7 @@ This endpoint supports result filtering. For more information on how to filter t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAttachments" method="get" path="/attachment.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -100,6 +101,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAttachments" method="post" path="/attachment.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -111,9 +113,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.attachments.createAttachments({
-    uuid: "123e4567-1837-40f6-b335-230efb6d252b",
-    relatedObjectUuid: "123e4567-141e-4ee6-9721-230efab443bb",
-    createdByStaffUuid: "123e4567-f1ae-4168-8665-230ef2247e3b",
+    uuid: "123e4567-4af3-4988-918f-230fe7b5ad9b",
+    relatedObjectUuid: "123e4567-3c9e-4181-a895-230febc9d3bb",
+    createdByStaffUuid: "123e4567-0942-4402-baf8-230fef65570b",
   });
 
   console.log(result);
@@ -140,9 +142,9 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await attachmentsCreateAttachments(serviceM8, {
-    uuid: "123e4567-1837-40f6-b335-230efb6d252b",
-    relatedObjectUuid: "123e4567-141e-4ee6-9721-230efab443bb",
-    createdByStaffUuid: "123e4567-f1ae-4168-8665-230ef2247e3b",
+    uuid: "123e4567-4af3-4988-918f-230fe7b5ad9b",
+    relatedObjectUuid: "123e4567-3c9e-4181-a895-230febc9d3bb",
+    createdByStaffUuid: "123e4567-0942-4402-baf8-230fef65570b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -181,6 +183,7 @@ Retrieve an Attachment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAttachments" method="get" path="/attachment/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -258,6 +261,7 @@ Update an Attachment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAttachments" method="post" path="/attachment/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -271,9 +275,9 @@ async function run() {
   const result = await serviceM8.attachments.updateAttachments({
     uuid: "e104394b-4c20-472c-976c-b9a47147723c",
     attachment: {
-      uuid: "123e4567-1837-40f6-b335-230efb6d252b",
-      relatedObjectUuid: "123e4567-141e-4ee6-9721-230efab443bb",
-      createdByStaffUuid: "123e4567-f1ae-4168-8665-230ef2247e3b",
+      uuid: "123e4567-4af3-4988-918f-230fe7b5ad9b",
+      relatedObjectUuid: "123e4567-3c9e-4181-a895-230febc9d3bb",
+      createdByStaffUuid: "123e4567-0942-4402-baf8-230fef65570b",
     },
   });
 
@@ -303,9 +307,9 @@ async function run() {
   const res = await attachmentsUpdateAttachments(serviceM8, {
     uuid: "e104394b-4c20-472c-976c-b9a47147723c",
     attachment: {
-      uuid: "123e4567-1837-40f6-b335-230efb6d252b",
-      relatedObjectUuid: "123e4567-141e-4ee6-9721-230efab443bb",
-      createdByStaffUuid: "123e4567-f1ae-4168-8665-230ef2247e3b",
+      uuid: "123e4567-4af3-4988-918f-230fe7b5ad9b",
+      relatedObjectUuid: "123e4567-3c9e-4181-a895-230febc9d3bb",
+      createdByStaffUuid: "123e4567-0942-4402-baf8-230fef65570b",
     },
   });
   if (res.ok) {
@@ -349,6 +353,7 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteAttachments" method="delete" path="/attachment/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

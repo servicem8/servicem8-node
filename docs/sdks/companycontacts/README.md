@@ -28,6 +28,7 @@ This endpoint requires the following OAuth scope **read_customer_contacts**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCompanyContacts" method="get" path="/companycontact.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,6 +111,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCompanyContacts" method="post" path="/companycontact.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -121,8 +123,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.companyContacts.createCompanyContacts({
-    uuid: "123e4567-f995-423c-a82a-230ef06e6d6b",
-    companyUuid: "123e4567-e27c-4186-a9b4-230ef9657fcb",
+    uuid: "123e4567-3b39-404d-9657-230feaf2eb6b",
+    companyUuid: "123e4567-b2f3-4c04-9683-230fe89e254b",
   });
 
   console.log(result);
@@ -149,8 +151,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await companyContactsCreateCompanyContacts(serviceM8, {
-    uuid: "123e4567-f995-423c-a82a-230ef06e6d6b",
-    companyUuid: "123e4567-e27c-4186-a9b4-230ef9657fcb",
+    uuid: "123e4567-3b39-404d-9657-230feaf2eb6b",
+    companyUuid: "123e4567-b2f3-4c04-9683-230fe89e254b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -194,6 +196,7 @@ This endpoint requires the following OAuth scope **read_customer_contacts**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCompanyContacts" method="get" path="/companycontact/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -276,6 +279,7 @@ This endpoint requires the following OAuth scope **manage_customer_contacts**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCompanyContacts" method="post" path="/companycontact/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,8 +293,8 @@ async function run() {
   const result = await serviceM8.companyContacts.updateCompanyContacts({
     uuid: "14a84f05-390e-4d88-ad00-a75bba477a48",
     companyContact: {
-      uuid: "123e4567-f995-423c-a82a-230ef06e6d6b",
-      companyUuid: "123e4567-e27c-4186-a9b4-230ef9657fcb",
+      uuid: "123e4567-3b39-404d-9657-230feaf2eb6b",
+      companyUuid: "123e4567-b2f3-4c04-9683-230fe89e254b",
     },
   });
 
@@ -320,8 +324,8 @@ async function run() {
   const res = await companyContactsUpdateCompanyContacts(serviceM8, {
     uuid: "14a84f05-390e-4d88-ad00-a75bba477a48",
     companyContact: {
-      uuid: "123e4567-f995-423c-a82a-230ef06e6d6b",
-      companyUuid: "123e4567-e27c-4186-a9b4-230ef9657fcb",
+      uuid: "123e4567-3b39-404d-9657-230feaf2eb6b",
+      companyUuid: "123e4567-b2f3-4c04-9683-230fe89e254b",
     },
   });
   if (res.ok) {
@@ -370,6 +374,7 @@ This endpoint requires the following OAuth scope **manage_customer_contacts**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteCompanyContacts" method="delete" path="/companycontact/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

@@ -23,6 +23,7 @@ This endpoint supports result filtering. For more information on how to filter t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listStaffMessages" method="get" path="/staffmessage.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -100,6 +101,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createStaffMessages" method="post" path="/staffmessage.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -111,13 +113,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.staffMessages.createStaffMessages({
-    uuid: "123e4567-a411-43b5-834b-230ef44dd5cb",
-    fromStaffUuid: "123e4567-eeb5-4834-a1c2-230ef9dbc3db",
-    toStaffUuid: "123e4567-5361-4fc1-ba85-230ef5011b8b",
+    uuid: "123e4567-2310-4e62-a4b3-230fe0f5777b",
+    fromStaffUuid: "123e4567-38d8-48a1-a2b7-230fea252d3b",
+    toStaffUuid: "123e4567-f01d-40c4-adc8-230fe36a22fb",
     sentTimestamp: "2025-07-01 12:00:00",
     deliveredTimestamp: "2025-07-01 12:00:00",
     readTimestamp: "2025-07-01 12:00:00",
-    regardingJobUuid: "123e4567-fcc8-4214-84d1-230ef0110d2b",
+    regardingJobUuid: "123e4567-7a65-463f-bda5-230fe913b47b",
   });
 
   console.log(result);
@@ -144,13 +146,13 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await staffMessagesCreateStaffMessages(serviceM8, {
-    uuid: "123e4567-a411-43b5-834b-230ef44dd5cb",
-    fromStaffUuid: "123e4567-eeb5-4834-a1c2-230ef9dbc3db",
-    toStaffUuid: "123e4567-5361-4fc1-ba85-230ef5011b8b",
+    uuid: "123e4567-2310-4e62-a4b3-230fe0f5777b",
+    fromStaffUuid: "123e4567-38d8-48a1-a2b7-230fea252d3b",
+    toStaffUuid: "123e4567-f01d-40c4-adc8-230fe36a22fb",
     sentTimestamp: "2025-07-01 12:00:00",
     deliveredTimestamp: "2025-07-01 12:00:00",
     readTimestamp: "2025-07-01 12:00:00",
-    regardingJobUuid: "123e4567-fcc8-4214-84d1-230ef0110d2b",
+    regardingJobUuid: "123e4567-7a65-463f-bda5-230fe913b47b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -189,6 +191,7 @@ Retrieve a Staff Message
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getStaffMessages" method="get" path="/staffmessage/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -266,6 +269,7 @@ Update a Staff Message
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateStaffMessages" method="post" path="/staffmessage/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -279,13 +283,13 @@ async function run() {
   const result = await serviceM8.staffMessages.updateStaffMessages({
     uuid: "b5fd0f7a-6810-4261-acdb-e8e543cf4e72",
     staffMessage: {
-      uuid: "123e4567-a411-43b5-834b-230ef44dd5cb",
-      fromStaffUuid: "123e4567-eeb5-4834-a1c2-230ef9dbc3db",
-      toStaffUuid: "123e4567-5361-4fc1-ba85-230ef5011b8b",
+      uuid: "123e4567-2310-4e62-a4b3-230fe0f5777b",
+      fromStaffUuid: "123e4567-38d8-48a1-a2b7-230fea252d3b",
+      toStaffUuid: "123e4567-f01d-40c4-adc8-230fe36a22fb",
       sentTimestamp: "2025-07-01 12:00:00",
       deliveredTimestamp: "2025-07-01 12:00:00",
       readTimestamp: "2025-07-01 12:00:00",
-      regardingJobUuid: "123e4567-fcc8-4214-84d1-230ef0110d2b",
+      regardingJobUuid: "123e4567-7a65-463f-bda5-230fe913b47b",
     },
   });
 
@@ -315,13 +319,13 @@ async function run() {
   const res = await staffMessagesUpdateStaffMessages(serviceM8, {
     uuid: "b5fd0f7a-6810-4261-acdb-e8e543cf4e72",
     staffMessage: {
-      uuid: "123e4567-a411-43b5-834b-230ef44dd5cb",
-      fromStaffUuid: "123e4567-eeb5-4834-a1c2-230ef9dbc3db",
-      toStaffUuid: "123e4567-5361-4fc1-ba85-230ef5011b8b",
+      uuid: "123e4567-2310-4e62-a4b3-230fe0f5777b",
+      fromStaffUuid: "123e4567-38d8-48a1-a2b7-230fea252d3b",
+      toStaffUuid: "123e4567-f01d-40c4-adc8-230fe36a22fb",
       sentTimestamp: "2025-07-01 12:00:00",
       deliveredTimestamp: "2025-07-01 12:00:00",
       readTimestamp: "2025-07-01 12:00:00",
-      regardingJobUuid: "123e4567-fcc8-4214-84d1-230ef0110d2b",
+      regardingJobUuid: "123e4567-7a65-463f-bda5-230fe913b47b",
     },
   });
   if (res.ok) {
@@ -365,6 +369,7 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteStaffMessages" method="delete" path="/staffmessage/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

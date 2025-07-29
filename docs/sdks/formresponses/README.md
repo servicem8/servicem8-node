@@ -23,6 +23,7 @@ This endpoint supports result filtering. For more information on how to filter t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listFormResponses" method="get" path="/formresponse.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -100,6 +101,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createFormResponses" method="post" path="/formresponse.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -111,14 +113,14 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.formResponses.createFormResponses({
-    uuid: "123e4567-77d7-4d9d-a478-230ef10e911b",
-    formUuid: "123e4567-1c87-4fea-9f57-230ef3fa0cbb",
-    staffUuid: "123e4567-237b-4c00-bd1d-230efc8b8e9b",
-    regardingObjectUuid: "123e4567-8170-45e4-860e-230ef557465b",
+    uuid: "123e4567-a6a1-4594-bcf5-230fe759e42b",
+    formUuid: "123e4567-083b-4d6d-be57-230fe5dedb7b",
+    staffUuid: "123e4567-6dcf-465e-b21d-230fe95a108b",
+    regardingObjectUuid: "123e4567-e1f8-44f5-8e6b-230fe48e5f5b",
     timestamp: "2025-07-01 12:00:00",
-    formByStaffUuid: "123e4567-5439-40fd-a45a-230ef114eaab",
-    documentAttachmentUuid: "123e4567-400e-42c2-94a3-230ef4d2861b",
-    assetUuid: "123e4567-e3a3-4bb3-8005-230ef47a6bfb",
+    formByStaffUuid: "123e4567-f321-48b3-a9b6-230fe516ed8b",
+    documentAttachmentUuid: "123e4567-12ce-4fd6-93c7-230fee727f6b",
+    assetUuid: "123e4567-5f1c-4fa5-8b58-230fe37d912b",
   });
 
   console.log(result);
@@ -145,14 +147,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formResponsesCreateFormResponses(serviceM8, {
-    uuid: "123e4567-77d7-4d9d-a478-230ef10e911b",
-    formUuid: "123e4567-1c87-4fea-9f57-230ef3fa0cbb",
-    staffUuid: "123e4567-237b-4c00-bd1d-230efc8b8e9b",
-    regardingObjectUuid: "123e4567-8170-45e4-860e-230ef557465b",
+    uuid: "123e4567-a6a1-4594-bcf5-230fe759e42b",
+    formUuid: "123e4567-083b-4d6d-be57-230fe5dedb7b",
+    staffUuid: "123e4567-6dcf-465e-b21d-230fe95a108b",
+    regardingObjectUuid: "123e4567-e1f8-44f5-8e6b-230fe48e5f5b",
     timestamp: "2025-07-01 12:00:00",
-    formByStaffUuid: "123e4567-5439-40fd-a45a-230ef114eaab",
-    documentAttachmentUuid: "123e4567-400e-42c2-94a3-230ef4d2861b",
-    assetUuid: "123e4567-e3a3-4bb3-8005-230ef47a6bfb",
+    formByStaffUuid: "123e4567-f321-48b3-a9b6-230fe516ed8b",
+    documentAttachmentUuid: "123e4567-12ce-4fd6-93c7-230fee727f6b",
+    assetUuid: "123e4567-5f1c-4fa5-8b58-230fe37d912b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -191,6 +193,7 @@ Retrieve a Form Response
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getFormResponses" method="get" path="/formresponse/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -268,6 +271,7 @@ Update a Form Response
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateFormResponses" method="post" path="/formresponse/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -281,14 +285,14 @@ async function run() {
   const result = await serviceM8.formResponses.updateFormResponses({
     uuid: "5f593a3c-772d-4259-856d-86a8df7ae53d",
     formResponse: {
-      uuid: "123e4567-77d7-4d9d-a478-230ef10e911b",
-      formUuid: "123e4567-1c87-4fea-9f57-230ef3fa0cbb",
-      staffUuid: "123e4567-237b-4c00-bd1d-230efc8b8e9b",
-      regardingObjectUuid: "123e4567-8170-45e4-860e-230ef557465b",
+      uuid: "123e4567-a6a1-4594-bcf5-230fe759e42b",
+      formUuid: "123e4567-083b-4d6d-be57-230fe5dedb7b",
+      staffUuid: "123e4567-6dcf-465e-b21d-230fe95a108b",
+      regardingObjectUuid: "123e4567-e1f8-44f5-8e6b-230fe48e5f5b",
       timestamp: "2025-07-01 12:00:00",
-      formByStaffUuid: "123e4567-5439-40fd-a45a-230ef114eaab",
-      documentAttachmentUuid: "123e4567-400e-42c2-94a3-230ef4d2861b",
-      assetUuid: "123e4567-e3a3-4bb3-8005-230ef47a6bfb",
+      formByStaffUuid: "123e4567-f321-48b3-a9b6-230fe516ed8b",
+      documentAttachmentUuid: "123e4567-12ce-4fd6-93c7-230fee727f6b",
+      assetUuid: "123e4567-5f1c-4fa5-8b58-230fe37d912b",
     },
   });
 
@@ -318,14 +322,14 @@ async function run() {
   const res = await formResponsesUpdateFormResponses(serviceM8, {
     uuid: "5f593a3c-772d-4259-856d-86a8df7ae53d",
     formResponse: {
-      uuid: "123e4567-77d7-4d9d-a478-230ef10e911b",
-      formUuid: "123e4567-1c87-4fea-9f57-230ef3fa0cbb",
-      staffUuid: "123e4567-237b-4c00-bd1d-230efc8b8e9b",
-      regardingObjectUuid: "123e4567-8170-45e4-860e-230ef557465b",
+      uuid: "123e4567-a6a1-4594-bcf5-230fe759e42b",
+      formUuid: "123e4567-083b-4d6d-be57-230fe5dedb7b",
+      staffUuid: "123e4567-6dcf-465e-b21d-230fe95a108b",
+      regardingObjectUuid: "123e4567-e1f8-44f5-8e6b-230fe48e5f5b",
       timestamp: "2025-07-01 12:00:00",
-      formByStaffUuid: "123e4567-5439-40fd-a45a-230ef114eaab",
-      documentAttachmentUuid: "123e4567-400e-42c2-94a3-230ef4d2861b",
-      assetUuid: "123e4567-e3a3-4bb3-8005-230ef47a6bfb",
+      formByStaffUuid: "123e4567-f321-48b3-a9b6-230fe516ed8b",
+      documentAttachmentUuid: "123e4567-12ce-4fd6-93c7-230fee727f6b",
+      assetUuid: "123e4567-5f1c-4fa5-8b58-230fe37d912b",
     },
   });
   if (res.ok) {
@@ -369,6 +373,7 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteFormResponses" method="delete" path="/formresponse/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

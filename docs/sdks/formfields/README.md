@@ -23,6 +23,7 @@ This endpoint supports result filtering. For more information on how to filter t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listFormFields" method="get" path="/formfield.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -100,6 +101,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createFormFields" method="post" path="/formfield.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -111,8 +113,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.formFields.createFormFields({
-    uuid: "123e4567-3a9e-439e-b915-230ef404f67b",
-    formUuid: "123e4567-625f-4308-9a26-230ef859f17b",
+    uuid: "123e4567-282e-4ec5-a702-230feb38dcab",
+    formUuid: "123e4567-d289-4641-8528-230fed7a7a6b",
   });
 
   console.log(result);
@@ -139,8 +141,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formFieldsCreateFormFields(serviceM8, {
-    uuid: "123e4567-3a9e-439e-b915-230ef404f67b",
-    formUuid: "123e4567-625f-4308-9a26-230ef859f17b",
+    uuid: "123e4567-282e-4ec5-a702-230feb38dcab",
+    formUuid: "123e4567-d289-4641-8528-230fed7a7a6b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -179,6 +181,7 @@ Retrieve a Form Field
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getFormFields" method="get" path="/formfield/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -256,6 +259,7 @@ Update a Form Field
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateFormFields" method="post" path="/formfield/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -269,8 +273,8 @@ async function run() {
   const result = await serviceM8.formFields.updateFormFields({
     uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
     formField: {
-      uuid: "123e4567-3a9e-439e-b915-230ef404f67b",
-      formUuid: "123e4567-625f-4308-9a26-230ef859f17b",
+      uuid: "123e4567-282e-4ec5-a702-230feb38dcab",
+      formUuid: "123e4567-d289-4641-8528-230fed7a7a6b",
     },
   });
 
@@ -300,8 +304,8 @@ async function run() {
   const res = await formFieldsUpdateFormFields(serviceM8, {
     uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
     formField: {
-      uuid: "123e4567-3a9e-439e-b915-230ef404f67b",
-      formUuid: "123e4567-625f-4308-9a26-230ef859f17b",
+      uuid: "123e4567-282e-4ec5-a702-230feb38dcab",
+      formUuid: "123e4567-d289-4641-8528-230fed7a7a6b",
     },
   });
   if (res.ok) {
@@ -345,6 +349,7 @@ In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="deleteFormFields" method="delete" path="/formfield/{uuid}.json" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
