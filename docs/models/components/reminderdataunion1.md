@@ -6,7 +6,9 @@
 ### `components.ReminderData1`
 
 ```typescript
-const value: components.ReminderData1 = {};
+const value: components.ReminderData1 = {
+  absoluteDateTime: "<value>",
+};
 ```
 
 ### `string`

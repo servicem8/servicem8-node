@@ -21,11 +21,37 @@ export const JobChecklistActive = {
  */
 export type JobChecklistActive = ClosedEnum<typeof JobChecklistActive>;
 
-export type ReminderData2 = {};
+export const BaseDate = {
+  JobCreateTime: "JOB_CREATE_TIME",
+  NextBookingTime: "NEXT_BOOKING_TIME",
+} as const;
+export type BaseDate = ClosedEnum<typeof BaseDate>;
+
+export const Unit = {
+  Day: "DAY",
+  Hour: "HOUR",
+  Minute: "MINUTE",
+} as const;
+export type Unit = ClosedEnum<typeof Unit>;
+
+export type RelativeDateTime = {
+  baseDate: BaseDate;
+  unit: Unit;
+  /**
+   * Number of units to add/subtract from base date. Negative quantities mean the reminder occurs before the base date. Reminders scheduled into the past will not occur.
+   */
+  quantity: number;
+};
+
+export type ReminderData2 = {
+  relativeDateTime: RelativeDateTime;
+};
 
 export type ReminderDataUnion2 = ReminderData2 | string;
 
-export type ReminderData1 = {};
+export type ReminderData1 = {
+  absoluteDateTime: string;
+};
 
 export type ReminderDataUnion1 = ReminderData1 | string;
 
@@ -242,21 +268,126 @@ export namespace JobChecklistActive$ {
 }
 
 /** @internal */
+export const BaseDate$inboundSchema: z.ZodNativeEnum<typeof BaseDate> = z
+  .nativeEnum(BaseDate);
+
+/** @internal */
+export const BaseDate$outboundSchema: z.ZodNativeEnum<typeof BaseDate> =
+  BaseDate$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace BaseDate$ {
+  /** @deprecated use `BaseDate$inboundSchema` instead. */
+  export const inboundSchema = BaseDate$inboundSchema;
+  /** @deprecated use `BaseDate$outboundSchema` instead. */
+  export const outboundSchema = BaseDate$outboundSchema;
+}
+
+/** @internal */
+export const Unit$inboundSchema: z.ZodNativeEnum<typeof Unit> = z.nativeEnum(
+  Unit,
+);
+
+/** @internal */
+export const Unit$outboundSchema: z.ZodNativeEnum<typeof Unit> =
+  Unit$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Unit$ {
+  /** @deprecated use `Unit$inboundSchema` instead. */
+  export const inboundSchema = Unit$inboundSchema;
+  /** @deprecated use `Unit$outboundSchema` instead. */
+  export const outboundSchema = Unit$outboundSchema;
+}
+
+/** @internal */
+export const RelativeDateTime$inboundSchema: z.ZodType<
+  RelativeDateTime,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  baseDate: BaseDate$inboundSchema,
+  unit: Unit$inboundSchema,
+  quantity: z.number().int(),
+});
+
+/** @internal */
+export type RelativeDateTime$Outbound = {
+  baseDate: string;
+  unit: string;
+  quantity: number;
+};
+
+/** @internal */
+export const RelativeDateTime$outboundSchema: z.ZodType<
+  RelativeDateTime$Outbound,
+  z.ZodTypeDef,
+  RelativeDateTime
+> = z.object({
+  baseDate: BaseDate$outboundSchema,
+  unit: Unit$outboundSchema,
+  quantity: z.number().int(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RelativeDateTime$ {
+  /** @deprecated use `RelativeDateTime$inboundSchema` instead. */
+  export const inboundSchema = RelativeDateTime$inboundSchema;
+  /** @deprecated use `RelativeDateTime$outboundSchema` instead. */
+  export const outboundSchema = RelativeDateTime$outboundSchema;
+  /** @deprecated use `RelativeDateTime$Outbound` instead. */
+  export type Outbound = RelativeDateTime$Outbound;
+}
+
+export function relativeDateTimeToJSON(
+  relativeDateTime: RelativeDateTime,
+): string {
+  return JSON.stringify(
+    RelativeDateTime$outboundSchema.parse(relativeDateTime),
+  );
+}
+
+export function relativeDateTimeFromJSON(
+  jsonString: string,
+): SafeParseResult<RelativeDateTime, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RelativeDateTime$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RelativeDateTime' from JSON`,
+  );
+}
+
+/** @internal */
 export const ReminderData2$inboundSchema: z.ZodType<
   ReminderData2,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = z.object({
+  relativeDateTime: z.lazy(() => RelativeDateTime$inboundSchema),
+});
 
 /** @internal */
-export type ReminderData2$Outbound = {};
+export type ReminderData2$Outbound = {
+  relativeDateTime: RelativeDateTime$Outbound;
+};
 
 /** @internal */
 export const ReminderData2$outboundSchema: z.ZodType<
   ReminderData2$Outbound,
   z.ZodTypeDef,
   ReminderData2
-> = z.object({});
+> = z.object({
+  relativeDateTime: z.lazy(() => RelativeDateTime$outboundSchema),
+});
 
 /**
  * @internal
@@ -338,17 +469,23 @@ export const ReminderData1$inboundSchema: z.ZodType<
   ReminderData1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = z.object({
+  absoluteDateTime: z.string(),
+});
 
 /** @internal */
-export type ReminderData1$Outbound = {};
+export type ReminderData1$Outbound = {
+  absoluteDateTime: string;
+};
 
 /** @internal */
 export const ReminderData1$outboundSchema: z.ZodType<
   ReminderData1$Outbound,
   z.ZodTypeDef,
   ReminderData1
-> = z.object({});
+> = z.object({
+  absoluteDateTime: z.string(),
+});
 
 /**
  * @internal

@@ -7,9 +7,9 @@
 
 ```typescript
 const value: components.CompanyContact = {
-  uuid: "123e4567-7ae7-41a0-8bd9-230fe9f9b3eb",
+  uuid: "123e4567-0d98-42f9-8bc7-230fe14005bb",
   editDate: "2025-07-01 12:00:00",
-  companyUuid: "123e4567-ad4b-45da-bdad-230fe524cc9b",
+  companyUuid: "123e4567-f6ac-4844-ae3d-230fe29487ab",
 };
 ```
 
