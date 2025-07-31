@@ -6,7 +6,7 @@
 import { TaxRate } from "servicem8/models/components";
 
 let value: TaxRate = {
-  uuid: "123e4567-615b-4f6c-95d3-230fe11825db",
+  uuid: "123e4567-85cf-4adc-b272-231100da9c3b",
   editDate: "2025-07-01 12:00:00",
   name: "<value>",
 };
@@ -16,7 +16,7 @@ let value: TaxRate = {
 
 | Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                | Example                                                                    |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `uuid`                                                                     | *string*                                                                   | :heavy_minus_sign:                                                         | Unique identifier for this record                                          | 123e4567-615b-4f6c-95d3-230fe11825db                                       |
+| `uuid`                                                                     | *string*                                                                   | :heavy_minus_sign:                                                         | Unique identifier for this record                                          | 123e4567-85cf-4adc-b272-231100da9c3b                                       |
 | `active`                                                                   | [components.TaxRateActive](../../models/components/taxrateactive.md)       | :heavy_minus_sign:                                                         | Record active/deleted flag.  Valid values are [0,1]                        |                                                                            |
 | `editDate`                                                                 | *any*                                                                      | :heavy_minus_sign:                                                         | Timestamp at which record was last modified                                | 2025-07-01 12:00:00                                                        |
 | `name`                                                                     | *string*                                                                   | :heavy_check_mark:                                                         | N/A                                                                        |                                                                            |
