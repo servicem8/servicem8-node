@@ -113,7 +113,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.smsTemplates.createSMSTemplates({
-    uuid: "123e4567-bbcd-4543-bab2-2311056fdf7b",
+    uuid: "123e4567-8ad3-4880-ab57-23110b953f6b",
     name: "<value>",
   });
 
@@ -141,7 +141,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await smsTemplatesCreateSMSTemplates(serviceM8, {
-    uuid: "123e4567-bbcd-4543-bab2-2311056fdf7b",
+    uuid: "123e4567-8ad3-4880-ab57-23110b953f6b",
     name: "<value>",
   });
   if (res.ok) {
@@ -273,7 +273,7 @@ async function run() {
   const result = await serviceM8.smsTemplates.updateSMSTemplates({
     uuid: "2ea183b5-88e4-4168-a975-1820b2711ae4",
     smsTemplate: {
-      uuid: "123e4567-bbcd-4543-bab2-2311056fdf7b",
+      uuid: "123e4567-8ad3-4880-ab57-23110b953f6b",
       name: "<value>",
     },
   });
@@ -304,7 +304,7 @@ async function run() {
   const res = await smsTemplatesUpdateSMSTemplates(serviceM8, {
     uuid: "2ea183b5-88e4-4168-a975-1820b2711ae4",
     smsTemplate: {
-      uuid: "123e4567-bbcd-4543-bab2-2311056fdf7b",
+      uuid: "123e4567-8ad3-4880-ab57-23110b953f6b",
       name: "<value>",
     },
   });

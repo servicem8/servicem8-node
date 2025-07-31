@@ -7,10 +7,10 @@
 
 ```typescript
 const value: components.Attachment = {
-  uuid: "123e4567-49c4-407d-b58d-231104e258eb",
+  uuid: "123e4567-855c-4a31-8abf-23110fa9d79b",
   editDate: "2025-07-01 12:00:00",
-  relatedObjectUuid: "123e4567-6db5-4ee4-a8f6-23110cb5333b",
-  createdByStaffUuid: "123e4567-77ee-4660-8255-231108346a1b",
+  relatedObjectUuid: "123e4567-aff7-43f8-8a27-23110212572b",
+  createdByStaffUuid: "123e4567-8377-4523-bd9a-231103a7f04b",
 };
 ```
 
