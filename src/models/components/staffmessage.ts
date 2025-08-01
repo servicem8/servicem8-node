@@ -21,6 +21,27 @@ export const StaffMessageActive = {
  */
 export type StaffMessageActive = ClosedEnum<typeof StaffMessageActive>;
 
+/** @internal */
+export const StaffMessageActive$inboundSchema: z.ZodNativeEnum<
+  typeof StaffMessageActive
+> = z.nativeEnum(StaffMessageActive);
+
+/** @internal */
+export const StaffMessageActive$outboundSchema: z.ZodNativeEnum<
+  typeof StaffMessageActive
+> = StaffMessageActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace StaffMessageActive$ {
+  /** @deprecated use `StaffMessageActive$inboundSchema` instead. */
+  export const inboundSchema = StaffMessageActive$inboundSchema;
+  /** @deprecated use `StaffMessageActive$outboundSchema` instead. */
+  export const outboundSchema = StaffMessageActive$outboundSchema;
+}
+
 export type StaffMessage = {
   /**
    * Unique identifier for this record
@@ -62,27 +83,6 @@ export type StaffMessageInput = {
   regardingJobUuid?: string | undefined;
   attachedJson?: string | undefined;
 };
-
-/** @internal */
-export const StaffMessageActive$inboundSchema: z.ZodNativeEnum<
-  typeof StaffMessageActive
-> = z.nativeEnum(StaffMessageActive);
-
-/** @internal */
-export const StaffMessageActive$outboundSchema: z.ZodNativeEnum<
-  typeof StaffMessageActive
-> = StaffMessageActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StaffMessageActive$ {
-  /** @deprecated use `StaffMessageActive$inboundSchema` instead. */
-  export const inboundSchema = StaffMessageActive$inboundSchema;
-  /** @deprecated use `StaffMessageActive$outboundSchema` instead. */
-  export const outboundSchema = StaffMessageActive$outboundSchema;
-}
 
 /** @internal */
 export const StaffMessage$inboundSchema: z.ZodType<

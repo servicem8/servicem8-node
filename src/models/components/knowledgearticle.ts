@@ -27,6 +27,46 @@ export const ObjectName = {
 } as const;
 export type ObjectName = ClosedEnum<typeof ObjectName>;
 
+/** @internal */
+export const KnowledgeArticleActive$inboundSchema: z.ZodNativeEnum<
+  typeof KnowledgeArticleActive
+> = z.nativeEnum(KnowledgeArticleActive);
+
+/** @internal */
+export const KnowledgeArticleActive$outboundSchema: z.ZodNativeEnum<
+  typeof KnowledgeArticleActive
+> = KnowledgeArticleActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace KnowledgeArticleActive$ {
+  /** @deprecated use `KnowledgeArticleActive$inboundSchema` instead. */
+  export const inboundSchema = KnowledgeArticleActive$inboundSchema;
+  /** @deprecated use `KnowledgeArticleActive$outboundSchema` instead. */
+  export const outboundSchema = KnowledgeArticleActive$outboundSchema;
+}
+
+/** @internal */
+export const ObjectName$inboundSchema: z.ZodNativeEnum<typeof ObjectName> = z
+  .nativeEnum(ObjectName);
+
+/** @internal */
+export const ObjectName$outboundSchema: z.ZodNativeEnum<typeof ObjectName> =
+  ObjectName$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ObjectName$ {
+  /** @deprecated use `ObjectName$inboundSchema` instead. */
+  export const inboundSchema = ObjectName$inboundSchema;
+  /** @deprecated use `ObjectName$outboundSchema` instead. */
+  export const outboundSchema = ObjectName$outboundSchema;
+}
+
 export type Relationship = {
   objectName: ObjectName;
   objectUuid: string;
@@ -99,46 +139,6 @@ export type KnowledgeArticleInput = {
    */
   relationships?: Array<Relationship> | undefined;
 };
-
-/** @internal */
-export const KnowledgeArticleActive$inboundSchema: z.ZodNativeEnum<
-  typeof KnowledgeArticleActive
-> = z.nativeEnum(KnowledgeArticleActive);
-
-/** @internal */
-export const KnowledgeArticleActive$outboundSchema: z.ZodNativeEnum<
-  typeof KnowledgeArticleActive
-> = KnowledgeArticleActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KnowledgeArticleActive$ {
-  /** @deprecated use `KnowledgeArticleActive$inboundSchema` instead. */
-  export const inboundSchema = KnowledgeArticleActive$inboundSchema;
-  /** @deprecated use `KnowledgeArticleActive$outboundSchema` instead. */
-  export const outboundSchema = KnowledgeArticleActive$outboundSchema;
-}
-
-/** @internal */
-export const ObjectName$inboundSchema: z.ZodNativeEnum<typeof ObjectName> = z
-  .nativeEnum(ObjectName);
-
-/** @internal */
-export const ObjectName$outboundSchema: z.ZodNativeEnum<typeof ObjectName> =
-  ObjectName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ObjectName$ {
-  /** @deprecated use `ObjectName$inboundSchema` instead. */
-  export const inboundSchema = ObjectName$inboundSchema;
-  /** @deprecated use `ObjectName$outboundSchema` instead. */
-  export const outboundSchema = ObjectName$outboundSchema;
-}
 
 /** @internal */
 export const Relationship$inboundSchema: z.ZodType<

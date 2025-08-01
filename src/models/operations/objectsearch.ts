@@ -26,21 +26,6 @@ export const ObjectType = {
  */
 export type ObjectType = ClosedEnum<typeof ObjectType>;
 
-export type ObjectSearchRequest = {
-  /**
-   * Type of object to search
-   */
-  objectType: ObjectType;
-  /**
-   * Search query string
-   */
-  q: string;
-  /**
-   * Maximum number of results to return (max 100)
-   */
-  limit?: number | undefined;
-};
-
 /** @internal */
 export const ObjectType$inboundSchema: z.ZodNativeEnum<typeof ObjectType> = z
   .nativeEnum(ObjectType);
@@ -59,6 +44,21 @@ export namespace ObjectType$ {
   /** @deprecated use `ObjectType$outboundSchema` instead. */
   export const outboundSchema = ObjectType$outboundSchema;
 }
+
+export type ObjectSearchRequest = {
+  /**
+   * Type of object to search
+   */
+  objectType: ObjectType;
+  /**
+   * Search query string
+   */
+  q: string;
+  /**
+   * Maximum number of results to return (max 100)
+   */
+  limit?: number | undefined;
+};
 
 /** @internal */
 export const ObjectSearchRequest$inboundSchema: z.ZodType<

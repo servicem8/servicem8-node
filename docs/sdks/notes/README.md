@@ -113,10 +113,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.notes.createNotes({
-    uuid: "123e4567-dfa2-4075-9e59-23110c12ef9b",
-    relatedObjectUuid: "123e4567-41d4-48b0-a837-23110b70737b",
-    actionCompletedByStaffUuid: "123e4567-d414-4140-85bc-231102257e7b",
-    createDate: "2025-07-01 12:00:00",
+    uuid: "123e4567-150d-44cd-afac-23126695029b",
+    relatedObjectUuid: "123e4567-0bca-409a-9151-23126167e1db",
+    actionCompletedByStaffUuid: "123e4567-0d0b-4765-862d-23126e49e9eb",
+    createDate: "2025-08-01 12:00:00",
   });
 
   console.log(result);
@@ -143,10 +143,10 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await notesCreateNotes(serviceM8, {
-    uuid: "123e4567-dfa2-4075-9e59-23110c12ef9b",
-    relatedObjectUuid: "123e4567-41d4-48b0-a837-23110b70737b",
-    actionCompletedByStaffUuid: "123e4567-d414-4140-85bc-231102257e7b",
-    createDate: "2025-07-01 12:00:00",
+    uuid: "123e4567-150d-44cd-afac-23126695029b",
+    relatedObjectUuid: "123e4567-0bca-409a-9151-23126167e1db",
+    actionCompletedByStaffUuid: "123e4567-0d0b-4765-862d-23126e49e9eb",
+    createDate: "2025-08-01 12:00:00",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -277,10 +277,10 @@ async function run() {
   const result = await serviceM8.notes.updateNotes({
     uuid: "1607abff-6202-4423-ae91-39b08699f830",
     note: {
-      uuid: "123e4567-dfa2-4075-9e59-23110c12ef9b",
-      relatedObjectUuid: "123e4567-41d4-48b0-a837-23110b70737b",
-      actionCompletedByStaffUuid: "123e4567-d414-4140-85bc-231102257e7b",
-      createDate: "2025-07-01 12:00:00",
+      uuid: "123e4567-150d-44cd-afac-23126695029b",
+      relatedObjectUuid: "123e4567-0bca-409a-9151-23126167e1db",
+      actionCompletedByStaffUuid: "123e4567-0d0b-4765-862d-23126e49e9eb",
+      createDate: "2025-08-01 12:00:00",
     },
   });
 
@@ -310,10 +310,10 @@ async function run() {
   const res = await notesUpdateNotes(serviceM8, {
     uuid: "1607abff-6202-4423-ae91-39b08699f830",
     note: {
-      uuid: "123e4567-dfa2-4075-9e59-23110c12ef9b",
-      relatedObjectUuid: "123e4567-41d4-48b0-a837-23110b70737b",
-      actionCompletedByStaffUuid: "123e4567-d414-4140-85bc-231102257e7b",
-      createDate: "2025-07-01 12:00:00",
+      uuid: "123e4567-150d-44cd-afac-23126695029b",
+      relatedObjectUuid: "123e4567-0bca-409a-9151-23126167e1db",
+      actionCompletedByStaffUuid: "123e4567-0d0b-4765-862d-23126e49e9eb",
+      createDate: "2025-08-01 12:00:00",
     },
   });
   if (res.ok) {

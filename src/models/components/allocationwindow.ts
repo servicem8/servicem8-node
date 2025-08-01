@@ -21,6 +21,27 @@ export const AllocationWindowActive = {
  */
 export type AllocationWindowActive = ClosedEnum<typeof AllocationWindowActive>;
 
+/** @internal */
+export const AllocationWindowActive$inboundSchema: z.ZodNativeEnum<
+  typeof AllocationWindowActive
+> = z.nativeEnum(AllocationWindowActive);
+
+/** @internal */
+export const AllocationWindowActive$outboundSchema: z.ZodNativeEnum<
+  typeof AllocationWindowActive
+> = AllocationWindowActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AllocationWindowActive$ {
+  /** @deprecated use `AllocationWindowActive$inboundSchema` instead. */
+  export const inboundSchema = AllocationWindowActive$inboundSchema;
+  /** @deprecated use `AllocationWindowActive$outboundSchema` instead. */
+  export const outboundSchema = AllocationWindowActive$outboundSchema;
+}
+
 export type AllocationWindow = {
   /**
    * Unique identifier for this record
@@ -54,27 +75,6 @@ export type AllocationWindowInput = {
   endTime?: number | undefined;
   sortPriority?: number | undefined;
 };
-
-/** @internal */
-export const AllocationWindowActive$inboundSchema: z.ZodNativeEnum<
-  typeof AllocationWindowActive
-> = z.nativeEnum(AllocationWindowActive);
-
-/** @internal */
-export const AllocationWindowActive$outboundSchema: z.ZodNativeEnum<
-  typeof AllocationWindowActive
-> = AllocationWindowActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AllocationWindowActive$ {
-  /** @deprecated use `AllocationWindowActive$inboundSchema` instead. */
-  export const inboundSchema = AllocationWindowActive$inboundSchema;
-  /** @deprecated use `AllocationWindowActive$outboundSchema` instead. */
-  export const outboundSchema = AllocationWindowActive$outboundSchema;
-}
 
 /** @internal */
 export const AllocationWindow$inboundSchema: z.ZodType<

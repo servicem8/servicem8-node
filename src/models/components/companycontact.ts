@@ -21,6 +21,27 @@ export const CompanyContactActive = {
  */
 export type CompanyContactActive = ClosedEnum<typeof CompanyContactActive>;
 
+/** @internal */
+export const CompanyContactActive$inboundSchema: z.ZodNativeEnum<
+  typeof CompanyContactActive
+> = z.nativeEnum(CompanyContactActive);
+
+/** @internal */
+export const CompanyContactActive$outboundSchema: z.ZodNativeEnum<
+  typeof CompanyContactActive
+> = CompanyContactActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CompanyContactActive$ {
+  /** @deprecated use `CompanyContactActive$inboundSchema` instead. */
+  export const inboundSchema = CompanyContactActive$inboundSchema;
+  /** @deprecated use `CompanyContactActive$outboundSchema` instead. */
+  export const outboundSchema = CompanyContactActive$outboundSchema;
+}
+
 export type CompanyContact = {
   /**
    * Unique identifier for this record
@@ -62,27 +83,6 @@ export type CompanyContactInput = {
   type?: string | undefined;
   isPrimaryContact?: string | undefined;
 };
-
-/** @internal */
-export const CompanyContactActive$inboundSchema: z.ZodNativeEnum<
-  typeof CompanyContactActive
-> = z.nativeEnum(CompanyContactActive);
-
-/** @internal */
-export const CompanyContactActive$outboundSchema: z.ZodNativeEnum<
-  typeof CompanyContactActive
-> = CompanyContactActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CompanyContactActive$ {
-  /** @deprecated use `CompanyContactActive$inboundSchema` instead. */
-  export const inboundSchema = CompanyContactActive$inboundSchema;
-  /** @deprecated use `CompanyContactActive$outboundSchema` instead. */
-  export const outboundSchema = CompanyContactActive$outboundSchema;
-}
 
 /** @internal */
 export const CompanyContact$inboundSchema: z.ZodType<

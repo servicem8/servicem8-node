@@ -21,6 +21,27 @@ export const AttachmentActive = {
  */
 export type AttachmentActive = ClosedEnum<typeof AttachmentActive>;
 
+/** @internal */
+export const AttachmentActive$inboundSchema: z.ZodNativeEnum<
+  typeof AttachmentActive
+> = z.nativeEnum(AttachmentActive);
+
+/** @internal */
+export const AttachmentActive$outboundSchema: z.ZodNativeEnum<
+  typeof AttachmentActive
+> = AttachmentActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AttachmentActive$ {
+  /** @deprecated use `AttachmentActive$inboundSchema` instead. */
+  export const inboundSchema = AttachmentActive$inboundSchema;
+  /** @deprecated use `AttachmentActive$outboundSchema` instead. */
+  export const outboundSchema = AttachmentActive$outboundSchema;
+}
+
 export type Attachment = {
   /**
    * Unique identifier for this record
@@ -90,27 +111,6 @@ export type AttachmentInput = {
   className?: string | undefined;
   metadata?: string | undefined;
 };
-
-/** @internal */
-export const AttachmentActive$inboundSchema: z.ZodNativeEnum<
-  typeof AttachmentActive
-> = z.nativeEnum(AttachmentActive);
-
-/** @internal */
-export const AttachmentActive$outboundSchema: z.ZodNativeEnum<
-  typeof AttachmentActive
-> = AttachmentActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AttachmentActive$ {
-  /** @deprecated use `AttachmentActive$inboundSchema` instead. */
-  export const inboundSchema = AttachmentActive$inboundSchema;
-  /** @deprecated use `AttachmentActive$outboundSchema` instead. */
-  export const outboundSchema = AttachmentActive$outboundSchema;
-}
 
 /** @internal */
 export const Attachment$inboundSchema: z.ZodType<

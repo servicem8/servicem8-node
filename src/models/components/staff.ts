@@ -33,6 +33,46 @@ export const StaffActive = {
  */
 export type StaffActive = ClosedEnum<typeof StaffActive>;
 
+/** @internal */
+export const HideFromSchedule$inboundSchema: z.ZodNativeEnum<
+  typeof HideFromSchedule
+> = z.nativeEnum(HideFromSchedule);
+
+/** @internal */
+export const HideFromSchedule$outboundSchema: z.ZodNativeEnum<
+  typeof HideFromSchedule
+> = HideFromSchedule$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace HideFromSchedule$ {
+  /** @deprecated use `HideFromSchedule$inboundSchema` instead. */
+  export const inboundSchema = HideFromSchedule$inboundSchema;
+  /** @deprecated use `HideFromSchedule$outboundSchema` instead. */
+  export const outboundSchema = HideFromSchedule$outboundSchema;
+}
+
+/** @internal */
+export const StaffActive$inboundSchema: z.ZodNativeEnum<typeof StaffActive> = z
+  .nativeEnum(StaffActive);
+
+/** @internal */
+export const StaffActive$outboundSchema: z.ZodNativeEnum<typeof StaffActive> =
+  StaffActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace StaffActive$ {
+  /** @deprecated use `StaffActive$inboundSchema` instead. */
+  export const inboundSchema = StaffActive$inboundSchema;
+  /** @deprecated use `StaffActive$outboundSchema` instead. */
+  export const outboundSchema = StaffActive$outboundSchema;
+}
+
 export type Staff = {
   /**
    * Staff First Name
@@ -196,46 +236,6 @@ export type StaffInput = {
   active?: StaffActive | undefined;
   canReceivePushNotification?: string | undefined;
 };
-
-/** @internal */
-export const HideFromSchedule$inboundSchema: z.ZodNativeEnum<
-  typeof HideFromSchedule
-> = z.nativeEnum(HideFromSchedule);
-
-/** @internal */
-export const HideFromSchedule$outboundSchema: z.ZodNativeEnum<
-  typeof HideFromSchedule
-> = HideFromSchedule$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HideFromSchedule$ {
-  /** @deprecated use `HideFromSchedule$inboundSchema` instead. */
-  export const inboundSchema = HideFromSchedule$inboundSchema;
-  /** @deprecated use `HideFromSchedule$outboundSchema` instead. */
-  export const outboundSchema = HideFromSchedule$outboundSchema;
-}
-
-/** @internal */
-export const StaffActive$inboundSchema: z.ZodNativeEnum<typeof StaffActive> = z
-  .nativeEnum(StaffActive);
-
-/** @internal */
-export const StaffActive$outboundSchema: z.ZodNativeEnum<typeof StaffActive> =
-  StaffActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StaffActive$ {
-  /** @deprecated use `StaffActive$inboundSchema` instead. */
-  export const inboundSchema = StaffActive$inboundSchema;
-  /** @deprecated use `StaffActive$outboundSchema` instead. */
-  export const outboundSchema = StaffActive$outboundSchema;
-}
 
 /** @internal */
 export const Staff$inboundSchema: z.ZodType<Staff, z.ZodTypeDef, unknown> = z

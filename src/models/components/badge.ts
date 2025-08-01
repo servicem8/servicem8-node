@@ -21,6 +21,25 @@ export const BadgeActive = {
  */
 export type BadgeActive = ClosedEnum<typeof BadgeActive>;
 
+/** @internal */
+export const BadgeActive$inboundSchema: z.ZodNativeEnum<typeof BadgeActive> = z
+  .nativeEnum(BadgeActive);
+
+/** @internal */
+export const BadgeActive$outboundSchema: z.ZodNativeEnum<typeof BadgeActive> =
+  BadgeActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace BadgeActive$ {
+  /** @deprecated use `BadgeActive$inboundSchema` instead. */
+  export const inboundSchema = BadgeActive$inboundSchema;
+  /** @deprecated use `BadgeActive$outboundSchema` instead. */
+  export const outboundSchema = BadgeActive$outboundSchema;
+}
+
 export type Badge = {
   /**
    * Unique identifier for this record
@@ -68,25 +87,6 @@ export type BadgeInput = {
    */
   regardingAssetTypeUuid?: string | undefined;
 };
-
-/** @internal */
-export const BadgeActive$inboundSchema: z.ZodNativeEnum<typeof BadgeActive> = z
-  .nativeEnum(BadgeActive);
-
-/** @internal */
-export const BadgeActive$outboundSchema: z.ZodNativeEnum<typeof BadgeActive> =
-  BadgeActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace BadgeActive$ {
-  /** @deprecated use `BadgeActive$inboundSchema` instead. */
-  export const inboundSchema = BadgeActive$inboundSchema;
-  /** @deprecated use `BadgeActive$outboundSchema` instead. */
-  export const outboundSchema = BadgeActive$outboundSchema;
-}
 
 /** @internal */
 export const Badge$inboundSchema: z.ZodType<Badge, z.ZodTypeDef, unknown> = z

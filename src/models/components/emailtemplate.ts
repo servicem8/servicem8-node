@@ -21,6 +21,27 @@ export const EmailTemplateActive = {
  */
 export type EmailTemplateActive = ClosedEnum<typeof EmailTemplateActive>;
 
+/** @internal */
+export const EmailTemplateActive$inboundSchema: z.ZodNativeEnum<
+  typeof EmailTemplateActive
+> = z.nativeEnum(EmailTemplateActive);
+
+/** @internal */
+export const EmailTemplateActive$outboundSchema: z.ZodNativeEnum<
+  typeof EmailTemplateActive
+> = EmailTemplateActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace EmailTemplateActive$ {
+  /** @deprecated use `EmailTemplateActive$inboundSchema` instead. */
+  export const inboundSchema = EmailTemplateActive$inboundSchema;
+  /** @deprecated use `EmailTemplateActive$outboundSchema` instead. */
+  export const outboundSchema = EmailTemplateActive$outboundSchema;
+}
+
 export type EmailTemplate = {
   /**
    * Unique identifier for this record
@@ -52,27 +73,6 @@ export type EmailTemplateInput = {
   subject?: string | undefined;
   message?: string | undefined;
 };
-
-/** @internal */
-export const EmailTemplateActive$inboundSchema: z.ZodNativeEnum<
-  typeof EmailTemplateActive
-> = z.nativeEnum(EmailTemplateActive);
-
-/** @internal */
-export const EmailTemplateActive$outboundSchema: z.ZodNativeEnum<
-  typeof EmailTemplateActive
-> = EmailTemplateActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EmailTemplateActive$ {
-  /** @deprecated use `EmailTemplateActive$inboundSchema` instead. */
-  export const inboundSchema = EmailTemplateActive$inboundSchema;
-  /** @deprecated use `EmailTemplateActive$outboundSchema` instead. */
-  export const outboundSchema = EmailTemplateActive$outboundSchema;
-}
 
 /** @internal */
 export const EmailTemplate$inboundSchema: z.ZodType<

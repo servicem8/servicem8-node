@@ -21,6 +21,27 @@ export const MaterialBundleActive = {
  */
 export type MaterialBundleActive = ClosedEnum<typeof MaterialBundleActive>;
 
+/** @internal */
+export const MaterialBundleActive$inboundSchema: z.ZodNativeEnum<
+  typeof MaterialBundleActive
+> = z.nativeEnum(MaterialBundleActive);
+
+/** @internal */
+export const MaterialBundleActive$outboundSchema: z.ZodNativeEnum<
+  typeof MaterialBundleActive
+> = MaterialBundleActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace MaterialBundleActive$ {
+  /** @deprecated use `MaterialBundleActive$inboundSchema` instead. */
+  export const inboundSchema = MaterialBundleActive$inboundSchema;
+  /** @deprecated use `MaterialBundleActive$outboundSchema` instead. */
+  export const outboundSchema = MaterialBundleActive$outboundSchema;
+}
+
 export type MaterialList = {
   /**
    * Must be the UUID of a Material record
@@ -78,27 +99,6 @@ export type MaterialBundleInput = {
    */
   materialList?: Array<MaterialList> | undefined;
 };
-
-/** @internal */
-export const MaterialBundleActive$inboundSchema: z.ZodNativeEnum<
-  typeof MaterialBundleActive
-> = z.nativeEnum(MaterialBundleActive);
-
-/** @internal */
-export const MaterialBundleActive$outboundSchema: z.ZodNativeEnum<
-  typeof MaterialBundleActive
-> = MaterialBundleActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaterialBundleActive$ {
-  /** @deprecated use `MaterialBundleActive$inboundSchema` instead. */
-  export const inboundSchema = MaterialBundleActive$inboundSchema;
-  /** @deprecated use `MaterialBundleActive$outboundSchema` instead. */
-  export const outboundSchema = MaterialBundleActive$outboundSchema;
-}
 
 /** @internal */
 export const MaterialList$inboundSchema: z.ZodType<

@@ -33,6 +33,46 @@ export const RequiresAssignment = {
  */
 export type RequiresAssignment = ClosedEnum<typeof RequiresAssignment>;
 
+/** @internal */
+export const QueueActive$inboundSchema: z.ZodNativeEnum<typeof QueueActive> = z
+  .nativeEnum(QueueActive);
+
+/** @internal */
+export const QueueActive$outboundSchema: z.ZodNativeEnum<typeof QueueActive> =
+  QueueActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace QueueActive$ {
+  /** @deprecated use `QueueActive$inboundSchema` instead. */
+  export const inboundSchema = QueueActive$inboundSchema;
+  /** @deprecated use `QueueActive$outboundSchema` instead. */
+  export const outboundSchema = QueueActive$outboundSchema;
+}
+
+/** @internal */
+export const RequiresAssignment$inboundSchema: z.ZodNativeEnum<
+  typeof RequiresAssignment
+> = z.nativeEnum(RequiresAssignment);
+
+/** @internal */
+export const RequiresAssignment$outboundSchema: z.ZodNativeEnum<
+  typeof RequiresAssignment
+> = RequiresAssignment$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RequiresAssignment$ {
+  /** @deprecated use `RequiresAssignment$inboundSchema` instead. */
+  export const inboundSchema = RequiresAssignment$inboundSchema;
+  /** @deprecated use `RequiresAssignment$outboundSchema` instead. */
+  export const outboundSchema = RequiresAssignment$outboundSchema;
+}
+
 export type Queue = {
   /**
    * Unique identifier for this record
@@ -90,46 +130,6 @@ export type QueueInput = {
    */
   requiresAssignment?: RequiresAssignment | undefined;
 };
-
-/** @internal */
-export const QueueActive$inboundSchema: z.ZodNativeEnum<typeof QueueActive> = z
-  .nativeEnum(QueueActive);
-
-/** @internal */
-export const QueueActive$outboundSchema: z.ZodNativeEnum<typeof QueueActive> =
-  QueueActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace QueueActive$ {
-  /** @deprecated use `QueueActive$inboundSchema` instead. */
-  export const inboundSchema = QueueActive$inboundSchema;
-  /** @deprecated use `QueueActive$outboundSchema` instead. */
-  export const outboundSchema = QueueActive$outboundSchema;
-}
-
-/** @internal */
-export const RequiresAssignment$inboundSchema: z.ZodNativeEnum<
-  typeof RequiresAssignment
-> = z.nativeEnum(RequiresAssignment);
-
-/** @internal */
-export const RequiresAssignment$outboundSchema: z.ZodNativeEnum<
-  typeof RequiresAssignment
-> = RequiresAssignment$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RequiresAssignment$ {
-  /** @deprecated use `RequiresAssignment$inboundSchema` instead. */
-  export const inboundSchema = RequiresAssignment$inboundSchema;
-  /** @deprecated use `RequiresAssignment$outboundSchema` instead. */
-  export const outboundSchema = RequiresAssignment$outboundSchema;
-}
 
 /** @internal */
 export const Queue$inboundSchema: z.ZodType<Queue, z.ZodTypeDef, unknown> = z

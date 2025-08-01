@@ -26,6 +26,27 @@ export type InboxMessageMessageType = ClosedEnum<
   typeof InboxMessageMessageType
 >;
 
+/** @internal */
+export const InboxMessageMessageType$inboundSchema: z.ZodNativeEnum<
+  typeof InboxMessageMessageType
+> = z.nativeEnum(InboxMessageMessageType);
+
+/** @internal */
+export const InboxMessageMessageType$outboundSchema: z.ZodNativeEnum<
+  typeof InboxMessageMessageType
+> = InboxMessageMessageType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace InboxMessageMessageType$ {
+  /** @deprecated use `InboxMessageMessageType$inboundSchema` instead. */
+  export const inboundSchema = InboxMessageMessageType$inboundSchema;
+  /** @deprecated use `InboxMessageMessageType$outboundSchema` instead. */
+  export const outboundSchema = InboxMessageMessageType$outboundSchema;
+}
+
 export type InboxMessage = {
   uuid?: string | undefined;
   active?: boolean | undefined;
@@ -49,27 +70,6 @@ export type InboxMessage = {
   jobTemplateUuid?: string | null | undefined;
   messageType?: InboxMessageMessageType | undefined;
 };
-
-/** @internal */
-export const InboxMessageMessageType$inboundSchema: z.ZodNativeEnum<
-  typeof InboxMessageMessageType
-> = z.nativeEnum(InboxMessageMessageType);
-
-/** @internal */
-export const InboxMessageMessageType$outboundSchema: z.ZodNativeEnum<
-  typeof InboxMessageMessageType
-> = InboxMessageMessageType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace InboxMessageMessageType$ {
-  /** @deprecated use `InboxMessageMessageType$inboundSchema` instead. */
-  export const inboundSchema = InboxMessageMessageType$inboundSchema;
-  /** @deprecated use `InboxMessageMessageType$outboundSchema` instead. */
-  export const outboundSchema = InboxMessageMessageType$outboundSchema;
-}
 
 /** @internal */
 export const InboxMessage$inboundSchema: z.ZodType<

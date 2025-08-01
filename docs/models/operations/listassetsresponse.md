@@ -8,11 +8,11 @@
 ```typescript
 const value: components.Asset[] = [
   {
-    uuid: "123e4567-dc99-48f0-aa5e-2311099aab6b",
-    editDate: "2025-07-01 12:00:00",
-    companyUuid: "123e4567-e095-4363-9682-231102634bdb",
-    assetTypeUuid: "123e4567-57ae-4519-b3d3-23110932063b",
-    geoTimestamp: "2025-07-01 12:00:00",
+    uuid: "123e4567-92ca-4456-8d22-231269bd8d3b",
+    editDate: "2025-08-01 12:00:00",
+    companyUuid: "123e4567-5e02-448d-a9a0-2312674e751b",
+    assetTypeUuid: "123e4567-f0d8-4229-aecd-231267cec25b",
+    geoTimestamp: "2025-08-01 12:00:00",
   },
 ];
 ```

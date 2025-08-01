@@ -21,6 +21,25 @@ export const NoteActive = {
  */
 export type NoteActive = ClosedEnum<typeof NoteActive>;
 
+/** @internal */
+export const NoteActive$inboundSchema: z.ZodNativeEnum<typeof NoteActive> = z
+  .nativeEnum(NoteActive);
+
+/** @internal */
+export const NoteActive$outboundSchema: z.ZodNativeEnum<typeof NoteActive> =
+  NoteActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace NoteActive$ {
+  /** @deprecated use `NoteActive$inboundSchema` instead. */
+  export const inboundSchema = NoteActive$inboundSchema;
+  /** @deprecated use `NoteActive$outboundSchema` instead. */
+  export const outboundSchema = NoteActive$outboundSchema;
+}
+
 export type Note = {
   /**
    * Unique identifier for this record
@@ -68,25 +87,6 @@ export type NoteInput = {
    */
   createDate?: any | undefined;
 };
-
-/** @internal */
-export const NoteActive$inboundSchema: z.ZodNativeEnum<typeof NoteActive> = z
-  .nativeEnum(NoteActive);
-
-/** @internal */
-export const NoteActive$outboundSchema: z.ZodNativeEnum<typeof NoteActive> =
-  NoteActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NoteActive$ {
-  /** @deprecated use `NoteActive$inboundSchema` instead. */
-  export const inboundSchema = NoteActive$inboundSchema;
-  /** @deprecated use `NoteActive$outboundSchema` instead. */
-  export const outboundSchema = NoteActive$outboundSchema;
-}
 
 /** @internal */
 export const Note$inboundSchema: z.ZodType<Note, z.ZodTypeDef, unknown> = z

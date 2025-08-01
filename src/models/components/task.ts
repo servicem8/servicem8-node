@@ -21,6 +21,25 @@ export const TaskActive = {
  */
 export type TaskActive = ClosedEnum<typeof TaskActive>;
 
+/** @internal */
+export const TaskActive$inboundSchema: z.ZodNativeEnum<typeof TaskActive> = z
+  .nativeEnum(TaskActive);
+
+/** @internal */
+export const TaskActive$outboundSchema: z.ZodNativeEnum<typeof TaskActive> =
+  TaskActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace TaskActive$ {
+  /** @deprecated use `TaskActive$inboundSchema` instead. */
+  export const inboundSchema = TaskActive$inboundSchema;
+  /** @deprecated use `TaskActive$outboundSchema` instead. */
+  export const outboundSchema = TaskActive$outboundSchema;
+}
+
 export type Task = {
   /**
    * The date by which the task should be completed. Format is YYYY-MM-DD. For mobile app compatibility, may be returned with time component (HHMMSS) in some contexts.
@@ -144,25 +163,6 @@ export type TaskInput = {
    */
   createDate?: any | undefined;
 };
-
-/** @internal */
-export const TaskActive$inboundSchema: z.ZodNativeEnum<typeof TaskActive> = z
-  .nativeEnum(TaskActive);
-
-/** @internal */
-export const TaskActive$outboundSchema: z.ZodNativeEnum<typeof TaskActive> =
-  TaskActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskActive$ {
-  /** @deprecated use `TaskActive$inboundSchema` instead. */
-  export const inboundSchema = TaskActive$inboundSchema;
-  /** @deprecated use `TaskActive$outboundSchema` instead. */
-  export const outboundSchema = TaskActive$outboundSchema;
-}
 
 /** @internal */
 export const Task$inboundSchema: z.ZodType<Task, z.ZodTypeDef, unknown> = z

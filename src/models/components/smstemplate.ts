@@ -21,6 +21,27 @@ export const SmsTemplateActive = {
  */
 export type SmsTemplateActive = ClosedEnum<typeof SmsTemplateActive>;
 
+/** @internal */
+export const SmsTemplateActive$inboundSchema: z.ZodNativeEnum<
+  typeof SmsTemplateActive
+> = z.nativeEnum(SmsTemplateActive);
+
+/** @internal */
+export const SmsTemplateActive$outboundSchema: z.ZodNativeEnum<
+  typeof SmsTemplateActive
+> = SmsTemplateActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace SmsTemplateActive$ {
+  /** @deprecated use `SmsTemplateActive$inboundSchema` instead. */
+  export const inboundSchema = SmsTemplateActive$inboundSchema;
+  /** @deprecated use `SmsTemplateActive$outboundSchema` instead. */
+  export const outboundSchema = SmsTemplateActive$outboundSchema;
+}
+
 export type SmsTemplate = {
   /**
    * Unique identifier for this record
@@ -50,27 +71,6 @@ export type SmsTemplateInput = {
   name: string;
   message?: string | undefined;
 };
-
-/** @internal */
-export const SmsTemplateActive$inboundSchema: z.ZodNativeEnum<
-  typeof SmsTemplateActive
-> = z.nativeEnum(SmsTemplateActive);
-
-/** @internal */
-export const SmsTemplateActive$outboundSchema: z.ZodNativeEnum<
-  typeof SmsTemplateActive
-> = SmsTemplateActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SmsTemplateActive$ {
-  /** @deprecated use `SmsTemplateActive$inboundSchema` instead. */
-  export const inboundSchema = SmsTemplateActive$inboundSchema;
-  /** @deprecated use `SmsTemplateActive$outboundSchema` instead. */
-  export const outboundSchema = SmsTemplateActive$outboundSchema;
-}
 
 /** @internal */
 export const SmsTemplate$inboundSchema: z.ZodType<

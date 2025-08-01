@@ -22,25 +22,6 @@ export const Filter = {
  */
 export type Filter = ClosedEnum<typeof Filter>;
 
-export type ListInboxMessagesRequest = {
-  /**
-   * Maximum number of messages to return (1-500)
-   */
-  limit?: number | undefined;
-  /**
-   * Number of messages to skip for pagination
-   */
-  offset?: number | undefined;
-  /**
-   * Filter messages by status
-   */
-  filter?: Filter | undefined;
-  /**
-   * Search messages by subject, from name, or from email
-   */
-  search?: string | undefined;
-};
-
 /** @internal */
 export const Filter$inboundSchema: z.ZodNativeEnum<typeof Filter> = z
   .nativeEnum(Filter);
@@ -59,6 +40,25 @@ export namespace Filter$ {
   /** @deprecated use `Filter$outboundSchema` instead. */
   export const outboundSchema = Filter$outboundSchema;
 }
+
+export type ListInboxMessagesRequest = {
+  /**
+   * Maximum number of messages to return (1-500)
+   */
+  limit?: number | undefined;
+  /**
+   * Number of messages to skip for pagination
+   */
+  offset?: number | undefined;
+  /**
+   * Filter messages by status
+   */
+  filter?: Filter | undefined;
+  /**
+   * Search messages by subject, from name, or from email
+   */
+  search?: string | undefined;
+};
 
 /** @internal */
 export const ListInboxMessagesRequest$inboundSchema: z.ZodType<

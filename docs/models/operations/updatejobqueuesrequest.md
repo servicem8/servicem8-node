@@ -8,7 +8,7 @@ import { UpdateJobQueuesRequest } from "servicem8/models/operations";
 let value: UpdateJobQueuesRequest = {
   uuid: "bb6dd9c8-af5b-4307-8d0a-649246c07828",
   queue: {
-    uuid: "123e4567-00cf-4c4f-9b61-23110c01ebcb",
+    uuid: "123e4567-b4e6-48c8-9946-231269401b5b",
   },
 };
 ```

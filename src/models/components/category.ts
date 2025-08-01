@@ -21,6 +21,27 @@ export const CategoryActive = {
  */
 export type CategoryActive = ClosedEnum<typeof CategoryActive>;
 
+/** @internal */
+export const CategoryActive$inboundSchema: z.ZodNativeEnum<
+  typeof CategoryActive
+> = z.nativeEnum(CategoryActive);
+
+/** @internal */
+export const CategoryActive$outboundSchema: z.ZodNativeEnum<
+  typeof CategoryActive
+> = CategoryActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CategoryActive$ {
+  /** @deprecated use `CategoryActive$inboundSchema` instead. */
+  export const inboundSchema = CategoryActive$inboundSchema;
+  /** @deprecated use `CategoryActive$outboundSchema` instead. */
+  export const outboundSchema = CategoryActive$outboundSchema;
+}
+
 export type Category = {
   /**
    * The name of the job category. Used to classify and organize jobs.
@@ -62,27 +83,6 @@ export type CategoryInput = {
    */
   active?: CategoryActive | undefined;
 };
-
-/** @internal */
-export const CategoryActive$inboundSchema: z.ZodNativeEnum<
-  typeof CategoryActive
-> = z.nativeEnum(CategoryActive);
-
-/** @internal */
-export const CategoryActive$outboundSchema: z.ZodNativeEnum<
-  typeof CategoryActive
-> = CategoryActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CategoryActive$ {
-  /** @deprecated use `CategoryActive$inboundSchema` instead. */
-  export const inboundSchema = CategoryActive$inboundSchema;
-  /** @deprecated use `CategoryActive$outboundSchema` instead. */
-  export const outboundSchema = CategoryActive$outboundSchema;
-}
 
 /** @internal */
 export const Category$inboundSchema: z.ZodType<

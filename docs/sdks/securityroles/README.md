@@ -114,7 +114,7 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.securityRoles.createSecurityRoles({
     name: "<value>",
-    uuid: "123e4567-45d5-406f-8e3b-23110b5ac45b",
+    uuid: "123e4567-4d90-4daa-bf0f-23126d6bc24b",
   });
 
   console.log(result);
@@ -142,7 +142,7 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await securityRolesCreateSecurityRoles(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-45d5-406f-8e3b-23110b5ac45b",
+    uuid: "123e4567-4d90-4daa-bf0f-23126d6bc24b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -274,7 +274,7 @@ async function run() {
     uuid: "f0a90dcf-f873-4a05-b043-1b34fcb5507e",
     securityRole: {
       name: "<value>",
-      uuid: "123e4567-45d5-406f-8e3b-23110b5ac45b",
+      uuid: "123e4567-4d90-4daa-bf0f-23126d6bc24b",
     },
   });
 
@@ -305,7 +305,7 @@ async function run() {
     uuid: "f0a90dcf-f873-4a05-b043-1b34fcb5507e",
     securityRole: {
       name: "<value>",
-      uuid: "123e4567-45d5-406f-8e3b-23110b5ac45b",
+      uuid: "123e4567-4d90-4daa-bf0f-23126d6bc24b",
     },
   });
   if (res.ok) {

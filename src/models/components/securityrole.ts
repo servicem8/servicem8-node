@@ -21,6 +21,27 @@ export const SecurityRoleActive = {
  */
 export type SecurityRoleActive = ClosedEnum<typeof SecurityRoleActive>;
 
+/** @internal */
+export const SecurityRoleActive$inboundSchema: z.ZodNativeEnum<
+  typeof SecurityRoleActive
+> = z.nativeEnum(SecurityRoleActive);
+
+/** @internal */
+export const SecurityRoleActive$outboundSchema: z.ZodNativeEnum<
+  typeof SecurityRoleActive
+> = SecurityRoleActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace SecurityRoleActive$ {
+  /** @deprecated use `SecurityRoleActive$inboundSchema` instead. */
+  export const inboundSchema = SecurityRoleActive$inboundSchema;
+  /** @deprecated use `SecurityRoleActive$outboundSchema` instead. */
+  export const outboundSchema = SecurityRoleActive$outboundSchema;
+}
+
 export type SecurityRole = {
   /**
    * The name given to the security role
@@ -62,27 +83,6 @@ export type SecurityRoleInput = {
    */
   active?: SecurityRoleActive | undefined;
 };
-
-/** @internal */
-export const SecurityRoleActive$inboundSchema: z.ZodNativeEnum<
-  typeof SecurityRoleActive
-> = z.nativeEnum(SecurityRoleActive);
-
-/** @internal */
-export const SecurityRoleActive$outboundSchema: z.ZodNativeEnum<
-  typeof SecurityRoleActive
-> = SecurityRoleActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SecurityRoleActive$ {
-  /** @deprecated use `SecurityRoleActive$inboundSchema` instead. */
-  export const inboundSchema = SecurityRoleActive$inboundSchema;
-  /** @deprecated use `SecurityRoleActive$outboundSchema` instead. */
-  export const outboundSchema = SecurityRoleActive$outboundSchema;
-}
 
 /** @internal */
 export const SecurityRole$inboundSchema: z.ZodType<

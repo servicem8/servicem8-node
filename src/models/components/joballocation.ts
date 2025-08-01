@@ -21,6 +21,27 @@ export const JobAllocationActive = {
  */
 export type JobAllocationActive = ClosedEnum<typeof JobAllocationActive>;
 
+/** @internal */
+export const JobAllocationActive$inboundSchema: z.ZodNativeEnum<
+  typeof JobAllocationActive
+> = z.nativeEnum(JobAllocationActive);
+
+/** @internal */
+export const JobAllocationActive$outboundSchema: z.ZodNativeEnum<
+  typeof JobAllocationActive
+> = JobAllocationActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace JobAllocationActive$ {
+  /** @deprecated use `JobAllocationActive$inboundSchema` instead. */
+  export const inboundSchema = JobAllocationActive$inboundSchema;
+  /** @deprecated use `JobAllocationActive$outboundSchema` instead. */
+  export const outboundSchema = JobAllocationActive$outboundSchema;
+}
+
 export type JobAllocation = {
   /**
    * Unique identifier for this record
@@ -78,27 +99,6 @@ export type JobAllocationInput = {
   acceptanceStatus?: string | undefined;
   acceptanceTimestamp?: string | undefined;
 };
-
-/** @internal */
-export const JobAllocationActive$inboundSchema: z.ZodNativeEnum<
-  typeof JobAllocationActive
-> = z.nativeEnum(JobAllocationActive);
-
-/** @internal */
-export const JobAllocationActive$outboundSchema: z.ZodNativeEnum<
-  typeof JobAllocationActive
-> = JobAllocationActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobAllocationActive$ {
-  /** @deprecated use `JobAllocationActive$inboundSchema` instead. */
-  export const inboundSchema = JobAllocationActive$inboundSchema;
-  /** @deprecated use `JobAllocationActive$outboundSchema` instead. */
-  export const outboundSchema = JobAllocationActive$outboundSchema;
-}
 
 /** @internal */
 export const JobAllocation$inboundSchema: z.ZodType<

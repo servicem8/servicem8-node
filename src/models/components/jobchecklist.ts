@@ -34,6 +34,97 @@ export const Unit = {
 } as const;
 export type Unit = ClosedEnum<typeof Unit>;
 
+/**
+ * If this checklist item is locked (read-only) and cannot be modified. This is set by the system when the checklist item is created from a Task or Network Request. (Read only).  Valid values are [0,1]
+ */
+export const IsLocked = {
+  Zero: 0,
+  One: 1,
+} as const;
+/**
+ * If this checklist item is locked (read-only) and cannot be modified. This is set by the system when the checklist item is created from a Task or Network Request. (Read only).  Valid values are [0,1]
+ */
+export type IsLocked = ClosedEnum<typeof IsLocked>;
+
+/** @internal */
+export const JobChecklistActive$inboundSchema: z.ZodNativeEnum<
+  typeof JobChecklistActive
+> = z.nativeEnum(JobChecklistActive);
+
+/** @internal */
+export const JobChecklistActive$outboundSchema: z.ZodNativeEnum<
+  typeof JobChecklistActive
+> = JobChecklistActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace JobChecklistActive$ {
+  /** @deprecated use `JobChecklistActive$inboundSchema` instead. */
+  export const inboundSchema = JobChecklistActive$inboundSchema;
+  /** @deprecated use `JobChecklistActive$outboundSchema` instead. */
+  export const outboundSchema = JobChecklistActive$outboundSchema;
+}
+
+/** @internal */
+export const BaseDate$inboundSchema: z.ZodNativeEnum<typeof BaseDate> = z
+  .nativeEnum(BaseDate);
+
+/** @internal */
+export const BaseDate$outboundSchema: z.ZodNativeEnum<typeof BaseDate> =
+  BaseDate$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace BaseDate$ {
+  /** @deprecated use `BaseDate$inboundSchema` instead. */
+  export const inboundSchema = BaseDate$inboundSchema;
+  /** @deprecated use `BaseDate$outboundSchema` instead. */
+  export const outboundSchema = BaseDate$outboundSchema;
+}
+
+/** @internal */
+export const Unit$inboundSchema: z.ZodNativeEnum<typeof Unit> = z.nativeEnum(
+  Unit,
+);
+
+/** @internal */
+export const Unit$outboundSchema: z.ZodNativeEnum<typeof Unit> =
+  Unit$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Unit$ {
+  /** @deprecated use `Unit$inboundSchema` instead. */
+  export const inboundSchema = Unit$inboundSchema;
+  /** @deprecated use `Unit$outboundSchema` instead. */
+  export const outboundSchema = Unit$outboundSchema;
+}
+
+/** @internal */
+export const IsLocked$inboundSchema: z.ZodNativeEnum<typeof IsLocked> = z
+  .nativeEnum(IsLocked);
+
+/** @internal */
+export const IsLocked$outboundSchema: z.ZodNativeEnum<typeof IsLocked> =
+  IsLocked$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace IsLocked$ {
+  /** @deprecated use `IsLocked$inboundSchema` instead. */
+  export const inboundSchema = IsLocked$inboundSchema;
+  /** @deprecated use `IsLocked$outboundSchema` instead. */
+  export const outboundSchema = IsLocked$outboundSchema;
+}
+
 export type RelativeDateTime = {
   baseDate: BaseDate;
   unit: Unit;
@@ -63,18 +154,6 @@ export type ReminderDataUnion3 =
   | string
   | ReminderData2
   | string;
-
-/**
- * If this checklist item is locked (read-only) and cannot be modified. This is set by the system when the checklist item is created from a Task or Network Request. (Read only).  Valid values are [0,1]
- */
-export const IsLocked = {
-  Zero: 0,
-  One: 1,
-} as const;
-/**
- * If this checklist item is locked (read-only) and cannot be modified. This is set by the system when the checklist item is created from a Task or Network Request. (Read only).  Valid values are [0,1]
- */
-export type IsLocked = ClosedEnum<typeof IsLocked>;
 
 export type JobChecklist = {
   /**
@@ -245,66 +324,6 @@ export type JobChecklistInput = {
    */
   assignedByStaffUuid?: string | undefined;
 };
-
-/** @internal */
-export const JobChecklistActive$inboundSchema: z.ZodNativeEnum<
-  typeof JobChecklistActive
-> = z.nativeEnum(JobChecklistActive);
-
-/** @internal */
-export const JobChecklistActive$outboundSchema: z.ZodNativeEnum<
-  typeof JobChecklistActive
-> = JobChecklistActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobChecklistActive$ {
-  /** @deprecated use `JobChecklistActive$inboundSchema` instead. */
-  export const inboundSchema = JobChecklistActive$inboundSchema;
-  /** @deprecated use `JobChecklistActive$outboundSchema` instead. */
-  export const outboundSchema = JobChecklistActive$outboundSchema;
-}
-
-/** @internal */
-export const BaseDate$inboundSchema: z.ZodNativeEnum<typeof BaseDate> = z
-  .nativeEnum(BaseDate);
-
-/** @internal */
-export const BaseDate$outboundSchema: z.ZodNativeEnum<typeof BaseDate> =
-  BaseDate$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace BaseDate$ {
-  /** @deprecated use `BaseDate$inboundSchema` instead. */
-  export const inboundSchema = BaseDate$inboundSchema;
-  /** @deprecated use `BaseDate$outboundSchema` instead. */
-  export const outboundSchema = BaseDate$outboundSchema;
-}
-
-/** @internal */
-export const Unit$inboundSchema: z.ZodNativeEnum<typeof Unit> = z.nativeEnum(
-  Unit,
-);
-
-/** @internal */
-export const Unit$outboundSchema: z.ZodNativeEnum<typeof Unit> =
-  Unit$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Unit$ {
-  /** @deprecated use `Unit$inboundSchema` instead. */
-  export const inboundSchema = Unit$inboundSchema;
-  /** @deprecated use `Unit$outboundSchema` instead. */
-  export const outboundSchema = Unit$outboundSchema;
-}
 
 /** @internal */
 export const RelativeDateTime$inboundSchema: z.ZodType<
@@ -618,25 +637,6 @@ export function reminderDataUnion3FromJSON(
     (x) => ReminderDataUnion3$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'ReminderDataUnion3' from JSON`,
   );
-}
-
-/** @internal */
-export const IsLocked$inboundSchema: z.ZodNativeEnum<typeof IsLocked> = z
-  .nativeEnum(IsLocked);
-
-/** @internal */
-export const IsLocked$outboundSchema: z.ZodNativeEnum<typeof IsLocked> =
-  IsLocked$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IsLocked$ {
-  /** @deprecated use `IsLocked$inboundSchema` instead. */
-  export const inboundSchema = IsLocked$inboundSchema;
-  /** @deprecated use `IsLocked$outboundSchema` instead. */
-  export const outboundSchema = IsLocked$outboundSchema;
 }
 
 /** @internal */

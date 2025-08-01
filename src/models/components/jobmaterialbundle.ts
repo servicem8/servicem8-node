@@ -23,6 +23,27 @@ export type JobMaterialBundleActive = ClosedEnum<
   typeof JobMaterialBundleActive
 >;
 
+/** @internal */
+export const JobMaterialBundleActive$inboundSchema: z.ZodNativeEnum<
+  typeof JobMaterialBundleActive
+> = z.nativeEnum(JobMaterialBundleActive);
+
+/** @internal */
+export const JobMaterialBundleActive$outboundSchema: z.ZodNativeEnum<
+  typeof JobMaterialBundleActive
+> = JobMaterialBundleActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace JobMaterialBundleActive$ {
+  /** @deprecated use `JobMaterialBundleActive$inboundSchema` instead. */
+  export const inboundSchema = JobMaterialBundleActive$inboundSchema;
+  /** @deprecated use `JobMaterialBundleActive$outboundSchema` instead. */
+  export const outboundSchema = JobMaterialBundleActive$outboundSchema;
+}
+
 export type JobMaterialBundle = {
   /**
    * Unique identifier for this record
@@ -96,27 +117,6 @@ export type JobMaterialBundleInput = {
    */
   jobUuid?: string | undefined;
 };
-
-/** @internal */
-export const JobMaterialBundleActive$inboundSchema: z.ZodNativeEnum<
-  typeof JobMaterialBundleActive
-> = z.nativeEnum(JobMaterialBundleActive);
-
-/** @internal */
-export const JobMaterialBundleActive$outboundSchema: z.ZodNativeEnum<
-  typeof JobMaterialBundleActive
-> = JobMaterialBundleActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobMaterialBundleActive$ {
-  /** @deprecated use `JobMaterialBundleActive$inboundSchema` instead. */
-  export const inboundSchema = JobMaterialBundleActive$inboundSchema;
-  /** @deprecated use `JobMaterialBundleActive$outboundSchema` instead. */
-  export const outboundSchema = JobMaterialBundleActive$outboundSchema;
-}
 
 /** @internal */
 export const JobMaterialBundle$inboundSchema: z.ZodType<

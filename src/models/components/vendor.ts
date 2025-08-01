@@ -21,6 +21,25 @@ export const VendorActive = {
  */
 export type VendorActive = ClosedEnum<typeof VendorActive>;
 
+/** @internal */
+export const VendorActive$inboundSchema: z.ZodNativeEnum<typeof VendorActive> =
+  z.nativeEnum(VendorActive);
+
+/** @internal */
+export const VendorActive$outboundSchema: z.ZodNativeEnum<typeof VendorActive> =
+  VendorActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace VendorActive$ {
+  /** @deprecated use `VendorActive$inboundSchema` instead. */
+  export const inboundSchema = VendorActive$inboundSchema;
+  /** @deprecated use `VendorActive$outboundSchema` instead. */
+  export const outboundSchema = VendorActive$outboundSchema;
+}
+
 export type Vendor = {
   /**
    * Unique identifier for this record
@@ -118,25 +137,6 @@ export type VendorInput = {
   invoiceTerms?: string | undefined;
   jobDefaultStatus?: string | undefined;
 };
-
-/** @internal */
-export const VendorActive$inboundSchema: z.ZodNativeEnum<typeof VendorActive> =
-  z.nativeEnum(VendorActive);
-
-/** @internal */
-export const VendorActive$outboundSchema: z.ZodNativeEnum<typeof VendorActive> =
-  VendorActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VendorActive$ {
-  /** @deprecated use `VendorActive$inboundSchema` instead. */
-  export const inboundSchema = VendorActive$inboundSchema;
-  /** @deprecated use `VendorActive$outboundSchema` instead. */
-  export const outboundSchema = VendorActive$outboundSchema;
-}
 
 /** @internal */
 export const Vendor$inboundSchema: z.ZodType<Vendor, z.ZodTypeDef, unknown> = z

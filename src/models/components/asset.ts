@@ -21,6 +21,25 @@ export const AssetActive = {
  */
 export type AssetActive = ClosedEnum<typeof AssetActive>;
 
+/** @internal */
+export const AssetActive$inboundSchema: z.ZodNativeEnum<typeof AssetActive> = z
+  .nativeEnum(AssetActive);
+
+/** @internal */
+export const AssetActive$outboundSchema: z.ZodNativeEnum<typeof AssetActive> =
+  AssetActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AssetActive$ {
+  /** @deprecated use `AssetActive$inboundSchema` instead. */
+  export const inboundSchema = AssetActive$inboundSchema;
+  /** @deprecated use `AssetActive$outboundSchema` instead. */
+  export const outboundSchema = AssetActive$outboundSchema;
+}
+
 export type FieldDatum = {
   /**
    * Must be the UUID of an AssetTypeField
@@ -132,25 +151,6 @@ export type AssetInput = {
    */
   fieldData?: Array<FieldDatum> | undefined;
 };
-
-/** @internal */
-export const AssetActive$inboundSchema: z.ZodNativeEnum<typeof AssetActive> = z
-  .nativeEnum(AssetActive);
-
-/** @internal */
-export const AssetActive$outboundSchema: z.ZodNativeEnum<typeof AssetActive> =
-  AssetActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AssetActive$ {
-  /** @deprecated use `AssetActive$inboundSchema` instead. */
-  export const inboundSchema = AssetActive$inboundSchema;
-  /** @deprecated use `AssetActive$outboundSchema` instead. */
-  export const outboundSchema = AssetActive$outboundSchema;
-}
 
 /** @internal */
 export const FieldDatum$inboundSchema: z.ZodType<

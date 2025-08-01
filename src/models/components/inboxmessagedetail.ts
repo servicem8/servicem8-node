@@ -26,6 +26,27 @@ export type InboxMessageDetailMessageType = ClosedEnum<
   typeof InboxMessageDetailMessageType
 >;
 
+/** @internal */
+export const InboxMessageDetailMessageType$inboundSchema: z.ZodNativeEnum<
+  typeof InboxMessageDetailMessageType
+> = z.nativeEnum(InboxMessageDetailMessageType);
+
+/** @internal */
+export const InboxMessageDetailMessageType$outboundSchema: z.ZodNativeEnum<
+  typeof InboxMessageDetailMessageType
+> = InboxMessageDetailMessageType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace InboxMessageDetailMessageType$ {
+  /** @deprecated use `InboxMessageDetailMessageType$inboundSchema` instead. */
+  export const inboundSchema = InboxMessageDetailMessageType$inboundSchema;
+  /** @deprecated use `InboxMessageDetailMessageType$outboundSchema` instead. */
+  export const outboundSchema = InboxMessageDetailMessageType$outboundSchema;
+}
+
 export type InboxMessageDetail = {
   uuid?: string | undefined;
   active?: boolean | undefined;
@@ -49,27 +70,6 @@ export type InboxMessageDetail = {
   jobTemplateUuid?: string | null | undefined;
   messageType?: InboxMessageDetailMessageType | undefined;
 };
-
-/** @internal */
-export const InboxMessageDetailMessageType$inboundSchema: z.ZodNativeEnum<
-  typeof InboxMessageDetailMessageType
-> = z.nativeEnum(InboxMessageDetailMessageType);
-
-/** @internal */
-export const InboxMessageDetailMessageType$outboundSchema: z.ZodNativeEnum<
-  typeof InboxMessageDetailMessageType
-> = InboxMessageDetailMessageType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace InboxMessageDetailMessageType$ {
-  /** @deprecated use `InboxMessageDetailMessageType$inboundSchema` instead. */
-  export const inboundSchema = InboxMessageDetailMessageType$inboundSchema;
-  /** @deprecated use `InboxMessageDetailMessageType$outboundSchema` instead. */
-  export const outboundSchema = InboxMessageDetailMessageType$outboundSchema;
-}
 
 /** @internal */
 export const InboxMessageDetail$inboundSchema: z.ZodType<
