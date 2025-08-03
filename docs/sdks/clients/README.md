@@ -124,8 +124,8 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.clients.createClients({
     name: "<value>",
-    uuid: "123e4567-8773-468d-927b-2312631cd5bb",
-    taxRateUuid: "123e4567-542e-4bd3-9ee4-2312681623bb",
+    uuid: "123e4567-025e-4e2f-bb98-2313f532644b",
+    taxRateUuid: "123e4567-0478-4d28-a613-2313f313033b",
   });
 
   console.log(result);
@@ -153,8 +153,8 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await clientsCreateClients(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-8773-468d-927b-2312631cd5bb",
-    taxRateUuid: "123e4567-542e-4bd3-9ee4-2312681623bb",
+    uuid: "123e4567-025e-4e2f-bb98-2313f532644b",
+    taxRateUuid: "123e4567-0478-4d28-a613-2313f313033b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -296,8 +296,8 @@ async function run() {
     uuid: "55f6bcc0-3bb7-4509-b13b-98c02374f910",
     company: {
       name: "<value>",
-      uuid: "123e4567-8773-468d-927b-2312631cd5bb",
-      taxRateUuid: "123e4567-542e-4bd3-9ee4-2312681623bb",
+      uuid: "123e4567-025e-4e2f-bb98-2313f532644b",
+      taxRateUuid: "123e4567-0478-4d28-a613-2313f313033b",
     },
   });
 
@@ -328,8 +328,8 @@ async function run() {
     uuid: "55f6bcc0-3bb7-4509-b13b-98c02374f910",
     company: {
       name: "<value>",
-      uuid: "123e4567-8773-468d-927b-2312631cd5bb",
-      taxRateUuid: "123e4567-542e-4bd3-9ee4-2312681623bb",
+      uuid: "123e4567-025e-4e2f-bb98-2313f532644b",
+      taxRateUuid: "123e4567-0478-4d28-a613-2313f313033b",
     },
   });
   if (res.ok) {

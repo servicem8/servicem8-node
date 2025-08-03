@@ -33,46 +33,6 @@ export const IsDeposit = {
  */
 export type IsDeposit = ClosedEnum<typeof IsDeposit>;
 
-/** @internal */
-export const JobPaymentActive$inboundSchema: z.ZodNativeEnum<
-  typeof JobPaymentActive
-> = z.nativeEnum(JobPaymentActive);
-
-/** @internal */
-export const JobPaymentActive$outboundSchema: z.ZodNativeEnum<
-  typeof JobPaymentActive
-> = JobPaymentActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobPaymentActive$ {
-  /** @deprecated use `JobPaymentActive$inboundSchema` instead. */
-  export const inboundSchema = JobPaymentActive$inboundSchema;
-  /** @deprecated use `JobPaymentActive$outboundSchema` instead. */
-  export const outboundSchema = JobPaymentActive$outboundSchema;
-}
-
-/** @internal */
-export const IsDeposit$inboundSchema: z.ZodNativeEnum<typeof IsDeposit> = z
-  .nativeEnum(IsDeposit);
-
-/** @internal */
-export const IsDeposit$outboundSchema: z.ZodNativeEnum<typeof IsDeposit> =
-  IsDeposit$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IsDeposit$ {
-  /** @deprecated use `IsDeposit$inboundSchema` instead. */
-  export const inboundSchema = IsDeposit$inboundSchema;
-  /** @deprecated use `IsDeposit$outboundSchema` instead. */
-  export const outboundSchema = IsDeposit$outboundSchema;
-}
-
 export type JobPayment = {
   /**
    * Unique identifier for this record
@@ -120,6 +80,46 @@ export type JobPaymentInput = {
    */
   isDeposit?: IsDeposit | undefined;
 };
+
+/** @internal */
+export const JobPaymentActive$inboundSchema: z.ZodNativeEnum<
+  typeof JobPaymentActive
+> = z.nativeEnum(JobPaymentActive);
+
+/** @internal */
+export const JobPaymentActive$outboundSchema: z.ZodNativeEnum<
+  typeof JobPaymentActive
+> = JobPaymentActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace JobPaymentActive$ {
+  /** @deprecated use `JobPaymentActive$inboundSchema` instead. */
+  export const inboundSchema = JobPaymentActive$inboundSchema;
+  /** @deprecated use `JobPaymentActive$outboundSchema` instead. */
+  export const outboundSchema = JobPaymentActive$outboundSchema;
+}
+
+/** @internal */
+export const IsDeposit$inboundSchema: z.ZodNativeEnum<typeof IsDeposit> = z
+  .nativeEnum(IsDeposit);
+
+/** @internal */
+export const IsDeposit$outboundSchema: z.ZodNativeEnum<typeof IsDeposit> =
+  IsDeposit$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace IsDeposit$ {
+  /** @deprecated use `IsDeposit$inboundSchema` instead. */
+  export const inboundSchema = IsDeposit$inboundSchema;
+  /** @deprecated use `IsDeposit$outboundSchema` instead. */
+  export const outboundSchema = IsDeposit$outboundSchema;
+}
 
 /** @internal */
 export const JobPayment$inboundSchema: z.ZodType<

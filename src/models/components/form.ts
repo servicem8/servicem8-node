@@ -14,6 +14,13 @@ export const FormFieldType = {
 } as const;
 export type FormFieldType = ClosedEnum<typeof FormFieldType>;
 
+export type TemplateField = {
+  name: string;
+  fieldType: FormFieldType;
+  value: string;
+  sortOrder: number;
+};
+
 /**
  * Record active/deleted flag.  Valid values are [0,1].  Valid values are [0,1]
  */
@@ -25,53 +32,6 @@ export const FormActive = {
  * Record active/deleted flag.  Valid values are [0,1].  Valid values are [0,1]
  */
 export type FormActive = ClosedEnum<typeof FormActive>;
-
-/** @internal */
-export const FormFieldType$inboundSchema: z.ZodNativeEnum<
-  typeof FormFieldType
-> = z.nativeEnum(FormFieldType);
-
-/** @internal */
-export const FormFieldType$outboundSchema: z.ZodNativeEnum<
-  typeof FormFieldType
-> = FormFieldType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FormFieldType$ {
-  /** @deprecated use `FormFieldType$inboundSchema` instead. */
-  export const inboundSchema = FormFieldType$inboundSchema;
-  /** @deprecated use `FormFieldType$outboundSchema` instead. */
-  export const outboundSchema = FormFieldType$outboundSchema;
-}
-
-/** @internal */
-export const FormActive$inboundSchema: z.ZodNativeEnum<typeof FormActive> = z
-  .nativeEnum(FormActive);
-
-/** @internal */
-export const FormActive$outboundSchema: z.ZodNativeEnum<typeof FormActive> =
-  FormActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FormActive$ {
-  /** @deprecated use `FormActive$inboundSchema` instead. */
-  export const inboundSchema = FormActive$inboundSchema;
-  /** @deprecated use `FormActive$outboundSchema` instead. */
-  export const outboundSchema = FormActive$outboundSchema;
-}
-
-export type TemplateField = {
-  name: string;
-  fieldType: FormFieldType;
-  value: string;
-  sortOrder: number;
-};
 
 export type Form = {
   /**
@@ -106,6 +66,7 @@ export type Form = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
+  badgeName?: string | undefined;
 };
 
 export type FormInput = {
@@ -137,7 +98,29 @@ export type FormInput = {
    * Record active/deleted flag.  Valid values are [0,1].  Valid values are [0,1]
    */
   active?: FormActive | undefined;
+  badgeName?: string | undefined;
 };
+
+/** @internal */
+export const FormFieldType$inboundSchema: z.ZodNativeEnum<
+  typeof FormFieldType
+> = z.nativeEnum(FormFieldType);
+
+/** @internal */
+export const FormFieldType$outboundSchema: z.ZodNativeEnum<
+  typeof FormFieldType
+> = FormFieldType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FormFieldType$ {
+  /** @deprecated use `FormFieldType$inboundSchema` instead. */
+  export const inboundSchema = FormFieldType$inboundSchema;
+  /** @deprecated use `FormFieldType$outboundSchema` instead. */
+  export const outboundSchema = FormFieldType$outboundSchema;
+}
 
 /** @internal */
 export const TemplateField$inboundSchema: z.ZodType<
@@ -199,6 +182,25 @@ export function templateFieldFromJSON(
 }
 
 /** @internal */
+export const FormActive$inboundSchema: z.ZodNativeEnum<typeof FormActive> = z
+  .nativeEnum(FormActive);
+
+/** @internal */
+export const FormActive$outboundSchema: z.ZodNativeEnum<typeof FormActive> =
+  FormActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FormActive$ {
+  /** @deprecated use `FormActive$inboundSchema` instead. */
+  export const inboundSchema = FormActive$inboundSchema;
+  /** @deprecated use `FormActive$outboundSchema` instead. */
+  export const outboundSchema = FormActive$outboundSchema;
+}
+
+/** @internal */
 export const Form$inboundSchema: z.ZodType<Form, z.ZodTypeDef, unknown> = z
   .object({
     name: z.string().optional(),
@@ -210,6 +212,7 @@ export const Form$inboundSchema: z.ZodType<Form, z.ZodTypeDef, unknown> = z
     uuid: z.string().optional(),
     active: FormActive$inboundSchema.default(1),
     edit_date: z.any().optional(),
+    badge_name: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
       "document_template_uuid": "documentTemplateUuid",
@@ -217,6 +220,7 @@ export const Form$inboundSchema: z.ZodType<Form, z.ZodTypeDef, unknown> = z
       "badge_mandatory_state": "badgeMandatoryState",
       "template_fields": "templateFields",
       "edit_date": "editDate",
+      "badge_name": "badgeName",
     });
   });
 
@@ -230,6 +234,7 @@ export type Form$Outbound = {
   uuid?: string | undefined;
   active: number;
   edit_date?: any | undefined;
+  badge_name?: string | undefined;
 };
 
 /** @internal */
@@ -244,6 +249,7 @@ export const Form$outboundSchema: z.ZodType<Form$Outbound, z.ZodTypeDef, Form> =
     uuid: z.string().optional(),
     active: FormActive$outboundSchema.default(1),
     editDate: z.any().optional(),
+    badgeName: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
       documentTemplateUuid: "document_template_uuid",
@@ -251,6 +257,7 @@ export const Form$outboundSchema: z.ZodType<Form$Outbound, z.ZodTypeDef, Form> =
       badgeMandatoryState: "badge_mandatory_state",
       templateFields: "template_fields",
       editDate: "edit_date",
+      badgeName: "badge_name",
     });
   });
 
@@ -295,12 +302,14 @@ export const FormInput$inboundSchema: z.ZodType<
     .optional(),
   uuid: z.string().optional(),
   active: FormActive$inboundSchema.default(1),
+  badge_name: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "document_template_uuid": "documentTemplateUuid",
     "can_be_used_independently": "canBeUsedIndependently",
     "badge_mandatory_state": "badgeMandatoryState",
     "template_fields": "templateFields",
+    "badge_name": "badgeName",
   });
 });
 
@@ -313,6 +322,7 @@ export type FormInput$Outbound = {
   template_fields?: Array<TemplateField$Outbound> | undefined;
   uuid?: string | undefined;
   active: number;
+  badge_name?: string | undefined;
 };
 
 /** @internal */
@@ -329,12 +339,14 @@ export const FormInput$outboundSchema: z.ZodType<
     .optional(),
   uuid: z.string().optional(),
   active: FormActive$outboundSchema.default(1),
+  badgeName: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     documentTemplateUuid: "document_template_uuid",
     canBeUsedIndependently: "can_be_used_independently",
     badgeMandatoryState: "badge_mandatory_state",
     templateFields: "template_fields",
+    badgeName: "badge_name",
   });
 });
 

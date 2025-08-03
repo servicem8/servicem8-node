@@ -21,27 +21,6 @@ export const JobContactActive = {
  */
 export type JobContactActive = ClosedEnum<typeof JobContactActive>;
 
-/** @internal */
-export const JobContactActive$inboundSchema: z.ZodNativeEnum<
-  typeof JobContactActive
-> = z.nativeEnum(JobContactActive);
-
-/** @internal */
-export const JobContactActive$outboundSchema: z.ZodNativeEnum<
-  typeof JobContactActive
-> = JobContactActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobContactActive$ {
-  /** @deprecated use `JobContactActive$inboundSchema` instead. */
-  export const inboundSchema = JobContactActive$inboundSchema;
-  /** @deprecated use `JobContactActive$outboundSchema` instead. */
-  export const outboundSchema = JobContactActive$outboundSchema;
-}
-
 export type JobContact = {
   /**
    * Unique identifier for this record
@@ -83,6 +62,27 @@ export type JobContactInput = {
   type?: string | undefined;
   isPrimaryContact?: string | undefined;
 };
+
+/** @internal */
+export const JobContactActive$inboundSchema: z.ZodNativeEnum<
+  typeof JobContactActive
+> = z.nativeEnum(JobContactActive);
+
+/** @internal */
+export const JobContactActive$outboundSchema: z.ZodNativeEnum<
+  typeof JobContactActive
+> = JobContactActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace JobContactActive$ {
+  /** @deprecated use `JobContactActive$inboundSchema` instead. */
+  export const inboundSchema = JobContactActive$inboundSchema;
+  /** @deprecated use `JobContactActive$outboundSchema` instead. */
+  export const outboundSchema = JobContactActive$outboundSchema;
+}
 
 /** @internal */
 export const JobContact$inboundSchema: z.ZodType<

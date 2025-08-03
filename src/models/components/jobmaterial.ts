@@ -21,27 +21,6 @@ export const JobMaterialActive = {
  */
 export type JobMaterialActive = ClosedEnum<typeof JobMaterialActive>;
 
-/** @internal */
-export const JobMaterialActive$inboundSchema: z.ZodNativeEnum<
-  typeof JobMaterialActive
-> = z.nativeEnum(JobMaterialActive);
-
-/** @internal */
-export const JobMaterialActive$outboundSchema: z.ZodNativeEnum<
-  typeof JobMaterialActive
-> = JobMaterialActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobMaterialActive$ {
-  /** @deprecated use `JobMaterialActive$inboundSchema` instead. */
-  export const inboundSchema = JobMaterialActive$inboundSchema;
-  /** @deprecated use `JobMaterialActive$outboundSchema` instead. */
-  export const outboundSchema = JobMaterialActive$outboundSchema;
-}
-
 export type JobMaterial = {
   /**
    * Unique identifier for this record
@@ -97,6 +76,27 @@ export type JobMaterialInput = {
    */
   jobMaterialBundleUuid?: string | undefined;
 };
+
+/** @internal */
+export const JobMaterialActive$inboundSchema: z.ZodNativeEnum<
+  typeof JobMaterialActive
+> = z.nativeEnum(JobMaterialActive);
+
+/** @internal */
+export const JobMaterialActive$outboundSchema: z.ZodNativeEnum<
+  typeof JobMaterialActive
+> = JobMaterialActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace JobMaterialActive$ {
+  /** @deprecated use `JobMaterialActive$inboundSchema` instead. */
+  export const inboundSchema = JobMaterialActive$inboundSchema;
+  /** @deprecated use `JobMaterialActive$outboundSchema` instead. */
+  export const outboundSchema = JobMaterialActive$outboundSchema;
+}
 
 /** @internal */
 export const JobMaterial$inboundSchema: z.ZodType<

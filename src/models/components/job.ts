@@ -47,63 +47,6 @@ export const JobActive = {
  */
 export type JobActive = ClosedEnum<typeof JobActive>;
 
-/** @internal */
-export const Status$inboundSchema: z.ZodNativeEnum<typeof Status> = z
-  .nativeEnum(Status);
-
-/** @internal */
-export const Status$outboundSchema: z.ZodNativeEnum<typeof Status> =
-  Status$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Status$ {
-  /** @deprecated use `Status$inboundSchema` instead. */
-  export const inboundSchema = Status$inboundSchema;
-  /** @deprecated use `Status$outboundSchema` instead. */
-  export const outboundSchema = Status$outboundSchema;
-}
-
-/** @internal */
-export const QuoteSent$inboundSchema: z.ZodNativeEnum<typeof QuoteSent> = z
-  .nativeEnum(QuoteSent);
-
-/** @internal */
-export const QuoteSent$outboundSchema: z.ZodNativeEnum<typeof QuoteSent> =
-  QuoteSent$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace QuoteSent$ {
-  /** @deprecated use `QuoteSent$inboundSchema` instead. */
-  export const inboundSchema = QuoteSent$inboundSchema;
-  /** @deprecated use `QuoteSent$outboundSchema` instead. */
-  export const outboundSchema = QuoteSent$outboundSchema;
-}
-
-/** @internal */
-export const JobActive$inboundSchema: z.ZodNativeEnum<typeof JobActive> = z
-  .nativeEnum(JobActive);
-
-/** @internal */
-export const JobActive$outboundSchema: z.ZodNativeEnum<typeof JobActive> =
-  JobActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobActive$ {
-  /** @deprecated use `JobActive$inboundSchema` instead. */
-  export const inboundSchema = JobActive$inboundSchema;
-  /** @deprecated use `JobActive$outboundSchema` instead. */
-  export const outboundSchema = JobActive$outboundSchema;
-}
-
 export type Job = {
   /**
    * UUID of the staff member who created this job. Records which staff member initially added the job to the system.
@@ -459,6 +402,63 @@ export type JobInput = {
   unsuccessfulDate?: string | undefined;
   jobIsScheduledUntilStamp?: string | undefined;
 };
+
+/** @internal */
+export const Status$inboundSchema: z.ZodNativeEnum<typeof Status> = z
+  .nativeEnum(Status);
+
+/** @internal */
+export const Status$outboundSchema: z.ZodNativeEnum<typeof Status> =
+  Status$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Status$ {
+  /** @deprecated use `Status$inboundSchema` instead. */
+  export const inboundSchema = Status$inboundSchema;
+  /** @deprecated use `Status$outboundSchema` instead. */
+  export const outboundSchema = Status$outboundSchema;
+}
+
+/** @internal */
+export const QuoteSent$inboundSchema: z.ZodNativeEnum<typeof QuoteSent> = z
+  .nativeEnum(QuoteSent);
+
+/** @internal */
+export const QuoteSent$outboundSchema: z.ZodNativeEnum<typeof QuoteSent> =
+  QuoteSent$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace QuoteSent$ {
+  /** @deprecated use `QuoteSent$inboundSchema` instead. */
+  export const inboundSchema = QuoteSent$inboundSchema;
+  /** @deprecated use `QuoteSent$outboundSchema` instead. */
+  export const outboundSchema = QuoteSent$outboundSchema;
+}
+
+/** @internal */
+export const JobActive$inboundSchema: z.ZodNativeEnum<typeof JobActive> = z
+  .nativeEnum(JobActive);
+
+/** @internal */
+export const JobActive$outboundSchema: z.ZodNativeEnum<typeof JobActive> =
+  JobActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace JobActive$ {
+  /** @deprecated use `JobActive$inboundSchema` instead. */
+  export const inboundSchema = JobActive$inboundSchema;
+  /** @deprecated use `JobActive$outboundSchema` instead. */
+  export const outboundSchema = JobActive$outboundSchema;
+}
 
 /** @internal */
 export const Job$inboundSchema: z.ZodType<Job, z.ZodTypeDef, unknown> = z

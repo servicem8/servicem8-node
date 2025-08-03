@@ -21,27 +21,6 @@ export const CompanyActive = {
  */
 export type CompanyActive = ClosedEnum<typeof CompanyActive>;
 
-/** @internal */
-export const CompanyActive$inboundSchema: z.ZodNativeEnum<
-  typeof CompanyActive
-> = z.nativeEnum(CompanyActive);
-
-/** @internal */
-export const CompanyActive$outboundSchema: z.ZodNativeEnum<
-  typeof CompanyActive
-> = CompanyActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CompanyActive$ {
-  /** @deprecated use `CompanyActive$inboundSchema` instead. */
-  export const inboundSchema = CompanyActive$inboundSchema;
-  /** @deprecated use `CompanyActive$outboundSchema` instead. */
-  export const outboundSchema = CompanyActive$outboundSchema;
-}
-
 export type Company = {
   /**
    * Company Name
@@ -131,6 +110,27 @@ export type CompanyInput = {
   billingAttention?: string | undefined;
   paymentTerms?: string | undefined;
 };
+
+/** @internal */
+export const CompanyActive$inboundSchema: z.ZodNativeEnum<
+  typeof CompanyActive
+> = z.nativeEnum(CompanyActive);
+
+/** @internal */
+export const CompanyActive$outboundSchema: z.ZodNativeEnum<
+  typeof CompanyActive
+> = CompanyActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CompanyActive$ {
+  /** @deprecated use `CompanyActive$inboundSchema` instead. */
+  export const inboundSchema = CompanyActive$inboundSchema;
+  /** @deprecated use `CompanyActive$outboundSchema` instead. */
+  export const outboundSchema = CompanyActive$outboundSchema;
+}
 
 /** @internal */
 export const Company$inboundSchema: z.ZodType<Company, z.ZodTypeDef, unknown> =

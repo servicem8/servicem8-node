@@ -33,6 +33,44 @@ export const IsDefaultTaxRate = {
  */
 export type IsDefaultTaxRate = ClosedEnum<typeof IsDefaultTaxRate>;
 
+export type TaxRate = {
+  /**
+   * Unique identifier for this record
+   */
+  uuid?: string | undefined;
+  /**
+   * Record active/deleted flag.  Valid values are [0,1]
+   */
+  active?: TaxRateActive | undefined;
+  /**
+   * Timestamp at which record was last modified
+   */
+  editDate?: any | undefined;
+  name: string;
+  amount?: string | undefined;
+  /**
+   *  Valid values are [0,1]
+   */
+  isDefaultTaxRate?: IsDefaultTaxRate | undefined;
+};
+
+export type TaxRateInput = {
+  /**
+   * Unique identifier for this record
+   */
+  uuid?: string | undefined;
+  /**
+   * Record active/deleted flag.  Valid values are [0,1]
+   */
+  active?: TaxRateActive | undefined;
+  name: string;
+  amount?: string | undefined;
+  /**
+   *  Valid values are [0,1]
+   */
+  isDefaultTaxRate?: IsDefaultTaxRate | undefined;
+};
+
 /** @internal */
 export const TaxRateActive$inboundSchema: z.ZodNativeEnum<
   typeof TaxRateActive
@@ -74,44 +112,6 @@ export namespace IsDefaultTaxRate$ {
   /** @deprecated use `IsDefaultTaxRate$outboundSchema` instead. */
   export const outboundSchema = IsDefaultTaxRate$outboundSchema;
 }
-
-export type TaxRate = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: TaxRateActive | undefined;
-  /**
-   * Timestamp at which record was last modified
-   */
-  editDate?: any | undefined;
-  name: string;
-  amount?: string | undefined;
-  /**
-   *  Valid values are [0,1]
-   */
-  isDefaultTaxRate?: IsDefaultTaxRate | undefined;
-};
-
-export type TaxRateInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: TaxRateActive | undefined;
-  name: string;
-  amount?: string | undefined;
-  /**
-   *  Valid values are [0,1]
-   */
-  isDefaultTaxRate?: IsDefaultTaxRate | undefined;
-};
 
 /** @internal */
 export const TaxRate$inboundSchema: z.ZodType<TaxRate, z.ZodTypeDef, unknown> =

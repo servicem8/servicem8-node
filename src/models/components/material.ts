@@ -45,69 +45,6 @@ export const MaterialActive = {
  */
 export type MaterialActive = ClosedEnum<typeof MaterialActive>;
 
-/** @internal */
-export const PriceIncludesTaxes$inboundSchema: z.ZodNativeEnum<
-  typeof PriceIncludesTaxes
-> = z.nativeEnum(PriceIncludesTaxes);
-
-/** @internal */
-export const PriceIncludesTaxes$outboundSchema: z.ZodNativeEnum<
-  typeof PriceIncludesTaxes
-> = PriceIncludesTaxes$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PriceIncludesTaxes$ {
-  /** @deprecated use `PriceIncludesTaxes$inboundSchema` instead. */
-  export const inboundSchema = PriceIncludesTaxes$inboundSchema;
-  /** @deprecated use `PriceIncludesTaxes$outboundSchema` instead. */
-  export const outboundSchema = PriceIncludesTaxes$outboundSchema;
-}
-
-/** @internal */
-export const ItemIsInventoried$inboundSchema: z.ZodNativeEnum<
-  typeof ItemIsInventoried
-> = z.nativeEnum(ItemIsInventoried);
-
-/** @internal */
-export const ItemIsInventoried$outboundSchema: z.ZodNativeEnum<
-  typeof ItemIsInventoried
-> = ItemIsInventoried$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ItemIsInventoried$ {
-  /** @deprecated use `ItemIsInventoried$inboundSchema` instead. */
-  export const inboundSchema = ItemIsInventoried$inboundSchema;
-  /** @deprecated use `ItemIsInventoried$outboundSchema` instead. */
-  export const outboundSchema = ItemIsInventoried$outboundSchema;
-}
-
-/** @internal */
-export const MaterialActive$inboundSchema: z.ZodNativeEnum<
-  typeof MaterialActive
-> = z.nativeEnum(MaterialActive);
-
-/** @internal */
-export const MaterialActive$outboundSchema: z.ZodNativeEnum<
-  typeof MaterialActive
-> = MaterialActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaterialActive$ {
-  /** @deprecated use `MaterialActive$inboundSchema` instead. */
-  export const inboundSchema = MaterialActive$inboundSchema;
-  /** @deprecated use `MaterialActive$outboundSchema` instead. */
-  export const outboundSchema = MaterialActive$outboundSchema;
-}
-
 export type Material = {
   /**
    * Name of the material, product or labour rate. The maximum length varies based on accounting package integration 30-100 characters for standard mode, up to 2000 characters for description billing mode. Required field that identifies the material in inventory lists, job forms, and invoices.
@@ -203,6 +140,69 @@ export type MaterialInput = {
   useDescriptionForInvoicing?: string | undefined;
   taxRateUuid?: string | undefined;
 };
+
+/** @internal */
+export const PriceIncludesTaxes$inboundSchema: z.ZodNativeEnum<
+  typeof PriceIncludesTaxes
+> = z.nativeEnum(PriceIncludesTaxes);
+
+/** @internal */
+export const PriceIncludesTaxes$outboundSchema: z.ZodNativeEnum<
+  typeof PriceIncludesTaxes
+> = PriceIncludesTaxes$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace PriceIncludesTaxes$ {
+  /** @deprecated use `PriceIncludesTaxes$inboundSchema` instead. */
+  export const inboundSchema = PriceIncludesTaxes$inboundSchema;
+  /** @deprecated use `PriceIncludesTaxes$outboundSchema` instead. */
+  export const outboundSchema = PriceIncludesTaxes$outboundSchema;
+}
+
+/** @internal */
+export const ItemIsInventoried$inboundSchema: z.ZodNativeEnum<
+  typeof ItemIsInventoried
+> = z.nativeEnum(ItemIsInventoried);
+
+/** @internal */
+export const ItemIsInventoried$outboundSchema: z.ZodNativeEnum<
+  typeof ItemIsInventoried
+> = ItemIsInventoried$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ItemIsInventoried$ {
+  /** @deprecated use `ItemIsInventoried$inboundSchema` instead. */
+  export const inboundSchema = ItemIsInventoried$inboundSchema;
+  /** @deprecated use `ItemIsInventoried$outboundSchema` instead. */
+  export const outboundSchema = ItemIsInventoried$outboundSchema;
+}
+
+/** @internal */
+export const MaterialActive$inboundSchema: z.ZodNativeEnum<
+  typeof MaterialActive
+> = z.nativeEnum(MaterialActive);
+
+/** @internal */
+export const MaterialActive$outboundSchema: z.ZodNativeEnum<
+  typeof MaterialActive
+> = MaterialActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace MaterialActive$ {
+  /** @deprecated use `MaterialActive$inboundSchema` instead. */
+  export const inboundSchema = MaterialActive$inboundSchema;
+  /** @deprecated use `MaterialActive$outboundSchema` instead. */
+  export const outboundSchema = MaterialActive$outboundSchema;
+}
 
 /** @internal */
 export const Material$inboundSchema: z.ZodType<

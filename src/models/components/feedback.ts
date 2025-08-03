@@ -21,27 +21,6 @@ export const FeedbackActive = {
  */
 export type FeedbackActive = ClosedEnum<typeof FeedbackActive>;
 
-/** @internal */
-export const FeedbackActive$inboundSchema: z.ZodNativeEnum<
-  typeof FeedbackActive
-> = z.nativeEnum(FeedbackActive);
-
-/** @internal */
-export const FeedbackActive$outboundSchema: z.ZodNativeEnum<
-  typeof FeedbackActive
-> = FeedbackActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FeedbackActive$ {
-  /** @deprecated use `FeedbackActive$inboundSchema` instead. */
-  export const inboundSchema = FeedbackActive$inboundSchema;
-  /** @deprecated use `FeedbackActive$outboundSchema` instead. */
-  export const outboundSchema = FeedbackActive$outboundSchema;
-}
-
 export type Feedback = {
   /**
    * Unique identifier for this record
@@ -77,6 +56,27 @@ export type FeedbackInput = {
   rating?: string | undefined;
   comment?: string | undefined;
 };
+
+/** @internal */
+export const FeedbackActive$inboundSchema: z.ZodNativeEnum<
+  typeof FeedbackActive
+> = z.nativeEnum(FeedbackActive);
+
+/** @internal */
+export const FeedbackActive$outboundSchema: z.ZodNativeEnum<
+  typeof FeedbackActive
+> = FeedbackActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FeedbackActive$ {
+  /** @deprecated use `FeedbackActive$inboundSchema` instead. */
+  export const inboundSchema = FeedbackActive$inboundSchema;
+  /** @deprecated use `FeedbackActive$outboundSchema` instead. */
+  export const outboundSchema = FeedbackActive$outboundSchema;
+}
 
 /** @internal */
 export const Feedback$inboundSchema: z.ZodType<

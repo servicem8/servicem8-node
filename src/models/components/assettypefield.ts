@@ -31,48 +31,6 @@ export type AssetTypeFieldFieldType = ClosedEnum<
   typeof AssetTypeFieldFieldType
 >;
 
-/** @internal */
-export const AssetTypeFieldActive$inboundSchema: z.ZodNativeEnum<
-  typeof AssetTypeFieldActive
-> = z.nativeEnum(AssetTypeFieldActive);
-
-/** @internal */
-export const AssetTypeFieldActive$outboundSchema: z.ZodNativeEnum<
-  typeof AssetTypeFieldActive
-> = AssetTypeFieldActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AssetTypeFieldActive$ {
-  /** @deprecated use `AssetTypeFieldActive$inboundSchema` instead. */
-  export const inboundSchema = AssetTypeFieldActive$inboundSchema;
-  /** @deprecated use `AssetTypeFieldActive$outboundSchema` instead. */
-  export const outboundSchema = AssetTypeFieldActive$outboundSchema;
-}
-
-/** @internal */
-export const AssetTypeFieldFieldType$inboundSchema: z.ZodNativeEnum<
-  typeof AssetTypeFieldFieldType
-> = z.nativeEnum(AssetTypeFieldFieldType);
-
-/** @internal */
-export const AssetTypeFieldFieldType$outboundSchema: z.ZodNativeEnum<
-  typeof AssetTypeFieldFieldType
-> = AssetTypeFieldFieldType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AssetTypeFieldFieldType$ {
-  /** @deprecated use `AssetTypeFieldFieldType$inboundSchema` instead. */
-  export const inboundSchema = AssetTypeFieldFieldType$inboundSchema;
-  /** @deprecated use `AssetTypeFieldFieldType$outboundSchema` instead. */
-  export const outboundSchema = AssetTypeFieldFieldType$outboundSchema;
-}
-
 /**
  * Configuration data for the field
  */
@@ -139,6 +97,48 @@ export type AssetTypeFieldInput = {
    */
   sortOrder?: number | undefined;
 };
+
+/** @internal */
+export const AssetTypeFieldActive$inboundSchema: z.ZodNativeEnum<
+  typeof AssetTypeFieldActive
+> = z.nativeEnum(AssetTypeFieldActive);
+
+/** @internal */
+export const AssetTypeFieldActive$outboundSchema: z.ZodNativeEnum<
+  typeof AssetTypeFieldActive
+> = AssetTypeFieldActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AssetTypeFieldActive$ {
+  /** @deprecated use `AssetTypeFieldActive$inboundSchema` instead. */
+  export const inboundSchema = AssetTypeFieldActive$inboundSchema;
+  /** @deprecated use `AssetTypeFieldActive$outboundSchema` instead. */
+  export const outboundSchema = AssetTypeFieldActive$outboundSchema;
+}
+
+/** @internal */
+export const AssetTypeFieldFieldType$inboundSchema: z.ZodNativeEnum<
+  typeof AssetTypeFieldFieldType
+> = z.nativeEnum(AssetTypeFieldFieldType);
+
+/** @internal */
+export const AssetTypeFieldFieldType$outboundSchema: z.ZodNativeEnum<
+  typeof AssetTypeFieldFieldType
+> = AssetTypeFieldFieldType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AssetTypeFieldFieldType$ {
+  /** @deprecated use `AssetTypeFieldFieldType$inboundSchema` instead. */
+  export const inboundSchema = AssetTypeFieldFieldType$inboundSchema;
+  /** @deprecated use `AssetTypeFieldFieldType$outboundSchema` instead. */
+  export const outboundSchema = AssetTypeFieldFieldType$outboundSchema;
+}
 
 /** @internal */
 export const FieldData$inboundSchema: z.ZodType<

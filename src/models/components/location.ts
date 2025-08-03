@@ -21,27 +21,6 @@ export const LocationActive = {
  */
 export type LocationActive = ClosedEnum<typeof LocationActive>;
 
-/** @internal */
-export const LocationActive$inboundSchema: z.ZodNativeEnum<
-  typeof LocationActive
-> = z.nativeEnum(LocationActive);
-
-/** @internal */
-export const LocationActive$outboundSchema: z.ZodNativeEnum<
-  typeof LocationActive
-> = LocationActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace LocationActive$ {
-  /** @deprecated use `LocationActive$inboundSchema` instead. */
-  export const inboundSchema = LocationActive$inboundSchema;
-  /** @deprecated use `LocationActive$outboundSchema` instead. */
-  export const outboundSchema = LocationActive$outboundSchema;
-}
-
 export type Location = {
   /**
    * Location's name
@@ -155,6 +134,27 @@ export type LocationInput = {
    */
   active?: LocationActive | undefined;
 };
+
+/** @internal */
+export const LocationActive$inboundSchema: z.ZodNativeEnum<
+  typeof LocationActive
+> = z.nativeEnum(LocationActive);
+
+/** @internal */
+export const LocationActive$outboundSchema: z.ZodNativeEnum<
+  typeof LocationActive
+> = LocationActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace LocationActive$ {
+  /** @deprecated use `LocationActive$inboundSchema` instead. */
+  export const inboundSchema = LocationActive$inboundSchema;
+  /** @deprecated use `LocationActive$outboundSchema` instead. */
+  export const outboundSchema = LocationActive$outboundSchema;
+}
 
 /** @internal */
 export const Location$inboundSchema: z.ZodType<

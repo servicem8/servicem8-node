@@ -22,25 +22,6 @@ export const Filter = {
  */
 export type Filter = ClosedEnum<typeof Filter>;
 
-/** @internal */
-export const Filter$inboundSchema: z.ZodNativeEnum<typeof Filter> = z
-  .nativeEnum(Filter);
-
-/** @internal */
-export const Filter$outboundSchema: z.ZodNativeEnum<typeof Filter> =
-  Filter$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Filter$ {
-  /** @deprecated use `Filter$inboundSchema` instead. */
-  export const inboundSchema = Filter$inboundSchema;
-  /** @deprecated use `Filter$outboundSchema` instead. */
-  export const outboundSchema = Filter$outboundSchema;
-}
-
 export type ListInboxMessagesRequest = {
   /**
    * Maximum number of messages to return (1-500)
@@ -59,6 +40,25 @@ export type ListInboxMessagesRequest = {
    */
   search?: string | undefined;
 };
+
+/** @internal */
+export const Filter$inboundSchema: z.ZodNativeEnum<typeof Filter> = z
+  .nativeEnum(Filter);
+
+/** @internal */
+export const Filter$outboundSchema: z.ZodNativeEnum<typeof Filter> =
+  Filter$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Filter$ {
+  /** @deprecated use `Filter$inboundSchema` instead. */
+  export const inboundSchema = Filter$inboundSchema;
+  /** @deprecated use `Filter$outboundSchema` instead. */
+  export const outboundSchema = Filter$outboundSchema;
+}
 
 /** @internal */
 export const ListInboxMessagesRequest$inboundSchema: z.ZodType<

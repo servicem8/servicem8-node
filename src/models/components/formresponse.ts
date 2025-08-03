@@ -21,27 +21,6 @@ export const FormResponseActive = {
  */
 export type FormResponseActive = ClosedEnum<typeof FormResponseActive>;
 
-/** @internal */
-export const FormResponseActive$inboundSchema: z.ZodNativeEnum<
-  typeof FormResponseActive
-> = z.nativeEnum(FormResponseActive);
-
-/** @internal */
-export const FormResponseActive$outboundSchema: z.ZodNativeEnum<
-  typeof FormResponseActive
-> = FormResponseActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FormResponseActive$ {
-  /** @deprecated use `FormResponseActive$inboundSchema` instead. */
-  export const inboundSchema = FormResponseActive$inboundSchema;
-  /** @deprecated use `FormResponseActive$outboundSchema` instead. */
-  export const outboundSchema = FormResponseActive$outboundSchema;
-}
-
 export type FormResponse = {
   /**
    * Unique identifier for this record
@@ -85,6 +64,27 @@ export type FormResponseInput = {
   documentAttachmentUuid?: string | undefined;
   assetUuid?: string | undefined;
 };
+
+/** @internal */
+export const FormResponseActive$inboundSchema: z.ZodNativeEnum<
+  typeof FormResponseActive
+> = z.nativeEnum(FormResponseActive);
+
+/** @internal */
+export const FormResponseActive$outboundSchema: z.ZodNativeEnum<
+  typeof FormResponseActive
+> = FormResponseActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FormResponseActive$ {
+  /** @deprecated use `FormResponseActive$inboundSchema` instead. */
+  export const inboundSchema = FormResponseActive$inboundSchema;
+  /** @deprecated use `FormResponseActive$outboundSchema` instead. */
+  export const outboundSchema = FormResponseActive$outboundSchema;
+}
 
 /** @internal */
 export const FormResponse$inboundSchema: z.ZodType<

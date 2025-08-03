@@ -21,27 +21,6 @@ export const AssetTypeActive = {
  */
 export type AssetTypeActive = ClosedEnum<typeof AssetTypeActive>;
 
-/** @internal */
-export const AssetTypeActive$inboundSchema: z.ZodNativeEnum<
-  typeof AssetTypeActive
-> = z.nativeEnum(AssetTypeActive);
-
-/** @internal */
-export const AssetTypeActive$outboundSchema: z.ZodNativeEnum<
-  typeof AssetTypeActive
-> = AssetTypeActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AssetTypeActive$ {
-  /** @deprecated use `AssetTypeActive$inboundSchema` instead. */
-  export const inboundSchema = AssetTypeActive$inboundSchema;
-  /** @deprecated use `AssetTypeActive$outboundSchema` instead. */
-  export const outboundSchema = AssetTypeActive$outboundSchema;
-}
-
 export type AssetType = {
   /**
    * Unique identifier for this record
@@ -75,6 +54,27 @@ export type AssetTypeInput = {
    */
   name?: string | undefined;
 };
+
+/** @internal */
+export const AssetTypeActive$inboundSchema: z.ZodNativeEnum<
+  typeof AssetTypeActive
+> = z.nativeEnum(AssetTypeActive);
+
+/** @internal */
+export const AssetTypeActive$outboundSchema: z.ZodNativeEnum<
+  typeof AssetTypeActive
+> = AssetTypeActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AssetTypeActive$ {
+  /** @deprecated use `AssetTypeActive$inboundSchema` instead. */
+  export const inboundSchema = AssetTypeActive$inboundSchema;
+  /** @deprecated use `AssetTypeActive$outboundSchema` instead. */
+  export const outboundSchema = AssetTypeActive$outboundSchema;
+}
 
 /** @internal */
 export const AssetType$inboundSchema: z.ZodType<

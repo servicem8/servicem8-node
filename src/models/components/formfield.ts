@@ -21,27 +21,6 @@ export const FormFieldActive = {
  */
 export type FormFieldActive = ClosedEnum<typeof FormFieldActive>;
 
-/** @internal */
-export const FormFieldActive$inboundSchema: z.ZodNativeEnum<
-  typeof FormFieldActive
-> = z.nativeEnum(FormFieldActive);
-
-/** @internal */
-export const FormFieldActive$outboundSchema: z.ZodNativeEnum<
-  typeof FormFieldActive
-> = FormFieldActive$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FormFieldActive$ {
-  /** @deprecated use `FormFieldActive$inboundSchema` instead. */
-  export const inboundSchema = FormFieldActive$inboundSchema;
-  /** @deprecated use `FormFieldActive$outboundSchema` instead. */
-  export const outboundSchema = FormFieldActive$outboundSchema;
-}
-
 export type FormField = {
   /**
    * Unique identifier for this record
@@ -75,6 +54,27 @@ export type FormFieldInput = {
   fieldDataJson?: string | undefined;
   sortOrder?: string | undefined;
 };
+
+/** @internal */
+export const FormFieldActive$inboundSchema: z.ZodNativeEnum<
+  typeof FormFieldActive
+> = z.nativeEnum(FormFieldActive);
+
+/** @internal */
+export const FormFieldActive$outboundSchema: z.ZodNativeEnum<
+  typeof FormFieldActive
+> = FormFieldActive$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FormFieldActive$ {
+  /** @deprecated use `FormFieldActive$inboundSchema` instead. */
+  export const inboundSchema = FormFieldActive$inboundSchema;
+  /** @deprecated use `FormFieldActive$outboundSchema` instead. */
+  export const outboundSchema = FormFieldActive$outboundSchema;
+}
 
 /** @internal */
 export const FormField$inboundSchema: z.ZodType<
