@@ -7,17 +7,17 @@
 
 ```typescript
 const value: components.JobActivity = {
-  uuid: "123e4567-d3f8-454d-977a-2313f12202db",
+  uuid: "123e4567-274d-4441-bd49-23184aa63e8b",
   editDate: "2025-08-01 12:00:00",
-  jobUuid: "123e4567-6d6e-42a3-b729-2313f15cc03b",
-  staffUuid: "123e4567-8b7b-4dc1-a634-2313f93dc16b",
+  jobUuid: "123e4567-650a-4da4-a79a-23184ea94ecb",
+  staffUuid: "123e4567-2e2f-41d9-ab88-231845f3388b",
   startDate: "2025-08-01 12:00:00",
   endDate: "2025-08-01 12:00:00",
   hasBeenOpenedTimestamp: "2025-08-01 12:00:00",
-  allocatedByStaffUuid: "123e4567-c5c5-4ba7-aadb-2313fac4302b",
+  allocatedByStaffUuid: "123e4567-5268-4be8-9ed1-231849079e3b",
   allocatedTimestamp: "2025-08-01 12:00:00",
-  materialUuid: "123e4567-1906-4adb-ad59-2313fa76573b",
-  editByStaffUuid: "123e4567-5413-4ef0-874d-2313f9e8928b",
+  materialUuid: "123e4567-787b-414f-a440-23184271224b",
+  editByStaffUuid: "123e4567-a46e-440e-b85e-23184c2ad50b",
 };
 ```
 

@@ -9,7 +9,7 @@
 const value: components.SecurityRole[] = [
   {
     name: "<value>",
-    uuid: "123e4567-0b27-463b-8b69-2313fcfd45eb",
+    uuid: "123e4567-4bfe-4a1c-a4e0-231848eb589b",
     editDate: "2025-08-01 12:00:00",
   },
 ];

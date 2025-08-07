@@ -9,7 +9,7 @@ let value: UpdateSecurityRolesRequest = {
   uuid: "6e56caba-8c3c-495e-9cd6-d570c3993688",
   securityRole: {
     name: "<value>",
-    uuid: "123e4567-0b27-463b-8b69-2313fcfd45eb",
+    uuid: "123e4567-4bfe-4a1c-a4e0-231848eb589b",
   },
 };
 ```

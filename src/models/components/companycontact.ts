@@ -34,6 +34,9 @@ export type CompanyContact = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
+  /**
+   * The UUID of the company this contact belongs to
+   */
   companyUuid?: string | undefined;
   first?: string | undefined;
   last?: string | undefined;
@@ -53,6 +56,9 @@ export type CompanyContactInput = {
    * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: CompanyContactActive | undefined;
+  /**
+   * The UUID of the company this contact belongs to
+   */
   companyUuid?: string | undefined;
   first?: string | undefined;
   last?: string | undefined;
