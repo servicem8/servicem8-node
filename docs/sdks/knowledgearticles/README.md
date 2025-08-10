@@ -123,7 +123,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.knowledgeArticles.createKnowledgeArticles({
-    uuid: "123e4567-13d5-4032-8fe8-23184a9c85ab",
+    uuid: "123e4567-b2b6-4457-b8e1-2318489891cb",
     name: "<value>",
   });
 
@@ -151,7 +151,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await knowledgeArticlesCreateKnowledgeArticles(serviceM8, {
-    uuid: "123e4567-13d5-4032-8fe8-23184a9c85ab",
+    uuid: "123e4567-b2b6-4457-b8e1-2318489891cb",
     name: "<value>",
   });
   if (res.ok) {
@@ -293,7 +293,7 @@ async function run() {
   const result = await serviceM8.knowledgeArticles.updateKnowledgeArticles({
     uuid: "a643fa14-496b-46a5-88bc-4e67bb92bafd",
     knowledgeArticle: {
-      uuid: "123e4567-13d5-4032-8fe8-23184a9c85ab",
+      uuid: "123e4567-b2b6-4457-b8e1-2318489891cb",
       name: "<value>",
     },
   });
@@ -324,7 +324,7 @@ async function run() {
   const res = await knowledgeArticlesUpdateKnowledgeArticles(serviceM8, {
     uuid: "a643fa14-496b-46a5-88bc-4e67bb92bafd",
     knowledgeArticle: {
-      uuid: "123e4567-13d5-4032-8fe8-23184a9c85ab",
+      uuid: "123e4567-b2b6-4457-b8e1-2318489891cb",
       name: "<value>",
     },
   });

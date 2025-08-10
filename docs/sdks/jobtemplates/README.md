@@ -119,7 +119,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobTemplates.createJobTemplates({
-    uuid: "123e4567-3acb-47d0-b184-23184dc7440b",
+    uuid: "123e4567-cb7e-4774-adac-23184b27c0db",
   });
 
   console.log(result);
@@ -146,7 +146,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobTemplatesCreateJobTemplates(serviceM8, {
-    uuid: "123e4567-3acb-47d0-b184-23184dc7440b",
+    uuid: "123e4567-cb7e-4774-adac-23184b27c0db",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -282,7 +282,7 @@ async function run() {
   const result = await serviceM8.jobTemplates.updateJobTemplates({
     uuid: "c3cda462-77ac-4f6b-96fc-278f0e8e4121",
     jobTemplate: {
-      uuid: "123e4567-3acb-47d0-b184-23184dc7440b",
+      uuid: "123e4567-cb7e-4774-adac-23184b27c0db",
     },
   });
 
@@ -312,7 +312,7 @@ async function run() {
   const res = await jobTemplatesUpdateJobTemplates(serviceM8, {
     uuid: "c3cda462-77ac-4f6b-96fc-278f0e8e4121",
     jobTemplate: {
-      uuid: "123e4567-3acb-47d0-b184-23184dc7440b",
+      uuid: "123e4567-cb7e-4774-adac-23184b27c0db",
     },
   });
   if (res.ok) {

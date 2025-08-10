@@ -8,8 +8,8 @@ import { UpdateFormFieldsRequest } from "servicem8/models/operations";
 let value: UpdateFormFieldsRequest = {
   uuid: "b954c479-0928-4c00-86ff-8f29c8f7bbe5",
   formField: {
-    uuid: "123e4567-1274-42cd-93a5-23184dfe250b",
-    formUuid: "123e4567-7176-48fd-a951-2318458484eb",
+    uuid: "123e4567-7428-4fe5-a870-23184c462dfb",
+    formUuid: "123e4567-a0c7-4fdf-b93e-2318419a2dab",
   },
 };
 ```

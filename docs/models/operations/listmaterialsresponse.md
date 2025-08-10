@@ -9,9 +9,9 @@
 const value: components.Material[] = [
   {
     name: "<value>",
-    uuid: "123e4567-11c4-428d-aeab-2318432f964b",
+    uuid: "123e4567-519a-4c8e-a7c4-231841e07b7b",
     editDate: "2025-08-01 12:00:00",
-    taxRateUuid: "123e4567-fe09-4e38-a969-231841806bbb",
+    taxRateUuid: "123e4567-51b3-453e-b955-2318497ffb2b",
   },
 ];
 ```

@@ -202,7 +202,7 @@ async function run() {
   const result = await serviceM8.vendors.updateVendors({
     uuid: "d90cffed-8677-4cbe-ab38-b734ac463633",
     vendor: {
-      uuid: "123e4567-a3e6-4c33-909d-231849767bdb",
+      uuid: "123e4567-998e-4c06-b519-231843a8b42b",
       name: "<value>",
     },
   });
@@ -233,7 +233,7 @@ async function run() {
   const res = await vendorsUpdateVendors(serviceM8, {
     uuid: "d90cffed-8677-4cbe-ab38-b734ac463633",
     vendor: {
-      uuid: "123e4567-a3e6-4c33-909d-231849767bdb",
+      uuid: "123e4567-998e-4c06-b519-231843a8b42b",
       name: "<value>",
     },
   });

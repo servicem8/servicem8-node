@@ -8,7 +8,7 @@
 ```typescript
 const value: components.JobTemplate[] = [
   {
-    uuid: "123e4567-3acb-47d0-b184-23184dc7440b",
+    uuid: "123e4567-cb7e-4774-adac-23184b27c0db",
     editDate: "2025-08-01 12:00:00",
   },
 ];
