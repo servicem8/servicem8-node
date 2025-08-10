@@ -6,7 +6,7 @@
 import { EmailTemplateInput } from "servicem8/models/components";
 
 let value: EmailTemplateInput = {
-  uuid: "123e4567-6189-4f0a-a881-231840ad32bb",
+  uuid: "123e4567-2d18-4e5a-a3b4-231b2c9ed8eb",
   name: "<value>",
 };
 ```
@@ -15,7 +15,7 @@ let value: EmailTemplateInput = {
 
 | Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `uuid`                                                                           | *string*                                                                         | :heavy_minus_sign:                                                               | Unique identifier for this record                                                | 123e4567-6189-4f0a-a881-231840ad32bb                                             |
+| `uuid`                                                                           | *string*                                                                         | :heavy_minus_sign:                                                               | Unique identifier for this record                                                | 123e4567-2d18-4e5a-a3b4-231b2c9ed8eb                                             |
 | `active`                                                                         | [components.EmailTemplateActive](../../models/components/emailtemplateactive.md) | :heavy_minus_sign:                                                               | Record active/deleted flag.  Valid values are [0,1]                              |                                                                                  |
 | `name`                                                                           | *string*                                                                         | :heavy_check_mark:                                                               | N/A                                                                              |                                                                                  |
 | `subject`                                                                        | *string*                                                                         | :heavy_minus_sign:                                                               | N/A                                                                              |                                                                                  |

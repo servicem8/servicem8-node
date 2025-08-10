@@ -323,6 +323,14 @@ run();
 * [updateCompanyContacts](docs/sdks/companycontacts/README.md#updatecompanycontacts) - Update a Company Contact
 * [deleteCompanyContacts](docs/sdks/companycontacts/README.md#deletecompanycontacts) - Delete a Company Contact
 
+### [documentTemplates](docs/sdks/documenttemplates/README.md)
+
+* [listDocumentTemplates](docs/sdks/documenttemplates/README.md#listdocumenttemplates) - List all Document Templates
+* [createDocumentTemplates](docs/sdks/documenttemplates/README.md#createdocumenttemplates) - Create a new Document Template
+* [getDocumentTemplates](docs/sdks/documenttemplates/README.md#getdocumenttemplates) - Retrieve a Document Template
+* [updateDocumentTemplates](docs/sdks/documenttemplates/README.md#updatedocumenttemplates) - Update a Document Template
+* [deleteDocumentTemplates](docs/sdks/documenttemplates/README.md#deletedocumenttemplates) - Delete a Document Template
+
 ### [emailTemplates](docs/sdks/emailtemplates/README.md)
 
 * [listEmailTemplates](docs/sdks/emailtemplates/README.md#listemailtemplates) - List all Email Templates
@@ -615,6 +623,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`companyContactsGetCompanyContacts`](docs/sdks/companycontacts/README.md#getcompanycontacts) - Retrieve a Company Contact
 - [`companyContactsListCompanyContacts`](docs/sdks/companycontacts/README.md#listcompanycontacts) - List all Company Contacts
 - [`companyContactsUpdateCompanyContacts`](docs/sdks/companycontacts/README.md#updatecompanycontacts) - Update a Company Contact
+- [`documentTemplatesCreateDocumentTemplates`](docs/sdks/documenttemplates/README.md#createdocumenttemplates) - Create a new Document Template
+- [`documentTemplatesDeleteDocumentTemplates`](docs/sdks/documenttemplates/README.md#deletedocumenttemplates) - Delete a Document Template
+- [`documentTemplatesGetDocumentTemplates`](docs/sdks/documenttemplates/README.md#getdocumenttemplates) - Retrieve a Document Template
+- [`documentTemplatesListDocumentTemplates`](docs/sdks/documenttemplates/README.md#listdocumenttemplates) - List all Document Templates
+- [`documentTemplatesUpdateDocumentTemplates`](docs/sdks/documenttemplates/README.md#updatedocumenttemplates) - Update a Document Template
 - [`emailTemplatesCreateEmailTemplates`](docs/sdks/emailtemplates/README.md#createemailtemplates) - Create a new Email Template
 - [`emailTemplatesDeleteEmailTemplates`](docs/sdks/emailtemplates/README.md#deleteemailtemplates) - Delete an Email Template
 - [`emailTemplatesGetEmailTemplates`](docs/sdks/emailtemplates/README.md#getemailtemplates) - Retrieve an Email Template

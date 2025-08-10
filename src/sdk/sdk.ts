@@ -13,6 +13,7 @@ import { Bundles } from "./bundles.js";
 import { Categories } from "./categories.js";
 import { Clients } from "./clients.js";
 import { CompanyContacts } from "./companycontacts.js";
+import { DocumentTemplates } from "./documenttemplates.js";
 import { EmailTemplates } from "./emailtemplates.js";
 import { Feedback } from "./feedback.js";
 import { FormFields } from "./formfields.js";
@@ -86,6 +87,11 @@ export class ServiceM8 extends ClientSDK {
   private _companyContacts?: CompanyContacts;
   get companyContacts(): CompanyContacts {
     return (this._companyContacts ??= new CompanyContacts(this._options));
+  }
+
+  private _documentTemplates?: DocumentTemplates;
+  get documentTemplates(): DocumentTemplates {
+    return (this._documentTemplates ??= new DocumentTemplates(this._options));
   }
 
   private _emailTemplates?: EmailTemplates;

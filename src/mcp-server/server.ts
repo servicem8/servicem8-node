@@ -62,6 +62,11 @@ import { tool$companyContactsDeleteCompanyContacts } from "./tools/companyContac
 import { tool$companyContactsGetCompanyContacts } from "./tools/companyContactsGetCompanyContacts.js";
 import { tool$companyContactsListCompanyContacts } from "./tools/companyContactsListCompanyContacts.js";
 import { tool$companyContactsUpdateCompanyContacts } from "./tools/companyContactsUpdateCompanyContacts.js";
+import { tool$documentTemplatesCreateDocumentTemplates } from "./tools/documentTemplatesCreateDocumentTemplates.js";
+import { tool$documentTemplatesDeleteDocumentTemplates } from "./tools/documentTemplatesDeleteDocumentTemplates.js";
+import { tool$documentTemplatesGetDocumentTemplates } from "./tools/documentTemplatesGetDocumentTemplates.js";
+import { tool$documentTemplatesListDocumentTemplates } from "./tools/documentTemplatesListDocumentTemplates.js";
+import { tool$documentTemplatesUpdateDocumentTemplates } from "./tools/documentTemplatesUpdateDocumentTemplates.js";
 import { tool$emailTemplatesCreateEmailTemplates } from "./tools/emailTemplatesCreateEmailTemplates.js";
 import { tool$emailTemplatesDeleteEmailTemplates } from "./tools/emailTemplatesDeleteEmailTemplates.js";
 import { tool$emailTemplatesGetEmailTemplates } from "./tools/emailTemplatesGetEmailTemplates.js";
@@ -213,7 +218,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "ServiceM8",
-    version: "0.9.27",
+    version: "0.9.28",
   });
 
   const client = new ServiceM8Core({
@@ -287,6 +292,11 @@ export function createMCPServer(deps: {
   tool(tool$companyContactsGetCompanyContacts);
   tool(tool$companyContactsUpdateCompanyContacts);
   tool(tool$companyContactsDeleteCompanyContacts);
+  tool(tool$documentTemplatesListDocumentTemplates);
+  tool(tool$documentTemplatesCreateDocumentTemplates);
+  tool(tool$documentTemplatesGetDocumentTemplates);
+  tool(tool$documentTemplatesUpdateDocumentTemplates);
+  tool(tool$documentTemplatesDeleteDocumentTemplates);
   tool(tool$emailTemplatesListEmailTemplates);
   tool(tool$emailTemplatesCreateEmailTemplates);
   tool(tool$emailTemplatesGetEmailTemplates);
