@@ -7,14 +7,14 @@
 
 ```typescript
 const value: components.StaffMessage = {
-  uuid: "123e4567-b988-4eee-869b-231b292835db",
+  uuid: "123e4567-1b5e-49f6-b20b-231b28daf49b",
   editDate: "2025-08-01 12:00:00",
-  fromStaffUuid: "123e4567-4124-4328-9004-231b25099b7b",
-  toStaffUuid: "123e4567-5ad6-4fac-8d88-231b2cecc2db",
+  fromStaffUuid: "123e4567-0edc-4cfc-922f-231b2eac55bb",
+  toStaffUuid: "123e4567-278c-4e78-a682-231b25dd9b5b",
   sentTimestamp: "2025-08-01 12:00:00",
   deliveredTimestamp: "2025-08-01 12:00:00",
   readTimestamp: "2025-08-01 12:00:00",
-  regardingJobUuid: "123e4567-62cf-4daa-b3a6-231b2f99b6fb",
+  regardingJobUuid: "123e4567-c8a0-4757-979c-231b264e6d3b",
 };
 ```
 
