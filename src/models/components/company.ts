@@ -62,6 +62,9 @@ export type Company = {
   addressPostcode?: string | undefined;
   addressCountry?: string | undefined;
   faxNumber?: string | undefined;
+  /**
+   * JSON Array of Badge UUIDs
+   */
   badges?: string | undefined;
   taxRateUuid?: string | undefined;
   billingAttention?: string | undefined;
@@ -105,6 +108,9 @@ export type CompanyInput = {
   addressPostcode?: string | undefined;
   addressCountry?: string | undefined;
   faxNumber?: string | undefined;
+  /**
+   * JSON Array of Badge UUIDs
+   */
   badges?: string | undefined;
   taxRateUuid?: string | undefined;
   billingAttention?: string | undefined;

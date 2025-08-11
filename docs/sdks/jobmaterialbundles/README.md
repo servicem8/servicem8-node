@@ -113,9 +113,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterialBundles.createJobMaterialBundles({
-    uuid: "123e4567-a6ab-41c0-8b49-231b29071fab",
-    materialBundleUuid: "123e4567-2928-461a-ae96-231b26f0587b",
-    jobUuid: "123e4567-e56f-4149-ba1f-231b290eefcb",
+    uuid: "123e4567-735d-4bef-a2ae-231cf8aecfeb",
+    materialBundleUuid: "123e4567-8fcb-4a70-8076-231cfff9c46b",
+    jobUuid: "123e4567-2f8f-4275-918f-231cf041504b",
   });
 
   console.log(result);
@@ -142,9 +142,9 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialBundlesCreateJobMaterialBundles(serviceM8, {
-    uuid: "123e4567-a6ab-41c0-8b49-231b29071fab",
-    materialBundleUuid: "123e4567-2928-461a-ae96-231b26f0587b",
-    jobUuid: "123e4567-e56f-4149-ba1f-231b290eefcb",
+    uuid: "123e4567-735d-4bef-a2ae-231cf8aecfeb",
+    materialBundleUuid: "123e4567-8fcb-4a70-8076-231cfff9c46b",
+    jobUuid: "123e4567-2f8f-4275-918f-231cf041504b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -275,9 +275,9 @@ async function run() {
   const result = await serviceM8.jobMaterialBundles.updateJobMaterialBundles({
     uuid: "6419b5e7-8edd-4c69-9648-b6ed7431256b",
     jobMaterialBundle: {
-      uuid: "123e4567-a6ab-41c0-8b49-231b29071fab",
-      materialBundleUuid: "123e4567-2928-461a-ae96-231b26f0587b",
-      jobUuid: "123e4567-e56f-4149-ba1f-231b290eefcb",
+      uuid: "123e4567-735d-4bef-a2ae-231cf8aecfeb",
+      materialBundleUuid: "123e4567-8fcb-4a70-8076-231cfff9c46b",
+      jobUuid: "123e4567-2f8f-4275-918f-231cf041504b",
     },
   });
 
@@ -307,9 +307,9 @@ async function run() {
   const res = await jobMaterialBundlesUpdateJobMaterialBundles(serviceM8, {
     uuid: "6419b5e7-8edd-4c69-9648-b6ed7431256b",
     jobMaterialBundle: {
-      uuid: "123e4567-a6ab-41c0-8b49-231b29071fab",
-      materialBundleUuid: "123e4567-2928-461a-ae96-231b26f0587b",
-      jobUuid: "123e4567-e56f-4149-ba1f-231b290eefcb",
+      uuid: "123e4567-735d-4bef-a2ae-231cf8aecfeb",
+      materialBundleUuid: "123e4567-8fcb-4a70-8076-231cfff9c46b",
+      jobUuid: "123e4567-2f8f-4275-918f-231cf041504b",
     },
   });
   if (res.ok) {

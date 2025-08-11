@@ -6,7 +6,7 @@
 import { Vendor } from "servicem8/models/components";
 
 let value: Vendor = {
-  uuid: "123e4567-8530-4888-9962-231b2043f2bb",
+  uuid: "123e4567-d6ae-47e2-ae3f-231cf50b889b",
   editDate: "2025-08-01 12:00:00",
   name: "<value>",
 };
@@ -16,7 +16,7 @@ let value: Vendor = {
 
 | Field                                                              | Type                                                               | Required                                                           | Description                                                        | Example                                                            |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `uuid`                                                             | *string*                                                           | :heavy_minus_sign:                                                 | Unique identifier for this record                                  | 123e4567-8530-4888-9962-231b2043f2bb                               |
+| `uuid`                                                             | *string*                                                           | :heavy_minus_sign:                                                 | Unique identifier for this record                                  | 123e4567-d6ae-47e2-ae3f-231cf50b889b                               |
 | `active`                                                           | [components.VendorActive](../../models/components/vendoractive.md) | :heavy_minus_sign:                                                 | Record active/deleted flag.  Valid values are [0,1]                |                                                                    |
 | `editDate`                                                         | *any*                                                              | :heavy_minus_sign:                                                 | Timestamp at which record was last modified                        | 2025-08-01 12:00:00                                                |
 | `name`                                                             | *string*                                                           | :heavy_check_mark:                                                 | Company Name                                                       |                                                                    |

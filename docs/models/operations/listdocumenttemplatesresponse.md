@@ -8,7 +8,7 @@
 ```typescript
 const value: components.DocumentTemplate[] = [
   {
-    uuid: "123e4567-3dcd-412e-80f8-231b29f5928b",
+    uuid: "123e4567-5ad9-402f-9a58-231cf8cc466b",
     editDate: "2025-08-01 12:00:00",
   },
 ];

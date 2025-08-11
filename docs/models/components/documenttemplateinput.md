@@ -6,7 +6,7 @@
 import { DocumentTemplateInput } from "servicem8/models/components";
 
 let value: DocumentTemplateInput = {
-  uuid: "123e4567-3dcd-412e-80f8-231b29f5928b",
+  uuid: "123e4567-5ad9-402f-9a58-231cf8cc466b",
 };
 ```
 
@@ -14,7 +14,7 @@ let value: DocumentTemplateInput = {
 
 | Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            | Example                                                                                |
 | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `uuid`                                                                                 | *string*                                                                               | :heavy_minus_sign:                                                                     | Unique identifier for this record                                                      | 123e4567-3dcd-412e-80f8-231b29f5928b                                                   |
+| `uuid`                                                                                 | *string*                                                                               | :heavy_minus_sign:                                                                     | Unique identifier for this record                                                      | 123e4567-5ad9-402f-9a58-231cf8cc466b                                                   |
 | `active`                                                                               | [components.DocumentTemplateActive](../../models/components/documenttemplateactive.md) | :heavy_minus_sign:                                                                     | Record active/deleted flag.  Valid values are [0,1]                                    |                                                                                        |
 | `templateType`                                                                         | *string*                                                                               | :heavy_minus_sign:                                                                     | (Read only)                                                                            |                                                                                        |
 | `relatedObject`                                                                        | *string*                                                                               | :heavy_minus_sign:                                                                     | N/A                                                                                    |                                                                                        |

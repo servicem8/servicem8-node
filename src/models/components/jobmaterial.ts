@@ -43,7 +43,13 @@ export type JobMaterial = {
   displayedAmountIsTaxInclusive?: string | undefined;
   taxRateUuid?: string | undefined;
   sortOrder?: string | undefined;
+  /**
+   * The cost of the material for this job. This is the ex-tax amount.
+   */
   cost?: string | undefined;
+  /**
+   * The cost of the material for this job, displayed as inc-tax or ex-tax depending on jobMaterial.displayed_amount_is_tax_inclusive.
+   */
   displayedCost?: string | undefined;
   /**
    * UUID of a JobMaterialBundle which this JobMaterial belongs to. The default value is blank, which means that the JobMaterial is not part of a JobMaterialBundle.
@@ -69,7 +75,13 @@ export type JobMaterialInput = {
   displayedAmountIsTaxInclusive?: string | undefined;
   taxRateUuid?: string | undefined;
   sortOrder?: string | undefined;
+  /**
+   * The cost of the material for this job. This is the ex-tax amount.
+   */
   cost?: string | undefined;
+  /**
+   * The cost of the material for this job, displayed as inc-tax or ex-tax depending on jobMaterial.displayed_amount_is_tax_inclusive.
+   */
   displayedCost?: string | undefined;
   /**
    * UUID of a JobMaterialBundle which this JobMaterial belongs to. The default value is blank, which means that the JobMaterial is not part of a JobMaterialBundle.

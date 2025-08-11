@@ -34,19 +34,40 @@ export type JobActivity = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
+  /**
+   * The UUID of the job this activity belongs to
+   */
   jobUuid?: string | undefined;
+  /**
+   * The UUID of the staff member assigned to this activity
+   */
   staffUuid?: string | undefined;
+  /**
+   * The scheduled start date and time of the activity
+   */
   startDate?: string | undefined;
+  /**
+   * The scheduled end date and time of the activity
+   */
   endDate?: string | undefined;
   activityWasScheduled?: string | undefined;
   activityWasRecorded?: string | undefined;
   activityWasAutomated?: string | undefined;
   hasBeenOpened?: string | undefined;
   hasBeenOpenedTimestamp?: string | undefined;
-  travelTimeInSeconds?: string | undefined;
-  travelDistanceInMeters?: string | undefined;
+  /**
+   * The estimated travel time to reach this activity location in seconds
+   */
+  travelTimeInSeconds?: number | undefined;
+  /**
+   * The estimated travel distance to reach this activity location in meters
+   */
+  travelDistanceInMeters?: number | undefined;
   allocatedByStaffUuid?: string | undefined;
   allocatedTimestamp?: string | undefined;
+  /**
+   * The UUID of the material associated with this activity. Used to determine the cost of the activity.
+   */
   materialUuid?: string | undefined;
   /**
    * UUID of Staff Member who last modified record
@@ -63,19 +84,40 @@ export type JobActivityInput = {
    * Record active/deleted flag.  Valid values are [0,1].  Valid values are [0,1]
    */
   active?: JobActivityActive | undefined;
+  /**
+   * The UUID of the job this activity belongs to
+   */
   jobUuid?: string | undefined;
+  /**
+   * The UUID of the staff member assigned to this activity
+   */
   staffUuid?: string | undefined;
+  /**
+   * The scheduled start date and time of the activity
+   */
   startDate?: string | undefined;
+  /**
+   * The scheduled end date and time of the activity
+   */
   endDate?: string | undefined;
   activityWasScheduled?: string | undefined;
   activityWasRecorded?: string | undefined;
   activityWasAutomated?: string | undefined;
   hasBeenOpened?: string | undefined;
   hasBeenOpenedTimestamp?: string | undefined;
-  travelTimeInSeconds?: string | undefined;
-  travelDistanceInMeters?: string | undefined;
+  /**
+   * The estimated travel time to reach this activity location in seconds
+   */
+  travelTimeInSeconds?: number | undefined;
+  /**
+   * The estimated travel distance to reach this activity location in meters
+   */
+  travelDistanceInMeters?: number | undefined;
   allocatedByStaffUuid?: string | undefined;
   allocatedTimestamp?: string | undefined;
+  /**
+   * The UUID of the material associated with this activity. Used to determine the cost of the activity.
+   */
   materialUuid?: string | undefined;
 };
 
@@ -118,8 +160,8 @@ export const JobActivity$inboundSchema: z.ZodType<
   activity_was_automated: z.string().optional(),
   has_been_opened: z.string().optional(),
   has_been_opened_timestamp: z.string().optional(),
-  travel_time_in_seconds: z.string().optional(),
-  travel_distance_in_meters: z.string().optional(),
+  travel_time_in_seconds: z.number().int().optional(),
+  travel_distance_in_meters: z.number().int().optional(),
   allocated_by_staff_uuid: z.string().optional(),
   allocated_timestamp: z.string().optional(),
   material_uuid: z.string().optional(),
@@ -159,8 +201,8 @@ export type JobActivity$Outbound = {
   activity_was_automated?: string | undefined;
   has_been_opened?: string | undefined;
   has_been_opened_timestamp?: string | undefined;
-  travel_time_in_seconds?: string | undefined;
-  travel_distance_in_meters?: string | undefined;
+  travel_time_in_seconds?: number | undefined;
+  travel_distance_in_meters?: number | undefined;
   allocated_by_staff_uuid?: string | undefined;
   allocated_timestamp?: string | undefined;
   material_uuid?: string | undefined;
@@ -185,8 +227,8 @@ export const JobActivity$outboundSchema: z.ZodType<
   activityWasAutomated: z.string().optional(),
   hasBeenOpened: z.string().optional(),
   hasBeenOpenedTimestamp: z.string().optional(),
-  travelTimeInSeconds: z.string().optional(),
-  travelDistanceInMeters: z.string().optional(),
+  travelTimeInSeconds: z.number().int().optional(),
+  travelDistanceInMeters: z.number().int().optional(),
   allocatedByStaffUuid: z.string().optional(),
   allocatedTimestamp: z.string().optional(),
   materialUuid: z.string().optional(),
@@ -256,8 +298,8 @@ export const JobActivityInput$inboundSchema: z.ZodType<
   activity_was_automated: z.string().optional(),
   has_been_opened: z.string().optional(),
   has_been_opened_timestamp: z.string().optional(),
-  travel_time_in_seconds: z.string().optional(),
-  travel_distance_in_meters: z.string().optional(),
+  travel_time_in_seconds: z.number().int().optional(),
+  travel_distance_in_meters: z.number().int().optional(),
   allocated_by_staff_uuid: z.string().optional(),
   allocated_timestamp: z.string().optional(),
   material_uuid: z.string().optional(),
@@ -293,8 +335,8 @@ export type JobActivityInput$Outbound = {
   activity_was_automated?: string | undefined;
   has_been_opened?: string | undefined;
   has_been_opened_timestamp?: string | undefined;
-  travel_time_in_seconds?: string | undefined;
-  travel_distance_in_meters?: string | undefined;
+  travel_time_in_seconds?: number | undefined;
+  travel_distance_in_meters?: number | undefined;
   allocated_by_staff_uuid?: string | undefined;
   allocated_timestamp?: string | undefined;
   material_uuid?: string | undefined;
@@ -317,8 +359,8 @@ export const JobActivityInput$outboundSchema: z.ZodType<
   activityWasAutomated: z.string().optional(),
   hasBeenOpened: z.string().optional(),
   hasBeenOpenedTimestamp: z.string().optional(),
-  travelTimeInSeconds: z.string().optional(),
-  travelDistanceInMeters: z.string().optional(),
+  travelTimeInSeconds: z.number().int().optional(),
+  travelDistanceInMeters: z.number().int().optional(),
   allocatedByStaffUuid: z.string().optional(),
   allocatedTimestamp: z.string().optional(),
   materialUuid: z.string().optional(),
