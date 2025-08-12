@@ -8,8 +8,8 @@ import { UpdateFeedbackRequest } from "servicem8/models/operations";
 let value: UpdateFeedbackRequest = {
   uuid: "92cb4782-9270-4ee2-afa8-785d4aa49a17",
   feedback: {
-    uuid: "123e4567-4291-404d-82e3-231cfabfc9bb",
-    relatedObjectUuid: "123e4567-8e0c-46de-94f0-231cf066f93b",
+    uuid: "123e4567-5d8e-4833-a6b6-231d2cee5ccb",
+    relatedObjectUuid: "123e4567-272c-4986-831a-231d2d86e73b",
   },
 };
 ```

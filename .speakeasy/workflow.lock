@@ -2,8 +2,8 @@ speakeasyVersion: 1.601.0
 sources:
     ServiceM8 API:
         sourceNamespace: service-m-8-api
-        sourceRevisionDigest: sha256:62f924e766551b1b4fa06a0ced354eed6d3dce3ae6814ec8d05a012479441ac7
-        sourceBlobDigest: sha256:3fcb97f61b180ccb6293641f694ec08d1175008613a93b745b2b2d1a99642f26
+        sourceRevisionDigest: sha256:72f9b9330c164d65221a216486eddc775216e1dfdc75813a1b015929710b9f8d
+        sourceBlobDigest: sha256:431f6b3e2351708e2ab2599ea0f0f14f4b991b48ee87368bce1aedf9af0fa653
         tags:
             - latest
             - 1.0.0
@@ -25,10 +25,10 @@ targets:
     servicem8:
         source: ServiceM8 API
         sourceNamespace: service-m-8-api
-        sourceRevisionDigest: sha256:62f924e766551b1b4fa06a0ced354eed6d3dce3ae6814ec8d05a012479441ac7
-        sourceBlobDigest: sha256:3fcb97f61b180ccb6293641f694ec08d1175008613a93b745b2b2d1a99642f26
+        sourceRevisionDigest: sha256:72f9b9330c164d65221a216486eddc775216e1dfdc75813a1b015929710b9f8d
+        sourceBlobDigest: sha256:431f6b3e2351708e2ab2599ea0f0f14f4b991b48ee87368bce1aedf9af0fa653
         codeSamplesNamespace: service-m-8-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:6ce3b4a879e49f1499ad72c7c83e03b3d1d93a838205515760272c7297cd548f
+        codeSamplesRevisionDigest: sha256:995462f6e8591f1d50907e7a6cb7e1b2c105b3b8f36299980d1c6f1d09e48a3e
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

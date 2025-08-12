@@ -10,12 +10,12 @@ let value: UpdateTasksRequest = {
   task: {
     dueDate: "YYYY-MM-DD",
     name: "<value>",
-    relatedObjectUuid: "123e4567-eb7b-44e3-9cdd-231cf44467cb",
+    relatedObjectUuid: "123e4567-6022-4c41-ae12-231d2900fe6b",
     completedTimestamp: "2025-08-01 12:00:00",
-    completedByStaffUuid: "123e4567-2feb-409a-9047-231cfef135eb",
-    assignedToStaffUuid: "123e4567-56e3-4a55-ae3c-231cf6e604cb",
-    uuid: "123e4567-5e18-478e-8af2-231cf2a37abb",
-    createdByStaffUuid: "123e4567-8c2e-480f-b4cd-231cf4d253eb",
+    completedByStaffUuid: "123e4567-afcf-46b9-aa78-231d2fdc435b",
+    assignedToStaffUuid: "123e4567-8c09-4e2c-b284-231d2d80617b",
+    uuid: "123e4567-155c-420e-99bd-231d2538ed2b",
+    createdByStaffUuid: "123e4567-96cd-4f04-97cd-231d241d193b",
     createDate: "2025-08-01 12:00:00",
   },
 };
