@@ -7,10 +7,10 @@
 
 ```typescript
 const value: components.JobMaterialBundle = {
-  uuid: "123e4567-735d-4bef-a2ae-231cf8aecfeb",
+  uuid: "123e4567-1924-49ba-8391-231cf68d414b",
   editDate: "2025-08-01 12:00:00",
-  materialBundleUuid: "123e4567-8fcb-4a70-8076-231cfff9c46b",
-  jobUuid: "123e4567-2f8f-4275-918f-231cf041504b",
+  materialBundleUuid: "123e4567-a3ce-461c-9803-231cf43dca7b",
+  jobUuid: "123e4567-de10-4fc4-84bd-231cf4144c8b",
 };
 ```
 

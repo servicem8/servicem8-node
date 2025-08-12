@@ -6,7 +6,7 @@
 import { EmailTemplate } from "servicem8/models/components";
 
 let value: EmailTemplate = {
-  uuid: "123e4567-a177-4c6c-a2d2-231cf61f0bcb",
+  uuid: "123e4567-d0ea-435d-a561-231cf5b5fa3b",
   editDate: "2025-08-01 12:00:00",
   name: "<value>",
 };
@@ -16,7 +16,7 @@ let value: EmailTemplate = {
 
 | Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `uuid`                                                                           | *string*                                                                         | :heavy_minus_sign:                                                               | Unique identifier for this record                                                | 123e4567-a177-4c6c-a2d2-231cf61f0bcb                                             |
+| `uuid`                                                                           | *string*                                                                         | :heavy_minus_sign:                                                               | Unique identifier for this record                                                | 123e4567-d0ea-435d-a561-231cf5b5fa3b                                             |
 | `active`                                                                         | [components.EmailTemplateActive](../../models/components/emailtemplateactive.md) | :heavy_minus_sign:                                                               | Record active/deleted flag.  Valid values are [0,1]                              |                                                                                  |
 | `editDate`                                                                       | *any*                                                                            | :heavy_minus_sign:                                                               | Timestamp at which record was last modified                                      | 2025-08-01 12:00:00                                                              |
 | `name`                                                                           | *string*                                                                         | :heavy_check_mark:                                                               | N/A                                                                              |                                                                                  |

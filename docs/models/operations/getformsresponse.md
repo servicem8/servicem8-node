@@ -7,8 +7,8 @@
 
 ```typescript
 const value: components.Form = {
-  documentTemplateUuid: "123e4567-d056-428c-932c-231cfcafe40b",
-  uuid: "123e4567-2e6d-4c01-b90b-231cfd8ce17b",
+  documentTemplateUuid: "123e4567-a8ce-4ebb-b308-231cf8130d0b",
+  uuid: "123e4567-700d-4ea9-82c1-231cfe5e819b",
   editDate: "2025-08-01 12:00:00",
 };
 ```
