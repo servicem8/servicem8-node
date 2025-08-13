@@ -38,6 +38,9 @@ export type DocumentTemplate = {
    * (Read only)
    */
   templateType?: string | undefined;
+  /**
+   * (Read only)
+   */
   relatedObject?: string | undefined;
   name?: string | undefined;
 };
@@ -55,6 +58,9 @@ export type DocumentTemplateInput = {
    * (Read only)
    */
   templateType?: string | undefined;
+  /**
+   * (Read only)
+   */
   relatedObject?: string | undefined;
   name?: string | undefined;
 };

@@ -9,8 +9,8 @@ let value: UpdateMaterialsRequest = {
   uuid: "14470a98-4d9c-4418-9714-612ef5934cd0",
   material: {
     name: "<value>",
-    uuid: "123e4567-3d76-4fce-960b-231ef9a862bb",
-    taxRateUuid: "123e4567-a43e-474a-8d5d-231efda259eb",
+    uuid: "123e4567-8e88-4d2e-a9f9-231efe31808b",
+    taxRateUuid: "123e4567-7b49-4ac3-be4d-231efa9c056b",
   },
 };
 ```
