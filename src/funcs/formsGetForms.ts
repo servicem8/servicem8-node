@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Retrieve a Form
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **read_forms**.
  */
 export function formsGetForms(
   client: ServiceM8Core,

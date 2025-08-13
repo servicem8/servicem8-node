@@ -8,18 +8,18 @@ import { UpdateJobChecklistsRequest } from "servicem8/models/operations";
 let value: UpdateJobChecklistsRequest = {
   uuid: "5e7f0491-d1f8-419b-aa52-18ad94c91066",
   jobChecklist: {
-    uuid: "123e4567-7078-477c-b32c-231d2818ec9b",
-    jobUuid: "123e4567-822e-45a1-a956-231d2eebfbab",
+    uuid: "123e4567-1cac-401c-bcb5-231ef269f9cb",
+    jobUuid: "123e4567-6f56-4f9b-9290-231efd979deb",
     completedTimestamp: "2025-08-01 12:00:00",
-    completedByStaffUuid: "123e4567-5ab4-4d01-ad78-231d22111e3b",
-    completedDuringCheckinUuid: "123e4567-f9d8-4fcd-9b40-231d2b13384b",
-    regardingObjectUuid: "123e4567-3beb-4656-a2db-231d22d8de4b",
-    fulfilledByObjectUuid: "123e4567-dc38-4f7e-a527-231d29105bdb",
+    completedByStaffUuid: "123e4567-b69d-446f-9e82-231efc1ea53b",
+    completedDuringCheckinUuid: "123e4567-fd83-4fab-8461-231efb521d1b",
+    regardingObjectUuid: "123e4567-9946-42dc-9837-231ef935ddcb",
+    fulfilledByObjectUuid: "123e4567-8e97-491b-80e7-231ef9140f1b",
     assignedToStaffUuids: [
-      "123e4567-d852-44b8-9bc8-231d2ff7232b",
+      "123e4567-738f-4be4-81f6-231ef2ddf36b",
     ],
     assignedTimestamp: "2025-08-01 12:00:00",
-    assignedByStaffUuid: "123e4567-6f7e-415c-bc04-231d24bd5e7b",
+    assignedByStaffUuid: "123e4567-55ee-43b4-b5f8-231efbb0cceb",
   },
 };
 ```

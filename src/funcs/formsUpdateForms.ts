@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Update a Form
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **manage_forms**.
  */
 export function formsUpdateForms(
   client: ServiceM8Core,

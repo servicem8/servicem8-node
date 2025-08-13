@@ -8,9 +8,9 @@ import { UpdateJobMaterialBundlesRequest } from "servicem8/models/operations";
 let value: UpdateJobMaterialBundlesRequest = {
   uuid: "0e6c3b75-832a-4ef7-93a4-7793e5e1e050",
   jobMaterialBundle: {
-    uuid: "123e4567-a478-45b6-8763-231d2ebaf6fb",
-    materialBundleUuid: "123e4567-42e8-447b-9130-231d2246150b",
-    jobUuid: "123e4567-39d0-4325-8dff-231d211b28eb",
+    uuid: "123e4567-c86b-45c5-97f2-231ef312c8bb",
+    materialBundleUuid: "123e4567-1be1-498e-a8e9-231ef0ab0cdb",
+    jobUuid: "123e4567-f934-4f40-9c75-231ef93ae80b",
   },
 };
 ```

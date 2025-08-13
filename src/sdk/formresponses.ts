@@ -20,6 +20,9 @@ export class FormResponses extends ClientSDK {
    *
    * #### Filtering
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **read_forms**.
    */
   async listFormResponses(
     options?: RequestOptions,
@@ -51,6 +54,11 @@ export class FormResponses extends ClientSDK {
 
   /**
    * Retrieve a Form Response
+   *
+   * @remarks
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **read_forms**.
    */
   async getFormResponses(
     request: operations.GetFormResponsesRequest,

@@ -20,6 +20,11 @@ Operations related to Form Responses
 #### Filtering
 This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
 			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_forms**.
+
+			
 
 ### Example Usage
 
@@ -113,14 +118,14 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.formResponses.createFormResponses({
-    uuid: "123e4567-438d-46d0-8c0b-231d2950482b",
-    formUuid: "123e4567-f3ce-4551-bd37-231d2514e6bb",
-    staffUuid: "123e4567-76f1-42ad-8427-231d25ba773b",
-    regardingObjectUuid: "123e4567-20f6-4431-89bc-231d2a15ec0b",
+    uuid: "123e4567-a454-4b06-9145-231ef36d807b",
+    formUuid: "123e4567-56a4-4870-ab05-231ef1b7614b",
+    staffUuid: "123e4567-9a91-489d-86d5-231ef5e2033b",
+    regardingObjectUuid: "123e4567-479a-42ab-8e22-231eff92093b",
     timestamp: "2025-08-01 12:00:00",
-    formByStaffUuid: "123e4567-78ef-481c-82ae-231d211e840b",
-    documentAttachmentUuid: "123e4567-2c4b-49a2-abd3-231d2f36670b",
-    assetUuid: "123e4567-c626-4223-bfbd-231d2b49e6bb",
+    formByStaffUuid: "123e4567-11af-4c66-bb51-231efaedc91b",
+    documentAttachmentUuid: "123e4567-5136-4baf-9368-231ef60a7b8b",
+    assetUuid: "123e4567-4617-4cf4-b2e7-231efb7b24bb",
   });
 
   console.log(result);
@@ -147,14 +152,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formResponsesCreateFormResponses(serviceM8, {
-    uuid: "123e4567-438d-46d0-8c0b-231d2950482b",
-    formUuid: "123e4567-f3ce-4551-bd37-231d2514e6bb",
-    staffUuid: "123e4567-76f1-42ad-8427-231d25ba773b",
-    regardingObjectUuid: "123e4567-20f6-4431-89bc-231d2a15ec0b",
+    uuid: "123e4567-a454-4b06-9145-231ef36d807b",
+    formUuid: "123e4567-56a4-4870-ab05-231ef1b7614b",
+    staffUuid: "123e4567-9a91-489d-86d5-231ef5e2033b",
+    regardingObjectUuid: "123e4567-479a-42ab-8e22-231eff92093b",
     timestamp: "2025-08-01 12:00:00",
-    formByStaffUuid: "123e4567-78ef-481c-82ae-231d211e840b",
-    documentAttachmentUuid: "123e4567-2c4b-49a2-abd3-231d2f36670b",
-    assetUuid: "123e4567-c626-4223-bfbd-231d2b49e6bb",
+    formByStaffUuid: "123e4567-11af-4c66-bb51-231efaedc91b",
+    documentAttachmentUuid: "123e4567-5136-4baf-9368-231ef60a7b8b",
+    assetUuid: "123e4567-4617-4cf4-b2e7-231efb7b24bb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -189,7 +194,12 @@ run();
 
 ## getFormResponses
 
-Retrieve a Form Response
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_forms**.
+
+			
 
 ### Example Usage
 
@@ -285,14 +295,14 @@ async function run() {
   const result = await serviceM8.formResponses.updateFormResponses({
     uuid: "5f593a3c-772d-4259-856d-86a8df7ae53d",
     formResponse: {
-      uuid: "123e4567-438d-46d0-8c0b-231d2950482b",
-      formUuid: "123e4567-f3ce-4551-bd37-231d2514e6bb",
-      staffUuid: "123e4567-76f1-42ad-8427-231d25ba773b",
-      regardingObjectUuid: "123e4567-20f6-4431-89bc-231d2a15ec0b",
+      uuid: "123e4567-a454-4b06-9145-231ef36d807b",
+      formUuid: "123e4567-56a4-4870-ab05-231ef1b7614b",
+      staffUuid: "123e4567-9a91-489d-86d5-231ef5e2033b",
+      regardingObjectUuid: "123e4567-479a-42ab-8e22-231eff92093b",
       timestamp: "2025-08-01 12:00:00",
-      formByStaffUuid: "123e4567-78ef-481c-82ae-231d211e840b",
-      documentAttachmentUuid: "123e4567-2c4b-49a2-abd3-231d2f36670b",
-      assetUuid: "123e4567-c626-4223-bfbd-231d2b49e6bb",
+      formByStaffUuid: "123e4567-11af-4c66-bb51-231efaedc91b",
+      documentAttachmentUuid: "123e4567-5136-4baf-9368-231ef60a7b8b",
+      assetUuid: "123e4567-4617-4cf4-b2e7-231efb7b24bb",
     },
   });
 
@@ -322,14 +332,14 @@ async function run() {
   const res = await formResponsesUpdateFormResponses(serviceM8, {
     uuid: "5f593a3c-772d-4259-856d-86a8df7ae53d",
     formResponse: {
-      uuid: "123e4567-438d-46d0-8c0b-231d2950482b",
-      formUuid: "123e4567-f3ce-4551-bd37-231d2514e6bb",
-      staffUuid: "123e4567-76f1-42ad-8427-231d25ba773b",
-      regardingObjectUuid: "123e4567-20f6-4431-89bc-231d2a15ec0b",
+      uuid: "123e4567-a454-4b06-9145-231ef36d807b",
+      formUuid: "123e4567-56a4-4870-ab05-231ef1b7614b",
+      staffUuid: "123e4567-9a91-489d-86d5-231ef5e2033b",
+      regardingObjectUuid: "123e4567-479a-42ab-8e22-231eff92093b",
       timestamp: "2025-08-01 12:00:00",
-      formByStaffUuid: "123e4567-78ef-481c-82ae-231d211e840b",
-      documentAttachmentUuid: "123e4567-2c4b-49a2-abd3-231d2f36670b",
-      assetUuid: "123e4567-c626-4223-bfbd-231d2b49e6bb",
+      formByStaffUuid: "123e4567-11af-4c66-bb51-231efaedc91b",
+      documentAttachmentUuid: "123e4567-5136-4baf-9368-231ef60a7b8b",
+      assetUuid: "123e4567-4617-4cf4-b2e7-231efb7b24bb",
     },
   });
   if (res.ok) {

@@ -12,7 +12,14 @@ const args = {
 
 export const tool$formsGetForms: ToolDefinition<typeof args> = {
   name: "forms-get-forms",
-  description: `Retrieve a Form`,
+  description: `Retrieve a Form
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_forms**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await formsGetForms(
