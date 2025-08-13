@@ -24,7 +24,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 typescript:
-  version: 0.9.32
+  version: 0.9.33
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -60,4 +60,5 @@ typescript:
   packageName: servicem8
   responseFormat: flat
   templateVersion: v2
+  usageSDKInitImports: []
   useIndexModules: true

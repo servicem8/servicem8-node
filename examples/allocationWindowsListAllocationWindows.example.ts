@@ -8,7 +8,7 @@ dotenv.config();
  * Example usage of the servicem8 SDK
  *
  * To run this example from the examples directory:
- * npm run build && npx tsx allocationWindowsListAllocationWindows.ts
+ * npm run build && npx tsx allocationWindowsListAllocationWindows.example.ts
  */
 
 import { ServiceM8 } from "servicem8";

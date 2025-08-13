@@ -20,6 +20,11 @@ Operations related to Job Material Bundles
 #### Filtering
 This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
 			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_job_materials**.
+
+			
 
 ### Example Usage
 
@@ -94,6 +99,11 @@ run();
 
 
 			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_job_materials**.
+
+			
+			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
@@ -113,9 +123,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterialBundles.createJobMaterialBundles({
-    uuid: "123e4567-c8c9-4572-b7a0-231d2abb310b",
-    materialBundleUuid: "123e4567-817f-453f-b858-231d2af36afb",
-    jobUuid: "123e4567-4716-4bd9-a3ee-231d200a1ceb",
+    uuid: "123e4567-a478-45b6-8763-231d2ebaf6fb",
+    materialBundleUuid: "123e4567-42e8-447b-9130-231d2246150b",
+    jobUuid: "123e4567-39d0-4325-8dff-231d211b28eb",
   });
 
   console.log(result);
@@ -142,9 +152,9 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialBundlesCreateJobMaterialBundles(serviceM8, {
-    uuid: "123e4567-c8c9-4572-b7a0-231d2abb310b",
-    materialBundleUuid: "123e4567-817f-453f-b858-231d2af36afb",
-    jobUuid: "123e4567-4716-4bd9-a3ee-231d200a1ceb",
+    uuid: "123e4567-a478-45b6-8763-231d2ebaf6fb",
+    materialBundleUuid: "123e4567-42e8-447b-9130-231d2246150b",
+    jobUuid: "123e4567-39d0-4325-8dff-231d211b28eb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -179,7 +189,12 @@ run();
 
 ## getJobMaterialBundles
 
-Retrieve a Job Material Bundle
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_job_materials**.
+
+			
 
 ### Example Usage
 
@@ -257,7 +272,12 @@ run();
 
 ## updateJobMaterialBundles
 
-Update a Job Material Bundle
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_job_materials**.
+
+			
 
 ### Example Usage
 
@@ -275,9 +295,9 @@ async function run() {
   const result = await serviceM8.jobMaterialBundles.updateJobMaterialBundles({
     uuid: "6419b5e7-8edd-4c69-9648-b6ed7431256b",
     jobMaterialBundle: {
-      uuid: "123e4567-c8c9-4572-b7a0-231d2abb310b",
-      materialBundleUuid: "123e4567-817f-453f-b858-231d2af36afb",
-      jobUuid: "123e4567-4716-4bd9-a3ee-231d200a1ceb",
+      uuid: "123e4567-a478-45b6-8763-231d2ebaf6fb",
+      materialBundleUuid: "123e4567-42e8-447b-9130-231d2246150b",
+      jobUuid: "123e4567-39d0-4325-8dff-231d211b28eb",
     },
   });
 
@@ -307,9 +327,9 @@ async function run() {
   const res = await jobMaterialBundlesUpdateJobMaterialBundles(serviceM8, {
     uuid: "6419b5e7-8edd-4c69-9648-b6ed7431256b",
     jobMaterialBundle: {
-      uuid: "123e4567-c8c9-4572-b7a0-231d2abb310b",
-      materialBundleUuid: "123e4567-817f-453f-b858-231d2af36afb",
-      jobUuid: "123e4567-4716-4bd9-a3ee-231d200a1ceb",
+      uuid: "123e4567-a478-45b6-8763-231d2ebaf6fb",
+      materialBundleUuid: "123e4567-42e8-447b-9130-231d2246150b",
+      jobUuid: "123e4567-39d0-4325-8dff-231d211b28eb",
     },
   });
   if (res.ok) {
@@ -348,6 +368,11 @@ run();
 
 			
 In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_job_materials**.
 
 			
 

@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Retrieve a Job Material Bundle
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **read_job_materials**.
  */
 export function jobMaterialBundlesGetJobMaterialBundles(
   client: ServiceM8Core,

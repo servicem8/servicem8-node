@@ -13,6 +13,11 @@ export const tool$jobMaterialBundlesListJobMaterialBundles: ToolDefinition = {
 			
 #### Filtering
 This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_job_materials**.
+
 			`,
   tool: async (client, ctx) => {
     const [result, apiCall] = await jobMaterialBundlesListJobMaterialBundles(

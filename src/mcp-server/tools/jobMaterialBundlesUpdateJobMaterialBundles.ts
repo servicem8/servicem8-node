@@ -14,7 +14,14 @@ export const tool$jobMaterialBundlesUpdateJobMaterialBundles: ToolDefinition<
   typeof args
 > = {
   name: "job-material-bundles-update-job-material-bundles",
-  description: `Update a Job Material Bundle`,
+  description: `Update a Job Material Bundle
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_job_materials**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await jobMaterialBundlesUpdateJobMaterialBundles(

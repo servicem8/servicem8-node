@@ -113,7 +113,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.allocationWindows.createAllocationWindows({
-    uuid: "123e4567-13fc-410c-ad28-231d2c9e7c1b",
+    uuid: "123e4567-d5d2-4020-96e3-231d2cc427fb",
   });
 
   console.log(result);
@@ -140,7 +140,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await allocationWindowsCreateAllocationWindows(serviceM8, {
-    uuid: "123e4567-13fc-410c-ad28-231d2c9e7c1b",
+    uuid: "123e4567-d5d2-4020-96e3-231d2cc427fb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -271,7 +271,7 @@ async function run() {
   const result = await serviceM8.allocationWindows.updateAllocationWindows({
     uuid: "4cd38297-8da6-4b29-8742-4f293110085d",
     allocationWindow: {
-      uuid: "123e4567-13fc-410c-ad28-231d2c9e7c1b",
+      uuid: "123e4567-d5d2-4020-96e3-231d2cc427fb",
     },
   });
 
@@ -301,7 +301,7 @@ async function run() {
   const res = await allocationWindowsUpdateAllocationWindows(serviceM8, {
     uuid: "4cd38297-8da6-4b29-8742-4f293110085d",
     allocationWindow: {
-      uuid: "123e4567-13fc-410c-ad28-231d2c9e7c1b",
+      uuid: "123e4567-d5d2-4020-96e3-231d2cc427fb",
     },
   });
   if (res.ok) {
