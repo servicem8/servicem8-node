@@ -12,7 +12,14 @@ const args = {
 
 export const tool$taxRatesUpdateTaxRates: ToolDefinition<typeof args> = {
   name: "tax-rates-update-tax-rates",
-  description: `Update a Tax Rate`,
+  description: `Update a Tax Rate
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_tax_rates**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await taxRatesUpdateTaxRates(

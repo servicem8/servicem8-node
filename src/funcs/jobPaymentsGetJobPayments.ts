@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Retrieve a Job Payment
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **read_job_payments**.
  */
 export function jobPaymentsGetJobPayments(
   client: ServiceM8Core,

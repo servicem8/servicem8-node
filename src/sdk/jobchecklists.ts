@@ -20,6 +20,9 @@ export class JobChecklists extends ClientSDK {
    *
    * #### Filtering
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **read_job_checklists**.
    */
   async listJobChecklists(
     options?: RequestOptions,
@@ -34,6 +37,9 @@ export class JobChecklists extends ClientSDK {
    * Create a new Job Checklist
    *
    * @remarks
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_job_checklists**.
    *
    * #### Record UUID
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
@@ -51,6 +57,11 @@ export class JobChecklists extends ClientSDK {
 
   /**
    * Retrieve a Job Checklist
+   *
+   * @remarks
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **read_job_checklists**.
    */
   async getJobChecklists(
     request: operations.GetJobChecklistsRequest,
@@ -65,6 +76,11 @@ export class JobChecklists extends ClientSDK {
 
   /**
    * Update a Job Checklist
+   *
+   * @remarks
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_job_checklists**.
    */
   async updateJobChecklists(
     request: operations.UpdateJobChecklistsRequest,
@@ -83,6 +99,9 @@ export class JobChecklists extends ClientSDK {
    * @remarks
    *
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_job_checklists**.
    */
   async deleteJobChecklists(
     request: operations.DeleteJobChecklistsRequest,

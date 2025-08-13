@@ -44,25 +44,6 @@ export type SecurityRole = {
   editDate?: any | undefined;
 };
 
-export type SecurityRoleInput = {
-  /**
-   * The name given to the security role
-   */
-  name: string;
-  /**
-   * A detailed description of the security role's purpose and permissions. This field provides information about what access and capabilities are granted to users assigned this role.
-   */
-  roleDescription?: string | undefined;
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: SecurityRoleActive | undefined;
-};
-
 /** @internal */
 export const SecurityRoleActive$inboundSchema: z.ZodNativeEnum<
   typeof SecurityRoleActive
@@ -153,76 +134,5 @@ export function securityRoleFromJSON(
     jsonString,
     (x) => SecurityRole$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'SecurityRole' from JSON`,
-  );
-}
-
-/** @internal */
-export const SecurityRoleInput$inboundSchema: z.ZodType<
-  SecurityRoleInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  role_description: z.string().optional(),
-  uuid: z.string().optional(),
-  active: SecurityRoleActive$inboundSchema.default(1),
-}).transform((v) => {
-  return remap$(v, {
-    "role_description": "roleDescription",
-  });
-});
-
-/** @internal */
-export type SecurityRoleInput$Outbound = {
-  name: string;
-  role_description?: string | undefined;
-  uuid?: string | undefined;
-  active: number;
-};
-
-/** @internal */
-export const SecurityRoleInput$outboundSchema: z.ZodType<
-  SecurityRoleInput$Outbound,
-  z.ZodTypeDef,
-  SecurityRoleInput
-> = z.object({
-  name: z.string(),
-  roleDescription: z.string().optional(),
-  uuid: z.string().optional(),
-  active: SecurityRoleActive$outboundSchema.default(1),
-}).transform((v) => {
-  return remap$(v, {
-    roleDescription: "role_description",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SecurityRoleInput$ {
-  /** @deprecated use `SecurityRoleInput$inboundSchema` instead. */
-  export const inboundSchema = SecurityRoleInput$inboundSchema;
-  /** @deprecated use `SecurityRoleInput$outboundSchema` instead. */
-  export const outboundSchema = SecurityRoleInput$outboundSchema;
-  /** @deprecated use `SecurityRoleInput$Outbound` instead. */
-  export type Outbound = SecurityRoleInput$Outbound;
-}
-
-export function securityRoleInputToJSON(
-  securityRoleInput: SecurityRoleInput,
-): string {
-  return JSON.stringify(
-    SecurityRoleInput$outboundSchema.parse(securityRoleInput),
-  );
-}
-
-export function securityRoleInputFromJSON(
-  jsonString: string,
-): SafeParseResult<SecurityRoleInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SecurityRoleInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SecurityRoleInput' from JSON`,
   );
 }

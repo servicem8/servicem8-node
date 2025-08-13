@@ -14,7 +14,14 @@ export const tool$emailTemplatesUpdateEmailTemplates: ToolDefinition<
   typeof args
 > = {
   name: "email-templates-update-email-templates",
-  description: `Update an Email Template`,
+  description: `Update an Email Template
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await emailTemplatesUpdateEmailTemplates(

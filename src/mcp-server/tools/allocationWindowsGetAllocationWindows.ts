@@ -14,7 +14,14 @@ export const tool$allocationWindowsGetAllocationWindows: ToolDefinition<
   typeof args
 > = {
   name: "allocation-windows-get-allocation-windows",
-  description: `Retrieve an Allocation Window`,
+  description: `Retrieve an Allocation Window
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_schedule**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await allocationWindowsGetAllocationWindows(

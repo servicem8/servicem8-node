@@ -12,7 +12,14 @@ const args = {
 
 export const tool$formFieldsUpdateFormFields: ToolDefinition<typeof args> = {
   name: "form-fields-update-form-fields",
-  description: `Update a Form Field`,
+  description: `Update a Form Field
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_forms**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await formFieldsUpdateFormFields(

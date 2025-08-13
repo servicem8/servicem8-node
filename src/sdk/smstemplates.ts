@@ -20,6 +20,9 @@ export class SMSTemplates extends ClientSDK {
    *
    * #### Filtering
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_templates**.
    */
   async listSMSTemplates(
     options?: RequestOptions,
@@ -34,6 +37,9 @@ export class SMSTemplates extends ClientSDK {
    * Create a new SMS Template
    *
    * @remarks
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_templates**.
    *
    * #### Record UUID
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
@@ -51,6 +57,11 @@ export class SMSTemplates extends ClientSDK {
 
   /**
    * Retrieve a SMS Template
+   *
+   * @remarks
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_templates**.
    */
   async getSMSTemplates(
     request: operations.GetSMSTemplatesRequest,
@@ -65,6 +76,11 @@ export class SMSTemplates extends ClientSDK {
 
   /**
    * Update a SMS Template
+   *
+   * @remarks
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_templates**.
    */
   async updateSMSTemplates(
     request: operations.UpdateSMSTemplatesRequest,
@@ -83,6 +99,9 @@ export class SMSTemplates extends ClientSDK {
    * @remarks
    *
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_templates**.
    */
   async deleteSMSTemplates(
     request: operations.DeleteSMSTemplatesRequest,

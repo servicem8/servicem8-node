@@ -12,7 +12,14 @@ const args = {
 
 export const tool$staffMessagesGetStaffMessages: ToolDefinition<typeof args> = {
   name: "staff-messages-get-staff-messages",
-  description: `Retrieve a Staff Message`,
+  description: `Retrieve a Staff Message
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_messages**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await staffMessagesGetStaffMessages(

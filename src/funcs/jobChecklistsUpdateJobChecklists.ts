@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Update a Job Checklist
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **manage_job_checklists**.
  */
 export function jobChecklistsUpdateJobChecklists(
   client: ServiceM8Core,

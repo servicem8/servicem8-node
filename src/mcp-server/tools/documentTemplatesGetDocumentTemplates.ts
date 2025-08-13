@@ -14,7 +14,14 @@ export const tool$documentTemplatesGetDocumentTemplates: ToolDefinition<
   typeof args
 > = {
   name: "document-templates-get-document-templates",
-  description: `Retrieve a Document Template`,
+  description: `Retrieve a Document Template
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await documentTemplatesGetDocumentTemplates(

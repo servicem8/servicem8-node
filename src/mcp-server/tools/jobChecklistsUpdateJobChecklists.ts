@@ -14,7 +14,14 @@ export const tool$jobChecklistsUpdateJobChecklists: ToolDefinition<
   typeof args
 > = {
   name: "job-checklists-update-job-checklists",
-  description: `Update a Job Checklist`,
+  description: `Update a Job Checklist
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_job_checklists**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await jobChecklistsUpdateJobChecklists(

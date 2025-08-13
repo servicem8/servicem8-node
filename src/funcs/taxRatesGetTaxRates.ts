@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Retrieve a Tax Rate
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **read_tax_rates**.
  */
 export function taxRatesGetTaxRates(
   client: ServiceM8Core,

@@ -20,6 +20,11 @@ Operations related to Email Templates
 #### Filtering
 This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
 			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			
 
 ### Example Usage
 
@@ -94,6 +99,11 @@ run();
 
 
 			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			
+			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
@@ -113,7 +123,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.emailTemplates.createEmailTemplates({
-    uuid: "123e4567-88cd-429c-88b5-231ef00074db",
+    uuid: "123e4567-d532-445c-a9f8-231ef995460b",
     name: "<value>",
   });
 
@@ -141,7 +151,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await emailTemplatesCreateEmailTemplates(serviceM8, {
-    uuid: "123e4567-88cd-429c-88b5-231ef00074db",
+    uuid: "123e4567-d532-445c-a9f8-231ef995460b",
     name: "<value>",
   });
   if (res.ok) {
@@ -177,7 +187,12 @@ run();
 
 ## getEmailTemplates
 
-Retrieve an Email Template
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			
 
 ### Example Usage
 
@@ -255,7 +270,12 @@ run();
 
 ## updateEmailTemplates
 
-Update an Email Template
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			
 
 ### Example Usage
 
@@ -273,7 +293,7 @@ async function run() {
   const result = await serviceM8.emailTemplates.updateEmailTemplates({
     uuid: "a3ce5f33-781a-4062-b068-2e3f8605b008",
     emailTemplate: {
-      uuid: "123e4567-88cd-429c-88b5-231ef00074db",
+      uuid: "123e4567-d532-445c-a9f8-231ef995460b",
       name: "<value>",
     },
   });
@@ -304,7 +324,7 @@ async function run() {
   const res = await emailTemplatesUpdateEmailTemplates(serviceM8, {
     uuid: "a3ce5f33-781a-4062-b068-2e3f8605b008",
     emailTemplate: {
-      uuid: "123e4567-88cd-429c-88b5-231ef00074db",
+      uuid: "123e4567-d532-445c-a9f8-231ef995460b",
       name: "<value>",
     },
   });
@@ -344,6 +364,11 @@ run();
 
 			
 In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
 
 			
 

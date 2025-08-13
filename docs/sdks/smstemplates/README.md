@@ -20,6 +20,11 @@ Operations related to SMS Templates
 #### Filtering
 This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
 			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			
 
 ### Example Usage
 
@@ -94,6 +99,11 @@ run();
 
 
 			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			
+			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
@@ -113,7 +123,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.smsTemplates.createSMSTemplates({
-    uuid: "123e4567-0c22-4013-abd2-231effb6b3ab",
+    uuid: "123e4567-af11-4012-9f77-231ef980209b",
     name: "<value>",
   });
 
@@ -141,7 +151,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await smsTemplatesCreateSMSTemplates(serviceM8, {
-    uuid: "123e4567-0c22-4013-abd2-231effb6b3ab",
+    uuid: "123e4567-af11-4012-9f77-231ef980209b",
     name: "<value>",
   });
   if (res.ok) {
@@ -177,7 +187,12 @@ run();
 
 ## getSMSTemplates
 
-Retrieve a SMS Template
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			
 
 ### Example Usage
 
@@ -255,7 +270,12 @@ run();
 
 ## updateSMSTemplates
 
-Update a SMS Template
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			
 
 ### Example Usage
 
@@ -273,7 +293,7 @@ async function run() {
   const result = await serviceM8.smsTemplates.updateSMSTemplates({
     uuid: "2ea183b5-88e4-4168-a975-1820b2711ae4",
     smsTemplate: {
-      uuid: "123e4567-0c22-4013-abd2-231effb6b3ab",
+      uuid: "123e4567-af11-4012-9f77-231ef980209b",
       name: "<value>",
     },
   });
@@ -304,7 +324,7 @@ async function run() {
   const res = await smsTemplatesUpdateSMSTemplates(serviceM8, {
     uuid: "2ea183b5-88e4-4168-a975-1820b2711ae4",
     smsTemplate: {
-      uuid: "123e4567-0c22-4013-abd2-231effb6b3ab",
+      uuid: "123e4567-af11-4012-9f77-231ef980209b",
       name: "<value>",
     },
   });
@@ -344,6 +364,11 @@ run();
 
 			
 In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
 
 			
 

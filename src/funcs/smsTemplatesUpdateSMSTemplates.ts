@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Update a SMS Template
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **manage_templates**.
  */
 export function smsTemplatesUpdateSMSTemplates(
   client: ServiceM8Core,

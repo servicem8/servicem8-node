@@ -12,7 +12,14 @@ const args = {
 
 export const tool$jobPaymentsUpdateJobPayments: ToolDefinition<typeof args> = {
   name: "job-payments-update-job-payments",
-  description: `Update a Job Payment`,
+  description: `Update a Job Payment
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_job_payments**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await jobPaymentsUpdateJobPayments(

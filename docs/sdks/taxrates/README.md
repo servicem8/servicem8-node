@@ -20,6 +20,11 @@ Operations related to Tax Rates
 #### Filtering
 This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
 			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_tax_rates**.
+
+			
 
 ### Example Usage
 
@@ -94,6 +99,11 @@ run();
 
 
 			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_tax_rates**.
+
+			
+			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
@@ -113,7 +123,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.taxRates.createTaxRates({
-    uuid: "123e4567-cc79-410b-8e04-231ef7449c1b",
+    uuid: "123e4567-6c35-42bc-a0da-231ef41f751b",
     name: "<value>",
   });
 
@@ -141,7 +151,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await taxRatesCreateTaxRates(serviceM8, {
-    uuid: "123e4567-cc79-410b-8e04-231ef7449c1b",
+    uuid: "123e4567-6c35-42bc-a0da-231ef41f751b",
     name: "<value>",
   });
   if (res.ok) {
@@ -177,7 +187,12 @@ run();
 
 ## getTaxRates
 
-Retrieve a Tax Rate
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_tax_rates**.
+
+			
 
 ### Example Usage
 
@@ -255,7 +270,12 @@ run();
 
 ## updateTaxRates
 
-Update a Tax Rate
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_tax_rates**.
+
+			
 
 ### Example Usage
 
@@ -273,7 +293,7 @@ async function run() {
   const result = await serviceM8.taxRates.updateTaxRates({
     uuid: "276d45f4-bf8b-41ae-82d4-264af7ec45cc",
     taxRate: {
-      uuid: "123e4567-cc79-410b-8e04-231ef7449c1b",
+      uuid: "123e4567-6c35-42bc-a0da-231ef41f751b",
       name: "<value>",
     },
   });
@@ -304,7 +324,7 @@ async function run() {
   const res = await taxRatesUpdateTaxRates(serviceM8, {
     uuid: "276d45f4-bf8b-41ae-82d4-264af7ec45cc",
     taxRate: {
-      uuid: "123e4567-cc79-410b-8e04-231ef7449c1b",
+      uuid: "123e4567-6c35-42bc-a0da-231ef41f751b",
       name: "<value>",
     },
   });
@@ -344,6 +364,11 @@ run();
 
 			
 In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_tax_rates**.
 
 			
 

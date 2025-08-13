@@ -20,6 +20,11 @@ Operations related to Feedback
 #### Filtering
 This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
 			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_feedback**.
+
+			
 
 ### Example Usage
 
@@ -94,6 +99,11 @@ run();
 
 
 			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_feedback**.
+
+			
+			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
@@ -113,8 +123,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.feedback.createFeedback({
-    uuid: "123e4567-ec74-4ed6-bd00-231ef6cde73b",
-    relatedObjectUuid: "123e4567-75c8-41cf-83ed-231ef299dbdb",
+    uuid: "123e4567-9a43-429f-b3e3-231effbfe8eb",
+    relatedObjectUuid: "123e4567-0ef9-4072-9d88-231ef132906b",
   });
 
   console.log(result);
@@ -141,8 +151,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await feedbackCreateFeedback(serviceM8, {
-    uuid: "123e4567-ec74-4ed6-bd00-231ef6cde73b",
-    relatedObjectUuid: "123e4567-75c8-41cf-83ed-231ef299dbdb",
+    uuid: "123e4567-9a43-429f-b3e3-231effbfe8eb",
+    relatedObjectUuid: "123e4567-0ef9-4072-9d88-231ef132906b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -177,7 +187,12 @@ run();
 
 ## getFeedback
 
-Retrieve a Feedback
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_feedback**.
+
+			
 
 ### Example Usage
 
@@ -255,7 +270,12 @@ run();
 
 ## updateFeedback
 
-Update a Feedback
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_feedback**.
+
+			
 
 ### Example Usage
 
@@ -273,8 +293,8 @@ async function run() {
   const result = await serviceM8.feedback.updateFeedback({
     uuid: "4b9b8627-caa7-402a-94b0-02cb8641823c",
     feedback: {
-      uuid: "123e4567-ec74-4ed6-bd00-231ef6cde73b",
-      relatedObjectUuid: "123e4567-75c8-41cf-83ed-231ef299dbdb",
+      uuid: "123e4567-9a43-429f-b3e3-231effbfe8eb",
+      relatedObjectUuid: "123e4567-0ef9-4072-9d88-231ef132906b",
     },
   });
 
@@ -304,8 +324,8 @@ async function run() {
   const res = await feedbackUpdateFeedback(serviceM8, {
     uuid: "4b9b8627-caa7-402a-94b0-02cb8641823c",
     feedback: {
-      uuid: "123e4567-ec74-4ed6-bd00-231ef6cde73b",
-      relatedObjectUuid: "123e4567-75c8-41cf-83ed-231ef299dbdb",
+      uuid: "123e4567-9a43-429f-b3e3-231effbfe8eb",
+      relatedObjectUuid: "123e4567-0ef9-4072-9d88-231ef132906b",
     },
   });
   if (res.ok) {
@@ -344,6 +364,11 @@ run();
 
 			
 In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_feedback**.
 
 			
 

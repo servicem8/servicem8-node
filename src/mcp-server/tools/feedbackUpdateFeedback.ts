@@ -12,7 +12,14 @@ const args = {
 
 export const tool$feedbackUpdateFeedback: ToolDefinition<typeof args> = {
   name: "feedback-update-feedback",
-  description: `Update a Feedback`,
+  description: `Update a Feedback
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_feedback**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await feedbackUpdateFeedback(

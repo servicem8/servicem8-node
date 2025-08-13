@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Update a Document Template
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **manage_templates**.
  */
 export function documentTemplatesUpdateDocumentTemplates(
   client: ServiceM8Core,

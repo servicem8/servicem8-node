@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Update an Email Template
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **manage_templates**.
  */
 export function emailTemplatesUpdateEmailTemplates(
   client: ServiceM8Core,

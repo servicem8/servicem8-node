@@ -20,6 +20,11 @@ Operations related to Bundles
 #### Filtering
 This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
 			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_inventory**.
+
+			
 
 ### Example Usage
 
@@ -94,6 +99,11 @@ run();
 
 
 			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_inventory**.
+
+			
+			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
@@ -113,7 +123,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.bundles.createBundles({
-    uuid: "123e4567-d9f3-4ea0-98a4-231ef64bb87b",
+    uuid: "123e4567-092c-43ef-b5e8-231ef368226b",
     itemNumber: "<value>",
   });
 
@@ -141,7 +151,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await bundlesCreateBundles(serviceM8, {
-    uuid: "123e4567-d9f3-4ea0-98a4-231ef64bb87b",
+    uuid: "123e4567-092c-43ef-b5e8-231ef368226b",
     itemNumber: "<value>",
   });
   if (res.ok) {
@@ -177,7 +187,12 @@ run();
 
 ## getBundles
 
-Retrieve a Bundle
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_inventory**.
+
+			
 
 ### Example Usage
 
@@ -255,7 +270,12 @@ run();
 
 ## updateBundles
 
-Update a Bundle
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_inventory**.
+
+			
 
 ### Example Usage
 
@@ -273,7 +293,7 @@ async function run() {
   const result = await serviceM8.bundles.updateBundles({
     uuid: "92d0296e-677d-4cfc-a0ec-84e1809ff960",
     materialBundle: {
-      uuid: "123e4567-d9f3-4ea0-98a4-231ef64bb87b",
+      uuid: "123e4567-092c-43ef-b5e8-231ef368226b",
       itemNumber: "<value>",
     },
   });
@@ -304,7 +324,7 @@ async function run() {
   const res = await bundlesUpdateBundles(serviceM8, {
     uuid: "92d0296e-677d-4cfc-a0ec-84e1809ff960",
     materialBundle: {
-      uuid: "123e4567-d9f3-4ea0-98a4-231ef64bb87b",
+      uuid: "123e4567-092c-43ef-b5e8-231ef368226b",
       itemNumber: "<value>",
     },
   });
@@ -344,6 +364,11 @@ run();
 
 			
 In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_inventory**.
 
 			
 

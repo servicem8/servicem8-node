@@ -3,13 +3,9 @@
  */
 
 import { jobTemplatesCreateJobFromTemplate } from "../funcs/jobTemplatesCreateJobFromTemplate.js";
-import { jobTemplatesCreateJobTemplates } from "../funcs/jobTemplatesCreateJobTemplates.js";
-import { jobTemplatesDeleteJobTemplates } from "../funcs/jobTemplatesDeleteJobTemplates.js";
 import { jobTemplatesGetJobTemplates } from "../funcs/jobTemplatesGetJobTemplates.js";
 import { jobTemplatesListJobTemplates } from "../funcs/jobTemplatesListJobTemplates.js";
-import { jobTemplatesUpdateJobTemplates } from "../funcs/jobTemplatesUpdateJobTemplates.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
-import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
@@ -35,25 +31,6 @@ export class JobTemplates extends ClientSDK {
   }
 
   /**
-   * Create a new Job Template
-   *
-   * @remarks
-   *
-   * #### Record UUID
-   * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
-   */
-  async createJobTemplates(
-    request: components.JobTemplateInput,
-    options?: RequestOptions,
-  ): Promise<operations.CreateJobTemplatesResponse> {
-    return unwrapAsync(jobTemplatesCreateJobTemplates(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
    * Retrieve a Job Template
    *
    * @remarks
@@ -66,38 +43,6 @@ export class JobTemplates extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.GetJobTemplatesResponse> {
     return unwrapAsync(jobTemplatesGetJobTemplates(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Update a Job Template
-   */
-  async updateJobTemplates(
-    request: operations.UpdateJobTemplatesRequest,
-    options?: RequestOptions,
-  ): Promise<operations.UpdateJobTemplatesResponse> {
-    return unwrapAsync(jobTemplatesUpdateJobTemplates(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Delete a Job Template
-   *
-   * @remarks
-   *
-   * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
-   */
-  async deleteJobTemplates(
-    request: operations.DeleteJobTemplatesRequest,
-    options?: RequestOptions,
-  ): Promise<operations.DeleteJobTemplatesResponse> {
-    return unwrapAsync(jobTemplatesDeleteJobTemplates(
       this,
       request,
       options,

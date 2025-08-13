@@ -30,6 +30,9 @@ import { Result } from "../types/fp.js";
  *
  * #### Filtering
  * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **manage_templates**.
  */
 export function smsTemplatesListSMSTemplates(
   client: ServiceM8Core,

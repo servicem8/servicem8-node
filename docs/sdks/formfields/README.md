@@ -20,6 +20,11 @@ Operations related to Form Fields
 #### Filtering
 This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
 			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_forms**.
+
+			
 
 ### Example Usage
 
@@ -94,6 +99,11 @@ run();
 
 
 			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_forms**.
+
+			
+			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
@@ -113,8 +123,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.formFields.createFormFields({
-    uuid: "123e4567-b796-47f4-b20c-231ef0fe2fdb",
-    formUuid: "123e4567-9271-4ce4-bd79-231efd589bdb",
+    uuid: "123e4567-02b8-4a7b-98e7-231ef75ee51b",
+    formUuid: "123e4567-ee72-4dac-950a-231efd6286cb",
   });
 
   console.log(result);
@@ -141,8 +151,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formFieldsCreateFormFields(serviceM8, {
-    uuid: "123e4567-b796-47f4-b20c-231ef0fe2fdb",
-    formUuid: "123e4567-9271-4ce4-bd79-231efd589bdb",
+    uuid: "123e4567-02b8-4a7b-98e7-231ef75ee51b",
+    formUuid: "123e4567-ee72-4dac-950a-231efd6286cb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -177,7 +187,12 @@ run();
 
 ## getFormFields
 
-Retrieve a Form Field
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_forms**.
+
+			
 
 ### Example Usage
 
@@ -255,7 +270,12 @@ run();
 
 ## updateFormFields
 
-Update a Form Field
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_forms**.
+
+			
 
 ### Example Usage
 
@@ -273,8 +293,8 @@ async function run() {
   const result = await serviceM8.formFields.updateFormFields({
     uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
     formField: {
-      uuid: "123e4567-b796-47f4-b20c-231ef0fe2fdb",
-      formUuid: "123e4567-9271-4ce4-bd79-231efd589bdb",
+      uuid: "123e4567-02b8-4a7b-98e7-231ef75ee51b",
+      formUuid: "123e4567-ee72-4dac-950a-231efd6286cb",
     },
   });
 
@@ -304,8 +324,8 @@ async function run() {
   const res = await formFieldsUpdateFormFields(serviceM8, {
     uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
     formField: {
-      uuid: "123e4567-b796-47f4-b20c-231ef0fe2fdb",
-      formUuid: "123e4567-9271-4ce4-bd79-231efd589bdb",
+      uuid: "123e4567-02b8-4a7b-98e7-231ef75ee51b",
+      formUuid: "123e4567-ee72-4dac-950a-231efd6286cb",
     },
   });
   if (res.ok) {
@@ -344,6 +364,11 @@ run();
 
 			
 In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_forms**.
 
 			
 

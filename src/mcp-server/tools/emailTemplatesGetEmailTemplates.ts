@@ -13,7 +13,14 @@ const args = {
 export const tool$emailTemplatesGetEmailTemplates: ToolDefinition<typeof args> =
   {
     name: "email-templates-get-email-templates",
-    description: `Retrieve an Email Template`,
+    description: `Retrieve an Email Template
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			`,
     args,
     tool: async (client, args, ctx) => {
       const [result, apiCall] = await emailTemplatesGetEmailTemplates(

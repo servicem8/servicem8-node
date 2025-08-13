@@ -4,7 +4,6 @@
 
 import { vendorsGetVendors } from "../funcs/vendorsGetVendors.js";
 import { vendorsListVendors } from "../funcs/vendorsListVendors.js";
-import { vendorsUpdateVendors } from "../funcs/vendorsUpdateVendors.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
@@ -45,23 +44,6 @@ export class Vendors extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.GetVendorsResponse> {
     return unwrapAsync(vendorsGetVendors(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Update a Vendor
-   *
-   * @remarks
-   * Vendor account information
-   */
-  async updateVendors(
-    request: operations.UpdateVendorsRequest,
-    options?: RequestOptions,
-  ): Promise<operations.UpdateVendorsResponse> {
-    return unwrapAsync(vendorsUpdateVendors(
       this,
       request,
       options,

@@ -20,6 +20,11 @@ Operations related to Allocation Windows
 #### Filtering
 This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
 			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_schedule**.
+
+			
 
 ### Example Usage
 
@@ -94,6 +99,11 @@ run();
 
 
 			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_schedule**.
+
+			
+			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
@@ -113,7 +123,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.allocationWindows.createAllocationWindows({
-    uuid: "123e4567-482d-4d1e-8e8f-231ef0de1afb",
+    uuid: "123e4567-aa96-48ee-88bf-231efdcf418b",
   });
 
   console.log(result);
@@ -140,7 +150,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await allocationWindowsCreateAllocationWindows(serviceM8, {
-    uuid: "123e4567-482d-4d1e-8e8f-231ef0de1afb",
+    uuid: "123e4567-aa96-48ee-88bf-231efdcf418b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -175,7 +185,12 @@ run();
 
 ## getAllocationWindows
 
-Retrieve an Allocation Window
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_schedule**.
+
+			
 
 ### Example Usage
 
@@ -253,7 +268,12 @@ run();
 
 ## updateAllocationWindows
 
-Update an Allocation Window
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_schedule**.
+
+			
 
 ### Example Usage
 
@@ -271,7 +291,7 @@ async function run() {
   const result = await serviceM8.allocationWindows.updateAllocationWindows({
     uuid: "4cd38297-8da6-4b29-8742-4f293110085d",
     allocationWindow: {
-      uuid: "123e4567-482d-4d1e-8e8f-231ef0de1afb",
+      uuid: "123e4567-aa96-48ee-88bf-231efdcf418b",
     },
   });
 
@@ -301,7 +321,7 @@ async function run() {
   const res = await allocationWindowsUpdateAllocationWindows(serviceM8, {
     uuid: "4cd38297-8da6-4b29-8742-4f293110085d",
     allocationWindow: {
-      uuid: "123e4567-482d-4d1e-8e8f-231ef0de1afb",
+      uuid: "123e4567-aa96-48ee-88bf-231efdcf418b",
     },
   });
   if (res.ok) {
@@ -340,6 +360,11 @@ run();
 
 			
 In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_schedule**.
 
 			
 

@@ -9,7 +9,6 @@ Vendor account information
 
 * [listVendors](#listvendors) - List all Vendors
 * [getVendors](#getvendors) - Retrieve a Vendor
-* [updateVendors](#updatevendors) - Update a Vendor
 
 ## listVendors
 
@@ -172,94 +171,6 @@ run();
 ### Response
 
 **Promise\<[operations.GetVendorsResponse](../../models/operations/getvendorsresponse.md)\>**
-
-### Errors
-
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
-
-## updateVendors
-
-Vendor account information
-
-
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="updateVendors" method="post" path="/vendor/{uuid}.json" -->
-```typescript
-import { ServiceM8 } from "servicem8";
-
-const serviceM8 = new ServiceM8({
-  security: {
-    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
-  },
-});
-
-async function run() {
-  const result = await serviceM8.vendors.updateVendors({
-    uuid: "d90cffed-8677-4cbe-ab38-b734ac463633",
-    vendor: {
-      uuid: "123e4567-482a-47f3-b7d0-231efa8a9eab",
-      name: "<value>",
-    },
-  });
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { ServiceM8Core } from "servicem8/core.js";
-import { vendorsUpdateVendors } from "servicem8/funcs/vendorsUpdateVendors.js";
-
-// Use `ServiceM8Core` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const serviceM8 = new ServiceM8Core({
-  security: {
-    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
-  },
-});
-
-async function run() {
-  const res = await vendorsUpdateVendors(serviceM8, {
-    uuid: "d90cffed-8677-4cbe-ab38-b734ac463633",
-    vendor: {
-      uuid: "123e4567-482a-47f3-b7d0-231efa8a9eab",
-      name: "<value>",
-    },
-  });
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("vendorsUpdateVendors failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateVendorsRequest](../../models/operations/updatevendorsrequest.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.UpdateVendorsResponse](../../models/operations/updatevendorsresponse.md)\>**
 
 ### Errors
 

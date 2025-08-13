@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Retrieve a Security Role
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **read_security_roles**.
  */
 export function securityRolesGetSecurityRoles(
   client: ServiceM8Core,

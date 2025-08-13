@@ -13,7 +13,14 @@ const args = {
 export const tool$smsTemplatesUpdateSMSTemplates: ToolDefinition<typeof args> =
   {
     name: "SMS-templates-update-SMS-templates",
-    description: `Update a SMS Template`,
+    description: `Update a SMS Template
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			`,
     args,
     tool: async (client, args, ctx) => {
       const [result, apiCall] = await smsTemplatesUpdateSMSTemplates(

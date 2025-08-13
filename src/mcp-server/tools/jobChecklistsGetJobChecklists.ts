@@ -12,7 +12,14 @@ const args = {
 
 export const tool$jobChecklistsGetJobChecklists: ToolDefinition<typeof args> = {
   name: "job-checklists-get-job-checklists",
-  description: `Retrieve a Job Checklist`,
+  description: `Retrieve a Job Checklist
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_job_checklists**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await jobChecklistsGetJobChecklists(

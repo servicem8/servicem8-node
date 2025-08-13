@@ -20,6 +20,11 @@ Operations related to Job Checklists
 #### Filtering
 This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
 			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_job_checklists**.
+
+			
 
 ### Example Usage
 
@@ -94,6 +99,11 @@ run();
 
 
 			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_job_checklists**.
+
+			
+			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
@@ -113,18 +123,18 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobChecklists.createJobChecklists({
-    uuid: "123e4567-bec8-4261-b597-231efb255b4b",
-    jobUuid: "123e4567-44e7-496a-93b1-231ef84b440b",
+    uuid: "123e4567-6e34-45f4-8840-231ef70817db",
+    jobUuid: "123e4567-133e-4868-8adc-231efd6271db",
     completedTimestamp: "2025-08-01 12:00:00",
-    completedByStaffUuid: "123e4567-f5fe-4e14-805b-231efd20d2bb",
-    completedDuringCheckinUuid: "123e4567-bb3e-4614-952a-231ef3eb3d6b",
-    regardingObjectUuid: "123e4567-5cf3-448c-b3b2-231efe58411b",
-    fulfilledByObjectUuid: "123e4567-21e1-47ce-949d-231ef9963e9b",
+    completedByStaffUuid: "123e4567-a358-4969-b894-231ef2f9410b",
+    completedDuringCheckinUuid: "123e4567-a5a9-458f-a95b-231ef4b21ddb",
+    regardingObjectUuid: "123e4567-a143-47ab-9663-231ef1781dfb",
+    fulfilledByObjectUuid: "123e4567-8110-4e73-aa02-231efdef980b",
     assignedToStaffUuids: [
-      "123e4567-ca13-45ce-8f40-231ef11342cb",
+      "123e4567-7d34-4814-8d7c-231efe45917b",
     ],
     assignedTimestamp: "2025-08-01 12:00:00",
-    assignedByStaffUuid: "123e4567-b35c-4e27-a319-231efe60d4fb",
+    assignedByStaffUuid: "123e4567-28a4-4223-baf4-231ef8ddcfab",
   });
 
   console.log(result);
@@ -151,18 +161,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobChecklistsCreateJobChecklists(serviceM8, {
-    uuid: "123e4567-bec8-4261-b597-231efb255b4b",
-    jobUuid: "123e4567-44e7-496a-93b1-231ef84b440b",
+    uuid: "123e4567-6e34-45f4-8840-231ef70817db",
+    jobUuid: "123e4567-133e-4868-8adc-231efd6271db",
     completedTimestamp: "2025-08-01 12:00:00",
-    completedByStaffUuid: "123e4567-f5fe-4e14-805b-231efd20d2bb",
-    completedDuringCheckinUuid: "123e4567-bb3e-4614-952a-231ef3eb3d6b",
-    regardingObjectUuid: "123e4567-5cf3-448c-b3b2-231efe58411b",
-    fulfilledByObjectUuid: "123e4567-21e1-47ce-949d-231ef9963e9b",
+    completedByStaffUuid: "123e4567-a358-4969-b894-231ef2f9410b",
+    completedDuringCheckinUuid: "123e4567-a5a9-458f-a95b-231ef4b21ddb",
+    regardingObjectUuid: "123e4567-a143-47ab-9663-231ef1781dfb",
+    fulfilledByObjectUuid: "123e4567-8110-4e73-aa02-231efdef980b",
     assignedToStaffUuids: [
-      "123e4567-ca13-45ce-8f40-231ef11342cb",
+      "123e4567-7d34-4814-8d7c-231efe45917b",
     ],
     assignedTimestamp: "2025-08-01 12:00:00",
-    assignedByStaffUuid: "123e4567-b35c-4e27-a319-231efe60d4fb",
+    assignedByStaffUuid: "123e4567-28a4-4223-baf4-231ef8ddcfab",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -197,7 +207,12 @@ run();
 
 ## getJobChecklists
 
-Retrieve a Job Checklist
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_job_checklists**.
+
+			
 
 ### Example Usage
 
@@ -275,7 +290,12 @@ run();
 
 ## updateJobChecklists
 
-Update a Job Checklist
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_job_checklists**.
+
+			
 
 ### Example Usage
 
@@ -293,18 +313,18 @@ async function run() {
   const result = await serviceM8.jobChecklists.updateJobChecklists({
     uuid: "cd24d8b9-7620-4771-805e-b96a73214740",
     jobChecklist: {
-      uuid: "123e4567-bec8-4261-b597-231efb255b4b",
-      jobUuid: "123e4567-44e7-496a-93b1-231ef84b440b",
+      uuid: "123e4567-6e34-45f4-8840-231ef70817db",
+      jobUuid: "123e4567-133e-4868-8adc-231efd6271db",
       completedTimestamp: "2025-08-01 12:00:00",
-      completedByStaffUuid: "123e4567-f5fe-4e14-805b-231efd20d2bb",
-      completedDuringCheckinUuid: "123e4567-bb3e-4614-952a-231ef3eb3d6b",
-      regardingObjectUuid: "123e4567-5cf3-448c-b3b2-231efe58411b",
-      fulfilledByObjectUuid: "123e4567-21e1-47ce-949d-231ef9963e9b",
+      completedByStaffUuid: "123e4567-a358-4969-b894-231ef2f9410b",
+      completedDuringCheckinUuid: "123e4567-a5a9-458f-a95b-231ef4b21ddb",
+      regardingObjectUuid: "123e4567-a143-47ab-9663-231ef1781dfb",
+      fulfilledByObjectUuid: "123e4567-8110-4e73-aa02-231efdef980b",
       assignedToStaffUuids: [
-        "123e4567-ca13-45ce-8f40-231ef11342cb",
+        "123e4567-7d34-4814-8d7c-231efe45917b",
       ],
       assignedTimestamp: "2025-08-01 12:00:00",
-      assignedByStaffUuid: "123e4567-b35c-4e27-a319-231efe60d4fb",
+      assignedByStaffUuid: "123e4567-28a4-4223-baf4-231ef8ddcfab",
     },
   });
 
@@ -334,18 +354,18 @@ async function run() {
   const res = await jobChecklistsUpdateJobChecklists(serviceM8, {
     uuid: "cd24d8b9-7620-4771-805e-b96a73214740",
     jobChecklist: {
-      uuid: "123e4567-bec8-4261-b597-231efb255b4b",
-      jobUuid: "123e4567-44e7-496a-93b1-231ef84b440b",
+      uuid: "123e4567-6e34-45f4-8840-231ef70817db",
+      jobUuid: "123e4567-133e-4868-8adc-231efd6271db",
       completedTimestamp: "2025-08-01 12:00:00",
-      completedByStaffUuid: "123e4567-f5fe-4e14-805b-231efd20d2bb",
-      completedDuringCheckinUuid: "123e4567-bb3e-4614-952a-231ef3eb3d6b",
-      regardingObjectUuid: "123e4567-5cf3-448c-b3b2-231efe58411b",
-      fulfilledByObjectUuid: "123e4567-21e1-47ce-949d-231ef9963e9b",
+      completedByStaffUuid: "123e4567-a358-4969-b894-231ef2f9410b",
+      completedDuringCheckinUuid: "123e4567-a5a9-458f-a95b-231ef4b21ddb",
+      regardingObjectUuid: "123e4567-a143-47ab-9663-231ef1781dfb",
+      fulfilledByObjectUuid: "123e4567-8110-4e73-aa02-231efdef980b",
       assignedToStaffUuids: [
-        "123e4567-ca13-45ce-8f40-231ef11342cb",
+        "123e4567-7d34-4814-8d7c-231efe45917b",
       ],
       assignedTimestamp: "2025-08-01 12:00:00",
-      assignedByStaffUuid: "123e4567-b35c-4e27-a319-231efe60d4fb",
+      assignedByStaffUuid: "123e4567-28a4-4223-baf4-231ef8ddcfab",
     },
   });
   if (res.ok) {
@@ -384,6 +404,11 @@ run();
 
 			
 In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_job_checklists**.
 
 			
 

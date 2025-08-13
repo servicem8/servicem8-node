@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Retrieve an Allocation Window
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **read_schedule**.
  */
 export function allocationWindowsGetAllocationWindows(
   client: ServiceM8Core,

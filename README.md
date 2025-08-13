@@ -275,14 +275,6 @@ run();
 * [updateAssetTypes](docs/sdks/assettypes/README.md#updateassettypes) - Update an Asset Type
 * [deleteAssetTypes](docs/sdks/assettypes/README.md#deleteassettypes) - Delete an Asset Type
 
-### [attachments](docs/sdks/attachments/README.md)
-
-* [listAttachments](docs/sdks/attachments/README.md#listattachments) - List all Attachments
-* [createAttachments](docs/sdks/attachments/README.md#createattachments) - Create a new Attachment
-* [getAttachments](docs/sdks/attachments/README.md#getattachments) - Retrieve an Attachment
-* [updateAttachments](docs/sdks/attachments/README.md#updateattachments) - Update an Attachment
-* [deleteAttachments](docs/sdks/attachments/README.md#deleteattachments) - Delete an Attachment
-
 ### [badges](docs/sdks/badges/README.md)
 
 * [listBadges](docs/sdks/badges/README.md#listbadges) - List all Badges
@@ -358,10 +350,7 @@ run();
 ### [formResponses](docs/sdks/formresponses/README.md)
 
 * [listFormResponses](docs/sdks/formresponses/README.md#listformresponses) - List all Form Responses
-* [createFormResponses](docs/sdks/formresponses/README.md#createformresponses) - Create a new Form Response
 * [getFormResponses](docs/sdks/formresponses/README.md#getformresponses) - Retrieve a Form Response
-* [updateFormResponses](docs/sdks/formresponses/README.md#updateformresponses) - Update a Form Response
-* [deleteFormResponses](docs/sdks/formresponses/README.md#deleteformresponses) - Delete a Form Response
 
 ### [forms](docs/sdks/forms/README.md)
 
@@ -457,10 +446,7 @@ run();
 ### [jobTemplates](docs/sdks/jobtemplates/README.md)
 
 * [listJobTemplates](docs/sdks/jobtemplates/README.md#listjobtemplates) - List all Job Templates
-* [createJobTemplates](docs/sdks/jobtemplates/README.md#createjobtemplates) - Create a new Job Template
 * [getJobTemplates](docs/sdks/jobtemplates/README.md#getjobtemplates) - Retrieve a Job Template
-* [updateJobTemplates](docs/sdks/jobtemplates/README.md#updatejobtemplates) - Update a Job Template
-* [deleteJobTemplates](docs/sdks/jobtemplates/README.md#deletejobtemplates) - Delete a Job Template
 * [createJobFromTemplate](docs/sdks/jobtemplates/README.md#createjobfromtemplate) - Create a job from a template
 
 ### [knowledgeArticles](docs/sdks/knowledgearticles/README.md)
@@ -487,14 +473,6 @@ run();
 * [updateMaterials](docs/sdks/materials/README.md#updatematerials) - Update a Material
 * [deleteMaterials](docs/sdks/materials/README.md#deletematerials) - Delete a Material
 
-### [notes](docs/sdks/notes/README.md)
-
-* [listNotes](docs/sdks/notes/README.md#listnotes) - List all Notes
-* [createNotes](docs/sdks/notes/README.md#createnotes) - Create a new Note
-* [getNotes](docs/sdks/notes/README.md#getnotes) - Retrieve a Note
-* [updateNotes](docs/sdks/notes/README.md#updatenotes) - Update a Note
-* [deleteNotes](docs/sdks/notes/README.md#deletenotes) - Delete a Note
-
 ### [search](docs/sdks/search/README.md)
 
 * [generalSearch](docs/sdks/search/README.md#generalsearch) - Search across multiple object types
@@ -504,10 +482,7 @@ run();
 ### [securityRoles](docs/sdks/securityroles/README.md)
 
 * [listSecurityRoles](docs/sdks/securityroles/README.md#listsecurityroles) - List all Security Roles
-* [createSecurityRoles](docs/sdks/securityroles/README.md#createsecurityroles) - Create a new Security Role
 * [getSecurityRoles](docs/sdks/securityroles/README.md#getsecurityroles) - Retrieve a Security Role
-* [updateSecurityRoles](docs/sdks/securityroles/README.md#updatesecurityroles) - Update a Security Role
-* [deleteSecurityRoles](docs/sdks/securityroles/README.md#deletesecurityroles) - Delete a Security Role
 
 
 ### [smsTemplates](docs/sdks/smstemplates/README.md)
@@ -529,10 +504,7 @@ run();
 ### [staffMessages](docs/sdks/staffmessages/README.md)
 
 * [listStaffMessages](docs/sdks/staffmessages/README.md#liststaffmessages) - List all Staff Messages
-* [createStaffMessages](docs/sdks/staffmessages/README.md#createstaffmessages) - Create a new Staff Message
 * [getStaffMessages](docs/sdks/staffmessages/README.md#getstaffmessages) - Retrieve a Staff Message
-* [updateStaffMessages](docs/sdks/staffmessages/README.md#updatestaffmessages) - Update a Staff Message
-* [deleteStaffMessages](docs/sdks/staffmessages/README.md#deletestaffmessages) - Delete a Staff Message
 
 ### [tasks](docs/sdks/tasks/README.md)
 
@@ -554,7 +526,6 @@ run();
 
 * [listVendors](docs/sdks/vendors/README.md#listvendors) - List all Vendors
 * [getVendors](docs/sdks/vendors/README.md#getvendors) - Retrieve a Vendor
-* [updateVendors](docs/sdks/vendors/README.md#updatevendors) - Update a Vendor
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -593,11 +564,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`assetTypesGetAssetTypes`](docs/sdks/assettypes/README.md#getassettypes) - Retrieve an Asset Type
 - [`assetTypesListAssetTypes`](docs/sdks/assettypes/README.md#listassettypes) - List all Asset Types
 - [`assetTypesUpdateAssetTypes`](docs/sdks/assettypes/README.md#updateassettypes) - Update an Asset Type
-- [`attachmentsCreateAttachments`](docs/sdks/attachments/README.md#createattachments) - Create a new Attachment
-- [`attachmentsDeleteAttachments`](docs/sdks/attachments/README.md#deleteattachments) - Delete an Attachment
-- [`attachmentsGetAttachments`](docs/sdks/attachments/README.md#getattachments) - Retrieve an Attachment
-- [`attachmentsListAttachments`](docs/sdks/attachments/README.md#listattachments) - List all Attachments
-- [`attachmentsUpdateAttachments`](docs/sdks/attachments/README.md#updateattachments) - Update an Attachment
 - [`badgesCreateBadges`](docs/sdks/badges/README.md#createbadges) - Create a new Badge
 - [`badgesDeleteBadges`](docs/sdks/badges/README.md#deletebadges) - Delete a Badge
 - [`badgesGetBadges`](docs/sdks/badges/README.md#getbadges) - Retrieve a Badge
@@ -643,11 +609,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`formFieldsGetFormFields`](docs/sdks/formfields/README.md#getformfields) - Retrieve a Form Field
 - [`formFieldsListFormFields`](docs/sdks/formfields/README.md#listformfields) - List all Form Fields
 - [`formFieldsUpdateFormFields`](docs/sdks/formfields/README.md#updateformfields) - Update a Form Field
-- [`formResponsesCreateFormResponses`](docs/sdks/formresponses/README.md#createformresponses) - Create a new Form Response
-- [`formResponsesDeleteFormResponses`](docs/sdks/formresponses/README.md#deleteformresponses) - Delete a Form Response
 - [`formResponsesGetFormResponses`](docs/sdks/formresponses/README.md#getformresponses) - Retrieve a Form Response
 - [`formResponsesListFormResponses`](docs/sdks/formresponses/README.md#listformresponses) - List all Form Responses
-- [`formResponsesUpdateFormResponses`](docs/sdks/formresponses/README.md#updateformresponses) - Update a Form Response
 - [`formsCreateForms`](docs/sdks/forms/README.md#createforms) - Create a new Form
 - [`formsDeleteForms`](docs/sdks/forms/README.md#deleteforms) - Delete a Form
 - [`formsGetForms`](docs/sdks/forms/README.md#getforms) - Retrieve a Form
@@ -707,11 +670,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`jobsListJobs`](docs/sdks/jobs/README.md#listjobs) - List all Jobs
 - [`jobsUpdateJobs`](docs/sdks/jobs/README.md#updatejobs) - Update a Job
 - [`jobTemplatesCreateJobFromTemplate`](docs/sdks/jobtemplates/README.md#createjobfromtemplate) - Create a job from a template
-- [`jobTemplatesCreateJobTemplates`](docs/sdks/jobtemplates/README.md#createjobtemplates) - Create a new Job Template
-- [`jobTemplatesDeleteJobTemplates`](docs/sdks/jobtemplates/README.md#deletejobtemplates) - Delete a Job Template
 - [`jobTemplatesGetJobTemplates`](docs/sdks/jobtemplates/README.md#getjobtemplates) - Retrieve a Job Template
 - [`jobTemplatesListJobTemplates`](docs/sdks/jobtemplates/README.md#listjobtemplates) - List all Job Templates
-- [`jobTemplatesUpdateJobTemplates`](docs/sdks/jobtemplates/README.md#updatejobtemplates) - Update a Job Template
 - [`knowledgeArticlesCreateKnowledgeArticles`](docs/sdks/knowledgearticles/README.md#createknowledgearticles) - Create a new Knowledge Article
 - [`knowledgeArticlesDeleteKnowledgeArticles`](docs/sdks/knowledgearticles/README.md#deleteknowledgearticles) - Delete a Knowledge Article
 - [`knowledgeArticlesGetKnowledgeArticles`](docs/sdks/knowledgearticles/README.md#getknowledgearticles) - Retrieve a Knowledge Article
@@ -727,19 +687,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`materialsGetMaterials`](docs/sdks/materials/README.md#getmaterials) - Retrieve a Material
 - [`materialsListMaterials`](docs/sdks/materials/README.md#listmaterials) - List all Materials
 - [`materialsUpdateMaterials`](docs/sdks/materials/README.md#updatematerials) - Update a Material
-- [`notesCreateNotes`](docs/sdks/notes/README.md#createnotes) - Create a new Note
-- [`notesDeleteNotes`](docs/sdks/notes/README.md#deletenotes) - Delete a Note
-- [`notesGetNotes`](docs/sdks/notes/README.md#getnotes) - Retrieve a Note
-- [`notesListNotes`](docs/sdks/notes/README.md#listnotes) - List all Notes
-- [`notesUpdateNotes`](docs/sdks/notes/README.md#updatenotes) - Update a Note
 - [`searchGeneralSearch`](docs/sdks/search/README.md#generalsearch) - Search across multiple object types
 - [`searchJobEmbeddingSearch`](docs/sdks/search/README.md#jobembeddingsearch) - Semantic search for jobs
 - [`searchObjectSearch`](docs/sdks/search/README.md#objectsearch) - Search within a specific object type
-- [`securityRolesCreateSecurityRoles`](docs/sdks/securityroles/README.md#createsecurityroles) - Create a new Security Role
-- [`securityRolesDeleteSecurityRoles`](docs/sdks/securityroles/README.md#deletesecurityroles) - Delete a Security Role
 - [`securityRolesGetSecurityRoles`](docs/sdks/securityroles/README.md#getsecurityroles) - Retrieve a Security Role
 - [`securityRolesListSecurityRoles`](docs/sdks/securityroles/README.md#listsecurityroles) - List all Security Roles
-- [`securityRolesUpdateSecurityRoles`](docs/sdks/securityroles/README.md#updatesecurityroles) - Update a Security Role
 - [`smsTemplatesCreateSMSTemplates`](docs/sdks/smstemplates/README.md#createsmstemplates) - Create a new SMS Template
 - [`smsTemplatesDeleteSMSTemplates`](docs/sdks/smstemplates/README.md#deletesmstemplates) - Delete a SMS Template
 - [`smsTemplatesGetSMSTemplates`](docs/sdks/smstemplates/README.md#getsmstemplates) - Retrieve a SMS Template
@@ -750,11 +702,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`staffMembersGetStaffMembers`](docs/sdks/staffmembers/README.md#getstaffmembers) - Retrieve a Staff Member
 - [`staffMembersListStaffMembers`](docs/sdks/staffmembers/README.md#liststaffmembers) - List all Staff Members
 - [`staffMembersUpdateStaffMembers`](docs/sdks/staffmembers/README.md#updatestaffmembers) - Update a Staff Member
-- [`staffMessagesCreateStaffMessages`](docs/sdks/staffmessages/README.md#createstaffmessages) - Create a new Staff Message
-- [`staffMessagesDeleteStaffMessages`](docs/sdks/staffmessages/README.md#deletestaffmessages) - Delete a Staff Message
 - [`staffMessagesGetStaffMessages`](docs/sdks/staffmessages/README.md#getstaffmessages) - Retrieve a Staff Message
 - [`staffMessagesListStaffMessages`](docs/sdks/staffmessages/README.md#liststaffmessages) - List all Staff Messages
-- [`staffMessagesUpdateStaffMessages`](docs/sdks/staffmessages/README.md#updatestaffmessages) - Update a Staff Message
 - [`tasksCreateTasks`](docs/sdks/tasks/README.md#createtasks) - Create a new Task
 - [`tasksDeleteTasks`](docs/sdks/tasks/README.md#deletetasks) - Delete a Task
 - [`tasksGetTasks`](docs/sdks/tasks/README.md#gettasks) - Retrieve a Task
@@ -767,7 +716,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`taxRatesUpdateTaxRates`](docs/sdks/taxrates/README.md#updatetaxrates) - Update a Tax Rate
 - [`vendorsGetVendors`](docs/sdks/vendors/README.md#getvendors) - Retrieve a Vendor
 - [`vendorsListVendors`](docs/sdks/vendors/README.md#listvendors) - List all Vendors
-- [`vendorsUpdateVendors`](docs/sdks/vendors/README.md#updatevendors) - Update a Vendor
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

@@ -12,7 +12,14 @@ const args = {
 
 export const tool$bundlesGetBundles: ToolDefinition<typeof args> = {
   name: "bundles-get-bundles",
-  description: `Retrieve a Bundle`,
+  description: `Retrieve a Bundle
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_inventory**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await bundlesGetBundles(

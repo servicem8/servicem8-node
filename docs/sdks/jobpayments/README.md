@@ -20,6 +20,11 @@ Operations related to Job Payments
 #### Filtering
 This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
 			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_job_payments**.
+
+			
 
 ### Example Usage
 
@@ -94,6 +99,11 @@ run();
 
 
 			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_job_payments**.
+
+			
+			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
@@ -113,11 +123,11 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobPayments.createJobPayments({
-    uuid: "123e4567-0e02-4877-a03b-231ef189d00b",
-    jobUuid: "123e4567-a376-4205-8821-231ef30d887b",
-    actionedByUuid: "123e4567-bdca-4d38-b4ca-231ef30e2c0b",
+    uuid: "123e4567-50cf-4db3-8665-231efcc9288b",
+    jobUuid: "123e4567-6f97-4347-8f68-231ef5b68d5b",
+    actionedByUuid: "123e4567-dba4-42bc-b0ea-231ef61c0e3b",
     timestamp: "2025-08-01 12:00:00",
-    attachmentUuid: "123e4567-8d81-45db-8c28-231ef71b97cb",
+    attachmentUuid: "123e4567-ef61-4b9e-ab9d-231ef83b9a8b",
   });
 
   console.log(result);
@@ -144,11 +154,11 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobPaymentsCreateJobPayments(serviceM8, {
-    uuid: "123e4567-0e02-4877-a03b-231ef189d00b",
-    jobUuid: "123e4567-a376-4205-8821-231ef30d887b",
-    actionedByUuid: "123e4567-bdca-4d38-b4ca-231ef30e2c0b",
+    uuid: "123e4567-50cf-4db3-8665-231efcc9288b",
+    jobUuid: "123e4567-6f97-4347-8f68-231ef5b68d5b",
+    actionedByUuid: "123e4567-dba4-42bc-b0ea-231ef61c0e3b",
     timestamp: "2025-08-01 12:00:00",
-    attachmentUuid: "123e4567-8d81-45db-8c28-231ef71b97cb",
+    attachmentUuid: "123e4567-ef61-4b9e-ab9d-231ef83b9a8b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -183,7 +193,12 @@ run();
 
 ## getJobPayments
 
-Retrieve a Job Payment
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_job_payments**.
+
+			
 
 ### Example Usage
 
@@ -261,7 +276,12 @@ run();
 
 ## updateJobPayments
 
-Update a Job Payment
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_job_payments**.
+
+			
 
 ### Example Usage
 
@@ -279,11 +299,11 @@ async function run() {
   const result = await serviceM8.jobPayments.updateJobPayments({
     uuid: "11677578-ba16-4ac4-b2d7-62ad0de4655c",
     jobPayment: {
-      uuid: "123e4567-0e02-4877-a03b-231ef189d00b",
-      jobUuid: "123e4567-a376-4205-8821-231ef30d887b",
-      actionedByUuid: "123e4567-bdca-4d38-b4ca-231ef30e2c0b",
+      uuid: "123e4567-50cf-4db3-8665-231efcc9288b",
+      jobUuid: "123e4567-6f97-4347-8f68-231ef5b68d5b",
+      actionedByUuid: "123e4567-dba4-42bc-b0ea-231ef61c0e3b",
       timestamp: "2025-08-01 12:00:00",
-      attachmentUuid: "123e4567-8d81-45db-8c28-231ef71b97cb",
+      attachmentUuid: "123e4567-ef61-4b9e-ab9d-231ef83b9a8b",
     },
   });
 
@@ -313,11 +333,11 @@ async function run() {
   const res = await jobPaymentsUpdateJobPayments(serviceM8, {
     uuid: "11677578-ba16-4ac4-b2d7-62ad0de4655c",
     jobPayment: {
-      uuid: "123e4567-0e02-4877-a03b-231ef189d00b",
-      jobUuid: "123e4567-a376-4205-8821-231ef30d887b",
-      actionedByUuid: "123e4567-bdca-4d38-b4ca-231ef30e2c0b",
+      uuid: "123e4567-50cf-4db3-8665-231efcc9288b",
+      jobUuid: "123e4567-6f97-4347-8f68-231ef5b68d5b",
+      actionedByUuid: "123e4567-dba4-42bc-b0ea-231ef61c0e3b",
       timestamp: "2025-08-01 12:00:00",
-      attachmentUuid: "123e4567-8d81-45db-8c28-231ef71b97cb",
+      attachmentUuid: "123e4567-ef61-4b9e-ab9d-231ef83b9a8b",
     },
   });
   if (res.ok) {
@@ -356,6 +376,11 @@ run();
 
 			
 In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_job_payments**.
 
 			
 

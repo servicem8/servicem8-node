@@ -14,7 +14,14 @@ export const tool$documentTemplatesUpdateDocumentTemplates: ToolDefinition<
   typeof args
 > = {
   name: "document-templates-update-document-templates",
-  description: `Update a Document Template`,
+  description: `Update a Document Template
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await documentTemplatesUpdateDocumentTemplates(

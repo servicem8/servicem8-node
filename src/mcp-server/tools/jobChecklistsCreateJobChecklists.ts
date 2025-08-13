@@ -18,6 +18,11 @@ export const tool$jobChecklistsCreateJobChecklists: ToolDefinition<
 
 
 			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_job_checklists**.
+
+			
+			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the \`x-record-uuid\` response header.
 

@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Update a Tax Rate
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **manage_tax_rates**.
  */
 export function taxRatesUpdateTaxRates(
   client: ServiceM8Core,

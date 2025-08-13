@@ -12,7 +12,14 @@ const args = {
 
 export const tool$securityRolesGetSecurityRoles: ToolDefinition<typeof args> = {
   name: "security-roles-get-security-roles",
-  description: `Retrieve a Security Role`,
+  description: `Retrieve a Security Role
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_security_roles**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await securityRolesGetSecurityRoles(

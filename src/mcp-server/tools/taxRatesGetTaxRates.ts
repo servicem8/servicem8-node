@@ -12,7 +12,14 @@ const args = {
 
 export const tool$taxRatesGetTaxRates: ToolDefinition<typeof args> = {
   name: "tax-rates-get-tax-rates",
-  description: `Retrieve a Tax Rate`,
+  description: `Retrieve a Tax Rate
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **read_tax_rates**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await taxRatesGetTaxRates(

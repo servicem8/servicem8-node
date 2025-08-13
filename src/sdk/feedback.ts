@@ -20,6 +20,9 @@ export class Feedback extends ClientSDK {
    *
    * #### Filtering
    * This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **read_feedback**.
    */
   async listFeedback(
     options?: RequestOptions,
@@ -34,6 +37,9 @@ export class Feedback extends ClientSDK {
    * Create a new Feedback
    *
    * @remarks
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_feedback**.
    *
    * #### Record UUID
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
@@ -51,6 +57,11 @@ export class Feedback extends ClientSDK {
 
   /**
    * Retrieve a Feedback
+   *
+   * @remarks
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **read_feedback**.
    */
   async getFeedback(
     request: operations.GetFeedbackRequest,
@@ -65,6 +76,11 @@ export class Feedback extends ClientSDK {
 
   /**
    * Update a Feedback
+   *
+   * @remarks
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_feedback**.
    */
   async updateFeedback(
     request: operations.UpdateFeedbackRequest,
@@ -83,6 +99,9 @@ export class Feedback extends ClientSDK {
    * @remarks
    *
    * In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+   *
+   * #### OAuth Scope
+   * This endpoint requires the following OAuth scope **manage_feedback**.
    */
   async deleteFeedback(
     request: operations.DeleteFeedbackRequest,

@@ -12,7 +12,14 @@ const args = {
 
 export const tool$bundlesUpdateBundles: ToolDefinition<typeof args> = {
   name: "bundles-update-bundles",
-  description: `Update a Bundle`,
+  description: `Update a Bundle
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_inventory**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await bundlesUpdateBundles(

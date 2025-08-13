@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Update an Allocation Window
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **manage_schedule**.
  */
 export function allocationWindowsUpdateAllocationWindows(
   client: ServiceM8Core,

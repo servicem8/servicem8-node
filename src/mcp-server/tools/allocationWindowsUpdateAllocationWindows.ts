@@ -14,7 +14,14 @@ export const tool$allocationWindowsUpdateAllocationWindows: ToolDefinition<
   typeof args
 > = {
   name: "allocation-windows-update-allocation-windows",
-  description: `Update an Allocation Window`,
+  description: `Update an Allocation Window
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_schedule**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await allocationWindowsUpdateAllocationWindows(

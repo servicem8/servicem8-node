@@ -32,11 +32,6 @@ import { tool$assetTypesDeleteAssetTypes } from "./tools/assetTypesDeleteAssetTy
 import { tool$assetTypesGetAssetTypes } from "./tools/assetTypesGetAssetTypes.js";
 import { tool$assetTypesListAssetTypes } from "./tools/assetTypesListAssetTypes.js";
 import { tool$assetTypesUpdateAssetTypes } from "./tools/assetTypesUpdateAssetTypes.js";
-import { tool$attachmentsCreateAttachments } from "./tools/attachmentsCreateAttachments.js";
-import { tool$attachmentsDeleteAttachments } from "./tools/attachmentsDeleteAttachments.js";
-import { tool$attachmentsGetAttachments } from "./tools/attachmentsGetAttachments.js";
-import { tool$attachmentsListAttachments } from "./tools/attachmentsListAttachments.js";
-import { tool$attachmentsUpdateAttachments } from "./tools/attachmentsUpdateAttachments.js";
 import { tool$badgesCreateBadges } from "./tools/badgesCreateBadges.js";
 import { tool$badgesDeleteBadges } from "./tools/badgesDeleteBadges.js";
 import { tool$badgesGetBadges } from "./tools/badgesGetBadges.js";
@@ -82,11 +77,8 @@ import { tool$formFieldsDeleteFormFields } from "./tools/formFieldsDeleteFormFie
 import { tool$formFieldsGetFormFields } from "./tools/formFieldsGetFormFields.js";
 import { tool$formFieldsListFormFields } from "./tools/formFieldsListFormFields.js";
 import { tool$formFieldsUpdateFormFields } from "./tools/formFieldsUpdateFormFields.js";
-import { tool$formResponsesCreateFormResponses } from "./tools/formResponsesCreateFormResponses.js";
-import { tool$formResponsesDeleteFormResponses } from "./tools/formResponsesDeleteFormResponses.js";
 import { tool$formResponsesGetFormResponses } from "./tools/formResponsesGetFormResponses.js";
 import { tool$formResponsesListFormResponses } from "./tools/formResponsesListFormResponses.js";
-import { tool$formResponsesUpdateFormResponses } from "./tools/formResponsesUpdateFormResponses.js";
 import { tool$formsCreateForms } from "./tools/formsCreateForms.js";
 import { tool$formsDeleteForms } from "./tools/formsDeleteForms.js";
 import { tool$formsGetForms } from "./tools/formsGetForms.js";
@@ -146,11 +138,8 @@ import { tool$jobsGetJobs } from "./tools/jobsGetJobs.js";
 import { tool$jobsListJobs } from "./tools/jobsListJobs.js";
 import { tool$jobsUpdateJobs } from "./tools/jobsUpdateJobs.js";
 import { tool$jobTemplatesCreateJobFromTemplate } from "./tools/jobTemplatesCreateJobFromTemplate.js";
-import { tool$jobTemplatesCreateJobTemplates } from "./tools/jobTemplatesCreateJobTemplates.js";
-import { tool$jobTemplatesDeleteJobTemplates } from "./tools/jobTemplatesDeleteJobTemplates.js";
 import { tool$jobTemplatesGetJobTemplates } from "./tools/jobTemplatesGetJobTemplates.js";
 import { tool$jobTemplatesListJobTemplates } from "./tools/jobTemplatesListJobTemplates.js";
-import { tool$jobTemplatesUpdateJobTemplates } from "./tools/jobTemplatesUpdateJobTemplates.js";
 import { tool$knowledgeArticlesCreateKnowledgeArticles } from "./tools/knowledgeArticlesCreateKnowledgeArticles.js";
 import { tool$knowledgeArticlesDeleteKnowledgeArticles } from "./tools/knowledgeArticlesDeleteKnowledgeArticles.js";
 import { tool$knowledgeArticlesGetKnowledgeArticles } from "./tools/knowledgeArticlesGetKnowledgeArticles.js";
@@ -166,19 +155,11 @@ import { tool$materialsDeleteMaterials } from "./tools/materialsDeleteMaterials.
 import { tool$materialsGetMaterials } from "./tools/materialsGetMaterials.js";
 import { tool$materialsListMaterials } from "./tools/materialsListMaterials.js";
 import { tool$materialsUpdateMaterials } from "./tools/materialsUpdateMaterials.js";
-import { tool$notesCreateNotes } from "./tools/notesCreateNotes.js";
-import { tool$notesDeleteNotes } from "./tools/notesDeleteNotes.js";
-import { tool$notesGetNotes } from "./tools/notesGetNotes.js";
-import { tool$notesListNotes } from "./tools/notesListNotes.js";
-import { tool$notesUpdateNotes } from "./tools/notesUpdateNotes.js";
 import { tool$searchGeneralSearch } from "./tools/searchGeneralSearch.js";
 import { tool$searchJobEmbeddingSearch } from "./tools/searchJobEmbeddingSearch.js";
 import { tool$searchObjectSearch } from "./tools/searchObjectSearch.js";
-import { tool$securityRolesCreateSecurityRoles } from "./tools/securityRolesCreateSecurityRoles.js";
-import { tool$securityRolesDeleteSecurityRoles } from "./tools/securityRolesDeleteSecurityRoles.js";
 import { tool$securityRolesGetSecurityRoles } from "./tools/securityRolesGetSecurityRoles.js";
 import { tool$securityRolesListSecurityRoles } from "./tools/securityRolesListSecurityRoles.js";
-import { tool$securityRolesUpdateSecurityRoles } from "./tools/securityRolesUpdateSecurityRoles.js";
 import { tool$smsTemplatesCreateSMSTemplates } from "./tools/smsTemplatesCreateSMSTemplates.js";
 import { tool$smsTemplatesDeleteSMSTemplates } from "./tools/smsTemplatesDeleteSMSTemplates.js";
 import { tool$smsTemplatesGetSMSTemplates } from "./tools/smsTemplatesGetSMSTemplates.js";
@@ -189,11 +170,8 @@ import { tool$staffMembersDeleteStaffMembers } from "./tools/staffMembersDeleteS
 import { tool$staffMembersGetStaffMembers } from "./tools/staffMembersGetStaffMembers.js";
 import { tool$staffMembersListStaffMembers } from "./tools/staffMembersListStaffMembers.js";
 import { tool$staffMembersUpdateStaffMembers } from "./tools/staffMembersUpdateStaffMembers.js";
-import { tool$staffMessagesCreateStaffMessages } from "./tools/staffMessagesCreateStaffMessages.js";
-import { tool$staffMessagesDeleteStaffMessages } from "./tools/staffMessagesDeleteStaffMessages.js";
 import { tool$staffMessagesGetStaffMessages } from "./tools/staffMessagesGetStaffMessages.js";
 import { tool$staffMessagesListStaffMessages } from "./tools/staffMessagesListStaffMessages.js";
-import { tool$staffMessagesUpdateStaffMessages } from "./tools/staffMessagesUpdateStaffMessages.js";
 import { tool$tasksCreateTasks } from "./tools/tasksCreateTasks.js";
 import { tool$tasksDeleteTasks } from "./tools/tasksDeleteTasks.js";
 import { tool$tasksGetTasks } from "./tools/tasksGetTasks.js";
@@ -206,7 +184,6 @@ import { tool$taxRatesListTaxRates } from "./tools/taxRatesListTaxRates.js";
 import { tool$taxRatesUpdateTaxRates } from "./tools/taxRatesUpdateTaxRates.js";
 import { tool$vendorsGetVendors } from "./tools/vendorsGetVendors.js";
 import { tool$vendorsListVendors } from "./tools/vendorsListVendors.js";
-import { tool$vendorsUpdateVendors } from "./tools/vendorsUpdateVendors.js";
 
 export function createMCPServer(deps: {
   logger: ConsoleLogger;
@@ -218,7 +195,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "ServiceM8",
-    version: "0.9.35",
+    version: "0.9.36",
   });
 
   const client = new ServiceM8Core({
@@ -267,11 +244,6 @@ export function createMCPServer(deps: {
   tool(tool$assetTypeFieldsGetAssetTypeFields);
   tool(tool$assetTypeFieldsUpdateAssetTypeFields);
   tool(tool$assetTypeFieldsDeleteAssetTypeFields);
-  tool(tool$attachmentsListAttachments);
-  tool(tool$attachmentsCreateAttachments);
-  tool(tool$attachmentsGetAttachments);
-  tool(tool$attachmentsUpdateAttachments);
-  tool(tool$attachmentsDeleteAttachments);
   tool(tool$badgesListBadges);
   tool(tool$badgesCreateBadges);
   tool(tool$badgesGetBadges);
@@ -318,18 +290,7 @@ export function createMCPServer(deps: {
   tool(tool$formFieldsUpdateFormFields);
   tool(tool$formFieldsDeleteFormFields);
   tool(tool$formResponsesListFormResponses);
-  tool(tool$formResponsesCreateFormResponses);
   tool(tool$formResponsesGetFormResponses);
-  tool(tool$formResponsesUpdateFormResponses);
-  tool(tool$formResponsesDeleteFormResponses);
-  tool(tool$inboxListInboxMessages);
-  tool(tool$inboxGetInboxMessage);
-  tool(tool$inboxMarkInboxMessageAsRead);
-  tool(tool$inboxArchiveInboxMessage);
-  tool(tool$inboxSnoozeInboxMessage);
-  tool(tool$inboxConvertInboxMessageToJob);
-  tool(tool$inboxAttachInboxMessageToJob);
-  tool(tool$inboxAddNoteToInboxMessage);
   tool(tool$jobsListJobs);
   tool(tool$jobsCreateJobs);
   tool(tool$jobsGetJobs);
@@ -371,10 +332,7 @@ export function createMCPServer(deps: {
   tool(tool$jobPaymentsUpdateJobPayments);
   tool(tool$jobPaymentsDeleteJobPayments);
   tool(tool$jobTemplatesListJobTemplates);
-  tool(tool$jobTemplatesCreateJobTemplates);
   tool(tool$jobTemplatesGetJobTemplates);
-  tool(tool$jobTemplatesUpdateJobTemplates);
-  tool(tool$jobTemplatesDeleteJobTemplates);
   tool(tool$jobTemplatesCreateJobFromTemplate);
   tool(tool$knowledgeArticlesListKnowledgeArticles);
   tool(tool$knowledgeArticlesCreateKnowledgeArticles);
@@ -396,21 +354,13 @@ export function createMCPServer(deps: {
   tool(tool$bundlesGetBundles);
   tool(tool$bundlesUpdateBundles);
   tool(tool$bundlesDeleteBundles);
-  tool(tool$notesListNotes);
-  tool(tool$notesCreateNotes);
-  tool(tool$notesGetNotes);
-  tool(tool$notesUpdateNotes);
-  tool(tool$notesDeleteNotes);
   tool(tool$jobQueuesListJobQueues);
   tool(tool$jobQueuesCreateJobQueues);
   tool(tool$jobQueuesGetJobQueues);
   tool(tool$jobQueuesUpdateJobQueues);
   tool(tool$jobQueuesDeleteJobQueues);
   tool(tool$securityRolesListSecurityRoles);
-  tool(tool$securityRolesCreateSecurityRoles);
   tool(tool$securityRolesGetSecurityRoles);
-  tool(tool$securityRolesUpdateSecurityRoles);
-  tool(tool$securityRolesDeleteSecurityRoles);
   tool(tool$smsTemplatesListSMSTemplates);
   tool(tool$smsTemplatesCreateSMSTemplates);
   tool(tool$smsTemplatesGetSMSTemplates);
@@ -422,10 +372,7 @@ export function createMCPServer(deps: {
   tool(tool$staffMembersUpdateStaffMembers);
   tool(tool$staffMembersDeleteStaffMembers);
   tool(tool$staffMessagesListStaffMessages);
-  tool(tool$staffMessagesCreateStaffMessages);
   tool(tool$staffMessagesGetStaffMessages);
-  tool(tool$staffMessagesUpdateStaffMessages);
-  tool(tool$staffMessagesDeleteStaffMessages);
   tool(tool$tasksListTasks);
   tool(tool$tasksCreateTasks);
   tool(tool$tasksGetTasks);
@@ -438,7 +385,14 @@ export function createMCPServer(deps: {
   tool(tool$taxRatesDeleteTaxRates);
   tool(tool$vendorsListVendors);
   tool(tool$vendorsGetVendors);
-  tool(tool$vendorsUpdateVendors);
+  tool(tool$inboxListInboxMessages);
+  tool(tool$inboxGetInboxMessage);
+  tool(tool$inboxMarkInboxMessageAsRead);
+  tool(tool$inboxArchiveInboxMessage);
+  tool(tool$inboxSnoozeInboxMessage);
+  tool(tool$inboxConvertInboxMessageToJob);
+  tool(tool$inboxAttachInboxMessageToJob);
+  tool(tool$inboxAddNoteToInboxMessage);
   tool(tool$searchGeneralSearch);
   tool(tool$searchObjectSearch);
   tool(tool$searchJobEmbeddingSearch);

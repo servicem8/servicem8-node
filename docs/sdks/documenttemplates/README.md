@@ -20,6 +20,11 @@ Operations related to Document Templates
 #### Filtering
 This endpoint supports result filtering. For more information on how to filter this request, [go here](/docs/filtering).
 			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			
 
 ### Example Usage
 
@@ -94,6 +99,11 @@ run();
 
 
 			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			
+			
 #### Record UUID
 UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
 
@@ -113,7 +123,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.documentTemplates.createDocumentTemplates({
-    uuid: "123e4567-b0fc-456f-822e-231ef6988e2b",
+    uuid: "123e4567-9a5c-4ee2-a40b-231eff7950db",
   });
 
   console.log(result);
@@ -140,7 +150,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await documentTemplatesCreateDocumentTemplates(serviceM8, {
-    uuid: "123e4567-b0fc-456f-822e-231ef6988e2b",
+    uuid: "123e4567-9a5c-4ee2-a40b-231eff7950db",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -175,7 +185,12 @@ run();
 
 ## getDocumentTemplates
 
-Retrieve a Document Template
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			
 
 ### Example Usage
 
@@ -253,7 +268,12 @@ run();
 
 ## updateDocumentTemplates
 
-Update a Document Template
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			
 
 ### Example Usage
 
@@ -271,7 +291,7 @@ async function run() {
   const result = await serviceM8.documentTemplates.updateDocumentTemplates({
     uuid: "e371a482-2feb-4b5b-a72a-56796a683d72",
     documentTemplate: {
-      uuid: "123e4567-b0fc-456f-822e-231ef6988e2b",
+      uuid: "123e4567-9a5c-4ee2-a40b-231eff7950db",
     },
   });
 
@@ -301,7 +321,7 @@ async function run() {
   const res = await documentTemplatesUpdateDocumentTemplates(serviceM8, {
     uuid: "e371a482-2feb-4b5b-a72a-56796a683d72",
     documentTemplate: {
-      uuid: "123e4567-b0fc-456f-822e-231ef6988e2b",
+      uuid: "123e4567-9a5c-4ee2-a40b-231eff7950db",
     },
   });
   if (res.ok) {
@@ -340,6 +360,11 @@ run();
 
 			
 In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
 
 			
 

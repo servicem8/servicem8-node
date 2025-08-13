@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Update a Feedback
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **manage_feedback**.
  */
 export function feedbackUpdateFeedback(
   client: ServiceM8Core,

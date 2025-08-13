@@ -8,10 +8,10 @@ import { UpdateBadgesRequest } from "servicem8/models/operations";
 let value: UpdateBadgesRequest = {
   uuid: "dc958f3c-f61f-4e7c-a32f-ac09ac1db338",
   badge: {
-    uuid: "123e4567-24c8-465d-ab20-231ef1fff88b",
+    uuid: "123e4567-4283-4dd2-8f9b-231eff2fd48b",
     name: "<value>",
-    regardingFormUuid: "123e4567-03f4-49a2-9a9b-231ef589ef5b",
-    regardingAssetTypeUuid: "123e4567-9025-417b-84da-231ef1b83e3b",
+    regardingFormUuid: "123e4567-c2ce-460d-9aad-231eff48cc7b",
+    regardingAssetTypeUuid: "123e4567-dfea-4b8d-b699-231ef581ac3b",
   },
 };
 ```

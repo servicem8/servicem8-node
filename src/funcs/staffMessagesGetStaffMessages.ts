@@ -27,6 +27,11 @@ import { Result } from "../types/fp.js";
 
 /**
  * Retrieve a Staff Message
+ *
+ * @remarks
+ *
+ * #### OAuth Scope
+ * This endpoint requires the following OAuth scope **read_messages**.
  */
 export function staffMessagesGetStaffMessages(
   client: ServiceM8Core,

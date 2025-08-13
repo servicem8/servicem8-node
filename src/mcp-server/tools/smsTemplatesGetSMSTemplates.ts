@@ -12,7 +12,14 @@ const args = {
 
 export const tool$smsTemplatesGetSMSTemplates: ToolDefinition<typeof args> = {
   name: "SMS-templates-get-SMS-templates",
-  description: `Retrieve a SMS Template`,
+  description: `Retrieve a SMS Template
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_templates**.
+
+			`,
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await smsTemplatesGetSMSTemplates(

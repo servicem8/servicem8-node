@@ -37,18 +37,6 @@ export type JobTemplate = {
   name?: string | undefined;
 };
 
-export type JobTemplateInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: JobTemplateActive | undefined;
-  name?: string | undefined;
-};
-
 /** @internal */
 export const JobTemplateActive$inboundSchema: z.ZodNativeEnum<
   typeof JobTemplateActive
@@ -134,65 +122,5 @@ export function jobTemplateFromJSON(
     jsonString,
     (x) => JobTemplate$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'JobTemplate' from JSON`,
-  );
-}
-
-/** @internal */
-export const JobTemplateInput$inboundSchema: z.ZodType<
-  JobTemplateInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobTemplateActive$inboundSchema.default(1),
-  name: z.string().optional(),
-});
-
-/** @internal */
-export type JobTemplateInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  name?: string | undefined;
-};
-
-/** @internal */
-export const JobTemplateInput$outboundSchema: z.ZodType<
-  JobTemplateInput$Outbound,
-  z.ZodTypeDef,
-  JobTemplateInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobTemplateActive$outboundSchema.default(1),
-  name: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobTemplateInput$ {
-  /** @deprecated use `JobTemplateInput$inboundSchema` instead. */
-  export const inboundSchema = JobTemplateInput$inboundSchema;
-  /** @deprecated use `JobTemplateInput$outboundSchema` instead. */
-  export const outboundSchema = JobTemplateInput$outboundSchema;
-  /** @deprecated use `JobTemplateInput$Outbound` instead. */
-  export type Outbound = JobTemplateInput$Outbound;
-}
-
-export function jobTemplateInputToJSON(
-  jobTemplateInput: JobTemplateInput,
-): string {
-  return JSON.stringify(
-    JobTemplateInput$outboundSchema.parse(jobTemplateInput),
-  );
-}
-
-export function jobTemplateInputFromJSON(
-  jsonString: string,
-): SafeParseResult<JobTemplateInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => JobTemplateInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'JobTemplateInput' from JSON`,
   );
 }
