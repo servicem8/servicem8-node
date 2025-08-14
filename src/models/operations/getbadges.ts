@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetBadgesRequest = {
@@ -14,8 +13,6 @@ export type GetBadgesRequest = {
    */
   uuid: string;
 };
-
-export type GetBadgesResponse = components.Badge | components.ErrorT;
 
 /** @internal */
 export const GetBadgesRequest$inboundSchema: z.ZodType<
@@ -68,58 +65,5 @@ export function getBadgesRequestFromJSON(
     jsonString,
     (x) => GetBadgesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetBadgesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetBadgesResponse$inboundSchema: z.ZodType<
-  GetBadgesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Badge$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type GetBadgesResponse$Outbound =
-  | components.Badge$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetBadgesResponse$outboundSchema: z.ZodType<
-  GetBadgesResponse$Outbound,
-  z.ZodTypeDef,
-  GetBadgesResponse
-> = z.union([
-  components.Badge$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetBadgesResponse$ {
-  /** @deprecated use `GetBadgesResponse$inboundSchema` instead. */
-  export const inboundSchema = GetBadgesResponse$inboundSchema;
-  /** @deprecated use `GetBadgesResponse$outboundSchema` instead. */
-  export const outboundSchema = GetBadgesResponse$outboundSchema;
-  /** @deprecated use `GetBadgesResponse$Outbound` instead. */
-  export type Outbound = GetBadgesResponse$Outbound;
-}
-
-export function getBadgesResponseToJSON(
-  getBadgesResponse: GetBadgesResponse,
-): string {
-  return JSON.stringify(
-    GetBadgesResponse$outboundSchema.parse(getBadgesResponse),
-  );
-}
-
-export function getBadgesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetBadgesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetBadgesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetBadgesResponse' from JSON`,
   );
 }

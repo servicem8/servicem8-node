@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetClientsRequest = {
@@ -14,8 +13,6 @@ export type GetClientsRequest = {
    */
   uuid: string;
 };
-
-export type GetClientsResponse = components.Company | components.ErrorT;
 
 /** @internal */
 export const GetClientsRequest$inboundSchema: z.ZodType<
@@ -68,61 +65,5 @@ export function getClientsRequestFromJSON(
     jsonString,
     (x) => GetClientsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetClientsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetClientsResponse$inboundSchema: z.ZodType<
-  GetClientsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.Company$inboundSchema,
-  components.ErrorT$inboundSchema,
-]);
-
-/** @internal */
-export type GetClientsResponse$Outbound =
-  | components.Company$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetClientsResponse$outboundSchema: z.ZodType<
-  GetClientsResponse$Outbound,
-  z.ZodTypeDef,
-  GetClientsResponse
-> = z.union([
-  components.Company$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetClientsResponse$ {
-  /** @deprecated use `GetClientsResponse$inboundSchema` instead. */
-  export const inboundSchema = GetClientsResponse$inboundSchema;
-  /** @deprecated use `GetClientsResponse$outboundSchema` instead. */
-  export const outboundSchema = GetClientsResponse$outboundSchema;
-  /** @deprecated use `GetClientsResponse$Outbound` instead. */
-  export type Outbound = GetClientsResponse$Outbound;
-}
-
-export function getClientsResponseToJSON(
-  getClientsResponse: GetClientsResponse,
-): string {
-  return JSON.stringify(
-    GetClientsResponse$outboundSchema.parse(getClientsResponse),
-  );
-}
-
-export function getClientsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetClientsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetClientsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetClientsResponse' from JSON`,
   );
 }

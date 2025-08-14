@@ -26,7 +26,7 @@ export class KnowledgeArticles extends ClientSDK {
    */
   async listKnowledgeArticles(
     options?: RequestOptions,
-  ): Promise<operations.ListKnowledgeArticlesResponse> {
+  ): Promise<Array<components.KnowledgeArticle>> {
     return unwrapAsync(knowledgeArticlesListKnowledgeArticles(
       this,
       options,
@@ -66,7 +66,7 @@ export class KnowledgeArticles extends ClientSDK {
   async getKnowledgeArticles(
     request: operations.GetKnowledgeArticlesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetKnowledgeArticlesResponse> {
+  ): Promise<components.KnowledgeArticle> {
     return unwrapAsync(knowledgeArticlesGetKnowledgeArticles(
       this,
       request,
@@ -85,7 +85,7 @@ export class KnowledgeArticles extends ClientSDK {
   async updateKnowledgeArticles(
     request: operations.UpdateKnowledgeArticlesRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateKnowledgeArticlesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(knowledgeArticlesUpdateKnowledgeArticles(
       this,
       request,
@@ -106,7 +106,7 @@ export class KnowledgeArticles extends ClientSDK {
   async deleteKnowledgeArticles(
     request: operations.DeleteKnowledgeArticlesRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteKnowledgeArticlesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(knowledgeArticlesDeleteKnowledgeArticles(
       this,
       request,

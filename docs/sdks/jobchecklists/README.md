@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListJobChecklistsResponse](../../models/operations/listjobchecklistsresponse.md)\>**
+**Promise\<[components.JobChecklist[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createJobChecklists
 
@@ -123,18 +127,18 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobChecklists.createJobChecklists({
-    uuid: "123e4567-ae42-4b82-9d85-231ef59d636b",
-    jobUuid: "123e4567-b9ef-4c8f-be37-231ef6ff488b",
+    uuid: "123e4567-785f-4f1d-8f84-231fe2a4371b",
+    jobUuid: "123e4567-8d0e-4fb1-a361-231fe792c0db",
     completedTimestamp: "2025-08-01 12:00:00",
-    completedByStaffUuid: "123e4567-c9f0-4572-974c-231efdba7c1b",
-    completedDuringCheckinUuid: "123e4567-b92f-4cd8-b962-231efbe7116b",
-    regardingObjectUuid: "123e4567-6ad2-41d4-8778-231eff7413ab",
-    fulfilledByObjectUuid: "123e4567-5b0e-4a15-8bea-231ef6ab6a4b",
+    completedByStaffUuid: "123e4567-63dd-4985-8107-231fe2feaa8b",
+    completedDuringCheckinUuid: "123e4567-02a0-49ad-97e9-231fede3864b",
+    regardingObjectUuid: "123e4567-319e-4118-ac5f-231fedf8bfdb",
+    fulfilledByObjectUuid: "123e4567-b361-499f-a0ea-231fe91c9d3b",
     assignedToStaffUuids: [
-      "123e4567-1579-47da-a0a3-231ef6dcb01b",
+      "123e4567-25e8-4818-bc14-231febfef26b",
     ],
     assignedTimestamp: "2025-08-01 12:00:00",
-    assignedByStaffUuid: "123e4567-8553-4767-a0d8-231ef390647b",
+    assignedByStaffUuid: "123e4567-589e-4077-817b-231fe6c9fb6b",
   });
 
   console.log(result);
@@ -161,18 +165,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobChecklistsCreateJobChecklists(serviceM8, {
-    uuid: "123e4567-ae42-4b82-9d85-231ef59d636b",
-    jobUuid: "123e4567-b9ef-4c8f-be37-231ef6ff488b",
+    uuid: "123e4567-785f-4f1d-8f84-231fe2a4371b",
+    jobUuid: "123e4567-8d0e-4fb1-a361-231fe792c0db",
     completedTimestamp: "2025-08-01 12:00:00",
-    completedByStaffUuid: "123e4567-c9f0-4572-974c-231efdba7c1b",
-    completedDuringCheckinUuid: "123e4567-b92f-4cd8-b962-231efbe7116b",
-    regardingObjectUuid: "123e4567-6ad2-41d4-8778-231eff7413ab",
-    fulfilledByObjectUuid: "123e4567-5b0e-4a15-8bea-231ef6ab6a4b",
+    completedByStaffUuid: "123e4567-63dd-4985-8107-231fe2feaa8b",
+    completedDuringCheckinUuid: "123e4567-02a0-49ad-97e9-231fede3864b",
+    regardingObjectUuid: "123e4567-319e-4118-ac5f-231fedf8bfdb",
+    fulfilledByObjectUuid: "123e4567-b361-499f-a0ea-231fe91c9d3b",
     assignedToStaffUuids: [
-      "123e4567-1579-47da-a0a3-231ef6dcb01b",
+      "123e4567-25e8-4818-bc14-231febfef26b",
     ],
     assignedTimestamp: "2025-08-01 12:00:00",
-    assignedByStaffUuid: "123e4567-8553-4767-a0d8-231ef390647b",
+    assignedByStaffUuid: "123e4567-589e-4077-817b-231fe6c9fb6b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -200,10 +204,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getJobChecklists
 
@@ -279,14 +287,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetJobChecklistsResponse](../../models/operations/getjobchecklistsresponse.md)\>**
+**Promise\<[components.JobChecklist](../../models/components/jobchecklist.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateJobChecklists
 
@@ -313,18 +326,18 @@ async function run() {
   const result = await serviceM8.jobChecklists.updateJobChecklists({
     uuid: "cd24d8b9-7620-4771-805e-b96a73214740",
     jobChecklist: {
-      uuid: "123e4567-ae42-4b82-9d85-231ef59d636b",
-      jobUuid: "123e4567-b9ef-4c8f-be37-231ef6ff488b",
+      uuid: "123e4567-785f-4f1d-8f84-231fe2a4371b",
+      jobUuid: "123e4567-8d0e-4fb1-a361-231fe792c0db",
       completedTimestamp: "2025-08-01 12:00:00",
-      completedByStaffUuid: "123e4567-c9f0-4572-974c-231efdba7c1b",
-      completedDuringCheckinUuid: "123e4567-b92f-4cd8-b962-231efbe7116b",
-      regardingObjectUuid: "123e4567-6ad2-41d4-8778-231eff7413ab",
-      fulfilledByObjectUuid: "123e4567-5b0e-4a15-8bea-231ef6ab6a4b",
+      completedByStaffUuid: "123e4567-63dd-4985-8107-231fe2feaa8b",
+      completedDuringCheckinUuid: "123e4567-02a0-49ad-97e9-231fede3864b",
+      regardingObjectUuid: "123e4567-319e-4118-ac5f-231fedf8bfdb",
+      fulfilledByObjectUuid: "123e4567-b361-499f-a0ea-231fe91c9d3b",
       assignedToStaffUuids: [
-        "123e4567-1579-47da-a0a3-231ef6dcb01b",
+        "123e4567-25e8-4818-bc14-231febfef26b",
       ],
       assignedTimestamp: "2025-08-01 12:00:00",
-      assignedByStaffUuid: "123e4567-8553-4767-a0d8-231ef390647b",
+      assignedByStaffUuid: "123e4567-589e-4077-817b-231fe6c9fb6b",
     },
   });
 
@@ -354,18 +367,18 @@ async function run() {
   const res = await jobChecklistsUpdateJobChecklists(serviceM8, {
     uuid: "cd24d8b9-7620-4771-805e-b96a73214740",
     jobChecklist: {
-      uuid: "123e4567-ae42-4b82-9d85-231ef59d636b",
-      jobUuid: "123e4567-b9ef-4c8f-be37-231ef6ff488b",
+      uuid: "123e4567-785f-4f1d-8f84-231fe2a4371b",
+      jobUuid: "123e4567-8d0e-4fb1-a361-231fe792c0db",
       completedTimestamp: "2025-08-01 12:00:00",
-      completedByStaffUuid: "123e4567-c9f0-4572-974c-231efdba7c1b",
-      completedDuringCheckinUuid: "123e4567-b92f-4cd8-b962-231efbe7116b",
-      regardingObjectUuid: "123e4567-6ad2-41d4-8778-231eff7413ab",
-      fulfilledByObjectUuid: "123e4567-5b0e-4a15-8bea-231ef6ab6a4b",
+      completedByStaffUuid: "123e4567-63dd-4985-8107-231fe2feaa8b",
+      completedDuringCheckinUuid: "123e4567-02a0-49ad-97e9-231fede3864b",
+      regardingObjectUuid: "123e4567-319e-4118-ac5f-231fedf8bfdb",
+      fulfilledByObjectUuid: "123e4567-b361-499f-a0ea-231fe91c9d3b",
       assignedToStaffUuids: [
-        "123e4567-1579-47da-a0a3-231ef6dcb01b",
+        "123e4567-25e8-4818-bc14-231febfef26b",
       ],
       assignedTimestamp: "2025-08-01 12:00:00",
-      assignedByStaffUuid: "123e4567-8553-4767-a0d8-231ef390647b",
+      assignedByStaffUuid: "123e4567-589e-4077-817b-231fe6c9fb6b",
     },
   });
   if (res.ok) {
@@ -390,14 +403,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateJobChecklistsResponse](../../models/operations/updatejobchecklistsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteJobChecklists
 
@@ -477,11 +495,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteJobChecklistsResponse](../../models/operations/deletejobchecklistsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

@@ -26,7 +26,7 @@ export class EmailTemplates extends ClientSDK {
    */
   async listEmailTemplates(
     options?: RequestOptions,
-  ): Promise<operations.ListEmailTemplatesResponse> {
+  ): Promise<Array<components.EmailTemplate>> {
     return unwrapAsync(emailTemplatesListEmailTemplates(
       this,
       options,
@@ -66,7 +66,7 @@ export class EmailTemplates extends ClientSDK {
   async getEmailTemplates(
     request: operations.GetEmailTemplatesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetEmailTemplatesResponse> {
+  ): Promise<components.EmailTemplate> {
     return unwrapAsync(emailTemplatesGetEmailTemplates(
       this,
       request,
@@ -85,7 +85,7 @@ export class EmailTemplates extends ClientSDK {
   async updateEmailTemplates(
     request: operations.UpdateEmailTemplatesRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateEmailTemplatesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(emailTemplatesUpdateEmailTemplates(
       this,
       request,
@@ -106,7 +106,7 @@ export class EmailTemplates extends ClientSDK {
   async deleteEmailTemplates(
     request: operations.DeleteEmailTemplatesRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteEmailTemplatesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(emailTemplatesDeleteEmailTemplates(
       this,
       request,

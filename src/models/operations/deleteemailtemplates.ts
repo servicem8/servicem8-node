@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type DeleteEmailTemplatesRequest = {
@@ -14,10 +13,6 @@ export type DeleteEmailTemplatesRequest = {
    */
   uuid: string;
 };
-
-export type DeleteEmailTemplatesResponse =
-  | components.Result
-  | components.ErrorT;
 
 /** @internal */
 export const DeleteEmailTemplatesRequest$inboundSchema: z.ZodType<
@@ -72,60 +67,5 @@ export function deleteEmailTemplatesRequestFromJSON(
     jsonString,
     (x) => DeleteEmailTemplatesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'DeleteEmailTemplatesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const DeleteEmailTemplatesResponse$inboundSchema: z.ZodType<
-  DeleteEmailTemplatesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type DeleteEmailTemplatesResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const DeleteEmailTemplatesResponse$outboundSchema: z.ZodType<
-  DeleteEmailTemplatesResponse$Outbound,
-  z.ZodTypeDef,
-  DeleteEmailTemplatesResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteEmailTemplatesResponse$ {
-  /** @deprecated use `DeleteEmailTemplatesResponse$inboundSchema` instead. */
-  export const inboundSchema = DeleteEmailTemplatesResponse$inboundSchema;
-  /** @deprecated use `DeleteEmailTemplatesResponse$outboundSchema` instead. */
-  export const outboundSchema = DeleteEmailTemplatesResponse$outboundSchema;
-  /** @deprecated use `DeleteEmailTemplatesResponse$Outbound` instead. */
-  export type Outbound = DeleteEmailTemplatesResponse$Outbound;
-}
-
-export function deleteEmailTemplatesResponseToJSON(
-  deleteEmailTemplatesResponse: DeleteEmailTemplatesResponse,
-): string {
-  return JSON.stringify(
-    DeleteEmailTemplatesResponse$outboundSchema.parse(
-      deleteEmailTemplatesResponse,
-    ),
-  );
-}
-
-export function deleteEmailTemplatesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteEmailTemplatesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteEmailTemplatesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteEmailTemplatesResponse' from JSON`,
   );
 }

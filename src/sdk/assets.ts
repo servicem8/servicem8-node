@@ -7,6 +7,7 @@ import { assetsGetAssets } from "../funcs/assetsGetAssets.js";
 import { assetsListAssets } from "../funcs/assetsListAssets.js";
 import { assetsUpdateAssets } from "../funcs/assetsUpdateAssets.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
+import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
@@ -24,7 +25,7 @@ export class Assets extends ClientSDK {
    */
   async listAssets(
     options?: RequestOptions,
-  ): Promise<operations.ListAssetsResponse> {
+  ): Promise<Array<components.Asset>> {
     return unwrapAsync(assetsListAssets(
       this,
       options,
@@ -42,7 +43,7 @@ export class Assets extends ClientSDK {
   async getAssets(
     request: operations.GetAssetsRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetAssetsResponse> {
+  ): Promise<components.Asset> {
     return unwrapAsync(assetsGetAssets(
       this,
       request,
@@ -61,7 +62,7 @@ export class Assets extends ClientSDK {
   async updateAssets(
     request: operations.UpdateAssetsRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateAssetsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(assetsUpdateAssets(
       this,
       request,
@@ -82,7 +83,7 @@ export class Assets extends ClientSDK {
   async deleteAssets(
     request: operations.DeleteAssetsRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteAssetsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(assetsDeleteAssets(
       this,
       request,

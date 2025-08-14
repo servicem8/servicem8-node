@@ -26,7 +26,7 @@ export class Tasks extends ClientSDK {
    */
   async listTasks(
     options?: RequestOptions,
-  ): Promise<operations.ListTasksResponse> {
+  ): Promise<Array<components.Task>> {
     return unwrapAsync(tasksListTasks(
       this,
       options,
@@ -66,7 +66,7 @@ export class Tasks extends ClientSDK {
   async getTasks(
     request: operations.GetTasksRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetTasksResponse> {
+  ): Promise<components.Task> {
     return unwrapAsync(tasksGetTasks(
       this,
       request,
@@ -85,7 +85,7 @@ export class Tasks extends ClientSDK {
   async updateTasks(
     request: operations.UpdateTasksRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateTasksResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(tasksUpdateTasks(
       this,
       request,
@@ -106,7 +106,7 @@ export class Tasks extends ClientSDK {
   async deleteTasks(
     request: operations.DeleteTasksRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteTasksResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(tasksDeleteTasks(
       this,
       request,

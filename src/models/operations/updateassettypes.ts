@@ -20,8 +20,6 @@ export type UpdateAssetTypesRequest = {
   assetType: components.AssetTypeInput;
 };
 
-export type UpdateAssetTypesResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateAssetTypesRequest$inboundSchema: z.ZodType<
   UpdateAssetTypesRequest,
@@ -84,58 +82,5 @@ export function updateAssetTypesRequestFromJSON(
     jsonString,
     (x) => UpdateAssetTypesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateAssetTypesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateAssetTypesResponse$inboundSchema: z.ZodType<
-  UpdateAssetTypesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateAssetTypesResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateAssetTypesResponse$outboundSchema: z.ZodType<
-  UpdateAssetTypesResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateAssetTypesResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAssetTypesResponse$ {
-  /** @deprecated use `UpdateAssetTypesResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateAssetTypesResponse$inboundSchema;
-  /** @deprecated use `UpdateAssetTypesResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateAssetTypesResponse$outboundSchema;
-  /** @deprecated use `UpdateAssetTypesResponse$Outbound` instead. */
-  export type Outbound = UpdateAssetTypesResponse$Outbound;
-}
-
-export function updateAssetTypesResponseToJSON(
-  updateAssetTypesResponse: UpdateAssetTypesResponse,
-): string {
-  return JSON.stringify(
-    UpdateAssetTypesResponse$outboundSchema.parse(updateAssetTypesResponse),
-  );
-}
-
-export function updateAssetTypesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAssetTypesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAssetTypesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAssetTypesResponse' from JSON`,
   );
 }

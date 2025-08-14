@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListAssetTypeFieldsResponse](../../models/operations/listassettypefieldsresponse.md)\>**
+**Promise\<[components.AssetTypeField[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createAssetTypeFields
 
@@ -123,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.assetTypeFields.createAssetTypeFields({
-    uuid: "123e4567-430a-48c7-90b8-231efd2600eb",
-    assetTypeUuid: "123e4567-f3f7-4b03-a17b-231efcdffe3b",
+    uuid: "123e4567-f4ed-43e8-8d0f-231fed2b7a6b",
+    assetTypeUuid: "123e4567-97e4-4318-9e42-231fe8b1feab",
     name: "<value>",
   });
 
@@ -152,8 +156,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetTypeFieldsCreateAssetTypeFields(serviceM8, {
-    uuid: "123e4567-430a-48c7-90b8-231efd2600eb",
-    assetTypeUuid: "123e4567-f3f7-4b03-a17b-231efcdffe3b",
+    uuid: "123e4567-f4ed-43e8-8d0f-231fed2b7a6b",
+    assetTypeUuid: "123e4567-97e4-4318-9e42-231fe8b1feab",
     name: "<value>",
   });
   if (res.ok) {
@@ -182,10 +186,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getAssetTypeFields
 
@@ -261,14 +269,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetAssetTypeFieldsResponse](../../models/operations/getassettypefieldsresponse.md)\>**
+**Promise\<[components.AssetTypeField](../../models/components/assettypefield.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateAssetTypeFields
 
@@ -295,8 +308,8 @@ async function run() {
   const result = await serviceM8.assetTypeFields.updateAssetTypeFields({
     uuid: "1d8d7fd0-4d09-4955-a484-0cd4add08b25",
     assetTypeField: {
-      uuid: "123e4567-430a-48c7-90b8-231efd2600eb",
-      assetTypeUuid: "123e4567-f3f7-4b03-a17b-231efcdffe3b",
+      uuid: "123e4567-f4ed-43e8-8d0f-231fed2b7a6b",
+      assetTypeUuid: "123e4567-97e4-4318-9e42-231fe8b1feab",
       name: "<value>",
     },
   });
@@ -327,8 +340,8 @@ async function run() {
   const res = await assetTypeFieldsUpdateAssetTypeFields(serviceM8, {
     uuid: "1d8d7fd0-4d09-4955-a484-0cd4add08b25",
     assetTypeField: {
-      uuid: "123e4567-430a-48c7-90b8-231efd2600eb",
-      assetTypeUuid: "123e4567-f3f7-4b03-a17b-231efcdffe3b",
+      uuid: "123e4567-f4ed-43e8-8d0f-231fed2b7a6b",
+      assetTypeUuid: "123e4567-97e4-4318-9e42-231fe8b1feab",
       name: "<value>",
     },
   });
@@ -354,14 +367,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateAssetTypeFieldsResponse](../../models/operations/updateassettypefieldsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteAssetTypeFields
 
@@ -441,11 +459,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteAssetTypeFieldsResponse](../../models/operations/deleteassettypefieldsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListSMSTemplatesResponse](../../models/operations/listsmstemplatesresponse.md)\>**
+**Promise\<[components.SmsTemplate[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createSMSTemplates
 
@@ -123,7 +127,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.smsTemplates.createSMSTemplates({
-    uuid: "123e4567-fc9a-4410-801b-231ef4d4a55b",
+    uuid: "123e4567-f3e1-482a-94c2-231fed88193b",
     name: "<value>",
   });
 
@@ -151,7 +155,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await smsTemplatesCreateSMSTemplates(serviceM8, {
-    uuid: "123e4567-fc9a-4410-801b-231ef4d4a55b",
+    uuid: "123e4567-f3e1-482a-94c2-231fed88193b",
     name: "<value>",
   });
   if (res.ok) {
@@ -180,10 +184,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getSMSTemplates
 
@@ -259,14 +267,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetSMSTemplatesResponse](../../models/operations/getsmstemplatesresponse.md)\>**
+**Promise\<[components.SmsTemplate](../../models/components/smstemplate.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateSMSTemplates
 
@@ -293,7 +306,7 @@ async function run() {
   const result = await serviceM8.smsTemplates.updateSMSTemplates({
     uuid: "2ea183b5-88e4-4168-a975-1820b2711ae4",
     smsTemplate: {
-      uuid: "123e4567-fc9a-4410-801b-231ef4d4a55b",
+      uuid: "123e4567-f3e1-482a-94c2-231fed88193b",
       name: "<value>",
     },
   });
@@ -324,7 +337,7 @@ async function run() {
   const res = await smsTemplatesUpdateSMSTemplates(serviceM8, {
     uuid: "2ea183b5-88e4-4168-a975-1820b2711ae4",
     smsTemplate: {
-      uuid: "123e4567-fc9a-4410-801b-231ef4d4a55b",
+      uuid: "123e4567-f3e1-482a-94c2-231fed88193b",
       name: "<value>",
     },
   });
@@ -350,14 +363,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateSMSTemplatesResponse](../../models/operations/updatesmstemplatesresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteSMSTemplates
 
@@ -437,11 +455,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteSMSTemplatesResponse](../../models/operations/deletesmstemplatesresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

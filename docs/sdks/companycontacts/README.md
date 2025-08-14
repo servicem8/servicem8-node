@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListCompanyContactsResponse](../../models/operations/listcompanycontactsresponse.md)\>**
+**Promise\<[components.CompanyContact[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createCompanyContacts
 
@@ -123,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.companyContacts.createCompanyContacts({
-    uuid: "123e4567-ba3e-4d9d-941c-231ef2be166b",
-    companyUuid: "123e4567-83eb-4341-8bd6-231ef47cdb9b",
+    uuid: "123e4567-639f-45d9-a321-231fe9bdcf7b",
+    companyUuid: "123e4567-952e-449e-b394-231fef66318b",
   });
 
   console.log(result);
@@ -151,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await companyContactsCreateCompanyContacts(serviceM8, {
-    uuid: "123e4567-ba3e-4d9d-941c-231ef2be166b",
-    companyUuid: "123e4567-83eb-4341-8bd6-231ef47cdb9b",
+    uuid: "123e4567-639f-45d9-a321-231fe9bdcf7b",
+    companyUuid: "123e4567-952e-449e-b394-231fef66318b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -180,10 +184,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getCompanyContacts
 
@@ -259,14 +267,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetCompanyContactsResponse](../../models/operations/getcompanycontactsresponse.md)\>**
+**Promise\<[components.CompanyContact](../../models/components/companycontact.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateCompanyContacts
 
@@ -293,8 +306,8 @@ async function run() {
   const result = await serviceM8.companyContacts.updateCompanyContacts({
     uuid: "14a84f05-390e-4d88-ad00-a75bba477a48",
     companyContact: {
-      uuid: "123e4567-ba3e-4d9d-941c-231ef2be166b",
-      companyUuid: "123e4567-83eb-4341-8bd6-231ef47cdb9b",
+      uuid: "123e4567-639f-45d9-a321-231fe9bdcf7b",
+      companyUuid: "123e4567-952e-449e-b394-231fef66318b",
     },
   });
 
@@ -324,8 +337,8 @@ async function run() {
   const res = await companyContactsUpdateCompanyContacts(serviceM8, {
     uuid: "14a84f05-390e-4d88-ad00-a75bba477a48",
     companyContact: {
-      uuid: "123e4567-ba3e-4d9d-941c-231ef2be166b",
-      companyUuid: "123e4567-83eb-4341-8bd6-231ef47cdb9b",
+      uuid: "123e4567-639f-45d9-a321-231fe9bdcf7b",
+      companyUuid: "123e4567-952e-449e-b394-231fef66318b",
     },
   });
   if (res.ok) {
@@ -350,14 +363,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateCompanyContactsResponse](../../models/operations/updatecompanycontactsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteCompanyContacts
 
@@ -437,11 +455,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteCompanyContactsResponse](../../models/operations/deletecompanycontactsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type DeleteFormFieldsRequest = {
@@ -14,8 +13,6 @@ export type DeleteFormFieldsRequest = {
    */
   uuid: string;
 };
-
-export type DeleteFormFieldsResponse = components.Result | components.ErrorT;
 
 /** @internal */
 export const DeleteFormFieldsRequest$inboundSchema: z.ZodType<
@@ -68,58 +65,5 @@ export function deleteFormFieldsRequestFromJSON(
     jsonString,
     (x) => DeleteFormFieldsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'DeleteFormFieldsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const DeleteFormFieldsResponse$inboundSchema: z.ZodType<
-  DeleteFormFieldsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type DeleteFormFieldsResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const DeleteFormFieldsResponse$outboundSchema: z.ZodType<
-  DeleteFormFieldsResponse$Outbound,
-  z.ZodTypeDef,
-  DeleteFormFieldsResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteFormFieldsResponse$ {
-  /** @deprecated use `DeleteFormFieldsResponse$inboundSchema` instead. */
-  export const inboundSchema = DeleteFormFieldsResponse$inboundSchema;
-  /** @deprecated use `DeleteFormFieldsResponse$outboundSchema` instead. */
-  export const outboundSchema = DeleteFormFieldsResponse$outboundSchema;
-  /** @deprecated use `DeleteFormFieldsResponse$Outbound` instead. */
-  export type Outbound = DeleteFormFieldsResponse$Outbound;
-}
-
-export function deleteFormFieldsResponseToJSON(
-  deleteFormFieldsResponse: DeleteFormFieldsResponse,
-): string {
-  return JSON.stringify(
-    DeleteFormFieldsResponse$outboundSchema.parse(deleteFormFieldsResponse),
-  );
-}
-
-export function deleteFormFieldsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteFormFieldsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteFormFieldsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteFormFieldsResponse' from JSON`,
   );
 }

@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListFormFieldsResponse](../../models/operations/listformfieldsresponse.md)\>**
+**Promise\<[components.FormField[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createFormFields
 
@@ -123,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.formFields.createFormFields({
-    uuid: "123e4567-8959-4e71-a440-231efbceb33b",
-    formUuid: "123e4567-3336-4f31-b5d5-231efbefc3eb",
+    uuid: "123e4567-dea4-42dc-9dc7-231fe70fb2cb",
+    formUuid: "123e4567-8d0a-4f63-9e6b-231fe2aa27fb",
   });
 
   console.log(result);
@@ -151,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formFieldsCreateFormFields(serviceM8, {
-    uuid: "123e4567-8959-4e71-a440-231efbceb33b",
-    formUuid: "123e4567-3336-4f31-b5d5-231efbefc3eb",
+    uuid: "123e4567-dea4-42dc-9dc7-231fe70fb2cb",
+    formUuid: "123e4567-8d0a-4f63-9e6b-231fe2aa27fb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -180,10 +184,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getFormFields
 
@@ -259,14 +267,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetFormFieldsResponse](../../models/operations/getformfieldsresponse.md)\>**
+**Promise\<[components.FormField](../../models/components/formfield.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateFormFields
 
@@ -293,8 +306,8 @@ async function run() {
   const result = await serviceM8.formFields.updateFormFields({
     uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
     formField: {
-      uuid: "123e4567-8959-4e71-a440-231efbceb33b",
-      formUuid: "123e4567-3336-4f31-b5d5-231efbefc3eb",
+      uuid: "123e4567-dea4-42dc-9dc7-231fe70fb2cb",
+      formUuid: "123e4567-8d0a-4f63-9e6b-231fe2aa27fb",
     },
   });
 
@@ -324,8 +337,8 @@ async function run() {
   const res = await formFieldsUpdateFormFields(serviceM8, {
     uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
     formField: {
-      uuid: "123e4567-8959-4e71-a440-231efbceb33b",
-      formUuid: "123e4567-3336-4f31-b5d5-231efbefc3eb",
+      uuid: "123e4567-dea4-42dc-9dc7-231fe70fb2cb",
+      formUuid: "123e4567-8d0a-4f63-9e6b-231fe2aa27fb",
     },
   });
   if (res.ok) {
@@ -350,14 +363,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateFormFieldsResponse](../../models/operations/updateformfieldsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteFormFields
 
@@ -437,11 +455,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteFormFieldsResponse](../../models/operations/deleteformfieldsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

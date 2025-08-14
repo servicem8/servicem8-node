@@ -5,6 +5,7 @@
 import { securityRolesGetSecurityRoles } from "../funcs/securityRolesGetSecurityRoles.js";
 import { securityRolesListSecurityRoles } from "../funcs/securityRolesListSecurityRoles.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
+import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
@@ -22,7 +23,7 @@ export class SecurityRoles extends ClientSDK {
    */
   async listSecurityRoles(
     options?: RequestOptions,
-  ): Promise<operations.ListSecurityRolesResponse> {
+  ): Promise<Array<components.SecurityRole>> {
     return unwrapAsync(securityRolesListSecurityRoles(
       this,
       options,
@@ -40,7 +41,7 @@ export class SecurityRoles extends ClientSDK {
   async getSecurityRoles(
     request: operations.GetSecurityRolesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetSecurityRolesResponse> {
+  ): Promise<components.SecurityRole> {
     return unwrapAsync(securityRolesGetSecurityRoles(
       this,
       request,

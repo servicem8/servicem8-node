@@ -9,69 +9,10 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CreateCategoriesResponseResult =
-  | components.Result
-  | components.ErrorT;
-
 export type CreateCategoriesResponse = {
   headers: { [k: string]: Array<string> };
-  result: components.Result | components.ErrorT;
+  result: components.Result;
 };
-
-/** @internal */
-export const CreateCategoriesResponseResult$inboundSchema: z.ZodType<
-  CreateCategoriesResponseResult,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type CreateCategoriesResponseResult$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const CreateCategoriesResponseResult$outboundSchema: z.ZodType<
-  CreateCategoriesResponseResult$Outbound,
-  z.ZodTypeDef,
-  CreateCategoriesResponseResult
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateCategoriesResponseResult$ {
-  /** @deprecated use `CreateCategoriesResponseResult$inboundSchema` instead. */
-  export const inboundSchema = CreateCategoriesResponseResult$inboundSchema;
-  /** @deprecated use `CreateCategoriesResponseResult$outboundSchema` instead. */
-  export const outboundSchema = CreateCategoriesResponseResult$outboundSchema;
-  /** @deprecated use `CreateCategoriesResponseResult$Outbound` instead. */
-  export type Outbound = CreateCategoriesResponseResult$Outbound;
-}
-
-export function createCategoriesResponseResultToJSON(
-  createCategoriesResponseResult: CreateCategoriesResponseResult,
-): string {
-  return JSON.stringify(
-    CreateCategoriesResponseResult$outboundSchema.parse(
-      createCategoriesResponseResult,
-    ),
-  );
-}
-
-export function createCategoriesResponseResultFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateCategoriesResponseResult, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateCategoriesResponseResult$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateCategoriesResponseResult' from JSON`,
-  );
-}
 
 /** @internal */
 export const CreateCategoriesResponse$inboundSchema: z.ZodType<
@@ -80,10 +21,7 @@ export const CreateCategoriesResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   Headers: z.record(z.array(z.string())),
-  Result: z.union([
-    components.Result$inboundSchema,
-    components.ErrorT$inboundSchema,
-  ]),
+  Result: components.Result$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "Headers": "headers",
@@ -94,7 +32,7 @@ export const CreateCategoriesResponse$inboundSchema: z.ZodType<
 /** @internal */
 export type CreateCategoriesResponse$Outbound = {
   Headers: { [k: string]: Array<string> };
-  Result: components.Result$Outbound | components.ErrorT$Outbound;
+  Result: components.Result$Outbound;
 };
 
 /** @internal */
@@ -104,10 +42,7 @@ export const CreateCategoriesResponse$outboundSchema: z.ZodType<
   CreateCategoriesResponse
 > = z.object({
   headers: z.record(z.array(z.string())),
-  result: z.union([
-    components.Result$outboundSchema,
-    components.ErrorT$outboundSchema,
-  ]),
+  result: components.Result$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     headers: "Headers",

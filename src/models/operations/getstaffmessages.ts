@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetStaffMessagesRequest = {
@@ -14,10 +13,6 @@ export type GetStaffMessagesRequest = {
    */
   uuid: string;
 };
-
-export type GetStaffMessagesResponse =
-  | components.StaffMessage
-  | components.ErrorT;
 
 /** @internal */
 export const GetStaffMessagesRequest$inboundSchema: z.ZodType<
@@ -70,61 +65,5 @@ export function getStaffMessagesRequestFromJSON(
     jsonString,
     (x) => GetStaffMessagesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetStaffMessagesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetStaffMessagesResponse$inboundSchema: z.ZodType<
-  GetStaffMessagesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.StaffMessage$inboundSchema,
-  components.ErrorT$inboundSchema,
-]);
-
-/** @internal */
-export type GetStaffMessagesResponse$Outbound =
-  | components.StaffMessage$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetStaffMessagesResponse$outboundSchema: z.ZodType<
-  GetStaffMessagesResponse$Outbound,
-  z.ZodTypeDef,
-  GetStaffMessagesResponse
-> = z.union([
-  components.StaffMessage$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetStaffMessagesResponse$ {
-  /** @deprecated use `GetStaffMessagesResponse$inboundSchema` instead. */
-  export const inboundSchema = GetStaffMessagesResponse$inboundSchema;
-  /** @deprecated use `GetStaffMessagesResponse$outboundSchema` instead. */
-  export const outboundSchema = GetStaffMessagesResponse$outboundSchema;
-  /** @deprecated use `GetStaffMessagesResponse$Outbound` instead. */
-  export type Outbound = GetStaffMessagesResponse$Outbound;
-}
-
-export function getStaffMessagesResponseToJSON(
-  getStaffMessagesResponse: GetStaffMessagesResponse,
-): string {
-  return JSON.stringify(
-    GetStaffMessagesResponse$outboundSchema.parse(getStaffMessagesResponse),
-  );
-}
-
-export function getStaffMessagesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetStaffMessagesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetStaffMessagesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetStaffMessagesResponse' from JSON`,
   );
 }

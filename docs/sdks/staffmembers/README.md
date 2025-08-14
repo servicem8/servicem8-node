@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListStaffMembersResponse](../../models/operations/liststaffmembersresponse.md)\>**
+**Promise\<[components.Staff[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createStaffMembers
 
@@ -127,12 +131,12 @@ async function run() {
     last: "<value>",
     email: "Larissa_Pfannerstill75@hotmail.com",
     geoTimestamp: "2025-08-01 12:00:00",
-    navigatingToJobUuid: "123e4567-ed8f-4fd5-ac0a-231ef9a781db",
+    navigatingToJobUuid: "123e4567-3afe-4cdb-a820-231fe42d0f3b",
     navigatingTimestamp: "2025-08-01 12:00:00",
     navigatingExpiryTimestamp: "2025-08-01 12:00:00",
     statusMessageTimestamp: "2025-08-01 12:00:00",
-    securityRoleUuid: "123e4567-35ba-4278-b2b5-231efff542cb",
-    uuid: "123e4567-dfeb-4322-ae0d-231efa62f34b",
+    securityRoleUuid: "123e4567-748b-47eb-8618-231fe346b2cb",
+    uuid: "123e4567-83f8-4bba-823b-231feaa8e52b",
   });
 
   console.log(result);
@@ -163,12 +167,12 @@ async function run() {
     last: "<value>",
     email: "Larissa_Pfannerstill75@hotmail.com",
     geoTimestamp: "2025-08-01 12:00:00",
-    navigatingToJobUuid: "123e4567-ed8f-4fd5-ac0a-231ef9a781db",
+    navigatingToJobUuid: "123e4567-3afe-4cdb-a820-231fe42d0f3b",
     navigatingTimestamp: "2025-08-01 12:00:00",
     navigatingExpiryTimestamp: "2025-08-01 12:00:00",
     statusMessageTimestamp: "2025-08-01 12:00:00",
-    securityRoleUuid: "123e4567-35ba-4278-b2b5-231efff542cb",
-    uuid: "123e4567-dfeb-4322-ae0d-231efa62f34b",
+    securityRoleUuid: "123e4567-748b-47eb-8618-231fe346b2cb",
+    uuid: "123e4567-83f8-4bba-823b-231feaa8e52b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -196,10 +200,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getStaffMembers
 
@@ -275,14 +283,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetStaffMembersResponse](../../models/operations/getstaffmembersresponse.md)\>**
+**Promise\<[components.Staff](../../models/components/staff.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateStaffMembers
 
@@ -313,12 +326,12 @@ async function run() {
       last: "<value>",
       email: "Mckenna_Yundt@hotmail.com",
       geoTimestamp: "2025-08-01 12:00:00",
-      navigatingToJobUuid: "123e4567-ed8f-4fd5-ac0a-231ef9a781db",
+      navigatingToJobUuid: "123e4567-3afe-4cdb-a820-231fe42d0f3b",
       navigatingTimestamp: "2025-08-01 12:00:00",
       navigatingExpiryTimestamp: "2025-08-01 12:00:00",
       statusMessageTimestamp: "2025-08-01 12:00:00",
-      securityRoleUuid: "123e4567-35ba-4278-b2b5-231efff542cb",
-      uuid: "123e4567-dfeb-4322-ae0d-231efa62f34b",
+      securityRoleUuid: "123e4567-748b-47eb-8618-231fe346b2cb",
+      uuid: "123e4567-83f8-4bba-823b-231feaa8e52b",
     },
   });
 
@@ -352,12 +365,12 @@ async function run() {
       last: "<value>",
       email: "Mckenna_Yundt@hotmail.com",
       geoTimestamp: "2025-08-01 12:00:00",
-      navigatingToJobUuid: "123e4567-ed8f-4fd5-ac0a-231ef9a781db",
+      navigatingToJobUuid: "123e4567-3afe-4cdb-a820-231fe42d0f3b",
       navigatingTimestamp: "2025-08-01 12:00:00",
       navigatingExpiryTimestamp: "2025-08-01 12:00:00",
       statusMessageTimestamp: "2025-08-01 12:00:00",
-      securityRoleUuid: "123e4567-35ba-4278-b2b5-231efff542cb",
-      uuid: "123e4567-dfeb-4322-ae0d-231efa62f34b",
+      securityRoleUuid: "123e4567-748b-47eb-8618-231fe346b2cb",
+      uuid: "123e4567-83f8-4bba-823b-231feaa8e52b",
     },
   });
   if (res.ok) {
@@ -382,14 +395,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateStaffMembersResponse](../../models/operations/updatestaffmembersresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteStaffMembers
 
@@ -469,11 +487,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteStaffMembersResponse](../../models/operations/deletestaffmembersresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

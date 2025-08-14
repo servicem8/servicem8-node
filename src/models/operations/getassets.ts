@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAssetsRequest = {
@@ -14,8 +13,6 @@ export type GetAssetsRequest = {
    */
   uuid: string;
 };
-
-export type GetAssetsResponse = components.Asset | components.ErrorT;
 
 /** @internal */
 export const GetAssetsRequest$inboundSchema: z.ZodType<
@@ -68,58 +65,5 @@ export function getAssetsRequestFromJSON(
     jsonString,
     (x) => GetAssetsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetAssetsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetAssetsResponse$inboundSchema: z.ZodType<
-  GetAssetsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Asset$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type GetAssetsResponse$Outbound =
-  | components.Asset$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetAssetsResponse$outboundSchema: z.ZodType<
-  GetAssetsResponse$Outbound,
-  z.ZodTypeDef,
-  GetAssetsResponse
-> = z.union([
-  components.Asset$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAssetsResponse$ {
-  /** @deprecated use `GetAssetsResponse$inboundSchema` instead. */
-  export const inboundSchema = GetAssetsResponse$inboundSchema;
-  /** @deprecated use `GetAssetsResponse$outboundSchema` instead. */
-  export const outboundSchema = GetAssetsResponse$outboundSchema;
-  /** @deprecated use `GetAssetsResponse$Outbound` instead. */
-  export type Outbound = GetAssetsResponse$Outbound;
-}
-
-export function getAssetsResponseToJSON(
-  getAssetsResponse: GetAssetsResponse,
-): string {
-  return JSON.stringify(
-    GetAssetsResponse$outboundSchema.parse(getAssetsResponse),
-  );
-}
-
-export function getAssetsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAssetsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAssetsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAssetsResponse' from JSON`,
   );
 }

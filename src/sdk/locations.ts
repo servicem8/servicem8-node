@@ -26,7 +26,7 @@ export class Locations extends ClientSDK {
    */
   async listLocations(
     options?: RequestOptions,
-  ): Promise<operations.ListLocationsResponse> {
+  ): Promise<Array<components.Location>> {
     return unwrapAsync(locationsListLocations(
       this,
       options,
@@ -66,7 +66,7 @@ export class Locations extends ClientSDK {
   async getLocations(
     request: operations.GetLocationsRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetLocationsResponse> {
+  ): Promise<components.Location> {
     return unwrapAsync(locationsGetLocations(
       this,
       request,
@@ -85,7 +85,7 @@ export class Locations extends ClientSDK {
   async updateLocations(
     request: operations.UpdateLocationsRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateLocationsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(locationsUpdateLocations(
       this,
       request,
@@ -106,7 +106,7 @@ export class Locations extends ClientSDK {
   async deleteLocations(
     request: operations.DeleteLocationsRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteLocationsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(locationsDeleteLocations(
       this,
       request,

@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListClientsResponse](../../models/operations/listclientsresponse.md)\>**
+**Promise\<[components.Company[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createClients
 
@@ -124,8 +128,8 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.clients.createClients({
     name: "<value>",
-    uuid: "123e4567-cda6-46f8-a965-231efa2aeadb",
-    taxRateUuid: "123e4567-3ef7-493f-a007-231ef86799ab",
+    uuid: "123e4567-ee5a-4fa2-8e76-231fe8f424bb",
+    taxRateUuid: "123e4567-74ce-479d-8f19-231fe07ba99b",
   });
 
   console.log(result);
@@ -153,8 +157,8 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await clientsCreateClients(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-cda6-46f8-a965-231efa2aeadb",
-    taxRateUuid: "123e4567-3ef7-493f-a007-231ef86799ab",
+    uuid: "123e4567-ee5a-4fa2-8e76-231fe8f424bb",
+    taxRateUuid: "123e4567-74ce-479d-8f19-231fe07ba99b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -182,10 +186,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getClients
 
@@ -261,14 +269,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetClientsResponse](../../models/operations/getclientsresponse.md)\>**
+**Promise\<[components.Company](../../models/components/company.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateClients
 
@@ -296,8 +309,8 @@ async function run() {
     uuid: "55f6bcc0-3bb7-4509-b13b-98c02374f910",
     company: {
       name: "<value>",
-      uuid: "123e4567-cda6-46f8-a965-231efa2aeadb",
-      taxRateUuid: "123e4567-3ef7-493f-a007-231ef86799ab",
+      uuid: "123e4567-ee5a-4fa2-8e76-231fe8f424bb",
+      taxRateUuid: "123e4567-74ce-479d-8f19-231fe07ba99b",
     },
   });
 
@@ -328,8 +341,8 @@ async function run() {
     uuid: "55f6bcc0-3bb7-4509-b13b-98c02374f910",
     company: {
       name: "<value>",
-      uuid: "123e4567-cda6-46f8-a965-231efa2aeadb",
-      taxRateUuid: "123e4567-3ef7-493f-a007-231ef86799ab",
+      uuid: "123e4567-ee5a-4fa2-8e76-231fe8f424bb",
+      taxRateUuid: "123e4567-74ce-479d-8f19-231fe07ba99b",
     },
   });
   if (res.ok) {
@@ -354,14 +367,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateClientsResponse](../../models/operations/updateclientsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteClients
 
@@ -441,11 +459,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteClientsResponse](../../models/operations/deleteclientsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

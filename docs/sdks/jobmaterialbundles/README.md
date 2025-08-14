@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListJobMaterialBundlesResponse](../../models/operations/listjobmaterialbundlesresponse.md)\>**
+**Promise\<[components.JobMaterialBundle[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createJobMaterialBundles
 
@@ -123,9 +127,9 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterialBundles.createJobMaterialBundles({
-    uuid: "123e4567-14bd-4500-a186-231ef60224ab",
-    materialBundleUuid: "123e4567-78d7-403d-ac31-231eff24cfeb",
-    jobUuid: "123e4567-fccd-4bc3-9074-231efeca712b",
+    uuid: "123e4567-92d3-4d67-bcda-231fe318854b",
+    materialBundleUuid: "123e4567-bc43-4601-89e5-231fecacaf1b",
+    jobUuid: "123e4567-558a-4de7-9feb-231fee85befb",
   });
 
   console.log(result);
@@ -152,9 +156,9 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialBundlesCreateJobMaterialBundles(serviceM8, {
-    uuid: "123e4567-14bd-4500-a186-231ef60224ab",
-    materialBundleUuid: "123e4567-78d7-403d-ac31-231eff24cfeb",
-    jobUuid: "123e4567-fccd-4bc3-9074-231efeca712b",
+    uuid: "123e4567-92d3-4d67-bcda-231fe318854b",
+    materialBundleUuid: "123e4567-bc43-4601-89e5-231fecacaf1b",
+    jobUuid: "123e4567-558a-4de7-9feb-231fee85befb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -182,10 +186,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getJobMaterialBundles
 
@@ -261,14 +269,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetJobMaterialBundlesResponse](../../models/operations/getjobmaterialbundlesresponse.md)\>**
+**Promise\<[components.JobMaterialBundle](../../models/components/jobmaterialbundle.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateJobMaterialBundles
 
@@ -295,9 +308,9 @@ async function run() {
   const result = await serviceM8.jobMaterialBundles.updateJobMaterialBundles({
     uuid: "6419b5e7-8edd-4c69-9648-b6ed7431256b",
     jobMaterialBundle: {
-      uuid: "123e4567-14bd-4500-a186-231ef60224ab",
-      materialBundleUuid: "123e4567-78d7-403d-ac31-231eff24cfeb",
-      jobUuid: "123e4567-fccd-4bc3-9074-231efeca712b",
+      uuid: "123e4567-92d3-4d67-bcda-231fe318854b",
+      materialBundleUuid: "123e4567-bc43-4601-89e5-231fecacaf1b",
+      jobUuid: "123e4567-558a-4de7-9feb-231fee85befb",
     },
   });
 
@@ -327,9 +340,9 @@ async function run() {
   const res = await jobMaterialBundlesUpdateJobMaterialBundles(serviceM8, {
     uuid: "6419b5e7-8edd-4c69-9648-b6ed7431256b",
     jobMaterialBundle: {
-      uuid: "123e4567-14bd-4500-a186-231ef60224ab",
-      materialBundleUuid: "123e4567-78d7-403d-ac31-231eff24cfeb",
-      jobUuid: "123e4567-fccd-4bc3-9074-231efeca712b",
+      uuid: "123e4567-92d3-4d67-bcda-231fe318854b",
+      materialBundleUuid: "123e4567-bc43-4601-89e5-231fecacaf1b",
+      jobUuid: "123e4567-558a-4de7-9feb-231fee85befb",
     },
   });
   if (res.ok) {
@@ -354,14 +367,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateJobMaterialBundlesResponse](../../models/operations/updatejobmaterialbundlesresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteJobMaterialBundles
 
@@ -441,11 +459,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteJobMaterialBundlesResponse](../../models/operations/deletejobmaterialbundlesresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

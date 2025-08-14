@@ -26,7 +26,7 @@ export class DocumentTemplates extends ClientSDK {
    */
   async listDocumentTemplates(
     options?: RequestOptions,
-  ): Promise<operations.ListDocumentTemplatesResponse> {
+  ): Promise<Array<components.DocumentTemplate>> {
     return unwrapAsync(documentTemplatesListDocumentTemplates(
       this,
       options,
@@ -66,7 +66,7 @@ export class DocumentTemplates extends ClientSDK {
   async getDocumentTemplates(
     request: operations.GetDocumentTemplatesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetDocumentTemplatesResponse> {
+  ): Promise<components.DocumentTemplate> {
     return unwrapAsync(documentTemplatesGetDocumentTemplates(
       this,
       request,
@@ -85,7 +85,7 @@ export class DocumentTemplates extends ClientSDK {
   async updateDocumentTemplates(
     request: operations.UpdateDocumentTemplatesRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateDocumentTemplatesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(documentTemplatesUpdateDocumentTemplates(
       this,
       request,
@@ -106,7 +106,7 @@ export class DocumentTemplates extends ClientSDK {
   async deleteDocumentTemplates(
     request: operations.DeleteDocumentTemplatesRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteDocumentTemplatesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(documentTemplatesDeleteDocumentTemplates(
       this,
       request,

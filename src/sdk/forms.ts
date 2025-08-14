@@ -26,7 +26,7 @@ export class Forms extends ClientSDK {
    */
   async listForms(
     options?: RequestOptions,
-  ): Promise<operations.ListFormsResponse> {
+  ): Promise<Array<components.Form>> {
     return unwrapAsync(formsListForms(
       this,
       options,
@@ -66,7 +66,7 @@ export class Forms extends ClientSDK {
   async getForms(
     request: operations.GetFormsRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetFormsResponse> {
+  ): Promise<components.Form> {
     return unwrapAsync(formsGetForms(
       this,
       request,
@@ -85,7 +85,7 @@ export class Forms extends ClientSDK {
   async updateForms(
     request: operations.UpdateFormsRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateFormsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(formsUpdateForms(
       this,
       request,
@@ -106,7 +106,7 @@ export class Forms extends ClientSDK {
   async deleteForms(
     request: operations.DeleteFormsRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteFormsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(formsDeleteForms(
       this,
       request,

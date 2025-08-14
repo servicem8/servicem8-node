@@ -20,8 +20,6 @@ export type UpdateStaffMembersRequest = {
   staff: components.StaffInput;
 };
 
-export type UpdateStaffMembersResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateStaffMembersRequest$inboundSchema: z.ZodType<
   UpdateStaffMembersRequest,
@@ -84,58 +82,5 @@ export function updateStaffMembersRequestFromJSON(
     jsonString,
     (x) => UpdateStaffMembersRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateStaffMembersRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateStaffMembersResponse$inboundSchema: z.ZodType<
-  UpdateStaffMembersResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateStaffMembersResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateStaffMembersResponse$outboundSchema: z.ZodType<
-  UpdateStaffMembersResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateStaffMembersResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateStaffMembersResponse$ {
-  /** @deprecated use `UpdateStaffMembersResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateStaffMembersResponse$inboundSchema;
-  /** @deprecated use `UpdateStaffMembersResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateStaffMembersResponse$outboundSchema;
-  /** @deprecated use `UpdateStaffMembersResponse$Outbound` instead. */
-  export type Outbound = UpdateStaffMembersResponse$Outbound;
-}
-
-export function updateStaffMembersResponseToJSON(
-  updateStaffMembersResponse: UpdateStaffMembersResponse,
-): string {
-  return JSON.stringify(
-    UpdateStaffMembersResponse$outboundSchema.parse(updateStaffMembersResponse),
-  );
-}
-
-export function updateStaffMembersResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateStaffMembersResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateStaffMembersResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateStaffMembersResponse' from JSON`,
   );
 }

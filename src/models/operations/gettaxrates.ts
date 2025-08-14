@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetTaxRatesRequest = {
@@ -14,8 +13,6 @@ export type GetTaxRatesRequest = {
    */
   uuid: string;
 };
-
-export type GetTaxRatesResponse = components.TaxRate | components.ErrorT;
 
 /** @internal */
 export const GetTaxRatesRequest$inboundSchema: z.ZodType<
@@ -68,61 +65,5 @@ export function getTaxRatesRequestFromJSON(
     jsonString,
     (x) => GetTaxRatesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetTaxRatesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetTaxRatesResponse$inboundSchema: z.ZodType<
-  GetTaxRatesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.TaxRate$inboundSchema,
-  components.ErrorT$inboundSchema,
-]);
-
-/** @internal */
-export type GetTaxRatesResponse$Outbound =
-  | components.TaxRate$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetTaxRatesResponse$outboundSchema: z.ZodType<
-  GetTaxRatesResponse$Outbound,
-  z.ZodTypeDef,
-  GetTaxRatesResponse
-> = z.union([
-  components.TaxRate$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetTaxRatesResponse$ {
-  /** @deprecated use `GetTaxRatesResponse$inboundSchema` instead. */
-  export const inboundSchema = GetTaxRatesResponse$inboundSchema;
-  /** @deprecated use `GetTaxRatesResponse$outboundSchema` instead. */
-  export const outboundSchema = GetTaxRatesResponse$outboundSchema;
-  /** @deprecated use `GetTaxRatesResponse$Outbound` instead. */
-  export type Outbound = GetTaxRatesResponse$Outbound;
-}
-
-export function getTaxRatesResponseToJSON(
-  getTaxRatesResponse: GetTaxRatesResponse,
-): string {
-  return JSON.stringify(
-    GetTaxRatesResponse$outboundSchema.parse(getTaxRatesResponse),
-  );
-}
-
-export function getTaxRatesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetTaxRatesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetTaxRatesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetTaxRatesResponse' from JSON`,
   );
 }

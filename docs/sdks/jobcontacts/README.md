@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListJobContactsResponse](../../models/operations/listjobcontactsresponse.md)\>**
+**Promise\<[components.JobContact[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createJobContacts
 
@@ -123,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobContacts.createJobContacts({
-    uuid: "123e4567-da91-44a8-8697-231ef2cd7b5b",
-    jobUuid: "123e4567-54c2-4e2c-b00a-231efde4d09b",
+    uuid: "123e4567-0884-4575-b127-231fec4d1f9b",
+    jobUuid: "123e4567-4d8d-4225-b2da-231fe333c03b",
   });
 
   console.log(result);
@@ -151,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobContactsCreateJobContacts(serviceM8, {
-    uuid: "123e4567-da91-44a8-8697-231ef2cd7b5b",
-    jobUuid: "123e4567-54c2-4e2c-b00a-231efde4d09b",
+    uuid: "123e4567-0884-4575-b127-231fec4d1f9b",
+    jobUuid: "123e4567-4d8d-4225-b2da-231fe333c03b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -180,10 +184,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getJobContacts
 
@@ -259,14 +267,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetJobContactsResponse](../../models/operations/getjobcontactsresponse.md)\>**
+**Promise\<[components.JobContact](../../models/components/jobcontact.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateJobContacts
 
@@ -293,8 +306,8 @@ async function run() {
   const result = await serviceM8.jobContacts.updateJobContacts({
     uuid: "9ce8245c-9fb9-4361-8f7f-25eba557ff71",
     jobContact: {
-      uuid: "123e4567-da91-44a8-8697-231ef2cd7b5b",
-      jobUuid: "123e4567-54c2-4e2c-b00a-231efde4d09b",
+      uuid: "123e4567-0884-4575-b127-231fec4d1f9b",
+      jobUuid: "123e4567-4d8d-4225-b2da-231fe333c03b",
     },
   });
 
@@ -324,8 +337,8 @@ async function run() {
   const res = await jobContactsUpdateJobContacts(serviceM8, {
     uuid: "9ce8245c-9fb9-4361-8f7f-25eba557ff71",
     jobContact: {
-      uuid: "123e4567-da91-44a8-8697-231ef2cd7b5b",
-      jobUuid: "123e4567-54c2-4e2c-b00a-231efde4d09b",
+      uuid: "123e4567-0884-4575-b127-231fec4d1f9b",
+      jobUuid: "123e4567-4d8d-4225-b2da-231fe333c03b",
     },
   });
   if (res.ok) {
@@ -350,14 +363,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateJobContactsResponse](../../models/operations/updatejobcontactsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteJobContacts
 
@@ -437,11 +455,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteJobContactsResponse](../../models/operations/deletejobcontactsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

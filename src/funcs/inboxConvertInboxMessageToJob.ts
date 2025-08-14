@@ -130,7 +130,7 @@ async function $do(
         retryConnectionErrors: true,
       }
       || { strategy: "none" },
-    retryCodes: options?.retryCodes || ["5XX"],
+    retryCodes: options?.retryCodes || ["5XX", "429"],
   };
 
   const requestRes = client._createRequest(context, {

@@ -26,7 +26,7 @@ export class CompanyContacts extends ClientSDK {
    */
   async listCompanyContacts(
     options?: RequestOptions,
-  ): Promise<operations.ListCompanyContactsResponse> {
+  ): Promise<Array<components.CompanyContact>> {
     return unwrapAsync(companyContactsListCompanyContacts(
       this,
       options,
@@ -66,7 +66,7 @@ export class CompanyContacts extends ClientSDK {
   async getCompanyContacts(
     request: operations.GetCompanyContactsRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetCompanyContactsResponse> {
+  ): Promise<components.CompanyContact> {
     return unwrapAsync(companyContactsGetCompanyContacts(
       this,
       request,
@@ -85,7 +85,7 @@ export class CompanyContacts extends ClientSDK {
   async updateCompanyContacts(
     request: operations.UpdateCompanyContactsRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateCompanyContactsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(companyContactsUpdateCompanyContacts(
       this,
       request,
@@ -106,7 +106,7 @@ export class CompanyContacts extends ClientSDK {
   async deleteCompanyContacts(
     request: operations.DeleteCompanyContactsRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteCompanyContactsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(companyContactsDeleteCompanyContacts(
       this,
       request,

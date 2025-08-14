@@ -6,7 +6,14 @@
 import { CreateAssetTypeFieldsResponse } from "servicem8/models/operations";
 
 let value: CreateAssetTypeFieldsResponse = {
-  headers: {},
+  headers: {
+    "key": [],
+    "key1": [],
+    "key2": [
+      "<value 1>",
+      "<value 2>",
+    ],
+  },
   result: {
     errorCode: 0,
     message: "OK",
@@ -16,7 +23,7 @@ let value: CreateAssetTypeFieldsResponse = {
 
 ## Fields
 
-| Field                                            | Type                                             | Required                                         | Description                                      |
-| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| `headers`                                        | Record<string, *string*[]>                       | :heavy_check_mark:                               | N/A                                              |
-| `result`                                         | *operations.CreateAssetTypeFieldsResponseResult* | :heavy_check_mark:                               | N/A                                              |
+| Field                                                  | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `headers`                                              | Record<string, *string*[]>                             | :heavy_check_mark:                                     | N/A                                                    |
+| `result`                                               | [components.Result](../../models/components/result.md) | :heavy_check_mark:                                     | N/A                                                    |

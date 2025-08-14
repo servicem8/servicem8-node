@@ -26,7 +26,7 @@ export class SMSTemplates extends ClientSDK {
    */
   async listSMSTemplates(
     options?: RequestOptions,
-  ): Promise<operations.ListSMSTemplatesResponse> {
+  ): Promise<Array<components.SmsTemplate>> {
     return unwrapAsync(smsTemplatesListSMSTemplates(
       this,
       options,
@@ -66,7 +66,7 @@ export class SMSTemplates extends ClientSDK {
   async getSMSTemplates(
     request: operations.GetSMSTemplatesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetSMSTemplatesResponse> {
+  ): Promise<components.SmsTemplate> {
     return unwrapAsync(smsTemplatesGetSMSTemplates(
       this,
       request,
@@ -85,7 +85,7 @@ export class SMSTemplates extends ClientSDK {
   async updateSMSTemplates(
     request: operations.UpdateSMSTemplatesRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateSMSTemplatesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(smsTemplatesUpdateSMSTemplates(
       this,
       request,
@@ -106,7 +106,7 @@ export class SMSTemplates extends ClientSDK {
   async deleteSMSTemplates(
     request: operations.DeleteSMSTemplatesRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteSMSTemplatesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(smsTemplatesDeleteSMSTemplates(
       this,
       request,

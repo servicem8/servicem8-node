@@ -10,6 +10,10 @@ let value: CreateJobChecklistsResponse = {
     "key": [
       "<value 1>",
     ],
+    "key1": [
+      "<value 1>",
+    ],
+    "key2": [],
   },
   result: {
     errorCode: 0,
@@ -20,7 +24,7 @@ let value: CreateJobChecklistsResponse = {
 
 ## Fields
 
-| Field                                          | Type                                           | Required                                       | Description                                    |
-| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
-| `headers`                                      | Record<string, *string*[]>                     | :heavy_check_mark:                             | N/A                                            |
-| `result`                                       | *operations.CreateJobChecklistsResponseResult* | :heavy_check_mark:                             | N/A                                            |
+| Field                                                  | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `headers`                                              | Record<string, *string*[]>                             | :heavy_check_mark:                                     | N/A                                                    |
+| `result`                                               | [components.Result](../../models/components/result.md) | :heavy_check_mark:                                     | N/A                                                    |

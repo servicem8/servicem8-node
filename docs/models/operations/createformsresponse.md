@@ -14,11 +14,11 @@ let value: CreateFormsResponse = {
     ],
     "key1": [
       "<value 1>",
+      "<value 2>",
+      "<value 3>",
     ],
     "key2": [
       "<value 1>",
-      "<value 2>",
-      "<value 3>",
     ],
   },
   result: {
@@ -30,7 +30,7 @@ let value: CreateFormsResponse = {
 
 ## Fields
 
-| Field                                  | Type                                   | Required                               | Description                            |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
-| `headers`                              | Record<string, *string*[]>             | :heavy_check_mark:                     | N/A                                    |
-| `result`                               | *operations.CreateFormsResponseResult* | :heavy_check_mark:                     | N/A                                    |
+| Field                                                  | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `headers`                                              | Record<string, *string*[]>                             | :heavy_check_mark:                                     | N/A                                                    |
+| `result`                                               | [components.Result](../../models/components/result.md) | :heavy_check_mark:                                     | N/A                                                    |

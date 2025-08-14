@@ -9,69 +9,10 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CreateMaterialsResponseResult =
-  | components.Result
-  | components.ErrorT;
-
 export type CreateMaterialsResponse = {
   headers: { [k: string]: Array<string> };
-  result: components.Result | components.ErrorT;
+  result: components.Result;
 };
-
-/** @internal */
-export const CreateMaterialsResponseResult$inboundSchema: z.ZodType<
-  CreateMaterialsResponseResult,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type CreateMaterialsResponseResult$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const CreateMaterialsResponseResult$outboundSchema: z.ZodType<
-  CreateMaterialsResponseResult$Outbound,
-  z.ZodTypeDef,
-  CreateMaterialsResponseResult
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateMaterialsResponseResult$ {
-  /** @deprecated use `CreateMaterialsResponseResult$inboundSchema` instead. */
-  export const inboundSchema = CreateMaterialsResponseResult$inboundSchema;
-  /** @deprecated use `CreateMaterialsResponseResult$outboundSchema` instead. */
-  export const outboundSchema = CreateMaterialsResponseResult$outboundSchema;
-  /** @deprecated use `CreateMaterialsResponseResult$Outbound` instead. */
-  export type Outbound = CreateMaterialsResponseResult$Outbound;
-}
-
-export function createMaterialsResponseResultToJSON(
-  createMaterialsResponseResult: CreateMaterialsResponseResult,
-): string {
-  return JSON.stringify(
-    CreateMaterialsResponseResult$outboundSchema.parse(
-      createMaterialsResponseResult,
-    ),
-  );
-}
-
-export function createMaterialsResponseResultFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateMaterialsResponseResult, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateMaterialsResponseResult$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateMaterialsResponseResult' from JSON`,
-  );
-}
 
 /** @internal */
 export const CreateMaterialsResponse$inboundSchema: z.ZodType<
@@ -80,10 +21,7 @@ export const CreateMaterialsResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   Headers: z.record(z.array(z.string())),
-  Result: z.union([
-    components.Result$inboundSchema,
-    components.ErrorT$inboundSchema,
-  ]),
+  Result: components.Result$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "Headers": "headers",
@@ -94,7 +32,7 @@ export const CreateMaterialsResponse$inboundSchema: z.ZodType<
 /** @internal */
 export type CreateMaterialsResponse$Outbound = {
   Headers: { [k: string]: Array<string> };
-  Result: components.Result$Outbound | components.ErrorT$Outbound;
+  Result: components.Result$Outbound;
 };
 
 /** @internal */
@@ -104,10 +42,7 @@ export const CreateMaterialsResponse$outboundSchema: z.ZodType<
   CreateMaterialsResponse
 > = z.object({
   headers: z.record(z.array(z.string())),
-  result: z.union([
-    components.Result$outboundSchema,
-    components.ErrorT$outboundSchema,
-  ]),
+  result: components.Result$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     headers: "Headers",

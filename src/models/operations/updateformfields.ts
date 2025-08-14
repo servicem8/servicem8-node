@@ -20,8 +20,6 @@ export type UpdateFormFieldsRequest = {
   formField: components.FormFieldInput;
 };
 
-export type UpdateFormFieldsResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateFormFieldsRequest$inboundSchema: z.ZodType<
   UpdateFormFieldsRequest,
@@ -84,58 +82,5 @@ export function updateFormFieldsRequestFromJSON(
     jsonString,
     (x) => UpdateFormFieldsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateFormFieldsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateFormFieldsResponse$inboundSchema: z.ZodType<
-  UpdateFormFieldsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateFormFieldsResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateFormFieldsResponse$outboundSchema: z.ZodType<
-  UpdateFormFieldsResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateFormFieldsResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateFormFieldsResponse$ {
-  /** @deprecated use `UpdateFormFieldsResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateFormFieldsResponse$inboundSchema;
-  /** @deprecated use `UpdateFormFieldsResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateFormFieldsResponse$outboundSchema;
-  /** @deprecated use `UpdateFormFieldsResponse$Outbound` instead. */
-  export type Outbound = UpdateFormFieldsResponse$Outbound;
-}
-
-export function updateFormFieldsResponseToJSON(
-  updateFormFieldsResponse: UpdateFormFieldsResponse,
-): string {
-  return JSON.stringify(
-    UpdateFormFieldsResponse$outboundSchema.parse(updateFormFieldsResponse),
-  );
-}
-
-export function updateFormFieldsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateFormFieldsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateFormFieldsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateFormFieldsResponse' from JSON`,
   );
 }

@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListBadgesResponse](../../models/operations/listbadgesresponse.md)\>**
+**Promise\<[components.Badge[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createBadges
 
@@ -123,10 +127,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.badges.createBadges({
-    uuid: "123e4567-7828-4bb7-9508-231ef31e0bab",
+    uuid: "123e4567-4c5d-4869-86e2-231fece63a0b",
     name: "<value>",
-    regardingFormUuid: "123e4567-aa52-45ef-b113-231efc3a3deb",
-    regardingAssetTypeUuid: "123e4567-8a3e-48c5-bbdf-231effa5da6b",
+    regardingFormUuid: "123e4567-765c-4a2e-95d7-231fedfce26b",
+    regardingAssetTypeUuid: "123e4567-377c-4ed9-9f68-231fe0cd7aeb",
   });
 
   console.log(result);
@@ -153,10 +157,10 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await badgesCreateBadges(serviceM8, {
-    uuid: "123e4567-7828-4bb7-9508-231ef31e0bab",
+    uuid: "123e4567-4c5d-4869-86e2-231fece63a0b",
     name: "<value>",
-    regardingFormUuid: "123e4567-aa52-45ef-b113-231efc3a3deb",
-    regardingAssetTypeUuid: "123e4567-8a3e-48c5-bbdf-231effa5da6b",
+    regardingFormUuid: "123e4567-765c-4a2e-95d7-231fedfce26b",
+    regardingAssetTypeUuid: "123e4567-377c-4ed9-9f68-231fe0cd7aeb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -184,10 +188,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getBadges
 
@@ -263,14 +271,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetBadgesResponse](../../models/operations/getbadgesresponse.md)\>**
+**Promise\<[components.Badge](../../models/components/badge.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateBadges
 
@@ -297,10 +310,10 @@ async function run() {
   const result = await serviceM8.badges.updateBadges({
     uuid: "444f2947-b065-4aac-8159-0ffca6278fd2",
     badge: {
-      uuid: "123e4567-7828-4bb7-9508-231ef31e0bab",
+      uuid: "123e4567-4c5d-4869-86e2-231fece63a0b",
       name: "<value>",
-      regardingFormUuid: "123e4567-aa52-45ef-b113-231efc3a3deb",
-      regardingAssetTypeUuid: "123e4567-8a3e-48c5-bbdf-231effa5da6b",
+      regardingFormUuid: "123e4567-765c-4a2e-95d7-231fedfce26b",
+      regardingAssetTypeUuid: "123e4567-377c-4ed9-9f68-231fe0cd7aeb",
     },
   });
 
@@ -330,10 +343,10 @@ async function run() {
   const res = await badgesUpdateBadges(serviceM8, {
     uuid: "444f2947-b065-4aac-8159-0ffca6278fd2",
     badge: {
-      uuid: "123e4567-7828-4bb7-9508-231ef31e0bab",
+      uuid: "123e4567-4c5d-4869-86e2-231fece63a0b",
       name: "<value>",
-      regardingFormUuid: "123e4567-aa52-45ef-b113-231efc3a3deb",
-      regardingAssetTypeUuid: "123e4567-8a3e-48c5-bbdf-231effa5da6b",
+      regardingFormUuid: "123e4567-765c-4a2e-95d7-231fedfce26b",
+      regardingAssetTypeUuid: "123e4567-377c-4ed9-9f68-231fe0cd7aeb",
     },
   });
   if (res.ok) {
@@ -358,14 +371,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateBadgesResponse](../../models/operations/updatebadgesresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteBadges
 
@@ -445,11 +463,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteBadgesResponse](../../models/operations/deletebadgesresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

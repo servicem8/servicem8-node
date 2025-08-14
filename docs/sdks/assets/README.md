@@ -85,14 +85,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListAssetsResponse](../../models/operations/listassetsresponse.md)\>**
+**Promise\<[components.Asset[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getAssets
 
@@ -168,14 +172,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetAssetsResponse](../../models/operations/getassetsresponse.md)\>**
+**Promise\<[components.Asset](../../models/components/asset.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateAssets
 
@@ -202,9 +211,9 @@ async function run() {
   const result = await serviceM8.assets.updateAssets({
     uuid: "5b24eb53-3f3d-4b60-b9e9-e44934a80c53",
     asset: {
-      uuid: "123e4567-44e9-4897-af11-231ef0c78c1b",
-      companyUuid: "123e4567-616d-4780-b34e-231ef56a4f9b",
-      assetTypeUuid: "123e4567-92b5-4d38-9929-231ef102bb2b",
+      uuid: "123e4567-ff1f-4837-9e1b-231fe9d0a6db",
+      companyUuid: "123e4567-0181-4307-9bde-231fe0084b4b",
+      assetTypeUuid: "123e4567-3a34-42d7-9c40-231fe537d2bb",
       geoTimestamp: "2025-08-01 12:00:00",
     },
   });
@@ -235,9 +244,9 @@ async function run() {
   const res = await assetsUpdateAssets(serviceM8, {
     uuid: "5b24eb53-3f3d-4b60-b9e9-e44934a80c53",
     asset: {
-      uuid: "123e4567-44e9-4897-af11-231ef0c78c1b",
-      companyUuid: "123e4567-616d-4780-b34e-231ef56a4f9b",
-      assetTypeUuid: "123e4567-92b5-4d38-9929-231ef102bb2b",
+      uuid: "123e4567-ff1f-4837-9e1b-231fe9d0a6db",
+      companyUuid: "123e4567-0181-4307-9bde-231fe0084b4b",
+      assetTypeUuid: "123e4567-3a34-42d7-9c40-231fe537d2bb",
       geoTimestamp: "2025-08-01 12:00:00",
     },
   });
@@ -263,14 +272,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateAssetsResponse](../../models/operations/updateassetsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteAssets
 
@@ -350,11 +364,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteAssetsResponse](../../models/operations/deleteassetsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

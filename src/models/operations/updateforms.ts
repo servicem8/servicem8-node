@@ -20,8 +20,6 @@ export type UpdateFormsRequest = {
   form: components.FormInput;
 };
 
-export type UpdateFormsResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateFormsRequest$inboundSchema: z.ZodType<
   UpdateFormsRequest,
@@ -84,58 +82,5 @@ export function updateFormsRequestFromJSON(
     jsonString,
     (x) => UpdateFormsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateFormsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateFormsResponse$inboundSchema: z.ZodType<
-  UpdateFormsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateFormsResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateFormsResponse$outboundSchema: z.ZodType<
-  UpdateFormsResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateFormsResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateFormsResponse$ {
-  /** @deprecated use `UpdateFormsResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateFormsResponse$inboundSchema;
-  /** @deprecated use `UpdateFormsResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateFormsResponse$outboundSchema;
-  /** @deprecated use `UpdateFormsResponse$Outbound` instead. */
-  export type Outbound = UpdateFormsResponse$Outbound;
-}
-
-export function updateFormsResponseToJSON(
-  updateFormsResponse: UpdateFormsResponse,
-): string {
-  return JSON.stringify(
-    UpdateFormsResponse$outboundSchema.parse(updateFormsResponse),
-  );
-}
-
-export function updateFormsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateFormsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateFormsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateFormsResponse' from JSON`,
   );
 }

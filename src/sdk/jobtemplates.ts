@@ -6,6 +6,7 @@ import { jobTemplatesCreateJobFromTemplate } from "../funcs/jobTemplatesCreateJo
 import { jobTemplatesGetJobTemplates } from "../funcs/jobTemplatesGetJobTemplates.js";
 import { jobTemplatesListJobTemplates } from "../funcs/jobTemplatesListJobTemplates.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
+import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
@@ -23,7 +24,7 @@ export class JobTemplates extends ClientSDK {
    */
   async listJobTemplates(
     options?: RequestOptions,
-  ): Promise<operations.ListJobTemplatesResponse> {
+  ): Promise<Array<components.JobTemplate>> {
     return unwrapAsync(jobTemplatesListJobTemplates(
       this,
       options,
@@ -41,7 +42,7 @@ export class JobTemplates extends ClientSDK {
   async getJobTemplates(
     request: operations.GetJobTemplatesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetJobTemplatesResponse> {
+  ): Promise<components.JobTemplate> {
     return unwrapAsync(jobTemplatesGetJobTemplates(
       this,
       request,

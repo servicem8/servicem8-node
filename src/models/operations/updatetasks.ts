@@ -20,8 +20,6 @@ export type UpdateTasksRequest = {
   task: components.TaskInput;
 };
 
-export type UpdateTasksResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateTasksRequest$inboundSchema: z.ZodType<
   UpdateTasksRequest,
@@ -84,58 +82,5 @@ export function updateTasksRequestFromJSON(
     jsonString,
     (x) => UpdateTasksRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateTasksRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateTasksResponse$inboundSchema: z.ZodType<
-  UpdateTasksResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateTasksResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateTasksResponse$outboundSchema: z.ZodType<
-  UpdateTasksResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateTasksResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateTasksResponse$ {
-  /** @deprecated use `UpdateTasksResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateTasksResponse$inboundSchema;
-  /** @deprecated use `UpdateTasksResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateTasksResponse$outboundSchema;
-  /** @deprecated use `UpdateTasksResponse$Outbound` instead. */
-  export type Outbound = UpdateTasksResponse$Outbound;
-}
-
-export function updateTasksResponseToJSON(
-  updateTasksResponse: UpdateTasksResponse,
-): string {
-  return JSON.stringify(
-    UpdateTasksResponse$outboundSchema.parse(updateTasksResponse),
-  );
-}
-
-export function updateTasksResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateTasksResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateTasksResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateTasksResponse' from JSON`,
   );
 }

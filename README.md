@@ -842,8 +842,11 @@ run();
 **Primary errors:**
 * [`ServiceM8Error`](./src/models/errors/servicem8error.ts): The base class for HTTP error responses.
   * [`ErrorT`](./src/models/errors/errort.ts): *
+  * [`AuthenticationError`](./src/models/errors/authenticationerror.ts): Unauthorized - Authentication credentials are missing or invalid. Status code `401`. *
+  * [`ForbiddenError`](./src/models/errors/forbiddenerror.ts): Status code `403`. *
+  * [`RateLimitError`](./src/models/errors/ratelimiterror.ts): Too Many Requests - You have exceeded the rate limit. Status code `429`. *
 
-<details><summary>Less common errors (6)</summary>
+<details><summary>Less common errors (7)</summary>
 
 <br />
 
@@ -856,6 +859,7 @@ run();
 
 
 **Inherit from [`ServiceM8Error`](./src/models/errors/servicem8error.ts)**:
+* [`NotFoundError`](./src/models/errors/notfounderror.ts): Status code `404`. Applicable to 95 of 171 methods.*
 * [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
 
 </details>

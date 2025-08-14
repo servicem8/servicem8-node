@@ -7,8 +7,12 @@ import { CreateJobAllocationsResponse } from "servicem8/models/operations";
 
 let value: CreateJobAllocationsResponse = {
   headers: {
-    "key": [],
-    "key1": [
+    "key": [
+      "<value 1>",
+      "<value 2>",
+    ],
+    "key1": [],
+    "key2": [
       "<value 1>",
       "<value 2>",
       "<value 3>",
@@ -23,7 +27,7 @@ let value: CreateJobAllocationsResponse = {
 
 ## Fields
 
-| Field                                           | Type                                            | Required                                        | Description                                     |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| `headers`                                       | Record<string, *string*[]>                      | :heavy_check_mark:                              | N/A                                             |
-| `result`                                        | *operations.CreateJobAllocationsResponseResult* | :heavy_check_mark:                              | N/A                                             |
+| Field                                                  | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `headers`                                              | Record<string, *string*[]>                             | :heavy_check_mark:                                     | N/A                                                    |
+| `result`                                               | [components.Result](../../models/components/result.md) | :heavy_check_mark:                                     | N/A                                                    |

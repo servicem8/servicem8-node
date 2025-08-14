@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetVendorsRequest = {
@@ -14,8 +13,6 @@ export type GetVendorsRequest = {
    */
   uuid: string;
 };
-
-export type GetVendorsResponse = components.Vendor | components.ErrorT;
 
 /** @internal */
 export const GetVendorsRequest$inboundSchema: z.ZodType<
@@ -68,58 +65,5 @@ export function getVendorsRequestFromJSON(
     jsonString,
     (x) => GetVendorsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetVendorsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetVendorsResponse$inboundSchema: z.ZodType<
-  GetVendorsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Vendor$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type GetVendorsResponse$Outbound =
-  | components.Vendor$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetVendorsResponse$outboundSchema: z.ZodType<
-  GetVendorsResponse$Outbound,
-  z.ZodTypeDef,
-  GetVendorsResponse
-> = z.union([
-  components.Vendor$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetVendorsResponse$ {
-  /** @deprecated use `GetVendorsResponse$inboundSchema` instead. */
-  export const inboundSchema = GetVendorsResponse$inboundSchema;
-  /** @deprecated use `GetVendorsResponse$outboundSchema` instead. */
-  export const outboundSchema = GetVendorsResponse$outboundSchema;
-  /** @deprecated use `GetVendorsResponse$Outbound` instead. */
-  export type Outbound = GetVendorsResponse$Outbound;
-}
-
-export function getVendorsResponseToJSON(
-  getVendorsResponse: GetVendorsResponse,
-): string {
-  return JSON.stringify(
-    GetVendorsResponse$outboundSchema.parse(getVendorsResponse),
-  );
-}
-
-export function getVendorsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetVendorsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetVendorsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetVendorsResponse' from JSON`,
   );
 }

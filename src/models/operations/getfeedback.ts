@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetFeedbackRequest = {
@@ -14,8 +13,6 @@ export type GetFeedbackRequest = {
    */
   uuid: string;
 };
-
-export type GetFeedbackResponse = components.Feedback | components.ErrorT;
 
 /** @internal */
 export const GetFeedbackRequest$inboundSchema: z.ZodType<
@@ -68,61 +65,5 @@ export function getFeedbackRequestFromJSON(
     jsonString,
     (x) => GetFeedbackRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetFeedbackRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetFeedbackResponse$inboundSchema: z.ZodType<
-  GetFeedbackResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.Feedback$inboundSchema,
-  components.ErrorT$inboundSchema,
-]);
-
-/** @internal */
-export type GetFeedbackResponse$Outbound =
-  | components.Feedback$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetFeedbackResponse$outboundSchema: z.ZodType<
-  GetFeedbackResponse$Outbound,
-  z.ZodTypeDef,
-  GetFeedbackResponse
-> = z.union([
-  components.Feedback$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetFeedbackResponse$ {
-  /** @deprecated use `GetFeedbackResponse$inboundSchema` instead. */
-  export const inboundSchema = GetFeedbackResponse$inboundSchema;
-  /** @deprecated use `GetFeedbackResponse$outboundSchema` instead. */
-  export const outboundSchema = GetFeedbackResponse$outboundSchema;
-  /** @deprecated use `GetFeedbackResponse$Outbound` instead. */
-  export type Outbound = GetFeedbackResponse$Outbound;
-}
-
-export function getFeedbackResponseToJSON(
-  getFeedbackResponse: GetFeedbackResponse,
-): string {
-  return JSON.stringify(
-    GetFeedbackResponse$outboundSchema.parse(getFeedbackResponse),
-  );
-}
-
-export function getFeedbackResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetFeedbackResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetFeedbackResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetFeedbackResponse' from JSON`,
   );
 }

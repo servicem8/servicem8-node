@@ -26,7 +26,7 @@ export class AssetTypes extends ClientSDK {
    */
   async listAssetTypes(
     options?: RequestOptions,
-  ): Promise<operations.ListAssetTypesResponse> {
+  ): Promise<Array<components.AssetType>> {
     return unwrapAsync(assetTypesListAssetTypes(
       this,
       options,
@@ -66,7 +66,7 @@ export class AssetTypes extends ClientSDK {
   async getAssetTypes(
     request: operations.GetAssetTypesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetAssetTypesResponse> {
+  ): Promise<components.AssetType> {
     return unwrapAsync(assetTypesGetAssetTypes(
       this,
       request,
@@ -85,7 +85,7 @@ export class AssetTypes extends ClientSDK {
   async updateAssetTypes(
     request: operations.UpdateAssetTypesRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateAssetTypesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(assetTypesUpdateAssetTypes(
       this,
       request,
@@ -106,7 +106,7 @@ export class AssetTypes extends ClientSDK {
   async deleteAssetTypes(
     request: operations.DeleteAssetTypesRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteAssetTypesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(assetTypesDeleteAssetTypes(
       this,
       request,

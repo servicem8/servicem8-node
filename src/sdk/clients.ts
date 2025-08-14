@@ -26,7 +26,7 @@ export class Clients extends ClientSDK {
    */
   async listClients(
     options?: RequestOptions,
-  ): Promise<operations.ListClientsResponse> {
+  ): Promise<Array<components.Company>> {
     return unwrapAsync(clientsListClients(
       this,
       options,
@@ -66,7 +66,7 @@ export class Clients extends ClientSDK {
   async getClients(
     request: operations.GetClientsRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetClientsResponse> {
+  ): Promise<components.Company> {
     return unwrapAsync(clientsGetClients(
       this,
       request,
@@ -85,7 +85,7 @@ export class Clients extends ClientSDK {
   async updateClients(
     request: operations.UpdateClientsRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateClientsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(clientsUpdateClients(
       this,
       request,
@@ -106,7 +106,7 @@ export class Clients extends ClientSDK {
   async deleteClients(
     request: operations.DeleteClientsRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteClientsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(clientsDeleteClients(
       this,
       request,

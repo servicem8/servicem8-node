@@ -20,8 +20,6 @@ export type UpdateJobChecklistsRequest = {
   jobChecklist: components.JobChecklistInput;
 };
 
-export type UpdateJobChecklistsResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateJobChecklistsRequest$inboundSchema: z.ZodType<
   UpdateJobChecklistsRequest,
@@ -84,60 +82,5 @@ export function updateJobChecklistsRequestFromJSON(
     jsonString,
     (x) => UpdateJobChecklistsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateJobChecklistsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateJobChecklistsResponse$inboundSchema: z.ZodType<
-  UpdateJobChecklistsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateJobChecklistsResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateJobChecklistsResponse$outboundSchema: z.ZodType<
-  UpdateJobChecklistsResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateJobChecklistsResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateJobChecklistsResponse$ {
-  /** @deprecated use `UpdateJobChecklistsResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateJobChecklistsResponse$inboundSchema;
-  /** @deprecated use `UpdateJobChecklistsResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateJobChecklistsResponse$outboundSchema;
-  /** @deprecated use `UpdateJobChecklistsResponse$Outbound` instead. */
-  export type Outbound = UpdateJobChecklistsResponse$Outbound;
-}
-
-export function updateJobChecklistsResponseToJSON(
-  updateJobChecklistsResponse: UpdateJobChecklistsResponse,
-): string {
-  return JSON.stringify(
-    UpdateJobChecklistsResponse$outboundSchema.parse(
-      updateJobChecklistsResponse,
-    ),
-  );
-}
-
-export function updateJobChecklistsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateJobChecklistsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateJobChecklistsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateJobChecklistsResponse' from JSON`,
   );
 }

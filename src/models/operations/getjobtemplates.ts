@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetJobTemplatesRequest = {
@@ -14,10 +13,6 @@ export type GetJobTemplatesRequest = {
    */
   uuid: string;
 };
-
-export type GetJobTemplatesResponse =
-  | components.JobTemplate
-  | components.ErrorT;
 
 /** @internal */
 export const GetJobTemplatesRequest$inboundSchema: z.ZodType<
@@ -70,61 +65,5 @@ export function getJobTemplatesRequestFromJSON(
     jsonString,
     (x) => GetJobTemplatesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetJobTemplatesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetJobTemplatesResponse$inboundSchema: z.ZodType<
-  GetJobTemplatesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.JobTemplate$inboundSchema,
-  components.ErrorT$inboundSchema,
-]);
-
-/** @internal */
-export type GetJobTemplatesResponse$Outbound =
-  | components.JobTemplate$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetJobTemplatesResponse$outboundSchema: z.ZodType<
-  GetJobTemplatesResponse$Outbound,
-  z.ZodTypeDef,
-  GetJobTemplatesResponse
-> = z.union([
-  components.JobTemplate$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetJobTemplatesResponse$ {
-  /** @deprecated use `GetJobTemplatesResponse$inboundSchema` instead. */
-  export const inboundSchema = GetJobTemplatesResponse$inboundSchema;
-  /** @deprecated use `GetJobTemplatesResponse$outboundSchema` instead. */
-  export const outboundSchema = GetJobTemplatesResponse$outboundSchema;
-  /** @deprecated use `GetJobTemplatesResponse$Outbound` instead. */
-  export type Outbound = GetJobTemplatesResponse$Outbound;
-}
-
-export function getJobTemplatesResponseToJSON(
-  getJobTemplatesResponse: GetJobTemplatesResponse,
-): string {
-  return JSON.stringify(
-    GetJobTemplatesResponse$outboundSchema.parse(getJobTemplatesResponse),
-  );
-}
-
-export function getJobTemplatesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetJobTemplatesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetJobTemplatesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetJobTemplatesResponse' from JSON`,
   );
 }

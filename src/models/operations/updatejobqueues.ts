@@ -20,8 +20,6 @@ export type UpdateJobQueuesRequest = {
   queue: components.QueueInput;
 };
 
-export type UpdateJobQueuesResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateJobQueuesRequest$inboundSchema: z.ZodType<
   UpdateJobQueuesRequest,
@@ -84,58 +82,5 @@ export function updateJobQueuesRequestFromJSON(
     jsonString,
     (x) => UpdateJobQueuesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateJobQueuesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateJobQueuesResponse$inboundSchema: z.ZodType<
-  UpdateJobQueuesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateJobQueuesResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateJobQueuesResponse$outboundSchema: z.ZodType<
-  UpdateJobQueuesResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateJobQueuesResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateJobQueuesResponse$ {
-  /** @deprecated use `UpdateJobQueuesResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateJobQueuesResponse$inboundSchema;
-  /** @deprecated use `UpdateJobQueuesResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateJobQueuesResponse$outboundSchema;
-  /** @deprecated use `UpdateJobQueuesResponse$Outbound` instead. */
-  export type Outbound = UpdateJobQueuesResponse$Outbound;
-}
-
-export function updateJobQueuesResponseToJSON(
-  updateJobQueuesResponse: UpdateJobQueuesResponse,
-): string {
-  return JSON.stringify(
-    UpdateJobQueuesResponse$outboundSchema.parse(updateJobQueuesResponse),
-  );
-}
-
-export function updateJobQueuesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateJobQueuesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateJobQueuesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateJobQueuesResponse' from JSON`,
   );
 }

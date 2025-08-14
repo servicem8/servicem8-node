@@ -7,18 +7,20 @@ import { CreateCompanyContactsResponse } from "servicem8/models/operations";
 
 let value: CreateCompanyContactsResponse = {
   headers: {
-    "key": [],
+    "key": [
+      "<value 1>",
+    ],
   },
   result: {
-    errorCode: 1000,
-    message: "An error occurred completing your request",
+    errorCode: 0,
+    message: "OK",
   },
 };
 ```
 
 ## Fields
 
-| Field                                            | Type                                             | Required                                         | Description                                      |
-| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| `headers`                                        | Record<string, *string*[]>                       | :heavy_check_mark:                               | N/A                                              |
-| `result`                                         | *operations.CreateCompanyContactsResponseResult* | :heavy_check_mark:                               | N/A                                              |
+| Field                                                  | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `headers`                                              | Record<string, *string*[]>                             | :heavy_check_mark:                                     | N/A                                                    |
+| `result`                                               | [components.Result](../../models/components/result.md) | :heavy_check_mark:                                     | N/A                                                    |

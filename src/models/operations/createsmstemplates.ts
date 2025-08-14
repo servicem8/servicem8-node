@@ -9,69 +9,10 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CreateSMSTemplatesResponseResult =
-  | components.Result
-  | components.ErrorT;
-
 export type CreateSMSTemplatesResponse = {
   headers: { [k: string]: Array<string> };
-  result: components.Result | components.ErrorT;
+  result: components.Result;
 };
-
-/** @internal */
-export const CreateSMSTemplatesResponseResult$inboundSchema: z.ZodType<
-  CreateSMSTemplatesResponseResult,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type CreateSMSTemplatesResponseResult$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const CreateSMSTemplatesResponseResult$outboundSchema: z.ZodType<
-  CreateSMSTemplatesResponseResult$Outbound,
-  z.ZodTypeDef,
-  CreateSMSTemplatesResponseResult
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateSMSTemplatesResponseResult$ {
-  /** @deprecated use `CreateSMSTemplatesResponseResult$inboundSchema` instead. */
-  export const inboundSchema = CreateSMSTemplatesResponseResult$inboundSchema;
-  /** @deprecated use `CreateSMSTemplatesResponseResult$outboundSchema` instead. */
-  export const outboundSchema = CreateSMSTemplatesResponseResult$outboundSchema;
-  /** @deprecated use `CreateSMSTemplatesResponseResult$Outbound` instead. */
-  export type Outbound = CreateSMSTemplatesResponseResult$Outbound;
-}
-
-export function createSMSTemplatesResponseResultToJSON(
-  createSMSTemplatesResponseResult: CreateSMSTemplatesResponseResult,
-): string {
-  return JSON.stringify(
-    CreateSMSTemplatesResponseResult$outboundSchema.parse(
-      createSMSTemplatesResponseResult,
-    ),
-  );
-}
-
-export function createSMSTemplatesResponseResultFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateSMSTemplatesResponseResult, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateSMSTemplatesResponseResult$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateSMSTemplatesResponseResult' from JSON`,
-  );
-}
 
 /** @internal */
 export const CreateSMSTemplatesResponse$inboundSchema: z.ZodType<
@@ -80,10 +21,7 @@ export const CreateSMSTemplatesResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   Headers: z.record(z.array(z.string())),
-  Result: z.union([
-    components.Result$inboundSchema,
-    components.ErrorT$inboundSchema,
-  ]),
+  Result: components.Result$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "Headers": "headers",
@@ -94,7 +32,7 @@ export const CreateSMSTemplatesResponse$inboundSchema: z.ZodType<
 /** @internal */
 export type CreateSMSTemplatesResponse$Outbound = {
   Headers: { [k: string]: Array<string> };
-  Result: components.Result$Outbound | components.ErrorT$Outbound;
+  Result: components.Result$Outbound;
 };
 
 /** @internal */
@@ -104,10 +42,7 @@ export const CreateSMSTemplatesResponse$outboundSchema: z.ZodType<
   CreateSMSTemplatesResponse
 > = z.object({
   headers: z.record(z.array(z.string())),
-  result: z.union([
-    components.Result$outboundSchema,
-    components.ErrorT$outboundSchema,
-  ]),
+  result: components.Result$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     headers: "Headers",

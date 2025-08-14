@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetFormsRequest = {
@@ -14,8 +13,6 @@ export type GetFormsRequest = {
    */
   uuid: string;
 };
-
-export type GetFormsResponse = components.Form | components.ErrorT;
 
 /** @internal */
 export const GetFormsRequest$inboundSchema: z.ZodType<
@@ -66,55 +63,5 @@ export function getFormsRequestFromJSON(
     jsonString,
     (x) => GetFormsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetFormsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetFormsResponse$inboundSchema: z.ZodType<
-  GetFormsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Form$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type GetFormsResponse$Outbound =
-  | components.Form$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetFormsResponse$outboundSchema: z.ZodType<
-  GetFormsResponse$Outbound,
-  z.ZodTypeDef,
-  GetFormsResponse
-> = z.union([components.Form$outboundSchema, components.ErrorT$outboundSchema]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetFormsResponse$ {
-  /** @deprecated use `GetFormsResponse$inboundSchema` instead. */
-  export const inboundSchema = GetFormsResponse$inboundSchema;
-  /** @deprecated use `GetFormsResponse$outboundSchema` instead. */
-  export const outboundSchema = GetFormsResponse$outboundSchema;
-  /** @deprecated use `GetFormsResponse$Outbound` instead. */
-  export type Outbound = GetFormsResponse$Outbound;
-}
-
-export function getFormsResponseToJSON(
-  getFormsResponse: GetFormsResponse,
-): string {
-  return JSON.stringify(
-    GetFormsResponse$outboundSchema.parse(getFormsResponse),
-  );
-}
-
-export function getFormsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetFormsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetFormsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetFormsResponse' from JSON`,
   );
 }

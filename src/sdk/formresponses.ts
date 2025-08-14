@@ -5,6 +5,7 @@
 import { formResponsesGetFormResponses } from "../funcs/formResponsesGetFormResponses.js";
 import { formResponsesListFormResponses } from "../funcs/formResponsesListFormResponses.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
+import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
@@ -22,7 +23,7 @@ export class FormResponses extends ClientSDK {
    */
   async listFormResponses(
     options?: RequestOptions,
-  ): Promise<operations.ListFormResponsesResponse> {
+  ): Promise<Array<components.FormResponse>> {
     return unwrapAsync(formResponsesListFormResponses(
       this,
       options,
@@ -40,7 +41,7 @@ export class FormResponses extends ClientSDK {
   async getFormResponses(
     request: operations.GetFormResponsesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetFormResponsesResponse> {
+  ): Promise<components.FormResponse> {
     return unwrapAsync(formResponsesGetFormResponses(
       this,
       request,

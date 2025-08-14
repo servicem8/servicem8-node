@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAssetTypeFieldsRequest = {
@@ -14,10 +13,6 @@ export type GetAssetTypeFieldsRequest = {
    */
   uuid: string;
 };
-
-export type GetAssetTypeFieldsResponse =
-  | components.AssetTypeField
-  | components.ErrorT;
 
 /** @internal */
 export const GetAssetTypeFieldsRequest$inboundSchema: z.ZodType<
@@ -70,61 +65,5 @@ export function getAssetTypeFieldsRequestFromJSON(
     jsonString,
     (x) => GetAssetTypeFieldsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetAssetTypeFieldsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetAssetTypeFieldsResponse$inboundSchema: z.ZodType<
-  GetAssetTypeFieldsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.AssetTypeField$inboundSchema,
-  components.ErrorT$inboundSchema,
-]);
-
-/** @internal */
-export type GetAssetTypeFieldsResponse$Outbound =
-  | components.AssetTypeField$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetAssetTypeFieldsResponse$outboundSchema: z.ZodType<
-  GetAssetTypeFieldsResponse$Outbound,
-  z.ZodTypeDef,
-  GetAssetTypeFieldsResponse
-> = z.union([
-  components.AssetTypeField$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAssetTypeFieldsResponse$ {
-  /** @deprecated use `GetAssetTypeFieldsResponse$inboundSchema` instead. */
-  export const inboundSchema = GetAssetTypeFieldsResponse$inboundSchema;
-  /** @deprecated use `GetAssetTypeFieldsResponse$outboundSchema` instead. */
-  export const outboundSchema = GetAssetTypeFieldsResponse$outboundSchema;
-  /** @deprecated use `GetAssetTypeFieldsResponse$Outbound` instead. */
-  export type Outbound = GetAssetTypeFieldsResponse$Outbound;
-}
-
-export function getAssetTypeFieldsResponseToJSON(
-  getAssetTypeFieldsResponse: GetAssetTypeFieldsResponse,
-): string {
-  return JSON.stringify(
-    GetAssetTypeFieldsResponse$outboundSchema.parse(getAssetTypeFieldsResponse),
-  );
-}
-
-export function getAssetTypeFieldsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAssetTypeFieldsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAssetTypeFieldsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAssetTypeFieldsResponse' from JSON`,
   );
 }

@@ -26,7 +26,7 @@ export class JobChecklists extends ClientSDK {
    */
   async listJobChecklists(
     options?: RequestOptions,
-  ): Promise<operations.ListJobChecklistsResponse> {
+  ): Promise<Array<components.JobChecklist>> {
     return unwrapAsync(jobChecklistsListJobChecklists(
       this,
       options,
@@ -66,7 +66,7 @@ export class JobChecklists extends ClientSDK {
   async getJobChecklists(
     request: operations.GetJobChecklistsRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetJobChecklistsResponse> {
+  ): Promise<components.JobChecklist> {
     return unwrapAsync(jobChecklistsGetJobChecklists(
       this,
       request,
@@ -85,7 +85,7 @@ export class JobChecklists extends ClientSDK {
   async updateJobChecklists(
     request: operations.UpdateJobChecklistsRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateJobChecklistsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(jobChecklistsUpdateJobChecklists(
       this,
       request,
@@ -106,7 +106,7 @@ export class JobChecklists extends ClientSDK {
   async deleteJobChecklists(
     request: operations.DeleteJobChecklistsRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteJobChecklistsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(jobChecklistsDeleteJobChecklists(
       this,
       request,

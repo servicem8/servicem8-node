@@ -26,7 +26,7 @@ export class StaffMembers extends ClientSDK {
    */
   async listStaffMembers(
     options?: RequestOptions,
-  ): Promise<operations.ListStaffMembersResponse> {
+  ): Promise<Array<components.Staff>> {
     return unwrapAsync(staffMembersListStaffMembers(
       this,
       options,
@@ -66,7 +66,7 @@ export class StaffMembers extends ClientSDK {
   async getStaffMembers(
     request: operations.GetStaffMembersRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetStaffMembersResponse> {
+  ): Promise<components.Staff> {
     return unwrapAsync(staffMembersGetStaffMembers(
       this,
       request,
@@ -85,7 +85,7 @@ export class StaffMembers extends ClientSDK {
   async updateStaffMembers(
     request: operations.UpdateStaffMembersRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateStaffMembersResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(staffMembersUpdateStaffMembers(
       this,
       request,
@@ -106,7 +106,7 @@ export class StaffMembers extends ClientSDK {
   async deleteStaffMembers(
     request: operations.DeleteStaffMembersRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteStaffMembersResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(staffMembersDeleteStaffMembers(
       this,
       request,

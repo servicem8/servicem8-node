@@ -9,69 +9,10 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CreateFeedbackResponseResult =
-  | components.Result
-  | components.ErrorT;
-
 export type CreateFeedbackResponse = {
   headers: { [k: string]: Array<string> };
-  result: components.Result | components.ErrorT;
+  result: components.Result;
 };
-
-/** @internal */
-export const CreateFeedbackResponseResult$inboundSchema: z.ZodType<
-  CreateFeedbackResponseResult,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type CreateFeedbackResponseResult$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const CreateFeedbackResponseResult$outboundSchema: z.ZodType<
-  CreateFeedbackResponseResult$Outbound,
-  z.ZodTypeDef,
-  CreateFeedbackResponseResult
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateFeedbackResponseResult$ {
-  /** @deprecated use `CreateFeedbackResponseResult$inboundSchema` instead. */
-  export const inboundSchema = CreateFeedbackResponseResult$inboundSchema;
-  /** @deprecated use `CreateFeedbackResponseResult$outboundSchema` instead. */
-  export const outboundSchema = CreateFeedbackResponseResult$outboundSchema;
-  /** @deprecated use `CreateFeedbackResponseResult$Outbound` instead. */
-  export type Outbound = CreateFeedbackResponseResult$Outbound;
-}
-
-export function createFeedbackResponseResultToJSON(
-  createFeedbackResponseResult: CreateFeedbackResponseResult,
-): string {
-  return JSON.stringify(
-    CreateFeedbackResponseResult$outboundSchema.parse(
-      createFeedbackResponseResult,
-    ),
-  );
-}
-
-export function createFeedbackResponseResultFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateFeedbackResponseResult, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateFeedbackResponseResult$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateFeedbackResponseResult' from JSON`,
-  );
-}
 
 /** @internal */
 export const CreateFeedbackResponse$inboundSchema: z.ZodType<
@@ -80,10 +21,7 @@ export const CreateFeedbackResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   Headers: z.record(z.array(z.string())),
-  Result: z.union([
-    components.Result$inboundSchema,
-    components.ErrorT$inboundSchema,
-  ]),
+  Result: components.Result$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "Headers": "headers",
@@ -94,7 +32,7 @@ export const CreateFeedbackResponse$inboundSchema: z.ZodType<
 /** @internal */
 export type CreateFeedbackResponse$Outbound = {
   Headers: { [k: string]: Array<string> };
-  Result: components.Result$Outbound | components.ErrorT$Outbound;
+  Result: components.Result$Outbound;
 };
 
 /** @internal */
@@ -104,10 +42,7 @@ export const CreateFeedbackResponse$outboundSchema: z.ZodType<
   CreateFeedbackResponse
 > = z.object({
   headers: z.record(z.array(z.string())),
-  result: z.union([
-    components.Result$outboundSchema,
-    components.ErrorT$outboundSchema,
-  ]),
+  result: components.Result$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     headers: "Headers",

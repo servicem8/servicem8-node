@@ -26,7 +26,7 @@ export class Materials extends ClientSDK {
    */
   async listMaterials(
     options?: RequestOptions,
-  ): Promise<operations.ListMaterialsResponse> {
+  ): Promise<Array<components.Material>> {
     return unwrapAsync(materialsListMaterials(
       this,
       options,
@@ -66,7 +66,7 @@ export class Materials extends ClientSDK {
   async getMaterials(
     request: operations.GetMaterialsRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetMaterialsResponse> {
+  ): Promise<components.Material> {
     return unwrapAsync(materialsGetMaterials(
       this,
       request,
@@ -85,7 +85,7 @@ export class Materials extends ClientSDK {
   async updateMaterials(
     request: operations.UpdateMaterialsRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateMaterialsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(materialsUpdateMaterials(
       this,
       request,
@@ -106,7 +106,7 @@ export class Materials extends ClientSDK {
   async deleteMaterials(
     request: operations.DeleteMaterialsRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteMaterialsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(materialsDeleteMaterials(
       this,
       request,

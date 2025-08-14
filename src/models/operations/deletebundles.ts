@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type DeleteBundlesRequest = {
@@ -14,8 +13,6 @@ export type DeleteBundlesRequest = {
    */
   uuid: string;
 };
-
-export type DeleteBundlesResponse = components.Result | components.ErrorT;
 
 /** @internal */
 export const DeleteBundlesRequest$inboundSchema: z.ZodType<
@@ -68,58 +65,5 @@ export function deleteBundlesRequestFromJSON(
     jsonString,
     (x) => DeleteBundlesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'DeleteBundlesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const DeleteBundlesResponse$inboundSchema: z.ZodType<
-  DeleteBundlesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type DeleteBundlesResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const DeleteBundlesResponse$outboundSchema: z.ZodType<
-  DeleteBundlesResponse$Outbound,
-  z.ZodTypeDef,
-  DeleteBundlesResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteBundlesResponse$ {
-  /** @deprecated use `DeleteBundlesResponse$inboundSchema` instead. */
-  export const inboundSchema = DeleteBundlesResponse$inboundSchema;
-  /** @deprecated use `DeleteBundlesResponse$outboundSchema` instead. */
-  export const outboundSchema = DeleteBundlesResponse$outboundSchema;
-  /** @deprecated use `DeleteBundlesResponse$Outbound` instead. */
-  export type Outbound = DeleteBundlesResponse$Outbound;
-}
-
-export function deleteBundlesResponseToJSON(
-  deleteBundlesResponse: DeleteBundlesResponse,
-): string {
-  return JSON.stringify(
-    DeleteBundlesResponse$outboundSchema.parse(deleteBundlesResponse),
-  );
-}
-
-export function deleteBundlesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteBundlesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteBundlesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteBundlesResponse' from JSON`,
   );
 }

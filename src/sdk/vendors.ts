@@ -5,6 +5,7 @@
 import { vendorsGetVendors } from "../funcs/vendorsGetVendors.js";
 import { vendorsListVendors } from "../funcs/vendorsListVendors.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
+import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
@@ -23,7 +24,7 @@ export class Vendors extends ClientSDK {
    */
   async listVendors(
     options?: RequestOptions,
-  ): Promise<operations.ListVendorsResponse> {
+  ): Promise<Array<components.Vendor>> {
     return unwrapAsync(vendorsListVendors(
       this,
       options,
@@ -42,7 +43,7 @@ export class Vendors extends ClientSDK {
   async getVendors(
     request: operations.GetVendorsRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetVendorsResponse> {
+  ): Promise<components.Vendor> {
     return unwrapAsync(vendorsGetVendors(
       this,
       request,

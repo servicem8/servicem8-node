@@ -20,10 +20,6 @@ export type UpdateKnowledgeArticlesRequest = {
   knowledgeArticle: components.KnowledgeArticleInput;
 };
 
-export type UpdateKnowledgeArticlesResponse =
-  | components.Result
-  | components.ErrorT;
-
 /** @internal */
 export const UpdateKnowledgeArticlesRequest$inboundSchema: z.ZodType<
   UpdateKnowledgeArticlesRequest,
@@ -88,60 +84,5 @@ export function updateKnowledgeArticlesRequestFromJSON(
     jsonString,
     (x) => UpdateKnowledgeArticlesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateKnowledgeArticlesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateKnowledgeArticlesResponse$inboundSchema: z.ZodType<
-  UpdateKnowledgeArticlesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateKnowledgeArticlesResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateKnowledgeArticlesResponse$outboundSchema: z.ZodType<
-  UpdateKnowledgeArticlesResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateKnowledgeArticlesResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateKnowledgeArticlesResponse$ {
-  /** @deprecated use `UpdateKnowledgeArticlesResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateKnowledgeArticlesResponse$inboundSchema;
-  /** @deprecated use `UpdateKnowledgeArticlesResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateKnowledgeArticlesResponse$outboundSchema;
-  /** @deprecated use `UpdateKnowledgeArticlesResponse$Outbound` instead. */
-  export type Outbound = UpdateKnowledgeArticlesResponse$Outbound;
-}
-
-export function updateKnowledgeArticlesResponseToJSON(
-  updateKnowledgeArticlesResponse: UpdateKnowledgeArticlesResponse,
-): string {
-  return JSON.stringify(
-    UpdateKnowledgeArticlesResponse$outboundSchema.parse(
-      updateKnowledgeArticlesResponse,
-    ),
-  );
-}
-
-export function updateKnowledgeArticlesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateKnowledgeArticlesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateKnowledgeArticlesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateKnowledgeArticlesResponse' from JSON`,
   );
 }

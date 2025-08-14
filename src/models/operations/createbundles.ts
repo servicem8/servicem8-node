@@ -9,67 +9,10 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CreateBundlesResponseResult = components.Result | components.ErrorT;
-
 export type CreateBundlesResponse = {
   headers: { [k: string]: Array<string> };
-  result: components.Result | components.ErrorT;
+  result: components.Result;
 };
-
-/** @internal */
-export const CreateBundlesResponseResult$inboundSchema: z.ZodType<
-  CreateBundlesResponseResult,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type CreateBundlesResponseResult$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const CreateBundlesResponseResult$outboundSchema: z.ZodType<
-  CreateBundlesResponseResult$Outbound,
-  z.ZodTypeDef,
-  CreateBundlesResponseResult
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateBundlesResponseResult$ {
-  /** @deprecated use `CreateBundlesResponseResult$inboundSchema` instead. */
-  export const inboundSchema = CreateBundlesResponseResult$inboundSchema;
-  /** @deprecated use `CreateBundlesResponseResult$outboundSchema` instead. */
-  export const outboundSchema = CreateBundlesResponseResult$outboundSchema;
-  /** @deprecated use `CreateBundlesResponseResult$Outbound` instead. */
-  export type Outbound = CreateBundlesResponseResult$Outbound;
-}
-
-export function createBundlesResponseResultToJSON(
-  createBundlesResponseResult: CreateBundlesResponseResult,
-): string {
-  return JSON.stringify(
-    CreateBundlesResponseResult$outboundSchema.parse(
-      createBundlesResponseResult,
-    ),
-  );
-}
-
-export function createBundlesResponseResultFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateBundlesResponseResult, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateBundlesResponseResult$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateBundlesResponseResult' from JSON`,
-  );
-}
 
 /** @internal */
 export const CreateBundlesResponse$inboundSchema: z.ZodType<
@@ -78,10 +21,7 @@ export const CreateBundlesResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   Headers: z.record(z.array(z.string())),
-  Result: z.union([
-    components.Result$inboundSchema,
-    components.ErrorT$inboundSchema,
-  ]),
+  Result: components.Result$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "Headers": "headers",
@@ -92,7 +32,7 @@ export const CreateBundlesResponse$inboundSchema: z.ZodType<
 /** @internal */
 export type CreateBundlesResponse$Outbound = {
   Headers: { [k: string]: Array<string> };
-  Result: components.Result$Outbound | components.ErrorT$Outbound;
+  Result: components.Result$Outbound;
 };
 
 /** @internal */
@@ -102,10 +42,7 @@ export const CreateBundlesResponse$outboundSchema: z.ZodType<
   CreateBundlesResponse
 > = z.object({
   headers: z.record(z.array(z.string())),
-  result: z.union([
-    components.Result$outboundSchema,
-    components.ErrorT$outboundSchema,
-  ]),
+  result: components.Result$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     headers: "Headers",

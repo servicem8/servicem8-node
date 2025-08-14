@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListTasksResponse](../../models/operations/listtasksresponse.md)\>**
+**Promise\<[components.Task[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createTasks
 
@@ -125,12 +129,12 @@ async function run() {
   const result = await serviceM8.tasks.createTasks({
     dueDate: "YYYY-MM-DD",
     name: "<value>",
-    relatedObjectUuid: "123e4567-2b42-446b-9414-231efa4ef4bb",
+    relatedObjectUuid: "123e4567-cce3-4954-bbb4-231fea6ccc9b",
     completedTimestamp: "2025-08-01 12:00:00",
-    completedByStaffUuid: "123e4567-130b-4e35-9064-231ef25e5e9b",
-    assignedToStaffUuid: "123e4567-1019-4d53-a09a-231ef5ea542b",
-    uuid: "123e4567-3209-4985-9450-231ef6f901fb",
-    createdByStaffUuid: "123e4567-a189-44b9-8711-231ef7243d6b",
+    completedByStaffUuid: "123e4567-372e-40c9-84e4-231fe646bf3b",
+    assignedToStaffUuid: "123e4567-7642-4885-898c-231fedde747b",
+    uuid: "123e4567-f6f2-49aa-8366-231fe0d82f9b",
+    createdByStaffUuid: "123e4567-efe5-4b8f-bfdc-231fe4f407eb",
     createDate: "2025-08-01 12:00:00",
   });
 
@@ -160,12 +164,12 @@ async function run() {
   const res = await tasksCreateTasks(serviceM8, {
     dueDate: "YYYY-MM-DD",
     name: "<value>",
-    relatedObjectUuid: "123e4567-2b42-446b-9414-231efa4ef4bb",
+    relatedObjectUuid: "123e4567-cce3-4954-bbb4-231fea6ccc9b",
     completedTimestamp: "2025-08-01 12:00:00",
-    completedByStaffUuid: "123e4567-130b-4e35-9064-231ef25e5e9b",
-    assignedToStaffUuid: "123e4567-1019-4d53-a09a-231ef5ea542b",
-    uuid: "123e4567-3209-4985-9450-231ef6f901fb",
-    createdByStaffUuid: "123e4567-a189-44b9-8711-231ef7243d6b",
+    completedByStaffUuid: "123e4567-372e-40c9-84e4-231fe646bf3b",
+    assignedToStaffUuid: "123e4567-7642-4885-898c-231fedde747b",
+    uuid: "123e4567-f6f2-49aa-8366-231fe0d82f9b",
+    createdByStaffUuid: "123e4567-efe5-4b8f-bfdc-231fe4f407eb",
     createDate: "2025-08-01 12:00:00",
   });
   if (res.ok) {
@@ -194,10 +198,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getTasks
 
@@ -273,14 +281,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetTasksResponse](../../models/operations/gettasksresponse.md)\>**
+**Promise\<[components.Task](../../models/components/task.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateTasks
 
@@ -309,12 +322,12 @@ async function run() {
     task: {
       dueDate: "YYYY-MM-DD",
       name: "<value>",
-      relatedObjectUuid: "123e4567-2b42-446b-9414-231efa4ef4bb",
+      relatedObjectUuid: "123e4567-cce3-4954-bbb4-231fea6ccc9b",
       completedTimestamp: "2025-08-01 12:00:00",
-      completedByStaffUuid: "123e4567-130b-4e35-9064-231ef25e5e9b",
-      assignedToStaffUuid: "123e4567-1019-4d53-a09a-231ef5ea542b",
-      uuid: "123e4567-3209-4985-9450-231ef6f901fb",
-      createdByStaffUuid: "123e4567-a189-44b9-8711-231ef7243d6b",
+      completedByStaffUuid: "123e4567-372e-40c9-84e4-231fe646bf3b",
+      assignedToStaffUuid: "123e4567-7642-4885-898c-231fedde747b",
+      uuid: "123e4567-f6f2-49aa-8366-231fe0d82f9b",
+      createdByStaffUuid: "123e4567-efe5-4b8f-bfdc-231fe4f407eb",
       createDate: "2025-08-01 12:00:00",
     },
   });
@@ -347,12 +360,12 @@ async function run() {
     task: {
       dueDate: "YYYY-MM-DD",
       name: "<value>",
-      relatedObjectUuid: "123e4567-2b42-446b-9414-231efa4ef4bb",
+      relatedObjectUuid: "123e4567-cce3-4954-bbb4-231fea6ccc9b",
       completedTimestamp: "2025-08-01 12:00:00",
-      completedByStaffUuid: "123e4567-130b-4e35-9064-231ef25e5e9b",
-      assignedToStaffUuid: "123e4567-1019-4d53-a09a-231ef5ea542b",
-      uuid: "123e4567-3209-4985-9450-231ef6f901fb",
-      createdByStaffUuid: "123e4567-a189-44b9-8711-231ef7243d6b",
+      completedByStaffUuid: "123e4567-372e-40c9-84e4-231fe646bf3b",
+      assignedToStaffUuid: "123e4567-7642-4885-898c-231fedde747b",
+      uuid: "123e4567-f6f2-49aa-8366-231fe0d82f9b",
+      createdByStaffUuid: "123e4567-efe5-4b8f-bfdc-231fe4f407eb",
       createDate: "2025-08-01 12:00:00",
     },
   });
@@ -378,14 +391,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateTasksResponse](../../models/operations/updatetasksresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteTasks
 
@@ -465,11 +483,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteTasksResponse](../../models/operations/deletetasksresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetMaterialsRequest = {
@@ -14,8 +13,6 @@ export type GetMaterialsRequest = {
    */
   uuid: string;
 };
-
-export type GetMaterialsResponse = components.Material | components.ErrorT;
 
 /** @internal */
 export const GetMaterialsRequest$inboundSchema: z.ZodType<
@@ -68,61 +65,5 @@ export function getMaterialsRequestFromJSON(
     jsonString,
     (x) => GetMaterialsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetMaterialsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetMaterialsResponse$inboundSchema: z.ZodType<
-  GetMaterialsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.Material$inboundSchema,
-  components.ErrorT$inboundSchema,
-]);
-
-/** @internal */
-export type GetMaterialsResponse$Outbound =
-  | components.Material$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetMaterialsResponse$outboundSchema: z.ZodType<
-  GetMaterialsResponse$Outbound,
-  z.ZodTypeDef,
-  GetMaterialsResponse
-> = z.union([
-  components.Material$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetMaterialsResponse$ {
-  /** @deprecated use `GetMaterialsResponse$inboundSchema` instead. */
-  export const inboundSchema = GetMaterialsResponse$inboundSchema;
-  /** @deprecated use `GetMaterialsResponse$outboundSchema` instead. */
-  export const outboundSchema = GetMaterialsResponse$outboundSchema;
-  /** @deprecated use `GetMaterialsResponse$Outbound` instead. */
-  export type Outbound = GetMaterialsResponse$Outbound;
-}
-
-export function getMaterialsResponseToJSON(
-  getMaterialsResponse: GetMaterialsResponse,
-): string {
-  return JSON.stringify(
-    GetMaterialsResponse$outboundSchema.parse(getMaterialsResponse),
-  );
-}
-
-export function getMaterialsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetMaterialsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetMaterialsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetMaterialsResponse' from JSON`,
   );
 }

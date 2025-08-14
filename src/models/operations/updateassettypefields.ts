@@ -20,10 +20,6 @@ export type UpdateAssetTypeFieldsRequest = {
   assetTypeField: components.AssetTypeFieldInput;
 };
 
-export type UpdateAssetTypeFieldsResponse =
-  | components.Result
-  | components.ErrorT;
-
 /** @internal */
 export const UpdateAssetTypeFieldsRequest$inboundSchema: z.ZodType<
   UpdateAssetTypeFieldsRequest,
@@ -88,60 +84,5 @@ export function updateAssetTypeFieldsRequestFromJSON(
     jsonString,
     (x) => UpdateAssetTypeFieldsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateAssetTypeFieldsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateAssetTypeFieldsResponse$inboundSchema: z.ZodType<
-  UpdateAssetTypeFieldsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateAssetTypeFieldsResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateAssetTypeFieldsResponse$outboundSchema: z.ZodType<
-  UpdateAssetTypeFieldsResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateAssetTypeFieldsResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAssetTypeFieldsResponse$ {
-  /** @deprecated use `UpdateAssetTypeFieldsResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateAssetTypeFieldsResponse$inboundSchema;
-  /** @deprecated use `UpdateAssetTypeFieldsResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateAssetTypeFieldsResponse$outboundSchema;
-  /** @deprecated use `UpdateAssetTypeFieldsResponse$Outbound` instead. */
-  export type Outbound = UpdateAssetTypeFieldsResponse$Outbound;
-}
-
-export function updateAssetTypeFieldsResponseToJSON(
-  updateAssetTypeFieldsResponse: UpdateAssetTypeFieldsResponse,
-): string {
-  return JSON.stringify(
-    UpdateAssetTypeFieldsResponse$outboundSchema.parse(
-      updateAssetTypeFieldsResponse,
-    ),
-  );
-}
-
-export function updateAssetTypeFieldsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAssetTypeFieldsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAssetTypeFieldsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAssetTypeFieldsResponse' from JSON`,
   );
 }

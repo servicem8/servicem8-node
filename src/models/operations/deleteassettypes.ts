@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type DeleteAssetTypesRequest = {
@@ -14,8 +13,6 @@ export type DeleteAssetTypesRequest = {
    */
   uuid: string;
 };
-
-export type DeleteAssetTypesResponse = components.Result | components.ErrorT;
 
 /** @internal */
 export const DeleteAssetTypesRequest$inboundSchema: z.ZodType<
@@ -68,58 +65,5 @@ export function deleteAssetTypesRequestFromJSON(
     jsonString,
     (x) => DeleteAssetTypesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'DeleteAssetTypesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const DeleteAssetTypesResponse$inboundSchema: z.ZodType<
-  DeleteAssetTypesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type DeleteAssetTypesResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const DeleteAssetTypesResponse$outboundSchema: z.ZodType<
-  DeleteAssetTypesResponse$Outbound,
-  z.ZodTypeDef,
-  DeleteAssetTypesResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteAssetTypesResponse$ {
-  /** @deprecated use `DeleteAssetTypesResponse$inboundSchema` instead. */
-  export const inboundSchema = DeleteAssetTypesResponse$inboundSchema;
-  /** @deprecated use `DeleteAssetTypesResponse$outboundSchema` instead. */
-  export const outboundSchema = DeleteAssetTypesResponse$outboundSchema;
-  /** @deprecated use `DeleteAssetTypesResponse$Outbound` instead. */
-  export type Outbound = DeleteAssetTypesResponse$Outbound;
-}
-
-export function deleteAssetTypesResponseToJSON(
-  deleteAssetTypesResponse: DeleteAssetTypesResponse,
-): string {
-  return JSON.stringify(
-    DeleteAssetTypesResponse$outboundSchema.parse(deleteAssetTypesResponse),
-  );
-}
-
-export function deleteAssetTypesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteAssetTypesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteAssetTypesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteAssetTypesResponse' from JSON`,
   );
 }

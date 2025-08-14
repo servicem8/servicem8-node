@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetEmailTemplatesRequest = {
@@ -14,10 +13,6 @@ export type GetEmailTemplatesRequest = {
    */
   uuid: string;
 };
-
-export type GetEmailTemplatesResponse =
-  | components.EmailTemplate
-  | components.ErrorT;
 
 /** @internal */
 export const GetEmailTemplatesRequest$inboundSchema: z.ZodType<
@@ -70,61 +65,5 @@ export function getEmailTemplatesRequestFromJSON(
     jsonString,
     (x) => GetEmailTemplatesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetEmailTemplatesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetEmailTemplatesResponse$inboundSchema: z.ZodType<
-  GetEmailTemplatesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.EmailTemplate$inboundSchema,
-  components.ErrorT$inboundSchema,
-]);
-
-/** @internal */
-export type GetEmailTemplatesResponse$Outbound =
-  | components.EmailTemplate$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetEmailTemplatesResponse$outboundSchema: z.ZodType<
-  GetEmailTemplatesResponse$Outbound,
-  z.ZodTypeDef,
-  GetEmailTemplatesResponse
-> = z.union([
-  components.EmailTemplate$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetEmailTemplatesResponse$ {
-  /** @deprecated use `GetEmailTemplatesResponse$inboundSchema` instead. */
-  export const inboundSchema = GetEmailTemplatesResponse$inboundSchema;
-  /** @deprecated use `GetEmailTemplatesResponse$outboundSchema` instead. */
-  export const outboundSchema = GetEmailTemplatesResponse$outboundSchema;
-  /** @deprecated use `GetEmailTemplatesResponse$Outbound` instead. */
-  export type Outbound = GetEmailTemplatesResponse$Outbound;
-}
-
-export function getEmailTemplatesResponseToJSON(
-  getEmailTemplatesResponse: GetEmailTemplatesResponse,
-): string {
-  return JSON.stringify(
-    GetEmailTemplatesResponse$outboundSchema.parse(getEmailTemplatesResponse),
-  );
-}
-
-export function getEmailTemplatesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetEmailTemplatesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetEmailTemplatesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetEmailTemplatesResponse' from JSON`,
   );
 }

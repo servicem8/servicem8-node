@@ -26,7 +26,7 @@ export class Badges extends ClientSDK {
    */
   async listBadges(
     options?: RequestOptions,
-  ): Promise<operations.ListBadgesResponse> {
+  ): Promise<Array<components.Badge>> {
     return unwrapAsync(badgesListBadges(
       this,
       options,
@@ -66,7 +66,7 @@ export class Badges extends ClientSDK {
   async getBadges(
     request: operations.GetBadgesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetBadgesResponse> {
+  ): Promise<components.Badge> {
     return unwrapAsync(badgesGetBadges(
       this,
       request,
@@ -85,7 +85,7 @@ export class Badges extends ClientSDK {
   async updateBadges(
     request: operations.UpdateBadgesRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateBadgesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(badgesUpdateBadges(
       this,
       request,
@@ -106,7 +106,7 @@ export class Badges extends ClientSDK {
   async deleteBadges(
     request: operations.DeleteBadgesRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteBadgesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(badgesDeleteBadges(
       this,
       request,

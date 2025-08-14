@@ -1,6 +1,6 @@
 # GeoIsValid
 
-Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used..  Valid values are [0,1]
+Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used. (Read only).  Valid values are [0,1]
 
 ## Example Usage
 

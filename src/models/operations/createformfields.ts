@@ -9,69 +9,10 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CreateFormFieldsResponseResult =
-  | components.Result
-  | components.ErrorT;
-
 export type CreateFormFieldsResponse = {
   headers: { [k: string]: Array<string> };
-  result: components.Result | components.ErrorT;
+  result: components.Result;
 };
-
-/** @internal */
-export const CreateFormFieldsResponseResult$inboundSchema: z.ZodType<
-  CreateFormFieldsResponseResult,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type CreateFormFieldsResponseResult$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const CreateFormFieldsResponseResult$outboundSchema: z.ZodType<
-  CreateFormFieldsResponseResult$Outbound,
-  z.ZodTypeDef,
-  CreateFormFieldsResponseResult
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateFormFieldsResponseResult$ {
-  /** @deprecated use `CreateFormFieldsResponseResult$inboundSchema` instead. */
-  export const inboundSchema = CreateFormFieldsResponseResult$inboundSchema;
-  /** @deprecated use `CreateFormFieldsResponseResult$outboundSchema` instead. */
-  export const outboundSchema = CreateFormFieldsResponseResult$outboundSchema;
-  /** @deprecated use `CreateFormFieldsResponseResult$Outbound` instead. */
-  export type Outbound = CreateFormFieldsResponseResult$Outbound;
-}
-
-export function createFormFieldsResponseResultToJSON(
-  createFormFieldsResponseResult: CreateFormFieldsResponseResult,
-): string {
-  return JSON.stringify(
-    CreateFormFieldsResponseResult$outboundSchema.parse(
-      createFormFieldsResponseResult,
-    ),
-  );
-}
-
-export function createFormFieldsResponseResultFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateFormFieldsResponseResult, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateFormFieldsResponseResult$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateFormFieldsResponseResult' from JSON`,
-  );
-}
 
 /** @internal */
 export const CreateFormFieldsResponse$inboundSchema: z.ZodType<
@@ -80,10 +21,7 @@ export const CreateFormFieldsResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   Headers: z.record(z.array(z.string())),
-  Result: z.union([
-    components.Result$inboundSchema,
-    components.ErrorT$inboundSchema,
-  ]),
+  Result: components.Result$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "Headers": "headers",
@@ -94,7 +32,7 @@ export const CreateFormFieldsResponse$inboundSchema: z.ZodType<
 /** @internal */
 export type CreateFormFieldsResponse$Outbound = {
   Headers: { [k: string]: Array<string> };
-  Result: components.Result$Outbound | components.ErrorT$Outbound;
+  Result: components.Result$Outbound;
 };
 
 /** @internal */
@@ -104,10 +42,7 @@ export const CreateFormFieldsResponse$outboundSchema: z.ZodType<
   CreateFormFieldsResponse
 > = z.object({
   headers: z.record(z.array(z.string())),
-  result: z.union([
-    components.Result$outboundSchema,
-    components.ErrorT$outboundSchema,
-  ]),
+  result: components.Result$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     headers: "Headers",

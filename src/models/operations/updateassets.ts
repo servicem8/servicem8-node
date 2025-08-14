@@ -20,8 +20,6 @@ export type UpdateAssetsRequest = {
   asset: components.AssetInput;
 };
 
-export type UpdateAssetsResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateAssetsRequest$inboundSchema: z.ZodType<
   UpdateAssetsRequest,
@@ -84,58 +82,5 @@ export function updateAssetsRequestFromJSON(
     jsonString,
     (x) => UpdateAssetsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateAssetsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateAssetsResponse$inboundSchema: z.ZodType<
-  UpdateAssetsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateAssetsResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateAssetsResponse$outboundSchema: z.ZodType<
-  UpdateAssetsResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateAssetsResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAssetsResponse$ {
-  /** @deprecated use `UpdateAssetsResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateAssetsResponse$inboundSchema;
-  /** @deprecated use `UpdateAssetsResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateAssetsResponse$outboundSchema;
-  /** @deprecated use `UpdateAssetsResponse$Outbound` instead. */
-  export type Outbound = UpdateAssetsResponse$Outbound;
-}
-
-export function updateAssetsResponseToJSON(
-  updateAssetsResponse: UpdateAssetsResponse,
-): string {
-  return JSON.stringify(
-    UpdateAssetsResponse$outboundSchema.parse(updateAssetsResponse),
-  );
-}
-
-export function updateAssetsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAssetsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAssetsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAssetsResponse' from JSON`,
   );
 }

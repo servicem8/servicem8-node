@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListJobsResponse](../../models/operations/listjobsresponse.md)\>**
+**Promise\<[components.Job[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createJobs
 
@@ -123,25 +127,25 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobs.createJobs({
-    createdByStaffUuid: "123e4567-4e11-406d-b738-231ef06f361b",
+    createdByStaffUuid: "123e4567-00fc-40e1-a310-231fee48407b",
     date: "YYYY-MM-DD",
-    companyUuid: "123e4567-8d5c-4b83-a8c2-231efb9ea2cb",
+    companyUuid: "123e4567-a04f-47fb-858c-231fecff827b",
     status: "Unsuccessful",
     paymentDate: "2025-08-01 12:00:00",
-    paymentActionedByUuid: "123e4567-9872-4e75-9bf4-231ef69e2dfb",
-    categoryUuid: "123e4567-a1f5-42e6-9598-231efbfae7db",
+    paymentActionedByUuid: "123e4567-9dbb-40a0-9671-231fec92060b",
+    categoryUuid: "123e4567-c0d2-442a-a313-231fe300c0bb",
     invoiceSentStamp: "2025-08-01 12:00:00",
-    queueUuid: "123e4567-18a8-4b12-8705-231efce0fd9b",
+    queueUuid: "123e4567-bb86-4ad6-a4ae-231feca6838b",
     queueExpiryDate: "2025-08-01 12:00:00",
-    queueAssignedStaffUuid: "123e4567-47cf-4846-9286-231ef192906b",
+    queueAssignedStaffUuid: "123e4567-31f8-4290-ad74-231fe3345d2b",
     quoteDate: "2025-08-01 12:00:00",
     quoteSentStamp: "2025-08-01 12:00:00",
     workOrderDate: "2025-08-01 12:00:00",
-    uuid: "123e4567-1a18-4afa-9b95-231efed0eb1b",
+    uuid: "123e4567-183b-4388-a46b-231fe321d00b",
     paymentProcessedStamp: "2025-08-01 12:00:00",
     paymentReceivedStamp: "2025-08-01 12:00:00",
     completionDate: "2025-08-01 12:00:00",
-    completionActionedByUuid: "123e4567-9577-413f-8505-231ef9c5a57b",
+    completionActionedByUuid: "123e4567-4b94-48c4-96e3-231fe01c491b",
     unsuccessfulDate: "2025-08-01 12:00:00",
     jobIsScheduledUntilStamp: "2025-08-01 12:00:00",
   });
@@ -170,25 +174,25 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobsCreateJobs(serviceM8, {
-    createdByStaffUuid: "123e4567-4e11-406d-b738-231ef06f361b",
+    createdByStaffUuid: "123e4567-00fc-40e1-a310-231fee48407b",
     date: "YYYY-MM-DD",
-    companyUuid: "123e4567-8d5c-4b83-a8c2-231efb9ea2cb",
+    companyUuid: "123e4567-a04f-47fb-858c-231fecff827b",
     status: "Unsuccessful",
     paymentDate: "2025-08-01 12:00:00",
-    paymentActionedByUuid: "123e4567-9872-4e75-9bf4-231ef69e2dfb",
-    categoryUuid: "123e4567-a1f5-42e6-9598-231efbfae7db",
+    paymentActionedByUuid: "123e4567-9dbb-40a0-9671-231fec92060b",
+    categoryUuid: "123e4567-c0d2-442a-a313-231fe300c0bb",
     invoiceSentStamp: "2025-08-01 12:00:00",
-    queueUuid: "123e4567-18a8-4b12-8705-231efce0fd9b",
+    queueUuid: "123e4567-bb86-4ad6-a4ae-231feca6838b",
     queueExpiryDate: "2025-08-01 12:00:00",
-    queueAssignedStaffUuid: "123e4567-47cf-4846-9286-231ef192906b",
+    queueAssignedStaffUuid: "123e4567-31f8-4290-ad74-231fe3345d2b",
     quoteDate: "2025-08-01 12:00:00",
     quoteSentStamp: "2025-08-01 12:00:00",
     workOrderDate: "2025-08-01 12:00:00",
-    uuid: "123e4567-1a18-4afa-9b95-231efed0eb1b",
+    uuid: "123e4567-183b-4388-a46b-231fe321d00b",
     paymentProcessedStamp: "2025-08-01 12:00:00",
     paymentReceivedStamp: "2025-08-01 12:00:00",
     completionDate: "2025-08-01 12:00:00",
-    completionActionedByUuid: "123e4567-9577-413f-8505-231ef9c5a57b",
+    completionActionedByUuid: "123e4567-4b94-48c4-96e3-231fe01c491b",
     unsuccessfulDate: "2025-08-01 12:00:00",
     jobIsScheduledUntilStamp: "2025-08-01 12:00:00",
   });
@@ -218,10 +222,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getJobs
 
@@ -297,14 +305,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetJobsResponse](../../models/operations/getjobsresponse.md)\>**
+**Promise\<[components.Job](../../models/components/job.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateJobs
 
@@ -331,25 +344,25 @@ async function run() {
   const result = await serviceM8.jobs.updateJobs({
     uuid: "f751bf5c-f1f2-4a20-8df3-7628082340b1",
     job: {
-      createdByStaffUuid: "123e4567-4e11-406d-b738-231ef06f361b",
+      createdByStaffUuid: "123e4567-00fc-40e1-a310-231fee48407b",
       date: "YYYY-MM-DD",
-      companyUuid: "123e4567-8d5c-4b83-a8c2-231efb9ea2cb",
+      companyUuid: "123e4567-a04f-47fb-858c-231fecff827b",
       status: "Work Order",
       paymentDate: "2025-08-01 12:00:00",
-      paymentActionedByUuid: "123e4567-9872-4e75-9bf4-231ef69e2dfb",
-      categoryUuid: "123e4567-a1f5-42e6-9598-231efbfae7db",
+      paymentActionedByUuid: "123e4567-9dbb-40a0-9671-231fec92060b",
+      categoryUuid: "123e4567-c0d2-442a-a313-231fe300c0bb",
       invoiceSentStamp: "2025-08-01 12:00:00",
-      queueUuid: "123e4567-18a8-4b12-8705-231efce0fd9b",
+      queueUuid: "123e4567-bb86-4ad6-a4ae-231feca6838b",
       queueExpiryDate: "2025-08-01 12:00:00",
-      queueAssignedStaffUuid: "123e4567-47cf-4846-9286-231ef192906b",
+      queueAssignedStaffUuid: "123e4567-31f8-4290-ad74-231fe3345d2b",
       quoteDate: "2025-08-01 12:00:00",
       quoteSentStamp: "2025-08-01 12:00:00",
       workOrderDate: "2025-08-01 12:00:00",
-      uuid: "123e4567-1a18-4afa-9b95-231efed0eb1b",
+      uuid: "123e4567-183b-4388-a46b-231fe321d00b",
       paymentProcessedStamp: "2025-08-01 12:00:00",
       paymentReceivedStamp: "2025-08-01 12:00:00",
       completionDate: "2025-08-01 12:00:00",
-      completionActionedByUuid: "123e4567-9577-413f-8505-231ef9c5a57b",
+      completionActionedByUuid: "123e4567-4b94-48c4-96e3-231fe01c491b",
       unsuccessfulDate: "2025-08-01 12:00:00",
       jobIsScheduledUntilStamp: "2025-08-01 12:00:00",
     },
@@ -381,25 +394,25 @@ async function run() {
   const res = await jobsUpdateJobs(serviceM8, {
     uuid: "f751bf5c-f1f2-4a20-8df3-7628082340b1",
     job: {
-      createdByStaffUuid: "123e4567-4e11-406d-b738-231ef06f361b",
+      createdByStaffUuid: "123e4567-00fc-40e1-a310-231fee48407b",
       date: "YYYY-MM-DD",
-      companyUuid: "123e4567-8d5c-4b83-a8c2-231efb9ea2cb",
+      companyUuid: "123e4567-a04f-47fb-858c-231fecff827b",
       status: "Work Order",
       paymentDate: "2025-08-01 12:00:00",
-      paymentActionedByUuid: "123e4567-9872-4e75-9bf4-231ef69e2dfb",
-      categoryUuid: "123e4567-a1f5-42e6-9598-231efbfae7db",
+      paymentActionedByUuid: "123e4567-9dbb-40a0-9671-231fec92060b",
+      categoryUuid: "123e4567-c0d2-442a-a313-231fe300c0bb",
       invoiceSentStamp: "2025-08-01 12:00:00",
-      queueUuid: "123e4567-18a8-4b12-8705-231efce0fd9b",
+      queueUuid: "123e4567-bb86-4ad6-a4ae-231feca6838b",
       queueExpiryDate: "2025-08-01 12:00:00",
-      queueAssignedStaffUuid: "123e4567-47cf-4846-9286-231ef192906b",
+      queueAssignedStaffUuid: "123e4567-31f8-4290-ad74-231fe3345d2b",
       quoteDate: "2025-08-01 12:00:00",
       quoteSentStamp: "2025-08-01 12:00:00",
       workOrderDate: "2025-08-01 12:00:00",
-      uuid: "123e4567-1a18-4afa-9b95-231efed0eb1b",
+      uuid: "123e4567-183b-4388-a46b-231fe321d00b",
       paymentProcessedStamp: "2025-08-01 12:00:00",
       paymentReceivedStamp: "2025-08-01 12:00:00",
       completionDate: "2025-08-01 12:00:00",
-      completionActionedByUuid: "123e4567-9577-413f-8505-231ef9c5a57b",
+      completionActionedByUuid: "123e4567-4b94-48c4-96e3-231fe01c491b",
       unsuccessfulDate: "2025-08-01 12:00:00",
       jobIsScheduledUntilStamp: "2025-08-01 12:00:00",
     },
@@ -426,14 +439,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateJobsResponse](../../models/operations/updatejobsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteJobs
 
@@ -513,11 +531,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteJobsResponse](../../models/operations/deletejobsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

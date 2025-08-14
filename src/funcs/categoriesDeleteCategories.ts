@@ -10,6 +10,7 @@ import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
+import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -41,8 +42,12 @@ export function categoriesDeleteCategories(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.DeleteCategoriesResponse,
+    components.Result,
     | errors.ErrorT
+    | errors.AuthenticationError
+    | errors.ForbiddenError
+    | errors.NotFoundError
+    | errors.RateLimitError
     | ServiceM8Error
     | ResponseValidationError
     | ConnectionError
@@ -67,8 +72,12 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.DeleteCategoriesResponse,
+      components.Result,
       | errors.ErrorT
+      | errors.AuthenticationError
+      | errors.ForbiddenError
+      | errors.NotFoundError
+      | errors.RateLimitError
       | ServiceM8Error
       | ResponseValidationError
       | ConnectionError
@@ -130,7 +139,7 @@ async function $do(
         retryConnectionErrors: true,
       }
       || { strategy: "none" },
-    retryCodes: options?.retryCodes || ["5XX"],
+    retryCodes: options?.retryCodes || ["5XX", "429"],
   };
 
   const requestRes = client._createRequest(context, {
@@ -150,7 +159,7 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["400", "4XX", "5XX"],
+    errorCodes: ["400", "401", "403", "404", "429", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -164,8 +173,12 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.DeleteCategoriesResponse,
+    components.Result,
     | errors.ErrorT
+    | errors.AuthenticationError
+    | errors.ForbiddenError
+    | errors.NotFoundError
+    | errors.RateLimitError
     | ServiceM8Error
     | ResponseValidationError
     | ConnectionError
@@ -175,11 +188,15 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.DeleteCategoriesResponse$inboundSchema),
+    M.json(200, components.Result$inboundSchema),
     M.jsonErr(400, errors.ErrorT$inboundSchema),
+    M.jsonErr(401, errors.AuthenticationError$inboundSchema),
+    M.jsonErr(403, errors.ForbiddenError$inboundSchema),
+    M.jsonErr(404, errors.NotFoundError$inboundSchema),
+    M.jsonErr(429, errors.RateLimitError$inboundSchema),
+    M.jsonErr(500, errors.ErrorT$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
-    M.json("default", operations.DeleteCategoriesResponse$inboundSchema),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];

@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListMaterialsResponse](../../models/operations/listmaterialsresponse.md)\>**
+**Promise\<[components.Material[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createMaterials
 
@@ -124,8 +128,8 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.materials.createMaterials({
     name: "<value>",
-    uuid: "123e4567-0e70-4e1a-bc58-231ef1cddb8b",
-    taxRateUuid: "123e4567-a8a9-4dc5-b3bc-231ef086f20b",
+    uuid: "123e4567-e170-4411-ad10-231fe6f0757b",
+    taxRateUuid: "123e4567-b6a0-47c1-b82b-231fefbeefbb",
   });
 
   console.log(result);
@@ -153,8 +157,8 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await materialsCreateMaterials(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-0e70-4e1a-bc58-231ef1cddb8b",
-    taxRateUuid: "123e4567-a8a9-4dc5-b3bc-231ef086f20b",
+    uuid: "123e4567-e170-4411-ad10-231fe6f0757b",
+    taxRateUuid: "123e4567-b6a0-47c1-b82b-231fefbeefbb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -182,10 +186,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getMaterials
 
@@ -261,14 +269,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetMaterialsResponse](../../models/operations/getmaterialsresponse.md)\>**
+**Promise\<[components.Material](../../models/components/material.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateMaterials
 
@@ -296,8 +309,8 @@ async function run() {
     uuid: "8a4aa688-8b41-4ab3-b862-24327504b606",
     material: {
       name: "<value>",
-      uuid: "123e4567-0e70-4e1a-bc58-231ef1cddb8b",
-      taxRateUuid: "123e4567-a8a9-4dc5-b3bc-231ef086f20b",
+      uuid: "123e4567-e170-4411-ad10-231fe6f0757b",
+      taxRateUuid: "123e4567-b6a0-47c1-b82b-231fefbeefbb",
     },
   });
 
@@ -328,8 +341,8 @@ async function run() {
     uuid: "8a4aa688-8b41-4ab3-b862-24327504b606",
     material: {
       name: "<value>",
-      uuid: "123e4567-0e70-4e1a-bc58-231ef1cddb8b",
-      taxRateUuid: "123e4567-a8a9-4dc5-b3bc-231ef086f20b",
+      uuid: "123e4567-e170-4411-ad10-231fe6f0757b",
+      taxRateUuid: "123e4567-b6a0-47c1-b82b-231fefbeefbb",
     },
   });
   if (res.ok) {
@@ -354,14 +367,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateMaterialsResponse](../../models/operations/updatematerialsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteMaterials
 
@@ -441,11 +459,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteMaterialsResponse](../../models/operations/deletematerialsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

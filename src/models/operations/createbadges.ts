@@ -9,65 +9,10 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CreateBadgesResponseResult = components.Result | components.ErrorT;
-
 export type CreateBadgesResponse = {
   headers: { [k: string]: Array<string> };
-  result: components.Result | components.ErrorT;
+  result: components.Result;
 };
-
-/** @internal */
-export const CreateBadgesResponseResult$inboundSchema: z.ZodType<
-  CreateBadgesResponseResult,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type CreateBadgesResponseResult$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const CreateBadgesResponseResult$outboundSchema: z.ZodType<
-  CreateBadgesResponseResult$Outbound,
-  z.ZodTypeDef,
-  CreateBadgesResponseResult
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateBadgesResponseResult$ {
-  /** @deprecated use `CreateBadgesResponseResult$inboundSchema` instead. */
-  export const inboundSchema = CreateBadgesResponseResult$inboundSchema;
-  /** @deprecated use `CreateBadgesResponseResult$outboundSchema` instead. */
-  export const outboundSchema = CreateBadgesResponseResult$outboundSchema;
-  /** @deprecated use `CreateBadgesResponseResult$Outbound` instead. */
-  export type Outbound = CreateBadgesResponseResult$Outbound;
-}
-
-export function createBadgesResponseResultToJSON(
-  createBadgesResponseResult: CreateBadgesResponseResult,
-): string {
-  return JSON.stringify(
-    CreateBadgesResponseResult$outboundSchema.parse(createBadgesResponseResult),
-  );
-}
-
-export function createBadgesResponseResultFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateBadgesResponseResult, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateBadgesResponseResult$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateBadgesResponseResult' from JSON`,
-  );
-}
 
 /** @internal */
 export const CreateBadgesResponse$inboundSchema: z.ZodType<
@@ -76,10 +21,7 @@ export const CreateBadgesResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   Headers: z.record(z.array(z.string())),
-  Result: z.union([
-    components.Result$inboundSchema,
-    components.ErrorT$inboundSchema,
-  ]),
+  Result: components.Result$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "Headers": "headers",
@@ -90,7 +32,7 @@ export const CreateBadgesResponse$inboundSchema: z.ZodType<
 /** @internal */
 export type CreateBadgesResponse$Outbound = {
   Headers: { [k: string]: Array<string> };
-  Result: components.Result$Outbound | components.ErrorT$Outbound;
+  Result: components.Result$Outbound;
 };
 
 /** @internal */
@@ -100,10 +42,7 @@ export const CreateBadgesResponse$outboundSchema: z.ZodType<
   CreateBadgesResponse
 > = z.object({
   headers: z.record(z.array(z.string())),
-  result: z.union([
-    components.Result$outboundSchema,
-    components.ErrorT$outboundSchema,
-  ]),
+  result: components.Result$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     headers: "Headers",

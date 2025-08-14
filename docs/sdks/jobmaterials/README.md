@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListJobMaterialsResponse](../../models/operations/listjobmaterialsresponse.md)\>**
+**Promise\<[components.JobMaterial[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createJobMaterials
 
@@ -123,12 +127,12 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterials.createJobMaterials({
-    uuid: "123e4567-2a5c-4493-a6a1-231eff7f786b",
-    jobUuid: "123e4567-017e-4378-a41a-231ef46ff44b",
-    materialUuid: "123e4567-db5b-41fd-b3a1-231ef6c09bfb",
+    uuid: "123e4567-0f07-433e-96fa-231fefd78b6b",
+    jobUuid: "123e4567-7fbb-4606-ac1f-231fe1124e3b",
+    materialUuid: "123e4567-1e29-42c9-838a-231feaafb31b",
     quantity: "<value>",
-    taxRateUuid: "123e4567-46fe-4ec4-a83e-231ef7019a9b",
-    jobMaterialBundleUuid: "123e4567-b99d-4c0b-90b0-231efe880ebb",
+    taxRateUuid: "123e4567-15fc-4870-b293-231fedc0307b",
+    jobMaterialBundleUuid: "123e4567-bfc6-42ce-8d68-231fe87ae84b",
   });
 
   console.log(result);
@@ -155,12 +159,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialsCreateJobMaterials(serviceM8, {
-    uuid: "123e4567-2a5c-4493-a6a1-231eff7f786b",
-    jobUuid: "123e4567-017e-4378-a41a-231ef46ff44b",
-    materialUuid: "123e4567-db5b-41fd-b3a1-231ef6c09bfb",
+    uuid: "123e4567-0f07-433e-96fa-231fefd78b6b",
+    jobUuid: "123e4567-7fbb-4606-ac1f-231fe1124e3b",
+    materialUuid: "123e4567-1e29-42c9-838a-231feaafb31b",
     quantity: "<value>",
-    taxRateUuid: "123e4567-46fe-4ec4-a83e-231ef7019a9b",
-    jobMaterialBundleUuid: "123e4567-b99d-4c0b-90b0-231efe880ebb",
+    taxRateUuid: "123e4567-15fc-4870-b293-231fedc0307b",
+    jobMaterialBundleUuid: "123e4567-bfc6-42ce-8d68-231fe87ae84b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -188,10 +192,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getJobMaterials
 
@@ -267,14 +275,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetJobMaterialsResponse](../../models/operations/getjobmaterialsresponse.md)\>**
+**Promise\<[components.JobMaterial](../../models/components/jobmaterial.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateJobMaterials
 
@@ -301,12 +314,12 @@ async function run() {
   const result = await serviceM8.jobMaterials.updateJobMaterials({
     uuid: "0afa4bc5-4269-47e6-81bd-da437fd2e097",
     jobMaterial: {
-      uuid: "123e4567-2a5c-4493-a6a1-231eff7f786b",
-      jobUuid: "123e4567-017e-4378-a41a-231ef46ff44b",
-      materialUuid: "123e4567-db5b-41fd-b3a1-231ef6c09bfb",
+      uuid: "123e4567-0f07-433e-96fa-231fefd78b6b",
+      jobUuid: "123e4567-7fbb-4606-ac1f-231fe1124e3b",
+      materialUuid: "123e4567-1e29-42c9-838a-231feaafb31b",
       quantity: "<value>",
-      taxRateUuid: "123e4567-46fe-4ec4-a83e-231ef7019a9b",
-      jobMaterialBundleUuid: "123e4567-b99d-4c0b-90b0-231efe880ebb",
+      taxRateUuid: "123e4567-15fc-4870-b293-231fedc0307b",
+      jobMaterialBundleUuid: "123e4567-bfc6-42ce-8d68-231fe87ae84b",
     },
   });
 
@@ -336,12 +349,12 @@ async function run() {
   const res = await jobMaterialsUpdateJobMaterials(serviceM8, {
     uuid: "0afa4bc5-4269-47e6-81bd-da437fd2e097",
     jobMaterial: {
-      uuid: "123e4567-2a5c-4493-a6a1-231eff7f786b",
-      jobUuid: "123e4567-017e-4378-a41a-231ef46ff44b",
-      materialUuid: "123e4567-db5b-41fd-b3a1-231ef6c09bfb",
+      uuid: "123e4567-0f07-433e-96fa-231fefd78b6b",
+      jobUuid: "123e4567-7fbb-4606-ac1f-231fe1124e3b",
+      materialUuid: "123e4567-1e29-42c9-838a-231feaafb31b",
       quantity: "<value>",
-      taxRateUuid: "123e4567-46fe-4ec4-a83e-231ef7019a9b",
-      jobMaterialBundleUuid: "123e4567-b99d-4c0b-90b0-231efe880ebb",
+      taxRateUuid: "123e4567-15fc-4870-b293-231fedc0307b",
+      jobMaterialBundleUuid: "123e4567-bfc6-42ce-8d68-231fe87ae84b",
     },
   });
   if (res.ok) {
@@ -366,14 +379,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateJobMaterialsResponse](../../models/operations/updatejobmaterialsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteJobMaterials
 
@@ -453,11 +471,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteJobMaterialsResponse](../../models/operations/deletejobmaterialsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

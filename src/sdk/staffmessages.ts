@@ -5,6 +5,7 @@
 import { staffMessagesGetStaffMessages } from "../funcs/staffMessagesGetStaffMessages.js";
 import { staffMessagesListStaffMessages } from "../funcs/staffMessagesListStaffMessages.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
+import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
@@ -22,7 +23,7 @@ export class StaffMessages extends ClientSDK {
    */
   async listStaffMessages(
     options?: RequestOptions,
-  ): Promise<operations.ListStaffMessagesResponse> {
+  ): Promise<Array<components.StaffMessage>> {
     return unwrapAsync(staffMessagesListStaffMessages(
       this,
       options,
@@ -40,7 +41,7 @@ export class StaffMessages extends ClientSDK {
   async getStaffMessages(
     request: operations.GetStaffMessagesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetStaffMessagesResponse> {
+  ): Promise<components.StaffMessage> {
     return unwrapAsync(staffMessagesGetStaffMessages(
       this,
       request,

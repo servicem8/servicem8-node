@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetTasksRequest = {
@@ -14,8 +13,6 @@ export type GetTasksRequest = {
    */
   uuid: string;
 };
-
-export type GetTasksResponse = components.Task | components.ErrorT;
 
 /** @internal */
 export const GetTasksRequest$inboundSchema: z.ZodType<
@@ -66,55 +63,5 @@ export function getTasksRequestFromJSON(
     jsonString,
     (x) => GetTasksRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetTasksRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetTasksResponse$inboundSchema: z.ZodType<
-  GetTasksResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Task$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type GetTasksResponse$Outbound =
-  | components.Task$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetTasksResponse$outboundSchema: z.ZodType<
-  GetTasksResponse$Outbound,
-  z.ZodTypeDef,
-  GetTasksResponse
-> = z.union([components.Task$outboundSchema, components.ErrorT$outboundSchema]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetTasksResponse$ {
-  /** @deprecated use `GetTasksResponse$inboundSchema` instead. */
-  export const inboundSchema = GetTasksResponse$inboundSchema;
-  /** @deprecated use `GetTasksResponse$outboundSchema` instead. */
-  export const outboundSchema = GetTasksResponse$outboundSchema;
-  /** @deprecated use `GetTasksResponse$Outbound` instead. */
-  export type Outbound = GetTasksResponse$Outbound;
-}
-
-export function getTasksResponseToJSON(
-  getTasksResponse: GetTasksResponse,
-): string {
-  return JSON.stringify(
-    GetTasksResponse$outboundSchema.parse(getTasksResponse),
-  );
-}
-
-export function getTasksResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetTasksResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetTasksResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetTasksResponse' from JSON`,
   );
 }

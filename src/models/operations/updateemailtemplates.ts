@@ -20,10 +20,6 @@ export type UpdateEmailTemplatesRequest = {
   emailTemplate: components.EmailTemplateInput;
 };
 
-export type UpdateEmailTemplatesResponse =
-  | components.Result
-  | components.ErrorT;
-
 /** @internal */
 export const UpdateEmailTemplatesRequest$inboundSchema: z.ZodType<
   UpdateEmailTemplatesRequest,
@@ -88,60 +84,5 @@ export function updateEmailTemplatesRequestFromJSON(
     jsonString,
     (x) => UpdateEmailTemplatesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateEmailTemplatesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateEmailTemplatesResponse$inboundSchema: z.ZodType<
-  UpdateEmailTemplatesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateEmailTemplatesResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateEmailTemplatesResponse$outboundSchema: z.ZodType<
-  UpdateEmailTemplatesResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateEmailTemplatesResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateEmailTemplatesResponse$ {
-  /** @deprecated use `UpdateEmailTemplatesResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateEmailTemplatesResponse$inboundSchema;
-  /** @deprecated use `UpdateEmailTemplatesResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateEmailTemplatesResponse$outboundSchema;
-  /** @deprecated use `UpdateEmailTemplatesResponse$Outbound` instead. */
-  export type Outbound = UpdateEmailTemplatesResponse$Outbound;
-}
-
-export function updateEmailTemplatesResponseToJSON(
-  updateEmailTemplatesResponse: UpdateEmailTemplatesResponse,
-): string {
-  return JSON.stringify(
-    UpdateEmailTemplatesResponse$outboundSchema.parse(
-      updateEmailTemplatesResponse,
-    ),
-  );
-}
-
-export function updateEmailTemplatesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateEmailTemplatesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateEmailTemplatesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateEmailTemplatesResponse' from JSON`,
   );
 }

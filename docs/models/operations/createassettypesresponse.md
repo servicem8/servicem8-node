@@ -6,7 +6,9 @@
 import { CreateAssetTypesResponse } from "servicem8/models/operations";
 
 let value: CreateAssetTypesResponse = {
-  headers: {},
+  headers: {
+    "key": [],
+  },
   result: {
     errorCode: 0,
     message: "OK",
@@ -16,7 +18,7 @@ let value: CreateAssetTypesResponse = {
 
 ## Fields
 
-| Field                                       | Type                                        | Required                                    | Description                                 |
-| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
-| `headers`                                   | Record<string, *string*[]>                  | :heavy_check_mark:                          | N/A                                         |
-| `result`                                    | *operations.CreateAssetTypesResponseResult* | :heavy_check_mark:                          | N/A                                         |
+| Field                                                  | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `headers`                                              | Record<string, *string*[]>                             | :heavy_check_mark:                                     | N/A                                                    |
+| `result`                                               | [components.Result](../../models/components/result.md) | :heavy_check_mark:                                     | N/A                                                    |

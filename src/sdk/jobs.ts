@@ -26,7 +26,7 @@ export class Jobs extends ClientSDK {
    */
   async listJobs(
     options?: RequestOptions,
-  ): Promise<operations.ListJobsResponse> {
+  ): Promise<Array<components.Job>> {
     return unwrapAsync(jobsListJobs(
       this,
       options,
@@ -66,7 +66,7 @@ export class Jobs extends ClientSDK {
   async getJobs(
     request: operations.GetJobsRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetJobsResponse> {
+  ): Promise<components.Job> {
     return unwrapAsync(jobsGetJobs(
       this,
       request,
@@ -85,7 +85,7 @@ export class Jobs extends ClientSDK {
   async updateJobs(
     request: operations.UpdateJobsRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateJobsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(jobsUpdateJobs(
       this,
       request,
@@ -106,7 +106,7 @@ export class Jobs extends ClientSDK {
   async deleteJobs(
     request: operations.DeleteJobsRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteJobsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(jobsDeleteJobs(
       this,
       request,

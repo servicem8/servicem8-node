@@ -20,8 +20,6 @@ export type UpdateMaterialsRequest = {
   material: components.MaterialInput;
 };
 
-export type UpdateMaterialsResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateMaterialsRequest$inboundSchema: z.ZodType<
   UpdateMaterialsRequest,
@@ -84,58 +82,5 @@ export function updateMaterialsRequestFromJSON(
     jsonString,
     (x) => UpdateMaterialsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateMaterialsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateMaterialsResponse$inboundSchema: z.ZodType<
-  UpdateMaterialsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateMaterialsResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateMaterialsResponse$outboundSchema: z.ZodType<
-  UpdateMaterialsResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateMaterialsResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateMaterialsResponse$ {
-  /** @deprecated use `UpdateMaterialsResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateMaterialsResponse$inboundSchema;
-  /** @deprecated use `UpdateMaterialsResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateMaterialsResponse$outboundSchema;
-  /** @deprecated use `UpdateMaterialsResponse$Outbound` instead. */
-  export type Outbound = UpdateMaterialsResponse$Outbound;
-}
-
-export function updateMaterialsResponseToJSON(
-  updateMaterialsResponse: UpdateMaterialsResponse,
-): string {
-  return JSON.stringify(
-    UpdateMaterialsResponse$outboundSchema.parse(updateMaterialsResponse),
-  );
-}
-
-export function updateMaterialsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateMaterialsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateMaterialsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateMaterialsResponse' from JSON`,
   );
 }

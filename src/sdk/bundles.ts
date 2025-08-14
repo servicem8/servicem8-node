@@ -26,7 +26,7 @@ export class Bundles extends ClientSDK {
    */
   async listBundles(
     options?: RequestOptions,
-  ): Promise<operations.ListBundlesResponse> {
+  ): Promise<Array<components.MaterialBundle>> {
     return unwrapAsync(bundlesListBundles(
       this,
       options,
@@ -66,7 +66,7 @@ export class Bundles extends ClientSDK {
   async getBundles(
     request: operations.GetBundlesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetBundlesResponse> {
+  ): Promise<components.MaterialBundle> {
     return unwrapAsync(bundlesGetBundles(
       this,
       request,
@@ -85,7 +85,7 @@ export class Bundles extends ClientSDK {
   async updateBundles(
     request: operations.UpdateBundlesRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateBundlesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(bundlesUpdateBundles(
       this,
       request,
@@ -106,7 +106,7 @@ export class Bundles extends ClientSDK {
   async deleteBundles(
     request: operations.DeleteBundlesRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteBundlesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(bundlesDeleteBundles(
       this,
       request,

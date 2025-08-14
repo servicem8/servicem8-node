@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetJobAllocationsRequest = {
@@ -14,10 +13,6 @@ export type GetJobAllocationsRequest = {
    */
   uuid: string;
 };
-
-export type GetJobAllocationsResponse =
-  | components.JobAllocation
-  | components.ErrorT;
 
 /** @internal */
 export const GetJobAllocationsRequest$inboundSchema: z.ZodType<
@@ -70,61 +65,5 @@ export function getJobAllocationsRequestFromJSON(
     jsonString,
     (x) => GetJobAllocationsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetJobAllocationsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetJobAllocationsResponse$inboundSchema: z.ZodType<
-  GetJobAllocationsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.JobAllocation$inboundSchema,
-  components.ErrorT$inboundSchema,
-]);
-
-/** @internal */
-export type GetJobAllocationsResponse$Outbound =
-  | components.JobAllocation$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetJobAllocationsResponse$outboundSchema: z.ZodType<
-  GetJobAllocationsResponse$Outbound,
-  z.ZodTypeDef,
-  GetJobAllocationsResponse
-> = z.union([
-  components.JobAllocation$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetJobAllocationsResponse$ {
-  /** @deprecated use `GetJobAllocationsResponse$inboundSchema` instead. */
-  export const inboundSchema = GetJobAllocationsResponse$inboundSchema;
-  /** @deprecated use `GetJobAllocationsResponse$outboundSchema` instead. */
-  export const outboundSchema = GetJobAllocationsResponse$outboundSchema;
-  /** @deprecated use `GetJobAllocationsResponse$Outbound` instead. */
-  export type Outbound = GetJobAllocationsResponse$Outbound;
-}
-
-export function getJobAllocationsResponseToJSON(
-  getJobAllocationsResponse: GetJobAllocationsResponse,
-): string {
-  return JSON.stringify(
-    GetJobAllocationsResponse$outboundSchema.parse(getJobAllocationsResponse),
-  );
-}
-
-export function getJobAllocationsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetJobAllocationsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetJobAllocationsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetJobAllocationsResponse' from JSON`,
   );
 }

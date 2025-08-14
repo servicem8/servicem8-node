@@ -16,7 +16,7 @@ let value: CreateJobContactsResponse = {
 
 ## Fields
 
-| Field                                        | Type                                         | Required                                     | Description                                  |
-| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
-| `headers`                                    | Record<string, *string*[]>                   | :heavy_check_mark:                           | N/A                                          |
-| `result`                                     | *operations.CreateJobContactsResponseResult* | :heavy_check_mark:                           | N/A                                          |
+| Field                                                  | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `headers`                                              | Record<string, *string*[]>                             | :heavy_check_mark:                                     | N/A                                                    |
+| `result`                                               | [components.Result](../../models/components/result.md) | :heavy_check_mark:                                     | N/A                                                    |

@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type DeleteBadgesRequest = {
@@ -14,8 +13,6 @@ export type DeleteBadgesRequest = {
    */
   uuid: string;
 };
-
-export type DeleteBadgesResponse = components.Result | components.ErrorT;
 
 /** @internal */
 export const DeleteBadgesRequest$inboundSchema: z.ZodType<
@@ -68,58 +65,5 @@ export function deleteBadgesRequestFromJSON(
     jsonString,
     (x) => DeleteBadgesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'DeleteBadgesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const DeleteBadgesResponse$inboundSchema: z.ZodType<
-  DeleteBadgesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type DeleteBadgesResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const DeleteBadgesResponse$outboundSchema: z.ZodType<
-  DeleteBadgesResponse$Outbound,
-  z.ZodTypeDef,
-  DeleteBadgesResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteBadgesResponse$ {
-  /** @deprecated use `DeleteBadgesResponse$inboundSchema` instead. */
-  export const inboundSchema = DeleteBadgesResponse$inboundSchema;
-  /** @deprecated use `DeleteBadgesResponse$outboundSchema` instead. */
-  export const outboundSchema = DeleteBadgesResponse$outboundSchema;
-  /** @deprecated use `DeleteBadgesResponse$Outbound` instead. */
-  export type Outbound = DeleteBadgesResponse$Outbound;
-}
-
-export function deleteBadgesResponseToJSON(
-  deleteBadgesResponse: DeleteBadgesResponse,
-): string {
-  return JSON.stringify(
-    DeleteBadgesResponse$outboundSchema.parse(deleteBadgesResponse),
-  );
-}
-
-export function deleteBadgesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteBadgesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteBadgesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteBadgesResponse' from JSON`,
   );
 }

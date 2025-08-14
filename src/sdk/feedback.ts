@@ -26,7 +26,7 @@ export class Feedback extends ClientSDK {
    */
   async listFeedback(
     options?: RequestOptions,
-  ): Promise<operations.ListFeedbackResponse> {
+  ): Promise<Array<components.Feedback>> {
     return unwrapAsync(feedbackListFeedback(
       this,
       options,
@@ -66,7 +66,7 @@ export class Feedback extends ClientSDK {
   async getFeedback(
     request: operations.GetFeedbackRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetFeedbackResponse> {
+  ): Promise<components.Feedback> {
     return unwrapAsync(feedbackGetFeedback(
       this,
       request,
@@ -85,7 +85,7 @@ export class Feedback extends ClientSDK {
   async updateFeedback(
     request: operations.UpdateFeedbackRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateFeedbackResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(feedbackUpdateFeedback(
       this,
       request,
@@ -106,7 +106,7 @@ export class Feedback extends ClientSDK {
   async deleteFeedback(
     request: operations.DeleteFeedbackRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteFeedbackResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(feedbackDeleteFeedback(
       this,
       request,

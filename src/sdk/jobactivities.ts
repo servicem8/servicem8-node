@@ -26,7 +26,7 @@ export class JobActivities extends ClientSDK {
    */
   async listJobActivities(
     options?: RequestOptions,
-  ): Promise<operations.ListJobActivitiesResponse> {
+  ): Promise<Array<components.JobActivity>> {
     return unwrapAsync(jobActivitiesListJobActivities(
       this,
       options,
@@ -66,7 +66,7 @@ export class JobActivities extends ClientSDK {
   async getJobActivities(
     request: operations.GetJobActivitiesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetJobActivitiesResponse> {
+  ): Promise<components.JobActivity> {
     return unwrapAsync(jobActivitiesGetJobActivities(
       this,
       request,
@@ -85,7 +85,7 @@ export class JobActivities extends ClientSDK {
   async updateJobActivities(
     request: operations.UpdateJobActivitiesRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateJobActivitiesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(jobActivitiesUpdateJobActivities(
       this,
       request,
@@ -106,7 +106,7 @@ export class JobActivities extends ClientSDK {
   async deleteJobActivities(
     request: operations.DeleteJobActivitiesRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteJobActivitiesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(jobActivitiesDeleteJobActivities(
       this,
       request,

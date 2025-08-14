@@ -26,7 +26,7 @@ export class JobMaterialBundles extends ClientSDK {
    */
   async listJobMaterialBundles(
     options?: RequestOptions,
-  ): Promise<operations.ListJobMaterialBundlesResponse> {
+  ): Promise<Array<components.JobMaterialBundle>> {
     return unwrapAsync(jobMaterialBundlesListJobMaterialBundles(
       this,
       options,
@@ -66,7 +66,7 @@ export class JobMaterialBundles extends ClientSDK {
   async getJobMaterialBundles(
     request: operations.GetJobMaterialBundlesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetJobMaterialBundlesResponse> {
+  ): Promise<components.JobMaterialBundle> {
     return unwrapAsync(jobMaterialBundlesGetJobMaterialBundles(
       this,
       request,
@@ -85,7 +85,7 @@ export class JobMaterialBundles extends ClientSDK {
   async updateJobMaterialBundles(
     request: operations.UpdateJobMaterialBundlesRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateJobMaterialBundlesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(jobMaterialBundlesUpdateJobMaterialBundles(
       this,
       request,
@@ -106,7 +106,7 @@ export class JobMaterialBundles extends ClientSDK {
   async deleteJobMaterialBundles(
     request: operations.DeleteJobMaterialBundlesRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteJobMaterialBundlesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(jobMaterialBundlesDeleteJobMaterialBundles(
       this,
       request,

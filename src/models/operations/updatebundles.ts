@@ -20,8 +20,6 @@ export type UpdateBundlesRequest = {
   materialBundle: components.MaterialBundleInput;
 };
 
-export type UpdateBundlesResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateBundlesRequest$inboundSchema: z.ZodType<
   UpdateBundlesRequest,
@@ -84,58 +82,5 @@ export function updateBundlesRequestFromJSON(
     jsonString,
     (x) => UpdateBundlesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateBundlesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateBundlesResponse$inboundSchema: z.ZodType<
-  UpdateBundlesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateBundlesResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateBundlesResponse$outboundSchema: z.ZodType<
-  UpdateBundlesResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateBundlesResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateBundlesResponse$ {
-  /** @deprecated use `UpdateBundlesResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateBundlesResponse$inboundSchema;
-  /** @deprecated use `UpdateBundlesResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateBundlesResponse$outboundSchema;
-  /** @deprecated use `UpdateBundlesResponse$Outbound` instead. */
-  export type Outbound = UpdateBundlesResponse$Outbound;
-}
-
-export function updateBundlesResponseToJSON(
-  updateBundlesResponse: UpdateBundlesResponse,
-): string {
-  return JSON.stringify(
-    UpdateBundlesResponse$outboundSchema.parse(updateBundlesResponse),
-  );
-}
-
-export function updateBundlesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateBundlesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateBundlesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateBundlesResponse' from JSON`,
   );
 }

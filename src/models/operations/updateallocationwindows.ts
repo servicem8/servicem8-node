@@ -20,10 +20,6 @@ export type UpdateAllocationWindowsRequest = {
   allocationWindow: components.AllocationWindowInput;
 };
 
-export type UpdateAllocationWindowsResponse =
-  | components.Result
-  | components.ErrorT;
-
 /** @internal */
 export const UpdateAllocationWindowsRequest$inboundSchema: z.ZodType<
   UpdateAllocationWindowsRequest,
@@ -88,60 +84,5 @@ export function updateAllocationWindowsRequestFromJSON(
     jsonString,
     (x) => UpdateAllocationWindowsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateAllocationWindowsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateAllocationWindowsResponse$inboundSchema: z.ZodType<
-  UpdateAllocationWindowsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateAllocationWindowsResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateAllocationWindowsResponse$outboundSchema: z.ZodType<
-  UpdateAllocationWindowsResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateAllocationWindowsResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAllocationWindowsResponse$ {
-  /** @deprecated use `UpdateAllocationWindowsResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateAllocationWindowsResponse$inboundSchema;
-  /** @deprecated use `UpdateAllocationWindowsResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateAllocationWindowsResponse$outboundSchema;
-  /** @deprecated use `UpdateAllocationWindowsResponse$Outbound` instead. */
-  export type Outbound = UpdateAllocationWindowsResponse$Outbound;
-}
-
-export function updateAllocationWindowsResponseToJSON(
-  updateAllocationWindowsResponse: UpdateAllocationWindowsResponse,
-): string {
-  return JSON.stringify(
-    UpdateAllocationWindowsResponse$outboundSchema.parse(
-      updateAllocationWindowsResponse,
-    ),
-  );
-}
-
-export function updateAllocationWindowsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAllocationWindowsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAllocationWindowsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAllocationWindowsResponse' from JSON`,
   );
 }

@@ -26,7 +26,7 @@ export class JobQueues extends ClientSDK {
    */
   async listJobQueues(
     options?: RequestOptions,
-  ): Promise<operations.ListJobQueuesResponse> {
+  ): Promise<Array<components.Queue>> {
     return unwrapAsync(jobQueuesListJobQueues(
       this,
       options,
@@ -66,7 +66,7 @@ export class JobQueues extends ClientSDK {
   async getJobQueues(
     request: operations.GetJobQueuesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetJobQueuesResponse> {
+  ): Promise<components.Queue> {
     return unwrapAsync(jobQueuesGetJobQueues(
       this,
       request,
@@ -85,7 +85,7 @@ export class JobQueues extends ClientSDK {
   async updateJobQueues(
     request: operations.UpdateJobQueuesRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateJobQueuesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(jobQueuesUpdateJobQueues(
       this,
       request,
@@ -106,7 +106,7 @@ export class JobQueues extends ClientSDK {
   async deleteJobQueues(
     request: operations.DeleteJobQueuesRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteJobQueuesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(jobQueuesDeleteJobQueues(
       this,
       request,

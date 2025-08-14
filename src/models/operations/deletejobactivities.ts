@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type DeleteJobActivitiesRequest = {
@@ -14,8 +13,6 @@ export type DeleteJobActivitiesRequest = {
    */
   uuid: string;
 };
-
-export type DeleteJobActivitiesResponse = components.Result | components.ErrorT;
 
 /** @internal */
 export const DeleteJobActivitiesRequest$inboundSchema: z.ZodType<
@@ -68,60 +65,5 @@ export function deleteJobActivitiesRequestFromJSON(
     jsonString,
     (x) => DeleteJobActivitiesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'DeleteJobActivitiesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const DeleteJobActivitiesResponse$inboundSchema: z.ZodType<
-  DeleteJobActivitiesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type DeleteJobActivitiesResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const DeleteJobActivitiesResponse$outboundSchema: z.ZodType<
-  DeleteJobActivitiesResponse$Outbound,
-  z.ZodTypeDef,
-  DeleteJobActivitiesResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteJobActivitiesResponse$ {
-  /** @deprecated use `DeleteJobActivitiesResponse$inboundSchema` instead. */
-  export const inboundSchema = DeleteJobActivitiesResponse$inboundSchema;
-  /** @deprecated use `DeleteJobActivitiesResponse$outboundSchema` instead. */
-  export const outboundSchema = DeleteJobActivitiesResponse$outboundSchema;
-  /** @deprecated use `DeleteJobActivitiesResponse$Outbound` instead. */
-  export type Outbound = DeleteJobActivitiesResponse$Outbound;
-}
-
-export function deleteJobActivitiesResponseToJSON(
-  deleteJobActivitiesResponse: DeleteJobActivitiesResponse,
-): string {
-  return JSON.stringify(
-    DeleteJobActivitiesResponse$outboundSchema.parse(
-      deleteJobActivitiesResponse,
-    ),
-  );
-}
-
-export function deleteJobActivitiesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteJobActivitiesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteJobActivitiesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteJobActivitiesResponse' from JSON`,
   );
 }

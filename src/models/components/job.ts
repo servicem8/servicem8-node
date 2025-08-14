@@ -24,26 +24,26 @@ export const Status = {
 export type Status = ClosedEnum<typeof Status>;
 
 /**
- * Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used..  Valid values are [0,1]
+ * Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used. (Read only).  Valid values are [0,1]
  */
 export const GeoIsValid = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used..  Valid values are [0,1]
+ * Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used. (Read only).  Valid values are [0,1]
  */
 export type GeoIsValid = ClosedEnum<typeof GeoIsValid>;
 
 /**
- * Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
+ * Indicates whether an invoice has been sent for this job. (Read only).  Valid values are [0,1]
  */
 export const InvoiceSent = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
+ * Indicates whether an invoice has been sent for this job. (Read only).  Valid values are [0,1]
  */
 export type InvoiceSent = ClosedEnum<typeof InvoiceSent>;
 
@@ -149,7 +149,7 @@ export type Job = {
    */
   paymentNote?: string | undefined;
   /**
-   * Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used..  Valid values are [0,1]
+   * Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used. (Read only).  Valid values are [0,1]
    */
   geoIsValid?: GeoIsValid | undefined;
   /**
@@ -157,11 +157,11 @@ export type Job = {
    */
   purchaseOrderNumber?: string | undefined;
   /**
-   * Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
+   * Indicates whether an invoice has been sent for this job. (Read only).  Valid values are [0,1]
    */
   invoiceSent?: InvoiceSent | undefined;
   /**
-   * The date and time when the invoice was sent.
+   * The date and time when the invoice was sent. (Read only)
    */
   invoiceSentStamp?: string | undefined;
   /**
@@ -173,27 +173,27 @@ export type Job = {
    */
   readyToInvoiceStamp?: any | undefined;
   /**
-   * The country field of the job address.
+   * The country field of the job address. (Read only)
    */
   geoCountry?: string | undefined;
   /**
-   * The postcode/ZIP code field of the job address.
+   * The postcode/ZIP code field of the job address. (Read only)
    */
   geoPostcode?: string | undefined;
   /**
-   * The state/province field of the job address.
+   * The state/province field of the job address. (Read only)
    */
   geoState?: string | undefined;
   /**
-   * The city/suburb field of the job address.
+   * The city/suburb field of the job address. (Read only)
    */
   geoCity?: string | undefined;
   /**
-   * The street name field of the job address.
+   * The street name field of the job address. (Read only)
    */
   geoStreet?: string | undefined;
   /**
-   * The street number field of the job address.
+   * The street number field of the job address. (Read only)
    */
   geoNumber?: string | undefined;
   /**
@@ -353,7 +353,7 @@ export type JobInput = {
    */
   paymentNote?: string | undefined;
   /**
-   * Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used..  Valid values are [0,1]
+   * Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used. (Read only).  Valid values are [0,1]
    */
   geoIsValid?: GeoIsValid | undefined;
   /**
@@ -361,11 +361,11 @@ export type JobInput = {
    */
   purchaseOrderNumber?: string | undefined;
   /**
-   * Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
+   * Indicates whether an invoice has been sent for this job. (Read only).  Valid values are [0,1]
    */
   invoiceSent?: InvoiceSent | undefined;
   /**
-   * The date and time when the invoice was sent.
+   * The date and time when the invoice was sent. (Read only)
    */
   invoiceSentStamp?: string | undefined;
   /**
@@ -377,27 +377,27 @@ export type JobInput = {
    */
   readyToInvoiceStamp?: any | undefined;
   /**
-   * The country field of the job address.
+   * The country field of the job address. (Read only)
    */
   geoCountry?: string | undefined;
   /**
-   * The postcode/ZIP code field of the job address.
+   * The postcode/ZIP code field of the job address. (Read only)
    */
   geoPostcode?: string | undefined;
   /**
-   * The state/province field of the job address.
+   * The state/province field of the job address. (Read only)
    */
   geoState?: string | undefined;
   /**
-   * The city/suburb field of the job address.
+   * The city/suburb field of the job address. (Read only)
    */
   geoCity?: string | undefined;
   /**
-   * The street name field of the job address.
+   * The street name field of the job address. (Read only)
    */
   geoStreet?: string | undefined;
   /**
-   * The street number field of the job address.
+   * The street number field of the job address. (Read only)
    */
   geoNumber?: string | undefined;
   /**

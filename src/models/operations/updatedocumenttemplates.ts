@@ -20,10 +20,6 @@ export type UpdateDocumentTemplatesRequest = {
   documentTemplate: components.DocumentTemplateInput;
 };
 
-export type UpdateDocumentTemplatesResponse =
-  | components.Result
-  | components.ErrorT;
-
 /** @internal */
 export const UpdateDocumentTemplatesRequest$inboundSchema: z.ZodType<
   UpdateDocumentTemplatesRequest,
@@ -88,60 +84,5 @@ export function updateDocumentTemplatesRequestFromJSON(
     jsonString,
     (x) => UpdateDocumentTemplatesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateDocumentTemplatesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateDocumentTemplatesResponse$inboundSchema: z.ZodType<
-  UpdateDocumentTemplatesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateDocumentTemplatesResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateDocumentTemplatesResponse$outboundSchema: z.ZodType<
-  UpdateDocumentTemplatesResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateDocumentTemplatesResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateDocumentTemplatesResponse$ {
-  /** @deprecated use `UpdateDocumentTemplatesResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateDocumentTemplatesResponse$inboundSchema;
-  /** @deprecated use `UpdateDocumentTemplatesResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateDocumentTemplatesResponse$outboundSchema;
-  /** @deprecated use `UpdateDocumentTemplatesResponse$Outbound` instead. */
-  export type Outbound = UpdateDocumentTemplatesResponse$Outbound;
-}
-
-export function updateDocumentTemplatesResponseToJSON(
-  updateDocumentTemplatesResponse: UpdateDocumentTemplatesResponse,
-): string {
-  return JSON.stringify(
-    UpdateDocumentTemplatesResponse$outboundSchema.parse(
-      updateDocumentTemplatesResponse,
-    ),
-  );
-}
-
-export function updateDocumentTemplatesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateDocumentTemplatesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateDocumentTemplatesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateDocumentTemplatesResponse' from JSON`,
   );
 }

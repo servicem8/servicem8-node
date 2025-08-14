@@ -26,7 +26,7 @@ export class AllocationWindows extends ClientSDK {
    */
   async listAllocationWindows(
     options?: RequestOptions,
-  ): Promise<operations.ListAllocationWindowsResponse> {
+  ): Promise<Array<components.AllocationWindow>> {
     return unwrapAsync(allocationWindowsListAllocationWindows(
       this,
       options,
@@ -66,7 +66,7 @@ export class AllocationWindows extends ClientSDK {
   async getAllocationWindows(
     request: operations.GetAllocationWindowsRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetAllocationWindowsResponse> {
+  ): Promise<components.AllocationWindow> {
     return unwrapAsync(allocationWindowsGetAllocationWindows(
       this,
       request,
@@ -85,7 +85,7 @@ export class AllocationWindows extends ClientSDK {
   async updateAllocationWindows(
     request: operations.UpdateAllocationWindowsRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateAllocationWindowsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(allocationWindowsUpdateAllocationWindows(
       this,
       request,
@@ -106,7 +106,7 @@ export class AllocationWindows extends ClientSDK {
   async deleteAllocationWindows(
     request: operations.DeleteAllocationWindowsRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteAllocationWindowsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(allocationWindowsDeleteAllocationWindows(
       this,
       request,

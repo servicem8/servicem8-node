@@ -20,10 +20,6 @@ export type UpdateJobMaterialBundlesRequest = {
   jobMaterialBundle: components.JobMaterialBundleInput;
 };
 
-export type UpdateJobMaterialBundlesResponse =
-  | components.Result
-  | components.ErrorT;
-
 /** @internal */
 export const UpdateJobMaterialBundlesRequest$inboundSchema: z.ZodType<
   UpdateJobMaterialBundlesRequest,
@@ -88,60 +84,5 @@ export function updateJobMaterialBundlesRequestFromJSON(
     jsonString,
     (x) => UpdateJobMaterialBundlesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateJobMaterialBundlesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateJobMaterialBundlesResponse$inboundSchema: z.ZodType<
-  UpdateJobMaterialBundlesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateJobMaterialBundlesResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateJobMaterialBundlesResponse$outboundSchema: z.ZodType<
-  UpdateJobMaterialBundlesResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateJobMaterialBundlesResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateJobMaterialBundlesResponse$ {
-  /** @deprecated use `UpdateJobMaterialBundlesResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateJobMaterialBundlesResponse$inboundSchema;
-  /** @deprecated use `UpdateJobMaterialBundlesResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateJobMaterialBundlesResponse$outboundSchema;
-  /** @deprecated use `UpdateJobMaterialBundlesResponse$Outbound` instead. */
-  export type Outbound = UpdateJobMaterialBundlesResponse$Outbound;
-}
-
-export function updateJobMaterialBundlesResponseToJSON(
-  updateJobMaterialBundlesResponse: UpdateJobMaterialBundlesResponse,
-): string {
-  return JSON.stringify(
-    UpdateJobMaterialBundlesResponse$outboundSchema.parse(
-      updateJobMaterialBundlesResponse,
-    ),
-  );
-}
-
-export function updateJobMaterialBundlesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateJobMaterialBundlesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateJobMaterialBundlesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateJobMaterialBundlesResponse' from JSON`,
   );
 }

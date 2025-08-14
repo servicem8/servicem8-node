@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListJobAllocationsResponse](../../models/operations/listjoballocationsresponse.md)\>**
+**Promise\<[components.JobAllocation[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createJobAllocations
 
@@ -123,13 +127,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobAllocations.createJobAllocations({
-    uuid: "123e4567-ca97-44c1-97b8-231efb5598ab",
-    jobUuid: "123e4567-02e2-47ef-b40e-231efbb85a1b",
-    queueUuid: "123e4567-3b38-4f8f-9979-231efed268eb",
-    staffUuid: "123e4567-5308-40ba-88de-231efa9f8f9b",
+    uuid: "123e4567-b55c-490a-92a6-231fe807043b",
+    jobUuid: "123e4567-b316-4ff9-b147-231fe6a07d4b",
+    queueUuid: "123e4567-1bc1-417c-b8f3-231fe996165b",
+    staffUuid: "123e4567-9617-47f4-b74a-231fe18c987b",
     allocationDate: "2025-08-01 12:00:00",
-    allocationWindowUuid: "123e4567-03ab-4ae7-9cfc-231ef37ef11b",
-    allocatedByStaffUuid: "123e4567-7257-42b8-89fb-231efd798c0b",
+    allocationWindowUuid: "123e4567-8d7a-4ad6-ad43-231fe307f21b",
+    allocatedByStaffUuid: "123e4567-a453-4427-a4ea-231fecea101b",
     allocatedTimestamp: "2025-08-01 12:00:00",
     expiryTimestamp: "2025-08-01 12:00:00",
     readTimestamp: "2025-08-01 12:00:00",
@@ -161,13 +165,13 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobAllocationsCreateJobAllocations(serviceM8, {
-    uuid: "123e4567-ca97-44c1-97b8-231efb5598ab",
-    jobUuid: "123e4567-02e2-47ef-b40e-231efbb85a1b",
-    queueUuid: "123e4567-3b38-4f8f-9979-231efed268eb",
-    staffUuid: "123e4567-5308-40ba-88de-231efa9f8f9b",
+    uuid: "123e4567-b55c-490a-92a6-231fe807043b",
+    jobUuid: "123e4567-b316-4ff9-b147-231fe6a07d4b",
+    queueUuid: "123e4567-1bc1-417c-b8f3-231fe996165b",
+    staffUuid: "123e4567-9617-47f4-b74a-231fe18c987b",
     allocationDate: "2025-08-01 12:00:00",
-    allocationWindowUuid: "123e4567-03ab-4ae7-9cfc-231ef37ef11b",
-    allocatedByStaffUuid: "123e4567-7257-42b8-89fb-231efd798c0b",
+    allocationWindowUuid: "123e4567-8d7a-4ad6-ad43-231fe307f21b",
+    allocatedByStaffUuid: "123e4567-a453-4427-a4ea-231fecea101b",
     allocatedTimestamp: "2025-08-01 12:00:00",
     expiryTimestamp: "2025-08-01 12:00:00",
     readTimestamp: "2025-08-01 12:00:00",
@@ -200,10 +204,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getJobAllocations
 
@@ -279,14 +287,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetJobAllocationsResponse](../../models/operations/getjoballocationsresponse.md)\>**
+**Promise\<[components.JobAllocation](../../models/components/joballocation.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateJobAllocations
 
@@ -313,13 +326,13 @@ async function run() {
   const result = await serviceM8.jobAllocations.updateJobAllocations({
     uuid: "583058ca-b387-4a2b-86cf-ca46e5b89aba",
     jobAllocation: {
-      uuid: "123e4567-ca97-44c1-97b8-231efb5598ab",
-      jobUuid: "123e4567-02e2-47ef-b40e-231efbb85a1b",
-      queueUuid: "123e4567-3b38-4f8f-9979-231efed268eb",
-      staffUuid: "123e4567-5308-40ba-88de-231efa9f8f9b",
+      uuid: "123e4567-b55c-490a-92a6-231fe807043b",
+      jobUuid: "123e4567-b316-4ff9-b147-231fe6a07d4b",
+      queueUuid: "123e4567-1bc1-417c-b8f3-231fe996165b",
+      staffUuid: "123e4567-9617-47f4-b74a-231fe18c987b",
       allocationDate: "2025-08-01 12:00:00",
-      allocationWindowUuid: "123e4567-03ab-4ae7-9cfc-231ef37ef11b",
-      allocatedByStaffUuid: "123e4567-7257-42b8-89fb-231efd798c0b",
+      allocationWindowUuid: "123e4567-8d7a-4ad6-ad43-231fe307f21b",
+      allocatedByStaffUuid: "123e4567-a453-4427-a4ea-231fecea101b",
       allocatedTimestamp: "2025-08-01 12:00:00",
       expiryTimestamp: "2025-08-01 12:00:00",
       readTimestamp: "2025-08-01 12:00:00",
@@ -354,13 +367,13 @@ async function run() {
   const res = await jobAllocationsUpdateJobAllocations(serviceM8, {
     uuid: "583058ca-b387-4a2b-86cf-ca46e5b89aba",
     jobAllocation: {
-      uuid: "123e4567-ca97-44c1-97b8-231efb5598ab",
-      jobUuid: "123e4567-02e2-47ef-b40e-231efbb85a1b",
-      queueUuid: "123e4567-3b38-4f8f-9979-231efed268eb",
-      staffUuid: "123e4567-5308-40ba-88de-231efa9f8f9b",
+      uuid: "123e4567-b55c-490a-92a6-231fe807043b",
+      jobUuid: "123e4567-b316-4ff9-b147-231fe6a07d4b",
+      queueUuid: "123e4567-1bc1-417c-b8f3-231fe996165b",
+      staffUuid: "123e4567-9617-47f4-b74a-231fe18c987b",
       allocationDate: "2025-08-01 12:00:00",
-      allocationWindowUuid: "123e4567-03ab-4ae7-9cfc-231ef37ef11b",
-      allocatedByStaffUuid: "123e4567-7257-42b8-89fb-231efd798c0b",
+      allocationWindowUuid: "123e4567-8d7a-4ad6-ad43-231fe307f21b",
+      allocatedByStaffUuid: "123e4567-a453-4427-a4ea-231fecea101b",
       allocatedTimestamp: "2025-08-01 12:00:00",
       expiryTimestamp: "2025-08-01 12:00:00",
       readTimestamp: "2025-08-01 12:00:00",
@@ -390,14 +403,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateJobAllocationsResponse](../../models/operations/updatejoballocationsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteJobAllocations
 
@@ -477,11 +495,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteJobAllocationsResponse](../../models/operations/deletejoballocationsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

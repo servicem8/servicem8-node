@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetBundlesRequest = {
@@ -14,8 +13,6 @@ export type GetBundlesRequest = {
    */
   uuid: string;
 };
-
-export type GetBundlesResponse = components.MaterialBundle | components.ErrorT;
 
 /** @internal */
 export const GetBundlesRequest$inboundSchema: z.ZodType<
@@ -68,61 +65,5 @@ export function getBundlesRequestFromJSON(
     jsonString,
     (x) => GetBundlesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetBundlesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetBundlesResponse$inboundSchema: z.ZodType<
-  GetBundlesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.MaterialBundle$inboundSchema,
-  components.ErrorT$inboundSchema,
-]);
-
-/** @internal */
-export type GetBundlesResponse$Outbound =
-  | components.MaterialBundle$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetBundlesResponse$outboundSchema: z.ZodType<
-  GetBundlesResponse$Outbound,
-  z.ZodTypeDef,
-  GetBundlesResponse
-> = z.union([
-  components.MaterialBundle$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetBundlesResponse$ {
-  /** @deprecated use `GetBundlesResponse$inboundSchema` instead. */
-  export const inboundSchema = GetBundlesResponse$inboundSchema;
-  /** @deprecated use `GetBundlesResponse$outboundSchema` instead. */
-  export const outboundSchema = GetBundlesResponse$outboundSchema;
-  /** @deprecated use `GetBundlesResponse$Outbound` instead. */
-  export type Outbound = GetBundlesResponse$Outbound;
-}
-
-export function getBundlesResponseToJSON(
-  getBundlesResponse: GetBundlesResponse,
-): string {
-  return JSON.stringify(
-    GetBundlesResponse$outboundSchema.parse(getBundlesResponse),
-  );
-}
-
-export function getBundlesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetBundlesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetBundlesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetBundlesResponse' from JSON`,
   );
 }

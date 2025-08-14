@@ -45,6 +45,9 @@ export function allocationWindowsCreateAllocationWindows(
   Result<
     operations.CreateAllocationWindowsResponse,
     | errors.ErrorT
+    | errors.AuthenticationError
+    | errors.ForbiddenError
+    | errors.RateLimitError
     | ServiceM8Error
     | ResponseValidationError
     | ConnectionError
@@ -71,6 +74,9 @@ async function $do(
     Result<
       operations.CreateAllocationWindowsResponse,
       | errors.ErrorT
+      | errors.AuthenticationError
+      | errors.ForbiddenError
+      | errors.RateLimitError
       | ServiceM8Error
       | ResponseValidationError
       | ConnectionError
@@ -126,7 +132,7 @@ async function $do(
         retryConnectionErrors: true,
       }
       || { strategy: "none" },
-    retryCodes: options?.retryCodes || ["5XX"],
+    retryCodes: options?.retryCodes || ["5XX", "429"],
   };
 
   const requestRes = client._createRequest(context, {
@@ -146,7 +152,7 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["400", "4XX", "5XX"],
+    errorCodes: ["400", "401", "403", "429", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -162,6 +168,9 @@ async function $do(
   const [result] = await M.match<
     operations.CreateAllocationWindowsResponse,
     | errors.ErrorT
+    | errors.AuthenticationError
+    | errors.ForbiddenError
+    | errors.RateLimitError
     | ServiceM8Error
     | ResponseValidationError
     | ConnectionError
@@ -176,13 +185,12 @@ async function $do(
       key: "Result",
     }),
     M.jsonErr(400, errors.ErrorT$inboundSchema),
+    M.jsonErr(401, errors.AuthenticationError$inboundSchema),
+    M.jsonErr(403, errors.ForbiddenError$inboundSchema),
+    M.jsonErr(429, errors.RateLimitError$inboundSchema),
+    M.jsonErr(500, errors.ErrorT$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
-    M.json(
-      "default",
-      operations.CreateAllocationWindowsResponse$inboundSchema,
-      { key: "Result" },
-    ),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];

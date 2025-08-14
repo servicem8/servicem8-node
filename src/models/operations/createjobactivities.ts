@@ -9,70 +9,10 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CreateJobActivitiesResponseResult =
-  | components.Result
-  | components.ErrorT;
-
 export type CreateJobActivitiesResponse = {
   headers: { [k: string]: Array<string> };
-  result: components.Result | components.ErrorT;
+  result: components.Result;
 };
-
-/** @internal */
-export const CreateJobActivitiesResponseResult$inboundSchema: z.ZodType<
-  CreateJobActivitiesResponseResult,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type CreateJobActivitiesResponseResult$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const CreateJobActivitiesResponseResult$outboundSchema: z.ZodType<
-  CreateJobActivitiesResponseResult$Outbound,
-  z.ZodTypeDef,
-  CreateJobActivitiesResponseResult
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateJobActivitiesResponseResult$ {
-  /** @deprecated use `CreateJobActivitiesResponseResult$inboundSchema` instead. */
-  export const inboundSchema = CreateJobActivitiesResponseResult$inboundSchema;
-  /** @deprecated use `CreateJobActivitiesResponseResult$outboundSchema` instead. */
-  export const outboundSchema =
-    CreateJobActivitiesResponseResult$outboundSchema;
-  /** @deprecated use `CreateJobActivitiesResponseResult$Outbound` instead. */
-  export type Outbound = CreateJobActivitiesResponseResult$Outbound;
-}
-
-export function createJobActivitiesResponseResultToJSON(
-  createJobActivitiesResponseResult: CreateJobActivitiesResponseResult,
-): string {
-  return JSON.stringify(
-    CreateJobActivitiesResponseResult$outboundSchema.parse(
-      createJobActivitiesResponseResult,
-    ),
-  );
-}
-
-export function createJobActivitiesResponseResultFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateJobActivitiesResponseResult, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateJobActivitiesResponseResult$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateJobActivitiesResponseResult' from JSON`,
-  );
-}
 
 /** @internal */
 export const CreateJobActivitiesResponse$inboundSchema: z.ZodType<
@@ -81,10 +21,7 @@ export const CreateJobActivitiesResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   Headers: z.record(z.array(z.string())),
-  Result: z.union([
-    components.Result$inboundSchema,
-    components.ErrorT$inboundSchema,
-  ]),
+  Result: components.Result$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "Headers": "headers",
@@ -95,7 +32,7 @@ export const CreateJobActivitiesResponse$inboundSchema: z.ZodType<
 /** @internal */
 export type CreateJobActivitiesResponse$Outbound = {
   Headers: { [k: string]: Array<string> };
-  Result: components.Result$Outbound | components.ErrorT$Outbound;
+  Result: components.Result$Outbound;
 };
 
 /** @internal */
@@ -105,10 +42,7 @@ export const CreateJobActivitiesResponse$outboundSchema: z.ZodType<
   CreateJobActivitiesResponse
 > = z.object({
   headers: z.record(z.array(z.string())),
-  result: z.union([
-    components.Result$outboundSchema,
-    components.ErrorT$outboundSchema,
-  ]),
+  result: components.Result$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     headers: "Headers",

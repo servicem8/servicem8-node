@@ -20,7 +20,6 @@ export * from "./documenttemplate.js";
 export * from "./emailtemplate.js";
 export * from "./embeddingsearchresponse.js";
 export * from "./embeddingsearchresult.js";
-export * from "./error.js";
 export * from "./feedback.js";
 export * from "./form.js";
 export * from "./formfield.js";

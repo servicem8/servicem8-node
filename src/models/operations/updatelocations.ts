@@ -20,8 +20,6 @@ export type UpdateLocationsRequest = {
   location: components.LocationInput;
 };
 
-export type UpdateLocationsResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateLocationsRequest$inboundSchema: z.ZodType<
   UpdateLocationsRequest,
@@ -84,58 +82,5 @@ export function updateLocationsRequestFromJSON(
     jsonString,
     (x) => UpdateLocationsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateLocationsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateLocationsResponse$inboundSchema: z.ZodType<
-  UpdateLocationsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateLocationsResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateLocationsResponse$outboundSchema: z.ZodType<
-  UpdateLocationsResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateLocationsResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateLocationsResponse$ {
-  /** @deprecated use `UpdateLocationsResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateLocationsResponse$inboundSchema;
-  /** @deprecated use `UpdateLocationsResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateLocationsResponse$outboundSchema;
-  /** @deprecated use `UpdateLocationsResponse$Outbound` instead. */
-  export type Outbound = UpdateLocationsResponse$Outbound;
-}
-
-export function updateLocationsResponseToJSON(
-  updateLocationsResponse: UpdateLocationsResponse,
-): string {
-  return JSON.stringify(
-    UpdateLocationsResponse$outboundSchema.parse(updateLocationsResponse),
-  );
-}
-
-export function updateLocationsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateLocationsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateLocationsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateLocationsResponse' from JSON`,
   );
 }

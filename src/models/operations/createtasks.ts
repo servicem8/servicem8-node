@@ -9,65 +9,10 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CreateTasksResponseResult = components.Result | components.ErrorT;
-
 export type CreateTasksResponse = {
   headers: { [k: string]: Array<string> };
-  result: components.Result | components.ErrorT;
+  result: components.Result;
 };
-
-/** @internal */
-export const CreateTasksResponseResult$inboundSchema: z.ZodType<
-  CreateTasksResponseResult,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type CreateTasksResponseResult$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const CreateTasksResponseResult$outboundSchema: z.ZodType<
-  CreateTasksResponseResult$Outbound,
-  z.ZodTypeDef,
-  CreateTasksResponseResult
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateTasksResponseResult$ {
-  /** @deprecated use `CreateTasksResponseResult$inboundSchema` instead. */
-  export const inboundSchema = CreateTasksResponseResult$inboundSchema;
-  /** @deprecated use `CreateTasksResponseResult$outboundSchema` instead. */
-  export const outboundSchema = CreateTasksResponseResult$outboundSchema;
-  /** @deprecated use `CreateTasksResponseResult$Outbound` instead. */
-  export type Outbound = CreateTasksResponseResult$Outbound;
-}
-
-export function createTasksResponseResultToJSON(
-  createTasksResponseResult: CreateTasksResponseResult,
-): string {
-  return JSON.stringify(
-    CreateTasksResponseResult$outboundSchema.parse(createTasksResponseResult),
-  );
-}
-
-export function createTasksResponseResultFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateTasksResponseResult, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateTasksResponseResult$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateTasksResponseResult' from JSON`,
-  );
-}
 
 /** @internal */
 export const CreateTasksResponse$inboundSchema: z.ZodType<
@@ -76,10 +21,7 @@ export const CreateTasksResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   Headers: z.record(z.array(z.string())),
-  Result: z.union([
-    components.Result$inboundSchema,
-    components.ErrorT$inboundSchema,
-  ]),
+  Result: components.Result$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "Headers": "headers",
@@ -90,7 +32,7 @@ export const CreateTasksResponse$inboundSchema: z.ZodType<
 /** @internal */
 export type CreateTasksResponse$Outbound = {
   Headers: { [k: string]: Array<string> };
-  Result: components.Result$Outbound | components.ErrorT$Outbound;
+  Result: components.Result$Outbound;
 };
 
 /** @internal */
@@ -100,10 +42,7 @@ export const CreateTasksResponse$outboundSchema: z.ZodType<
   CreateTasksResponse
 > = z.object({
   headers: z.record(z.array(z.string())),
-  result: z.union([
-    components.Result$outboundSchema,
-    components.ErrorT$outboundSchema,
-  ]),
+  result: components.Result$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     headers: "Headers",

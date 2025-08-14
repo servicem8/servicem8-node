@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListJobPaymentsResponse](../../models/operations/listjobpaymentsresponse.md)\>**
+**Promise\<[components.JobPayment[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createJobPayments
 
@@ -123,11 +127,11 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobPayments.createJobPayments({
-    uuid: "123e4567-d07e-4360-92cc-231ef68ec49b",
-    jobUuid: "123e4567-d0c9-46ee-bc05-231ef7c901fb",
-    actionedByUuid: "123e4567-fd5b-4db4-bae2-231ef02598eb",
+    uuid: "123e4567-c95f-40c5-900f-231feffe008b",
+    jobUuid: "123e4567-b06b-4d08-a8f4-231febc6130b",
+    actionedByUuid: "123e4567-92f5-4610-ac20-231fe157311b",
     timestamp: "2025-08-01 12:00:00",
-    attachmentUuid: "123e4567-eec4-4da4-9c02-231efaf00f4b",
+    attachmentUuid: "123e4567-4396-4dc9-a88d-231feae1a00b",
   });
 
   console.log(result);
@@ -154,11 +158,11 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobPaymentsCreateJobPayments(serviceM8, {
-    uuid: "123e4567-d07e-4360-92cc-231ef68ec49b",
-    jobUuid: "123e4567-d0c9-46ee-bc05-231ef7c901fb",
-    actionedByUuid: "123e4567-fd5b-4db4-bae2-231ef02598eb",
+    uuid: "123e4567-c95f-40c5-900f-231feffe008b",
+    jobUuid: "123e4567-b06b-4d08-a8f4-231febc6130b",
+    actionedByUuid: "123e4567-92f5-4610-ac20-231fe157311b",
     timestamp: "2025-08-01 12:00:00",
-    attachmentUuid: "123e4567-eec4-4da4-9c02-231efaf00f4b",
+    attachmentUuid: "123e4567-4396-4dc9-a88d-231feae1a00b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -186,10 +190,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getJobPayments
 
@@ -265,14 +273,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetJobPaymentsResponse](../../models/operations/getjobpaymentsresponse.md)\>**
+**Promise\<[components.JobPayment](../../models/components/jobpayment.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateJobPayments
 
@@ -299,11 +312,11 @@ async function run() {
   const result = await serviceM8.jobPayments.updateJobPayments({
     uuid: "11677578-ba16-4ac4-b2d7-62ad0de4655c",
     jobPayment: {
-      uuid: "123e4567-d07e-4360-92cc-231ef68ec49b",
-      jobUuid: "123e4567-d0c9-46ee-bc05-231ef7c901fb",
-      actionedByUuid: "123e4567-fd5b-4db4-bae2-231ef02598eb",
+      uuid: "123e4567-c95f-40c5-900f-231feffe008b",
+      jobUuid: "123e4567-b06b-4d08-a8f4-231febc6130b",
+      actionedByUuid: "123e4567-92f5-4610-ac20-231fe157311b",
       timestamp: "2025-08-01 12:00:00",
-      attachmentUuid: "123e4567-eec4-4da4-9c02-231efaf00f4b",
+      attachmentUuid: "123e4567-4396-4dc9-a88d-231feae1a00b",
     },
   });
 
@@ -333,11 +346,11 @@ async function run() {
   const res = await jobPaymentsUpdateJobPayments(serviceM8, {
     uuid: "11677578-ba16-4ac4-b2d7-62ad0de4655c",
     jobPayment: {
-      uuid: "123e4567-d07e-4360-92cc-231ef68ec49b",
-      jobUuid: "123e4567-d0c9-46ee-bc05-231ef7c901fb",
-      actionedByUuid: "123e4567-fd5b-4db4-bae2-231ef02598eb",
+      uuid: "123e4567-c95f-40c5-900f-231feffe008b",
+      jobUuid: "123e4567-b06b-4d08-a8f4-231febc6130b",
+      actionedByUuid: "123e4567-92f5-4610-ac20-231fe157311b",
       timestamp: "2025-08-01 12:00:00",
-      attachmentUuid: "123e4567-eec4-4da4-9c02-231efaf00f4b",
+      attachmentUuid: "123e4567-4396-4dc9-a88d-231feae1a00b",
     },
   });
   if (res.ok) {
@@ -362,14 +375,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateJobPaymentsResponse](../../models/operations/updatejobpaymentsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteJobPayments
 
@@ -449,11 +467,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteJobPaymentsResponse](../../models/operations/deletejobpaymentsresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

@@ -20,8 +20,6 @@ export type UpdateJobActivitiesRequest = {
   jobActivity: components.JobActivityInput;
 };
 
-export type UpdateJobActivitiesResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateJobActivitiesRequest$inboundSchema: z.ZodType<
   UpdateJobActivitiesRequest,
@@ -84,60 +82,5 @@ export function updateJobActivitiesRequestFromJSON(
     jsonString,
     (x) => UpdateJobActivitiesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateJobActivitiesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateJobActivitiesResponse$inboundSchema: z.ZodType<
-  UpdateJobActivitiesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateJobActivitiesResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateJobActivitiesResponse$outboundSchema: z.ZodType<
-  UpdateJobActivitiesResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateJobActivitiesResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateJobActivitiesResponse$ {
-  /** @deprecated use `UpdateJobActivitiesResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateJobActivitiesResponse$inboundSchema;
-  /** @deprecated use `UpdateJobActivitiesResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateJobActivitiesResponse$outboundSchema;
-  /** @deprecated use `UpdateJobActivitiesResponse$Outbound` instead. */
-  export type Outbound = UpdateJobActivitiesResponse$Outbound;
-}
-
-export function updateJobActivitiesResponseToJSON(
-  updateJobActivitiesResponse: UpdateJobActivitiesResponse,
-): string {
-  return JSON.stringify(
-    UpdateJobActivitiesResponse$outboundSchema.parse(
-      updateJobActivitiesResponse,
-    ),
-  );
-}
-
-export function updateJobActivitiesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateJobActivitiesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateJobActivitiesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateJobActivitiesResponse' from JSON`,
   );
 }

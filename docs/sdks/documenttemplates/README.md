@@ -86,14 +86,18 @@ run();
 
 ### Response
 
-**Promise\<[operations.ListDocumentTemplatesResponse](../../models/operations/listdocumenttemplatesresponse.md)\>**
+**Promise\<[components.DocumentTemplate[]](../../models/.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createDocumentTemplates
 
@@ -123,7 +127,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.documentTemplates.createDocumentTemplates({
-    uuid: "123e4567-5206-45da-9928-231efd9d626b",
+    uuid: "123e4567-a719-4a9b-a9fc-231fe084252b",
   });
 
   console.log(result);
@@ -150,7 +154,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await documentTemplatesCreateDocumentTemplates(serviceM8, {
-    uuid: "123e4567-5206-45da-9928-231efd9d626b",
+    uuid: "123e4567-a719-4a9b-a9fc-231fe084252b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -178,10 +182,14 @@ run();
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getDocumentTemplates
 
@@ -257,14 +265,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetDocumentTemplatesResponse](../../models/operations/getdocumenttemplatesresponse.md)\>**
+**Promise\<[components.DocumentTemplate](../../models/components/documenttemplate.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateDocumentTemplates
 
@@ -291,7 +304,7 @@ async function run() {
   const result = await serviceM8.documentTemplates.updateDocumentTemplates({
     uuid: "e371a482-2feb-4b5b-a72a-56796a683d72",
     documentTemplate: {
-      uuid: "123e4567-5206-45da-9928-231efd9d626b",
+      uuid: "123e4567-a719-4a9b-a9fc-231fe084252b",
     },
   });
 
@@ -321,7 +334,7 @@ async function run() {
   const res = await documentTemplatesUpdateDocumentTemplates(serviceM8, {
     uuid: "e371a482-2feb-4b5b-a72a-56796a683d72",
     documentTemplate: {
-      uuid: "123e4567-5206-45da-9928-231efd9d626b",
+      uuid: "123e4567-a719-4a9b-a9fc-231fe084252b",
     },
   });
   if (res.ok) {
@@ -346,14 +359,19 @@ run();
 
 ### Response
 
-**Promise\<[operations.UpdateDocumentTemplatesResponse](../../models/operations/updatedocumenttemplatesresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
 ## deleteDocumentTemplates
 
@@ -433,11 +451,16 @@ run();
 
 ### Response
 
-**Promise\<[operations.DeleteDocumentTemplatesResponse](../../models/operations/deletedocumenttemplatesresponse.md)\>**
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorT    | 400              | application/json |
-| errors.APIError  | 4XX, 5XX         | \*/\*            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |

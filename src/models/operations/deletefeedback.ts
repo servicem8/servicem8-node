@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type DeleteFeedbackRequest = {
@@ -14,8 +13,6 @@ export type DeleteFeedbackRequest = {
    */
   uuid: string;
 };
-
-export type DeleteFeedbackResponse = components.Result | components.ErrorT;
 
 /** @internal */
 export const DeleteFeedbackRequest$inboundSchema: z.ZodType<
@@ -68,58 +65,5 @@ export function deleteFeedbackRequestFromJSON(
     jsonString,
     (x) => DeleteFeedbackRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'DeleteFeedbackRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const DeleteFeedbackResponse$inboundSchema: z.ZodType<
-  DeleteFeedbackResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type DeleteFeedbackResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const DeleteFeedbackResponse$outboundSchema: z.ZodType<
-  DeleteFeedbackResponse$Outbound,
-  z.ZodTypeDef,
-  DeleteFeedbackResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteFeedbackResponse$ {
-  /** @deprecated use `DeleteFeedbackResponse$inboundSchema` instead. */
-  export const inboundSchema = DeleteFeedbackResponse$inboundSchema;
-  /** @deprecated use `DeleteFeedbackResponse$outboundSchema` instead. */
-  export const outboundSchema = DeleteFeedbackResponse$outboundSchema;
-  /** @deprecated use `DeleteFeedbackResponse$Outbound` instead. */
-  export type Outbound = DeleteFeedbackResponse$Outbound;
-}
-
-export function deleteFeedbackResponseToJSON(
-  deleteFeedbackResponse: DeleteFeedbackResponse,
-): string {
-  return JSON.stringify(
-    DeleteFeedbackResponse$outboundSchema.parse(deleteFeedbackResponse),
-  );
-}
-
-export function deleteFeedbackResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteFeedbackResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteFeedbackResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteFeedbackResponse' from JSON`,
   );
 }

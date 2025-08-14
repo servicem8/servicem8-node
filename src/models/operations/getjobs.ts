@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetJobsRequest = {
@@ -14,8 +13,6 @@ export type GetJobsRequest = {
    */
   uuid: string;
 };
-
-export type GetJobsResponse = components.Job | components.ErrorT;
 
 /** @internal */
 export const GetJobsRequest$inboundSchema: z.ZodType<
@@ -64,53 +61,5 @@ export function getJobsRequestFromJSON(
     jsonString,
     (x) => GetJobsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetJobsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetJobsResponse$inboundSchema: z.ZodType<
-  GetJobsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Job$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type GetJobsResponse$Outbound =
-  | components.Job$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetJobsResponse$outboundSchema: z.ZodType<
-  GetJobsResponse$Outbound,
-  z.ZodTypeDef,
-  GetJobsResponse
-> = z.union([components.Job$outboundSchema, components.ErrorT$outboundSchema]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetJobsResponse$ {
-  /** @deprecated use `GetJobsResponse$inboundSchema` instead. */
-  export const inboundSchema = GetJobsResponse$inboundSchema;
-  /** @deprecated use `GetJobsResponse$outboundSchema` instead. */
-  export const outboundSchema = GetJobsResponse$outboundSchema;
-  /** @deprecated use `GetJobsResponse$Outbound` instead. */
-  export type Outbound = GetJobsResponse$Outbound;
-}
-
-export function getJobsResponseToJSON(
-  getJobsResponse: GetJobsResponse,
-): string {
-  return JSON.stringify(GetJobsResponse$outboundSchema.parse(getJobsResponse));
-}
-
-export function getJobsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetJobsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetJobsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetJobsResponse' from JSON`,
   );
 }

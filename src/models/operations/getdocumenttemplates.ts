@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetDocumentTemplatesRequest = {
@@ -14,10 +13,6 @@ export type GetDocumentTemplatesRequest = {
    */
   uuid: string;
 };
-
-export type GetDocumentTemplatesResponse =
-  | components.DocumentTemplate
-  | components.ErrorT;
 
 /** @internal */
 export const GetDocumentTemplatesRequest$inboundSchema: z.ZodType<
@@ -72,63 +67,5 @@ export function getDocumentTemplatesRequestFromJSON(
     jsonString,
     (x) => GetDocumentTemplatesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetDocumentTemplatesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetDocumentTemplatesResponse$inboundSchema: z.ZodType<
-  GetDocumentTemplatesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.DocumentTemplate$inboundSchema,
-  components.ErrorT$inboundSchema,
-]);
-
-/** @internal */
-export type GetDocumentTemplatesResponse$Outbound =
-  | components.DocumentTemplate$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetDocumentTemplatesResponse$outboundSchema: z.ZodType<
-  GetDocumentTemplatesResponse$Outbound,
-  z.ZodTypeDef,
-  GetDocumentTemplatesResponse
-> = z.union([
-  components.DocumentTemplate$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetDocumentTemplatesResponse$ {
-  /** @deprecated use `GetDocumentTemplatesResponse$inboundSchema` instead. */
-  export const inboundSchema = GetDocumentTemplatesResponse$inboundSchema;
-  /** @deprecated use `GetDocumentTemplatesResponse$outboundSchema` instead. */
-  export const outboundSchema = GetDocumentTemplatesResponse$outboundSchema;
-  /** @deprecated use `GetDocumentTemplatesResponse$Outbound` instead. */
-  export type Outbound = GetDocumentTemplatesResponse$Outbound;
-}
-
-export function getDocumentTemplatesResponseToJSON(
-  getDocumentTemplatesResponse: GetDocumentTemplatesResponse,
-): string {
-  return JSON.stringify(
-    GetDocumentTemplatesResponse$outboundSchema.parse(
-      getDocumentTemplatesResponse,
-    ),
-  );
-}
-
-export function getDocumentTemplatesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetDocumentTemplatesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetDocumentTemplatesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetDocumentTemplatesResponse' from JSON`,
   );
 }

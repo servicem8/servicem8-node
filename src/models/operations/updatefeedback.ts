@@ -20,8 +20,6 @@ export type UpdateFeedbackRequest = {
   feedback: components.FeedbackInput;
 };
 
-export type UpdateFeedbackResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateFeedbackRequest$inboundSchema: z.ZodType<
   UpdateFeedbackRequest,
@@ -84,58 +82,5 @@ export function updateFeedbackRequestFromJSON(
     jsonString,
     (x) => UpdateFeedbackRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateFeedbackRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateFeedbackResponse$inboundSchema: z.ZodType<
-  UpdateFeedbackResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateFeedbackResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateFeedbackResponse$outboundSchema: z.ZodType<
-  UpdateFeedbackResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateFeedbackResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateFeedbackResponse$ {
-  /** @deprecated use `UpdateFeedbackResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateFeedbackResponse$inboundSchema;
-  /** @deprecated use `UpdateFeedbackResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateFeedbackResponse$outboundSchema;
-  /** @deprecated use `UpdateFeedbackResponse$Outbound` instead. */
-  export type Outbound = UpdateFeedbackResponse$Outbound;
-}
-
-export function updateFeedbackResponseToJSON(
-  updateFeedbackResponse: UpdateFeedbackResponse,
-): string {
-  return JSON.stringify(
-    UpdateFeedbackResponse$outboundSchema.parse(updateFeedbackResponse),
-  );
-}
-
-export function updateFeedbackResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateFeedbackResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateFeedbackResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateFeedbackResponse' from JSON`,
   );
 }

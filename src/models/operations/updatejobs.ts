@@ -20,8 +20,6 @@ export type UpdateJobsRequest = {
   job: components.JobInput;
 };
 
-export type UpdateJobsResponse = components.Result | components.ErrorT;
-
 /** @internal */
 export const UpdateJobsRequest$inboundSchema: z.ZodType<
   UpdateJobsRequest,
@@ -84,58 +82,5 @@ export function updateJobsRequestFromJSON(
     jsonString,
     (x) => UpdateJobsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'UpdateJobsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const UpdateJobsResponse$inboundSchema: z.ZodType<
-  UpdateJobsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type UpdateJobsResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const UpdateJobsResponse$outboundSchema: z.ZodType<
-  UpdateJobsResponse$Outbound,
-  z.ZodTypeDef,
-  UpdateJobsResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateJobsResponse$ {
-  /** @deprecated use `UpdateJobsResponse$inboundSchema` instead. */
-  export const inboundSchema = UpdateJobsResponse$inboundSchema;
-  /** @deprecated use `UpdateJobsResponse$outboundSchema` instead. */
-  export const outboundSchema = UpdateJobsResponse$outboundSchema;
-  /** @deprecated use `UpdateJobsResponse$Outbound` instead. */
-  export type Outbound = UpdateJobsResponse$Outbound;
-}
-
-export function updateJobsResponseToJSON(
-  updateJobsResponse: UpdateJobsResponse,
-): string {
-  return JSON.stringify(
-    UpdateJobsResponse$outboundSchema.parse(updateJobsResponse),
-  );
-}
-
-export function updateJobsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateJobsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateJobsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateJobsResponse' from JSON`,
   );
 }

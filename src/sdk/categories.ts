@@ -26,7 +26,7 @@ export class Categories extends ClientSDK {
    */
   async listCategories(
     options?: RequestOptions,
-  ): Promise<operations.ListCategoriesResponse> {
+  ): Promise<Array<components.Category>> {
     return unwrapAsync(categoriesListCategories(
       this,
       options,
@@ -66,7 +66,7 @@ export class Categories extends ClientSDK {
   async getCategories(
     request: operations.GetCategoriesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetCategoriesResponse> {
+  ): Promise<components.Category> {
     return unwrapAsync(categoriesGetCategories(
       this,
       request,
@@ -85,7 +85,7 @@ export class Categories extends ClientSDK {
   async updateCategories(
     request: operations.UpdateCategoriesRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateCategoriesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(categoriesUpdateCategories(
       this,
       request,
@@ -106,7 +106,7 @@ export class Categories extends ClientSDK {
   async deleteCategories(
     request: operations.DeleteCategoriesRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteCategoriesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(categoriesDeleteCategories(
       this,
       request,

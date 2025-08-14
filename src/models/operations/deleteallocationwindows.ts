@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type DeleteAllocationWindowsRequest = {
@@ -14,10 +13,6 @@ export type DeleteAllocationWindowsRequest = {
    */
   uuid: string;
 };
-
-export type DeleteAllocationWindowsResponse =
-  | components.Result
-  | components.ErrorT;
 
 /** @internal */
 export const DeleteAllocationWindowsRequest$inboundSchema: z.ZodType<
@@ -72,60 +67,5 @@ export function deleteAllocationWindowsRequestFromJSON(
     jsonString,
     (x) => DeleteAllocationWindowsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'DeleteAllocationWindowsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const DeleteAllocationWindowsResponse$inboundSchema: z.ZodType<
-  DeleteAllocationWindowsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([components.Result$inboundSchema, components.ErrorT$inboundSchema]);
-
-/** @internal */
-export type DeleteAllocationWindowsResponse$Outbound =
-  | components.Result$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const DeleteAllocationWindowsResponse$outboundSchema: z.ZodType<
-  DeleteAllocationWindowsResponse$Outbound,
-  z.ZodTypeDef,
-  DeleteAllocationWindowsResponse
-> = z.union([
-  components.Result$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeleteAllocationWindowsResponse$ {
-  /** @deprecated use `DeleteAllocationWindowsResponse$inboundSchema` instead. */
-  export const inboundSchema = DeleteAllocationWindowsResponse$inboundSchema;
-  /** @deprecated use `DeleteAllocationWindowsResponse$outboundSchema` instead. */
-  export const outboundSchema = DeleteAllocationWindowsResponse$outboundSchema;
-  /** @deprecated use `DeleteAllocationWindowsResponse$Outbound` instead. */
-  export type Outbound = DeleteAllocationWindowsResponse$Outbound;
-}
-
-export function deleteAllocationWindowsResponseToJSON(
-  deleteAllocationWindowsResponse: DeleteAllocationWindowsResponse,
-): string {
-  return JSON.stringify(
-    DeleteAllocationWindowsResponse$outboundSchema.parse(
-      deleteAllocationWindowsResponse,
-    ),
-  );
-}
-
-export function deleteAllocationWindowsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<DeleteAllocationWindowsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DeleteAllocationWindowsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DeleteAllocationWindowsResponse' from JSON`,
   );
 }

@@ -12,15 +12,15 @@ let value: CreateEmailTemplatesResponse = {
     ],
   },
   result: {
-    errorCode: 1000,
-    message: "An error occurred completing your request",
+    errorCode: 0,
+    message: "OK",
   },
 };
 ```
 
 ## Fields
 
-| Field                                           | Type                                            | Required                                        | Description                                     |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| `headers`                                       | Record<string, *string*[]>                      | :heavy_check_mark:                              | N/A                                             |
-| `result`                                        | *operations.CreateEmailTemplatesResponseResult* | :heavy_check_mark:                              | N/A                                             |
+| Field                                                  | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `headers`                                              | Record<string, *string*[]>                             | :heavy_check_mark:                                     | N/A                                                    |
+| `result`                                               | [components.Result](../../models/components/result.md) | :heavy_check_mark:                                     | N/A                                                    |

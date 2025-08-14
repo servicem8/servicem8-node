@@ -26,7 +26,7 @@ export class TaxRates extends ClientSDK {
    */
   async listTaxRates(
     options?: RequestOptions,
-  ): Promise<operations.ListTaxRatesResponse> {
+  ): Promise<Array<components.TaxRate>> {
     return unwrapAsync(taxRatesListTaxRates(
       this,
       options,
@@ -66,7 +66,7 @@ export class TaxRates extends ClientSDK {
   async getTaxRates(
     request: operations.GetTaxRatesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetTaxRatesResponse> {
+  ): Promise<components.TaxRate> {
     return unwrapAsync(taxRatesGetTaxRates(
       this,
       request,
@@ -85,7 +85,7 @@ export class TaxRates extends ClientSDK {
   async updateTaxRates(
     request: operations.UpdateTaxRatesRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateTaxRatesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(taxRatesUpdateTaxRates(
       this,
       request,
@@ -106,7 +106,7 @@ export class TaxRates extends ClientSDK {
   async deleteTaxRates(
     request: operations.DeleteTaxRatesRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteTaxRatesResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(taxRatesDeleteTaxRates(
       this,
       request,

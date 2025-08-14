@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetCategoriesRequest = {
@@ -14,8 +13,6 @@ export type GetCategoriesRequest = {
    */
   uuid: string;
 };
-
-export type GetCategoriesResponse = components.Category | components.ErrorT;
 
 /** @internal */
 export const GetCategoriesRequest$inboundSchema: z.ZodType<
@@ -68,61 +65,5 @@ export function getCategoriesRequestFromJSON(
     jsonString,
     (x) => GetCategoriesRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetCategoriesRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetCategoriesResponse$inboundSchema: z.ZodType<
-  GetCategoriesResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.Category$inboundSchema,
-  components.ErrorT$inboundSchema,
-]);
-
-/** @internal */
-export type GetCategoriesResponse$Outbound =
-  | components.Category$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetCategoriesResponse$outboundSchema: z.ZodType<
-  GetCategoriesResponse$Outbound,
-  z.ZodTypeDef,
-  GetCategoriesResponse
-> = z.union([
-  components.Category$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetCategoriesResponse$ {
-  /** @deprecated use `GetCategoriesResponse$inboundSchema` instead. */
-  export const inboundSchema = GetCategoriesResponse$inboundSchema;
-  /** @deprecated use `GetCategoriesResponse$outboundSchema` instead. */
-  export const outboundSchema = GetCategoriesResponse$outboundSchema;
-  /** @deprecated use `GetCategoriesResponse$Outbound` instead. */
-  export type Outbound = GetCategoriesResponse$Outbound;
-}
-
-export function getCategoriesResponseToJSON(
-  getCategoriesResponse: GetCategoriesResponse,
-): string {
-  return JSON.stringify(
-    GetCategoriesResponse$outboundSchema.parse(getCategoriesResponse),
-  );
-}
-
-export function getCategoriesResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetCategoriesResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetCategoriesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetCategoriesResponse' from JSON`,
   );
 }

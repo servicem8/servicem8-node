@@ -9,6 +9,9 @@ let value: CreateLocationsResponse = {
   headers: {
     "key": [
       "<value 1>",
+    ],
+    "key1": [
+      "<value 1>",
       "<value 2>",
       "<value 3>",
     ],
@@ -22,7 +25,7 @@ let value: CreateLocationsResponse = {
 
 ## Fields
 
-| Field                                      | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `headers`                                  | Record<string, *string*[]>                 | :heavy_check_mark:                         | N/A                                        |
-| `result`                                   | *operations.CreateLocationsResponseResult* | :heavy_check_mark:                         | N/A                                        |
+| Field                                                  | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `headers`                                              | Record<string, *string*[]>                             | :heavy_check_mark:                                     | N/A                                                    |
+| `result`                                               | [components.Result](../../models/components/result.md) | :heavy_check_mark:                                     | N/A                                                    |

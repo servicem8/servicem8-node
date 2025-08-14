@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
-import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetFormFieldsRequest = {
@@ -14,8 +13,6 @@ export type GetFormFieldsRequest = {
    */
   uuid: string;
 };
-
-export type GetFormFieldsResponse = components.FormField | components.ErrorT;
 
 /** @internal */
 export const GetFormFieldsRequest$inboundSchema: z.ZodType<
@@ -68,61 +65,5 @@ export function getFormFieldsRequestFromJSON(
     jsonString,
     (x) => GetFormFieldsRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetFormFieldsRequest' from JSON`,
-  );
-}
-
-/** @internal */
-export const GetFormFieldsResponse$inboundSchema: z.ZodType<
-  GetFormFieldsResponse,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.FormField$inboundSchema,
-  components.ErrorT$inboundSchema,
-]);
-
-/** @internal */
-export type GetFormFieldsResponse$Outbound =
-  | components.FormField$Outbound
-  | components.ErrorT$Outbound;
-
-/** @internal */
-export const GetFormFieldsResponse$outboundSchema: z.ZodType<
-  GetFormFieldsResponse$Outbound,
-  z.ZodTypeDef,
-  GetFormFieldsResponse
-> = z.union([
-  components.FormField$outboundSchema,
-  components.ErrorT$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetFormFieldsResponse$ {
-  /** @deprecated use `GetFormFieldsResponse$inboundSchema` instead. */
-  export const inboundSchema = GetFormFieldsResponse$inboundSchema;
-  /** @deprecated use `GetFormFieldsResponse$outboundSchema` instead. */
-  export const outboundSchema = GetFormFieldsResponse$outboundSchema;
-  /** @deprecated use `GetFormFieldsResponse$Outbound` instead. */
-  export type Outbound = GetFormFieldsResponse$Outbound;
-}
-
-export function getFormFieldsResponseToJSON(
-  getFormFieldsResponse: GetFormFieldsResponse,
-): string {
-  return JSON.stringify(
-    GetFormFieldsResponse$outboundSchema.parse(getFormFieldsResponse),
-  );
-}
-
-export function getFormFieldsResponseFromJSON(
-  jsonString: string,
-): SafeParseResult<GetFormFieldsResponse, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetFormFieldsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetFormFieldsResponse' from JSON`,
   );
 }

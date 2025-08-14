@@ -26,7 +26,7 @@ export class JobPayments extends ClientSDK {
    */
   async listJobPayments(
     options?: RequestOptions,
-  ): Promise<operations.ListJobPaymentsResponse> {
+  ): Promise<Array<components.JobPayment>> {
     return unwrapAsync(jobPaymentsListJobPayments(
       this,
       options,
@@ -66,7 +66,7 @@ export class JobPayments extends ClientSDK {
   async getJobPayments(
     request: operations.GetJobPaymentsRequest,
     options?: RequestOptions,
-  ): Promise<operations.GetJobPaymentsResponse> {
+  ): Promise<components.JobPayment> {
     return unwrapAsync(jobPaymentsGetJobPayments(
       this,
       request,
@@ -85,7 +85,7 @@ export class JobPayments extends ClientSDK {
   async updateJobPayments(
     request: operations.UpdateJobPaymentsRequest,
     options?: RequestOptions,
-  ): Promise<operations.UpdateJobPaymentsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(jobPaymentsUpdateJobPayments(
       this,
       request,
@@ -106,7 +106,7 @@ export class JobPayments extends ClientSDK {
   async deleteJobPayments(
     request: operations.DeleteJobPaymentsRequest,
     options?: RequestOptions,
-  ): Promise<operations.DeleteJobPaymentsResponse> {
+  ): Promise<components.Result> {
     return unwrapAsync(jobPaymentsDeleteJobPayments(
       this,
       request,
