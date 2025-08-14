@@ -127,7 +127,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.bundles.createBundles({
-    uuid: "123e4567-a424-412d-a48c-231feeba961b",
+    uuid: "123e4567-33d0-40fc-a79d-231feec4a52b",
     itemNumber: "<value>",
   });
 
@@ -155,7 +155,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await bundlesCreateBundles(serviceM8, {
-    uuid: "123e4567-a424-412d-a48c-231feeba961b",
+    uuid: "123e4567-33d0-40fc-a79d-231feec4a52b",
     itemNumber: "<value>",
   });
   if (res.ok) {
@@ -306,7 +306,7 @@ async function run() {
   const result = await serviceM8.bundles.updateBundles({
     uuid: "92d0296e-677d-4cfc-a0ec-84e1809ff960",
     materialBundle: {
-      uuid: "123e4567-a424-412d-a48c-231feeba961b",
+      uuid: "123e4567-33d0-40fc-a79d-231feec4a52b",
       itemNumber: "<value>",
     },
   });
@@ -337,7 +337,7 @@ async function run() {
   const res = await bundlesUpdateBundles(serviceM8, {
     uuid: "92d0296e-677d-4cfc-a0ec-84e1809ff960",
     materialBundle: {
-      uuid: "123e4567-a424-412d-a48c-231feeba961b",
+      uuid: "123e4567-33d0-40fc-a79d-231feec4a52b",
       itemNumber: "<value>",
     },
   });

@@ -8,7 +8,7 @@ import { UpdateDocumentTemplatesRequest } from "servicem8/models/operations";
 let value: UpdateDocumentTemplatesRequest = {
   uuid: "b4563396-3cb5-4855-b5c4-b8ec3d98a34d",
   documentTemplate: {
-    uuid: "123e4567-a719-4a9b-a9fc-231fe084252b",
+    uuid: "123e4567-b79e-4ca8-8bd7-231feaf93e7b",
   },
 };
 ```
