@@ -34,10 +34,22 @@ export type FormField = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
+  /**
+   * The UUID of the form this field belongs to.
+   */
   formUuid?: string | undefined;
+  /**
+   * The name of the form field.
+   */
   name?: string | undefined;
+  /**
+   * JSON configuration for this question, including type, mandatory, choices and conditions.
+   */
   fieldDataJson?: string | undefined;
-  sortOrder?: string | undefined;
+  /**
+   * The sort order of the form field.
+   */
+  sortOrder?: number | undefined;
 };
 
 export type FormFieldInput = {
@@ -49,10 +61,22 @@ export type FormFieldInput = {
    * Record active/deleted flag.  Valid values are [0,1]
    */
   active?: FormFieldActive | undefined;
+  /**
+   * The UUID of the form this field belongs to.
+   */
   formUuid?: string | undefined;
+  /**
+   * The name of the form field.
+   */
   name?: string | undefined;
+  /**
+   * JSON configuration for this question, including type, mandatory, choices and conditions.
+   */
   fieldDataJson?: string | undefined;
-  sortOrder?: string | undefined;
+  /**
+   * The sort order of the form field.
+   */
+  sortOrder?: number | undefined;
 };
 
 /** @internal */
@@ -88,7 +112,7 @@ export const FormField$inboundSchema: z.ZodType<
   form_uuid: z.string().optional(),
   name: z.string().optional(),
   field_data_json: z.string().optional(),
-  sort_order: z.string().optional(),
+  sort_order: z.number().int().optional(),
 }).transform((v) => {
   return remap$(v, {
     "edit_date": "editDate",
@@ -106,7 +130,7 @@ export type FormField$Outbound = {
   form_uuid?: string | undefined;
   name?: string | undefined;
   field_data_json?: string | undefined;
-  sort_order?: string | undefined;
+  sort_order?: number | undefined;
 };
 
 /** @internal */
@@ -121,7 +145,7 @@ export const FormField$outboundSchema: z.ZodType<
   formUuid: z.string().optional(),
   name: z.string().optional(),
   fieldDataJson: z.string().optional(),
-  sortOrder: z.string().optional(),
+  sortOrder: z.number().int().optional(),
 }).transform((v) => {
   return remap$(v, {
     editDate: "edit_date",
@@ -169,7 +193,7 @@ export const FormFieldInput$inboundSchema: z.ZodType<
   form_uuid: z.string().optional(),
   name: z.string().optional(),
   field_data_json: z.string().optional(),
-  sort_order: z.string().optional(),
+  sort_order: z.number().int().optional(),
 }).transform((v) => {
   return remap$(v, {
     "form_uuid": "formUuid",
@@ -185,7 +209,7 @@ export type FormFieldInput$Outbound = {
   form_uuid?: string | undefined;
   name?: string | undefined;
   field_data_json?: string | undefined;
-  sort_order?: string | undefined;
+  sort_order?: number | undefined;
 };
 
 /** @internal */
@@ -199,7 +223,7 @@ export const FormFieldInput$outboundSchema: z.ZodType<
   formUuid: z.string().optional(),
   name: z.string().optional(),
   fieldDataJson: z.string().optional(),
-  sortOrder: z.string().optional(),
+  sortOrder: z.number().int().optional(),
 }).transform((v) => {
   return remap$(v, {
     formUuid: "form_uuid",

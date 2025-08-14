@@ -8,7 +8,7 @@ import { UpdateTaxRatesRequest } from "servicem8/models/operations";
 let value: UpdateTaxRatesRequest = {
   uuid: "454d7816-ba3d-4ece-ab28-bf8ea8608925",
   taxRate: {
-    uuid: "123e4567-6c35-42bc-a0da-231ef41f751b",
+    uuid: "123e4567-7cd6-4ab2-93e9-231ef0e55d0b",
     name: "<value>",
   },
 };
