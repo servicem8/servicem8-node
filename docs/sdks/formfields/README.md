@@ -127,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.formFields.createFormFields({
-    uuid: "123e4567-62e6-479d-bfcc-231fe1d128cb",
-    formUuid: "123e4567-cffb-4925-8fa1-231fe6c21ffb",
+    uuid: "123e4567-6398-4006-b1f9-2320ab246ddb",
+    formUuid: "123e4567-9fa4-4ea2-92c0-2320aab09e4b",
   });
 
   console.log(result);
@@ -155,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formFieldsCreateFormFields(serviceM8, {
-    uuid: "123e4567-62e6-479d-bfcc-231fe1d128cb",
-    formUuid: "123e4567-cffb-4925-8fa1-231fe6c21ffb",
+    uuid: "123e4567-6398-4006-b1f9-2320ab246ddb",
+    formUuid: "123e4567-9fa4-4ea2-92c0-2320aab09e4b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -306,8 +306,8 @@ async function run() {
   const result = await serviceM8.formFields.updateFormFields({
     uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
     formField: {
-      uuid: "123e4567-62e6-479d-bfcc-231fe1d128cb",
-      formUuid: "123e4567-cffb-4925-8fa1-231fe6c21ffb",
+      uuid: "123e4567-6398-4006-b1f9-2320ab246ddb",
+      formUuid: "123e4567-9fa4-4ea2-92c0-2320aab09e4b",
     },
   });
 
@@ -337,8 +337,8 @@ async function run() {
   const res = await formFieldsUpdateFormFields(serviceM8, {
     uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
     formField: {
-      uuid: "123e4567-62e6-479d-bfcc-231fe1d128cb",
-      formUuid: "123e4567-cffb-4925-8fa1-231fe6c21ffb",
+      uuid: "123e4567-6398-4006-b1f9-2320ab246ddb",
+      formUuid: "123e4567-9fa4-4ea2-92c0-2320aab09e4b",
     },
   });
   if (res.ok) {

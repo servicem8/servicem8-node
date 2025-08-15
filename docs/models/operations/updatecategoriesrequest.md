@@ -9,7 +9,7 @@ let value: UpdateCategoriesRequest = {
   uuid: "a91e8171-6ae0-4f6a-8b4c-d78c5601e0a9",
   category: {
     name: "<value>",
-    uuid: "123e4567-0f76-42b4-8ba7-231fed1d876b",
+    uuid: "123e4567-2ae6-4075-a78b-2320a4639f9b",
   },
 };
 ```

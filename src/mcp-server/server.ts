@@ -195,7 +195,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "ServiceM8",
-    version: "0.9.40",
+    version: "0.9.41",
   });
 
   const client = new ServiceM8Core({
