@@ -38,10 +38,10 @@ export type Vendor = {
    * Company Name
    */
   name: string;
-  abnNumber?: string | undefined;
   /**
-   * Company Business Number
+   * Company ABN Number (Australian Accounts Only)
    */
+  abnNumber?: string | undefined;
   businessNumber?: string | undefined;
   /**
    * Company Website address
