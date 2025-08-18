@@ -170,11 +170,8 @@ import { tool$staffMembersDeleteStaffMembers } from "./tools/staffMembersDeleteS
 import { tool$staffMembersGetStaffMembers } from "./tools/staffMembersGetStaffMembers.js";
 import { tool$staffMembersListStaffMembers } from "./tools/staffMembersListStaffMembers.js";
 import { tool$staffMembersUpdateStaffMembers } from "./tools/staffMembersUpdateStaffMembers.js";
-import { tool$staffMessagesCreateStaffMessages } from "./tools/staffMessagesCreateStaffMessages.js";
-import { tool$staffMessagesDeleteStaffMessages } from "./tools/staffMessagesDeleteStaffMessages.js";
 import { tool$staffMessagesGetStaffMessages } from "./tools/staffMessagesGetStaffMessages.js";
 import { tool$staffMessagesListStaffMessages } from "./tools/staffMessagesListStaffMessages.js";
-import { tool$staffMessagesUpdateStaffMessages } from "./tools/staffMessagesUpdateStaffMessages.js";
 import { tool$tasksCreateTasks } from "./tools/tasksCreateTasks.js";
 import { tool$tasksDeleteTasks } from "./tools/tasksDeleteTasks.js";
 import { tool$tasksGetTasks } from "./tools/tasksGetTasks.js";
@@ -198,7 +195,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "ServiceM8",
-    version: "0.9.42",
+    version: "0.9.43",
   });
 
   const client = new ServiceM8Core({
@@ -375,10 +372,7 @@ export function createMCPServer(deps: {
   tool(tool$staffMembersUpdateStaffMembers);
   tool(tool$staffMembersDeleteStaffMembers);
   tool(tool$staffMessagesListStaffMessages);
-  tool(tool$staffMessagesCreateStaffMessages);
   tool(tool$staffMessagesGetStaffMessages);
-  tool(tool$staffMessagesUpdateStaffMessages);
-  tool(tool$staffMessagesDeleteStaffMessages);
   tool(tool$tasksListTasks);
   tool(tool$tasksCreateTasks);
   tool(tool$tasksGetTasks);

@@ -504,10 +504,7 @@ run();
 ### [staffMessages](docs/sdks/staffmessages/README.md)
 
 * [listStaffMessages](docs/sdks/staffmessages/README.md#liststaffmessages) - List all Staff Messages
-* [createStaffMessages](docs/sdks/staffmessages/README.md#createstaffmessages) - Create a new Staff Message
 * [getStaffMessages](docs/sdks/staffmessages/README.md#getstaffmessages) - Retrieve a Staff Message
-* [updateStaffMessages](docs/sdks/staffmessages/README.md#updatestaffmessages) - Update a Staff Message
-* [deleteStaffMessages](docs/sdks/staffmessages/README.md#deletestaffmessages) - Delete a Staff Message
 
 ### [tasks](docs/sdks/tasks/README.md)
 
@@ -705,11 +702,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`staffMembersGetStaffMembers`](docs/sdks/staffmembers/README.md#getstaffmembers) - Retrieve a Staff Member
 - [`staffMembersListStaffMembers`](docs/sdks/staffmembers/README.md#liststaffmembers) - List all Staff Members
 - [`staffMembersUpdateStaffMembers`](docs/sdks/staffmembers/README.md#updatestaffmembers) - Update a Staff Member
-- [`staffMessagesCreateStaffMessages`](docs/sdks/staffmessages/README.md#createstaffmessages) - Create a new Staff Message
-- [`staffMessagesDeleteStaffMessages`](docs/sdks/staffmessages/README.md#deletestaffmessages) - Delete a Staff Message
 - [`staffMessagesGetStaffMessages`](docs/sdks/staffmessages/README.md#getstaffmessages) - Retrieve a Staff Message
 - [`staffMessagesListStaffMessages`](docs/sdks/staffmessages/README.md#liststaffmessages) - List all Staff Messages
-- [`staffMessagesUpdateStaffMessages`](docs/sdks/staffmessages/README.md#updatestaffmessages) - Update a Staff Message
 - [`tasksCreateTasks`](docs/sdks/tasks/README.md#createtasks) - Create a new Task
 - [`tasksDeleteTasks`](docs/sdks/tasks/README.md#deletetasks) - Delete a Task
 - [`tasksGetTasks`](docs/sdks/tasks/README.md#gettasks) - Retrieve a Task
@@ -865,7 +859,7 @@ run();
 
 
 **Inherit from [`ServiceM8Error`](./src/models/errors/servicem8error.ts)**:
-* [`NotFoundError`](./src/models/errors/notfounderror.ts): Status code `404`. Applicable to 97 of 174 methods.*
+* [`NotFoundError`](./src/models/errors/notfounderror.ts): Status code `404`. Applicable to 95 of 171 methods.*
 * [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
 
 </details>
