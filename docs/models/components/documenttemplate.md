@@ -6,7 +6,7 @@
 import { DocumentTemplate } from "servicem8/models/components";
 
 let value: DocumentTemplate = {
-  uuid: "123e4567-baf4-4b74-b4e9-2322282ccb2b",
+  uuid: "123e4567-3438-45de-bafd-2329bc4ba00b",
   editDate: "2025-08-01 12:00:00",
 };
 ```
@@ -15,7 +15,7 @@ let value: DocumentTemplate = {
 
 | Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            | Example                                                                                |
 | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `uuid`                                                                                 | *string*                                                                               | :heavy_minus_sign:                                                                     | Unique identifier for this record                                                      | 123e4567-baf4-4b74-b4e9-2322282ccb2b                                                   |
+| `uuid`                                                                                 | *string*                                                                               | :heavy_minus_sign:                                                                     | Unique identifier for this record                                                      | 123e4567-3438-45de-bafd-2329bc4ba00b                                                   |
 | `active`                                                                               | [components.DocumentTemplateActive](../../models/components/documenttemplateactive.md) | :heavy_minus_sign:                                                                     | Record active/deleted flag.  Valid values are [0,1]                                    |                                                                                        |
 | `editDate`                                                                             | *any*                                                                                  | :heavy_minus_sign:                                                                     | Timestamp at which record was last modified                                            | 2025-08-01 12:00:00                                                                    |
 | `templateType`                                                                         | *string*                                                                               | :heavy_minus_sign:                                                                     | (Read only)                                                                            |                                                                                        |

@@ -8,7 +8,7 @@ import { UpdateAssetTypesRequest } from "servicem8/models/operations";
 let value: UpdateAssetTypesRequest = {
   uuid: "46b5b535-a0d0-4436-ad42-246c98a238ec",
   assetType: {
-    uuid: "123e4567-c51f-4c5e-91dc-23222eb7cf9b",
+    uuid: "123e4567-c58f-4a1a-a110-2329b0435f0b",
   },
 };
 ```

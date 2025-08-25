@@ -127,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobContacts.createJobContacts({
-    uuid: "123e4567-3bee-4871-8a9a-23222b4d49cb",
-    jobUuid: "123e4567-2e94-4962-a1b7-23222299792b",
+    uuid: "123e4567-e2bd-4b4c-a62c-2329b2deb5cb",
+    jobUuid: "123e4567-6d29-4471-8a10-2329b75a9a2b",
   });
 
   console.log(result);
@@ -155,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobContactsCreateJobContacts(serviceM8, {
-    uuid: "123e4567-3bee-4871-8a9a-23222b4d49cb",
-    jobUuid: "123e4567-2e94-4962-a1b7-23222299792b",
+    uuid: "123e4567-e2bd-4b4c-a62c-2329b2deb5cb",
+    jobUuid: "123e4567-6d29-4471-8a10-2329b75a9a2b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -306,8 +306,8 @@ async function run() {
   const result = await serviceM8.jobContacts.updateJobContacts({
     uuid: "9ce8245c-9fb9-4361-8f7f-25eba557ff71",
     jobContact: {
-      uuid: "123e4567-3bee-4871-8a9a-23222b4d49cb",
-      jobUuid: "123e4567-2e94-4962-a1b7-23222299792b",
+      uuid: "123e4567-e2bd-4b4c-a62c-2329b2deb5cb",
+      jobUuid: "123e4567-6d29-4471-8a10-2329b75a9a2b",
     },
   });
 
@@ -337,8 +337,8 @@ async function run() {
   const res = await jobContactsUpdateJobContacts(serviceM8, {
     uuid: "9ce8245c-9fb9-4361-8f7f-25eba557ff71",
     jobContact: {
-      uuid: "123e4567-3bee-4871-8a9a-23222b4d49cb",
-      jobUuid: "123e4567-2e94-4962-a1b7-23222299792b",
+      uuid: "123e4567-e2bd-4b4c-a62c-2329b2deb5cb",
+      jobUuid: "123e4567-6d29-4471-8a10-2329b75a9a2b",
     },
   });
   if (res.ok) {

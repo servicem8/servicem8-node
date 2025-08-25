@@ -6,6 +6,7 @@
 ### Available Operations
 
 * [listInboxMessages](#listinboxmessages) - List inbox messages
+* [createInboxMessage](#createinboxmessage) - Create a new inbox message
 * [getInboxMessage](#getinboxmessage) - Get inbox message details
 * [markInboxMessageAsRead](#markinboxmessageasread) - Mark message as read
 * [archiveInboxMessage](#archiveinboxmessage) - Archive or unarchive message
@@ -86,6 +87,87 @@ run();
 | Error Type       | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorT    | 400, 403         | application/json |
+| errors.APIError  | 4XX, 5XX         | \*/\*            |
+
+## createInboxMessage
+
+Creates a new inbox message that will appear in the inbox
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createInboxMessage" method="post" path="/inboxmessage.json" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.inbox.createInboxMessage({
+    subject: "<value>",
+    messageText: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { inboxCreateInboxMessage } from "servicem8/funcs/inboxCreateInboxMessage.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await inboxCreateInboxMessage(serviceM8, {
+    subject: "<value>",
+    messageText: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("inboxCreateInboxMessage failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.CreateInboxMessageRequest](../../models/components/createinboxmessagerequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[components.InboxMessageDetail](../../models/components/inboxmessagedetail.md)\>**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorT    | 400, 403, 404    | application/json |
+| errors.ErrorT    | 500              | application/json |
 | errors.APIError  | 4XX, 5XX         | \*/\*            |
 
 ## getInboxMessage

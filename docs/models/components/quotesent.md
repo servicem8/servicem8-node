@@ -1,6 +1,6 @@
 # QuoteSent
 
-Boolean flag indicating whether a quote has been sent to the client for this job. (Read only).  Valid values are [0,1]
+Boolean flag indicating whether a quote has been sent to the client for this job..  Valid values are [0,1]
 
 ## Example Usage
 

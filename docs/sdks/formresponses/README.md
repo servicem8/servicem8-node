@@ -8,7 +8,10 @@ Operations related to Form Responses
 ### Available Operations
 
 * [listFormResponses](#listformresponses) - List all Form Responses
+* [createFormResponses](#createformresponses) - Create a new Form Response
 * [getFormResponses](#getformresponses) - Retrieve a Form Response
+* [updateFormResponses](#updateformresponses) - Update a Form Response
+* [deleteFormResponses](#deleteformresponses) - Delete a Form Response
 
 ## listFormResponses
 
@@ -96,6 +99,112 @@ run();
 | errors.ErrorT              | 500                        | application/json           |
 | errors.APIError            | 4XX, 5XX                   | \*/\*                      |
 
+## createFormResponses
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_forms**.
+
+			
+			
+#### Record UUID
+UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
+
+			
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createFormResponses" method="post" path="/formresponse.json" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.createFormResponses({
+    uuid: "123e4567-178a-4fa4-a1bb-2329bd3bc29b",
+    formUuid: "123e4567-0db8-4602-b04f-2329b9b2d90b",
+    staffUuid: "123e4567-721a-4295-82dc-2329bfa38f9b",
+    regardingObjectUuid: "123e4567-d4a5-4382-94f8-2329bdb8d27b",
+    timestamp: "2025-08-01 12:00:00",
+    formByStaffUuid: "123e4567-c7eb-4b86-9853-2329bcc0713b",
+    documentAttachmentUuid: "123e4567-7e82-42cb-861a-2329b4d22dbb",
+    assetUuid: "123e4567-c58c-40cf-8836-2329be5e6fab",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesCreateFormResponses } from "servicem8/funcs/formResponsesCreateFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesCreateFormResponses(serviceM8, {
+    uuid: "123e4567-178a-4fa4-a1bb-2329bd3bc29b",
+    formUuid: "123e4567-0db8-4602-b04f-2329b9b2d90b",
+    staffUuid: "123e4567-721a-4295-82dc-2329bfa38f9b",
+    regardingObjectUuid: "123e4567-d4a5-4382-94f8-2329bdb8d27b",
+    timestamp: "2025-08-01 12:00:00",
+    formByStaffUuid: "123e4567-c7eb-4b86-9853-2329bcc0713b",
+    documentAttachmentUuid: "123e4567-7e82-42cb-861a-2329b4d22dbb",
+    assetUuid: "123e4567-c58c-40cf-8836-2329be5e6fab",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesCreateFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.FormResponseInput](../../models/components/formresponseinput.md)                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.CreateFormResponsesResponse](../../models/operations/createformresponsesresponse.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
+
 ## getFormResponses
 
 
@@ -171,6 +280,206 @@ run();
 ### Response
 
 **Promise\<[components.FormResponse](../../models/components/formresponse.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## updateFormResponses
+
+
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_forms**.
+
+			
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateFormResponses" method="post" path="/formresponse/{uuid}.json" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.updateFormResponses({
+    uuid: "5f593a3c-772d-4259-856d-86a8df7ae53d",
+    formResponse: {
+      uuid: "123e4567-178a-4fa4-a1bb-2329bd3bc29b",
+      formUuid: "123e4567-0db8-4602-b04f-2329b9b2d90b",
+      staffUuid: "123e4567-721a-4295-82dc-2329bfa38f9b",
+      regardingObjectUuid: "123e4567-d4a5-4382-94f8-2329bdb8d27b",
+      timestamp: "2025-08-01 12:00:00",
+      formByStaffUuid: "123e4567-c7eb-4b86-9853-2329bcc0713b",
+      documentAttachmentUuid: "123e4567-7e82-42cb-861a-2329b4d22dbb",
+      assetUuid: "123e4567-c58c-40cf-8836-2329be5e6fab",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesUpdateFormResponses } from "servicem8/funcs/formResponsesUpdateFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesUpdateFormResponses(serviceM8, {
+    uuid: "5f593a3c-772d-4259-856d-86a8df7ae53d",
+    formResponse: {
+      uuid: "123e4567-178a-4fa4-a1bb-2329bd3bc29b",
+      formUuid: "123e4567-0db8-4602-b04f-2329b9b2d90b",
+      staffUuid: "123e4567-721a-4295-82dc-2329bfa38f9b",
+      regardingObjectUuid: "123e4567-d4a5-4382-94f8-2329bdb8d27b",
+      timestamp: "2025-08-01 12:00:00",
+      formByStaffUuid: "123e4567-c7eb-4b86-9853-2329bcc0713b",
+      documentAttachmentUuid: "123e4567-7e82-42cb-861a-2329b4d22dbb",
+      assetUuid: "123e4567-c58c-40cf-8836-2329be5e6fab",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesUpdateFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateFormResponsesRequest](../../models/operations/updateformresponsesrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[components.Result](../../models/components/result.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| errors.ErrorT              | 400                        | application/json           |
+| errors.AuthenticationError | 401                        | application/json           |
+| errors.ForbiddenError      | 403                        | application/json           |
+| errors.NotFoundError       | 404                        | application/json           |
+| errors.RateLimitError      | 429                        | application/json           |
+| errors.ErrorT              | 500                        | application/json           |
+| errors.APIError            | 4XX, 5XX                   | \*/\*                      |
+
+## deleteFormResponses
+
+
+			
+In ServiceM8, deleting a record sets its `active` field to `0`. Inactive records are still accessible on the API, but are hidden in the UI. Inactive records can be restored by setting their `active` field to `1`.
+
+			
+			
+#### OAuth Scope
+This endpoint requires the following OAuth scope **manage_forms**.
+
+			
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="deleteFormResponses" method="delete" path="/formresponse/{uuid}.json" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.deleteFormResponses({
+    uuid: "e983658f-a3da-4850-8bb2-90c7866b30cf",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesDeleteFormResponses } from "servicem8/funcs/formResponsesDeleteFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesDeleteFormResponses(serviceM8, {
+    uuid: "e983658f-a3da-4850-8bb2-90c7866b30cf",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesDeleteFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.DeleteFormResponsesRequest](../../models/operations/deleteformresponsesrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[components.Result](../../models/components/result.md)\>**
 
 ### Errors
 

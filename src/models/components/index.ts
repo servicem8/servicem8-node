@@ -16,6 +16,7 @@ export * from "./company.js";
 export * from "./companycontact.js";
 export * from "./converttojobrequest.js";
 export * from "./converttojobresponse.js";
+export * from "./createinboxmessagerequest.js";
 export * from "./documenttemplate.js";
 export * from "./emailtemplate.js";
 export * from "./embeddingsearchresponse.js";

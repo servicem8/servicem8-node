@@ -36,26 +36,26 @@ export const GeoIsValid = {
 export type GeoIsValid = ClosedEnum<typeof GeoIsValid>;
 
 /**
- * Indicates whether an invoice has been sent for this job. (Read only).  Valid values are [0,1]
+ * Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
  */
 export const InvoiceSent = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Indicates whether an invoice has been sent for this job. (Read only).  Valid values are [0,1]
+ * Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
  */
 export type InvoiceSent = ClosedEnum<typeof InvoiceSent>;
 
 /**
- * Boolean flag indicating whether a quote has been sent to the client for this job. (Read only).  Valid values are [0,1]
+ * Boolean flag indicating whether a quote has been sent to the client for this job..  Valid values are [0,1]
  */
 export const QuoteSent = {
   Zero: 0,
   One: 1,
 } as const;
 /**
- * Boolean flag indicating whether a quote has been sent to the client for this job. (Read only).  Valid values are [0,1]
+ * Boolean flag indicating whether a quote has been sent to the client for this job..  Valid values are [0,1]
  */
 export type QuoteSent = ClosedEnum<typeof QuoteSent>;
 
@@ -117,11 +117,11 @@ export type Job = {
    */
   status: Status;
   /**
-   * The longitude coordinate of the job location.
+   * The longitude coordinate of the job location. (Read only)
    */
   lng?: number | undefined;
   /**
-   * The latitude coordinate of the job location.
+   * The latitude coordinate of the job location. (Read only)
    */
   lat?: number | undefined;
   /**
@@ -157,7 +157,7 @@ export type Job = {
    */
   purchaseOrderNumber?: string | undefined;
   /**
-   * Indicates whether an invoice has been sent for this job. (Read only).  Valid values are [0,1]
+   * Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
    */
   invoiceSent?: InvoiceSent | undefined;
   /**
@@ -217,7 +217,7 @@ export type Job = {
    */
   quoteDate?: string | undefined;
   /**
-   * Boolean flag indicating whether a quote has been sent to the client for this job. (Read only).  Valid values are [0,1]
+   * Boolean flag indicating whether a quote has been sent to the client for this job..  Valid values are [0,1]
    */
   quoteSent?: QuoteSent | undefined;
   /**
@@ -262,7 +262,7 @@ export type Job = {
    */
   generatedJobId?: string | undefined;
   /**
-   * The total amount to be invoiced for this job.
+   * The total amount to be invoiced for this job. (Read only)
    */
   totalInvoiceAmount?: string | undefined;
   /**
@@ -270,7 +270,7 @@ export type Job = {
    */
   paymentProcessed?: PaymentProcessed | undefined;
   /**
-   * The date and time the job has been exported to the connected Accounting Package.
+   * The date and time the job has been exported to the connected Accounting Package. (Read only)
    */
   paymentProcessedStamp?: string | undefined;
   /**
@@ -278,7 +278,7 @@ export type Job = {
    */
   paymentReceived?: PaymentReceived | undefined;
   /**
-   * The date and time when full payment was received.
+   * The date and time when full payment was received. (Read only)
    */
   paymentReceivedStamp?: string | undefined;
   /**
@@ -286,7 +286,7 @@ export type Job = {
    */
   completionDate?: string | undefined;
   /**
-   * UUID of the staff member who marked this job as completed. References a staff record in the system.
+   * UUID of the staff member who marked this job as completed. References a staff record in the system. (Read only)
    */
   completionActionedByUuid?: string | undefined;
   /**
@@ -294,7 +294,7 @@ export type Job = {
    */
   unsuccessfulDate?: string | undefined;
   /**
-   * The end date/time of the last scheduled activity for this job. After this date, the job is considered Unscheduled.
+   * The end date/time of the last scheduled activity for this job. After this date, the job is considered Unscheduled. (Read only)
    */
   jobIsScheduledUntilStamp?: string | undefined;
 };
@@ -321,11 +321,11 @@ export type JobInput = {
    */
   status: Status;
   /**
-   * The longitude coordinate of the job location.
+   * The longitude coordinate of the job location. (Read only)
    */
   lng?: number | undefined;
   /**
-   * The latitude coordinate of the job location.
+   * The latitude coordinate of the job location. (Read only)
    */
   lat?: number | undefined;
   /**
@@ -361,7 +361,7 @@ export type JobInput = {
    */
   purchaseOrderNumber?: string | undefined;
   /**
-   * Indicates whether an invoice has been sent for this job. (Read only).  Valid values are [0,1]
+   * Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
    */
   invoiceSent?: InvoiceSent | undefined;
   /**
@@ -421,7 +421,7 @@ export type JobInput = {
    */
   quoteDate?: string | undefined;
   /**
-   * Boolean flag indicating whether a quote has been sent to the client for this job. (Read only).  Valid values are [0,1]
+   * Boolean flag indicating whether a quote has been sent to the client for this job..  Valid values are [0,1]
    */
   quoteSent?: QuoteSent | undefined;
   /**
@@ -462,7 +462,7 @@ export type JobInput = {
    */
   generatedJobId?: string | undefined;
   /**
-   * The total amount to be invoiced for this job.
+   * The total amount to be invoiced for this job. (Read only)
    */
   totalInvoiceAmount?: string | undefined;
   /**
@@ -470,7 +470,7 @@ export type JobInput = {
    */
   paymentProcessed?: PaymentProcessed | undefined;
   /**
-   * The date and time the job has been exported to the connected Accounting Package.
+   * The date and time the job has been exported to the connected Accounting Package. (Read only)
    */
   paymentProcessedStamp?: string | undefined;
   /**
@@ -478,7 +478,7 @@ export type JobInput = {
    */
   paymentReceived?: PaymentReceived | undefined;
   /**
-   * The date and time when full payment was received.
+   * The date and time when full payment was received. (Read only)
    */
   paymentReceivedStamp?: string | undefined;
   /**
@@ -486,7 +486,7 @@ export type JobInput = {
    */
   completionDate?: string | undefined;
   /**
-   * UUID of the staff member who marked this job as completed. References a staff record in the system.
+   * UUID of the staff member who marked this job as completed. References a staff record in the system. (Read only)
    */
   completionActionedByUuid?: string | undefined;
   /**
@@ -494,7 +494,7 @@ export type JobInput = {
    */
   unsuccessfulDate?: string | undefined;
   /**
-   * The end date/time of the last scheduled activity for this job. After this date, the job is considered Unscheduled.
+   * The end date/time of the last scheduled activity for this job. After this date, the job is considered Unscheduled. (Read only)
    */
   jobIsScheduledUntilStamp?: string | undefined;
 };

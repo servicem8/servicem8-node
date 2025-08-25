@@ -350,7 +350,10 @@ run();
 ### [formResponses](docs/sdks/formresponses/README.md)
 
 * [listFormResponses](docs/sdks/formresponses/README.md#listformresponses) - List all Form Responses
+* [createFormResponses](docs/sdks/formresponses/README.md#createformresponses) - Create a new Form Response
 * [getFormResponses](docs/sdks/formresponses/README.md#getformresponses) - Retrieve a Form Response
+* [updateFormResponses](docs/sdks/formresponses/README.md#updateformresponses) - Update a Form Response
+* [deleteFormResponses](docs/sdks/formresponses/README.md#deleteformresponses) - Delete a Form Response
 
 ### [forms](docs/sdks/forms/README.md)
 
@@ -363,6 +366,7 @@ run();
 ### [inbox](docs/sdks/inbox/README.md)
 
 * [listInboxMessages](docs/sdks/inbox/README.md#listinboxmessages) - List inbox messages
+* [createInboxMessage](docs/sdks/inbox/README.md#createinboxmessage) - Create a new inbox message
 * [getInboxMessage](docs/sdks/inbox/README.md#getinboxmessage) - Get inbox message details
 * [markInboxMessageAsRead](docs/sdks/inbox/README.md#markinboxmessageasread) - Mark message as read
 * [archiveInboxMessage](docs/sdks/inbox/README.md#archiveinboxmessage) - Archive or unarchive message
@@ -504,7 +508,10 @@ run();
 ### [staffMessages](docs/sdks/staffmessages/README.md)
 
 * [listStaffMessages](docs/sdks/staffmessages/README.md#liststaffmessages) - List all Staff Messages
+* [createStaffMessages](docs/sdks/staffmessages/README.md#createstaffmessages) - Create a new Staff Message
 * [getStaffMessages](docs/sdks/staffmessages/README.md#getstaffmessages) - Retrieve a Staff Message
+* [updateStaffMessages](docs/sdks/staffmessages/README.md#updatestaffmessages) - Update a Staff Message
+* [deleteStaffMessages](docs/sdks/staffmessages/README.md#deletestaffmessages) - Delete a Staff Message
 
 ### [tasks](docs/sdks/tasks/README.md)
 
@@ -609,8 +616,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`formFieldsGetFormFields`](docs/sdks/formfields/README.md#getformfields) - Retrieve a Form Field
 - [`formFieldsListFormFields`](docs/sdks/formfields/README.md#listformfields) - List all Form Fields
 - [`formFieldsUpdateFormFields`](docs/sdks/formfields/README.md#updateformfields) - Update a Form Field
+- [`formResponsesCreateFormResponses`](docs/sdks/formresponses/README.md#createformresponses) - Create a new Form Response
+- [`formResponsesDeleteFormResponses`](docs/sdks/formresponses/README.md#deleteformresponses) - Delete a Form Response
 - [`formResponsesGetFormResponses`](docs/sdks/formresponses/README.md#getformresponses) - Retrieve a Form Response
 - [`formResponsesListFormResponses`](docs/sdks/formresponses/README.md#listformresponses) - List all Form Responses
+- [`formResponsesUpdateFormResponses`](docs/sdks/formresponses/README.md#updateformresponses) - Update a Form Response
 - [`formsCreateForms`](docs/sdks/forms/README.md#createforms) - Create a new Form
 - [`formsDeleteForms`](docs/sdks/forms/README.md#deleteforms) - Delete a Form
 - [`formsGetForms`](docs/sdks/forms/README.md#getforms) - Retrieve a Form
@@ -620,6 +630,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`inboxArchiveInboxMessage`](docs/sdks/inbox/README.md#archiveinboxmessage) - Archive or unarchive message
 - [`inboxAttachInboxMessageToJob`](docs/sdks/inbox/README.md#attachinboxmessagetojob) - Attach message to existing job
 - [`inboxConvertInboxMessageToJob`](docs/sdks/inbox/README.md#convertinboxmessagetojob) - Convert message to job
+- [`inboxCreateInboxMessage`](docs/sdks/inbox/README.md#createinboxmessage) - Create a new inbox message
 - [`inboxGetInboxMessage`](docs/sdks/inbox/README.md#getinboxmessage) - Get inbox message details
 - [`inboxListInboxMessages`](docs/sdks/inbox/README.md#listinboxmessages) - List inbox messages
 - [`inboxMarkInboxMessageAsRead`](docs/sdks/inbox/README.md#markinboxmessageasread) - Mark message as read
@@ -702,8 +713,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`staffMembersGetStaffMembers`](docs/sdks/staffmembers/README.md#getstaffmembers) - Retrieve a Staff Member
 - [`staffMembersListStaffMembers`](docs/sdks/staffmembers/README.md#liststaffmembers) - List all Staff Members
 - [`staffMembersUpdateStaffMembers`](docs/sdks/staffmembers/README.md#updatestaffmembers) - Update a Staff Member
+- [`staffMessagesCreateStaffMessages`](docs/sdks/staffmessages/README.md#createstaffmessages) - Create a new Staff Message
+- [`staffMessagesDeleteStaffMessages`](docs/sdks/staffmessages/README.md#deletestaffmessages) - Delete a Staff Message
 - [`staffMessagesGetStaffMessages`](docs/sdks/staffmessages/README.md#getstaffmessages) - Retrieve a Staff Message
 - [`staffMessagesListStaffMessages`](docs/sdks/staffmessages/README.md#liststaffmessages) - List all Staff Messages
+- [`staffMessagesUpdateStaffMessages`](docs/sdks/staffmessages/README.md#updatestaffmessages) - Update a Staff Message
 - [`tasksCreateTasks`](docs/sdks/tasks/README.md#createtasks) - Create a new Task
 - [`tasksDeleteTasks`](docs/sdks/tasks/README.md#deletetasks) - Delete a Task
 - [`tasksGetTasks`](docs/sdks/tasks/README.md#gettasks) - Retrieve a Task
@@ -859,7 +873,7 @@ run();
 
 
 **Inherit from [`ServiceM8Error`](./src/models/errors/servicem8error.ts)**:
-* [`NotFoundError`](./src/models/errors/notfounderror.ts): Status code `404`. Applicable to 95 of 171 methods.*
+* [`NotFoundError`](./src/models/errors/notfounderror.ts): Status code `404`. Applicable to 99 of 178 methods.*
 * [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
 
 </details>

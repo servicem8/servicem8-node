@@ -1,6 +1,6 @@
 # InvoiceSent
 
-Indicates whether an invoice has been sent for this job. (Read only).  Valid values are [0,1]
+Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
 
 ## Example Usage
 

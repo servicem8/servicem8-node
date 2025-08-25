@@ -6,6 +6,7 @@ import { inboxAddNoteToInboxMessage } from "../funcs/inboxAddNoteToInboxMessage.
 import { inboxArchiveInboxMessage } from "../funcs/inboxArchiveInboxMessage.js";
 import { inboxAttachInboxMessageToJob } from "../funcs/inboxAttachInboxMessageToJob.js";
 import { inboxConvertInboxMessageToJob } from "../funcs/inboxConvertInboxMessageToJob.js";
+import { inboxCreateInboxMessage } from "../funcs/inboxCreateInboxMessage.js";
 import { inboxGetInboxMessage } from "../funcs/inboxGetInboxMessage.js";
 import { inboxListInboxMessages } from "../funcs/inboxListInboxMessages.js";
 import { inboxMarkInboxMessageAsRead } from "../funcs/inboxMarkInboxMessageAsRead.js";
@@ -27,6 +28,23 @@ export class Inbox extends ClientSDK {
     options?: RequestOptions,
   ): Promise<components.InboxMessagesResponse> {
     return unwrapAsync(inboxListInboxMessages(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a new inbox message
+   *
+   * @remarks
+   * Creates a new inbox message that will appear in the inbox
+   */
+  async createInboxMessage(
+    request: components.CreateInboxMessageRequest,
+    options?: RequestOptions,
+  ): Promise<components.InboxMessageDetail> {
+    return unwrapAsync(inboxCreateInboxMessage(
       this,
       request,
       options,
