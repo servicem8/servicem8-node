@@ -1,6 +1,6 @@
 {
   "name": "servicem8",
-  "version": "0.9.44",
+  "version": "0.9.45",
   "author": "ServiceM8",
   "type": "module",
   "bin": {
@@ -22,6 +22,10 @@
     }
   },
   "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/servicem8/servicem8-node.git"
+  },
   "scripts": {
     "lint": "eslint --cache --max-warnings=0 src",
     "build:mcp": "bun src/mcp-server/build.mts",

@@ -3,10 +3,12 @@ id: 5292d1b1-a456-4df8-b793-88d92b92bb91
 management:
   docChecksum: 86011ba1c7028e087e9dc48d3be3d7e0
   docVersion: 1.0.0
-  speakeasyVersion: 1.606.3
-  generationVersion: 2.687.1
-  releaseVersion: 0.9.44
-  configChecksum: 23fdd36bfdd69ca6da1a5c2b974a8ff7
+  speakeasyVersion: 1.606.9
+  generationVersion: 2.687.13
+  releaseVersion: 0.9.45
+  configChecksum: f6f67c111412c037a7b716fd81e3d63b
+  repoURL: https://github.com/servicem8/servicem8-node.git
+  installationURL: https://github.com/servicem8/servicem8-node
   published: true
 features:
   typescript:
