@@ -127,18 +127,18 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobAllocations.createJobAllocations({
-    uuid: "123e4567-1821-42b4-96c9-2329b8d1505b",
-    jobUuid: "123e4567-5799-4bb4-85b1-2329befb431b",
-    queueUuid: "123e4567-5f55-496a-abcd-2329ba5116bb",
-    staffUuid: "123e4567-b51c-4c13-a9d5-2329b5b07bcb",
-    allocationDate: "2025-08-01 12:00:00",
-    allocationWindowUuid: "123e4567-c395-4744-b3f9-2329b9d10deb",
-    allocatedByStaffUuid: "123e4567-8b9a-4a58-83e0-2329b4f49c2b",
-    allocatedTimestamp: "2025-08-01 12:00:00",
-    expiryTimestamp: "2025-08-01 12:00:00",
-    readTimestamp: "2025-08-01 12:00:00",
-    completionTimestamp: "2025-08-01 12:00:00",
-    acceptanceTimestamp: "2025-08-01 12:00:00",
+    uuid: "123e4567-fa33-4fdf-8474-233124eec24b",
+    jobUuid: "123e4567-c81a-4f00-a076-23312cebe30b",
+    queueUuid: "123e4567-5c4e-417b-be83-23312767137b",
+    staffUuid: "123e4567-676f-4dd6-a2d3-233123d386fb",
+    allocationDate: "2025-09-01 12:00:00",
+    allocationWindowUuid: "123e4567-0f00-47be-926b-2331220d673b",
+    allocatedByStaffUuid: "123e4567-c5f8-4504-8c52-23312dacfffb",
+    allocatedTimestamp: "2025-09-01 12:00:00",
+    expiryTimestamp: "2025-09-01 12:00:00",
+    readTimestamp: "2025-09-01 12:00:00",
+    completionTimestamp: "2025-09-01 12:00:00",
+    acceptanceTimestamp: "2025-09-01 12:00:00",
   });
 
   console.log(result);
@@ -165,18 +165,18 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobAllocationsCreateJobAllocations(serviceM8, {
-    uuid: "123e4567-1821-42b4-96c9-2329b8d1505b",
-    jobUuid: "123e4567-5799-4bb4-85b1-2329befb431b",
-    queueUuid: "123e4567-5f55-496a-abcd-2329ba5116bb",
-    staffUuid: "123e4567-b51c-4c13-a9d5-2329b5b07bcb",
-    allocationDate: "2025-08-01 12:00:00",
-    allocationWindowUuid: "123e4567-c395-4744-b3f9-2329b9d10deb",
-    allocatedByStaffUuid: "123e4567-8b9a-4a58-83e0-2329b4f49c2b",
-    allocatedTimestamp: "2025-08-01 12:00:00",
-    expiryTimestamp: "2025-08-01 12:00:00",
-    readTimestamp: "2025-08-01 12:00:00",
-    completionTimestamp: "2025-08-01 12:00:00",
-    acceptanceTimestamp: "2025-08-01 12:00:00",
+    uuid: "123e4567-fa33-4fdf-8474-233124eec24b",
+    jobUuid: "123e4567-c81a-4f00-a076-23312cebe30b",
+    queueUuid: "123e4567-5c4e-417b-be83-23312767137b",
+    staffUuid: "123e4567-676f-4dd6-a2d3-233123d386fb",
+    allocationDate: "2025-09-01 12:00:00",
+    allocationWindowUuid: "123e4567-0f00-47be-926b-2331220d673b",
+    allocatedByStaffUuid: "123e4567-c5f8-4504-8c52-23312dacfffb",
+    allocatedTimestamp: "2025-09-01 12:00:00",
+    expiryTimestamp: "2025-09-01 12:00:00",
+    readTimestamp: "2025-09-01 12:00:00",
+    completionTimestamp: "2025-09-01 12:00:00",
+    acceptanceTimestamp: "2025-09-01 12:00:00",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -326,18 +326,18 @@ async function run() {
   const result = await serviceM8.jobAllocations.updateJobAllocations({
     uuid: "583058ca-b387-4a2b-86cf-ca46e5b89aba",
     jobAllocation: {
-      uuid: "123e4567-1821-42b4-96c9-2329b8d1505b",
-      jobUuid: "123e4567-5799-4bb4-85b1-2329befb431b",
-      queueUuid: "123e4567-5f55-496a-abcd-2329ba5116bb",
-      staffUuid: "123e4567-b51c-4c13-a9d5-2329b5b07bcb",
-      allocationDate: "2025-08-01 12:00:00",
-      allocationWindowUuid: "123e4567-c395-4744-b3f9-2329b9d10deb",
-      allocatedByStaffUuid: "123e4567-8b9a-4a58-83e0-2329b4f49c2b",
-      allocatedTimestamp: "2025-08-01 12:00:00",
-      expiryTimestamp: "2025-08-01 12:00:00",
-      readTimestamp: "2025-08-01 12:00:00",
-      completionTimestamp: "2025-08-01 12:00:00",
-      acceptanceTimestamp: "2025-08-01 12:00:00",
+      uuid: "123e4567-fa33-4fdf-8474-233124eec24b",
+      jobUuid: "123e4567-c81a-4f00-a076-23312cebe30b",
+      queueUuid: "123e4567-5c4e-417b-be83-23312767137b",
+      staffUuid: "123e4567-676f-4dd6-a2d3-233123d386fb",
+      allocationDate: "2025-09-01 12:00:00",
+      allocationWindowUuid: "123e4567-0f00-47be-926b-2331220d673b",
+      allocatedByStaffUuid: "123e4567-c5f8-4504-8c52-23312dacfffb",
+      allocatedTimestamp: "2025-09-01 12:00:00",
+      expiryTimestamp: "2025-09-01 12:00:00",
+      readTimestamp: "2025-09-01 12:00:00",
+      completionTimestamp: "2025-09-01 12:00:00",
+      acceptanceTimestamp: "2025-09-01 12:00:00",
     },
   });
 
@@ -367,18 +367,18 @@ async function run() {
   const res = await jobAllocationsUpdateJobAllocations(serviceM8, {
     uuid: "583058ca-b387-4a2b-86cf-ca46e5b89aba",
     jobAllocation: {
-      uuid: "123e4567-1821-42b4-96c9-2329b8d1505b",
-      jobUuid: "123e4567-5799-4bb4-85b1-2329befb431b",
-      queueUuid: "123e4567-5f55-496a-abcd-2329ba5116bb",
-      staffUuid: "123e4567-b51c-4c13-a9d5-2329b5b07bcb",
-      allocationDate: "2025-08-01 12:00:00",
-      allocationWindowUuid: "123e4567-c395-4744-b3f9-2329b9d10deb",
-      allocatedByStaffUuid: "123e4567-8b9a-4a58-83e0-2329b4f49c2b",
-      allocatedTimestamp: "2025-08-01 12:00:00",
-      expiryTimestamp: "2025-08-01 12:00:00",
-      readTimestamp: "2025-08-01 12:00:00",
-      completionTimestamp: "2025-08-01 12:00:00",
-      acceptanceTimestamp: "2025-08-01 12:00:00",
+      uuid: "123e4567-fa33-4fdf-8474-233124eec24b",
+      jobUuid: "123e4567-c81a-4f00-a076-23312cebe30b",
+      queueUuid: "123e4567-5c4e-417b-be83-23312767137b",
+      staffUuid: "123e4567-676f-4dd6-a2d3-233123d386fb",
+      allocationDate: "2025-09-01 12:00:00",
+      allocationWindowUuid: "123e4567-0f00-47be-926b-2331220d673b",
+      allocatedByStaffUuid: "123e4567-c5f8-4504-8c52-23312dacfffb",
+      allocatedTimestamp: "2025-09-01 12:00:00",
+      expiryTimestamp: "2025-09-01 12:00:00",
+      readTimestamp: "2025-09-01 12:00:00",
+      completionTimestamp: "2025-09-01 12:00:00",
+      acceptanceTimestamp: "2025-09-01 12:00:00",
     },
   });
   if (res.ok) {

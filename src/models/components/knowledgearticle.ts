@@ -52,11 +52,11 @@ export type KnowledgeArticle = {
    */
   name: string;
   /**
-   * The main content of the knowledge article. For 'richtext' articles, this contains HTML formatted text. For 'video' articles, this may contain supplementary information. For 'call' articles, this contains call details. Supports extended text length.
+   * The main content of the knowledge article. For 'richtext' and 'pdf' articles, this contains HTML formatted text. For 'video' articles, this may contain supplementary information. For 'call' articles, this contains call details. Supports extended text length.
    */
   content?: string | undefined;
   /**
-   * Type of knowledge article. Valid values are 'video', 'richtext', or 'call'. This determines how the article content is presented and processed in the system.
+   * Type of knowledge article. Valid values are 'video', 'richtext', 'pdf', or 'call'. This determines how the article content is presented and processed in the system.
    */
   articleType?: string | undefined;
   /**
@@ -83,11 +83,11 @@ export type KnowledgeArticleInput = {
    */
   name: string;
   /**
-   * The main content of the knowledge article. For 'richtext' articles, this contains HTML formatted text. For 'video' articles, this may contain supplementary information. For 'call' articles, this contains call details. Supports extended text length.
+   * The main content of the knowledge article. For 'richtext' and 'pdf' articles, this contains HTML formatted text. For 'video' articles, this may contain supplementary information. For 'call' articles, this contains call details. Supports extended text length.
    */
   content?: string | undefined;
   /**
-   * Type of knowledge article. Valid values are 'video', 'richtext', or 'call'. This determines how the article content is presented and processed in the system.
+   * Type of knowledge article. Valid values are 'video', 'richtext', 'pdf', or 'call'. This determines how the article content is presented and processed in the system.
    */
   articleType?: string | undefined;
   /**

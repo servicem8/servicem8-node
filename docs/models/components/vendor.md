@@ -6,8 +6,8 @@
 import { Vendor } from "servicem8/models/components";
 
 let value: Vendor = {
-  uuid: "123e4567-fdca-4e7b-ab75-2329bc13c0cb",
-  editDate: "2025-08-01 12:00:00",
+  uuid: "123e4567-c1d3-4781-9a75-23312fa118db",
+  editDate: "2025-09-01 12:00:00",
   name: "<value>",
 };
 ```
@@ -16,9 +16,9 @@ let value: Vendor = {
 
 | Field                                                              | Type                                                               | Required                                                           | Description                                                        | Example                                                            |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `uuid`                                                             | *string*                                                           | :heavy_minus_sign:                                                 | Unique identifier for this record                                  | 123e4567-fdca-4e7b-ab75-2329bc13c0cb                               |
+| `uuid`                                                             | *string*                                                           | :heavy_minus_sign:                                                 | Unique identifier for this record                                  | 123e4567-c1d3-4781-9a75-23312fa118db                               |
 | `active`                                                           | [components.VendorActive](../../models/components/vendoractive.md) | :heavy_minus_sign:                                                 | Record active/deleted flag.  Valid values are [0,1]                |                                                                    |
-| `editDate`                                                         | *any*                                                              | :heavy_minus_sign:                                                 | Timestamp at which record was last modified                        | 2025-08-01 12:00:00                                                |
+| `editDate`                                                         | *any*                                                              | :heavy_minus_sign:                                                 | Timestamp at which record was last modified                        | 2025-09-01 12:00:00                                                |
 | `name`                                                             | *string*                                                           | :heavy_check_mark:                                                 | Company Name                                                       |                                                                    |
 | `abnNumber`                                                        | *string*                                                           | :heavy_minus_sign:                                                 | N/A                                                                |                                                                    |
 | `businessNumber`                                                   | *string*                                                           | :heavy_minus_sign:                                                 | Company Business Number                                            |                                                                    |

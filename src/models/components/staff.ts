@@ -115,6 +115,7 @@ export type Staff = {
    */
   editDate?: any | undefined;
   canReceivePushNotification?: string | undefined;
+  labourMaterialUuid?: string | undefined;
 };
 
 export type StaffInput = {
@@ -195,6 +196,7 @@ export type StaffInput = {
    */
   active?: StaffActive | undefined;
   canReceivePushNotification?: string | undefined;
+  labourMaterialUuid?: string | undefined;
 };
 
 /** @internal */
@@ -261,6 +263,7 @@ export const Staff$inboundSchema: z.ZodType<Staff, z.ZodTypeDef, unknown> = z
     active: StaffActive$inboundSchema.default(1),
     edit_date: z.any().optional(),
     can_receive_push_notification: z.string().optional(),
+    labour_material_uuid: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
       "geo_timestamp": "geoTimestamp",
@@ -275,6 +278,7 @@ export const Staff$inboundSchema: z.ZodType<Staff, z.ZodTypeDef, unknown> = z
       "security_role_uuid": "securityRoleUuid",
       "edit_date": "editDate",
       "can_receive_push_notification": "canReceivePushNotification",
+      "labour_material_uuid": "labourMaterialUuid",
     });
   });
 
@@ -301,6 +305,7 @@ export type Staff$Outbound = {
   active: number;
   edit_date?: any | undefined;
   can_receive_push_notification?: string | undefined;
+  labour_material_uuid?: string | undefined;
 };
 
 /** @internal */
@@ -330,6 +335,7 @@ export const Staff$outboundSchema: z.ZodType<
   active: StaffActive$outboundSchema.default(1),
   editDate: z.any().optional(),
   canReceivePushNotification: z.string().optional(),
+  labourMaterialUuid: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     geoTimestamp: "geo_timestamp",
@@ -344,6 +350,7 @@ export const Staff$outboundSchema: z.ZodType<
     securityRoleUuid: "security_role_uuid",
     editDate: "edit_date",
     canReceivePushNotification: "can_receive_push_notification",
+    labourMaterialUuid: "labour_material_uuid",
   });
 });
 
@@ -400,6 +407,7 @@ export const StaffInput$inboundSchema: z.ZodType<
   uuid: z.string().optional(),
   active: StaffActive$inboundSchema.default(1),
   can_receive_push_notification: z.string().optional(),
+  labour_material_uuid: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "geo_timestamp": "geoTimestamp",
@@ -413,6 +421,7 @@ export const StaffInput$inboundSchema: z.ZodType<
     "hide_from_schedule": "hideFromSchedule",
     "security_role_uuid": "securityRoleUuid",
     "can_receive_push_notification": "canReceivePushNotification",
+    "labour_material_uuid": "labourMaterialUuid",
   });
 });
 
@@ -438,6 +447,7 @@ export type StaffInput$Outbound = {
   uuid?: string | undefined;
   active: number;
   can_receive_push_notification?: string | undefined;
+  labour_material_uuid?: string | undefined;
 };
 
 /** @internal */
@@ -466,6 +476,7 @@ export const StaffInput$outboundSchema: z.ZodType<
   uuid: z.string().optional(),
   active: StaffActive$outboundSchema.default(1),
   canReceivePushNotification: z.string().optional(),
+  labourMaterialUuid: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     geoTimestamp: "geo_timestamp",
@@ -479,6 +490,7 @@ export const StaffInput$outboundSchema: z.ZodType<
     hideFromSchedule: "hide_from_schedule",
     securityRoleUuid: "security_role_uuid",
     canReceivePushNotification: "can_receive_push_notification",
+    labourMaterialUuid: "labour_material_uuid",
   });
 });
 
