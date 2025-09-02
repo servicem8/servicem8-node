@@ -127,15 +127,15 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobActivities.createJobActivities({
-    uuid: "123e4567-1cca-428e-8eed-23312a9d088b",
-    jobUuid: "123e4567-3e0b-491f-9b07-233128aba0bb",
-    staffUuid: "123e4567-21d6-446f-9984-2331241b824b",
+    uuid: "123e4567-2b0d-4bdf-b964-233120a5f2eb",
+    jobUuid: "123e4567-897a-4552-bbb7-233127c1283b",
+    staffUuid: "123e4567-704d-40ab-9158-23312472a96b",
     startDate: "2025-09-01 12:00:00",
     endDate: "2025-09-01 12:00:00",
     hasBeenOpenedTimestamp: "2025-09-01 12:00:00",
-    allocatedByStaffUuid: "123e4567-d6ed-475e-aaa4-23312c5eab0b",
+    allocatedByStaffUuid: "123e4567-490c-4eb6-80ad-233121f26b9b",
     allocatedTimestamp: "2025-09-01 12:00:00",
-    materialUuid: "123e4567-2cd3-4855-9491-2331260de26b",
+    materialUuid: "123e4567-eacb-4e92-8c9e-233125383b2b",
   });
 
   console.log(result);
@@ -162,15 +162,15 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobActivitiesCreateJobActivities(serviceM8, {
-    uuid: "123e4567-1cca-428e-8eed-23312a9d088b",
-    jobUuid: "123e4567-3e0b-491f-9b07-233128aba0bb",
-    staffUuid: "123e4567-21d6-446f-9984-2331241b824b",
+    uuid: "123e4567-2b0d-4bdf-b964-233120a5f2eb",
+    jobUuid: "123e4567-897a-4552-bbb7-233127c1283b",
+    staffUuid: "123e4567-704d-40ab-9158-23312472a96b",
     startDate: "2025-09-01 12:00:00",
     endDate: "2025-09-01 12:00:00",
     hasBeenOpenedTimestamp: "2025-09-01 12:00:00",
-    allocatedByStaffUuid: "123e4567-d6ed-475e-aaa4-23312c5eab0b",
+    allocatedByStaffUuid: "123e4567-490c-4eb6-80ad-233121f26b9b",
     allocatedTimestamp: "2025-09-01 12:00:00",
-    materialUuid: "123e4567-2cd3-4855-9491-2331260de26b",
+    materialUuid: "123e4567-eacb-4e92-8c9e-233125383b2b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -320,15 +320,15 @@ async function run() {
   const result = await serviceM8.jobActivities.updateJobActivities({
     uuid: "5ccaaaf0-ee37-4a96-a41a-cc701c3f1a65",
     jobActivity: {
-      uuid: "123e4567-1cca-428e-8eed-23312a9d088b",
-      jobUuid: "123e4567-3e0b-491f-9b07-233128aba0bb",
-      staffUuid: "123e4567-21d6-446f-9984-2331241b824b",
+      uuid: "123e4567-2b0d-4bdf-b964-233120a5f2eb",
+      jobUuid: "123e4567-897a-4552-bbb7-233127c1283b",
+      staffUuid: "123e4567-704d-40ab-9158-23312472a96b",
       startDate: "2025-09-01 12:00:00",
       endDate: "2025-09-01 12:00:00",
       hasBeenOpenedTimestamp: "2025-09-01 12:00:00",
-      allocatedByStaffUuid: "123e4567-d6ed-475e-aaa4-23312c5eab0b",
+      allocatedByStaffUuid: "123e4567-490c-4eb6-80ad-233121f26b9b",
       allocatedTimestamp: "2025-09-01 12:00:00",
-      materialUuid: "123e4567-2cd3-4855-9491-2331260de26b",
+      materialUuid: "123e4567-eacb-4e92-8c9e-233125383b2b",
     },
   });
 
@@ -358,15 +358,15 @@ async function run() {
   const res = await jobActivitiesUpdateJobActivities(serviceM8, {
     uuid: "5ccaaaf0-ee37-4a96-a41a-cc701c3f1a65",
     jobActivity: {
-      uuid: "123e4567-1cca-428e-8eed-23312a9d088b",
-      jobUuid: "123e4567-3e0b-491f-9b07-233128aba0bb",
-      staffUuid: "123e4567-21d6-446f-9984-2331241b824b",
+      uuid: "123e4567-2b0d-4bdf-b964-233120a5f2eb",
+      jobUuid: "123e4567-897a-4552-bbb7-233127c1283b",
+      staffUuid: "123e4567-704d-40ab-9158-23312472a96b",
       startDate: "2025-09-01 12:00:00",
       endDate: "2025-09-01 12:00:00",
       hasBeenOpenedTimestamp: "2025-09-01 12:00:00",
-      allocatedByStaffUuid: "123e4567-d6ed-475e-aaa4-23312c5eab0b",
+      allocatedByStaffUuid: "123e4567-490c-4eb6-80ad-233121f26b9b",
       allocatedTimestamp: "2025-09-01 12:00:00",
-      materialUuid: "123e4567-2cd3-4855-9491-2331260de26b",
+      materialUuid: "123e4567-eacb-4e92-8c9e-233125383b2b",
     },
   });
   if (res.ok) {

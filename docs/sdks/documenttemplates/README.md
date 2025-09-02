@@ -127,7 +127,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.documentTemplates.createDocumentTemplates({
-    uuid: "123e4567-e33a-4005-b683-23312b0dd0db",
+    uuid: "123e4567-f1aa-4987-95cc-23312ee02dab",
   });
 
   console.log(result);
@@ -154,7 +154,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await documentTemplatesCreateDocumentTemplates(serviceM8, {
-    uuid: "123e4567-e33a-4005-b683-23312b0dd0db",
+    uuid: "123e4567-f1aa-4987-95cc-23312ee02dab",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -304,7 +304,7 @@ async function run() {
   const result = await serviceM8.documentTemplates.updateDocumentTemplates({
     uuid: "e371a482-2feb-4b5b-a72a-56796a683d72",
     documentTemplate: {
-      uuid: "123e4567-e33a-4005-b683-23312b0dd0db",
+      uuid: "123e4567-f1aa-4987-95cc-23312ee02dab",
     },
   });
 
@@ -334,7 +334,7 @@ async function run() {
   const res = await documentTemplatesUpdateDocumentTemplates(serviceM8, {
     uuid: "e371a482-2feb-4b5b-a72a-56796a683d72",
     documentTemplate: {
-      uuid: "123e4567-e33a-4005-b683-23312b0dd0db",
+      uuid: "123e4567-f1aa-4987-95cc-23312ee02dab",
     },
   });
   if (res.ok) {
