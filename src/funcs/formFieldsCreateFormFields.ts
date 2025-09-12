@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function formFieldsCreateFormFields(
   client: ServiceM8Core,
-  request: components.FormFieldInput,
+  request: components.FormFieldCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function formFieldsCreateFormFields(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.FormFieldInput,
+  request: components.FormFieldCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.FormFieldInput$outboundSchema.parse(value),
+    (value) => components.FormFieldCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

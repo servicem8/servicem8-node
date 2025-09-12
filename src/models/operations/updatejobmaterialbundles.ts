@@ -17,7 +17,7 @@ export type UpdateJobMaterialBundlesRequest = {
   /**
    * Job Material Bundle fields to update
    */
-  jobMaterialBundle: components.JobMaterialBundleInput;
+  jobMaterialBundleCreate: components.JobMaterialBundleCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateJobMaterialBundlesRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  JobMaterialBundle: components.JobMaterialBundleInput$inboundSchema,
+  JobMaterialBundleCreate: components.JobMaterialBundleCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "JobMaterialBundle": "jobMaterialBundle",
+    "JobMaterialBundleCreate": "jobMaterialBundleCreate",
   });
 });
 
 /** @internal */
 export type UpdateJobMaterialBundlesRequest$Outbound = {
   uuid: string;
-  JobMaterialBundle: components.JobMaterialBundleInput$Outbound;
+  JobMaterialBundleCreate: components.JobMaterialBundleCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateJobMaterialBundlesRequest$outboundSchema: z.ZodType<
   UpdateJobMaterialBundlesRequest
 > = z.object({
   uuid: z.string(),
-  jobMaterialBundle: components.JobMaterialBundleInput$outboundSchema,
+  jobMaterialBundleCreate: components.JobMaterialBundleCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    jobMaterialBundle: "JobMaterialBundle",
+    jobMaterialBundleCreate: "JobMaterialBundleCreate",
   });
 });
 

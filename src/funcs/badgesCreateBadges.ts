@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function badgesCreateBadges(
   client: ServiceM8Core,
-  request: components.BadgeInput,
+  request: components.BadgeCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function badgesCreateBadges(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.BadgeInput,
+  request: components.BadgeCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.BadgeInput$outboundSchema.parse(value),
+    (value) => components.BadgeCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

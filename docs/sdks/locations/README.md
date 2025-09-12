@@ -128,7 +128,7 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.locations.createLocations({
     name: "<value>",
-    uuid: "123e4567-f9c9-4cec-85d9-23312c4c901b",
+    uuid: "123e4567-da84-4139-8a60-233c61c8faab",
   });
 
   console.log(result);
@@ -156,7 +156,7 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await locationsCreateLocations(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-f9c9-4cec-85d9-23312c4c901b",
+    uuid: "123e4567-da84-4139-8a60-233c61c8faab",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -173,7 +173,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.LocationInput](../../models/components/locationinput.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.LocationCreate](../../models/components/locationcreate.md)                                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -305,9 +305,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.locations.updateLocations({
     uuid: "fee3b1fa-ab4e-4094-823d-0885a2f7b69f",
-    location: {
+    locationCreate: {
       name: "<value>",
-      uuid: "123e4567-f9c9-4cec-85d9-23312c4c901b",
+      uuid: "123e4567-da84-4139-8a60-233c61c8faab",
     },
   });
 
@@ -336,9 +336,9 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await locationsUpdateLocations(serviceM8, {
     uuid: "fee3b1fa-ab4e-4094-823d-0885a2f7b69f",
-    location: {
+    locationCreate: {
       name: "<value>",
-      uuid: "123e4567-f9c9-4cec-85d9-23312c4c901b",
+      uuid: "123e4567-da84-4139-8a60-233c61c8faab",
     },
   });
   if (res.ok) {

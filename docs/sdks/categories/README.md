@@ -128,7 +128,7 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.categories.createCategories({
     name: "<value>",
-    uuid: "123e4567-3240-443e-8f58-23312c19f13b",
+    uuid: "123e4567-410c-41af-b091-233c6be777eb",
   });
 
   console.log(result);
@@ -156,7 +156,7 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await categoriesCreateCategories(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-3240-443e-8f58-23312c19f13b",
+    uuid: "123e4567-410c-41af-b091-233c6be777eb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -173,7 +173,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.CategoryInput](../../models/components/categoryinput.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.CategoryCreate](../../models/components/categorycreate.md)                                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -305,9 +305,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.categories.updateCategories({
     uuid: "c830c901-e3ae-427d-8f08-cf28c94b319f",
-    category: {
+    categoryCreate: {
       name: "<value>",
-      uuid: "123e4567-3240-443e-8f58-23312c19f13b",
+      uuid: "123e4567-410c-41af-b091-233c6be777eb",
     },
   });
 
@@ -336,9 +336,9 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await categoriesUpdateCategories(serviceM8, {
     uuid: "c830c901-e3ae-427d-8f08-cf28c94b319f",
-    category: {
+    categoryCreate: {
       name: "<value>",
-      uuid: "123e4567-3240-443e-8f58-23312c19f13b",
+      uuid: "123e4567-410c-41af-b091-233c6be777eb",
     },
   });
   if (res.ok) {

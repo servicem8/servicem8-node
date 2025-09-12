@@ -17,7 +17,7 @@ export type UpdateBadgesRequest = {
   /**
    * Badge fields to update
    */
-  badge: components.BadgeInput;
+  badgeCreate: components.BadgeCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateBadgesRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  Badge: components.BadgeInput$inboundSchema,
+  BadgeCreate: components.BadgeCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "Badge": "badge",
+    "BadgeCreate": "badgeCreate",
   });
 });
 
 /** @internal */
 export type UpdateBadgesRequest$Outbound = {
   uuid: string;
-  Badge: components.BadgeInput$Outbound;
+  BadgeCreate: components.BadgeCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateBadgesRequest$outboundSchema: z.ZodType<
   UpdateBadgesRequest
 > = z.object({
   uuid: z.string(),
-  badge: components.BadgeInput$outboundSchema,
+  badgeCreate: components.BadgeCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    badge: "Badge",
+    badgeCreate: "BadgeCreate",
   });
 });
 

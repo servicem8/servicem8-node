@@ -23,6 +23,26 @@ export type FeedbackActive = ClosedEnum<typeof FeedbackActive>;
 
 export type Feedback = {
   /**
+   * Date and time when the feedback was submitted
+   */
+  timestamp?: string | undefined;
+  /**
+   * Type of object this feedback relates to (usually 'job' or 'vendor')
+   */
+  relatedObject?: string | undefined;
+  /**
+   * UUID of the specific object this feedback is about, corresponding to the object type specified in related_object
+   */
+  relatedObjectUuid?: string | undefined;
+  /**
+   * Numeric rating value for the feedback, between 1-5 where higher values represent more positive feedback
+   */
+  rating?: string | undefined;
+  /**
+   * Text comments provided with the feedback
+   */
+  comment?: string | undefined;
+  /**
    * Unique identifier for this record
    */
   uuid?: string | undefined;
@@ -34,27 +54,6 @@ export type Feedback = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
-  timestamp?: string | undefined;
-  relatedObject?: string | undefined;
-  relatedObjectUuid?: string | undefined;
-  rating?: string | undefined;
-  comment?: string | undefined;
-};
-
-export type FeedbackInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: FeedbackActive | undefined;
-  timestamp?: string | undefined;
-  relatedObject?: string | undefined;
-  relatedObjectUuid?: string | undefined;
-  rating?: string | undefined;
-  comment?: string | undefined;
 };
 
 /** @internal */
@@ -84,32 +83,32 @@ export const Feedback$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: FeedbackActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
   timestamp: z.string().optional(),
   related_object: z.string().optional(),
   related_object_uuid: z.string().optional(),
   rating: z.string().optional(),
   comment: z.string().optional(),
+  uuid: z.string().optional(),
+  active: FeedbackActive$inboundSchema.default(1),
+  edit_date: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "edit_date": "editDate",
     "related_object": "relatedObject",
     "related_object_uuid": "relatedObjectUuid",
+    "edit_date": "editDate",
   });
 });
 
 /** @internal */
 export type Feedback$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: any | undefined;
   timestamp?: string | undefined;
   related_object?: string | undefined;
   related_object_uuid?: string | undefined;
   rating?: string | undefined;
   comment?: string | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
 };
 
 /** @internal */
@@ -118,19 +117,19 @@ export const Feedback$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Feedback
 > = z.object({
-  uuid: z.string().optional(),
-  active: FeedbackActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
   timestamp: z.string().optional(),
   relatedObject: z.string().optional(),
   relatedObjectUuid: z.string().optional(),
   rating: z.string().optional(),
   comment: z.string().optional(),
+  uuid: z.string().optional(),
+  active: FeedbackActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
     relatedObject: "related_object",
     relatedObjectUuid: "related_object_uuid",
+    editDate: "edit_date",
   });
 });
 
@@ -158,83 +157,5 @@ export function feedbackFromJSON(
     jsonString,
     (x) => Feedback$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'Feedback' from JSON`,
-  );
-}
-
-/** @internal */
-export const FeedbackInput$inboundSchema: z.ZodType<
-  FeedbackInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: FeedbackActive$inboundSchema.default(1),
-  timestamp: z.string().optional(),
-  related_object: z.string().optional(),
-  related_object_uuid: z.string().optional(),
-  rating: z.string().optional(),
-  comment: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "related_object": "relatedObject",
-    "related_object_uuid": "relatedObjectUuid",
-  });
-});
-
-/** @internal */
-export type FeedbackInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  timestamp?: string | undefined;
-  related_object?: string | undefined;
-  related_object_uuid?: string | undefined;
-  rating?: string | undefined;
-  comment?: string | undefined;
-};
-
-/** @internal */
-export const FeedbackInput$outboundSchema: z.ZodType<
-  FeedbackInput$Outbound,
-  z.ZodTypeDef,
-  FeedbackInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: FeedbackActive$outboundSchema.default(1),
-  timestamp: z.string().optional(),
-  relatedObject: z.string().optional(),
-  relatedObjectUuid: z.string().optional(),
-  rating: z.string().optional(),
-  comment: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    relatedObject: "related_object",
-    relatedObjectUuid: "related_object_uuid",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FeedbackInput$ {
-  /** @deprecated use `FeedbackInput$inboundSchema` instead. */
-  export const inboundSchema = FeedbackInput$inboundSchema;
-  /** @deprecated use `FeedbackInput$outboundSchema` instead. */
-  export const outboundSchema = FeedbackInput$outboundSchema;
-  /** @deprecated use `FeedbackInput$Outbound` instead. */
-  export type Outbound = FeedbackInput$Outbound;
-}
-
-export function feedbackInputToJSON(feedbackInput: FeedbackInput): string {
-  return JSON.stringify(FeedbackInput$outboundSchema.parse(feedbackInput));
-}
-
-export function feedbackInputFromJSON(
-  jsonString: string,
-): SafeParseResult<FeedbackInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => FeedbackInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FeedbackInput' from JSON`,
   );
 }

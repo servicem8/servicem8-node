@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.KnowledgeArticleInput$inboundSchema,
+  request: components.KnowledgeArticleCreate$inboundSchema,
 };
 
 export const tool$knowledgeArticlesCreateKnowledgeArticles: ToolDefinition<

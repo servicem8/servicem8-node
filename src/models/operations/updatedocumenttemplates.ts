@@ -17,7 +17,7 @@ export type UpdateDocumentTemplatesRequest = {
   /**
    * Document Template fields to update
    */
-  documentTemplate: components.DocumentTemplateInput;
+  documentTemplateCreate: components.DocumentTemplateCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateDocumentTemplatesRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  DocumentTemplate: components.DocumentTemplateInput$inboundSchema,
+  DocumentTemplateCreate: components.DocumentTemplateCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "DocumentTemplate": "documentTemplate",
+    "DocumentTemplateCreate": "documentTemplateCreate",
   });
 });
 
 /** @internal */
 export type UpdateDocumentTemplatesRequest$Outbound = {
   uuid: string;
-  DocumentTemplate: components.DocumentTemplateInput$Outbound;
+  DocumentTemplateCreate: components.DocumentTemplateCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateDocumentTemplatesRequest$outboundSchema: z.ZodType<
   UpdateDocumentTemplatesRequest
 > = z.object({
   uuid: z.string(),
-  documentTemplate: components.DocumentTemplateInput$outboundSchema,
+  documentTemplateCreate: components.DocumentTemplateCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    documentTemplate: "DocumentTemplate",
+    documentTemplateCreate: "DocumentTemplateCreate",
   });
 });
 

@@ -17,7 +17,7 @@ export type UpdateLocationsRequest = {
   /**
    * Location fields to update
    */
-  location: components.LocationInput;
+  locationCreate: components.LocationCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateLocationsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  Location: components.LocationInput$inboundSchema,
+  LocationCreate: components.LocationCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "Location": "location",
+    "LocationCreate": "locationCreate",
   });
 });
 
 /** @internal */
 export type UpdateLocationsRequest$Outbound = {
   uuid: string;
-  Location: components.LocationInput$Outbound;
+  LocationCreate: components.LocationCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateLocationsRequest$outboundSchema: z.ZodType<
   UpdateLocationsRequest
 > = z.object({
   uuid: z.string(),
-  location: components.LocationInput$outboundSchema,
+  locationCreate: components.LocationCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    location: "Location",
+    locationCreate: "LocationCreate",
   });
 });
 

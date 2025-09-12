@@ -45,7 +45,7 @@ export class StaffMembers extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createStaffMembers(
-    request: components.StaffInput,
+    request: components.StaffCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateStaffMembersResponse> {
     return unwrapAsync(staffMembersCreateStaffMembers(

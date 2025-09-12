@@ -17,7 +17,7 @@ export type UpdateTaxRatesRequest = {
   /**
    * Tax Rate fields to update
    */
-  taxRate: components.TaxRateInput;
+  taxRateCreate: components.TaxRateCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateTaxRatesRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  TaxRate: components.TaxRateInput$inboundSchema,
+  TaxRateCreate: components.TaxRateCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "TaxRate": "taxRate",
+    "TaxRateCreate": "taxRateCreate",
   });
 });
 
 /** @internal */
 export type UpdateTaxRatesRequest$Outbound = {
   uuid: string;
-  TaxRate: components.TaxRateInput$Outbound;
+  TaxRateCreate: components.TaxRateCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateTaxRatesRequest$outboundSchema: z.ZodType<
   UpdateTaxRatesRequest
 > = z.object({
   uuid: z.string(),
-  taxRate: components.TaxRateInput$outboundSchema,
+  taxRateCreate: components.TaxRateCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    taxRate: "TaxRate",
+    taxRateCreate: "TaxRateCreate",
   });
 });
 

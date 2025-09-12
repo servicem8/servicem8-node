@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function clientsCreateClients(
   client: ServiceM8Core,
-  request: components.CompanyInput,
+  request: components.CompanyCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function clientsCreateClients(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.CompanyInput,
+  request: components.CompanyCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.CompanyInput$outboundSchema.parse(value),
+    (value) => components.CompanyCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

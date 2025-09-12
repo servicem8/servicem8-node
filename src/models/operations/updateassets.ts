@@ -17,7 +17,7 @@ export type UpdateAssetsRequest = {
   /**
    * Asset fields to update
    */
-  asset: components.AssetInput;
+  assetCreate: components.AssetCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateAssetsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  Asset: components.AssetInput$inboundSchema,
+  AssetCreate: components.AssetCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "Asset": "asset",
+    "AssetCreate": "assetCreate",
   });
 });
 
 /** @internal */
 export type UpdateAssetsRequest$Outbound = {
   uuid: string;
-  Asset: components.AssetInput$Outbound;
+  AssetCreate: components.AssetCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateAssetsRequest$outboundSchema: z.ZodType<
   UpdateAssetsRequest
 > = z.object({
   uuid: z.string(),
-  asset: components.AssetInput$outboundSchema,
+  assetCreate: components.AssetCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    asset: "Asset",
+    assetCreate: "AssetCreate",
   });
 });
 

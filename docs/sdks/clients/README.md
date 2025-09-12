@@ -128,8 +128,8 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.clients.createClients({
     name: "<value>",
-    uuid: "123e4567-7583-4cf4-a32a-2331262437bb",
-    taxRateUuid: "123e4567-4717-43a0-91b1-2331255b355b",
+    uuid: "123e4567-3ea4-4144-baeb-233c64a2802b",
+    taxRateUuid: "123e4567-10ce-412d-966f-233c6f10eafb",
   });
 
   console.log(result);
@@ -157,8 +157,8 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await clientsCreateClients(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-7583-4cf4-a32a-2331262437bb",
-    taxRateUuid: "123e4567-4717-43a0-91b1-2331255b355b",
+    uuid: "123e4567-3ea4-4144-baeb-233c64a2802b",
+    taxRateUuid: "123e4567-10ce-412d-966f-233c6f10eafb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -175,7 +175,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.CompanyInput](../../models/components/companyinput.md)                                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.CompanyCreate](../../models/components/companycreate.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -307,10 +307,10 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.clients.updateClients({
     uuid: "55f6bcc0-3bb7-4509-b13b-98c02374f910",
-    company: {
+    companyCreate: {
       name: "<value>",
-      uuid: "123e4567-7583-4cf4-a32a-2331262437bb",
-      taxRateUuid: "123e4567-4717-43a0-91b1-2331255b355b",
+      uuid: "123e4567-3ea4-4144-baeb-233c64a2802b",
+      taxRateUuid: "123e4567-10ce-412d-966f-233c6f10eafb",
     },
   });
 
@@ -339,10 +339,10 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await clientsUpdateClients(serviceM8, {
     uuid: "55f6bcc0-3bb7-4509-b13b-98c02374f910",
-    company: {
+    companyCreate: {
       name: "<value>",
-      uuid: "123e4567-7583-4cf4-a32a-2331262437bb",
-      taxRateUuid: "123e4567-4717-43a0-91b1-2331255b355b",
+      uuid: "123e4567-3ea4-4144-baeb-233c64a2802b",
+      taxRateUuid: "123e4567-10ce-412d-966f-233c6f10eafb",
     },
   });
   if (res.ok) {

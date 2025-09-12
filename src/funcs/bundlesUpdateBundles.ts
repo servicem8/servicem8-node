@@ -97,7 +97,9 @@ async function $do(
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.MaterialBundle, { explode: true });
+  const body = encodeJSON("body", payload.MaterialBundleCreate, {
+    explode: true,
+  });
 
   const pathParams = {
     uuid: encodeSimple("uuid", payload.uuid, {

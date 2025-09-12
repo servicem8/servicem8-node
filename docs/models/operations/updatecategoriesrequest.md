@@ -7,16 +7,16 @@ import { UpdateCategoriesRequest } from "servicem8/models/operations";
 
 let value: UpdateCategoriesRequest = {
   uuid: "a91e8171-6ae0-4f6a-8b4c-d78c5601e0a9",
-  category: {
+  categoryCreate: {
     name: "<value>",
-    uuid: "123e4567-3240-443e-8f58-23312c19f13b",
+    uuid: "123e4567-410c-41af-b091-233c6be777eb",
   },
 };
 ```
 
 ## Fields
 
-| Field                                                                | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `uuid`                                                               | *string*                                                             | :heavy_check_mark:                                                   | UUID of the Category                                                 |
-| `category`                                                           | [components.CategoryInput](../../models/components/categoryinput.md) | :heavy_check_mark:                                                   | Category fields to update                                            |
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `uuid`                                                                 | *string*                                                               | :heavy_check_mark:                                                     | UUID of the Category                                                   |
+| `categoryCreate`                                                       | [components.CategoryCreate](../../models/components/categorycreate.md) | :heavy_check_mark:                                                     | Category fields to update                                              |

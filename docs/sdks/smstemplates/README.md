@@ -127,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.smsTemplates.createSMSTemplates({
-    uuid: "123e4567-49e1-4fa6-ae43-233121ff4beb",
     name: "<value>",
+    uuid: "123e4567-0189-4d1f-922b-233c685e132b",
   });
 
   console.log(result);
@@ -155,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await smsTemplatesCreateSMSTemplates(serviceM8, {
-    uuid: "123e4567-49e1-4fa6-ae43-233121ff4beb",
     name: "<value>",
+    uuid: "123e4567-0189-4d1f-922b-233c685e132b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -173,7 +173,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.SmsTemplateInput](../../models/components/smstemplateinput.md)                                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.SmsTemplateCreate](../../models/components/smstemplatecreate.md)                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -305,9 +305,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.smsTemplates.updateSMSTemplates({
     uuid: "2ea183b5-88e4-4168-a975-1820b2711ae4",
-    smsTemplate: {
-      uuid: "123e4567-49e1-4fa6-ae43-233121ff4beb",
+    smsTemplateCreate: {
       name: "<value>",
+      uuid: "123e4567-0189-4d1f-922b-233c685e132b",
     },
   });
 
@@ -336,9 +336,9 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await smsTemplatesUpdateSMSTemplates(serviceM8, {
     uuid: "2ea183b5-88e4-4168-a975-1820b2711ae4",
-    smsTemplate: {
-      uuid: "123e4567-49e1-4fa6-ae43-233121ff4beb",
+    smsTemplateCreate: {
       name: "<value>",
+      uuid: "123e4567-0189-4d1f-922b-233c685e132b",
     },
   });
   if (res.ok) {

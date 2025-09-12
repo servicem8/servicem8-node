@@ -23,6 +23,38 @@ export type JobContactActive = ClosedEnum<typeof JobContactActive>;
 
 export type JobContact = {
   /**
+   * UUID of the job this contact is associated with. Each job contact must be linked to a valid job in the system. This field cannot be changed once set.
+   */
+  jobUuid?: string | undefined;
+  /**
+   * First name of the job contact. This information is synced with the job's contact information fields depending on the contact type.
+   */
+  first?: string | undefined;
+  /**
+   * Last name of the job contact. This information is synced with the job's contact information fields depending on the contact type.
+   */
+  last?: string | undefined;
+  /**
+   * Landline or office phone number of the job contact. Format is flexible but should represent a valid phone number. This field syncs with the job's phone_1 field for job contacts or phone_2 field for billing contacts.
+   */
+  phone?: string | undefined;
+  /**
+   * Mobile phone number of the job contact. Format is flexible but should represent a valid mobile number. This field syncs with the job's mobile field for job contacts or billing_mobile field for billing contacts.
+   */
+  mobile?: string | undefined;
+  /**
+   * Email address of the job contact. Should be a valid email format. Used for sending job-related communications. This field syncs with the job's email field for job contacts or billing_email field for billing contacts.
+   */
+  email?: string | undefined;
+  /**
+   * Type of contact relationship to the job. Valid values are: 'JOB' (or 'Job Contact'), 'BILLING' (or 'Billing Contact'), or 'Property Manager'. Controls which job fields are updated when this contact record changes.
+   */
+  type?: string | undefined;
+  /**
+   * DEPRECATED
+   */
+  isPrimaryContact?: any | undefined;
+  /**
    * Unique identifier for this record
    */
   uuid?: string | undefined;
@@ -34,33 +66,6 @@ export type JobContact = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
-  jobUuid?: string | undefined;
-  first?: string | undefined;
-  last?: string | undefined;
-  phone?: string | undefined;
-  mobile?: string | undefined;
-  email?: string | undefined;
-  type?: string | undefined;
-  isPrimaryContact?: string | undefined;
-};
-
-export type JobContactInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: JobContactActive | undefined;
-  jobUuid?: string | undefined;
-  first?: string | undefined;
-  last?: string | undefined;
-  phone?: string | undefined;
-  mobile?: string | undefined;
-  email?: string | undefined;
-  type?: string | undefined;
-  isPrimaryContact?: string | undefined;
 };
 
 /** @internal */
@@ -90,9 +95,6 @@ export const JobContact$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: JobContactActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
   job_uuid: z.string().optional(),
   first: z.string().optional(),
   last: z.string().optional(),
@@ -100,20 +102,20 @@ export const JobContact$inboundSchema: z.ZodType<
   mobile: z.string().optional(),
   email: z.string().optional(),
   type: z.string().optional(),
-  is_primary_contact: z.string().optional(),
+  is_primary_contact: z.any().optional(),
+  uuid: z.string().optional(),
+  active: JobContactActive$inboundSchema.default(1),
+  edit_date: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "edit_date": "editDate",
     "job_uuid": "jobUuid",
     "is_primary_contact": "isPrimaryContact",
+    "edit_date": "editDate",
   });
 });
 
 /** @internal */
 export type JobContact$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: any | undefined;
   job_uuid?: string | undefined;
   first?: string | undefined;
   last?: string | undefined;
@@ -121,7 +123,10 @@ export type JobContact$Outbound = {
   mobile?: string | undefined;
   email?: string | undefined;
   type?: string | undefined;
-  is_primary_contact?: string | undefined;
+  is_primary_contact?: any | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
 };
 
 /** @internal */
@@ -130,9 +135,6 @@ export const JobContact$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   JobContact
 > = z.object({
-  uuid: z.string().optional(),
-  active: JobContactActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
   jobUuid: z.string().optional(),
   first: z.string().optional(),
   last: z.string().optional(),
@@ -140,12 +142,15 @@ export const JobContact$outboundSchema: z.ZodType<
   mobile: z.string().optional(),
   email: z.string().optional(),
   type: z.string().optional(),
-  isPrimaryContact: z.string().optional(),
+  isPrimaryContact: z.any().optional(),
+  uuid: z.string().optional(),
+  active: JobContactActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
     jobUuid: "job_uuid",
     isPrimaryContact: "is_primary_contact",
+    editDate: "edit_date",
   });
 });
 
@@ -173,94 +178,5 @@ export function jobContactFromJSON(
     jsonString,
     (x) => JobContact$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'JobContact' from JSON`,
-  );
-}
-
-/** @internal */
-export const JobContactInput$inboundSchema: z.ZodType<
-  JobContactInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobContactActive$inboundSchema.default(1),
-  job_uuid: z.string().optional(),
-  first: z.string().optional(),
-  last: z.string().optional(),
-  phone: z.string().optional(),
-  mobile: z.string().optional(),
-  email: z.string().optional(),
-  type: z.string().optional(),
-  is_primary_contact: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-    "is_primary_contact": "isPrimaryContact",
-  });
-});
-
-/** @internal */
-export type JobContactInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  job_uuid?: string | undefined;
-  first?: string | undefined;
-  last?: string | undefined;
-  phone?: string | undefined;
-  mobile?: string | undefined;
-  email?: string | undefined;
-  type?: string | undefined;
-  is_primary_contact?: string | undefined;
-};
-
-/** @internal */
-export const JobContactInput$outboundSchema: z.ZodType<
-  JobContactInput$Outbound,
-  z.ZodTypeDef,
-  JobContactInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobContactActive$outboundSchema.default(1),
-  jobUuid: z.string().optional(),
-  first: z.string().optional(),
-  last: z.string().optional(),
-  phone: z.string().optional(),
-  mobile: z.string().optional(),
-  email: z.string().optional(),
-  type: z.string().optional(),
-  isPrimaryContact: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-    isPrimaryContact: "is_primary_contact",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobContactInput$ {
-  /** @deprecated use `JobContactInput$inboundSchema` instead. */
-  export const inboundSchema = JobContactInput$inboundSchema;
-  /** @deprecated use `JobContactInput$outboundSchema` instead. */
-  export const outboundSchema = JobContactInput$outboundSchema;
-  /** @deprecated use `JobContactInput$Outbound` instead. */
-  export type Outbound = JobContactInput$Outbound;
-}
-
-export function jobContactInputToJSON(
-  jobContactInput: JobContactInput,
-): string {
-  return JSON.stringify(JobContactInput$outboundSchema.parse(jobContactInput));
-}
-
-export function jobContactInputFromJSON(
-  jsonString: string,
-): SafeParseResult<JobContactInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => JobContactInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'JobContactInput' from JSON`,
   );
 }

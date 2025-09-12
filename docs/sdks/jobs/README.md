@@ -127,27 +127,21 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobs.createJobs({
-    createdByStaffUuid: "123e4567-d2dc-4cda-92ab-2331247613ab",
+    createdByStaffUuid: "123e4567-6a97-42d9-bdeb-233c6849d48b",
     date: "YYYY-MM-DD",
-    companyUuid: "123e4567-44bc-42f7-ba11-2331254a44cb",
+    companyUuid: "123e4567-0efa-4c5b-9d65-233c6b496e6b",
     status: "Unsuccessful",
     paymentDate: "2025-09-01 12:00:00",
-    paymentActionedByUuid: "123e4567-c35e-4123-89ab-233124b459bb",
-    categoryUuid: "123e4567-b6f5-415e-b341-23312b8ed61b",
-    invoiceSentStamp: "2025-09-01 12:00:00",
-    queueUuid: "123e4567-228a-42a0-9504-23312894180b",
+    paymentActionedByUuid: "123e4567-afa6-4465-af21-233c69cbb6db",
+    categoryUuid: "123e4567-796f-476e-a4f6-233c6f95aa0b",
+    queueUuid: "123e4567-22c8-41aa-8a66-233c685ab15b",
     queueExpiryDate: "2025-09-01 12:00:00",
-    queueAssignedStaffUuid: "123e4567-0d1c-4509-8cc7-233126bf422b",
+    queueAssignedStaffUuid: "123e4567-ceb6-44e1-b555-233c64a9309b",
     quoteDate: "2025-09-01 12:00:00",
-    quoteSentStamp: "2025-09-01 12:00:00",
     workOrderDate: "2025-09-01 12:00:00",
-    uuid: "123e4567-031c-4edb-8d44-233126314ccb",
-    paymentProcessedStamp: "2025-09-01 12:00:00",
-    paymentReceivedStamp: "2025-09-01 12:00:00",
+    uuid: "123e4567-417f-4db3-845e-233c6bcdc9db",
     completionDate: "2025-09-01 12:00:00",
-    completionActionedByUuid: "123e4567-7682-4513-b02f-233126a7b8fb",
     unsuccessfulDate: "2025-09-01 12:00:00",
-    jobIsScheduledUntilStamp: "2025-09-01 12:00:00",
   });
 
   console.log(result);
@@ -174,27 +168,21 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobsCreateJobs(serviceM8, {
-    createdByStaffUuid: "123e4567-d2dc-4cda-92ab-2331247613ab",
+    createdByStaffUuid: "123e4567-6a97-42d9-bdeb-233c6849d48b",
     date: "YYYY-MM-DD",
-    companyUuid: "123e4567-44bc-42f7-ba11-2331254a44cb",
+    companyUuid: "123e4567-0efa-4c5b-9d65-233c6b496e6b",
     status: "Unsuccessful",
     paymentDate: "2025-09-01 12:00:00",
-    paymentActionedByUuid: "123e4567-c35e-4123-89ab-233124b459bb",
-    categoryUuid: "123e4567-b6f5-415e-b341-23312b8ed61b",
-    invoiceSentStamp: "2025-09-01 12:00:00",
-    queueUuid: "123e4567-228a-42a0-9504-23312894180b",
+    paymentActionedByUuid: "123e4567-afa6-4465-af21-233c69cbb6db",
+    categoryUuid: "123e4567-796f-476e-a4f6-233c6f95aa0b",
+    queueUuid: "123e4567-22c8-41aa-8a66-233c685ab15b",
     queueExpiryDate: "2025-09-01 12:00:00",
-    queueAssignedStaffUuid: "123e4567-0d1c-4509-8cc7-233126bf422b",
+    queueAssignedStaffUuid: "123e4567-ceb6-44e1-b555-233c64a9309b",
     quoteDate: "2025-09-01 12:00:00",
-    quoteSentStamp: "2025-09-01 12:00:00",
     workOrderDate: "2025-09-01 12:00:00",
-    uuid: "123e4567-031c-4edb-8d44-233126314ccb",
-    paymentProcessedStamp: "2025-09-01 12:00:00",
-    paymentReceivedStamp: "2025-09-01 12:00:00",
+    uuid: "123e4567-417f-4db3-845e-233c6bcdc9db",
     completionDate: "2025-09-01 12:00:00",
-    completionActionedByUuid: "123e4567-7682-4513-b02f-233126a7b8fb",
     unsuccessfulDate: "2025-09-01 12:00:00",
-    jobIsScheduledUntilStamp: "2025-09-01 12:00:00",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -211,7 +199,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.JobInput](../../models/components/jobinput.md)                                                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.JobCreate](../../models/components/jobcreate.md)                                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -343,28 +331,22 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.jobs.updateJobs({
     uuid: "f751bf5c-f1f2-4a20-8df3-7628082340b1",
-    job: {
-      createdByStaffUuid: "123e4567-d2dc-4cda-92ab-2331247613ab",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-6a97-42d9-bdeb-233c6849d48b",
       date: "YYYY-MM-DD",
-      companyUuid: "123e4567-44bc-42f7-ba11-2331254a44cb",
+      companyUuid: "123e4567-0efa-4c5b-9d65-233c6b496e6b",
       status: "Work Order",
       paymentDate: "2025-09-01 12:00:00",
-      paymentActionedByUuid: "123e4567-c35e-4123-89ab-233124b459bb",
-      categoryUuid: "123e4567-b6f5-415e-b341-23312b8ed61b",
-      invoiceSentStamp: "2025-09-01 12:00:00",
-      queueUuid: "123e4567-228a-42a0-9504-23312894180b",
+      paymentActionedByUuid: "123e4567-afa6-4465-af21-233c69cbb6db",
+      categoryUuid: "123e4567-796f-476e-a4f6-233c6f95aa0b",
+      queueUuid: "123e4567-22c8-41aa-8a66-233c685ab15b",
       queueExpiryDate: "2025-09-01 12:00:00",
-      queueAssignedStaffUuid: "123e4567-0d1c-4509-8cc7-233126bf422b",
+      queueAssignedStaffUuid: "123e4567-ceb6-44e1-b555-233c64a9309b",
       quoteDate: "2025-09-01 12:00:00",
-      quoteSentStamp: "2025-09-01 12:00:00",
       workOrderDate: "2025-09-01 12:00:00",
-      uuid: "123e4567-031c-4edb-8d44-233126314ccb",
-      paymentProcessedStamp: "2025-09-01 12:00:00",
-      paymentReceivedStamp: "2025-09-01 12:00:00",
+      uuid: "123e4567-417f-4db3-845e-233c6bcdc9db",
       completionDate: "2025-09-01 12:00:00",
-      completionActionedByUuid: "123e4567-7682-4513-b02f-233126a7b8fb",
       unsuccessfulDate: "2025-09-01 12:00:00",
-      jobIsScheduledUntilStamp: "2025-09-01 12:00:00",
     },
   });
 
@@ -393,28 +375,22 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await jobsUpdateJobs(serviceM8, {
     uuid: "f751bf5c-f1f2-4a20-8df3-7628082340b1",
-    job: {
-      createdByStaffUuid: "123e4567-d2dc-4cda-92ab-2331247613ab",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-6a97-42d9-bdeb-233c6849d48b",
       date: "YYYY-MM-DD",
-      companyUuid: "123e4567-44bc-42f7-ba11-2331254a44cb",
+      companyUuid: "123e4567-0efa-4c5b-9d65-233c6b496e6b",
       status: "Work Order",
       paymentDate: "2025-09-01 12:00:00",
-      paymentActionedByUuid: "123e4567-c35e-4123-89ab-233124b459bb",
-      categoryUuid: "123e4567-b6f5-415e-b341-23312b8ed61b",
-      invoiceSentStamp: "2025-09-01 12:00:00",
-      queueUuid: "123e4567-228a-42a0-9504-23312894180b",
+      paymentActionedByUuid: "123e4567-afa6-4465-af21-233c69cbb6db",
+      categoryUuid: "123e4567-796f-476e-a4f6-233c6f95aa0b",
+      queueUuid: "123e4567-22c8-41aa-8a66-233c685ab15b",
       queueExpiryDate: "2025-09-01 12:00:00",
-      queueAssignedStaffUuid: "123e4567-0d1c-4509-8cc7-233126bf422b",
+      queueAssignedStaffUuid: "123e4567-ceb6-44e1-b555-233c64a9309b",
       quoteDate: "2025-09-01 12:00:00",
-      quoteSentStamp: "2025-09-01 12:00:00",
       workOrderDate: "2025-09-01 12:00:00",
-      uuid: "123e4567-031c-4edb-8d44-233126314ccb",
-      paymentProcessedStamp: "2025-09-01 12:00:00",
-      paymentReceivedStamp: "2025-09-01 12:00:00",
+      uuid: "123e4567-417f-4db3-845e-233c6bcdc9db",
       completionDate: "2025-09-01 12:00:00",
-      completionActionedByUuid: "123e4567-7682-4513-b02f-233126a7b8fb",
       unsuccessfulDate: "2025-09-01 12:00:00",
-      jobIsScheduledUntilStamp: "2025-09-01 12:00:00",
     },
   });
   if (res.ok) {

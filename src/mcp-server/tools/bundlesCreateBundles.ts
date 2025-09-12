@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.MaterialBundleInput$inboundSchema,
+  request: components.MaterialBundleCreate$inboundSchema,
 };
 
 export const tool$bundlesCreateBundles: ToolDefinition<typeof args> = {

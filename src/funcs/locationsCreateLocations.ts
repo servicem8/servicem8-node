@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function locationsCreateLocations(
   client: ServiceM8Core,
-  request: components.LocationInput,
+  request: components.LocationCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function locationsCreateLocations(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.LocationInput,
+  request: components.LocationCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.LocationInput$outboundSchema.parse(value),
+    (value) => components.LocationCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

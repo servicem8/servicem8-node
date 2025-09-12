@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function bundlesCreateBundles(
   client: ServiceM8Core,
-  request: components.MaterialBundleInput,
+  request: components.MaterialBundleCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function bundlesCreateBundles(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.MaterialBundleInput,
+  request: components.MaterialBundleCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.MaterialBundleInput$outboundSchema.parse(value),
+    (value) => components.MaterialBundleCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

@@ -17,7 +17,7 @@ export type UpdateEmailTemplatesRequest = {
   /**
    * Email Template fields to update
    */
-  emailTemplate: components.EmailTemplateInput;
+  emailTemplateCreate: components.EmailTemplateCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateEmailTemplatesRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  EmailTemplate: components.EmailTemplateInput$inboundSchema,
+  EmailTemplateCreate: components.EmailTemplateCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "EmailTemplate": "emailTemplate",
+    "EmailTemplateCreate": "emailTemplateCreate",
   });
 });
 
 /** @internal */
 export type UpdateEmailTemplatesRequest$Outbound = {
   uuid: string;
-  EmailTemplate: components.EmailTemplateInput$Outbound;
+  EmailTemplateCreate: components.EmailTemplateCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateEmailTemplatesRequest$outboundSchema: z.ZodType<
   UpdateEmailTemplatesRequest
 > = z.object({
   uuid: z.string(),
-  emailTemplate: components.EmailTemplateInput$outboundSchema,
+  emailTemplateCreate: components.EmailTemplateCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    emailTemplate: "EmailTemplate",
+    emailTemplateCreate: "EmailTemplateCreate",
   });
 });
 

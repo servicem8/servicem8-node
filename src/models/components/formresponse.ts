@@ -23,6 +23,42 @@ export type FormResponseActive = ClosedEnum<typeof FormResponseActive>;
 
 export type FormResponse = {
   /**
+   * UUID of the form used to generate this form response. Links to a specific form in the system that defines the fields to be gathered.
+   */
+  formUuid?: string | undefined;
+  /**
+   * UUID of the staff member who completed this FormResponse.
+   */
+  staffUuid?: string | undefined;
+  /**
+   * The object type that this form response is associated with. Common values include 'job', 'asset', or 'company'. Works in conjunction with regarding_object_uuid to link this form response to a specific record in the system.
+   */
+  regardingObject?: string | undefined;
+  /**
+   * UUID of the specific record this form response is linked to. For example, if regarding_object is 'job', this will be the UUID of the specific job. This creates a relationship between the form response and the object it refers to.
+   */
+  regardingObjectUuid?: string | undefined;
+  /**
+   * JSON array of form answers captured at submission time.
+   */
+  fieldData?: string | undefined;
+  /**
+   * Date and time when the form was submitted/completed. Used for sorting and displaying form responses chronologically. Format is YYYY-MM-DD HH:MM:SS in UTC timezone.
+   */
+  timestamp?: string | undefined;
+  /**
+   * UUID of the staff member who completed or submitted this form. Identifies which user filled out the form. Used for tracking form submission history and staff accountability.
+   */
+  formByStaffUuid?: string | undefined;
+  /**
+   * UUID of the document attachment generated from this form response. When a form is completed, it can generate a PDF document which is stored as an attachment. This field links to that generated document attachment.
+   */
+  documentAttachmentUuid?: string | undefined;
+  /**
+   * UUID of the Asset this form response is related to. Used when the FormResponsepertains to a specific asset, such as equipment inspections, maintenance checklists, or asset condition reports.
+   */
+  assetUuid?: string | undefined;
+  /**
    * Unique identifier for this record
    */
   uuid?: string | undefined;
@@ -34,41 +70,6 @@ export type FormResponse = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
-  formUuid?: string | undefined;
-  staffUuid?: string | undefined;
-  regardingObject?: string | undefined;
-  regardingObjectUuid?: string | undefined;
-  /**
-   * JSON array of form answers captured at submission time.
-   */
-  fieldData?: string | undefined;
-  timestamp?: string | undefined;
-  formByStaffUuid?: string | undefined;
-  documentAttachmentUuid?: string | undefined;
-  assetUuid?: string | undefined;
-};
-
-export type FormResponseInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: FormResponseActive | undefined;
-  formUuid?: string | undefined;
-  staffUuid?: string | undefined;
-  regardingObject?: string | undefined;
-  regardingObjectUuid?: string | undefined;
-  /**
-   * JSON array of form answers captured at submission time.
-   */
-  fieldData?: string | undefined;
-  timestamp?: string | undefined;
-  formByStaffUuid?: string | undefined;
-  documentAttachmentUuid?: string | undefined;
-  assetUuid?: string | undefined;
 };
 
 /** @internal */
@@ -98,9 +99,6 @@ export const FormResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: FormResponseActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
   form_uuid: z.string().optional(),
   staff_uuid: z.string().optional(),
   regarding_object: z.string().optional(),
@@ -110,9 +108,11 @@ export const FormResponse$inboundSchema: z.ZodType<
   form_by_staff_uuid: z.string().optional(),
   document_attachment_uuid: z.string().optional(),
   asset_uuid: z.string().optional(),
+  uuid: z.string().optional(),
+  active: FormResponseActive$inboundSchema.default(1),
+  edit_date: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "edit_date": "editDate",
     "form_uuid": "formUuid",
     "staff_uuid": "staffUuid",
     "regarding_object": "regardingObject",
@@ -121,14 +121,12 @@ export const FormResponse$inboundSchema: z.ZodType<
     "form_by_staff_uuid": "formByStaffUuid",
     "document_attachment_uuid": "documentAttachmentUuid",
     "asset_uuid": "assetUuid",
+    "edit_date": "editDate",
   });
 });
 
 /** @internal */
 export type FormResponse$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: any | undefined;
   form_uuid?: string | undefined;
   staff_uuid?: string | undefined;
   regarding_object?: string | undefined;
@@ -138,6 +136,9 @@ export type FormResponse$Outbound = {
   form_by_staff_uuid?: string | undefined;
   document_attachment_uuid?: string | undefined;
   asset_uuid?: string | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
 };
 
 /** @internal */
@@ -146,9 +147,6 @@ export const FormResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   FormResponse
 > = z.object({
-  uuid: z.string().optional(),
-  active: FormResponseActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
   formUuid: z.string().optional(),
   staffUuid: z.string().optional(),
   regardingObject: z.string().optional(),
@@ -158,9 +156,11 @@ export const FormResponse$outboundSchema: z.ZodType<
   formByStaffUuid: z.string().optional(),
   documentAttachmentUuid: z.string().optional(),
   assetUuid: z.string().optional(),
+  uuid: z.string().optional(),
+  active: FormResponseActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
     formUuid: "form_uuid",
     staffUuid: "staff_uuid",
     regardingObject: "regarding_object",
@@ -169,6 +169,7 @@ export const FormResponse$outboundSchema: z.ZodType<
     formByStaffUuid: "form_by_staff_uuid",
     documentAttachmentUuid: "document_attachment_uuid",
     assetUuid: "asset_uuid",
+    editDate: "edit_date",
   });
 });
 
@@ -196,111 +197,5 @@ export function formResponseFromJSON(
     jsonString,
     (x) => FormResponse$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'FormResponse' from JSON`,
-  );
-}
-
-/** @internal */
-export const FormResponseInput$inboundSchema: z.ZodType<
-  FormResponseInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: FormResponseActive$inboundSchema.default(1),
-  form_uuid: z.string().optional(),
-  staff_uuid: z.string().optional(),
-  regarding_object: z.string().optional(),
-  regarding_object_uuid: z.string().optional(),
-  field_data: z.string().optional(),
-  timestamp: z.string().optional(),
-  form_by_staff_uuid: z.string().optional(),
-  document_attachment_uuid: z.string().optional(),
-  asset_uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "form_uuid": "formUuid",
-    "staff_uuid": "staffUuid",
-    "regarding_object": "regardingObject",
-    "regarding_object_uuid": "regardingObjectUuid",
-    "field_data": "fieldData",
-    "form_by_staff_uuid": "formByStaffUuid",
-    "document_attachment_uuid": "documentAttachmentUuid",
-    "asset_uuid": "assetUuid",
-  });
-});
-
-/** @internal */
-export type FormResponseInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  form_uuid?: string | undefined;
-  staff_uuid?: string | undefined;
-  regarding_object?: string | undefined;
-  regarding_object_uuid?: string | undefined;
-  field_data?: string | undefined;
-  timestamp?: string | undefined;
-  form_by_staff_uuid?: string | undefined;
-  document_attachment_uuid?: string | undefined;
-  asset_uuid?: string | undefined;
-};
-
-/** @internal */
-export const FormResponseInput$outboundSchema: z.ZodType<
-  FormResponseInput$Outbound,
-  z.ZodTypeDef,
-  FormResponseInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: FormResponseActive$outboundSchema.default(1),
-  formUuid: z.string().optional(),
-  staffUuid: z.string().optional(),
-  regardingObject: z.string().optional(),
-  regardingObjectUuid: z.string().optional(),
-  fieldData: z.string().optional(),
-  timestamp: z.string().optional(),
-  formByStaffUuid: z.string().optional(),
-  documentAttachmentUuid: z.string().optional(),
-  assetUuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    formUuid: "form_uuid",
-    staffUuid: "staff_uuid",
-    regardingObject: "regarding_object",
-    regardingObjectUuid: "regarding_object_uuid",
-    fieldData: "field_data",
-    formByStaffUuid: "form_by_staff_uuid",
-    documentAttachmentUuid: "document_attachment_uuid",
-    assetUuid: "asset_uuid",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FormResponseInput$ {
-  /** @deprecated use `FormResponseInput$inboundSchema` instead. */
-  export const inboundSchema = FormResponseInput$inboundSchema;
-  /** @deprecated use `FormResponseInput$outboundSchema` instead. */
-  export const outboundSchema = FormResponseInput$outboundSchema;
-  /** @deprecated use `FormResponseInput$Outbound` instead. */
-  export type Outbound = FormResponseInput$Outbound;
-}
-
-export function formResponseInputToJSON(
-  formResponseInput: FormResponseInput,
-): string {
-  return JSON.stringify(
-    FormResponseInput$outboundSchema.parse(formResponseInput),
-  );
-}
-
-export function formResponseInputFromJSON(
-  jsonString: string,
-): SafeParseResult<FormResponseInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => FormResponseInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FormResponseInput' from JSON`,
   );
 }

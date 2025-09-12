@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function assetTypeFieldsCreateAssetTypeFields(
   client: ServiceM8Core,
-  request: components.AssetTypeFieldInput,
+  request: components.AssetTypeFieldCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function assetTypeFieldsCreateAssetTypeFields(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.AssetTypeFieldInput,
+  request: components.AssetTypeFieldCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.AssetTypeFieldInput$outboundSchema.parse(value),
+    (value) => components.AssetTypeFieldCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

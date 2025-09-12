@@ -17,7 +17,7 @@ export type UpdateCategoriesRequest = {
   /**
    * Category fields to update
    */
-  category: components.CategoryInput;
+  categoryCreate: components.CategoryCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateCategoriesRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  Category: components.CategoryInput$inboundSchema,
+  CategoryCreate: components.CategoryCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "Category": "category",
+    "CategoryCreate": "categoryCreate",
   });
 });
 
 /** @internal */
 export type UpdateCategoriesRequest$Outbound = {
   uuid: string;
-  Category: components.CategoryInput$Outbound;
+  CategoryCreate: components.CategoryCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateCategoriesRequest$outboundSchema: z.ZodType<
   UpdateCategoriesRequest
 > = z.object({
   uuid: z.string(),
-  category: components.CategoryInput$outboundSchema,
+  categoryCreate: components.CategoryCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    category: "Category",
+    categoryCreate: "CategoryCreate",
   });
 });
 

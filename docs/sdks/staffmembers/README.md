@@ -131,13 +131,13 @@ async function run() {
     last: "<value>",
     email: "Larissa_Pfannerstill75@hotmail.com",
     geoTimestamp: "2025-09-01 12:00:00",
-    navigatingToJobUuid: "123e4567-840f-4bca-b608-23312641d80b",
+    navigatingToJobUuid: "123e4567-46e0-407e-916e-233c6746b18b",
     navigatingTimestamp: "2025-09-01 12:00:00",
     navigatingExpiryTimestamp: "2025-09-01 12:00:00",
     statusMessageTimestamp: "2025-09-01 12:00:00",
-    securityRoleUuid: "123e4567-2884-420a-be20-233121354e3b",
-    uuid: "123e4567-9fe2-4783-a6d8-23312b12c94b",
-    labourMaterialUuid: "123e4567-b0c0-42aa-ae71-23312e996e7b",
+    uuid: "123e4567-7016-4a94-b46e-233c6cded34b",
+    securityRoleUuid: "123e4567-77cf-460c-afb6-233c6e9f3bbb",
+    labourMaterialUuid: "123e4567-b307-469b-be70-233c62001aeb",
   });
 
   console.log(result);
@@ -168,13 +168,13 @@ async function run() {
     last: "<value>",
     email: "Larissa_Pfannerstill75@hotmail.com",
     geoTimestamp: "2025-09-01 12:00:00",
-    navigatingToJobUuid: "123e4567-840f-4bca-b608-23312641d80b",
+    navigatingToJobUuid: "123e4567-46e0-407e-916e-233c6746b18b",
     navigatingTimestamp: "2025-09-01 12:00:00",
     navigatingExpiryTimestamp: "2025-09-01 12:00:00",
     statusMessageTimestamp: "2025-09-01 12:00:00",
-    securityRoleUuid: "123e4567-2884-420a-be20-233121354e3b",
-    uuid: "123e4567-9fe2-4783-a6d8-23312b12c94b",
-    labourMaterialUuid: "123e4567-b0c0-42aa-ae71-23312e996e7b",
+    uuid: "123e4567-7016-4a94-b46e-233c6cded34b",
+    securityRoleUuid: "123e4567-77cf-460c-afb6-233c6e9f3bbb",
+    labourMaterialUuid: "123e4567-b307-469b-be70-233c62001aeb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -191,7 +191,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.StaffInput](../../models/components/staffinput.md)                                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.StaffCreate](../../models/components/staffcreate.md)                                                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -323,18 +323,18 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.staffMembers.updateStaffMembers({
     uuid: "6cd534f3-6271-46ec-8887-e8e6e8cea57e",
-    staff: {
+    staffCreate: {
       first: "<value>",
       last: "<value>",
       email: "Mckenna_Yundt@hotmail.com",
       geoTimestamp: "2025-09-01 12:00:00",
-      navigatingToJobUuid: "123e4567-840f-4bca-b608-23312641d80b",
+      navigatingToJobUuid: "123e4567-46e0-407e-916e-233c6746b18b",
       navigatingTimestamp: "2025-09-01 12:00:00",
       navigatingExpiryTimestamp: "2025-09-01 12:00:00",
       statusMessageTimestamp: "2025-09-01 12:00:00",
-      securityRoleUuid: "123e4567-2884-420a-be20-233121354e3b",
-      uuid: "123e4567-9fe2-4783-a6d8-23312b12c94b",
-      labourMaterialUuid: "123e4567-b0c0-42aa-ae71-23312e996e7b",
+      uuid: "123e4567-7016-4a94-b46e-233c6cded34b",
+      securityRoleUuid: "123e4567-77cf-460c-afb6-233c6e9f3bbb",
+      labourMaterialUuid: "123e4567-b307-469b-be70-233c62001aeb",
     },
   });
 
@@ -363,18 +363,18 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await staffMembersUpdateStaffMembers(serviceM8, {
     uuid: "6cd534f3-6271-46ec-8887-e8e6e8cea57e",
-    staff: {
+    staffCreate: {
       first: "<value>",
       last: "<value>",
       email: "Mckenna_Yundt@hotmail.com",
       geoTimestamp: "2025-09-01 12:00:00",
-      navigatingToJobUuid: "123e4567-840f-4bca-b608-23312641d80b",
+      navigatingToJobUuid: "123e4567-46e0-407e-916e-233c6746b18b",
       navigatingTimestamp: "2025-09-01 12:00:00",
       navigatingExpiryTimestamp: "2025-09-01 12:00:00",
       statusMessageTimestamp: "2025-09-01 12:00:00",
-      securityRoleUuid: "123e4567-2884-420a-be20-233121354e3b",
-      uuid: "123e4567-9fe2-4783-a6d8-23312b12c94b",
-      labourMaterialUuid: "123e4567-b0c0-42aa-ae71-23312e996e7b",
+      uuid: "123e4567-7016-4a94-b46e-233c6cded34b",
+      securityRoleUuid: "123e4567-77cf-460c-afb6-233c6e9f3bbb",
+      labourMaterialUuid: "123e4567-b307-469b-be70-233c62001aeb",
     },
   });
   if (res.ok) {

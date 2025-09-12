@@ -45,7 +45,7 @@ export class FormResponses extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createFormResponses(
-    request: components.FormResponseInput,
+    request: components.FormResponseCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateFormResponsesResponse> {
     return unwrapAsync(formResponsesCreateFormResponses(

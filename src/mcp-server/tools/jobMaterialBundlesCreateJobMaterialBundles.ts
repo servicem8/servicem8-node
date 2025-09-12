@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.JobMaterialBundleInput$inboundSchema,
+  request: components.JobMaterialBundleCreate$inboundSchema,
 };
 
 export const tool$jobMaterialBundlesCreateJobMaterialBundles: ToolDefinition<

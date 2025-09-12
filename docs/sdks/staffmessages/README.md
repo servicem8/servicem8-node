@@ -127,13 +127,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.staffMessages.createStaffMessages({
-    uuid: "123e4567-73b8-4a96-8e9e-2331261edb0b",
-    fromStaffUuid: "123e4567-ef9c-4b75-aff2-233128aee34b",
-    toStaffUuid: "123e4567-4e21-4cc1-aa1c-23312a9c29eb",
+    fromStaffUuid: "123e4567-b32f-4a18-bc88-233c665f87fb",
+    toStaffUuid: "123e4567-6bec-4d79-95c7-233c6995ccbb",
     sentTimestamp: "2025-09-01 12:00:00",
     deliveredTimestamp: "2025-09-01 12:00:00",
     readTimestamp: "2025-09-01 12:00:00",
-    regardingJobUuid: "123e4567-85dd-4e21-8e37-233121e0495b",
+    regardingJobUuid: "123e4567-18cc-4598-bdfd-233c6d76c1ab",
+    uuid: "123e4567-cf39-4768-a511-233c6b664bbb",
   });
 
   console.log(result);
@@ -160,13 +160,13 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await staffMessagesCreateStaffMessages(serviceM8, {
-    uuid: "123e4567-73b8-4a96-8e9e-2331261edb0b",
-    fromStaffUuid: "123e4567-ef9c-4b75-aff2-233128aee34b",
-    toStaffUuid: "123e4567-4e21-4cc1-aa1c-23312a9c29eb",
+    fromStaffUuid: "123e4567-b32f-4a18-bc88-233c665f87fb",
+    toStaffUuid: "123e4567-6bec-4d79-95c7-233c6995ccbb",
     sentTimestamp: "2025-09-01 12:00:00",
     deliveredTimestamp: "2025-09-01 12:00:00",
     readTimestamp: "2025-09-01 12:00:00",
-    regardingJobUuid: "123e4567-85dd-4e21-8e37-233121e0495b",
+    regardingJobUuid: "123e4567-18cc-4598-bdfd-233c6d76c1ab",
+    uuid: "123e4567-cf39-4768-a511-233c6b664bbb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -183,7 +183,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.StaffMessageInput](../../models/components/staffmessageinput.md)                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.StaffMessageCreate](../../models/components/staffmessagecreate.md)                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -315,14 +315,14 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.staffMessages.updateStaffMessages({
     uuid: "b5fd0f7a-6810-4261-acdb-e8e543cf4e72",
-    staffMessage: {
-      uuid: "123e4567-73b8-4a96-8e9e-2331261edb0b",
-      fromStaffUuid: "123e4567-ef9c-4b75-aff2-233128aee34b",
-      toStaffUuid: "123e4567-4e21-4cc1-aa1c-23312a9c29eb",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-b32f-4a18-bc88-233c665f87fb",
+      toStaffUuid: "123e4567-6bec-4d79-95c7-233c6995ccbb",
       sentTimestamp: "2025-09-01 12:00:00",
       deliveredTimestamp: "2025-09-01 12:00:00",
       readTimestamp: "2025-09-01 12:00:00",
-      regardingJobUuid: "123e4567-85dd-4e21-8e37-233121e0495b",
+      regardingJobUuid: "123e4567-18cc-4598-bdfd-233c6d76c1ab",
+      uuid: "123e4567-cf39-4768-a511-233c6b664bbb",
     },
   });
 
@@ -351,14 +351,14 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await staffMessagesUpdateStaffMessages(serviceM8, {
     uuid: "b5fd0f7a-6810-4261-acdb-e8e543cf4e72",
-    staffMessage: {
-      uuid: "123e4567-73b8-4a96-8e9e-2331261edb0b",
-      fromStaffUuid: "123e4567-ef9c-4b75-aff2-233128aee34b",
-      toStaffUuid: "123e4567-4e21-4cc1-aa1c-23312a9c29eb",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-b32f-4a18-bc88-233c665f87fb",
+      toStaffUuid: "123e4567-6bec-4d79-95c7-233c6995ccbb",
       sentTimestamp: "2025-09-01 12:00:00",
       deliveredTimestamp: "2025-09-01 12:00:00",
       readTimestamp: "2025-09-01 12:00:00",
-      regardingJobUuid: "123e4567-85dd-4e21-8e37-233121e0495b",
+      regardingJobUuid: "123e4567-18cc-4598-bdfd-233c6d76c1ab",
+      uuid: "123e4567-cf39-4768-a511-233c6b664bbb",
     },
   });
   if (res.ok) {

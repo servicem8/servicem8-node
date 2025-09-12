@@ -17,7 +17,7 @@ export type UpdateAllocationWindowsRequest = {
   /**
    * Allocation Window fields to update
    */
-  allocationWindow: components.AllocationWindowInput;
+  allocationWindowCreate: components.AllocationWindowCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateAllocationWindowsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  AllocationWindow: components.AllocationWindowInput$inboundSchema,
+  AllocationWindowCreate: components.AllocationWindowCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "AllocationWindow": "allocationWindow",
+    "AllocationWindowCreate": "allocationWindowCreate",
   });
 });
 
 /** @internal */
 export type UpdateAllocationWindowsRequest$Outbound = {
   uuid: string;
-  AllocationWindow: components.AllocationWindowInput$Outbound;
+  AllocationWindowCreate: components.AllocationWindowCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateAllocationWindowsRequest$outboundSchema: z.ZodType<
   UpdateAllocationWindowsRequest
 > = z.object({
   uuid: z.string(),
-  allocationWindow: components.AllocationWindowInput$outboundSchema,
+  allocationWindowCreate: components.AllocationWindowCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    allocationWindow: "AllocationWindow",
+    allocationWindowCreate: "AllocationWindowCreate",
   });
 });
 

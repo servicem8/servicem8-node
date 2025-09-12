@@ -45,7 +45,7 @@ export class SMSTemplates extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createSMSTemplates(
-    request: components.SmsTemplateInput,
+    request: components.SmsTemplateCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateSMSTemplatesResponse> {
     return unwrapAsync(smsTemplatesCreateSMSTemplates(

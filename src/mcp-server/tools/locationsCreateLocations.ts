@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.LocationInput$inboundSchema,
+  request: components.LocationCreate$inboundSchema,
 };
 
 export const tool$locationsCreateLocations: ToolDefinition<typeof args> = {

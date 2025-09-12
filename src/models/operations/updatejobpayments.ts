@@ -17,7 +17,7 @@ export type UpdateJobPaymentsRequest = {
   /**
    * Job Payment fields to update
    */
-  jobPayment: components.JobPaymentInput;
+  jobPaymentCreate: components.JobPaymentCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateJobPaymentsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  JobPayment: components.JobPaymentInput$inboundSchema,
+  JobPaymentCreate: components.JobPaymentCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "JobPayment": "jobPayment",
+    "JobPaymentCreate": "jobPaymentCreate",
   });
 });
 
 /** @internal */
 export type UpdateJobPaymentsRequest$Outbound = {
   uuid: string;
-  JobPayment: components.JobPaymentInput$Outbound;
+  JobPaymentCreate: components.JobPaymentCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateJobPaymentsRequest$outboundSchema: z.ZodType<
   UpdateJobPaymentsRequest
 > = z.object({
   uuid: z.string(),
-  jobPayment: components.JobPaymentInput$outboundSchema,
+  jobPaymentCreate: components.JobPaymentCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    jobPayment: "JobPayment",
+    jobPaymentCreate: "JobPaymentCreate",
   });
 });
 

@@ -23,6 +23,102 @@ export type VendorActive = ClosedEnum<typeof VendorActive>;
 
 export type Vendor = {
   /**
+   * Company Business Number
+   */
+  businessNumber?: string | undefined;
+  /**
+   * Primary email address for the company. Used for system notifications, customer communications, and as the default sender address for emails sent from the system.
+   */
+  email?: string | undefined;
+  /**
+   * Accounts/billing email accounts configured for the company.
+   */
+  emailAccounts?: string | undefined;
+  /**
+   * The company's billing address where invoices and financial correspondence should be sent.
+   */
+  billingAddress?: string | undefined;
+  /**
+   * DEPRECATED
+   */
+  acceptedPaymentMethods?: any | undefined;
+  /**
+   * Default geographic region for the company. Affects currency, tax calculations, date formats, and other region-specific behaviors in the system.
+   */
+  defaultRegion?: string | undefined;
+  /**
+   * Three-letter ISO currency code (e.g., 'USD', 'AUD', 'EUR') representing the company's primary currency. Used for all financial calculations and displays in the system.
+   */
+  currency?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business opens on Monday. For example, 480 represents 8:00 AM (8 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  openingTimeMonday?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business closes on Monday. For example, 1020 represents 5:00 PM (17 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  closingTimeMonday?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business opens on Tuesday. For example, 480 represents 8:00 AM (8 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  openingTimeTuesday?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business closes on Tuesday. For example, 1020 represents 5:00 PM (17 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  closingTimeTuesday?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business opens on Wednesday. For example, 480 represents 8:00 AM (8 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  openingTimeWednesday?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business closes on Wednesday. For example, 1020 represents 5:00 PM (17 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  closingTimeWednesday?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business opens on Thursday. For example, 480 represents 8:00 AM (8 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  openingTimeThursday?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business closes on Thursday. For example, 1020 represents 5:00 PM (17 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  closingTimeThursday?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business opens on Friday. For example, 480 represents 8:00 AM (8 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  openingTimeFriday?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business closes on Friday. For example, 1020 represents 5:00 PM (17 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  closingTimeFriday?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business opens on Saturday. For example, 480 represents 8:00 AM (8 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  openingTimeSaturday?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business closes on Saturday. For example, 1020 represents 5:00 PM (17 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  closingTimeSaturday?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business opens on Sunday. For example, 480 represents 8:00 AM (8 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  openingTimeSunday?: string | undefined;
+  /**
+   * The minute of the day (from midnight) when the business closes on Sunday. For example, 1020 represents 5:00 PM (17 hours × 60 minutes). Used for scheduling and availability calculations.
+   */
+  closingTimeSunday?: string | undefined;
+  /**
+   * IANA timezone name (e.g., 'America/New_York', 'Australia/Sydney') for the company's primary location. Used for date/time calculations, scheduling, and display of times across the system.
+   */
+  timezoneName?: string | undefined;
+  /**
+   * Text describing the payment terms that appear on invoices. For example, '14 days', 'Net 30', etc. Used to communicate payment expectations to customers on invoices and financial documents.
+   */
+  invoiceTerms?: string | undefined;
+  /**
+   * Default status for new jobs created in the system. Valid values are 'Quote' or 'Work Order'. Controls the initial state of newly created jobs.
+   */
+  jobDefaultStatus?: string | undefined;
+  /**
    * Unique identifier for this record
    */
   uuid?: string | undefined;
@@ -40,36 +136,9 @@ export type Vendor = {
   name: string;
   abnNumber?: string | undefined;
   /**
-   * Company Business Number
-   */
-  businessNumber?: string | undefined;
-  /**
    * Company Website address
    */
   website?: string | undefined;
-  email?: string | undefined;
-  emailAccounts?: string | undefined;
-  billingAddress?: string | undefined;
-  acceptedPaymentMethods?: string | undefined;
-  defaultRegion?: string | undefined;
-  currency?: string | undefined;
-  openingTimeMonday?: string | undefined;
-  closingTimeMonday?: string | undefined;
-  openingTimeTuesday?: string | undefined;
-  closingTimeTuesday?: string | undefined;
-  openingTimeWednesday?: string | undefined;
-  closingTimeWednesday?: string | undefined;
-  openingTimeThursday?: string | undefined;
-  closingTimeThursday?: string | undefined;
-  openingTimeFriday?: string | undefined;
-  closingTimeFriday?: string | undefined;
-  openingTimeSaturday?: string | undefined;
-  closingTimeSaturday?: string | undefined;
-  openingTimeSunday?: string | undefined;
-  closingTimeSunday?: string | undefined;
-  timezoneName?: string | undefined;
-  invoiceTerms?: string | undefined;
-  jobDefaultStatus?: string | undefined;
 };
 
 /** @internal */
@@ -94,17 +163,11 @@ export namespace VendorActive$ {
 /** @internal */
 export const Vendor$inboundSchema: z.ZodType<Vendor, z.ZodTypeDef, unknown> = z
   .object({
-    uuid: z.string().optional(),
-    active: VendorActive$inboundSchema.default(1),
-    edit_date: z.any().optional(),
-    name: z.string(),
-    abn_number: z.string().optional(),
     business_number: z.string().optional(),
-    website: z.string().optional(),
     email: z.string().optional(),
     email_accounts: z.string().optional(),
     billing_address: z.string().optional(),
-    accepted_payment_methods: z.string().optional(),
+    accepted_payment_methods: z.any().optional(),
     default_region: z.string().optional(),
     currency: z.string().optional(),
     opening_time_monday: z.string().optional(),
@@ -124,10 +187,14 @@ export const Vendor$inboundSchema: z.ZodType<Vendor, z.ZodTypeDef, unknown> = z
     timezone_name: z.string().optional(),
     invoice_terms: z.string().optional(),
     job_default_status: z.string().optional(),
+    uuid: z.string().optional(),
+    active: VendorActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    name: z.string(),
+    abn_number: z.string().optional(),
+    website: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
-      "edit_date": "editDate",
-      "abn_number": "abnNumber",
       "business_number": "businessNumber",
       "email_accounts": "emailAccounts",
       "billing_address": "billingAddress",
@@ -150,22 +217,18 @@ export const Vendor$inboundSchema: z.ZodType<Vendor, z.ZodTypeDef, unknown> = z
       "timezone_name": "timezoneName",
       "invoice_terms": "invoiceTerms",
       "job_default_status": "jobDefaultStatus",
+      "edit_date": "editDate",
+      "abn_number": "abnNumber",
     });
   });
 
 /** @internal */
 export type Vendor$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: any | undefined;
-  name: string;
-  abn_number?: string | undefined;
   business_number?: string | undefined;
-  website?: string | undefined;
   email?: string | undefined;
   email_accounts?: string | undefined;
   billing_address?: string | undefined;
-  accepted_payment_methods?: string | undefined;
+  accepted_payment_methods?: any | undefined;
   default_region?: string | undefined;
   currency?: string | undefined;
   opening_time_monday?: string | undefined;
@@ -185,6 +248,12 @@ export type Vendor$Outbound = {
   timezone_name?: string | undefined;
   invoice_terms?: string | undefined;
   job_default_status?: string | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
+  name: string;
+  abn_number?: string | undefined;
+  website?: string | undefined;
 };
 
 /** @internal */
@@ -193,17 +262,11 @@ export const Vendor$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Vendor
 > = z.object({
-  uuid: z.string().optional(),
-  active: VendorActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  name: z.string(),
-  abnNumber: z.string().optional(),
   businessNumber: z.string().optional(),
-  website: z.string().optional(),
   email: z.string().optional(),
   emailAccounts: z.string().optional(),
   billingAddress: z.string().optional(),
-  acceptedPaymentMethods: z.string().optional(),
+  acceptedPaymentMethods: z.any().optional(),
   defaultRegion: z.string().optional(),
   currency: z.string().optional(),
   openingTimeMonday: z.string().optional(),
@@ -223,10 +286,14 @@ export const Vendor$outboundSchema: z.ZodType<
   timezoneName: z.string().optional(),
   invoiceTerms: z.string().optional(),
   jobDefaultStatus: z.string().optional(),
+  uuid: z.string().optional(),
+  active: VendorActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
+  name: z.string(),
+  abnNumber: z.string().optional(),
+  website: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
-    abnNumber: "abn_number",
     businessNumber: "business_number",
     emailAccounts: "email_accounts",
     billingAddress: "billing_address",
@@ -249,6 +316,8 @@ export const Vendor$outboundSchema: z.ZodType<
     timezoneName: "timezone_name",
     invoiceTerms: "invoice_terms",
     jobDefaultStatus: "job_default_status",
+    editDate: "edit_date",
+    abnNumber: "abn_number",
   });
 });
 

@@ -7,6 +7,7 @@ import { AllocationWindows } from "./allocationwindows.js";
 import { Assets } from "./assets.js";
 import { AssetTypeFields } from "./assettypefields.js";
 import { AssetTypes } from "./assettypes.js";
+import { Attachments } from "./attachments.js";
 import { Badges } from "./badges.js";
 import { Bundles } from "./bundles.js";
 import { Categories } from "./categories.js";
@@ -32,6 +33,7 @@ import { JobTemplates } from "./jobtemplates.js";
 import { KnowledgeArticles } from "./knowledgearticles.js";
 import { Locations } from "./locations.js";
 import { Materials } from "./materials.js";
+import { Notes } from "./notes.js";
 import { Search } from "./search.js";
 import { SecurityRoles } from "./securityroles.js";
 import { SMSTemplates } from "./smstemplates.js";
@@ -60,6 +62,11 @@ export class ServiceM8 extends ClientSDK {
   private _assetTypeFields?: AssetTypeFields;
   get assetTypeFields(): AssetTypeFields {
     return (this._assetTypeFields ??= new AssetTypeFields(this._options));
+  }
+
+  private _attachments?: Attachments;
+  get attachments(): Attachments {
+    return (this._attachments ??= new Attachments(this._options));
   }
 
   private _badges?: Badges;
@@ -175,6 +182,11 @@ export class ServiceM8 extends ClientSDK {
   private _bundles?: Bundles;
   get bundles(): Bundles {
     return (this._bundles ??= new Bundles(this._options));
+  }
+
+  private _notes?: Notes;
+  get notes(): Notes {
+    return (this._notes ??= new Notes(this._options));
   }
 
   private _jobQueues?: JobQueues;

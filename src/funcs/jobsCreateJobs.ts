@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function jobsCreateJobs(
   client: ServiceM8Core,
-  request: components.JobInput,
+  request: components.JobCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function jobsCreateJobs(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.JobInput,
+  request: components.JobCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.JobInput$outboundSchema.parse(value),
+    (value) => components.JobCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

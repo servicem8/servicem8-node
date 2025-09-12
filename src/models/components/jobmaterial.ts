@@ -23,6 +23,50 @@ export type JobMaterialActive = ClosedEnum<typeof JobMaterialActive>;
 
 export type JobMaterial = {
   /**
+   * The UUID of the job this material is associated with. This is a required field that establishes the relationship between the job material and its parent job.
+   */
+  jobUuid?: string | undefined;
+  /**
+   * The UUID of the material catalog item this job material is based on. Links the job material to the corresponding material in the materials catalog.
+   */
+  materialUuid?: string | undefined;
+  /**
+   * The name of the material item used on the job. This is displayed on invoices and is used to identify the material to the customer. The name typically comes from the associated material object but can be customized per job.
+   */
+  name?: string | undefined;
+  /**
+   * The quantity of this material used on the job. This field is mandatory and cannot be empty.
+   */
+  quantity: string;
+  /**
+   * The unit price of the material excluding tax. Used in calculations to determine the total price for this line item on the job. The system may automatically adjust this value to maintain consistency with tax-inclusive pricing.
+   */
+  price?: string | undefined;
+  /**
+   * The unit price amount as displayed on invoices and quotes. This can be either tax-inclusive or tax-exclusive depending on the displayed_amount_is_tax_inclusive field value. Used for presentation to customers.
+   */
+  displayedAmount?: string | undefined;
+  /**
+   * Boolean flag indicating whether the displayed_amount includes tax (true) or excludes tax (false). This controls how prices are presented to customers and determines which price value (inclusive or exclusive) is used in calculations.
+   */
+  displayedAmountIsTaxInclusive?: string | undefined;
+  /**
+   * The UUID of the tax rate applied to this job material. Determines how tax is calculated for this specific line item.
+   */
+  taxRateUuid?: string | undefined;
+  /**
+   * Integer value controlling the display order of materials on a job. Lower values appear first in lists. Used to customize the presentation order of materials on quotes, invoices and job forms.
+   */
+  sortOrder?: string | undefined;
+  /**
+   * The cost of the material for this job. This is the ex-tax amount.
+   */
+  cost?: string | undefined;
+  /**
+   * The cost of the material for this job, displayed as inc-tax or ex-tax depending on jobMaterial.displayed_amount_is_tax_inclusive.
+   */
+  displayedCost?: string | undefined;
+  /**
    * Unique identifier for this record
    */
   uuid?: string | undefined;
@@ -34,55 +78,6 @@ export type JobMaterial = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
-  jobUuid?: string | undefined;
-  materialUuid?: string | undefined;
-  name?: string | undefined;
-  quantity: string;
-  price?: string | undefined;
-  displayedAmount?: string | undefined;
-  displayedAmountIsTaxInclusive?: string | undefined;
-  taxRateUuid?: string | undefined;
-  sortOrder?: string | undefined;
-  /**
-   * The cost of the material for this job. This is the ex-tax amount.
-   */
-  cost?: string | undefined;
-  /**
-   * The cost of the material for this job, displayed as inc-tax or ex-tax depending on jobMaterial.displayed_amount_is_tax_inclusive.
-   */
-  displayedCost?: string | undefined;
-  /**
-   * UUID of a JobMaterialBundle which this JobMaterial belongs to. The default value is blank, which means that the JobMaterial is not part of a JobMaterialBundle.
-   */
-  jobMaterialBundleUuid?: string | undefined;
-};
-
-export type JobMaterialInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: JobMaterialActive | undefined;
-  jobUuid?: string | undefined;
-  materialUuid?: string | undefined;
-  name?: string | undefined;
-  quantity: string;
-  price?: string | undefined;
-  displayedAmount?: string | undefined;
-  displayedAmountIsTaxInclusive?: string | undefined;
-  taxRateUuid?: string | undefined;
-  sortOrder?: string | undefined;
-  /**
-   * The cost of the material for this job. This is the ex-tax amount.
-   */
-  cost?: string | undefined;
-  /**
-   * The cost of the material for this job, displayed as inc-tax or ex-tax depending on jobMaterial.displayed_amount_is_tax_inclusive.
-   */
-  displayedCost?: string | undefined;
   /**
    * UUID of a JobMaterialBundle which this JobMaterial belongs to. The default value is blank, which means that the JobMaterial is not part of a JobMaterialBundle.
    */
@@ -116,9 +111,6 @@ export const JobMaterial$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: JobMaterialActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
   job_uuid: z.string().optional(),
   material_uuid: z.string().optional(),
   name: z.string().optional(),
@@ -130,10 +122,12 @@ export const JobMaterial$inboundSchema: z.ZodType<
   sort_order: z.string().optional(),
   cost: z.string().optional(),
   displayed_cost: z.string().optional(),
+  uuid: z.string().optional(),
+  active: JobMaterialActive$inboundSchema.default(1),
+  edit_date: z.any().optional(),
   job_material_bundle_uuid: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "edit_date": "editDate",
     "job_uuid": "jobUuid",
     "material_uuid": "materialUuid",
     "displayed_amount": "displayedAmount",
@@ -141,15 +135,13 @@ export const JobMaterial$inboundSchema: z.ZodType<
     "tax_rate_uuid": "taxRateUuid",
     "sort_order": "sortOrder",
     "displayed_cost": "displayedCost",
+    "edit_date": "editDate",
     "job_material_bundle_uuid": "jobMaterialBundleUuid",
   });
 });
 
 /** @internal */
 export type JobMaterial$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: any | undefined;
   job_uuid?: string | undefined;
   material_uuid?: string | undefined;
   name?: string | undefined;
@@ -161,6 +153,9 @@ export type JobMaterial$Outbound = {
   sort_order?: string | undefined;
   cost?: string | undefined;
   displayed_cost?: string | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
   job_material_bundle_uuid?: string | undefined;
 };
 
@@ -170,9 +165,6 @@ export const JobMaterial$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   JobMaterial
 > = z.object({
-  uuid: z.string().optional(),
-  active: JobMaterialActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
   jobUuid: z.string().optional(),
   materialUuid: z.string().optional(),
   name: z.string().optional(),
@@ -184,10 +176,12 @@ export const JobMaterial$outboundSchema: z.ZodType<
   sortOrder: z.string().optional(),
   cost: z.string().optional(),
   displayedCost: z.string().optional(),
+  uuid: z.string().optional(),
+  active: JobMaterialActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
   jobMaterialBundleUuid: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
     jobUuid: "job_uuid",
     materialUuid: "material_uuid",
     displayedAmount: "displayed_amount",
@@ -195,6 +189,7 @@ export const JobMaterial$outboundSchema: z.ZodType<
     taxRateUuid: "tax_rate_uuid",
     sortOrder: "sort_order",
     displayedCost: "displayed_cost",
+    editDate: "edit_date",
     jobMaterialBundleUuid: "job_material_bundle_uuid",
   });
 });
@@ -223,120 +218,5 @@ export function jobMaterialFromJSON(
     jsonString,
     (x) => JobMaterial$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'JobMaterial' from JSON`,
-  );
-}
-
-/** @internal */
-export const JobMaterialInput$inboundSchema: z.ZodType<
-  JobMaterialInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobMaterialActive$inboundSchema.default(1),
-  job_uuid: z.string().optional(),
-  material_uuid: z.string().optional(),
-  name: z.string().optional(),
-  quantity: z.string(),
-  price: z.string().optional(),
-  displayed_amount: z.string().optional(),
-  displayed_amount_is_tax_inclusive: z.string().optional(),
-  tax_rate_uuid: z.string().optional(),
-  sort_order: z.string().optional(),
-  cost: z.string().optional(),
-  displayed_cost: z.string().optional(),
-  job_material_bundle_uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-    "material_uuid": "materialUuid",
-    "displayed_amount": "displayedAmount",
-    "displayed_amount_is_tax_inclusive": "displayedAmountIsTaxInclusive",
-    "tax_rate_uuid": "taxRateUuid",
-    "sort_order": "sortOrder",
-    "displayed_cost": "displayedCost",
-    "job_material_bundle_uuid": "jobMaterialBundleUuid",
-  });
-});
-
-/** @internal */
-export type JobMaterialInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  job_uuid?: string | undefined;
-  material_uuid?: string | undefined;
-  name?: string | undefined;
-  quantity: string;
-  price?: string | undefined;
-  displayed_amount?: string | undefined;
-  displayed_amount_is_tax_inclusive?: string | undefined;
-  tax_rate_uuid?: string | undefined;
-  sort_order?: string | undefined;
-  cost?: string | undefined;
-  displayed_cost?: string | undefined;
-  job_material_bundle_uuid?: string | undefined;
-};
-
-/** @internal */
-export const JobMaterialInput$outboundSchema: z.ZodType<
-  JobMaterialInput$Outbound,
-  z.ZodTypeDef,
-  JobMaterialInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobMaterialActive$outboundSchema.default(1),
-  jobUuid: z.string().optional(),
-  materialUuid: z.string().optional(),
-  name: z.string().optional(),
-  quantity: z.string(),
-  price: z.string().optional(),
-  displayedAmount: z.string().optional(),
-  displayedAmountIsTaxInclusive: z.string().optional(),
-  taxRateUuid: z.string().optional(),
-  sortOrder: z.string().optional(),
-  cost: z.string().optional(),
-  displayedCost: z.string().optional(),
-  jobMaterialBundleUuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-    materialUuid: "material_uuid",
-    displayedAmount: "displayed_amount",
-    displayedAmountIsTaxInclusive: "displayed_amount_is_tax_inclusive",
-    taxRateUuid: "tax_rate_uuid",
-    sortOrder: "sort_order",
-    displayedCost: "displayed_cost",
-    jobMaterialBundleUuid: "job_material_bundle_uuid",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobMaterialInput$ {
-  /** @deprecated use `JobMaterialInput$inboundSchema` instead. */
-  export const inboundSchema = JobMaterialInput$inboundSchema;
-  /** @deprecated use `JobMaterialInput$outboundSchema` instead. */
-  export const outboundSchema = JobMaterialInput$outboundSchema;
-  /** @deprecated use `JobMaterialInput$Outbound` instead. */
-  export type Outbound = JobMaterialInput$Outbound;
-}
-
-export function jobMaterialInputToJSON(
-  jobMaterialInput: JobMaterialInput,
-): string {
-  return JSON.stringify(
-    JobMaterialInput$outboundSchema.parse(jobMaterialInput),
-  );
-}
-
-export function jobMaterialInputFromJSON(
-  jsonString: string,
-): SafeParseResult<JobMaterialInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => JobMaterialInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'JobMaterialInput' from JSON`,
   );
 }

@@ -34,7 +34,7 @@ export type AssetTypeFieldFieldType = ClosedEnum<
 /**
  * Configuration data for the field
  */
-export type FieldData = {
+export type AssetTypeFieldFieldData = {
   fieldType: AssetTypeFieldFieldType;
   mandatory: boolean;
   choices?: Array<string> | undefined;
@@ -64,34 +64,7 @@ export type AssetTypeField = {
   /**
    * Configuration data for the field
    */
-  fieldData?: FieldData | undefined;
-  /**
-   * The order in which this field should be displayed relative to other fields of the same asset type. Lower values display first.
-   */
-  sortOrder?: number | undefined;
-};
-
-export type AssetTypeFieldInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: AssetTypeFieldActive | undefined;
-  /**
-   * UUID of the Asset Type to which this field belongs. This field is read-only in the API. (Read only)
-   */
-  assetTypeUuid?: string | undefined;
-  /**
-   * Name of the field that will be displayed to users. Used as a label for the input field when managing assets.
-   */
-  name: string;
-  /**
-   * Configuration data for the field
-   */
-  fieldData?: FieldData | undefined;
+  fieldData?: AssetTypeFieldFieldData | undefined;
   /**
    * The order in which this field should be displayed relative to other fields of the same asset type. Lower values display first.
    */
@@ -141,8 +114,8 @@ export namespace AssetTypeFieldFieldType$ {
 }
 
 /** @internal */
-export const FieldData$inboundSchema: z.ZodType<
-  FieldData,
+export const AssetTypeFieldFieldData$inboundSchema: z.ZodType<
+  AssetTypeFieldFieldData,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -152,17 +125,17 @@ export const FieldData$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type FieldData$Outbound = {
+export type AssetTypeFieldFieldData$Outbound = {
   fieldType: string;
   mandatory: boolean;
   choices?: Array<string> | undefined;
 };
 
 /** @internal */
-export const FieldData$outboundSchema: z.ZodType<
-  FieldData$Outbound,
+export const AssetTypeFieldFieldData$outboundSchema: z.ZodType<
+  AssetTypeFieldFieldData$Outbound,
   z.ZodTypeDef,
-  FieldData
+  AssetTypeFieldFieldData
 > = z.object({
   fieldType: AssetTypeFieldFieldType$outboundSchema,
   mandatory: z.boolean(),
@@ -173,26 +146,30 @@ export const FieldData$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FieldData$ {
-  /** @deprecated use `FieldData$inboundSchema` instead. */
-  export const inboundSchema = FieldData$inboundSchema;
-  /** @deprecated use `FieldData$outboundSchema` instead. */
-  export const outboundSchema = FieldData$outboundSchema;
-  /** @deprecated use `FieldData$Outbound` instead. */
-  export type Outbound = FieldData$Outbound;
+export namespace AssetTypeFieldFieldData$ {
+  /** @deprecated use `AssetTypeFieldFieldData$inboundSchema` instead. */
+  export const inboundSchema = AssetTypeFieldFieldData$inboundSchema;
+  /** @deprecated use `AssetTypeFieldFieldData$outboundSchema` instead. */
+  export const outboundSchema = AssetTypeFieldFieldData$outboundSchema;
+  /** @deprecated use `AssetTypeFieldFieldData$Outbound` instead. */
+  export type Outbound = AssetTypeFieldFieldData$Outbound;
 }
 
-export function fieldDataToJSON(fieldData: FieldData): string {
-  return JSON.stringify(FieldData$outboundSchema.parse(fieldData));
+export function assetTypeFieldFieldDataToJSON(
+  assetTypeFieldFieldData: AssetTypeFieldFieldData,
+): string {
+  return JSON.stringify(
+    AssetTypeFieldFieldData$outboundSchema.parse(assetTypeFieldFieldData),
+  );
 }
 
-export function fieldDataFromJSON(
+export function assetTypeFieldFieldDataFromJSON(
   jsonString: string,
-): SafeParseResult<FieldData, SDKValidationError> {
+): SafeParseResult<AssetTypeFieldFieldData, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => FieldData$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FieldData' from JSON`,
+    (x) => AssetTypeFieldFieldData$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AssetTypeFieldFieldData' from JSON`,
   );
 }
 
@@ -207,7 +184,7 @@ export const AssetTypeField$inboundSchema: z.ZodType<
   edit_date: z.any().optional(),
   asset_type_uuid: z.string().optional(),
   name: z.string(),
-  field_data: z.lazy(() => FieldData$inboundSchema).optional(),
+  field_data: z.lazy(() => AssetTypeFieldFieldData$inboundSchema).optional(),
   sort_order: z.number().int().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -225,7 +202,7 @@ export type AssetTypeField$Outbound = {
   edit_date?: any | undefined;
   asset_type_uuid?: string | undefined;
   name: string;
-  field_data?: FieldData$Outbound | undefined;
+  field_data?: AssetTypeFieldFieldData$Outbound | undefined;
   sort_order?: number | undefined;
 };
 
@@ -240,7 +217,7 @@ export const AssetTypeField$outboundSchema: z.ZodType<
   editDate: z.any().optional(),
   assetTypeUuid: z.string().optional(),
   name: z.string(),
-  fieldData: z.lazy(() => FieldData$outboundSchema).optional(),
+  fieldData: z.lazy(() => AssetTypeFieldFieldData$outboundSchema).optional(),
   sortOrder: z.number().int().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -275,86 +252,5 @@ export function assetTypeFieldFromJSON(
     jsonString,
     (x) => AssetTypeField$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'AssetTypeField' from JSON`,
-  );
-}
-
-/** @internal */
-export const AssetTypeFieldInput$inboundSchema: z.ZodType<
-  AssetTypeFieldInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: AssetTypeFieldActive$inboundSchema.default(1),
-  asset_type_uuid: z.string().optional(),
-  name: z.string(),
-  field_data: z.lazy(() => FieldData$inboundSchema).optional(),
-  sort_order: z.number().int().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "asset_type_uuid": "assetTypeUuid",
-    "field_data": "fieldData",
-    "sort_order": "sortOrder",
-  });
-});
-
-/** @internal */
-export type AssetTypeFieldInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  asset_type_uuid?: string | undefined;
-  name: string;
-  field_data?: FieldData$Outbound | undefined;
-  sort_order?: number | undefined;
-};
-
-/** @internal */
-export const AssetTypeFieldInput$outboundSchema: z.ZodType<
-  AssetTypeFieldInput$Outbound,
-  z.ZodTypeDef,
-  AssetTypeFieldInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: AssetTypeFieldActive$outboundSchema.default(1),
-  assetTypeUuid: z.string().optional(),
-  name: z.string(),
-  fieldData: z.lazy(() => FieldData$outboundSchema).optional(),
-  sortOrder: z.number().int().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    assetTypeUuid: "asset_type_uuid",
-    fieldData: "field_data",
-    sortOrder: "sort_order",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AssetTypeFieldInput$ {
-  /** @deprecated use `AssetTypeFieldInput$inboundSchema` instead. */
-  export const inboundSchema = AssetTypeFieldInput$inboundSchema;
-  /** @deprecated use `AssetTypeFieldInput$outboundSchema` instead. */
-  export const outboundSchema = AssetTypeFieldInput$outboundSchema;
-  /** @deprecated use `AssetTypeFieldInput$Outbound` instead. */
-  export type Outbound = AssetTypeFieldInput$Outbound;
-}
-
-export function assetTypeFieldInputToJSON(
-  assetTypeFieldInput: AssetTypeFieldInput,
-): string {
-  return JSON.stringify(
-    AssetTypeFieldInput$outboundSchema.parse(assetTypeFieldInput),
-  );
-}
-
-export function assetTypeFieldInputFromJSON(
-  jsonString: string,
-): SafeParseResult<AssetTypeFieldInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AssetTypeFieldInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AssetTypeFieldInput' from JSON`,
   );
 }

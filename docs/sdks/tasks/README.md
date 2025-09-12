@@ -129,12 +129,12 @@ async function run() {
   const result = await serviceM8.tasks.createTasks({
     dueDate: "YYYY-MM-DD",
     name: "<value>",
-    relatedObjectUuid: "123e4567-cf18-40b2-a489-233126f6664b",
+    relatedObjectUuid: "123e4567-5148-4881-aeee-233c6c106d4b",
     completedTimestamp: "2025-09-01 12:00:00",
-    completedByStaffUuid: "123e4567-e5d7-4fc1-8caa-233121fef72b",
-    assignedToStaffUuid: "123e4567-4e20-49e7-84aa-2331294aae2b",
-    uuid: "123e4567-d6bc-4040-ba39-2331286f885b",
-    createdByStaffUuid: "123e4567-921a-4c52-91ff-23312a5af5fb",
+    completedByStaffUuid: "123e4567-5131-43dc-b884-233c638bb17b",
+    assignedToStaffUuid: "123e4567-9dbd-44b6-b214-233c662a479b",
+    uuid: "123e4567-47ed-423a-ae5b-233c6e45790b",
+    createdByStaffUuid: "123e4567-2a1a-4b43-ac7d-233c61d0661b",
     createDate: "2025-09-01 12:00:00",
   });
 
@@ -164,12 +164,12 @@ async function run() {
   const res = await tasksCreateTasks(serviceM8, {
     dueDate: "YYYY-MM-DD",
     name: "<value>",
-    relatedObjectUuid: "123e4567-cf18-40b2-a489-233126f6664b",
+    relatedObjectUuid: "123e4567-5148-4881-aeee-233c6c106d4b",
     completedTimestamp: "2025-09-01 12:00:00",
-    completedByStaffUuid: "123e4567-e5d7-4fc1-8caa-233121fef72b",
-    assignedToStaffUuid: "123e4567-4e20-49e7-84aa-2331294aae2b",
-    uuid: "123e4567-d6bc-4040-ba39-2331286f885b",
-    createdByStaffUuid: "123e4567-921a-4c52-91ff-23312a5af5fb",
+    completedByStaffUuid: "123e4567-5131-43dc-b884-233c638bb17b",
+    assignedToStaffUuid: "123e4567-9dbd-44b6-b214-233c662a479b",
+    uuid: "123e4567-47ed-423a-ae5b-233c6e45790b",
+    createdByStaffUuid: "123e4567-2a1a-4b43-ac7d-233c61d0661b",
     createDate: "2025-09-01 12:00:00",
   });
   if (res.ok) {
@@ -187,7 +187,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.TaskInput](../../models/components/taskinput.md)                                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.TaskCreate](../../models/components/taskcreate.md)                                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -319,15 +319,15 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.tasks.updateTasks({
     uuid: "fc5a7972-ff2f-4bbb-a4fb-c4e583b9d183",
-    task: {
+    taskCreate: {
       dueDate: "YYYY-MM-DD",
       name: "<value>",
-      relatedObjectUuid: "123e4567-cf18-40b2-a489-233126f6664b",
+      relatedObjectUuid: "123e4567-5148-4881-aeee-233c6c106d4b",
       completedTimestamp: "2025-09-01 12:00:00",
-      completedByStaffUuid: "123e4567-e5d7-4fc1-8caa-233121fef72b",
-      assignedToStaffUuid: "123e4567-4e20-49e7-84aa-2331294aae2b",
-      uuid: "123e4567-d6bc-4040-ba39-2331286f885b",
-      createdByStaffUuid: "123e4567-921a-4c52-91ff-23312a5af5fb",
+      completedByStaffUuid: "123e4567-5131-43dc-b884-233c638bb17b",
+      assignedToStaffUuid: "123e4567-9dbd-44b6-b214-233c662a479b",
+      uuid: "123e4567-47ed-423a-ae5b-233c6e45790b",
+      createdByStaffUuid: "123e4567-2a1a-4b43-ac7d-233c61d0661b",
       createDate: "2025-09-01 12:00:00",
     },
   });
@@ -357,15 +357,15 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await tasksUpdateTasks(serviceM8, {
     uuid: "fc5a7972-ff2f-4bbb-a4fb-c4e583b9d183",
-    task: {
+    taskCreate: {
       dueDate: "YYYY-MM-DD",
       name: "<value>",
-      relatedObjectUuid: "123e4567-cf18-40b2-a489-233126f6664b",
+      relatedObjectUuid: "123e4567-5148-4881-aeee-233c6c106d4b",
       completedTimestamp: "2025-09-01 12:00:00",
-      completedByStaffUuid: "123e4567-e5d7-4fc1-8caa-233121fef72b",
-      assignedToStaffUuid: "123e4567-4e20-49e7-84aa-2331294aae2b",
-      uuid: "123e4567-d6bc-4040-ba39-2331286f885b",
-      createdByStaffUuid: "123e4567-921a-4c52-91ff-23312a5af5fb",
+      completedByStaffUuid: "123e4567-5131-43dc-b884-233c638bb17b",
+      assignedToStaffUuid: "123e4567-9dbd-44b6-b214-233c662a479b",
+      uuid: "123e4567-47ed-423a-ae5b-233c6e45790b",
+      createdByStaffUuid: "123e4567-2a1a-4b43-ac7d-233c61d0661b",
       createDate: "2025-09-01 12:00:00",
     },
   });

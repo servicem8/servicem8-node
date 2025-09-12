@@ -23,6 +23,18 @@ export type EmailTemplateActive = ClosedEnum<typeof EmailTemplateActive>;
 
 export type EmailTemplate = {
   /**
+   * Unique name of the email template. Used to identify and select the template in the system. This field is mandatory and must be unique among all email templates in the account.
+   */
+  name: string;
+  /**
+   * Subject line for the email template. Supports variable placeholders like {job.job_address} which are replaced with actual values when the email is generated. This field defines what appears in the subject line of emails sent using this template.
+   */
+  subject?: string | undefined;
+  /**
+   * The HTML body content of the email template. Supports rich text formatting and variable placeholders like {job.contact_first}, {document}, {vendor.name}, etc., which are replaced with actual values when the email is generated.
+   */
+  message?: string | undefined;
+  /**
    * Unique identifier for this record
    */
   uuid?: string | undefined;
@@ -34,23 +46,6 @@ export type EmailTemplate = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
-  name: string;
-  subject?: string | undefined;
-  message?: string | undefined;
-};
-
-export type EmailTemplateInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: EmailTemplateActive | undefined;
-  name: string;
-  subject?: string | undefined;
-  message?: string | undefined;
 };
 
 /** @internal */
@@ -80,12 +75,12 @@ export const EmailTemplate$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: EmailTemplateActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
   name: z.string(),
   subject: z.string().optional(),
   message: z.string().optional(),
+  uuid: z.string().optional(),
+  active: EmailTemplateActive$inboundSchema.default(1),
+  edit_date: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
     "edit_date": "editDate",
@@ -94,12 +89,12 @@ export const EmailTemplate$inboundSchema: z.ZodType<
 
 /** @internal */
 export type EmailTemplate$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: any | undefined;
   name: string;
   subject?: string | undefined;
   message?: string | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
 };
 
 /** @internal */
@@ -108,12 +103,12 @@ export const EmailTemplate$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   EmailTemplate
 > = z.object({
-  uuid: z.string().optional(),
-  active: EmailTemplateActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
   name: z.string(),
   subject: z.string().optional(),
   message: z.string().optional(),
+  uuid: z.string().optional(),
+  active: EmailTemplateActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
     editDate: "edit_date",
@@ -144,71 +139,5 @@ export function emailTemplateFromJSON(
     jsonString,
     (x) => EmailTemplate$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'EmailTemplate' from JSON`,
-  );
-}
-
-/** @internal */
-export const EmailTemplateInput$inboundSchema: z.ZodType<
-  EmailTemplateInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: EmailTemplateActive$inboundSchema.default(1),
-  name: z.string(),
-  subject: z.string().optional(),
-  message: z.string().optional(),
-});
-
-/** @internal */
-export type EmailTemplateInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  name: string;
-  subject?: string | undefined;
-  message?: string | undefined;
-};
-
-/** @internal */
-export const EmailTemplateInput$outboundSchema: z.ZodType<
-  EmailTemplateInput$Outbound,
-  z.ZodTypeDef,
-  EmailTemplateInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: EmailTemplateActive$outboundSchema.default(1),
-  name: z.string(),
-  subject: z.string().optional(),
-  message: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EmailTemplateInput$ {
-  /** @deprecated use `EmailTemplateInput$inboundSchema` instead. */
-  export const inboundSchema = EmailTemplateInput$inboundSchema;
-  /** @deprecated use `EmailTemplateInput$outboundSchema` instead. */
-  export const outboundSchema = EmailTemplateInput$outboundSchema;
-  /** @deprecated use `EmailTemplateInput$Outbound` instead. */
-  export type Outbound = EmailTemplateInput$Outbound;
-}
-
-export function emailTemplateInputToJSON(
-  emailTemplateInput: EmailTemplateInput,
-): string {
-  return JSON.stringify(
-    EmailTemplateInput$outboundSchema.parse(emailTemplateInput),
-  );
-}
-
-export function emailTemplateInputFromJSON(
-  jsonString: string,
-): SafeParseResult<EmailTemplateInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => EmailTemplateInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'EmailTemplateInput' from JSON`,
   );
 }

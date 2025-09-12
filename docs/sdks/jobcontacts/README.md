@@ -127,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobContacts.createJobContacts({
-    uuid: "123e4567-5cea-488f-a896-23312fb7a6ab",
-    jobUuid: "123e4567-b300-4c67-b86c-23312433443b",
+    jobUuid: "123e4567-defc-4636-bfb3-233c649bc23b",
+    uuid: "123e4567-9629-4f5f-868a-233c6abc950b",
   });
 
   console.log(result);
@@ -155,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobContactsCreateJobContacts(serviceM8, {
-    uuid: "123e4567-5cea-488f-a896-23312fb7a6ab",
-    jobUuid: "123e4567-b300-4c67-b86c-23312433443b",
+    jobUuid: "123e4567-defc-4636-bfb3-233c649bc23b",
+    uuid: "123e4567-9629-4f5f-868a-233c6abc950b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -173,7 +173,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.JobContactInput](../../models/components/jobcontactinput.md)                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.JobContactCreate](../../models/components/jobcontactcreate.md)                                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -305,9 +305,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.jobContacts.updateJobContacts({
     uuid: "9ce8245c-9fb9-4361-8f7f-25eba557ff71",
-    jobContact: {
-      uuid: "123e4567-5cea-488f-a896-23312fb7a6ab",
-      jobUuid: "123e4567-b300-4c67-b86c-23312433443b",
+    jobContactCreate: {
+      jobUuid: "123e4567-defc-4636-bfb3-233c649bc23b",
+      uuid: "123e4567-9629-4f5f-868a-233c6abc950b",
     },
   });
 
@@ -336,9 +336,9 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await jobContactsUpdateJobContacts(serviceM8, {
     uuid: "9ce8245c-9fb9-4361-8f7f-25eba557ff71",
-    jobContact: {
-      uuid: "123e4567-5cea-488f-a896-23312fb7a6ab",
-      jobUuid: "123e4567-b300-4c67-b86c-23312433443b",
+    jobContactCreate: {
+      jobUuid: "123e4567-defc-4636-bfb3-233c649bc23b",
+      uuid: "123e4567-9629-4f5f-868a-233c6abc950b",
     },
   });
   if (res.ok) {

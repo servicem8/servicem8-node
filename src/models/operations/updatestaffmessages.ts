@@ -17,7 +17,7 @@ export type UpdateStaffMessagesRequest = {
   /**
    * Staff Message fields to update
    */
-  staffMessage: components.StaffMessageInput;
+  staffMessageCreate: components.StaffMessageCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateStaffMessagesRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  StaffMessage: components.StaffMessageInput$inboundSchema,
+  StaffMessageCreate: components.StaffMessageCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "StaffMessage": "staffMessage",
+    "StaffMessageCreate": "staffMessageCreate",
   });
 });
 
 /** @internal */
 export type UpdateStaffMessagesRequest$Outbound = {
   uuid: string;
-  StaffMessage: components.StaffMessageInput$Outbound;
+  StaffMessageCreate: components.StaffMessageCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateStaffMessagesRequest$outboundSchema: z.ZodType<
   UpdateStaffMessagesRequest
 > = z.object({
   uuid: z.string(),
-  staffMessage: components.StaffMessageInput$outboundSchema,
+  staffMessageCreate: components.StaffMessageCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    staffMessage: "StaffMessage",
+    staffMessageCreate: "StaffMessageCreate",
   });
 });
 

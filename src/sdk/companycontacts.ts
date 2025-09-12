@@ -45,7 +45,7 @@ export class CompanyContacts extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createCompanyContacts(
-    request: components.CompanyContactInput,
+    request: components.CompanyContactCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateCompanyContactsResponse> {
     return unwrapAsync(companyContactsCreateCompanyContacts(

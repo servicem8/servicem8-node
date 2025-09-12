@@ -10,6 +10,20 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
+ * Boolean flag indicating whether this tax rate is the system default (true) or not (false). Only one tax rate can be marked as default at any time. The default tax rate is automatically applied to new line items when no specific tax rate is selected..  Valid values are [0,1]
+ */
+export const TaxRateIsDefaultTaxRate = {
+  Zero: 0,
+  One: 1,
+} as const;
+/**
+ * Boolean flag indicating whether this tax rate is the system default (true) or not (false). Only one tax rate can be marked as default at any time. The default tax rate is automatically applied to new line items when no specific tax rate is selected..  Valid values are [0,1]
+ */
+export type TaxRateIsDefaultTaxRate = ClosedEnum<
+  typeof TaxRateIsDefaultTaxRate
+>;
+
+/**
  * Record active/deleted flag.  Valid values are [0,1]
  */
 export const TaxRateActive = {
@@ -21,19 +35,19 @@ export const TaxRateActive = {
  */
 export type TaxRateActive = ClosedEnum<typeof TaxRateActive>;
 
-/**
- *  Valid values are [0,1]
- */
-export const IsDefaultTaxRate = {
-  Zero: 0,
-  One: 1,
-} as const;
-/**
- *  Valid values are [0,1]
- */
-export type IsDefaultTaxRate = ClosedEnum<typeof IsDefaultTaxRate>;
-
 export type TaxRate = {
+  /**
+   * Name of the tax rate used for identification. Examples include 'GST', 'VAT', 'Sales Tax', etc.
+   */
+  name: string;
+  /**
+   * The tax rate percentage value (stored as a decimal value). For example, 10 for a 10% tax rate. Used in calculations to determine tax amounts for invoices and quotes.
+   */
+  amount?: string | undefined;
+  /**
+   * Boolean flag indicating whether this tax rate is the system default (true) or not (false). Only one tax rate can be marked as default at any time. The default tax rate is automatically applied to new line items when no specific tax rate is selected..  Valid values are [0,1]
+   */
+  isDefaultTaxRate?: TaxRateIsDefaultTaxRate | undefined;
   /**
    * Unique identifier for this record
    */
@@ -46,30 +60,28 @@ export type TaxRate = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
-  name: string;
-  amount?: string | undefined;
-  /**
-   *  Valid values are [0,1]
-   */
-  isDefaultTaxRate?: IsDefaultTaxRate | undefined;
 };
 
-export type TaxRateInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: TaxRateActive | undefined;
-  name: string;
-  amount?: string | undefined;
-  /**
-   *  Valid values are [0,1]
-   */
-  isDefaultTaxRate?: IsDefaultTaxRate | undefined;
-};
+/** @internal */
+export const TaxRateIsDefaultTaxRate$inboundSchema: z.ZodNativeEnum<
+  typeof TaxRateIsDefaultTaxRate
+> = z.nativeEnum(TaxRateIsDefaultTaxRate);
+
+/** @internal */
+export const TaxRateIsDefaultTaxRate$outboundSchema: z.ZodNativeEnum<
+  typeof TaxRateIsDefaultTaxRate
+> = TaxRateIsDefaultTaxRate$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace TaxRateIsDefaultTaxRate$ {
+  /** @deprecated use `TaxRateIsDefaultTaxRate$inboundSchema` instead. */
+  export const inboundSchema = TaxRateIsDefaultTaxRate$inboundSchema;
+  /** @deprecated use `TaxRateIsDefaultTaxRate$outboundSchema` instead. */
+  export const outboundSchema = TaxRateIsDefaultTaxRate$outboundSchema;
+}
 
 /** @internal */
 export const TaxRateActive$inboundSchema: z.ZodNativeEnum<
@@ -93,50 +105,29 @@ export namespace TaxRateActive$ {
 }
 
 /** @internal */
-export const IsDefaultTaxRate$inboundSchema: z.ZodNativeEnum<
-  typeof IsDefaultTaxRate
-> = z.nativeEnum(IsDefaultTaxRate);
-
-/** @internal */
-export const IsDefaultTaxRate$outboundSchema: z.ZodNativeEnum<
-  typeof IsDefaultTaxRate
-> = IsDefaultTaxRate$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IsDefaultTaxRate$ {
-  /** @deprecated use `IsDefaultTaxRate$inboundSchema` instead. */
-  export const inboundSchema = IsDefaultTaxRate$inboundSchema;
-  /** @deprecated use `IsDefaultTaxRate$outboundSchema` instead. */
-  export const outboundSchema = IsDefaultTaxRate$outboundSchema;
-}
-
-/** @internal */
 export const TaxRate$inboundSchema: z.ZodType<TaxRate, z.ZodTypeDef, unknown> =
   z.object({
+    name: z.string(),
+    amount: z.string().optional(),
+    is_default_tax_rate: TaxRateIsDefaultTaxRate$inboundSchema.optional(),
     uuid: z.string().optional(),
     active: TaxRateActive$inboundSchema.default(1),
     edit_date: z.any().optional(),
-    name: z.string(),
-    amount: z.string().optional(),
-    is_default_tax_rate: IsDefaultTaxRate$inboundSchema.optional(),
   }).transform((v) => {
     return remap$(v, {
-      "edit_date": "editDate",
       "is_default_tax_rate": "isDefaultTaxRate",
+      "edit_date": "editDate",
     });
   });
 
 /** @internal */
 export type TaxRate$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: any | undefined;
   name: string;
   amount?: string | undefined;
   is_default_tax_rate?: number | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
 };
 
 /** @internal */
@@ -145,16 +136,16 @@ export const TaxRate$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   TaxRate
 > = z.object({
+  name: z.string(),
+  amount: z.string().optional(),
+  isDefaultTaxRate: TaxRateIsDefaultTaxRate$outboundSchema.optional(),
   uuid: z.string().optional(),
   active: TaxRateActive$outboundSchema.default(1),
   editDate: z.any().optional(),
-  name: z.string(),
-  amount: z.string().optional(),
-  isDefaultTaxRate: IsDefaultTaxRate$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
     isDefaultTaxRate: "is_default_tax_rate",
+    editDate: "edit_date",
   });
 });
 
@@ -182,75 +173,5 @@ export function taxRateFromJSON(
     jsonString,
     (x) => TaxRate$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'TaxRate' from JSON`,
-  );
-}
-
-/** @internal */
-export const TaxRateInput$inboundSchema: z.ZodType<
-  TaxRateInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: TaxRateActive$inboundSchema.default(1),
-  name: z.string(),
-  amount: z.string().optional(),
-  is_default_tax_rate: IsDefaultTaxRate$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_default_tax_rate": "isDefaultTaxRate",
-  });
-});
-
-/** @internal */
-export type TaxRateInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  name: string;
-  amount?: string | undefined;
-  is_default_tax_rate?: number | undefined;
-};
-
-/** @internal */
-export const TaxRateInput$outboundSchema: z.ZodType<
-  TaxRateInput$Outbound,
-  z.ZodTypeDef,
-  TaxRateInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: TaxRateActive$outboundSchema.default(1),
-  name: z.string(),
-  amount: z.string().optional(),
-  isDefaultTaxRate: IsDefaultTaxRate$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isDefaultTaxRate: "is_default_tax_rate",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaxRateInput$ {
-  /** @deprecated use `TaxRateInput$inboundSchema` instead. */
-  export const inboundSchema = TaxRateInput$inboundSchema;
-  /** @deprecated use `TaxRateInput$outboundSchema` instead. */
-  export const outboundSchema = TaxRateInput$outboundSchema;
-  /** @deprecated use `TaxRateInput$Outbound` instead. */
-  export type Outbound = TaxRateInput$Outbound;
-}
-
-export function taxRateInputToJSON(taxRateInput: TaxRateInput): string {
-  return JSON.stringify(TaxRateInput$outboundSchema.parse(taxRateInput));
-}
-
-export function taxRateInputFromJSON(
-  jsonString: string,
-): SafeParseResult<TaxRateInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => TaxRateInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'TaxRateInput' from JSON`,
   );
 }

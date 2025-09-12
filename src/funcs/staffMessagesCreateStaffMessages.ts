@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function staffMessagesCreateStaffMessages(
   client: ServiceM8Core,
-  request: components.StaffMessageInput,
+  request: components.StaffMessageCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function staffMessagesCreateStaffMessages(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.StaffMessageInput,
+  request: components.StaffMessageCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.StaffMessageInput$outboundSchema.parse(value),
+    (value) => components.StaffMessageCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

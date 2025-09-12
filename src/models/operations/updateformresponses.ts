@@ -17,7 +17,7 @@ export type UpdateFormResponsesRequest = {
   /**
    * Form Response fields to update
    */
-  formResponse: components.FormResponseInput;
+  formResponseCreate: components.FormResponseCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateFormResponsesRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  FormResponse: components.FormResponseInput$inboundSchema,
+  FormResponseCreate: components.FormResponseCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "FormResponse": "formResponse",
+    "FormResponseCreate": "formResponseCreate",
   });
 });
 
 /** @internal */
 export type UpdateFormResponsesRequest$Outbound = {
   uuid: string;
-  FormResponse: components.FormResponseInput$Outbound;
+  FormResponseCreate: components.FormResponseCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateFormResponsesRequest$outboundSchema: z.ZodType<
   UpdateFormResponsesRequest
 > = z.object({
   uuid: z.string(),
-  formResponse: components.FormResponseInput$outboundSchema,
+  formResponseCreate: components.FormResponseCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    formResponse: "FormResponse",
+    formResponseCreate: "FormResponseCreate",
   });
 });
 

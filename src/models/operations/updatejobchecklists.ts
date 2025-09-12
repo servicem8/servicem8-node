@@ -17,7 +17,7 @@ export type UpdateJobChecklistsRequest = {
   /**
    * Job Checklist fields to update
    */
-  jobChecklist: components.JobChecklistInput;
+  jobChecklistCreate: components.JobChecklistCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateJobChecklistsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  JobChecklist: components.JobChecklistInput$inboundSchema,
+  JobChecklistCreate: components.JobChecklistCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "JobChecklist": "jobChecklist",
+    "JobChecklistCreate": "jobChecklistCreate",
   });
 });
 
 /** @internal */
 export type UpdateJobChecklistsRequest$Outbound = {
   uuid: string;
-  JobChecklist: components.JobChecklistInput$Outbound;
+  JobChecklistCreate: components.JobChecklistCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateJobChecklistsRequest$outboundSchema: z.ZodType<
   UpdateJobChecklistsRequest
 > = z.object({
   uuid: z.string(),
-  jobChecklist: components.JobChecklistInput$outboundSchema,
+  jobChecklistCreate: components.JobChecklistCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    jobChecklist: "JobChecklist",
+    jobChecklistCreate: "JobChecklistCreate",
   });
 });
 

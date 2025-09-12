@@ -127,7 +127,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.allocationWindows.createAllocationWindows({
-    uuid: "123e4567-16d8-4474-a13e-23312049e92b",
+    uuid: "123e4567-fc93-41ba-9d57-233c674a362b",
   });
 
   console.log(result);
@@ -154,7 +154,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await allocationWindowsCreateAllocationWindows(serviceM8, {
-    uuid: "123e4567-16d8-4474-a13e-23312049e92b",
+    uuid: "123e4567-fc93-41ba-9d57-233c674a362b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -171,7 +171,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.AllocationWindowInput](../../models/components/allocationwindowinput.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.AllocationWindowCreate](../../models/components/allocationwindowcreate.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -303,8 +303,8 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.allocationWindows.updateAllocationWindows({
     uuid: "4cd38297-8da6-4b29-8742-4f293110085d",
-    allocationWindow: {
-      uuid: "123e4567-16d8-4474-a13e-23312049e92b",
+    allocationWindowCreate: {
+      uuid: "123e4567-fc93-41ba-9d57-233c674a362b",
     },
   });
 
@@ -333,8 +333,8 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await allocationWindowsUpdateAllocationWindows(serviceM8, {
     uuid: "4cd38297-8da6-4b29-8742-4f293110085d",
-    allocationWindow: {
-      uuid: "123e4567-16d8-4474-a13e-23312049e92b",
+    allocationWindowCreate: {
+      uuid: "123e4567-fc93-41ba-9d57-233c674a362b",
     },
   });
   if (res.ok) {

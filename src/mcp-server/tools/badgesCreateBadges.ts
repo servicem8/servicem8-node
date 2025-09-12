@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.BadgeInput$inboundSchema,
+  request: components.BadgeCreate$inboundSchema,
 };
 
 export const tool$badgesCreateBadges: ToolDefinition<typeof args> = {

@@ -127,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.formFields.createFormFields({
-    uuid: "123e4567-615d-4891-9e1b-2331266fbe9b",
-    formUuid: "123e4567-056b-4555-948f-23312e15205b",
+    formUuid: "123e4567-0264-4484-a028-233c6636bceb",
+    uuid: "123e4567-5ad4-4231-b9cd-233c67868c6b",
   });
 
   console.log(result);
@@ -155,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formFieldsCreateFormFields(serviceM8, {
-    uuid: "123e4567-615d-4891-9e1b-2331266fbe9b",
-    formUuid: "123e4567-056b-4555-948f-23312e15205b",
+    formUuid: "123e4567-0264-4484-a028-233c6636bceb",
+    uuid: "123e4567-5ad4-4231-b9cd-233c67868c6b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -173,7 +173,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.FormFieldInput](../../models/components/formfieldinput.md)                                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.FormFieldCreate](../../models/components/formfieldcreate.md)                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -305,9 +305,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.formFields.updateFormFields({
     uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
-    formField: {
-      uuid: "123e4567-615d-4891-9e1b-2331266fbe9b",
-      formUuid: "123e4567-056b-4555-948f-23312e15205b",
+    formFieldCreate: {
+      formUuid: "123e4567-0264-4484-a028-233c6636bceb",
+      uuid: "123e4567-5ad4-4231-b9cd-233c67868c6b",
     },
   });
 
@@ -336,9 +336,9 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await formFieldsUpdateFormFields(serviceM8, {
     uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
-    formField: {
-      uuid: "123e4567-615d-4891-9e1b-2331266fbe9b",
-      formUuid: "123e4567-056b-4555-948f-23312e15205b",
+    formFieldCreate: {
+      formUuid: "123e4567-0264-4484-a028-233c6636bceb",
+      uuid: "123e4567-5ad4-4231-b9cd-233c67868c6b",
     },
   });
   if (res.ok) {

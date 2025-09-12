@@ -21,7 +21,7 @@ export const AssetActive = {
  */
 export type AssetActive = ClosedEnum<typeof AssetActive>;
 
-export type FieldDatum = {
+export type AssetFieldDatum = {
   /**
    * Must be the UUID of an AssetTypeField
    */
@@ -83,54 +83,7 @@ export type Asset = {
   /**
    * JSON array containing field values for this asset. Each entry represents a field value defined by the associated AssetType, with field values stored as strings. Date fields use Y-m-d format. This field stores all custom fields defined in the asset type template.
    */
-  fieldData?: Array<FieldDatum> | undefined;
-};
-
-export type AssetInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: AssetActive | undefined;
-  /**
-   * UUID of the Client to which this Asset is attached
-   */
-  companyUuid?: string | undefined;
-  /**
-   * The unique code printed on this Asset's attached label (read only)
-   */
-  assetCode?: string | undefined;
-  /**
-   * UUID of an Asset Type which defines the fields that can be stored for this Asset (read only)
-   */
-  assetTypeUuid?: string | undefined;
-  /**
-   * User-facing description of this asset
-   */
-  name?: string | undefined;
-  /**
-   * Latitude component of the Asset's location in degrees
-   */
-  lat?: number | undefined;
-  /**
-   * Longitude component of the Asset's location in degrees
-   */
-  lng?: number | undefined;
-  /**
-   * Timestamp at which the Asset's location was last updated
-   */
-  geoTimestamp?: string | undefined;
-  /**
-   * Altitude component of the Asset's location in metres
-   */
-  altitude?: number | undefined;
-  /**
-   * JSON array containing field values for this asset. Each entry represents a field value defined by the associated AssetType, with field values stored as strings. Date fields use Y-m-d format. This field stores all custom fields defined in the asset type template.
-   */
-  fieldData?: Array<FieldDatum> | undefined;
+  fieldData?: Array<AssetFieldDatum> | undefined;
 };
 
 /** @internal */
@@ -153,8 +106,8 @@ export namespace AssetActive$ {
 }
 
 /** @internal */
-export const FieldDatum$inboundSchema: z.ZodType<
-  FieldDatum,
+export const AssetFieldDatum$inboundSchema: z.ZodType<
+  AssetFieldDatum,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -166,7 +119,7 @@ export const FieldDatum$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type FieldDatum$Outbound = {
+export type AssetFieldDatum$Outbound = {
   uuid: string;
   fieldType: string;
   fieldName: string;
@@ -175,10 +128,10 @@ export type FieldDatum$Outbound = {
 };
 
 /** @internal */
-export const FieldDatum$outboundSchema: z.ZodType<
-  FieldDatum$Outbound,
+export const AssetFieldDatum$outboundSchema: z.ZodType<
+  AssetFieldDatum$Outbound,
   z.ZodTypeDef,
-  FieldDatum
+  AssetFieldDatum
 > = z.object({
   uuid: z.string(),
   fieldType: z.string(),
@@ -191,26 +144,28 @@ export const FieldDatum$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FieldDatum$ {
-  /** @deprecated use `FieldDatum$inboundSchema` instead. */
-  export const inboundSchema = FieldDatum$inboundSchema;
-  /** @deprecated use `FieldDatum$outboundSchema` instead. */
-  export const outboundSchema = FieldDatum$outboundSchema;
-  /** @deprecated use `FieldDatum$Outbound` instead. */
-  export type Outbound = FieldDatum$Outbound;
+export namespace AssetFieldDatum$ {
+  /** @deprecated use `AssetFieldDatum$inboundSchema` instead. */
+  export const inboundSchema = AssetFieldDatum$inboundSchema;
+  /** @deprecated use `AssetFieldDatum$outboundSchema` instead. */
+  export const outboundSchema = AssetFieldDatum$outboundSchema;
+  /** @deprecated use `AssetFieldDatum$Outbound` instead. */
+  export type Outbound = AssetFieldDatum$Outbound;
 }
 
-export function fieldDatumToJSON(fieldDatum: FieldDatum): string {
-  return JSON.stringify(FieldDatum$outboundSchema.parse(fieldDatum));
+export function assetFieldDatumToJSON(
+  assetFieldDatum: AssetFieldDatum,
+): string {
+  return JSON.stringify(AssetFieldDatum$outboundSchema.parse(assetFieldDatum));
 }
 
-export function fieldDatumFromJSON(
+export function assetFieldDatumFromJSON(
   jsonString: string,
-): SafeParseResult<FieldDatum, SDKValidationError> {
+): SafeParseResult<AssetFieldDatum, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => FieldDatum$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FieldDatum' from JSON`,
+    (x) => AssetFieldDatum$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AssetFieldDatum' from JSON`,
   );
 }
 
@@ -228,7 +183,7 @@ export const Asset$inboundSchema: z.ZodType<Asset, z.ZodTypeDef, unknown> = z
     lng: z.number().optional(),
     geo_timestamp: z.string().optional(),
     altitude: z.number().optional(),
-    field_data: z.array(z.lazy(() => FieldDatum$inboundSchema)).optional(),
+    field_data: z.array(z.lazy(() => AssetFieldDatum$inboundSchema)).optional(),
   }).transform((v) => {
     return remap$(v, {
       "edit_date": "editDate",
@@ -253,7 +208,7 @@ export type Asset$Outbound = {
   lng?: number | undefined;
   geo_timestamp?: string | undefined;
   altitude?: number | undefined;
-  field_data?: Array<FieldDatum$Outbound> | undefined;
+  field_data?: Array<AssetFieldDatum$Outbound> | undefined;
 };
 
 /** @internal */
@@ -273,7 +228,7 @@ export const Asset$outboundSchema: z.ZodType<
   lng: z.number().optional(),
   geoTimestamp: z.string().optional(),
   altitude: z.number().optional(),
-  fieldData: z.array(z.lazy(() => FieldDatum$outboundSchema)).optional(),
+  fieldData: z.array(z.lazy(() => AssetFieldDatum$outboundSchema)).optional(),
 }).transform((v) => {
   return remap$(v, {
     editDate: "edit_date",
@@ -309,101 +264,5 @@ export function assetFromJSON(
     jsonString,
     (x) => Asset$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'Asset' from JSON`,
-  );
-}
-
-/** @internal */
-export const AssetInput$inboundSchema: z.ZodType<
-  AssetInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: AssetActive$inboundSchema.default(1),
-  company_uuid: z.string().optional(),
-  asset_code: z.string().optional(),
-  asset_type_uuid: z.string().optional(),
-  name: z.string().optional(),
-  lat: z.number().optional(),
-  lng: z.number().optional(),
-  geo_timestamp: z.string().optional(),
-  altitude: z.number().optional(),
-  field_data: z.array(z.lazy(() => FieldDatum$inboundSchema)).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_uuid": "companyUuid",
-    "asset_code": "assetCode",
-    "asset_type_uuid": "assetTypeUuid",
-    "geo_timestamp": "geoTimestamp",
-    "field_data": "fieldData",
-  });
-});
-
-/** @internal */
-export type AssetInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  company_uuid?: string | undefined;
-  asset_code?: string | undefined;
-  asset_type_uuid?: string | undefined;
-  name?: string | undefined;
-  lat?: number | undefined;
-  lng?: number | undefined;
-  geo_timestamp?: string | undefined;
-  altitude?: number | undefined;
-  field_data?: Array<FieldDatum$Outbound> | undefined;
-};
-
-/** @internal */
-export const AssetInput$outboundSchema: z.ZodType<
-  AssetInput$Outbound,
-  z.ZodTypeDef,
-  AssetInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: AssetActive$outboundSchema.default(1),
-  companyUuid: z.string().optional(),
-  assetCode: z.string().optional(),
-  assetTypeUuid: z.string().optional(),
-  name: z.string().optional(),
-  lat: z.number().optional(),
-  lng: z.number().optional(),
-  geoTimestamp: z.string().optional(),
-  altitude: z.number().optional(),
-  fieldData: z.array(z.lazy(() => FieldDatum$outboundSchema)).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyUuid: "company_uuid",
-    assetCode: "asset_code",
-    assetTypeUuid: "asset_type_uuid",
-    geoTimestamp: "geo_timestamp",
-    fieldData: "field_data",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AssetInput$ {
-  /** @deprecated use `AssetInput$inboundSchema` instead. */
-  export const inboundSchema = AssetInput$inboundSchema;
-  /** @deprecated use `AssetInput$outboundSchema` instead. */
-  export const outboundSchema = AssetInput$outboundSchema;
-  /** @deprecated use `AssetInput$Outbound` instead. */
-  export type Outbound = AssetInput$Outbound;
-}
-
-export function assetInputToJSON(assetInput: AssetInput): string {
-  return JSON.stringify(AssetInput$outboundSchema.parse(assetInput));
-}
-
-export function assetInputFromJSON(
-  jsonString: string,
-): SafeParseResult<AssetInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AssetInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AssetInput' from JSON`,
   );
 }

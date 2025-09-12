@@ -23,6 +23,62 @@ export type JobActivityActive = ClosedEnum<typeof JobActivityActive>;
 
 export type JobActivity = {
   /**
+   * The UUID of the job this activity belongs to
+   */
+  jobUuid?: string | undefined;
+  /**
+   * The UUID of the staff member assigned to this activity
+   */
+  staffUuid?: string | undefined;
+  /**
+   * The scheduled start date and time of the activity
+   */
+  startDate?: string | undefined;
+  /**
+   * The scheduled end date and time of the activity
+   */
+  endDate?: string | undefined;
+  /**
+   * Boolean flag indicating whether this activity was scheduled in advance. Cannot be true if activity_was_recorded is true.
+   */
+  activityWasScheduled?: string | undefined;
+  /**
+   * Boolean flag indicating whether this activity was recorded after completion rather than scheduled in advance. Cannot be true if activity_was_scheduled is true.
+   */
+  activityWasRecorded?: string | undefined;
+  /**
+   * Integer flag indicating if the activity was automated: 0
+   */
+  activityWasAutomated?: string | undefined;
+  /**
+   * Boolean flag indicating whether the assigned staff member has viewed this job activity. Resets to false if the staff member or start time is changed. Only relevant when activity_was_scheduled is true.
+   */
+  hasBeenOpened?: string | undefined;
+  /**
+   * The date and time when the assigned staff member first viewed this job activity. Format is YYYY-MM-DD HH:MM:SS. Resets when staff member or start time is changed. Only relevant when activity_was_scheduled is true.
+   */
+  hasBeenOpenedTimestamp?: string | undefined;
+  /**
+   * The estimated travel time to reach this activity location in seconds
+   */
+  travelTimeInSeconds?: number | undefined;
+  /**
+   * The estimated travel distance to reach this activity location in meters
+   */
+  travelDistanceInMeters?: number | undefined;
+  /**
+   * DEPRECATED
+   */
+  allocatedByStaffUuid?: any | undefined;
+  /**
+   * DEPRECATED
+   */
+  allocatedTimestamp?: any | undefined;
+  /**
+   * The UUID of the material associated with this activity. Used to determine the cost of the activity.
+   */
+  materialUuid?: string | undefined;
+  /**
    * Unique identifier for this record
    */
   uuid?: string | undefined;
@@ -35,90 +91,9 @@ export type JobActivity = {
    */
   editDate?: any | undefined;
   /**
-   * The UUID of the job this activity belongs to
-   */
-  jobUuid?: string | undefined;
-  /**
-   * The UUID of the staff member assigned to this activity
-   */
-  staffUuid?: string | undefined;
-  /**
-   * The scheduled start date and time of the activity
-   */
-  startDate?: string | undefined;
-  /**
-   * The scheduled end date and time of the activity
-   */
-  endDate?: string | undefined;
-  activityWasScheduled?: string | undefined;
-  activityWasRecorded?: string | undefined;
-  activityWasAutomated?: string | undefined;
-  hasBeenOpened?: string | undefined;
-  hasBeenOpenedTimestamp?: string | undefined;
-  /**
-   * The estimated travel time to reach this activity location in seconds
-   */
-  travelTimeInSeconds?: number | undefined;
-  /**
-   * The estimated travel distance to reach this activity location in meters
-   */
-  travelDistanceInMeters?: number | undefined;
-  allocatedByStaffUuid?: string | undefined;
-  allocatedTimestamp?: string | undefined;
-  /**
-   * The UUID of the material associated with this activity. Used to determine the cost of the activity.
-   */
-  materialUuid?: string | undefined;
-  /**
    * UUID of Staff Member who last modified record
    */
   editByStaffUuid?: any | undefined;
-};
-
-export type JobActivityInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1].  Valid values are [0,1]
-   */
-  active?: JobActivityActive | undefined;
-  /**
-   * The UUID of the job this activity belongs to
-   */
-  jobUuid?: string | undefined;
-  /**
-   * The UUID of the staff member assigned to this activity
-   */
-  staffUuid?: string | undefined;
-  /**
-   * The scheduled start date and time of the activity
-   */
-  startDate?: string | undefined;
-  /**
-   * The scheduled end date and time of the activity
-   */
-  endDate?: string | undefined;
-  activityWasScheduled?: string | undefined;
-  activityWasRecorded?: string | undefined;
-  activityWasAutomated?: string | undefined;
-  hasBeenOpened?: string | undefined;
-  hasBeenOpenedTimestamp?: string | undefined;
-  /**
-   * The estimated travel time to reach this activity location in seconds
-   */
-  travelTimeInSeconds?: number | undefined;
-  /**
-   * The estimated travel distance to reach this activity location in meters
-   */
-  travelDistanceInMeters?: number | undefined;
-  allocatedByStaffUuid?: string | undefined;
-  allocatedTimestamp?: string | undefined;
-  /**
-   * The UUID of the material associated with this activity. Used to determine the cost of the activity.
-   */
-  materialUuid?: string | undefined;
 };
 
 /** @internal */
@@ -148,9 +123,6 @@ export const JobActivity$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: JobActivityActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
   job_uuid: z.string().optional(),
   staff_uuid: z.string().optional(),
   start_date: z.string().optional(),
@@ -162,13 +134,15 @@ export const JobActivity$inboundSchema: z.ZodType<
   has_been_opened_timestamp: z.string().optional(),
   travel_time_in_seconds: z.number().int().optional(),
   travel_distance_in_meters: z.number().int().optional(),
-  allocated_by_staff_uuid: z.string().optional(),
-  allocated_timestamp: z.string().optional(),
+  allocated_by_staff_uuid: z.any().optional(),
+  allocated_timestamp: z.any().optional(),
   material_uuid: z.string().optional(),
+  uuid: z.string().optional(),
+  active: JobActivityActive$inboundSchema.default(1),
+  edit_date: z.any().optional(),
   edit_by_staff_uuid: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "edit_date": "editDate",
     "job_uuid": "jobUuid",
     "staff_uuid": "staffUuid",
     "start_date": "startDate",
@@ -183,15 +157,13 @@ export const JobActivity$inboundSchema: z.ZodType<
     "allocated_by_staff_uuid": "allocatedByStaffUuid",
     "allocated_timestamp": "allocatedTimestamp",
     "material_uuid": "materialUuid",
+    "edit_date": "editDate",
     "edit_by_staff_uuid": "editByStaffUuid",
   });
 });
 
 /** @internal */
 export type JobActivity$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: any | undefined;
   job_uuid?: string | undefined;
   staff_uuid?: string | undefined;
   start_date?: string | undefined;
@@ -203,9 +175,12 @@ export type JobActivity$Outbound = {
   has_been_opened_timestamp?: string | undefined;
   travel_time_in_seconds?: number | undefined;
   travel_distance_in_meters?: number | undefined;
-  allocated_by_staff_uuid?: string | undefined;
-  allocated_timestamp?: string | undefined;
+  allocated_by_staff_uuid?: any | undefined;
+  allocated_timestamp?: any | undefined;
   material_uuid?: string | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
   edit_by_staff_uuid?: any | undefined;
 };
 
@@ -215,9 +190,6 @@ export const JobActivity$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   JobActivity
 > = z.object({
-  uuid: z.string().optional(),
-  active: JobActivityActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
   jobUuid: z.string().optional(),
   staffUuid: z.string().optional(),
   startDate: z.string().optional(),
@@ -229,13 +201,15 @@ export const JobActivity$outboundSchema: z.ZodType<
   hasBeenOpenedTimestamp: z.string().optional(),
   travelTimeInSeconds: z.number().int().optional(),
   travelDistanceInMeters: z.number().int().optional(),
-  allocatedByStaffUuid: z.string().optional(),
-  allocatedTimestamp: z.string().optional(),
+  allocatedByStaffUuid: z.any().optional(),
+  allocatedTimestamp: z.any().optional(),
   materialUuid: z.string().optional(),
+  uuid: z.string().optional(),
+  active: JobActivityActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
   editByStaffUuid: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
     jobUuid: "job_uuid",
     staffUuid: "staff_uuid",
     startDate: "start_date",
@@ -250,6 +224,7 @@ export const JobActivity$outboundSchema: z.ZodType<
     allocatedByStaffUuid: "allocated_by_staff_uuid",
     allocatedTimestamp: "allocated_timestamp",
     materialUuid: "material_uuid",
+    editDate: "edit_date",
     editByStaffUuid: "edit_by_staff_uuid",
   });
 });
@@ -278,138 +253,5 @@ export function jobActivityFromJSON(
     jsonString,
     (x) => JobActivity$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'JobActivity' from JSON`,
-  );
-}
-
-/** @internal */
-export const JobActivityInput$inboundSchema: z.ZodType<
-  JobActivityInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobActivityActive$inboundSchema.default(1),
-  job_uuid: z.string().optional(),
-  staff_uuid: z.string().optional(),
-  start_date: z.string().optional(),
-  end_date: z.string().optional(),
-  activity_was_scheduled: z.string().optional(),
-  activity_was_recorded: z.string().optional(),
-  activity_was_automated: z.string().optional(),
-  has_been_opened: z.string().optional(),
-  has_been_opened_timestamp: z.string().optional(),
-  travel_time_in_seconds: z.number().int().optional(),
-  travel_distance_in_meters: z.number().int().optional(),
-  allocated_by_staff_uuid: z.string().optional(),
-  allocated_timestamp: z.string().optional(),
-  material_uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-    "staff_uuid": "staffUuid",
-    "start_date": "startDate",
-    "end_date": "endDate",
-    "activity_was_scheduled": "activityWasScheduled",
-    "activity_was_recorded": "activityWasRecorded",
-    "activity_was_automated": "activityWasAutomated",
-    "has_been_opened": "hasBeenOpened",
-    "has_been_opened_timestamp": "hasBeenOpenedTimestamp",
-    "travel_time_in_seconds": "travelTimeInSeconds",
-    "travel_distance_in_meters": "travelDistanceInMeters",
-    "allocated_by_staff_uuid": "allocatedByStaffUuid",
-    "allocated_timestamp": "allocatedTimestamp",
-    "material_uuid": "materialUuid",
-  });
-});
-
-/** @internal */
-export type JobActivityInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  job_uuid?: string | undefined;
-  staff_uuid?: string | undefined;
-  start_date?: string | undefined;
-  end_date?: string | undefined;
-  activity_was_scheduled?: string | undefined;
-  activity_was_recorded?: string | undefined;
-  activity_was_automated?: string | undefined;
-  has_been_opened?: string | undefined;
-  has_been_opened_timestamp?: string | undefined;
-  travel_time_in_seconds?: number | undefined;
-  travel_distance_in_meters?: number | undefined;
-  allocated_by_staff_uuid?: string | undefined;
-  allocated_timestamp?: string | undefined;
-  material_uuid?: string | undefined;
-};
-
-/** @internal */
-export const JobActivityInput$outboundSchema: z.ZodType<
-  JobActivityInput$Outbound,
-  z.ZodTypeDef,
-  JobActivityInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobActivityActive$outboundSchema.default(1),
-  jobUuid: z.string().optional(),
-  staffUuid: z.string().optional(),
-  startDate: z.string().optional(),
-  endDate: z.string().optional(),
-  activityWasScheduled: z.string().optional(),
-  activityWasRecorded: z.string().optional(),
-  activityWasAutomated: z.string().optional(),
-  hasBeenOpened: z.string().optional(),
-  hasBeenOpenedTimestamp: z.string().optional(),
-  travelTimeInSeconds: z.number().int().optional(),
-  travelDistanceInMeters: z.number().int().optional(),
-  allocatedByStaffUuid: z.string().optional(),
-  allocatedTimestamp: z.string().optional(),
-  materialUuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-    staffUuid: "staff_uuid",
-    startDate: "start_date",
-    endDate: "end_date",
-    activityWasScheduled: "activity_was_scheduled",
-    activityWasRecorded: "activity_was_recorded",
-    activityWasAutomated: "activity_was_automated",
-    hasBeenOpened: "has_been_opened",
-    hasBeenOpenedTimestamp: "has_been_opened_timestamp",
-    travelTimeInSeconds: "travel_time_in_seconds",
-    travelDistanceInMeters: "travel_distance_in_meters",
-    allocatedByStaffUuid: "allocated_by_staff_uuid",
-    allocatedTimestamp: "allocated_timestamp",
-    materialUuid: "material_uuid",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobActivityInput$ {
-  /** @deprecated use `JobActivityInput$inboundSchema` instead. */
-  export const inboundSchema = JobActivityInput$inboundSchema;
-  /** @deprecated use `JobActivityInput$outboundSchema` instead. */
-  export const outboundSchema = JobActivityInput$outboundSchema;
-  /** @deprecated use `JobActivityInput$Outbound` instead. */
-  export type Outbound = JobActivityInput$Outbound;
-}
-
-export function jobActivityInputToJSON(
-  jobActivityInput: JobActivityInput,
-): string {
-  return JSON.stringify(
-    JobActivityInput$outboundSchema.parse(jobActivityInput),
-  );
-}
-
-export function jobActivityInputFromJSON(
-  jsonString: string,
-): SafeParseResult<JobActivityInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => JobActivityInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'JobActivityInput' from JSON`,
   );
 }

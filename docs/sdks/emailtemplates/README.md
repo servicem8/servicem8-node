@@ -127,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.emailTemplates.createEmailTemplates({
-    uuid: "123e4567-1953-476f-a779-23312c43b63b",
     name: "<value>",
+    uuid: "123e4567-cb0a-4f74-99ab-233c6617b8bb",
   });
 
   console.log(result);
@@ -155,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await emailTemplatesCreateEmailTemplates(serviceM8, {
-    uuid: "123e4567-1953-476f-a779-23312c43b63b",
     name: "<value>",
+    uuid: "123e4567-cb0a-4f74-99ab-233c6617b8bb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -173,7 +173,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.EmailTemplateInput](../../models/components/emailtemplateinput.md)                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.EmailTemplateCreate](../../models/components/emailtemplatecreate.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -305,9 +305,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.emailTemplates.updateEmailTemplates({
     uuid: "a3ce5f33-781a-4062-b068-2e3f8605b008",
-    emailTemplate: {
-      uuid: "123e4567-1953-476f-a779-23312c43b63b",
+    emailTemplateCreate: {
       name: "<value>",
+      uuid: "123e4567-cb0a-4f74-99ab-233c6617b8bb",
     },
   });
 
@@ -336,9 +336,9 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await emailTemplatesUpdateEmailTemplates(serviceM8, {
     uuid: "a3ce5f33-781a-4062-b068-2e3f8605b008",
-    emailTemplate: {
-      uuid: "123e4567-1953-476f-a779-23312c43b63b",
+    emailTemplateCreate: {
       name: "<value>",
+      uuid: "123e4567-cb0a-4f74-99ab-233c6617b8bb",
     },
   });
   if (res.ok) {

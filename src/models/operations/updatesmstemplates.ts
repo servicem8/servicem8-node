@@ -17,7 +17,7 @@ export type UpdateSMSTemplatesRequest = {
   /**
    * SMS Template fields to update
    */
-  smsTemplate: components.SmsTemplateInput;
+  smsTemplateCreate: components.SmsTemplateCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateSMSTemplatesRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  SmsTemplate: components.SmsTemplateInput$inboundSchema,
+  SmsTemplateCreate: components.SmsTemplateCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "SmsTemplate": "smsTemplate",
+    "SmsTemplateCreate": "smsTemplateCreate",
   });
 });
 
 /** @internal */
 export type UpdateSMSTemplatesRequest$Outbound = {
   uuid: string;
-  SmsTemplate: components.SmsTemplateInput$Outbound;
+  SmsTemplateCreate: components.SmsTemplateCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateSMSTemplatesRequest$outboundSchema: z.ZodType<
   UpdateSMSTemplatesRequest
 > = z.object({
   uuid: z.string(),
-  smsTemplate: components.SmsTemplateInput$outboundSchema,
+  smsTemplateCreate: components.SmsTemplateCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    smsTemplate: "SmsTemplate",
+    smsTemplateCreate: "SmsTemplateCreate",
   });
 });
 

@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function jobChecklistsCreateJobChecklists(
   client: ServiceM8Core,
-  request: components.JobChecklistInput,
+  request: components.JobChecklistCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function jobChecklistsCreateJobChecklists(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.JobChecklistInput,
+  request: components.JobChecklistCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.JobChecklistInput$outboundSchema.parse(value),
+    (value) => components.JobChecklistCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

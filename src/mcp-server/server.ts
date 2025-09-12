@@ -32,6 +32,11 @@ import { tool$assetTypesDeleteAssetTypes } from "./tools/assetTypesDeleteAssetTy
 import { tool$assetTypesGetAssetTypes } from "./tools/assetTypesGetAssetTypes.js";
 import { tool$assetTypesListAssetTypes } from "./tools/assetTypesListAssetTypes.js";
 import { tool$assetTypesUpdateAssetTypes } from "./tools/assetTypesUpdateAssetTypes.js";
+import { tool$attachmentsCreateAttachments } from "./tools/attachmentsCreateAttachments.js";
+import { tool$attachmentsDeleteAttachments } from "./tools/attachmentsDeleteAttachments.js";
+import { tool$attachmentsGetAttachments } from "./tools/attachmentsGetAttachments.js";
+import { tool$attachmentsListAttachments } from "./tools/attachmentsListAttachments.js";
+import { tool$attachmentsUpdateAttachments } from "./tools/attachmentsUpdateAttachments.js";
 import { tool$badgesCreateBadges } from "./tools/badgesCreateBadges.js";
 import { tool$badgesDeleteBadges } from "./tools/badgesDeleteBadges.js";
 import { tool$badgesGetBadges } from "./tools/badgesGetBadges.js";
@@ -159,6 +164,11 @@ import { tool$materialsDeleteMaterials } from "./tools/materialsDeleteMaterials.
 import { tool$materialsGetMaterials } from "./tools/materialsGetMaterials.js";
 import { tool$materialsListMaterials } from "./tools/materialsListMaterials.js";
 import { tool$materialsUpdateMaterials } from "./tools/materialsUpdateMaterials.js";
+import { tool$notesCreateNotes } from "./tools/notesCreateNotes.js";
+import { tool$notesDeleteNotes } from "./tools/notesDeleteNotes.js";
+import { tool$notesGetNotes } from "./tools/notesGetNotes.js";
+import { tool$notesListNotes } from "./tools/notesListNotes.js";
+import { tool$notesUpdateNotes } from "./tools/notesUpdateNotes.js";
 import { tool$searchGeneralSearch } from "./tools/searchGeneralSearch.js";
 import { tool$searchJobEmbeddingSearch } from "./tools/searchJobEmbeddingSearch.js";
 import { tool$searchObjectSearch } from "./tools/searchObjectSearch.js";
@@ -202,7 +212,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "ServiceM8",
-    version: "0.9.46",
+    version: "0.9.47",
   });
 
   const client = new ServiceM8Core({
@@ -251,6 +261,11 @@ export function createMCPServer(deps: {
   tool(tool$assetTypeFieldsGetAssetTypeFields);
   tool(tool$assetTypeFieldsUpdateAssetTypeFields);
   tool(tool$assetTypeFieldsDeleteAssetTypeFields);
+  tool(tool$attachmentsListAttachments);
+  tool(tool$attachmentsCreateAttachments);
+  tool(tool$attachmentsGetAttachments);
+  tool(tool$attachmentsUpdateAttachments);
+  tool(tool$attachmentsDeleteAttachments);
   tool(tool$badgesListBadges);
   tool(tool$badgesCreateBadges);
   tool(tool$badgesGetBadges);
@@ -364,6 +379,11 @@ export function createMCPServer(deps: {
   tool(tool$bundlesGetBundles);
   tool(tool$bundlesUpdateBundles);
   tool(tool$bundlesDeleteBundles);
+  tool(tool$notesListNotes);
+  tool(tool$notesCreateNotes);
+  tool(tool$notesGetNotes);
+  tool(tool$notesUpdateNotes);
+  tool(tool$notesDeleteNotes);
   tool(tool$jobQueuesListJobQueues);
   tool(tool$jobQueuesCreateJobQueues);
   tool(tool$jobQueuesGetJobQueues);

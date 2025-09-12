@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.StaffMessageInput$inboundSchema,
+  request: components.StaffMessageCreate$inboundSchema,
 };
 
 export const tool$staffMessagesCreateStaffMessages: ToolDefinition<

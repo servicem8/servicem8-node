@@ -128,8 +128,8 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.materials.createMaterials({
     name: "<value>",
-    uuid: "123e4567-ccdd-4c73-81be-23312f0592cb",
-    taxRateUuid: "123e4567-7582-4bbe-a469-23312385960b",
+    uuid: "123e4567-473e-4d31-836b-233c6036b0ab",
+    taxRateUuid: "123e4567-55e8-421d-bed3-233c6d527b2b",
   });
 
   console.log(result);
@@ -157,8 +157,8 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await materialsCreateMaterials(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-ccdd-4c73-81be-23312f0592cb",
-    taxRateUuid: "123e4567-7582-4bbe-a469-23312385960b",
+    uuid: "123e4567-473e-4d31-836b-233c6036b0ab",
+    taxRateUuid: "123e4567-55e8-421d-bed3-233c6d527b2b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -175,7 +175,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.MaterialInput](../../models/components/materialinput.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.MaterialCreate](../../models/components/materialcreate.md)                                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -307,10 +307,10 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.materials.updateMaterials({
     uuid: "8a4aa688-8b41-4ab3-b862-24327504b606",
-    material: {
+    materialCreate: {
       name: "<value>",
-      uuid: "123e4567-ccdd-4c73-81be-23312f0592cb",
-      taxRateUuid: "123e4567-7582-4bbe-a469-23312385960b",
+      uuid: "123e4567-473e-4d31-836b-233c6036b0ab",
+      taxRateUuid: "123e4567-55e8-421d-bed3-233c6d527b2b",
     },
   });
 
@@ -339,10 +339,10 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await materialsUpdateMaterials(serviceM8, {
     uuid: "8a4aa688-8b41-4ab3-b862-24327504b606",
-    material: {
+    materialCreate: {
       name: "<value>",
-      uuid: "123e4567-ccdd-4c73-81be-23312f0592cb",
-      taxRateUuid: "123e4567-7582-4bbe-a469-23312385960b",
+      uuid: "123e4567-473e-4d31-836b-233c6036b0ab",
+      taxRateUuid: "123e4567-55e8-421d-bed3-233c6d527b2b",
     },
   });
   if (res.ok) {

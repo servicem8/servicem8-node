@@ -45,7 +45,7 @@ export class EmailTemplates extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createEmailTemplates(
-    request: components.EmailTemplateInput,
+    request: components.EmailTemplateCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateEmailTemplatesResponse> {
     return unwrapAsync(emailTemplatesCreateEmailTemplates(

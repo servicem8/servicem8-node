@@ -17,7 +17,7 @@ export type UpdateKnowledgeArticlesRequest = {
   /**
    * Knowledge Article fields to update
    */
-  knowledgeArticle: components.KnowledgeArticleInput;
+  knowledgeArticleCreate: components.KnowledgeArticleCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateKnowledgeArticlesRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  KnowledgeArticle: components.KnowledgeArticleInput$inboundSchema,
+  KnowledgeArticleCreate: components.KnowledgeArticleCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "KnowledgeArticle": "knowledgeArticle",
+    "KnowledgeArticleCreate": "knowledgeArticleCreate",
   });
 });
 
 /** @internal */
 export type UpdateKnowledgeArticlesRequest$Outbound = {
   uuid: string;
-  KnowledgeArticle: components.KnowledgeArticleInput$Outbound;
+  KnowledgeArticleCreate: components.KnowledgeArticleCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateKnowledgeArticlesRequest$outboundSchema: z.ZodType<
   UpdateKnowledgeArticlesRequest
 > = z.object({
   uuid: z.string(),
-  knowledgeArticle: components.KnowledgeArticleInput$outboundSchema,
+  knowledgeArticleCreate: components.KnowledgeArticleCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    knowledgeArticle: "KnowledgeArticle",
+    knowledgeArticleCreate: "KnowledgeArticleCreate",
   });
 });
 

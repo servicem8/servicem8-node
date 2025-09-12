@@ -127,18 +127,16 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobAllocations.createJobAllocations({
-    uuid: "123e4567-d2a5-470f-bcfc-23312fbf0bdb",
-    jobUuid: "123e4567-f430-4652-b867-23312f1283eb",
-    queueUuid: "123e4567-c0eb-4e6c-a7d9-233127781a9b",
-    staffUuid: "123e4567-4650-451a-a45c-23312ff968cb",
+    jobUuid: "123e4567-d215-428f-a077-233c6958e8ab",
+    staffUuid: "123e4567-f929-4376-81b3-233c643dbabb",
     allocationDate: "2025-09-01 12:00:00",
-    allocationWindowUuid: "123e4567-be5c-42a2-b38b-2331247dbc9b",
-    allocatedByStaffUuid: "123e4567-95b9-4424-8edb-23312fb871db",
+    allocationWindowUuid: "123e4567-2223-4848-9f8f-233c6384fa5b",
+    allocatedByStaffUuid: "123e4567-7856-4874-89f9-233c6cc0a07b",
     allocatedTimestamp: "2025-09-01 12:00:00",
     expiryTimestamp: "2025-09-01 12:00:00",
     readTimestamp: "2025-09-01 12:00:00",
     completionTimestamp: "2025-09-01 12:00:00",
-    acceptanceTimestamp: "2025-09-01 12:00:00",
+    uuid: "123e4567-e864-4ee4-9b39-233c60c46d3b",
   });
 
   console.log(result);
@@ -165,18 +163,16 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobAllocationsCreateJobAllocations(serviceM8, {
-    uuid: "123e4567-d2a5-470f-bcfc-23312fbf0bdb",
-    jobUuid: "123e4567-f430-4652-b867-23312f1283eb",
-    queueUuid: "123e4567-c0eb-4e6c-a7d9-233127781a9b",
-    staffUuid: "123e4567-4650-451a-a45c-23312ff968cb",
+    jobUuid: "123e4567-d215-428f-a077-233c6958e8ab",
+    staffUuid: "123e4567-f929-4376-81b3-233c643dbabb",
     allocationDate: "2025-09-01 12:00:00",
-    allocationWindowUuid: "123e4567-be5c-42a2-b38b-2331247dbc9b",
-    allocatedByStaffUuid: "123e4567-95b9-4424-8edb-23312fb871db",
+    allocationWindowUuid: "123e4567-2223-4848-9f8f-233c6384fa5b",
+    allocatedByStaffUuid: "123e4567-7856-4874-89f9-233c6cc0a07b",
     allocatedTimestamp: "2025-09-01 12:00:00",
     expiryTimestamp: "2025-09-01 12:00:00",
     readTimestamp: "2025-09-01 12:00:00",
     completionTimestamp: "2025-09-01 12:00:00",
-    acceptanceTimestamp: "2025-09-01 12:00:00",
+    uuid: "123e4567-e864-4ee4-9b39-233c60c46d3b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -193,7 +189,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.JobAllocationInput](../../models/components/joballocationinput.md)                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.JobAllocationCreate](../../models/components/joballocationcreate.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -325,19 +321,17 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.jobAllocations.updateJobAllocations({
     uuid: "583058ca-b387-4a2b-86cf-ca46e5b89aba",
-    jobAllocation: {
-      uuid: "123e4567-d2a5-470f-bcfc-23312fbf0bdb",
-      jobUuid: "123e4567-f430-4652-b867-23312f1283eb",
-      queueUuid: "123e4567-c0eb-4e6c-a7d9-233127781a9b",
-      staffUuid: "123e4567-4650-451a-a45c-23312ff968cb",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-d215-428f-a077-233c6958e8ab",
+      staffUuid: "123e4567-f929-4376-81b3-233c643dbabb",
       allocationDate: "2025-09-01 12:00:00",
-      allocationWindowUuid: "123e4567-be5c-42a2-b38b-2331247dbc9b",
-      allocatedByStaffUuid: "123e4567-95b9-4424-8edb-23312fb871db",
+      allocationWindowUuid: "123e4567-2223-4848-9f8f-233c6384fa5b",
+      allocatedByStaffUuid: "123e4567-7856-4874-89f9-233c6cc0a07b",
       allocatedTimestamp: "2025-09-01 12:00:00",
       expiryTimestamp: "2025-09-01 12:00:00",
       readTimestamp: "2025-09-01 12:00:00",
       completionTimestamp: "2025-09-01 12:00:00",
-      acceptanceTimestamp: "2025-09-01 12:00:00",
+      uuid: "123e4567-e864-4ee4-9b39-233c60c46d3b",
     },
   });
 
@@ -366,19 +360,17 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await jobAllocationsUpdateJobAllocations(serviceM8, {
     uuid: "583058ca-b387-4a2b-86cf-ca46e5b89aba",
-    jobAllocation: {
-      uuid: "123e4567-d2a5-470f-bcfc-23312fbf0bdb",
-      jobUuid: "123e4567-f430-4652-b867-23312f1283eb",
-      queueUuid: "123e4567-c0eb-4e6c-a7d9-233127781a9b",
-      staffUuid: "123e4567-4650-451a-a45c-23312ff968cb",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-d215-428f-a077-233c6958e8ab",
+      staffUuid: "123e4567-f929-4376-81b3-233c643dbabb",
       allocationDate: "2025-09-01 12:00:00",
-      allocationWindowUuid: "123e4567-be5c-42a2-b38b-2331247dbc9b",
-      allocatedByStaffUuid: "123e4567-95b9-4424-8edb-23312fb871db",
+      allocationWindowUuid: "123e4567-2223-4848-9f8f-233c6384fa5b",
+      allocatedByStaffUuid: "123e4567-7856-4874-89f9-233c6cc0a07b",
       allocatedTimestamp: "2025-09-01 12:00:00",
       expiryTimestamp: "2025-09-01 12:00:00",
       readTimestamp: "2025-09-01 12:00:00",
       completionTimestamp: "2025-09-01 12:00:00",
-      acceptanceTimestamp: "2025-09-01 12:00:00",
+      uuid: "123e4567-e864-4ee4-9b39-233c60c46d3b",
     },
   });
   if (res.ok) {

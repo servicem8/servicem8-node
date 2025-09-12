@@ -40,21 +40,6 @@ export type AssetType = {
   name?: string | undefined;
 };
 
-export type AssetTypeInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: AssetTypeActive | undefined;
-  /**
-   * The name of the asset type. Used to identify different categories of assets that can be tracked in the system. Examples might include 'Air Conditioner', 'Fire Extinguisher', etc.
-   */
-  name?: string | undefined;
-};
-
 /** @internal */
 export const AssetTypeActive$inboundSchema: z.ZodNativeEnum<
   typeof AssetTypeActive
@@ -140,61 +125,5 @@ export function assetTypeFromJSON(
     jsonString,
     (x) => AssetType$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'AssetType' from JSON`,
-  );
-}
-
-/** @internal */
-export const AssetTypeInput$inboundSchema: z.ZodType<
-  AssetTypeInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: AssetTypeActive$inboundSchema.default(1),
-  name: z.string().optional(),
-});
-
-/** @internal */
-export type AssetTypeInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  name?: string | undefined;
-};
-
-/** @internal */
-export const AssetTypeInput$outboundSchema: z.ZodType<
-  AssetTypeInput$Outbound,
-  z.ZodTypeDef,
-  AssetTypeInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: AssetTypeActive$outboundSchema.default(1),
-  name: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AssetTypeInput$ {
-  /** @deprecated use `AssetTypeInput$inboundSchema` instead. */
-  export const inboundSchema = AssetTypeInput$inboundSchema;
-  /** @deprecated use `AssetTypeInput$outboundSchema` instead. */
-  export const outboundSchema = AssetTypeInput$outboundSchema;
-  /** @deprecated use `AssetTypeInput$Outbound` instead. */
-  export type Outbound = AssetTypeInput$Outbound;
-}
-
-export function assetTypeInputToJSON(assetTypeInput: AssetTypeInput): string {
-  return JSON.stringify(AssetTypeInput$outboundSchema.parse(assetTypeInput));
-}
-
-export function assetTypeInputFromJSON(
-  jsonString: string,
-): SafeParseResult<AssetTypeInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AssetTypeInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AssetTypeInput' from JSON`,
   );
 }

@@ -45,7 +45,7 @@ export class JobContacts extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createJobContacts(
-    request: components.JobContactInput,
+    request: components.JobContactCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateJobContactsResponse> {
     return unwrapAsync(jobContactsCreateJobContacts(

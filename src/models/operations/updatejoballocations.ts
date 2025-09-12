@@ -17,7 +17,7 @@ export type UpdateJobAllocationsRequest = {
   /**
    * Job Allocation fields to update
    */
-  jobAllocation: components.JobAllocationInput;
+  jobAllocationCreate: components.JobAllocationCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateJobAllocationsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  JobAllocation: components.JobAllocationInput$inboundSchema,
+  JobAllocationCreate: components.JobAllocationCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "JobAllocation": "jobAllocation",
+    "JobAllocationCreate": "jobAllocationCreate",
   });
 });
 
 /** @internal */
 export type UpdateJobAllocationsRequest$Outbound = {
   uuid: string;
-  JobAllocation: components.JobAllocationInput$Outbound;
+  JobAllocationCreate: components.JobAllocationCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateJobAllocationsRequest$outboundSchema: z.ZodType<
   UpdateJobAllocationsRequest
 > = z.object({
   uuid: z.string(),
-  jobAllocation: components.JobAllocationInput$outboundSchema,
+  jobAllocationCreate: components.JobAllocationCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    jobAllocation: "JobAllocation",
+    jobAllocationCreate: "JobAllocationCreate",
   });
 });
 

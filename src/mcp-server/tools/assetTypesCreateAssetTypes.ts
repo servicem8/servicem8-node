@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.AssetTypeInput$inboundSchema,
+  request: components.AssetTypeCreate$inboundSchema,
 };
 
 export const tool$assetTypesCreateAssetTypes: ToolDefinition<typeof args> = {

@@ -45,7 +45,7 @@ export class AllocationWindows extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createAllocationWindows(
-    request: components.AllocationWindowInput,
+    request: components.AllocationWindowCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateAllocationWindowsResponse> {
     return unwrapAsync(allocationWindowsCreateAllocationWindows(

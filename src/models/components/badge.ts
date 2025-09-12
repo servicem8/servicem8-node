@@ -47,28 +47,6 @@ export type Badge = {
   regardingAssetTypeUuid?: string | undefined;
 };
 
-export type BadgeInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: BadgeActive | undefined;
-  /**
-   * The display name of the badge. Used to identify the badge in the system. Examples include 'Warranty', 'VIP', 'Take Payment Facilities', etc.
-   */
-  name: string;
-  automaticallyAllocated?: string | undefined;
-  fileName?: string | undefined;
-  regardingFormUuid?: string | undefined;
-  /**
-   * UUID of the asset type that this badge is associated with. Only applicable for asset-based badges. When set, the badge represents a specific asset type in the system and will appear on assets of this type.
-   */
-  regardingAssetTypeUuid?: string | undefined;
-};
-
 /** @internal */
 export const BadgeActive$inboundSchema: z.ZodNativeEnum<typeof BadgeActive> = z
   .nativeEnum(BadgeActive);
@@ -169,87 +147,5 @@ export function badgeFromJSON(
     jsonString,
     (x) => Badge$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'Badge' from JSON`,
-  );
-}
-
-/** @internal */
-export const BadgeInput$inboundSchema: z.ZodType<
-  BadgeInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: BadgeActive$inboundSchema.default(1),
-  name: z.string(),
-  automatically_allocated: z.string().optional(),
-  file_name: z.string().optional(),
-  regarding_form_uuid: z.string().optional(),
-  regarding_asset_type_uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "automatically_allocated": "automaticallyAllocated",
-    "file_name": "fileName",
-    "regarding_form_uuid": "regardingFormUuid",
-    "regarding_asset_type_uuid": "regardingAssetTypeUuid",
-  });
-});
-
-/** @internal */
-export type BadgeInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  name: string;
-  automatically_allocated?: string | undefined;
-  file_name?: string | undefined;
-  regarding_form_uuid?: string | undefined;
-  regarding_asset_type_uuid?: string | undefined;
-};
-
-/** @internal */
-export const BadgeInput$outboundSchema: z.ZodType<
-  BadgeInput$Outbound,
-  z.ZodTypeDef,
-  BadgeInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: BadgeActive$outboundSchema.default(1),
-  name: z.string(),
-  automaticallyAllocated: z.string().optional(),
-  fileName: z.string().optional(),
-  regardingFormUuid: z.string().optional(),
-  regardingAssetTypeUuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    automaticallyAllocated: "automatically_allocated",
-    fileName: "file_name",
-    regardingFormUuid: "regarding_form_uuid",
-    regardingAssetTypeUuid: "regarding_asset_type_uuid",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace BadgeInput$ {
-  /** @deprecated use `BadgeInput$inboundSchema` instead. */
-  export const inboundSchema = BadgeInput$inboundSchema;
-  /** @deprecated use `BadgeInput$outboundSchema` instead. */
-  export const outboundSchema = BadgeInput$outboundSchema;
-  /** @deprecated use `BadgeInput$Outbound` instead. */
-  export type Outbound = BadgeInput$Outbound;
-}
-
-export function badgeInputToJSON(badgeInput: BadgeInput): string {
-  return JSON.stringify(BadgeInput$outboundSchema.parse(badgeInput));
-}
-
-export function badgeInputFromJSON(
-  jsonString: string,
-): SafeParseResult<BadgeInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => BadgeInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'BadgeInput' from JSON`,
   );
 }

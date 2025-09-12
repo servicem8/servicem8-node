@@ -23,6 +23,14 @@ export type SmsTemplateActive = ClosedEnum<typeof SmsTemplateActive>;
 
 export type SmsTemplate = {
   /**
+   * The name of the SMS template. This is a unique identifier for the template within the system. Examples include 'Tech Delayed Template', 'Parts Ordered Template', etc.
+   */
+  name: string;
+  /**
+   * The SMS message content that will be sent to recipients. Supports template variables like {job.contact_first}, {vendor.name}, {job.generated_job_id}, {job.total_price}, etc. Maximum length is determined by the SMS service provider's limit. Messages exceeding this limit will not be saved.
+   */
+  message?: string | undefined;
+  /**
    * Unique identifier for this record
    */
   uuid?: string | undefined;
@@ -34,21 +42,6 @@ export type SmsTemplate = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
-  name: string;
-  message?: string | undefined;
-};
-
-export type SmsTemplateInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: SmsTemplateActive | undefined;
-  name: string;
-  message?: string | undefined;
 };
 
 /** @internal */
@@ -78,11 +71,11 @@ export const SmsTemplate$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  name: z.string(),
+  message: z.string().optional(),
   uuid: z.string().optional(),
   active: SmsTemplateActive$inboundSchema.default(1),
   edit_date: z.any().optional(),
-  name: z.string(),
-  message: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "edit_date": "editDate",
@@ -91,11 +84,11 @@ export const SmsTemplate$inboundSchema: z.ZodType<
 
 /** @internal */
 export type SmsTemplate$Outbound = {
+  name: string;
+  message?: string | undefined;
   uuid?: string | undefined;
   active: number;
   edit_date?: any | undefined;
-  name: string;
-  message?: string | undefined;
 };
 
 /** @internal */
@@ -104,11 +97,11 @@ export const SmsTemplate$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   SmsTemplate
 > = z.object({
+  name: z.string(),
+  message: z.string().optional(),
   uuid: z.string().optional(),
   active: SmsTemplateActive$outboundSchema.default(1),
   editDate: z.any().optional(),
-  name: z.string(),
-  message: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     editDate: "edit_date",
@@ -139,68 +132,5 @@ export function smsTemplateFromJSON(
     jsonString,
     (x) => SmsTemplate$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'SmsTemplate' from JSON`,
-  );
-}
-
-/** @internal */
-export const SmsTemplateInput$inboundSchema: z.ZodType<
-  SmsTemplateInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: SmsTemplateActive$inboundSchema.default(1),
-  name: z.string(),
-  message: z.string().optional(),
-});
-
-/** @internal */
-export type SmsTemplateInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  name: string;
-  message?: string | undefined;
-};
-
-/** @internal */
-export const SmsTemplateInput$outboundSchema: z.ZodType<
-  SmsTemplateInput$Outbound,
-  z.ZodTypeDef,
-  SmsTemplateInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: SmsTemplateActive$outboundSchema.default(1),
-  name: z.string(),
-  message: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SmsTemplateInput$ {
-  /** @deprecated use `SmsTemplateInput$inboundSchema` instead. */
-  export const inboundSchema = SmsTemplateInput$inboundSchema;
-  /** @deprecated use `SmsTemplateInput$outboundSchema` instead. */
-  export const outboundSchema = SmsTemplateInput$outboundSchema;
-  /** @deprecated use `SmsTemplateInput$Outbound` instead. */
-  export type Outbound = SmsTemplateInput$Outbound;
-}
-
-export function smsTemplateInputToJSON(
-  smsTemplateInput: SmsTemplateInput,
-): string {
-  return JSON.stringify(
-    SmsTemplateInput$outboundSchema.parse(smsTemplateInput),
-  );
-}
-
-export function smsTemplateInputFromJSON(
-  jsonString: string,
-): SafeParseResult<SmsTemplateInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SmsTemplateInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SmsTemplateInput' from JSON`,
   );
 }

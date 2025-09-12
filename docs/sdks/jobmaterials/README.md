@@ -127,12 +127,12 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterials.createJobMaterials({
-    uuid: "123e4567-6ec6-4ef7-8012-23312791bc3b",
-    jobUuid: "123e4567-7af9-4771-9025-233120b3498b",
-    materialUuid: "123e4567-2b5e-4705-856f-233122a2051b",
+    jobUuid: "123e4567-7315-4efd-bdf4-233c689d42fb",
+    materialUuid: "123e4567-8fb6-49f4-bd94-233c6f895f3b",
     quantity: "<value>",
-    taxRateUuid: "123e4567-b59c-46ad-a8cb-23312c94a09b",
-    jobMaterialBundleUuid: "123e4567-9a9d-40cb-8338-23312f321cfb",
+    taxRateUuid: "123e4567-797c-4e61-b288-233c6f97722b",
+    uuid: "123e4567-b54c-4262-bab3-233c616b25fb",
+    jobMaterialBundleUuid: "123e4567-fc6e-4451-a083-233c6d43032b",
   });
 
   console.log(result);
@@ -159,12 +159,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialsCreateJobMaterials(serviceM8, {
-    uuid: "123e4567-6ec6-4ef7-8012-23312791bc3b",
-    jobUuid: "123e4567-7af9-4771-9025-233120b3498b",
-    materialUuid: "123e4567-2b5e-4705-856f-233122a2051b",
+    jobUuid: "123e4567-7315-4efd-bdf4-233c689d42fb",
+    materialUuid: "123e4567-8fb6-49f4-bd94-233c6f895f3b",
     quantity: "<value>",
-    taxRateUuid: "123e4567-b59c-46ad-a8cb-23312c94a09b",
-    jobMaterialBundleUuid: "123e4567-9a9d-40cb-8338-23312f321cfb",
+    taxRateUuid: "123e4567-797c-4e61-b288-233c6f97722b",
+    uuid: "123e4567-b54c-4262-bab3-233c616b25fb",
+    jobMaterialBundleUuid: "123e4567-fc6e-4451-a083-233c6d43032b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -181,7 +181,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.JobMaterialInput](../../models/components/jobmaterialinput.md)                                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.JobMaterialCreate](../../models/components/jobmaterialcreate.md)                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -313,13 +313,13 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.jobMaterials.updateJobMaterials({
     uuid: "0afa4bc5-4269-47e6-81bd-da437fd2e097",
-    jobMaterial: {
-      uuid: "123e4567-6ec6-4ef7-8012-23312791bc3b",
-      jobUuid: "123e4567-7af9-4771-9025-233120b3498b",
-      materialUuid: "123e4567-2b5e-4705-856f-233122a2051b",
+    jobMaterialCreate: {
+      jobUuid: "123e4567-7315-4efd-bdf4-233c689d42fb",
+      materialUuid: "123e4567-8fb6-49f4-bd94-233c6f895f3b",
       quantity: "<value>",
-      taxRateUuid: "123e4567-b59c-46ad-a8cb-23312c94a09b",
-      jobMaterialBundleUuid: "123e4567-9a9d-40cb-8338-23312f321cfb",
+      taxRateUuid: "123e4567-797c-4e61-b288-233c6f97722b",
+      uuid: "123e4567-b54c-4262-bab3-233c616b25fb",
+      jobMaterialBundleUuid: "123e4567-fc6e-4451-a083-233c6d43032b",
     },
   });
 
@@ -348,13 +348,13 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await jobMaterialsUpdateJobMaterials(serviceM8, {
     uuid: "0afa4bc5-4269-47e6-81bd-da437fd2e097",
-    jobMaterial: {
-      uuid: "123e4567-6ec6-4ef7-8012-23312791bc3b",
-      jobUuid: "123e4567-7af9-4771-9025-233120b3498b",
-      materialUuid: "123e4567-2b5e-4705-856f-233122a2051b",
+    jobMaterialCreate: {
+      jobUuid: "123e4567-7315-4efd-bdf4-233c689d42fb",
+      materialUuid: "123e4567-8fb6-49f4-bd94-233c6f895f3b",
       quantity: "<value>",
-      taxRateUuid: "123e4567-b59c-46ad-a8cb-23312c94a09b",
-      jobMaterialBundleUuid: "123e4567-9a9d-40cb-8338-23312f321cfb",
+      taxRateUuid: "123e4567-797c-4e61-b288-233c6f97722b",
+      uuid: "123e4567-b54c-4262-bab3-233c616b25fb",
+      jobMaterialBundleUuid: "123e4567-fc6e-4451-a083-233c6d43032b",
     },
   });
   if (res.ok) {

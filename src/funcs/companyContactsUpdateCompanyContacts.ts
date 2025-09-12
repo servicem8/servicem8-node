@@ -98,7 +98,9 @@ async function $do(
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.CompanyContact, { explode: true });
+  const body = encodeJSON("body", payload.CompanyContactCreate, {
+    explode: true,
+  });
 
   const pathParams = {
     uuid: encodeSimple("uuid", payload.uuid, {

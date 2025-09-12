@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.EmailTemplateInput$inboundSchema,
+  request: components.EmailTemplateCreate$inboundSchema,
 };
 
 export const tool$emailTemplatesCreateEmailTemplates: ToolDefinition<

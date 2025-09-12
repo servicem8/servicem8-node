@@ -17,7 +17,7 @@ export type UpdateClientsRequest = {
   /**
    * Client fields to update
    */
-  company: components.CompanyInput;
+  companyCreate: components.CompanyCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateClientsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  Company: components.CompanyInput$inboundSchema,
+  CompanyCreate: components.CompanyCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "Company": "company",
+    "CompanyCreate": "companyCreate",
   });
 });
 
 /** @internal */
 export type UpdateClientsRequest$Outbound = {
   uuid: string;
-  Company: components.CompanyInput$Outbound;
+  CompanyCreate: components.CompanyCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateClientsRequest$outboundSchema: z.ZodType<
   UpdateClientsRequest
 > = z.object({
   uuid: z.string(),
-  company: components.CompanyInput$outboundSchema,
+  companyCreate: components.CompanyCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    company: "Company",
+    companyCreate: "CompanyCreate",
   });
 });
 

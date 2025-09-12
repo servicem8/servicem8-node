@@ -45,7 +45,7 @@ export class JobAllocations extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createJobAllocations(
-    request: components.JobAllocationInput,
+    request: components.JobAllocationCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateJobAllocationsResponse> {
     return unwrapAsync(jobAllocationsCreateJobAllocations(

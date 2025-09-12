@@ -35,6 +35,34 @@ export type IsDeposit = ClosedEnum<typeof IsDeposit>;
 
 export type JobPayment = {
   /**
+   * UUID of the job this payment is associated with. Each payment must be linked to a valid job in the system.
+   */
+  jobUuid?: string | undefined;
+  /**
+   * UUID of the staff member who recorded or processed this payment. Used for tracking which staff member handled the transaction.
+   */
+  actionedByUuid?: string | undefined;
+  /**
+   * The date and time when this payment was recorded or processed. Format is YYYY-MM-DD HH:MM:SS. Used for payment reconciliation and reporting.
+   */
+  timestamp?: string | undefined;
+  /**
+   * The payment amount in the account's currency.
+   */
+  amount?: string | undefined;
+  /**
+   * The payment method used for this transaction. Examples include 'Cash', 'Credit Card', 'Bank Transfer', 'Stripe', etc.
+   */
+  method?: string | undefined;
+  /**
+   * Optional text field for storing additional information about the payment. Can be used to record reference numbers, transaction IDs, or other payment-specific details.
+   */
+  note?: string | undefined;
+  /**
+   * UUID linking to a stored attachment related to this payment, such as a receipt image. This is an optional reference to an Attachment record.
+   */
+  attachmentUuid?: string | undefined;
+  /**
    * Unique identifier for this record
    */
   uuid?: string | undefined;
@@ -46,35 +74,6 @@ export type JobPayment = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
-  jobUuid?: string | undefined;
-  actionedByUuid?: string | undefined;
-  timestamp?: string | undefined;
-  amount?: string | undefined;
-  method?: string | undefined;
-  note?: string | undefined;
-  attachmentUuid?: string | undefined;
-  /**
-   * Boolean flag indicating whether this payment represents a deposit against future work (true) rather than a payment for completed work (false). Read-only in the API. (Read only).  Valid values are [0,1]
-   */
-  isDeposit?: IsDeposit | undefined;
-};
-
-export type JobPaymentInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: JobPaymentActive | undefined;
-  jobUuid?: string | undefined;
-  actionedByUuid?: string | undefined;
-  timestamp?: string | undefined;
-  amount?: string | undefined;
-  method?: string | undefined;
-  note?: string | undefined;
-  attachmentUuid?: string | undefined;
   /**
    * Boolean flag indicating whether this payment represents a deposit against future work (true) rather than a payment for completed work (false). Read-only in the API. (Read only).  Valid values are [0,1]
    */
@@ -127,9 +126,6 @@ export const JobPayment$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: JobPaymentActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
   job_uuid: z.string().optional(),
   actioned_by_uuid: z.string().optional(),
   timestamp: z.string().optional(),
@@ -137,22 +133,22 @@ export const JobPayment$inboundSchema: z.ZodType<
   method: z.string().optional(),
   note: z.string().optional(),
   attachment_uuid: z.string().optional(),
+  uuid: z.string().optional(),
+  active: JobPaymentActive$inboundSchema.default(1),
+  edit_date: z.any().optional(),
   is_deposit: IsDeposit$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
-    "edit_date": "editDate",
     "job_uuid": "jobUuid",
     "actioned_by_uuid": "actionedByUuid",
     "attachment_uuid": "attachmentUuid",
+    "edit_date": "editDate",
     "is_deposit": "isDeposit",
   });
 });
 
 /** @internal */
 export type JobPayment$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: any | undefined;
   job_uuid?: string | undefined;
   actioned_by_uuid?: string | undefined;
   timestamp?: string | undefined;
@@ -160,6 +156,9 @@ export type JobPayment$Outbound = {
   method?: string | undefined;
   note?: string | undefined;
   attachment_uuid?: string | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
   is_deposit?: number | undefined;
 };
 
@@ -169,9 +168,6 @@ export const JobPayment$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   JobPayment
 > = z.object({
-  uuid: z.string().optional(),
-  active: JobPaymentActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
   jobUuid: z.string().optional(),
   actionedByUuid: z.string().optional(),
   timestamp: z.string().optional(),
@@ -179,13 +175,16 @@ export const JobPayment$outboundSchema: z.ZodType<
   method: z.string().optional(),
   note: z.string().optional(),
   attachmentUuid: z.string().optional(),
+  uuid: z.string().optional(),
+  active: JobPaymentActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
   isDeposit: IsDeposit$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
     jobUuid: "job_uuid",
     actionedByUuid: "actioned_by_uuid",
     attachmentUuid: "attachment_uuid",
+    editDate: "edit_date",
     isDeposit: "is_deposit",
   });
 });
@@ -214,98 +213,5 @@ export function jobPaymentFromJSON(
     jsonString,
     (x) => JobPayment$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'JobPayment' from JSON`,
-  );
-}
-
-/** @internal */
-export const JobPaymentInput$inboundSchema: z.ZodType<
-  JobPaymentInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobPaymentActive$inboundSchema.default(1),
-  job_uuid: z.string().optional(),
-  actioned_by_uuid: z.string().optional(),
-  timestamp: z.string().optional(),
-  amount: z.string().optional(),
-  method: z.string().optional(),
-  note: z.string().optional(),
-  attachment_uuid: z.string().optional(),
-  is_deposit: IsDeposit$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-    "actioned_by_uuid": "actionedByUuid",
-    "attachment_uuid": "attachmentUuid",
-    "is_deposit": "isDeposit",
-  });
-});
-
-/** @internal */
-export type JobPaymentInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  job_uuid?: string | undefined;
-  actioned_by_uuid?: string | undefined;
-  timestamp?: string | undefined;
-  amount?: string | undefined;
-  method?: string | undefined;
-  note?: string | undefined;
-  attachment_uuid?: string | undefined;
-  is_deposit?: number | undefined;
-};
-
-/** @internal */
-export const JobPaymentInput$outboundSchema: z.ZodType<
-  JobPaymentInput$Outbound,
-  z.ZodTypeDef,
-  JobPaymentInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobPaymentActive$outboundSchema.default(1),
-  jobUuid: z.string().optional(),
-  actionedByUuid: z.string().optional(),
-  timestamp: z.string().optional(),
-  amount: z.string().optional(),
-  method: z.string().optional(),
-  note: z.string().optional(),
-  attachmentUuid: z.string().optional(),
-  isDeposit: IsDeposit$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-    actionedByUuid: "actioned_by_uuid",
-    attachmentUuid: "attachment_uuid",
-    isDeposit: "is_deposit",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobPaymentInput$ {
-  /** @deprecated use `JobPaymentInput$inboundSchema` instead. */
-  export const inboundSchema = JobPaymentInput$inboundSchema;
-  /** @deprecated use `JobPaymentInput$outboundSchema` instead. */
-  export const outboundSchema = JobPaymentInput$outboundSchema;
-  /** @deprecated use `JobPaymentInput$Outbound` instead. */
-  export type Outbound = JobPaymentInput$Outbound;
-}
-
-export function jobPaymentInputToJSON(
-  jobPaymentInput: JobPaymentInput,
-): string {
-  return JSON.stringify(JobPaymentInput$outboundSchema.parse(jobPaymentInput));
-}
-
-export function jobPaymentInputFromJSON(
-  jsonString: string,
-): SafeParseResult<JobPaymentInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => JobPaymentInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'JobPaymentInput' from JSON`,
   );
 }

@@ -127,10 +127,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.badges.createBadges({
-    uuid: "123e4567-89b0-4a19-bd9a-23312be9439b",
+    uuid: "123e4567-399a-4e46-a541-233c6cb296ab",
     name: "<value>",
-    regardingFormUuid: "123e4567-cd4d-46a2-a08e-23312ae10d3b",
-    regardingAssetTypeUuid: "123e4567-1b52-4649-8466-23312bcf20ab",
+    regardingFormUuid: "123e4567-f9c6-44db-81e2-233c616a98fb",
+    regardingAssetTypeUuid: "123e4567-eec5-4610-8c69-233c61b1b4ab",
   });
 
   console.log(result);
@@ -157,10 +157,10 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await badgesCreateBadges(serviceM8, {
-    uuid: "123e4567-89b0-4a19-bd9a-23312be9439b",
+    uuid: "123e4567-399a-4e46-a541-233c6cb296ab",
     name: "<value>",
-    regardingFormUuid: "123e4567-cd4d-46a2-a08e-23312ae10d3b",
-    regardingAssetTypeUuid: "123e4567-1b52-4649-8466-23312bcf20ab",
+    regardingFormUuid: "123e4567-f9c6-44db-81e2-233c616a98fb",
+    regardingAssetTypeUuid: "123e4567-eec5-4610-8c69-233c61b1b4ab",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -177,7 +177,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.BadgeInput](../../models/components/badgeinput.md)                                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.BadgeCreate](../../models/components/badgecreate.md)                                                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -309,11 +309,11 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.badges.updateBadges({
     uuid: "444f2947-b065-4aac-8159-0ffca6278fd2",
-    badge: {
-      uuid: "123e4567-89b0-4a19-bd9a-23312be9439b",
+    badgeCreate: {
+      uuid: "123e4567-399a-4e46-a541-233c6cb296ab",
       name: "<value>",
-      regardingFormUuid: "123e4567-cd4d-46a2-a08e-23312ae10d3b",
-      regardingAssetTypeUuid: "123e4567-1b52-4649-8466-23312bcf20ab",
+      regardingFormUuid: "123e4567-f9c6-44db-81e2-233c616a98fb",
+      regardingAssetTypeUuid: "123e4567-eec5-4610-8c69-233c61b1b4ab",
     },
   });
 
@@ -342,11 +342,11 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await badgesUpdateBadges(serviceM8, {
     uuid: "444f2947-b065-4aac-8159-0ffca6278fd2",
-    badge: {
-      uuid: "123e4567-89b0-4a19-bd9a-23312be9439b",
+    badgeCreate: {
+      uuid: "123e4567-399a-4e46-a541-233c6cb296ab",
       name: "<value>",
-      regardingFormUuid: "123e4567-cd4d-46a2-a08e-23312ae10d3b",
-      regardingAssetTypeUuid: "123e4567-1b52-4649-8466-23312bcf20ab",
+      regardingFormUuid: "123e4567-f9c6-44db-81e2-233c616a98fb",
+      regardingAssetTypeUuid: "123e4567-eec5-4610-8c69-233c61b1b4ab",
     },
   });
   if (res.ok) {

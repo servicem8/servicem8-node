@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.CategoryInput$inboundSchema,
+  request: components.CategoryCreate$inboundSchema,
 };
 
 export const tool$categoriesCreateCategories: ToolDefinition<typeof args> = {

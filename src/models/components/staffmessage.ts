@@ -23,6 +23,34 @@ export type StaffMessageActive = ClosedEnum<typeof StaffMessageActive>;
 
 export type StaffMessage = {
   /**
+   * Unique identifier (UUID) of the staff member who sent this message. Identifies the sender of the communication within the system.
+   */
+  fromStaffUuid?: string | undefined;
+  /**
+   * Unique identifier (UUID) of the staff member who received this message. Identifies the intended recipient of the communication.
+   */
+  toStaffUuid?: string | undefined;
+  /**
+   * The date and time when the message was sent. Format is YYYY-MM-DD HH:MM:SS. This field is automatically set to the current time when a new message is created.
+   */
+  sentTimestamp?: string | undefined;
+  /**
+   * The date and time when the message was delivered to the recipient's device. Format is YYYY-MM-DD HH:MM:SS. This field may be null if delivery confirmation is not available.
+   */
+  deliveredTimestamp?: string | undefined;
+  /**
+   * The date and time when the message was read by the recipient. Format is YYYY-MM-DD HH:MM:SS. This field may be null if the message has not been read or if read receipts are not available.
+   */
+  readTimestamp?: string | undefined;
+  /**
+   * The text content of the message. Supports Unicode characters for international language support. This field contains the actual message being sent between staff members.
+   */
+  message?: string | undefined;
+  /**
+   * Unique identifier (UUID) of the job this message is related to. Optional field that links the message to a specific job for context. This field may be null if the message is not related to a specific job.
+   */
+  regardingJobUuid?: string | undefined;
+  /**
    * Unique identifier for this record
    */
   uuid?: string | undefined;
@@ -34,32 +62,6 @@ export type StaffMessage = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
-  fromStaffUuid?: string | undefined;
-  toStaffUuid?: string | undefined;
-  sentTimestamp?: string | undefined;
-  deliveredTimestamp?: string | undefined;
-  readTimestamp?: string | undefined;
-  message?: string | undefined;
-  regardingJobUuid?: string | undefined;
-  attachedJson?: string | undefined;
-};
-
-export type StaffMessageInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: StaffMessageActive | undefined;
-  fromStaffUuid?: string | undefined;
-  toStaffUuid?: string | undefined;
-  sentTimestamp?: string | undefined;
-  deliveredTimestamp?: string | undefined;
-  readTimestamp?: string | undefined;
-  message?: string | undefined;
-  regardingJobUuid?: string | undefined;
   attachedJson?: string | undefined;
 };
 
@@ -90,9 +92,6 @@ export const StaffMessage$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: StaffMessageActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
   from_staff_uuid: z.string().optional(),
   to_staff_uuid: z.string().optional(),
   sent_timestamp: z.string().optional(),
@@ -100,25 +99,25 @@ export const StaffMessage$inboundSchema: z.ZodType<
   read_timestamp: z.string().optional(),
   message: z.string().optional(),
   regarding_job_uuid: z.string().optional(),
+  uuid: z.string().optional(),
+  active: StaffMessageActive$inboundSchema.default(1),
+  edit_date: z.any().optional(),
   attached_json: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "edit_date": "editDate",
     "from_staff_uuid": "fromStaffUuid",
     "to_staff_uuid": "toStaffUuid",
     "sent_timestamp": "sentTimestamp",
     "delivered_timestamp": "deliveredTimestamp",
     "read_timestamp": "readTimestamp",
     "regarding_job_uuid": "regardingJobUuid",
+    "edit_date": "editDate",
     "attached_json": "attachedJson",
   });
 });
 
 /** @internal */
 export type StaffMessage$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: any | undefined;
   from_staff_uuid?: string | undefined;
   to_staff_uuid?: string | undefined;
   sent_timestamp?: string | undefined;
@@ -126,6 +125,9 @@ export type StaffMessage$Outbound = {
   read_timestamp?: string | undefined;
   message?: string | undefined;
   regarding_job_uuid?: string | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
   attached_json?: string | undefined;
 };
 
@@ -135,9 +137,6 @@ export const StaffMessage$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   StaffMessage
 > = z.object({
-  uuid: z.string().optional(),
-  active: StaffMessageActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
   fromStaffUuid: z.string().optional(),
   toStaffUuid: z.string().optional(),
   sentTimestamp: z.string().optional(),
@@ -145,16 +144,19 @@ export const StaffMessage$outboundSchema: z.ZodType<
   readTimestamp: z.string().optional(),
   message: z.string().optional(),
   regardingJobUuid: z.string().optional(),
+  uuid: z.string().optional(),
+  active: StaffMessageActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
   attachedJson: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
     fromStaffUuid: "from_staff_uuid",
     toStaffUuid: "to_staff_uuid",
     sentTimestamp: "sent_timestamp",
     deliveredTimestamp: "delivered_timestamp",
     readTimestamp: "read_timestamp",
     regardingJobUuid: "regarding_job_uuid",
+    editDate: "edit_date",
     attachedJson: "attached_json",
   });
 });
@@ -183,106 +185,5 @@ export function staffMessageFromJSON(
     jsonString,
     (x) => StaffMessage$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'StaffMessage' from JSON`,
-  );
-}
-
-/** @internal */
-export const StaffMessageInput$inboundSchema: z.ZodType<
-  StaffMessageInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: StaffMessageActive$inboundSchema.default(1),
-  from_staff_uuid: z.string().optional(),
-  to_staff_uuid: z.string().optional(),
-  sent_timestamp: z.string().optional(),
-  delivered_timestamp: z.string().optional(),
-  read_timestamp: z.string().optional(),
-  message: z.string().optional(),
-  regarding_job_uuid: z.string().optional(),
-  attached_json: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "from_staff_uuid": "fromStaffUuid",
-    "to_staff_uuid": "toStaffUuid",
-    "sent_timestamp": "sentTimestamp",
-    "delivered_timestamp": "deliveredTimestamp",
-    "read_timestamp": "readTimestamp",
-    "regarding_job_uuid": "regardingJobUuid",
-    "attached_json": "attachedJson",
-  });
-});
-
-/** @internal */
-export type StaffMessageInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  from_staff_uuid?: string | undefined;
-  to_staff_uuid?: string | undefined;
-  sent_timestamp?: string | undefined;
-  delivered_timestamp?: string | undefined;
-  read_timestamp?: string | undefined;
-  message?: string | undefined;
-  regarding_job_uuid?: string | undefined;
-  attached_json?: string | undefined;
-};
-
-/** @internal */
-export const StaffMessageInput$outboundSchema: z.ZodType<
-  StaffMessageInput$Outbound,
-  z.ZodTypeDef,
-  StaffMessageInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: StaffMessageActive$outboundSchema.default(1),
-  fromStaffUuid: z.string().optional(),
-  toStaffUuid: z.string().optional(),
-  sentTimestamp: z.string().optional(),
-  deliveredTimestamp: z.string().optional(),
-  readTimestamp: z.string().optional(),
-  message: z.string().optional(),
-  regardingJobUuid: z.string().optional(),
-  attachedJson: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    fromStaffUuid: "from_staff_uuid",
-    toStaffUuid: "to_staff_uuid",
-    sentTimestamp: "sent_timestamp",
-    deliveredTimestamp: "delivered_timestamp",
-    readTimestamp: "read_timestamp",
-    regardingJobUuid: "regarding_job_uuid",
-    attachedJson: "attached_json",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StaffMessageInput$ {
-  /** @deprecated use `StaffMessageInput$inboundSchema` instead. */
-  export const inboundSchema = StaffMessageInput$inboundSchema;
-  /** @deprecated use `StaffMessageInput$outboundSchema` instead. */
-  export const outboundSchema = StaffMessageInput$outboundSchema;
-  /** @deprecated use `StaffMessageInput$Outbound` instead. */
-  export type Outbound = StaffMessageInput$Outbound;
-}
-
-export function staffMessageInputToJSON(
-  staffMessageInput: StaffMessageInput,
-): string {
-  return JSON.stringify(
-    StaffMessageInput$outboundSchema.parse(staffMessageInput),
-  );
-}
-
-export function staffMessageInputFromJSON(
-  jsonString: string,
-): SafeParseResult<StaffMessageInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => StaffMessageInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'StaffMessageInput' from JSON`,
   );
 }

@@ -127,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.companyContacts.createCompanyContacts({
-    uuid: "123e4567-ecf9-4676-a887-233127eabf5b",
-    companyUuid: "123e4567-b31a-4909-8fd5-23312a8f4fcb",
+    companyUuid: "123e4567-ded4-4f0c-a986-233c62326a0b",
+    uuid: "123e4567-0b1f-43e0-8ca2-233c695f05cb",
   });
 
   console.log(result);
@@ -155,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await companyContactsCreateCompanyContacts(serviceM8, {
-    uuid: "123e4567-ecf9-4676-a887-233127eabf5b",
-    companyUuid: "123e4567-b31a-4909-8fd5-23312a8f4fcb",
+    companyUuid: "123e4567-ded4-4f0c-a986-233c62326a0b",
+    uuid: "123e4567-0b1f-43e0-8ca2-233c695f05cb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -173,7 +173,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.CompanyContactInput](../../models/components/companycontactinput.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.CompanyContactCreate](../../models/components/companycontactcreate.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -305,9 +305,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.companyContacts.updateCompanyContacts({
     uuid: "14a84f05-390e-4d88-ad00-a75bba477a48",
-    companyContact: {
-      uuid: "123e4567-ecf9-4676-a887-233127eabf5b",
-      companyUuid: "123e4567-b31a-4909-8fd5-23312a8f4fcb",
+    companyContactCreate: {
+      companyUuid: "123e4567-ded4-4f0c-a986-233c62326a0b",
+      uuid: "123e4567-0b1f-43e0-8ca2-233c695f05cb",
     },
   });
 
@@ -336,9 +336,9 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await companyContactsUpdateCompanyContacts(serviceM8, {
     uuid: "14a84f05-390e-4d88-ad00-a75bba477a48",
-    companyContact: {
-      uuid: "123e4567-ecf9-4676-a887-233127eabf5b",
-      companyUuid: "123e4567-b31a-4909-8fd5-23312a8f4fcb",
+    companyContactCreate: {
+      companyUuid: "123e4567-ded4-4f0c-a986-233c62326a0b",
+      uuid: "123e4567-0b1f-43e0-8ca2-233c695f05cb",
     },
   });
   if (res.ok) {

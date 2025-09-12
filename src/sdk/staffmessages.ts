@@ -45,7 +45,7 @@ export class StaffMessages extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createStaffMessages(
-    request: components.StaffMessageInput,
+    request: components.StaffMessageCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateStaffMessagesResponse> {
     return unwrapAsync(staffMessagesCreateStaffMessages(

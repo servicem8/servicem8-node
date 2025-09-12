@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.TaxRateInput$inboundSchema,
+  request: components.TaxRateCreate$inboundSchema,
 };
 
 export const tool$taxRatesCreateTaxRates: ToolDefinition<typeof args> = {

@@ -127,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.feedback.createFeedback({
-    uuid: "123e4567-e4b4-4893-9776-233125991beb",
-    relatedObjectUuid: "123e4567-6ee9-4117-b3c7-2331218c0f7b",
+    relatedObjectUuid: "123e4567-700a-4700-8058-233c655ae0cb",
+    uuid: "123e4567-47fe-4112-b0b1-233c6bcaab2b",
   });
 
   console.log(result);
@@ -155,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await feedbackCreateFeedback(serviceM8, {
-    uuid: "123e4567-e4b4-4893-9776-233125991beb",
-    relatedObjectUuid: "123e4567-6ee9-4117-b3c7-2331218c0f7b",
+    relatedObjectUuid: "123e4567-700a-4700-8058-233c655ae0cb",
+    uuid: "123e4567-47fe-4112-b0b1-233c6bcaab2b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -173,7 +173,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.FeedbackInput](../../models/components/feedbackinput.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.FeedbackCreate](../../models/components/feedbackcreate.md)                                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -305,9 +305,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.feedback.updateFeedback({
     uuid: "4b9b8627-caa7-402a-94b0-02cb8641823c",
-    feedback: {
-      uuid: "123e4567-e4b4-4893-9776-233125991beb",
-      relatedObjectUuid: "123e4567-6ee9-4117-b3c7-2331218c0f7b",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-700a-4700-8058-233c655ae0cb",
+      uuid: "123e4567-47fe-4112-b0b1-233c6bcaab2b",
     },
   });
 
@@ -336,9 +336,9 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await feedbackUpdateFeedback(serviceM8, {
     uuid: "4b9b8627-caa7-402a-94b0-02cb8641823c",
-    feedback: {
-      uuid: "123e4567-e4b4-4893-9776-233125991beb",
-      relatedObjectUuid: "123e4567-6ee9-4117-b3c7-2331218c0f7b",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-700a-4700-8058-233c655ae0cb",
+      uuid: "123e4567-47fe-4112-b0b1-233c6bcaab2b",
     },
   });
   if (res.ok) {

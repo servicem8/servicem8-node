@@ -45,26 +45,6 @@ export type DocumentTemplate = {
   name?: string | undefined;
 };
 
-export type DocumentTemplateInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: DocumentTemplateActive | undefined;
-  /**
-   * (Read only)
-   */
-  templateType?: string | undefined;
-  /**
-   * (Read only)
-   */
-  relatedObject?: string | undefined;
-  name?: string | undefined;
-};
-
 /** @internal */
 export const DocumentTemplateActive$inboundSchema: z.ZodNativeEnum<
   typeof DocumentTemplateActive
@@ -164,81 +144,5 @@ export function documentTemplateFromJSON(
     jsonString,
     (x) => DocumentTemplate$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'DocumentTemplate' from JSON`,
-  );
-}
-
-/** @internal */
-export const DocumentTemplateInput$inboundSchema: z.ZodType<
-  DocumentTemplateInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: DocumentTemplateActive$inboundSchema.default(1),
-  template_type: z.string().optional(),
-  related_object: z.string().optional(),
-  name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "template_type": "templateType",
-    "related_object": "relatedObject",
-  });
-});
-
-/** @internal */
-export type DocumentTemplateInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  template_type?: string | undefined;
-  related_object?: string | undefined;
-  name?: string | undefined;
-};
-
-/** @internal */
-export const DocumentTemplateInput$outboundSchema: z.ZodType<
-  DocumentTemplateInput$Outbound,
-  z.ZodTypeDef,
-  DocumentTemplateInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: DocumentTemplateActive$outboundSchema.default(1),
-  templateType: z.string().optional(),
-  relatedObject: z.string().optional(),
-  name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    templateType: "template_type",
-    relatedObject: "related_object",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DocumentTemplateInput$ {
-  /** @deprecated use `DocumentTemplateInput$inboundSchema` instead. */
-  export const inboundSchema = DocumentTemplateInput$inboundSchema;
-  /** @deprecated use `DocumentTemplateInput$outboundSchema` instead. */
-  export const outboundSchema = DocumentTemplateInput$outboundSchema;
-  /** @deprecated use `DocumentTemplateInput$Outbound` instead. */
-  export type Outbound = DocumentTemplateInput$Outbound;
-}
-
-export function documentTemplateInputToJSON(
-  documentTemplateInput: DocumentTemplateInput,
-): string {
-  return JSON.stringify(
-    DocumentTemplateInput$outboundSchema.parse(documentTemplateInput),
-  );
-}
-
-export function documentTemplateInputFromJSON(
-  jsonString: string,
-): SafeParseResult<DocumentTemplateInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DocumentTemplateInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DocumentTemplateInput' from JSON`,
   );
 }

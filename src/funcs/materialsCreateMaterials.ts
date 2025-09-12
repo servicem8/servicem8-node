@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function materialsCreateMaterials(
   client: ServiceM8Core,
-  request: components.MaterialInput,
+  request: components.MaterialCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function materialsCreateMaterials(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.MaterialInput,
+  request: components.MaterialCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.MaterialInput$outboundSchema.parse(value),
+    (value) => components.MaterialCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

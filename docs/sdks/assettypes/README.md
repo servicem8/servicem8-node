@@ -127,7 +127,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.assetTypes.createAssetTypes({
-    uuid: "123e4567-c72b-42cf-9045-23312d87797b",
+    uuid: "123e4567-8484-444f-a442-233c67d6dfcb",
   });
 
   console.log(result);
@@ -154,7 +154,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetTypesCreateAssetTypes(serviceM8, {
-    uuid: "123e4567-c72b-42cf-9045-23312d87797b",
+    uuid: "123e4567-8484-444f-a442-233c67d6dfcb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -171,7 +171,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.AssetTypeInput](../../models/components/assettypeinput.md)                                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.AssetTypeCreate](../../models/components/assettypecreate.md)                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -303,8 +303,8 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.assetTypes.updateAssetTypes({
     uuid: "f89ce1c3-90b1-4b51-89a7-5bc9443eac2b",
-    assetType: {
-      uuid: "123e4567-c72b-42cf-9045-23312d87797b",
+    assetTypeCreate: {
+      uuid: "123e4567-8484-444f-a442-233c67d6dfcb",
     },
   });
 
@@ -333,8 +333,8 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await assetTypesUpdateAssetTypes(serviceM8, {
     uuid: "f89ce1c3-90b1-4b51-89a7-5bc9443eac2b",
-    assetType: {
-      uuid: "123e4567-c72b-42cf-9045-23312d87797b",
+    assetTypeCreate: {
+      uuid: "123e4567-8484-444f-a442-233c67d6dfcb",
     },
   });
   if (res.ok) {

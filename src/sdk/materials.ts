@@ -45,7 +45,7 @@ export class Materials extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createMaterials(
-    request: components.MaterialInput,
+    request: components.MaterialCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateMaterialsResponse> {
     return unwrapAsync(materialsCreateMaterials(

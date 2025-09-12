@@ -17,7 +17,7 @@ export type UpdateJobMaterialsRequest = {
   /**
    * Job Material fields to update
    */
-  jobMaterial: components.JobMaterialInput;
+  jobMaterialCreate: components.JobMaterialCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateJobMaterialsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  JobMaterial: components.JobMaterialInput$inboundSchema,
+  JobMaterialCreate: components.JobMaterialCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "JobMaterial": "jobMaterial",
+    "JobMaterialCreate": "jobMaterialCreate",
   });
 });
 
 /** @internal */
 export type UpdateJobMaterialsRequest$Outbound = {
   uuid: string;
-  JobMaterial: components.JobMaterialInput$Outbound;
+  JobMaterialCreate: components.JobMaterialCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateJobMaterialsRequest$outboundSchema: z.ZodType<
   UpdateJobMaterialsRequest
 > = z.object({
   uuid: z.string(),
-  jobMaterial: components.JobMaterialInput$outboundSchema,
+  jobMaterialCreate: components.JobMaterialCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    jobMaterial: "JobMaterial",
+    jobMaterialCreate: "JobMaterialCreate",
   });
 });
 

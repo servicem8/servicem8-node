@@ -127,7 +127,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.knowledgeArticles.createKnowledgeArticles({
-    uuid: "123e4567-c55d-4802-8f38-23312ecd000b",
+    uuid: "123e4567-ba9b-4f80-a8d8-233c627fa34b",
     name: "<value>",
   });
 
@@ -155,7 +155,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await knowledgeArticlesCreateKnowledgeArticles(serviceM8, {
-    uuid: "123e4567-c55d-4802-8f38-23312ecd000b",
+    uuid: "123e4567-ba9b-4f80-a8d8-233c627fa34b",
     name: "<value>",
   });
   if (res.ok) {
@@ -173,7 +173,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.KnowledgeArticleInput](../../models/components/knowledgearticleinput.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.KnowledgeArticleCreate](../../models/components/knowledgearticlecreate.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -305,8 +305,8 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.knowledgeArticles.updateKnowledgeArticles({
     uuid: "a643fa14-496b-46a5-88bc-4e67bb92bafd",
-    knowledgeArticle: {
-      uuid: "123e4567-c55d-4802-8f38-23312ecd000b",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-ba9b-4f80-a8d8-233c627fa34b",
       name: "<value>",
     },
   });
@@ -336,8 +336,8 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await knowledgeArticlesUpdateKnowledgeArticles(serviceM8, {
     uuid: "a643fa14-496b-46a5-88bc-4e67bb92bafd",
-    knowledgeArticle: {
-      uuid: "123e4567-c55d-4802-8f38-23312ecd000b",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-ba9b-4f80-a8d8-233c627fa34b",
       name: "<value>",
     },
   });

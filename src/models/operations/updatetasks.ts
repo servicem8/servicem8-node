@@ -17,7 +17,7 @@ export type UpdateTasksRequest = {
   /**
    * Task fields to update
    */
-  task: components.TaskInput;
+  taskCreate: components.TaskCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateTasksRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  Task: components.TaskInput$inboundSchema,
+  TaskCreate: components.TaskCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "Task": "task",
+    "TaskCreate": "taskCreate",
   });
 });
 
 /** @internal */
 export type UpdateTasksRequest$Outbound = {
   uuid: string;
-  Task: components.TaskInput$Outbound;
+  TaskCreate: components.TaskCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateTasksRequest$outboundSchema: z.ZodType<
   UpdateTasksRequest
 > = z.object({
   uuid: z.string(),
-  task: components.TaskInput$outboundSchema,
+  taskCreate: components.TaskCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    task: "Task",
+    taskCreate: "TaskCreate",
   });
 });
 

@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function assetTypesCreateAssetTypes(
   client: ServiceM8Core,
-  request: components.AssetTypeInput,
+  request: components.AssetTypeCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function assetTypesCreateAssetTypes(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.AssetTypeInput,
+  request: components.AssetTypeCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.AssetTypeInput$outboundSchema.parse(value),
+    (value) => components.AssetTypeCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

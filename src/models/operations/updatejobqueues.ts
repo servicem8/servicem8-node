@@ -17,7 +17,7 @@ export type UpdateJobQueuesRequest = {
   /**
    * Job Queue fields to update
    */
-  queue: components.QueueInput;
+  queueCreate: components.QueueCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateJobQueuesRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  Queue: components.QueueInput$inboundSchema,
+  QueueCreate: components.QueueCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "Queue": "queue",
+    "QueueCreate": "queueCreate",
   });
 });
 
 /** @internal */
 export type UpdateJobQueuesRequest$Outbound = {
   uuid: string;
-  Queue: components.QueueInput$Outbound;
+  QueueCreate: components.QueueCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateJobQueuesRequest$outboundSchema: z.ZodType<
   UpdateJobQueuesRequest
 > = z.object({
   uuid: z.string(),
-  queue: components.QueueInput$outboundSchema,
+  queueCreate: components.QueueCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    queue: "Queue",
+    queueCreate: "QueueCreate",
   });
 });
 

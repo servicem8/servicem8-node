@@ -127,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.taxRates.createTaxRates({
-    uuid: "123e4567-8576-421e-86f2-23312155b54b",
     name: "<value>",
+    uuid: "123e4567-0477-4ae3-ace7-233c6c56eb4b",
   });
 
   console.log(result);
@@ -155,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await taxRatesCreateTaxRates(serviceM8, {
-    uuid: "123e4567-8576-421e-86f2-23312155b54b",
     name: "<value>",
+    uuid: "123e4567-0477-4ae3-ace7-233c6c56eb4b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -173,7 +173,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.TaxRateInput](../../models/components/taxrateinput.md)                                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.TaxRateCreate](../../models/components/taxratecreate.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -305,9 +305,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.taxRates.updateTaxRates({
     uuid: "276d45f4-bf8b-41ae-82d4-264af7ec45cc",
-    taxRate: {
-      uuid: "123e4567-8576-421e-86f2-23312155b54b",
+    taxRateCreate: {
       name: "<value>",
+      uuid: "123e4567-0477-4ae3-ace7-233c6c56eb4b",
     },
   });
 
@@ -336,9 +336,9 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await taxRatesUpdateTaxRates(serviceM8, {
     uuid: "276d45f4-bf8b-41ae-82d4-264af7ec45cc",
-    taxRate: {
-      uuid: "123e4567-8576-421e-86f2-23312155b54b",
+    taxRateCreate: {
       name: "<value>",
+      uuid: "123e4567-0477-4ae3-ace7-233c6c56eb4b",
     },
   });
   if (res.ok) {

@@ -17,7 +17,7 @@ export type UpdateCompanyContactsRequest = {
   /**
    * Company Contact fields to update
    */
-  companyContact: components.CompanyContactInput;
+  companyContactCreate: components.CompanyContactCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateCompanyContactsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  CompanyContact: components.CompanyContactInput$inboundSchema,
+  CompanyContactCreate: components.CompanyContactCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "CompanyContact": "companyContact",
+    "CompanyContactCreate": "companyContactCreate",
   });
 });
 
 /** @internal */
 export type UpdateCompanyContactsRequest$Outbound = {
   uuid: string;
-  CompanyContact: components.CompanyContactInput$Outbound;
+  CompanyContactCreate: components.CompanyContactCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateCompanyContactsRequest$outboundSchema: z.ZodType<
   UpdateCompanyContactsRequest
 > = z.object({
   uuid: z.string(),
-  companyContact: components.CompanyContactInput$outboundSchema,
+  companyContactCreate: components.CompanyContactCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    companyContact: "CompanyContact",
+    companyContactCreate: "CompanyContactCreate",
   });
 });
 

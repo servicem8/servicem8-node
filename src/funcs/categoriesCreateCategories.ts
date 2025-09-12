@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function categoriesCreateCategories(
   client: ServiceM8Core,
-  request: components.CategoryInput,
+  request: components.CategoryCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function categoriesCreateCategories(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.CategoryInput,
+  request: components.CategoryCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.CategoryInput$outboundSchema.parse(value),
+    (value) => components.CategoryCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

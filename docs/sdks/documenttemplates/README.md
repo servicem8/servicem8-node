@@ -127,7 +127,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.documentTemplates.createDocumentTemplates({
-    uuid: "123e4567-f1aa-4987-95cc-23312ee02dab",
+    uuid: "123e4567-395f-4dbd-8c89-233c666aa80b",
   });
 
   console.log(result);
@@ -154,7 +154,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await documentTemplatesCreateDocumentTemplates(serviceM8, {
-    uuid: "123e4567-f1aa-4987-95cc-23312ee02dab",
+    uuid: "123e4567-395f-4dbd-8c89-233c666aa80b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -171,7 +171,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.DocumentTemplateInput](../../models/components/documenttemplateinput.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.DocumentTemplateCreate](../../models/components/documenttemplatecreate.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -303,8 +303,8 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.documentTemplates.updateDocumentTemplates({
     uuid: "e371a482-2feb-4b5b-a72a-56796a683d72",
-    documentTemplate: {
-      uuid: "123e4567-f1aa-4987-95cc-23312ee02dab",
+    documentTemplateCreate: {
+      uuid: "123e4567-395f-4dbd-8c89-233c666aa80b",
     },
   });
 
@@ -333,8 +333,8 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await documentTemplatesUpdateDocumentTemplates(serviceM8, {
     uuid: "e371a482-2feb-4b5b-a72a-56796a683d72",
-    documentTemplate: {
-      uuid: "123e4567-f1aa-4987-95cc-23312ee02dab",
+    documentTemplateCreate: {
+      uuid: "123e4567-395f-4dbd-8c89-233c666aa80b",
     },
   });
   if (res.ok) {

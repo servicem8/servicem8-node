@@ -17,7 +17,7 @@ export type UpdateBundlesRequest = {
   /**
    * Bundle fields to update
    */
-  materialBundle: components.MaterialBundleInput;
+  materialBundleCreate: components.MaterialBundleCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateBundlesRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  MaterialBundle: components.MaterialBundleInput$inboundSchema,
+  MaterialBundleCreate: components.MaterialBundleCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "MaterialBundle": "materialBundle",
+    "MaterialBundleCreate": "materialBundleCreate",
   });
 });
 
 /** @internal */
 export type UpdateBundlesRequest$Outbound = {
   uuid: string;
-  MaterialBundle: components.MaterialBundleInput$Outbound;
+  MaterialBundleCreate: components.MaterialBundleCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateBundlesRequest$outboundSchema: z.ZodType<
   UpdateBundlesRequest
 > = z.object({
   uuid: z.string(),
-  materialBundle: components.MaterialBundleInput$outboundSchema,
+  materialBundleCreate: components.MaterialBundleCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    materialBundle: "MaterialBundle",
+    materialBundleCreate: "MaterialBundleCreate",
   });
 });
 

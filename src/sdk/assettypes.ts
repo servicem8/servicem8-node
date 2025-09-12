@@ -45,7 +45,7 @@ export class AssetTypes extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createAssetTypes(
-    request: components.AssetTypeInput,
+    request: components.AssetTypeCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateAssetTypesResponse> {
     return unwrapAsync(assetTypesCreateAssetTypes(

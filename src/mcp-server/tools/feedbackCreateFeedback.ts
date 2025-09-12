@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.FeedbackInput$inboundSchema,
+  request: components.FeedbackCreate$inboundSchema,
 };
 
 export const tool$feedbackCreateFeedback: ToolDefinition<typeof args> = {

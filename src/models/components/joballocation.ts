@@ -23,6 +23,70 @@ export type JobAllocationActive = ClosedEnum<typeof JobAllocationActive>;
 
 export type JobAllocation = {
   /**
+   * The UUID of the job that this allocation relates to.
+   */
+  jobUuid?: string | undefined;
+  /**
+   * DEPRECATED
+   */
+  queueUuid?: any | undefined;
+  /**
+   * The UUID of the staff member this job is allocated to.
+   */
+  staffUuid?: string | undefined;
+  /**
+   * The minimum start date for a job allocation to be completed by a staff member. Setting this date will ensure the job allocation appears in the future on staff schedules.
+   */
+  allocationDate?: string | undefined;
+  /**
+   * The UUID of the allocation window that defines when the job should be completed (e.g. Urgent, Early Morning, During Business Hours).
+   */
+  allocationWindowUuid?: string | undefined;
+  /**
+   * The UUID of the staff member who allocated the job.
+   */
+  allocatedByStaffUuid?: string | undefined;
+  /**
+   * The timestamp when the job was allocated.
+   */
+  allocatedTimestamp?: string | undefined;
+  /**
+   * The timestamp when the job allocation expires.
+   */
+  expiryTimestamp?: string | undefined;
+  /**
+   * The timestamp when the job allocation was read by the staff member.
+   */
+  readTimestamp?: string | undefined;
+  /**
+   * The timestamp when the job allocation was marked as completed.
+   */
+  completionTimestamp?: string | undefined;
+  /**
+   * DEPRECATED
+   */
+  estimatedDuration?: any | undefined;
+  /**
+   * DEPRECATED
+   */
+  revisedDuration?: any | undefined;
+  /**
+   * The sort priority for displaying this job allocation.
+   */
+  sortPriority?: string | undefined;
+  /**
+   * DEPRECATED
+   */
+  requiresAcceptance?: any | undefined;
+  /**
+   * DEPRECATED
+   */
+  acceptanceStatus?: any | undefined;
+  /**
+   * DEPRECATED
+   */
+  acceptanceTimestamp?: any | undefined;
+  /**
    * Unique identifier for this record
    */
   uuid?: string | undefined;
@@ -34,49 +98,6 @@ export type JobAllocation = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
-  jobUuid?: string | undefined;
-  queueUuid?: string | undefined;
-  staffUuid?: string | undefined;
-  allocationDate?: string | undefined;
-  allocationWindowUuid?: string | undefined;
-  allocatedByStaffUuid?: string | undefined;
-  allocatedTimestamp?: string | undefined;
-  expiryTimestamp?: string | undefined;
-  readTimestamp?: string | undefined;
-  completionTimestamp?: string | undefined;
-  estimatedDuration?: string | undefined;
-  revisedDuration?: string | undefined;
-  sortPriority?: string | undefined;
-  requiresAcceptance?: string | undefined;
-  acceptanceStatus?: string | undefined;
-  acceptanceTimestamp?: string | undefined;
-};
-
-export type JobAllocationInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: JobAllocationActive | undefined;
-  jobUuid?: string | undefined;
-  queueUuid?: string | undefined;
-  staffUuid?: string | undefined;
-  allocationDate?: string | undefined;
-  allocationWindowUuid?: string | undefined;
-  allocatedByStaffUuid?: string | undefined;
-  allocatedTimestamp?: string | undefined;
-  expiryTimestamp?: string | undefined;
-  readTimestamp?: string | undefined;
-  completionTimestamp?: string | undefined;
-  estimatedDuration?: string | undefined;
-  revisedDuration?: string | undefined;
-  sortPriority?: string | undefined;
-  requiresAcceptance?: string | undefined;
-  acceptanceStatus?: string | undefined;
-  acceptanceTimestamp?: string | undefined;
 };
 
 /** @internal */
@@ -106,11 +127,8 @@ export const JobAllocation$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: JobAllocationActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
   job_uuid: z.string().optional(),
-  queue_uuid: z.string().optional(),
+  queue_uuid: z.any().optional(),
   staff_uuid: z.string().optional(),
   allocation_date: z.string().optional(),
   allocation_window_uuid: z.string().optional(),
@@ -119,15 +137,17 @@ export const JobAllocation$inboundSchema: z.ZodType<
   expiry_timestamp: z.string().optional(),
   read_timestamp: z.string().optional(),
   completion_timestamp: z.string().optional(),
-  estimated_duration: z.string().optional(),
-  revised_duration: z.string().optional(),
+  estimated_duration: z.any().optional(),
+  revised_duration: z.any().optional(),
   sort_priority: z.string().optional(),
-  requires_acceptance: z.string().optional(),
-  acceptance_status: z.string().optional(),
-  acceptance_timestamp: z.string().optional(),
+  requires_acceptance: z.any().optional(),
+  acceptance_status: z.any().optional(),
+  acceptance_timestamp: z.any().optional(),
+  uuid: z.string().optional(),
+  active: JobAllocationActive$inboundSchema.default(1),
+  edit_date: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "edit_date": "editDate",
     "job_uuid": "jobUuid",
     "queue_uuid": "queueUuid",
     "staff_uuid": "staffUuid",
@@ -144,16 +164,14 @@ export const JobAllocation$inboundSchema: z.ZodType<
     "requires_acceptance": "requiresAcceptance",
     "acceptance_status": "acceptanceStatus",
     "acceptance_timestamp": "acceptanceTimestamp",
+    "edit_date": "editDate",
   });
 });
 
 /** @internal */
 export type JobAllocation$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: any | undefined;
   job_uuid?: string | undefined;
-  queue_uuid?: string | undefined;
+  queue_uuid?: any | undefined;
   staff_uuid?: string | undefined;
   allocation_date?: string | undefined;
   allocation_window_uuid?: string | undefined;
@@ -162,12 +180,15 @@ export type JobAllocation$Outbound = {
   expiry_timestamp?: string | undefined;
   read_timestamp?: string | undefined;
   completion_timestamp?: string | undefined;
-  estimated_duration?: string | undefined;
-  revised_duration?: string | undefined;
+  estimated_duration?: any | undefined;
+  revised_duration?: any | undefined;
   sort_priority?: string | undefined;
-  requires_acceptance?: string | undefined;
-  acceptance_status?: string | undefined;
-  acceptance_timestamp?: string | undefined;
+  requires_acceptance?: any | undefined;
+  acceptance_status?: any | undefined;
+  acceptance_timestamp?: any | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
 };
 
 /** @internal */
@@ -176,11 +197,8 @@ export const JobAllocation$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   JobAllocation
 > = z.object({
-  uuid: z.string().optional(),
-  active: JobAllocationActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
   jobUuid: z.string().optional(),
-  queueUuid: z.string().optional(),
+  queueUuid: z.any().optional(),
   staffUuid: z.string().optional(),
   allocationDate: z.string().optional(),
   allocationWindowUuid: z.string().optional(),
@@ -189,15 +207,17 @@ export const JobAllocation$outboundSchema: z.ZodType<
   expiryTimestamp: z.string().optional(),
   readTimestamp: z.string().optional(),
   completionTimestamp: z.string().optional(),
-  estimatedDuration: z.string().optional(),
-  revisedDuration: z.string().optional(),
+  estimatedDuration: z.any().optional(),
+  revisedDuration: z.any().optional(),
   sortPriority: z.string().optional(),
-  requiresAcceptance: z.string().optional(),
-  acceptanceStatus: z.string().optional(),
-  acceptanceTimestamp: z.string().optional(),
+  requiresAcceptance: z.any().optional(),
+  acceptanceStatus: z.any().optional(),
+  acceptanceTimestamp: z.any().optional(),
+  uuid: z.string().optional(),
+  active: JobAllocationActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
     jobUuid: "job_uuid",
     queueUuid: "queue_uuid",
     staffUuid: "staff_uuid",
@@ -214,6 +234,7 @@ export const JobAllocation$outboundSchema: z.ZodType<
     requiresAcceptance: "requires_acceptance",
     acceptanceStatus: "acceptance_status",
     acceptanceTimestamp: "acceptance_timestamp",
+    editDate: "edit_date",
   });
 });
 
@@ -241,148 +262,5 @@ export function jobAllocationFromJSON(
     jsonString,
     (x) => JobAllocation$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'JobAllocation' from JSON`,
-  );
-}
-
-/** @internal */
-export const JobAllocationInput$inboundSchema: z.ZodType<
-  JobAllocationInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobAllocationActive$inboundSchema.default(1),
-  job_uuid: z.string().optional(),
-  queue_uuid: z.string().optional(),
-  staff_uuid: z.string().optional(),
-  allocation_date: z.string().optional(),
-  allocation_window_uuid: z.string().optional(),
-  allocated_by_staff_uuid: z.string().optional(),
-  allocated_timestamp: z.string().optional(),
-  expiry_timestamp: z.string().optional(),
-  read_timestamp: z.string().optional(),
-  completion_timestamp: z.string().optional(),
-  estimated_duration: z.string().optional(),
-  revised_duration: z.string().optional(),
-  sort_priority: z.string().optional(),
-  requires_acceptance: z.string().optional(),
-  acceptance_status: z.string().optional(),
-  acceptance_timestamp: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-    "queue_uuid": "queueUuid",
-    "staff_uuid": "staffUuid",
-    "allocation_date": "allocationDate",
-    "allocation_window_uuid": "allocationWindowUuid",
-    "allocated_by_staff_uuid": "allocatedByStaffUuid",
-    "allocated_timestamp": "allocatedTimestamp",
-    "expiry_timestamp": "expiryTimestamp",
-    "read_timestamp": "readTimestamp",
-    "completion_timestamp": "completionTimestamp",
-    "estimated_duration": "estimatedDuration",
-    "revised_duration": "revisedDuration",
-    "sort_priority": "sortPriority",
-    "requires_acceptance": "requiresAcceptance",
-    "acceptance_status": "acceptanceStatus",
-    "acceptance_timestamp": "acceptanceTimestamp",
-  });
-});
-
-/** @internal */
-export type JobAllocationInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  job_uuid?: string | undefined;
-  queue_uuid?: string | undefined;
-  staff_uuid?: string | undefined;
-  allocation_date?: string | undefined;
-  allocation_window_uuid?: string | undefined;
-  allocated_by_staff_uuid?: string | undefined;
-  allocated_timestamp?: string | undefined;
-  expiry_timestamp?: string | undefined;
-  read_timestamp?: string | undefined;
-  completion_timestamp?: string | undefined;
-  estimated_duration?: string | undefined;
-  revised_duration?: string | undefined;
-  sort_priority?: string | undefined;
-  requires_acceptance?: string | undefined;
-  acceptance_status?: string | undefined;
-  acceptance_timestamp?: string | undefined;
-};
-
-/** @internal */
-export const JobAllocationInput$outboundSchema: z.ZodType<
-  JobAllocationInput$Outbound,
-  z.ZodTypeDef,
-  JobAllocationInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobAllocationActive$outboundSchema.default(1),
-  jobUuid: z.string().optional(),
-  queueUuid: z.string().optional(),
-  staffUuid: z.string().optional(),
-  allocationDate: z.string().optional(),
-  allocationWindowUuid: z.string().optional(),
-  allocatedByStaffUuid: z.string().optional(),
-  allocatedTimestamp: z.string().optional(),
-  expiryTimestamp: z.string().optional(),
-  readTimestamp: z.string().optional(),
-  completionTimestamp: z.string().optional(),
-  estimatedDuration: z.string().optional(),
-  revisedDuration: z.string().optional(),
-  sortPriority: z.string().optional(),
-  requiresAcceptance: z.string().optional(),
-  acceptanceStatus: z.string().optional(),
-  acceptanceTimestamp: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-    queueUuid: "queue_uuid",
-    staffUuid: "staff_uuid",
-    allocationDate: "allocation_date",
-    allocationWindowUuid: "allocation_window_uuid",
-    allocatedByStaffUuid: "allocated_by_staff_uuid",
-    allocatedTimestamp: "allocated_timestamp",
-    expiryTimestamp: "expiry_timestamp",
-    readTimestamp: "read_timestamp",
-    completionTimestamp: "completion_timestamp",
-    estimatedDuration: "estimated_duration",
-    revisedDuration: "revised_duration",
-    sortPriority: "sort_priority",
-    requiresAcceptance: "requires_acceptance",
-    acceptanceStatus: "acceptance_status",
-    acceptanceTimestamp: "acceptance_timestamp",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobAllocationInput$ {
-  /** @deprecated use `JobAllocationInput$inboundSchema` instead. */
-  export const inboundSchema = JobAllocationInput$inboundSchema;
-  /** @deprecated use `JobAllocationInput$outboundSchema` instead. */
-  export const outboundSchema = JobAllocationInput$outboundSchema;
-  /** @deprecated use `JobAllocationInput$Outbound` instead. */
-  export type Outbound = JobAllocationInput$Outbound;
-}
-
-export function jobAllocationInputToJSON(
-  jobAllocationInput: JobAllocationInput,
-): string {
-  return JSON.stringify(
-    JobAllocationInput$outboundSchema.parse(jobAllocationInput),
-  );
-}
-
-export function jobAllocationInputFromJSON(
-  jsonString: string,
-): SafeParseResult<JobAllocationInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => JobAllocationInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'JobAllocationInput' from JSON`,
   );
 }

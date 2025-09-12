@@ -17,7 +17,7 @@ export type UpdateJobsRequest = {
   /**
    * Job fields to update
    */
-  job: components.JobInput;
+  jobCreate: components.JobCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateJobsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  Job: components.JobInput$inboundSchema,
+  JobCreate: components.JobCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "Job": "job",
+    "JobCreate": "jobCreate",
   });
 });
 
 /** @internal */
 export type UpdateJobsRequest$Outbound = {
   uuid: string;
-  Job: components.JobInput$Outbound;
+  JobCreate: components.JobCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateJobsRequest$outboundSchema: z.ZodType<
   UpdateJobsRequest
 > = z.object({
   uuid: z.string(),
-  job: components.JobInput$outboundSchema,
+  jobCreate: components.JobCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    job: "Job",
+    jobCreate: "JobCreate",
   });
 });
 

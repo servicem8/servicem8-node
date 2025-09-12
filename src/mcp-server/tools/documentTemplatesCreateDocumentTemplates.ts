@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.DocumentTemplateInput$inboundSchema,
+  request: components.DocumentTemplateCreate$inboundSchema,
 };
 
 export const tool$documentTemplatesCreateDocumentTemplates: ToolDefinition<

@@ -17,7 +17,7 @@ export type UpdateMaterialsRequest = {
   /**
    * Material fields to update
    */
-  material: components.MaterialInput;
+  materialCreate: components.MaterialCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateMaterialsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  Material: components.MaterialInput$inboundSchema,
+  MaterialCreate: components.MaterialCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "Material": "material",
+    "MaterialCreate": "materialCreate",
   });
 });
 
 /** @internal */
 export type UpdateMaterialsRequest$Outbound = {
   uuid: string;
-  Material: components.MaterialInput$Outbound;
+  MaterialCreate: components.MaterialCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateMaterialsRequest$outboundSchema: z.ZodType<
   UpdateMaterialsRequest
 > = z.object({
   uuid: z.string(),
-  material: components.MaterialInput$outboundSchema,
+  materialCreate: components.MaterialCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    material: "Material",
+    materialCreate: "MaterialCreate",
   });
 });
 

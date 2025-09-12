@@ -1,0 +1,21 @@
+# AssetTypeFieldCreate
+
+## Example Usage
+
+```typescript
+import { AssetTypeFieldCreate } from "servicem8/models/components";
+
+let value: AssetTypeFieldCreate = {
+  uuid: "123e4567-0356-474f-98d6-233c6339ecab",
+  name: "<value>",
+};
+```
+
+## Fields
+
+| Field                                                                                                                          | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    | Example                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `uuid`                                                                                                                         | *string*                                                                                                                       | :heavy_minus_sign:                                                                                                             | Unique identifier for this record                                                                                              | 123e4567-0356-474f-98d6-233c6339ecab                                                                                           |
+| `name`                                                                                                                         | *string*                                                                                                                       | :heavy_check_mark:                                                                                                             | Name of the field that will be displayed to users. Used as a label for the input field when managing assets.                   |                                                                                                                                |
+| `fieldData`                                                                                                                    | [components.AssetTypeFieldCreateFieldData](../../models/components/assettypefieldcreatefielddata.md)                           | :heavy_minus_sign:                                                                                                             | Configuration data for the field                                                                                               |                                                                                                                                |
+| `sortOrder`                                                                                                                    | *number*                                                                                                                       | :heavy_minus_sign:                                                                                                             | The order in which this field should be displayed relative to other fields of the same asset type. Lower values display first. |                                                                                                                                |

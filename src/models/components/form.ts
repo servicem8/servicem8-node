@@ -14,7 +14,7 @@ export const FormFieldType = {
 } as const;
 export type FormFieldType = ClosedEnum<typeof FormFieldType>;
 
-export type TemplateField = {
+export type FormTemplateField = {
   name: string;
   fieldType: FormFieldType;
   value: string;
@@ -53,7 +53,7 @@ export type Form = {
   /**
    * JSON array of template fields that are used when generating form documents. Each field contains a name, fieldType, value, and sortOrder. Maximum of 10 fields allowed.
    */
-  templateFields?: Array<TemplateField> | undefined;
+  templateFields?: Array<FormTemplateField> | undefined;
   /**
    * Unique identifier for this record
    */
@@ -66,38 +66,6 @@ export type Form = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
-  badgeName?: string | undefined;
-};
-
-export type FormInput = {
-  /**
-   * The name of the form. Used to identify the form in the system and displayed to users in the form selector. Must be unique within an account. Maximum length is 255 characters.
-   */
-  name?: string | undefined;
-  /**
-   * UUID of the document template associated with this form. The template defines the layout and appearance of the form when it's generated as a document. References a document template object in the system.
-   */
-  documentTemplateUuid?: string | undefined;
-  /**
-   * Boolean flag indicating whether this form can be used independently of a job. When set to true (1), the form can be filled out as a standalone form. When false (0), the form must be associated with a job to be completed.
-   */
-  canBeUsedIndependently?: string | undefined;
-  /**
-   * Controls when badge completion is mandatory for this form. Valid values are: 0 (not mandatory), 1 (mandatory on check-in), 2 (mandatory on check-out). This determines at which stage in the job lifecycle a staff member must complete this form.
-   */
-  badgeMandatoryState?: string | undefined;
-  /**
-   * JSON array of template fields that are used when generating form documents. Each field contains a name, fieldType, value, and sortOrder. Maximum of 10 fields allowed.
-   */
-  templateFields?: Array<TemplateField> | undefined;
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1].  Valid values are [0,1]
-   */
-  active?: FormActive | undefined;
   badgeName?: string | undefined;
 };
 
@@ -123,8 +91,8 @@ export namespace FormFieldType$ {
 }
 
 /** @internal */
-export const TemplateField$inboundSchema: z.ZodType<
-  TemplateField,
+export const FormTemplateField$inboundSchema: z.ZodType<
+  FormTemplateField,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -135,7 +103,7 @@ export const TemplateField$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type TemplateField$Outbound = {
+export type FormTemplateField$Outbound = {
   name: string;
   fieldType: string;
   value: string;
@@ -143,10 +111,10 @@ export type TemplateField$Outbound = {
 };
 
 /** @internal */
-export const TemplateField$outboundSchema: z.ZodType<
-  TemplateField$Outbound,
+export const FormTemplateField$outboundSchema: z.ZodType<
+  FormTemplateField$Outbound,
   z.ZodTypeDef,
-  TemplateField
+  FormTemplateField
 > = z.object({
   name: z.string(),
   fieldType: FormFieldType$outboundSchema,
@@ -158,26 +126,30 @@ export const TemplateField$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace TemplateField$ {
-  /** @deprecated use `TemplateField$inboundSchema` instead. */
-  export const inboundSchema = TemplateField$inboundSchema;
-  /** @deprecated use `TemplateField$outboundSchema` instead. */
-  export const outboundSchema = TemplateField$outboundSchema;
-  /** @deprecated use `TemplateField$Outbound` instead. */
-  export type Outbound = TemplateField$Outbound;
+export namespace FormTemplateField$ {
+  /** @deprecated use `FormTemplateField$inboundSchema` instead. */
+  export const inboundSchema = FormTemplateField$inboundSchema;
+  /** @deprecated use `FormTemplateField$outboundSchema` instead. */
+  export const outboundSchema = FormTemplateField$outboundSchema;
+  /** @deprecated use `FormTemplateField$Outbound` instead. */
+  export type Outbound = FormTemplateField$Outbound;
 }
 
-export function templateFieldToJSON(templateField: TemplateField): string {
-  return JSON.stringify(TemplateField$outboundSchema.parse(templateField));
+export function formTemplateFieldToJSON(
+  formTemplateField: FormTemplateField,
+): string {
+  return JSON.stringify(
+    FormTemplateField$outboundSchema.parse(formTemplateField),
+  );
 }
 
-export function templateFieldFromJSON(
+export function formTemplateFieldFromJSON(
   jsonString: string,
-): SafeParseResult<TemplateField, SDKValidationError> {
+): SafeParseResult<FormTemplateField, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => TemplateField$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'TemplateField' from JSON`,
+    (x) => FormTemplateField$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'FormTemplateField' from JSON`,
   );
 }
 
@@ -207,7 +179,7 @@ export const Form$inboundSchema: z.ZodType<Form, z.ZodTypeDef, unknown> = z
     document_template_uuid: z.string().optional(),
     can_be_used_independently: z.string().optional(),
     badge_mandatory_state: z.string().optional(),
-    template_fields: z.array(z.lazy(() => TemplateField$inboundSchema))
+    template_fields: z.array(z.lazy(() => FormTemplateField$inboundSchema))
       .optional(),
     uuid: z.string().optional(),
     active: FormActive$inboundSchema.default(1),
@@ -230,7 +202,7 @@ export type Form$Outbound = {
   document_template_uuid?: string | undefined;
   can_be_used_independently?: string | undefined;
   badge_mandatory_state?: string | undefined;
-  template_fields?: Array<TemplateField$Outbound> | undefined;
+  template_fields?: Array<FormTemplateField$Outbound> | undefined;
   uuid?: string | undefined;
   active: number;
   edit_date?: any | undefined;
@@ -244,7 +216,7 @@ export const Form$outboundSchema: z.ZodType<Form$Outbound, z.ZodTypeDef, Form> =
     documentTemplateUuid: z.string().optional(),
     canBeUsedIndependently: z.string().optional(),
     badgeMandatoryState: z.string().optional(),
-    templateFields: z.array(z.lazy(() => TemplateField$outboundSchema))
+    templateFields: z.array(z.lazy(() => FormTemplateField$outboundSchema))
       .optional(),
     uuid: z.string().optional(),
     active: FormActive$outboundSchema.default(1),
@@ -285,94 +257,5 @@ export function formFromJSON(
     jsonString,
     (x) => Form$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'Form' from JSON`,
-  );
-}
-
-/** @internal */
-export const FormInput$inboundSchema: z.ZodType<
-  FormInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string().optional(),
-  document_template_uuid: z.string().optional(),
-  can_be_used_independently: z.string().optional(),
-  badge_mandatory_state: z.string().optional(),
-  template_fields: z.array(z.lazy(() => TemplateField$inboundSchema))
-    .optional(),
-  uuid: z.string().optional(),
-  active: FormActive$inboundSchema.default(1),
-  badge_name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "document_template_uuid": "documentTemplateUuid",
-    "can_be_used_independently": "canBeUsedIndependently",
-    "badge_mandatory_state": "badgeMandatoryState",
-    "template_fields": "templateFields",
-    "badge_name": "badgeName",
-  });
-});
-
-/** @internal */
-export type FormInput$Outbound = {
-  name?: string | undefined;
-  document_template_uuid?: string | undefined;
-  can_be_used_independently?: string | undefined;
-  badge_mandatory_state?: string | undefined;
-  template_fields?: Array<TemplateField$Outbound> | undefined;
-  uuid?: string | undefined;
-  active: number;
-  badge_name?: string | undefined;
-};
-
-/** @internal */
-export const FormInput$outboundSchema: z.ZodType<
-  FormInput$Outbound,
-  z.ZodTypeDef,
-  FormInput
-> = z.object({
-  name: z.string().optional(),
-  documentTemplateUuid: z.string().optional(),
-  canBeUsedIndependently: z.string().optional(),
-  badgeMandatoryState: z.string().optional(),
-  templateFields: z.array(z.lazy(() => TemplateField$outboundSchema))
-    .optional(),
-  uuid: z.string().optional(),
-  active: FormActive$outboundSchema.default(1),
-  badgeName: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    documentTemplateUuid: "document_template_uuid",
-    canBeUsedIndependently: "can_be_used_independently",
-    badgeMandatoryState: "badge_mandatory_state",
-    templateFields: "template_fields",
-    badgeName: "badge_name",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FormInput$ {
-  /** @deprecated use `FormInput$inboundSchema` instead. */
-  export const inboundSchema = FormInput$inboundSchema;
-  /** @deprecated use `FormInput$outboundSchema` instead. */
-  export const outboundSchema = FormInput$outboundSchema;
-  /** @deprecated use `FormInput$Outbound` instead. */
-  export type Outbound = FormInput$Outbound;
-}
-
-export function formInputToJSON(formInput: FormInput): string {
-  return JSON.stringify(FormInput$outboundSchema.parse(formInput));
-}
-
-export function formInputFromJSON(
-  jsonString: string,
-): SafeParseResult<FormInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => FormInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FormInput' from JSON`,
   );
 }

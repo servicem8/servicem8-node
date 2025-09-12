@@ -12,7 +12,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * Current status of the job. Controls where the Job appears in the Dispatch Board..  Valid values are [Quote,Work Order,Unsuccessful,Completed]
  */
-export const Status = {
+export const JobStatus = {
   Quote: "Quote",
   WorkOrder: "Work Order",
   Unsuccessful: "Unsuccessful",
@@ -21,7 +21,7 @@ export const Status = {
 /**
  * Current status of the job. Controls where the Job appears in the Dispatch Board..  Valid values are [Quote,Work Order,Unsuccessful,Completed]
  */
-export type Status = ClosedEnum<typeof Status>;
+export type JobStatus = ClosedEnum<typeof JobStatus>;
 
 /**
  * Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used. (Read only).  Valid values are [0,1]
@@ -38,26 +38,26 @@ export type GeoIsValid = ClosedEnum<typeof GeoIsValid>;
 /**
  * Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
  */
-export const InvoiceSent = {
+export const JobInvoiceSent = {
   Zero: 0,
   One: 1,
 } as const;
 /**
  * Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
  */
-export type InvoiceSent = ClosedEnum<typeof InvoiceSent>;
+export type JobInvoiceSent = ClosedEnum<typeof JobInvoiceSent>;
 
 /**
  * Boolean flag indicating whether a quote has been sent to the client for this job..  Valid values are [0,1]
  */
-export const QuoteSent = {
+export const JobQuoteSent = {
   Zero: 0,
   One: 1,
 } as const;
 /**
  * Boolean flag indicating whether a quote has been sent to the client for this job..  Valid values are [0,1]
  */
-export type QuoteSent = ClosedEnum<typeof QuoteSent>;
+export type JobQuoteSent = ClosedEnum<typeof JobQuoteSent>;
 
 /**
  * Record active/deleted flag.  Valid values are [0,1]
@@ -74,26 +74,26 @@ export type JobActive = ClosedEnum<typeof JobActive>;
 /**
  * Indicates whether the job has been exported to the connected Accounting Package..  Valid values are [0,1]
  */
-export const PaymentProcessed = {
+export const JobPaymentProcessed = {
   Zero: 0,
   One: 1,
 } as const;
 /**
  * Indicates whether the job has been exported to the connected Accounting Package..  Valid values are [0,1]
  */
-export type PaymentProcessed = ClosedEnum<typeof PaymentProcessed>;
+export type JobPaymentProcessed = ClosedEnum<typeof JobPaymentProcessed>;
 
 /**
  * Indicates whether full payment has been received for this job..  Valid values are [0,1]
  */
-export const PaymentReceived = {
+export const JobPaymentReceived = {
   Zero: 0,
   One: 1,
 } as const;
 /**
  * Indicates whether full payment has been received for this job..  Valid values are [0,1]
  */
-export type PaymentReceived = ClosedEnum<typeof PaymentReceived>;
+export type JobPaymentReceived = ClosedEnum<typeof JobPaymentReceived>;
 
 export type Job = {
   /**
@@ -115,7 +115,7 @@ export type Job = {
   /**
    * Current status of the job. Controls where the Job appears in the Dispatch Board..  Valid values are [Quote,Work Order,Unsuccessful,Completed]
    */
-  status: Status;
+  status: JobStatus;
   /**
    * The longitude coordinate of the job location. (Read only)
    */
@@ -159,7 +159,7 @@ export type Job = {
   /**
    * Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
    */
-  invoiceSent?: InvoiceSent | undefined;
+  invoiceSent?: JobInvoiceSent | undefined;
   /**
    * The date and time when the invoice was sent. (Read only)
    */
@@ -219,7 +219,7 @@ export type Job = {
   /**
    * Boolean flag indicating whether a quote has been sent to the client for this job..  Valid values are [0,1]
    */
-  quoteSent?: QuoteSent | undefined;
+  quoteSent?: JobQuoteSent | undefined;
   /**
    * Timestamp when the quote was sent to the client. Format is YYYY-MM-DD HH:MM:SS. (Read only)
    */
@@ -268,7 +268,7 @@ export type Job = {
   /**
    * Indicates whether the job has been exported to the connected Accounting Package..  Valid values are [0,1]
    */
-  paymentProcessed?: PaymentProcessed | undefined;
+  paymentProcessed?: JobPaymentProcessed | undefined;
   /**
    * The date and time the job has been exported to the connected Accounting Package. (Read only)
    */
@@ -276,207 +276,7 @@ export type Job = {
   /**
    * Indicates whether full payment has been received for this job..  Valid values are [0,1]
    */
-  paymentReceived?: PaymentReceived | undefined;
-  /**
-   * The date and time when full payment was received. (Read only)
-   */
-  paymentReceivedStamp?: string | undefined;
-  /**
-   * The date and time that the job status was changed to Completed.
-   */
-  completionDate?: string | undefined;
-  /**
-   * UUID of the staff member who marked this job as completed. References a staff record in the system. (Read only)
-   */
-  completionActionedByUuid?: string | undefined;
-  /**
-   * The date and time that the job status was changed to Unsuccessful.
-   */
-  unsuccessfulDate?: string | undefined;
-  /**
-   * The end date/time of the last scheduled activity for this job. After this date, the job is considered Unscheduled. (Read only)
-   */
-  jobIsScheduledUntilStamp?: string | undefined;
-};
-
-export type JobInput = {
-  /**
-   * UUID of the staff member who created this job. Records which staff member initially added the job to the system.
-   */
-  createdByStaffUuid?: string | undefined;
-  /**
-   * The date the job was created or scheduled. Used for organizing jobs chronologically and for reference in reports.
-   */
-  date?: string | undefined;
-  /**
-   * UUID reference to the client/company record associated with this job. Links the job to a client in the system, establishing the client-job relationship for billing and contact purposes.
-   */
-  companyUuid?: string | undefined;
-  /**
-   * The address where invoices and billing information should be sent. If not specified, defaults to the job address.
-   */
-  billingAddress?: string | undefined;
-  /**
-   * Current status of the job. Controls where the Job appears in the Dispatch Board..  Valid values are [Quote,Work Order,Unsuccessful,Completed]
-   */
-  status: Status;
-  /**
-   * The longitude coordinate of the job location. (Read only)
-   */
-  lng?: number | undefined;
-  /**
-   * The latitude coordinate of the job location. (Read only)
-   */
-  lat?: number | undefined;
-  /**
-   * Not used. Refer to JobPayment endpoint.
-   */
-  paymentDate?: string | undefined;
-  /**
-   * Not used. Refer to JobPayment endpoint.
-   */
-  paymentActionedByUuid?: string | undefined;
-  /**
-   * Not used. Refer to JobPayment endpoint.
-   */
-  paymentMethod?: string | undefined;
-  /**
-   * Not used. Refer to JobPayment endpoint.
-   */
-  paymentAmount?: string | undefined;
-  /**
-   * UUID reference to the job category this job belongs to. Categories help organize jobs by type of work or department.
-   */
-  categoryUuid?: string | undefined;
-  /**
-   * Not used. Refer to JobPayment endpoint.
-   */
-  paymentNote?: string | undefined;
-  /**
-   * Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used. (Read only).  Valid values are [0,1]
-   */
-  geoIsValid?: GeoIsValid | undefined;
-  /**
-   * Client purchase order reference number for this job. Used for cross-referencing with external accounting or order management systems.
-   */
-  purchaseOrderNumber?: string | undefined;
-  /**
-   * Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
-   */
-  invoiceSent?: InvoiceSent | undefined;
-  /**
-   * The date and time when the invoice was sent. (Read only)
-   */
-  invoiceSentStamp?: string | undefined;
-  /**
-   * DEPRECATED
-   */
-  readyToInvoice?: any | undefined;
-  /**
-   * DEPRECATED
-   */
-  readyToInvoiceStamp?: any | undefined;
-  /**
-   * The country field of the job address. (Read only)
-   */
-  geoCountry?: string | undefined;
-  /**
-   * The postcode/ZIP code field of the job address. (Read only)
-   */
-  geoPostcode?: string | undefined;
-  /**
-   * The state/province field of the job address. (Read only)
-   */
-  geoState?: string | undefined;
-  /**
-   * The city/suburb field of the job address. (Read only)
-   */
-  geoCity?: string | undefined;
-  /**
-   * The street name field of the job address. (Read only)
-   */
-  geoStreet?: string | undefined;
-  /**
-   * The street number field of the job address. (Read only)
-   */
-  geoNumber?: string | undefined;
-  /**
-   * The UUID of the queue this job belongs to.
-   */
-  queueUuid?: string | undefined;
-  /**
-   * The date and time when the job expires from the queue.
-   */
-  queueExpiryDate?: string | undefined;
-  /**
-   * The UUID of the staff member assigned to this job in the queue.
-   */
-  queueAssignedStaffUuid?: string | undefined;
-  /**
-   * JSON Array of Badge UUIDs
-   */
-  badges?: string | undefined;
-  /**
-   * The date and time that the job status was changed to Quote.
-   */
-  quoteDate?: string | undefined;
-  /**
-   * Boolean flag indicating whether a quote has been sent to the client for this job..  Valid values are [0,1]
-   */
-  quoteSent?: QuoteSent | undefined;
-  /**
-   * Timestamp when the quote was sent to the client. Format is YYYY-MM-DD HH:MM:SS. (Read only)
-   */
-  quoteSentStamp?: string | undefined;
-  /**
-   * The date and time that the job status was changed to Work Order.
-   */
-  workOrderDate?: string | undefined;
-  /**
-   * DEPRECATED
-   */
-  activeNetworkRequestUuid?: any | undefined;
-  /**
-   * DEPRECATED
-   */
-  relatedKnowledgeArticles?: any | undefined;
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: JobActive | undefined;
-  /**
-   * Physical address where the job is to be performed. This address is used for geocoding to place the job on the map.
-   */
-  jobAddress?: string | undefined;
-  jobDescription?: string | undefined;
-  /**
-   * Email Address
-   */
-  workDoneDescription?: string | undefined;
-  /**
-   * System-generated unique job identifier. This is read-only and automatically assigned when a job is created. (Read only)
-   */
-  generatedJobId?: string | undefined;
-  /**
-   * The total amount to be invoiced for this job. (Read only)
-   */
-  totalInvoiceAmount?: string | undefined;
-  /**
-   * Indicates whether the job has been exported to the connected Accounting Package..  Valid values are [0,1]
-   */
-  paymentProcessed?: PaymentProcessed | undefined;
-  /**
-   * The date and time the job has been exported to the connected Accounting Package. (Read only)
-   */
-  paymentProcessedStamp?: string | undefined;
-  /**
-   * Indicates whether full payment has been received for this job..  Valid values are [0,1]
-   */
-  paymentReceived?: PaymentReceived | undefined;
+  paymentReceived?: JobPaymentReceived | undefined;
   /**
    * The date and time when full payment was received. (Read only)
    */
@@ -500,22 +300,22 @@ export type JobInput = {
 };
 
 /** @internal */
-export const Status$inboundSchema: z.ZodNativeEnum<typeof Status> = z
-  .nativeEnum(Status);
+export const JobStatus$inboundSchema: z.ZodNativeEnum<typeof JobStatus> = z
+  .nativeEnum(JobStatus);
 
 /** @internal */
-export const Status$outboundSchema: z.ZodNativeEnum<typeof Status> =
-  Status$inboundSchema;
+export const JobStatus$outboundSchema: z.ZodNativeEnum<typeof JobStatus> =
+  JobStatus$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Status$ {
-  /** @deprecated use `Status$inboundSchema` instead. */
-  export const inboundSchema = Status$inboundSchema;
-  /** @deprecated use `Status$outboundSchema` instead. */
-  export const outboundSchema = Status$outboundSchema;
+export namespace JobStatus$ {
+  /** @deprecated use `JobStatus$inboundSchema` instead. */
+  export const inboundSchema = JobStatus$inboundSchema;
+  /** @deprecated use `JobStatus$outboundSchema` instead. */
+  export const outboundSchema = JobStatus$outboundSchema;
 }
 
 /** @internal */
@@ -538,41 +338,43 @@ export namespace GeoIsValid$ {
 }
 
 /** @internal */
-export const InvoiceSent$inboundSchema: z.ZodNativeEnum<typeof InvoiceSent> = z
-  .nativeEnum(InvoiceSent);
+export const JobInvoiceSent$inboundSchema: z.ZodNativeEnum<
+  typeof JobInvoiceSent
+> = z.nativeEnum(JobInvoiceSent);
 
 /** @internal */
-export const InvoiceSent$outboundSchema: z.ZodNativeEnum<typeof InvoiceSent> =
-  InvoiceSent$inboundSchema;
+export const JobInvoiceSent$outboundSchema: z.ZodNativeEnum<
+  typeof JobInvoiceSent
+> = JobInvoiceSent$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace InvoiceSent$ {
-  /** @deprecated use `InvoiceSent$inboundSchema` instead. */
-  export const inboundSchema = InvoiceSent$inboundSchema;
-  /** @deprecated use `InvoiceSent$outboundSchema` instead. */
-  export const outboundSchema = InvoiceSent$outboundSchema;
+export namespace JobInvoiceSent$ {
+  /** @deprecated use `JobInvoiceSent$inboundSchema` instead. */
+  export const inboundSchema = JobInvoiceSent$inboundSchema;
+  /** @deprecated use `JobInvoiceSent$outboundSchema` instead. */
+  export const outboundSchema = JobInvoiceSent$outboundSchema;
 }
 
 /** @internal */
-export const QuoteSent$inboundSchema: z.ZodNativeEnum<typeof QuoteSent> = z
-  .nativeEnum(QuoteSent);
+export const JobQuoteSent$inboundSchema: z.ZodNativeEnum<typeof JobQuoteSent> =
+  z.nativeEnum(JobQuoteSent);
 
 /** @internal */
-export const QuoteSent$outboundSchema: z.ZodNativeEnum<typeof QuoteSent> =
-  QuoteSent$inboundSchema;
+export const JobQuoteSent$outboundSchema: z.ZodNativeEnum<typeof JobQuoteSent> =
+  JobQuoteSent$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace QuoteSent$ {
-  /** @deprecated use `QuoteSent$inboundSchema` instead. */
-  export const inboundSchema = QuoteSent$inboundSchema;
-  /** @deprecated use `QuoteSent$outboundSchema` instead. */
-  export const outboundSchema = QuoteSent$outboundSchema;
+export namespace JobQuoteSent$ {
+  /** @deprecated use `JobQuoteSent$inboundSchema` instead. */
+  export const inboundSchema = JobQuoteSent$inboundSchema;
+  /** @deprecated use `JobQuoteSent$outboundSchema` instead. */
+  export const outboundSchema = JobQuoteSent$outboundSchema;
 }
 
 /** @internal */
@@ -595,45 +397,45 @@ export namespace JobActive$ {
 }
 
 /** @internal */
-export const PaymentProcessed$inboundSchema: z.ZodNativeEnum<
-  typeof PaymentProcessed
-> = z.nativeEnum(PaymentProcessed);
+export const JobPaymentProcessed$inboundSchema: z.ZodNativeEnum<
+  typeof JobPaymentProcessed
+> = z.nativeEnum(JobPaymentProcessed);
 
 /** @internal */
-export const PaymentProcessed$outboundSchema: z.ZodNativeEnum<
-  typeof PaymentProcessed
-> = PaymentProcessed$inboundSchema;
+export const JobPaymentProcessed$outboundSchema: z.ZodNativeEnum<
+  typeof JobPaymentProcessed
+> = JobPaymentProcessed$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace PaymentProcessed$ {
-  /** @deprecated use `PaymentProcessed$inboundSchema` instead. */
-  export const inboundSchema = PaymentProcessed$inboundSchema;
-  /** @deprecated use `PaymentProcessed$outboundSchema` instead. */
-  export const outboundSchema = PaymentProcessed$outboundSchema;
+export namespace JobPaymentProcessed$ {
+  /** @deprecated use `JobPaymentProcessed$inboundSchema` instead. */
+  export const inboundSchema = JobPaymentProcessed$inboundSchema;
+  /** @deprecated use `JobPaymentProcessed$outboundSchema` instead. */
+  export const outboundSchema = JobPaymentProcessed$outboundSchema;
 }
 
 /** @internal */
-export const PaymentReceived$inboundSchema: z.ZodNativeEnum<
-  typeof PaymentReceived
-> = z.nativeEnum(PaymentReceived);
+export const JobPaymentReceived$inboundSchema: z.ZodNativeEnum<
+  typeof JobPaymentReceived
+> = z.nativeEnum(JobPaymentReceived);
 
 /** @internal */
-export const PaymentReceived$outboundSchema: z.ZodNativeEnum<
-  typeof PaymentReceived
-> = PaymentReceived$inboundSchema;
+export const JobPaymentReceived$outboundSchema: z.ZodNativeEnum<
+  typeof JobPaymentReceived
+> = JobPaymentReceived$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace PaymentReceived$ {
-  /** @deprecated use `PaymentReceived$inboundSchema` instead. */
-  export const inboundSchema = PaymentReceived$inboundSchema;
-  /** @deprecated use `PaymentReceived$outboundSchema` instead. */
-  export const outboundSchema = PaymentReceived$outboundSchema;
+export namespace JobPaymentReceived$ {
+  /** @deprecated use `JobPaymentReceived$inboundSchema` instead. */
+  export const inboundSchema = JobPaymentReceived$inboundSchema;
+  /** @deprecated use `JobPaymentReceived$outboundSchema` instead. */
+  export const outboundSchema = JobPaymentReceived$outboundSchema;
 }
 
 /** @internal */
@@ -643,7 +445,7 @@ export const Job$inboundSchema: z.ZodType<Job, z.ZodTypeDef, unknown> = z
     date: z.string().optional(),
     company_uuid: z.string().optional(),
     billing_address: z.string().optional(),
-    status: Status$inboundSchema,
+    status: JobStatus$inboundSchema,
     lng: z.number().optional(),
     lat: z.number().optional(),
     payment_date: z.string().optional(),
@@ -654,7 +456,7 @@ export const Job$inboundSchema: z.ZodType<Job, z.ZodTypeDef, unknown> = z
     payment_note: z.string().optional(),
     geo_is_valid: GeoIsValid$inboundSchema.optional(),
     purchase_order_number: z.string().optional(),
-    invoice_sent: InvoiceSent$inboundSchema.optional(),
+    invoice_sent: JobInvoiceSent$inboundSchema.optional(),
     invoice_sent_stamp: z.string().optional(),
     ready_to_invoice: z.any().optional(),
     ready_to_invoice_stamp: z.any().optional(),
@@ -669,7 +471,7 @@ export const Job$inboundSchema: z.ZodType<Job, z.ZodTypeDef, unknown> = z
     queue_assigned_staff_uuid: z.string().optional(),
     badges: z.string().optional(),
     quote_date: z.string().optional(),
-    quote_sent: QuoteSent$inboundSchema.optional(),
+    quote_sent: JobQuoteSent$inboundSchema.optional(),
     quote_sent_stamp: z.string().optional(),
     work_order_date: z.string().optional(),
     active_network_request_uuid: z.any().optional(),
@@ -682,9 +484,9 @@ export const Job$inboundSchema: z.ZodType<Job, z.ZodTypeDef, unknown> = z
     work_done_description: z.string().optional(),
     generated_job_id: z.string().optional(),
     total_invoice_amount: z.string().optional(),
-    payment_processed: PaymentProcessed$inboundSchema.optional(),
+    payment_processed: JobPaymentProcessed$inboundSchema.optional(),
     payment_processed_stamp: z.string().optional(),
-    payment_received: PaymentReceived$inboundSchema.optional(),
+    payment_received: JobPaymentReceived$inboundSchema.optional(),
     payment_received_stamp: z.string().optional(),
     completion_date: z.string().optional(),
     completion_actioned_by_uuid: z.string().optional(),
@@ -801,7 +603,7 @@ export const Job$outboundSchema: z.ZodType<Job$Outbound, z.ZodTypeDef, Job> = z
     date: z.string().optional(),
     companyUuid: z.string().optional(),
     billingAddress: z.string().optional(),
-    status: Status$outboundSchema,
+    status: JobStatus$outboundSchema,
     lng: z.number().optional(),
     lat: z.number().optional(),
     paymentDate: z.string().optional(),
@@ -812,7 +614,7 @@ export const Job$outboundSchema: z.ZodType<Job$Outbound, z.ZodTypeDef, Job> = z
     paymentNote: z.string().optional(),
     geoIsValid: GeoIsValid$outboundSchema.optional(),
     purchaseOrderNumber: z.string().optional(),
-    invoiceSent: InvoiceSent$outboundSchema.optional(),
+    invoiceSent: JobInvoiceSent$outboundSchema.optional(),
     invoiceSentStamp: z.string().optional(),
     readyToInvoice: z.any().optional(),
     readyToInvoiceStamp: z.any().optional(),
@@ -827,7 +629,7 @@ export const Job$outboundSchema: z.ZodType<Job$Outbound, z.ZodTypeDef, Job> = z
     queueAssignedStaffUuid: z.string().optional(),
     badges: z.string().optional(),
     quoteDate: z.string().optional(),
-    quoteSent: QuoteSent$outboundSchema.optional(),
+    quoteSent: JobQuoteSent$outboundSchema.optional(),
     quoteSentStamp: z.string().optional(),
     workOrderDate: z.string().optional(),
     activeNetworkRequestUuid: z.any().optional(),
@@ -840,9 +642,9 @@ export const Job$outboundSchema: z.ZodType<Job$Outbound, z.ZodTypeDef, Job> = z
     workDoneDescription: z.string().optional(),
     generatedJobId: z.string().optional(),
     totalInvoiceAmount: z.string().optional(),
-    paymentProcessed: PaymentProcessed$outboundSchema.optional(),
+    paymentProcessed: JobPaymentProcessed$outboundSchema.optional(),
     paymentProcessedStamp: z.string().optional(),
-    paymentReceived: PaymentReceived$outboundSchema.optional(),
+    paymentReceived: JobPaymentReceived$outboundSchema.optional(),
     paymentReceivedStamp: z.string().optional(),
     completionDate: z.string().optional(),
     completionActionedByUuid: z.string().optional(),
@@ -921,294 +723,5 @@ export function jobFromJSON(
     jsonString,
     (x) => Job$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'Job' from JSON`,
-  );
-}
-
-/** @internal */
-export const JobInput$inboundSchema: z.ZodType<
-  JobInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  created_by_staff_uuid: z.string().optional(),
-  date: z.string().optional(),
-  company_uuid: z.string().optional(),
-  billing_address: z.string().optional(),
-  status: Status$inboundSchema,
-  lng: z.number().optional(),
-  lat: z.number().optional(),
-  payment_date: z.string().optional(),
-  payment_actioned_by_uuid: z.string().optional(),
-  payment_method: z.string().optional(),
-  payment_amount: z.string().optional(),
-  category_uuid: z.string().optional(),
-  payment_note: z.string().optional(),
-  geo_is_valid: GeoIsValid$inboundSchema.optional(),
-  purchase_order_number: z.string().optional(),
-  invoice_sent: InvoiceSent$inboundSchema.optional(),
-  invoice_sent_stamp: z.string().optional(),
-  ready_to_invoice: z.any().optional(),
-  ready_to_invoice_stamp: z.any().optional(),
-  geo_country: z.string().optional(),
-  geo_postcode: z.string().optional(),
-  geo_state: z.string().optional(),
-  geo_city: z.string().optional(),
-  geo_street: z.string().optional(),
-  geo_number: z.string().optional(),
-  queue_uuid: z.string().optional(),
-  queue_expiry_date: z.string().optional(),
-  queue_assigned_staff_uuid: z.string().optional(),
-  badges: z.string().optional(),
-  quote_date: z.string().optional(),
-  quote_sent: QuoteSent$inboundSchema.optional(),
-  quote_sent_stamp: z.string().optional(),
-  work_order_date: z.string().optional(),
-  active_network_request_uuid: z.any().optional(),
-  related_knowledge_articles: z.any().optional(),
-  uuid: z.string().optional(),
-  active: JobActive$inboundSchema.default(1),
-  job_address: z.string().optional(),
-  job_description: z.string().optional(),
-  work_done_description: z.string().optional(),
-  generated_job_id: z.string().optional(),
-  total_invoice_amount: z.string().optional(),
-  payment_processed: PaymentProcessed$inboundSchema.optional(),
-  payment_processed_stamp: z.string().optional(),
-  payment_received: PaymentReceived$inboundSchema.optional(),
-  payment_received_stamp: z.string().optional(),
-  completion_date: z.string().optional(),
-  completion_actioned_by_uuid: z.string().optional(),
-  unsuccessful_date: z.string().optional(),
-  job_is_scheduled_until_stamp: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_by_staff_uuid": "createdByStaffUuid",
-    "company_uuid": "companyUuid",
-    "billing_address": "billingAddress",
-    "payment_date": "paymentDate",
-    "payment_actioned_by_uuid": "paymentActionedByUuid",
-    "payment_method": "paymentMethod",
-    "payment_amount": "paymentAmount",
-    "category_uuid": "categoryUuid",
-    "payment_note": "paymentNote",
-    "geo_is_valid": "geoIsValid",
-    "purchase_order_number": "purchaseOrderNumber",
-    "invoice_sent": "invoiceSent",
-    "invoice_sent_stamp": "invoiceSentStamp",
-    "ready_to_invoice": "readyToInvoice",
-    "ready_to_invoice_stamp": "readyToInvoiceStamp",
-    "geo_country": "geoCountry",
-    "geo_postcode": "geoPostcode",
-    "geo_state": "geoState",
-    "geo_city": "geoCity",
-    "geo_street": "geoStreet",
-    "geo_number": "geoNumber",
-    "queue_uuid": "queueUuid",
-    "queue_expiry_date": "queueExpiryDate",
-    "queue_assigned_staff_uuid": "queueAssignedStaffUuid",
-    "quote_date": "quoteDate",
-    "quote_sent": "quoteSent",
-    "quote_sent_stamp": "quoteSentStamp",
-    "work_order_date": "workOrderDate",
-    "active_network_request_uuid": "activeNetworkRequestUuid",
-    "related_knowledge_articles": "relatedKnowledgeArticles",
-    "job_address": "jobAddress",
-    "job_description": "jobDescription",
-    "work_done_description": "workDoneDescription",
-    "generated_job_id": "generatedJobId",
-    "total_invoice_amount": "totalInvoiceAmount",
-    "payment_processed": "paymentProcessed",
-    "payment_processed_stamp": "paymentProcessedStamp",
-    "payment_received": "paymentReceived",
-    "payment_received_stamp": "paymentReceivedStamp",
-    "completion_date": "completionDate",
-    "completion_actioned_by_uuid": "completionActionedByUuid",
-    "unsuccessful_date": "unsuccessfulDate",
-    "job_is_scheduled_until_stamp": "jobIsScheduledUntilStamp",
-  });
-});
-
-/** @internal */
-export type JobInput$Outbound = {
-  created_by_staff_uuid?: string | undefined;
-  date?: string | undefined;
-  company_uuid?: string | undefined;
-  billing_address?: string | undefined;
-  status: string;
-  lng?: number | undefined;
-  lat?: number | undefined;
-  payment_date?: string | undefined;
-  payment_actioned_by_uuid?: string | undefined;
-  payment_method?: string | undefined;
-  payment_amount?: string | undefined;
-  category_uuid?: string | undefined;
-  payment_note?: string | undefined;
-  geo_is_valid?: number | undefined;
-  purchase_order_number?: string | undefined;
-  invoice_sent?: number | undefined;
-  invoice_sent_stamp?: string | undefined;
-  ready_to_invoice?: any | undefined;
-  ready_to_invoice_stamp?: any | undefined;
-  geo_country?: string | undefined;
-  geo_postcode?: string | undefined;
-  geo_state?: string | undefined;
-  geo_city?: string | undefined;
-  geo_street?: string | undefined;
-  geo_number?: string | undefined;
-  queue_uuid?: string | undefined;
-  queue_expiry_date?: string | undefined;
-  queue_assigned_staff_uuid?: string | undefined;
-  badges?: string | undefined;
-  quote_date?: string | undefined;
-  quote_sent?: number | undefined;
-  quote_sent_stamp?: string | undefined;
-  work_order_date?: string | undefined;
-  active_network_request_uuid?: any | undefined;
-  related_knowledge_articles?: any | undefined;
-  uuid?: string | undefined;
-  active: number;
-  job_address?: string | undefined;
-  job_description?: string | undefined;
-  work_done_description?: string | undefined;
-  generated_job_id?: string | undefined;
-  total_invoice_amount?: string | undefined;
-  payment_processed?: number | undefined;
-  payment_processed_stamp?: string | undefined;
-  payment_received?: number | undefined;
-  payment_received_stamp?: string | undefined;
-  completion_date?: string | undefined;
-  completion_actioned_by_uuid?: string | undefined;
-  unsuccessful_date?: string | undefined;
-  job_is_scheduled_until_stamp?: string | undefined;
-};
-
-/** @internal */
-export const JobInput$outboundSchema: z.ZodType<
-  JobInput$Outbound,
-  z.ZodTypeDef,
-  JobInput
-> = z.object({
-  createdByStaffUuid: z.string().optional(),
-  date: z.string().optional(),
-  companyUuid: z.string().optional(),
-  billingAddress: z.string().optional(),
-  status: Status$outboundSchema,
-  lng: z.number().optional(),
-  lat: z.number().optional(),
-  paymentDate: z.string().optional(),
-  paymentActionedByUuid: z.string().optional(),
-  paymentMethod: z.string().optional(),
-  paymentAmount: z.string().optional(),
-  categoryUuid: z.string().optional(),
-  paymentNote: z.string().optional(),
-  geoIsValid: GeoIsValid$outboundSchema.optional(),
-  purchaseOrderNumber: z.string().optional(),
-  invoiceSent: InvoiceSent$outboundSchema.optional(),
-  invoiceSentStamp: z.string().optional(),
-  readyToInvoice: z.any().optional(),
-  readyToInvoiceStamp: z.any().optional(),
-  geoCountry: z.string().optional(),
-  geoPostcode: z.string().optional(),
-  geoState: z.string().optional(),
-  geoCity: z.string().optional(),
-  geoStreet: z.string().optional(),
-  geoNumber: z.string().optional(),
-  queueUuid: z.string().optional(),
-  queueExpiryDate: z.string().optional(),
-  queueAssignedStaffUuid: z.string().optional(),
-  badges: z.string().optional(),
-  quoteDate: z.string().optional(),
-  quoteSent: QuoteSent$outboundSchema.optional(),
-  quoteSentStamp: z.string().optional(),
-  workOrderDate: z.string().optional(),
-  activeNetworkRequestUuid: z.any().optional(),
-  relatedKnowledgeArticles: z.any().optional(),
-  uuid: z.string().optional(),
-  active: JobActive$outboundSchema.default(1),
-  jobAddress: z.string().optional(),
-  jobDescription: z.string().optional(),
-  workDoneDescription: z.string().optional(),
-  generatedJobId: z.string().optional(),
-  totalInvoiceAmount: z.string().optional(),
-  paymentProcessed: PaymentProcessed$outboundSchema.optional(),
-  paymentProcessedStamp: z.string().optional(),
-  paymentReceived: PaymentReceived$outboundSchema.optional(),
-  paymentReceivedStamp: z.string().optional(),
-  completionDate: z.string().optional(),
-  completionActionedByUuid: z.string().optional(),
-  unsuccessfulDate: z.string().optional(),
-  jobIsScheduledUntilStamp: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdByStaffUuid: "created_by_staff_uuid",
-    companyUuid: "company_uuid",
-    billingAddress: "billing_address",
-    paymentDate: "payment_date",
-    paymentActionedByUuid: "payment_actioned_by_uuid",
-    paymentMethod: "payment_method",
-    paymentAmount: "payment_amount",
-    categoryUuid: "category_uuid",
-    paymentNote: "payment_note",
-    geoIsValid: "geo_is_valid",
-    purchaseOrderNumber: "purchase_order_number",
-    invoiceSent: "invoice_sent",
-    invoiceSentStamp: "invoice_sent_stamp",
-    readyToInvoice: "ready_to_invoice",
-    readyToInvoiceStamp: "ready_to_invoice_stamp",
-    geoCountry: "geo_country",
-    geoPostcode: "geo_postcode",
-    geoState: "geo_state",
-    geoCity: "geo_city",
-    geoStreet: "geo_street",
-    geoNumber: "geo_number",
-    queueUuid: "queue_uuid",
-    queueExpiryDate: "queue_expiry_date",
-    queueAssignedStaffUuid: "queue_assigned_staff_uuid",
-    quoteDate: "quote_date",
-    quoteSent: "quote_sent",
-    quoteSentStamp: "quote_sent_stamp",
-    workOrderDate: "work_order_date",
-    activeNetworkRequestUuid: "active_network_request_uuid",
-    relatedKnowledgeArticles: "related_knowledge_articles",
-    jobAddress: "job_address",
-    jobDescription: "job_description",
-    workDoneDescription: "work_done_description",
-    generatedJobId: "generated_job_id",
-    totalInvoiceAmount: "total_invoice_amount",
-    paymentProcessed: "payment_processed",
-    paymentProcessedStamp: "payment_processed_stamp",
-    paymentReceived: "payment_received",
-    paymentReceivedStamp: "payment_received_stamp",
-    completionDate: "completion_date",
-    completionActionedByUuid: "completion_actioned_by_uuid",
-    unsuccessfulDate: "unsuccessful_date",
-    jobIsScheduledUntilStamp: "job_is_scheduled_until_stamp",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace JobInput$ {
-  /** @deprecated use `JobInput$inboundSchema` instead. */
-  export const inboundSchema = JobInput$inboundSchema;
-  /** @deprecated use `JobInput$outboundSchema` instead. */
-  export const outboundSchema = JobInput$outboundSchema;
-  /** @deprecated use `JobInput$Outbound` instead. */
-  export type Outbound = JobInput$Outbound;
-}
-
-export function jobInputToJSON(jobInput: JobInput): string {
-  return JSON.stringify(JobInput$outboundSchema.parse(jobInput));
-}
-
-export function jobInputFromJSON(
-  jsonString: string,
-): SafeParseResult<JobInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => JobInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'JobInput' from JSON`,
   );
 }

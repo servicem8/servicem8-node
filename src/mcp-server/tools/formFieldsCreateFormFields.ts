@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.FormFieldInput$inboundSchema,
+  request: components.FormFieldCreate$inboundSchema,
 };
 
 export const tool$formFieldsCreateFormFields: ToolDefinition<typeof args> = {

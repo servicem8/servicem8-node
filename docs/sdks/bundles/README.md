@@ -127,7 +127,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.bundles.createBundles({
-    uuid: "123e4567-d51d-4c78-b09b-23312271410b",
+    uuid: "123e4567-d455-4193-ab26-233c6fdf1ddb",
     itemNumber: "<value>",
   });
 
@@ -155,7 +155,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await bundlesCreateBundles(serviceM8, {
-    uuid: "123e4567-d51d-4c78-b09b-23312271410b",
+    uuid: "123e4567-d455-4193-ab26-233c6fdf1ddb",
     itemNumber: "<value>",
   });
   if (res.ok) {
@@ -173,7 +173,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.MaterialBundleInput](../../models/components/materialbundleinput.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.MaterialBundleCreate](../../models/components/materialbundlecreate.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -305,8 +305,8 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.bundles.updateBundles({
     uuid: "92d0296e-677d-4cfc-a0ec-84e1809ff960",
-    materialBundle: {
-      uuid: "123e4567-d51d-4c78-b09b-23312271410b",
+    materialBundleCreate: {
+      uuid: "123e4567-d455-4193-ab26-233c6fdf1ddb",
       itemNumber: "<value>",
     },
   });
@@ -336,8 +336,8 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await bundlesUpdateBundles(serviceM8, {
     uuid: "92d0296e-677d-4cfc-a0ec-84e1809ff960",
-    materialBundle: {
-      uuid: "123e4567-d51d-4c78-b09b-23312271410b",
+    materialBundleCreate: {
+      uuid: "123e4567-d455-4193-ab26-233c6fdf1ddb",
       itemNumber: "<value>",
     },
   });

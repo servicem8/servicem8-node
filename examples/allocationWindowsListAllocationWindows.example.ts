@@ -20,7 +20,7 @@ const serviceM8 = new ServiceM8({
 });
 
 async function main() {
-  const result = await serviceM8.listAllocationWindows();
+  const result = await serviceM8.allocationWindows.listAllocationWindows();
 
   console.log(result);
 }

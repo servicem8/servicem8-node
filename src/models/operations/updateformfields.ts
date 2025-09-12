@@ -17,7 +17,7 @@ export type UpdateFormFieldsRequest = {
   /**
    * Form Field fields to update
    */
-  formField: components.FormFieldInput;
+  formFieldCreate: components.FormFieldCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateFormFieldsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  FormField: components.FormFieldInput$inboundSchema,
+  FormFieldCreate: components.FormFieldCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "FormField": "formField",
+    "FormFieldCreate": "formFieldCreate",
   });
 });
 
 /** @internal */
 export type UpdateFormFieldsRequest$Outbound = {
   uuid: string;
-  FormField: components.FormFieldInput$Outbound;
+  FormFieldCreate: components.FormFieldCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateFormFieldsRequest$outboundSchema: z.ZodType<
   UpdateFormFieldsRequest
 > = z.object({
   uuid: z.string(),
-  formField: components.FormFieldInput$outboundSchema,
+  formFieldCreate: components.FormFieldCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    formField: "FormField",
+    formFieldCreate: "FormFieldCreate",
   });
 });
 

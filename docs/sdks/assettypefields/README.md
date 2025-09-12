@@ -127,8 +127,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.assetTypeFields.createAssetTypeFields({
-    uuid: "123e4567-3f55-4575-992a-233127b647eb",
-    assetTypeUuid: "123e4567-effd-4497-8034-233126c2ca9b",
+    uuid: "123e4567-0356-474f-98d6-233c6339ecab",
     name: "<value>",
   });
 
@@ -156,8 +155,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetTypeFieldsCreateAssetTypeFields(serviceM8, {
-    uuid: "123e4567-3f55-4575-992a-233127b647eb",
-    assetTypeUuid: "123e4567-effd-4497-8034-233126c2ca9b",
+    uuid: "123e4567-0356-474f-98d6-233c6339ecab",
     name: "<value>",
   });
   if (res.ok) {
@@ -175,7 +173,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.AssetTypeFieldInput](../../models/components/assettypefieldinput.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.AssetTypeFieldCreate](../../models/components/assettypefieldcreate.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -307,9 +305,8 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.assetTypeFields.updateAssetTypeFields({
     uuid: "1d8d7fd0-4d09-4955-a484-0cd4add08b25",
-    assetTypeField: {
-      uuid: "123e4567-3f55-4575-992a-233127b647eb",
-      assetTypeUuid: "123e4567-effd-4497-8034-233126c2ca9b",
+    assetTypeFieldCreate: {
+      uuid: "123e4567-0356-474f-98d6-233c6339ecab",
       name: "<value>",
     },
   });
@@ -339,9 +336,8 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await assetTypeFieldsUpdateAssetTypeFields(serviceM8, {
     uuid: "1d8d7fd0-4d09-4955-a484-0cd4add08b25",
-    assetTypeField: {
-      uuid: "123e4567-3f55-4575-992a-233127b647eb",
-      assetTypeUuid: "123e4567-effd-4497-8034-233126c2ca9b",
+    assetTypeFieldCreate: {
+      uuid: "123e4567-0356-474f-98d6-233c6339ecab",
       name: "<value>",
     },
   });

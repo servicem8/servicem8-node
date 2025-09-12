@@ -44,25 +44,6 @@ export type Category = {
   editDate?: any | undefined;
 };
 
-export type CategoryInput = {
-  /**
-   * The name of the job category. Used to classify and organize jobs.
-   */
-  name: string;
-  /**
-   * The colour associated with this job category. This colour is used to visually identify the category on the dispatch board and in calendar views. The value is a hexadecimal colour code (6 characters 0-9a-f).
-   */
-  colour?: string | undefined;
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: CategoryActive | undefined;
-};
-
 /** @internal */
 export const CategoryActive$inboundSchema: z.ZodNativeEnum<
   typeof CategoryActive
@@ -151,64 +132,5 @@ export function categoryFromJSON(
     jsonString,
     (x) => Category$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'Category' from JSON`,
-  );
-}
-
-/** @internal */
-export const CategoryInput$inboundSchema: z.ZodType<
-  CategoryInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  colour: z.string().optional(),
-  uuid: z.string().optional(),
-  active: CategoryActive$inboundSchema.default(1),
-});
-
-/** @internal */
-export type CategoryInput$Outbound = {
-  name: string;
-  colour?: string | undefined;
-  uuid?: string | undefined;
-  active: number;
-};
-
-/** @internal */
-export const CategoryInput$outboundSchema: z.ZodType<
-  CategoryInput$Outbound,
-  z.ZodTypeDef,
-  CategoryInput
-> = z.object({
-  name: z.string(),
-  colour: z.string().optional(),
-  uuid: z.string().optional(),
-  active: CategoryActive$outboundSchema.default(1),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CategoryInput$ {
-  /** @deprecated use `CategoryInput$inboundSchema` instead. */
-  export const inboundSchema = CategoryInput$inboundSchema;
-  /** @deprecated use `CategoryInput$outboundSchema` instead. */
-  export const outboundSchema = CategoryInput$outboundSchema;
-  /** @deprecated use `CategoryInput$Outbound` instead. */
-  export type Outbound = CategoryInput$Outbound;
-}
-
-export function categoryInputToJSON(categoryInput: CategoryInput): string {
-  return JSON.stringify(CategoryInput$outboundSchema.parse(categoryInput));
-}
-
-export function categoryInputFromJSON(
-  jsonString: string,
-): SafeParseResult<CategoryInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CategoryInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CategoryInput' from JSON`,
   );
 }

@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function taxRatesCreateTaxRates(
   client: ServiceM8Core,
-  request: components.TaxRateInput,
+  request: components.TaxRateCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function taxRatesCreateTaxRates(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.TaxRateInput,
+  request: components.TaxRateCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.TaxRateInput$outboundSchema.parse(value),
+    (value) => components.TaxRateCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

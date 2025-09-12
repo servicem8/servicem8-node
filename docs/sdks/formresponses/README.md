@@ -127,14 +127,14 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.formResponses.createFormResponses({
-    uuid: "123e4567-e2c5-4751-afbd-233122712a2b",
-    formUuid: "123e4567-011e-45bf-b9f8-2331261f927b",
-    staffUuid: "123e4567-1a3b-47f0-a5d2-233128d9183b",
-    regardingObjectUuid: "123e4567-676f-4319-8733-23312bd1387b",
+    formUuid: "123e4567-6950-4a3d-885b-233c6f1ba93b",
+    staffUuid: "123e4567-3d64-46db-87a8-233c656e87bb",
+    regardingObjectUuid: "123e4567-95cf-4b3c-a632-233c62da8c6b",
     timestamp: "2025-09-01 12:00:00",
-    formByStaffUuid: "123e4567-3182-4fc5-a180-23312167dbab",
-    documentAttachmentUuid: "123e4567-1161-42d9-a0dd-23312ecbb46b",
-    assetUuid: "123e4567-4a96-4031-9e2a-23312d60045b",
+    formByStaffUuid: "123e4567-866a-4a7a-8ffc-233c6ab2833b",
+    documentAttachmentUuid: "123e4567-62e5-467a-a6e2-233c6f8c269b",
+    assetUuid: "123e4567-6acf-4d17-bed2-233c685c0d3b",
+    uuid: "123e4567-78bc-467b-8898-233c6d20d4cb",
   });
 
   console.log(result);
@@ -161,14 +161,14 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formResponsesCreateFormResponses(serviceM8, {
-    uuid: "123e4567-e2c5-4751-afbd-233122712a2b",
-    formUuid: "123e4567-011e-45bf-b9f8-2331261f927b",
-    staffUuid: "123e4567-1a3b-47f0-a5d2-233128d9183b",
-    regardingObjectUuid: "123e4567-676f-4319-8733-23312bd1387b",
+    formUuid: "123e4567-6950-4a3d-885b-233c6f1ba93b",
+    staffUuid: "123e4567-3d64-46db-87a8-233c656e87bb",
+    regardingObjectUuid: "123e4567-95cf-4b3c-a632-233c62da8c6b",
     timestamp: "2025-09-01 12:00:00",
-    formByStaffUuid: "123e4567-3182-4fc5-a180-23312167dbab",
-    documentAttachmentUuid: "123e4567-1161-42d9-a0dd-23312ecbb46b",
-    assetUuid: "123e4567-4a96-4031-9e2a-23312d60045b",
+    formByStaffUuid: "123e4567-866a-4a7a-8ffc-233c6ab2833b",
+    documentAttachmentUuid: "123e4567-62e5-467a-a6e2-233c6f8c269b",
+    assetUuid: "123e4567-6acf-4d17-bed2-233c685c0d3b",
+    uuid: "123e4567-78bc-467b-8898-233c6d20d4cb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -185,7 +185,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.FormResponseInput](../../models/components/formresponseinput.md)                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.FormResponseCreate](../../models/components/formresponsecreate.md)                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -317,15 +317,15 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.formResponses.updateFormResponses({
     uuid: "5f593a3c-772d-4259-856d-86a8df7ae53d",
-    formResponse: {
-      uuid: "123e4567-e2c5-4751-afbd-233122712a2b",
-      formUuid: "123e4567-011e-45bf-b9f8-2331261f927b",
-      staffUuid: "123e4567-1a3b-47f0-a5d2-233128d9183b",
-      regardingObjectUuid: "123e4567-676f-4319-8733-23312bd1387b",
+    formResponseCreate: {
+      formUuid: "123e4567-6950-4a3d-885b-233c6f1ba93b",
+      staffUuid: "123e4567-3d64-46db-87a8-233c656e87bb",
+      regardingObjectUuid: "123e4567-95cf-4b3c-a632-233c62da8c6b",
       timestamp: "2025-09-01 12:00:00",
-      formByStaffUuid: "123e4567-3182-4fc5-a180-23312167dbab",
-      documentAttachmentUuid: "123e4567-1161-42d9-a0dd-23312ecbb46b",
-      assetUuid: "123e4567-4a96-4031-9e2a-23312d60045b",
+      formByStaffUuid: "123e4567-866a-4a7a-8ffc-233c6ab2833b",
+      documentAttachmentUuid: "123e4567-62e5-467a-a6e2-233c6f8c269b",
+      assetUuid: "123e4567-6acf-4d17-bed2-233c685c0d3b",
+      uuid: "123e4567-78bc-467b-8898-233c6d20d4cb",
     },
   });
 
@@ -354,15 +354,15 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await formResponsesUpdateFormResponses(serviceM8, {
     uuid: "5f593a3c-772d-4259-856d-86a8df7ae53d",
-    formResponse: {
-      uuid: "123e4567-e2c5-4751-afbd-233122712a2b",
-      formUuid: "123e4567-011e-45bf-b9f8-2331261f927b",
-      staffUuid: "123e4567-1a3b-47f0-a5d2-233128d9183b",
-      regardingObjectUuid: "123e4567-676f-4319-8733-23312bd1387b",
+    formResponseCreate: {
+      formUuid: "123e4567-6950-4a3d-885b-233c6f1ba93b",
+      staffUuid: "123e4567-3d64-46db-87a8-233c656e87bb",
+      regardingObjectUuid: "123e4567-95cf-4b3c-a632-233c62da8c6b",
       timestamp: "2025-09-01 12:00:00",
-      formByStaffUuid: "123e4567-3182-4fc5-a180-23312167dbab",
-      documentAttachmentUuid: "123e4567-1161-42d9-a0dd-23312ecbb46b",
-      assetUuid: "123e4567-4a96-4031-9e2a-23312d60045b",
+      formByStaffUuid: "123e4567-866a-4a7a-8ffc-233c6ab2833b",
+      documentAttachmentUuid: "123e4567-62e5-467a-a6e2-233c6f8c269b",
+      assetUuid: "123e4567-6acf-4d17-bed2-233c685c0d3b",
+      uuid: "123e4567-78bc-467b-8898-233c6d20d4cb",
     },
   });
   if (res.ok) {

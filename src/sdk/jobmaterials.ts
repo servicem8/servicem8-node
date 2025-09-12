@@ -45,7 +45,7 @@ export class JobMaterials extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createJobMaterials(
-    request: components.JobMaterialInput,
+    request: components.JobMaterialCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateJobMaterialsResponse> {
     return unwrapAsync(jobMaterialsCreateJobMaterials(

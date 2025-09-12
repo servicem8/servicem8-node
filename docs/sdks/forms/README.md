@@ -127,8 +127,8 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.forms.createForms({
-    documentTemplateUuid: "123e4567-d92d-4afd-bb91-23312b35a0cb",
-    uuid: "123e4567-9d89-45cf-a798-233127307a3b",
+    documentTemplateUuid: "123e4567-558c-4641-bac4-233c6d5b6ffb",
+    uuid: "123e4567-ca07-4602-bfad-233c6f49981b",
   });
 
   console.log(result);
@@ -155,8 +155,8 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await formsCreateForms(serviceM8, {
-    documentTemplateUuid: "123e4567-d92d-4afd-bb91-23312b35a0cb",
-    uuid: "123e4567-9d89-45cf-a798-233127307a3b",
+    documentTemplateUuid: "123e4567-558c-4641-bac4-233c6d5b6ffb",
+    uuid: "123e4567-ca07-4602-bfad-233c6f49981b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -173,7 +173,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.FormInput](../../models/components/forminput.md)                                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.FormCreate](../../models/components/formcreate.md)                                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -305,9 +305,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.forms.updateForms({
     uuid: "2473c622-cde4-4803-b91a-cd7a656f7e3b",
-    form: {
-      documentTemplateUuid: "123e4567-d92d-4afd-bb91-23312b35a0cb",
-      uuid: "123e4567-9d89-45cf-a798-233127307a3b",
+    formCreate: {
+      documentTemplateUuid: "123e4567-558c-4641-bac4-233c6d5b6ffb",
+      uuid: "123e4567-ca07-4602-bfad-233c6f49981b",
     },
   });
 
@@ -336,9 +336,9 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await formsUpdateForms(serviceM8, {
     uuid: "2473c622-cde4-4803-b91a-cd7a656f7e3b",
-    form: {
-      documentTemplateUuid: "123e4567-d92d-4afd-bb91-23312b35a0cb",
-      uuid: "123e4567-9d89-45cf-a798-233127307a3b",
+    formCreate: {
+      documentTemplateUuid: "123e4567-558c-4641-bac4-233c6d5b6ffb",
+      uuid: "123e4567-ca07-4602-bfad-233c6f49981b",
     },
   });
   if (res.ok) {

@@ -45,7 +45,7 @@ export class Categories extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createCategories(
-    request: components.CategoryInput,
+    request: components.CategoryCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateCategoriesResponse> {
     return unwrapAsync(categoriesCreateCategories(

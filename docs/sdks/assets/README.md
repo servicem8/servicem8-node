@@ -210,10 +210,9 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.assets.updateAssets({
     uuid: "5b24eb53-3f3d-4b60-b9e9-e44934a80c53",
-    asset: {
-      uuid: "123e4567-944b-4030-9d96-23312d341f5b",
-      companyUuid: "123e4567-4c20-476f-8721-23312c367e6b",
-      assetTypeUuid: "123e4567-fc15-4cbc-808b-23312a0b4abb",
+    assetCreate: {
+      uuid: "123e4567-3dff-4157-95a3-233c61f9952b",
+      companyUuid: "123e4567-852b-4d46-84eb-233c66f2d6ab",
       geoTimestamp: "2025-09-01 12:00:00",
     },
   });
@@ -243,10 +242,9 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await assetsUpdateAssets(serviceM8, {
     uuid: "5b24eb53-3f3d-4b60-b9e9-e44934a80c53",
-    asset: {
-      uuid: "123e4567-944b-4030-9d96-23312d341f5b",
-      companyUuid: "123e4567-4c20-476f-8721-23312c367e6b",
-      assetTypeUuid: "123e4567-fc15-4cbc-808b-23312a0b4abb",
+    assetCreate: {
+      uuid: "123e4567-3dff-4157-95a3-233c61f9952b",
+      companyUuid: "123e4567-852b-4d46-84eb-233c66f2d6ab",
       geoTimestamp: "2025-09-01 12:00:00",
     },
   });

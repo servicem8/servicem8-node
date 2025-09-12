@@ -23,6 +23,38 @@ export type CompanyContactActive = ClosedEnum<typeof CompanyContactActive>;
 
 export type CompanyContact = {
   /**
+   * The UUID of the company this contact belongs to
+   */
+  companyUuid?: string | undefined;
+  /**
+   * First name of the company contact. Used for identifying and addressing the contact in communications.
+   */
+  first?: string | undefined;
+  /**
+   * Last name of the company contact. Used together with the first name to identify the contact.
+   */
+  last?: string | undefined;
+  /**
+   * Primary phone number for the contact. Used for voice communications with the contact. Should include area code and can include international code.
+   */
+  phone?: string | undefined;
+  /**
+   * Mobile phone number for the contact. Used for SMS communications and alternative voice contact. Should include area code and can include international code.
+   */
+  mobile?: string | undefined;
+  /**
+   * Email address of the contact. Used for sending email communications, quotes, invoices, and other electronic correspondence.
+   */
+  email?: string | undefined;
+  /**
+   * Specifies the type of contact. Common values include 'BILLING' for billing contacts and 'JOB' for job contacts. This field determines how the contact is used in the system.
+   */
+  type?: string | undefined;
+  /**
+   * Indicates whether this contact is the primary contact for the company. Value of 1 means this is the primary contact, 0 means it is not. A company should have only one active primary contact.
+   */
+  isPrimaryContact?: string | undefined;
+  /**
    * Unique identifier for this record
    */
   uuid?: string | undefined;
@@ -34,39 +66,6 @@ export type CompanyContact = {
    * Timestamp at which record was last modified
    */
   editDate?: any | undefined;
-  /**
-   * The UUID of the company this contact belongs to
-   */
-  companyUuid?: string | undefined;
-  first?: string | undefined;
-  last?: string | undefined;
-  phone?: string | undefined;
-  mobile?: string | undefined;
-  email?: string | undefined;
-  type?: string | undefined;
-  isPrimaryContact?: string | undefined;
-};
-
-export type CompanyContactInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: CompanyContactActive | undefined;
-  /**
-   * The UUID of the company this contact belongs to
-   */
-  companyUuid?: string | undefined;
-  first?: string | undefined;
-  last?: string | undefined;
-  phone?: string | undefined;
-  mobile?: string | undefined;
-  email?: string | undefined;
-  type?: string | undefined;
-  isPrimaryContact?: string | undefined;
 };
 
 /** @internal */
@@ -96,9 +95,6 @@ export const CompanyContact$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  uuid: z.string().optional(),
-  active: CompanyContactActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
   company_uuid: z.string().optional(),
   first: z.string().optional(),
   last: z.string().optional(),
@@ -107,19 +103,19 @@ export const CompanyContact$inboundSchema: z.ZodType<
   email: z.string().optional(),
   type: z.string().optional(),
   is_primary_contact: z.string().optional(),
+  uuid: z.string().optional(),
+  active: CompanyContactActive$inboundSchema.default(1),
+  edit_date: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "edit_date": "editDate",
     "company_uuid": "companyUuid",
     "is_primary_contact": "isPrimaryContact",
+    "edit_date": "editDate",
   });
 });
 
 /** @internal */
 export type CompanyContact$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  edit_date?: any | undefined;
   company_uuid?: string | undefined;
   first?: string | undefined;
   last?: string | undefined;
@@ -128,6 +124,9 @@ export type CompanyContact$Outbound = {
   email?: string | undefined;
   type?: string | undefined;
   is_primary_contact?: string | undefined;
+  uuid?: string | undefined;
+  active: number;
+  edit_date?: any | undefined;
 };
 
 /** @internal */
@@ -136,9 +135,6 @@ export const CompanyContact$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CompanyContact
 > = z.object({
-  uuid: z.string().optional(),
-  active: CompanyContactActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
   companyUuid: z.string().optional(),
   first: z.string().optional(),
   last: z.string().optional(),
@@ -147,11 +143,14 @@ export const CompanyContact$outboundSchema: z.ZodType<
   email: z.string().optional(),
   type: z.string().optional(),
   isPrimaryContact: z.string().optional(),
+  uuid: z.string().optional(),
+  active: CompanyContactActive$outboundSchema.default(1),
+  editDate: z.any().optional(),
 }).transform((v) => {
   return remap$(v, {
-    editDate: "edit_date",
     companyUuid: "company_uuid",
     isPrimaryContact: "is_primary_contact",
+    editDate: "edit_date",
   });
 });
 
@@ -179,96 +178,5 @@ export function companyContactFromJSON(
     jsonString,
     (x) => CompanyContact$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'CompanyContact' from JSON`,
-  );
-}
-
-/** @internal */
-export const CompanyContactInput$inboundSchema: z.ZodType<
-  CompanyContactInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: CompanyContactActive$inboundSchema.default(1),
-  company_uuid: z.string().optional(),
-  first: z.string().optional(),
-  last: z.string().optional(),
-  phone: z.string().optional(),
-  mobile: z.string().optional(),
-  email: z.string().optional(),
-  type: z.string().optional(),
-  is_primary_contact: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_uuid": "companyUuid",
-    "is_primary_contact": "isPrimaryContact",
-  });
-});
-
-/** @internal */
-export type CompanyContactInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  company_uuid?: string | undefined;
-  first?: string | undefined;
-  last?: string | undefined;
-  phone?: string | undefined;
-  mobile?: string | undefined;
-  email?: string | undefined;
-  type?: string | undefined;
-  is_primary_contact?: string | undefined;
-};
-
-/** @internal */
-export const CompanyContactInput$outboundSchema: z.ZodType<
-  CompanyContactInput$Outbound,
-  z.ZodTypeDef,
-  CompanyContactInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: CompanyContactActive$outboundSchema.default(1),
-  companyUuid: z.string().optional(),
-  first: z.string().optional(),
-  last: z.string().optional(),
-  phone: z.string().optional(),
-  mobile: z.string().optional(),
-  email: z.string().optional(),
-  type: z.string().optional(),
-  isPrimaryContact: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyUuid: "company_uuid",
-    isPrimaryContact: "is_primary_contact",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CompanyContactInput$ {
-  /** @deprecated use `CompanyContactInput$inboundSchema` instead. */
-  export const inboundSchema = CompanyContactInput$inboundSchema;
-  /** @deprecated use `CompanyContactInput$outboundSchema` instead. */
-  export const outboundSchema = CompanyContactInput$outboundSchema;
-  /** @deprecated use `CompanyContactInput$Outbound` instead. */
-  export type Outbound = CompanyContactInput$Outbound;
-}
-
-export function companyContactInputToJSON(
-  companyContactInput: CompanyContactInput,
-): string {
-  return JSON.stringify(
-    CompanyContactInput$outboundSchema.parse(companyContactInput),
-  );
-}
-
-export function companyContactInputFromJSON(
-  jsonString: string,
-): SafeParseResult<CompanyContactInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CompanyContactInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CompanyContactInput' from JSON`,
   );
 }

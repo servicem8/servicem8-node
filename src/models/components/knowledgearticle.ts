@@ -21,14 +21,16 @@ export const KnowledgeArticleActive = {
  */
 export type KnowledgeArticleActive = ClosedEnum<typeof KnowledgeArticleActive>;
 
-export const ObjectName = {
+export const KnowledgeArticleObjectName = {
   JobMixed: "Job",
   JobLower: "job",
 } as const;
-export type ObjectName = ClosedEnum<typeof ObjectName>;
+export type KnowledgeArticleObjectName = ClosedEnum<
+  typeof KnowledgeArticleObjectName
+>;
 
-export type Relationship = {
-  objectName: ObjectName;
+export type KnowledgeArticleRelationship = {
+  objectName: KnowledgeArticleObjectName;
   objectUuid: string;
   objectDescription?: string | undefined;
   createDate?: string | undefined;
@@ -66,38 +68,7 @@ export type KnowledgeArticle = {
   /**
    * JSON array of manually created relationships between this knowledge article and other objects. Contains objects with properties: object_name (e.g., 'job'), object_uuid (the related object's UUID), object_description (a description of the related object), and create_date. Used to associate articles with specific jobs or other system objects.
    */
-  relationships?: Array<Relationship> | undefined;
-};
-
-export type KnowledgeArticleInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: KnowledgeArticleActive | undefined;
-  /**
-   * Title of the knowledge article. This is a mandatory field with a maximum length of 100 characters. Used for identifying and searching for articles in the knowledge base.
-   */
-  name: string;
-  /**
-   * The main content of the knowledge article. For 'richtext' and 'pdf' articles, this contains HTML formatted text. For 'video' articles, this may contain supplementary information. For 'call' articles, this contains call details. Supports extended text length.
-   */
-  content?: string | undefined;
-  /**
-   * Type of knowledge article. Valid values are 'video', 'richtext', 'pdf', or 'call'. This determines how the article content is presented and processed in the system.
-   */
-  articleType?: string | undefined;
-  /**
-   * Comma-separated list of tags associated with this knowledge article. Maximum length is 2000 characters. Tags are used for categorization, searching, and automatic relationship generation with other objects like Services, Materials, and Companies.
-   */
-  tags?: string | undefined;
-  /**
-   * JSON array of manually created relationships between this knowledge article and other objects. Contains objects with properties: object_name (e.g., 'job'), object_uuid (the related object's UUID), object_description (a description of the related object), and create_date. Used to associate articles with specific jobs or other system objects.
-   */
-  relationships?: Array<Relationship> | undefined;
+  relationships?: Array<KnowledgeArticleRelationship> | undefined;
 };
 
 /** @internal */
@@ -122,31 +93,33 @@ export namespace KnowledgeArticleActive$ {
 }
 
 /** @internal */
-export const ObjectName$inboundSchema: z.ZodNativeEnum<typeof ObjectName> = z
-  .nativeEnum(ObjectName);
+export const KnowledgeArticleObjectName$inboundSchema: z.ZodNativeEnum<
+  typeof KnowledgeArticleObjectName
+> = z.nativeEnum(KnowledgeArticleObjectName);
 
 /** @internal */
-export const ObjectName$outboundSchema: z.ZodNativeEnum<typeof ObjectName> =
-  ObjectName$inboundSchema;
+export const KnowledgeArticleObjectName$outboundSchema: z.ZodNativeEnum<
+  typeof KnowledgeArticleObjectName
+> = KnowledgeArticleObjectName$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ObjectName$ {
-  /** @deprecated use `ObjectName$inboundSchema` instead. */
-  export const inboundSchema = ObjectName$inboundSchema;
-  /** @deprecated use `ObjectName$outboundSchema` instead. */
-  export const outboundSchema = ObjectName$outboundSchema;
+export namespace KnowledgeArticleObjectName$ {
+  /** @deprecated use `KnowledgeArticleObjectName$inboundSchema` instead. */
+  export const inboundSchema = KnowledgeArticleObjectName$inboundSchema;
+  /** @deprecated use `KnowledgeArticleObjectName$outboundSchema` instead. */
+  export const outboundSchema = KnowledgeArticleObjectName$outboundSchema;
 }
 
 /** @internal */
-export const Relationship$inboundSchema: z.ZodType<
-  Relationship,
+export const KnowledgeArticleRelationship$inboundSchema: z.ZodType<
+  KnowledgeArticleRelationship,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  object_name: ObjectName$inboundSchema,
+  object_name: KnowledgeArticleObjectName$inboundSchema,
   object_uuid: z.string(),
   object_description: z.string().optional(),
   create_date: z.string().optional(),
@@ -160,7 +133,7 @@ export const Relationship$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type Relationship$Outbound = {
+export type KnowledgeArticleRelationship$Outbound = {
   object_name: string;
   object_uuid: string;
   object_description?: string | undefined;
@@ -168,12 +141,12 @@ export type Relationship$Outbound = {
 };
 
 /** @internal */
-export const Relationship$outboundSchema: z.ZodType<
-  Relationship$Outbound,
+export const KnowledgeArticleRelationship$outboundSchema: z.ZodType<
+  KnowledgeArticleRelationship$Outbound,
   z.ZodTypeDef,
-  Relationship
+  KnowledgeArticleRelationship
 > = z.object({
-  objectName: ObjectName$outboundSchema,
+  objectName: KnowledgeArticleObjectName$outboundSchema,
   objectUuid: z.string(),
   objectDescription: z.string().optional(),
   createDate: z.string().optional(),
@@ -190,26 +163,32 @@ export const Relationship$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Relationship$ {
-  /** @deprecated use `Relationship$inboundSchema` instead. */
-  export const inboundSchema = Relationship$inboundSchema;
-  /** @deprecated use `Relationship$outboundSchema` instead. */
-  export const outboundSchema = Relationship$outboundSchema;
-  /** @deprecated use `Relationship$Outbound` instead. */
-  export type Outbound = Relationship$Outbound;
+export namespace KnowledgeArticleRelationship$ {
+  /** @deprecated use `KnowledgeArticleRelationship$inboundSchema` instead. */
+  export const inboundSchema = KnowledgeArticleRelationship$inboundSchema;
+  /** @deprecated use `KnowledgeArticleRelationship$outboundSchema` instead. */
+  export const outboundSchema = KnowledgeArticleRelationship$outboundSchema;
+  /** @deprecated use `KnowledgeArticleRelationship$Outbound` instead. */
+  export type Outbound = KnowledgeArticleRelationship$Outbound;
 }
 
-export function relationshipToJSON(relationship: Relationship): string {
-  return JSON.stringify(Relationship$outboundSchema.parse(relationship));
+export function knowledgeArticleRelationshipToJSON(
+  knowledgeArticleRelationship: KnowledgeArticleRelationship,
+): string {
+  return JSON.stringify(
+    KnowledgeArticleRelationship$outboundSchema.parse(
+      knowledgeArticleRelationship,
+    ),
+  );
 }
 
-export function relationshipFromJSON(
+export function knowledgeArticleRelationshipFromJSON(
   jsonString: string,
-): SafeParseResult<Relationship, SDKValidationError> {
+): SafeParseResult<KnowledgeArticleRelationship, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Relationship$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Relationship' from JSON`,
+    (x) => KnowledgeArticleRelationship$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'KnowledgeArticleRelationship' from JSON`,
   );
 }
 
@@ -226,7 +205,9 @@ export const KnowledgeArticle$inboundSchema: z.ZodType<
   content: z.string().optional(),
   article_type: z.string().optional(),
   tags: z.string().optional(),
-  relationships: z.array(z.lazy(() => Relationship$inboundSchema)).optional(),
+  relationships: z.array(
+    z.lazy(() => KnowledgeArticleRelationship$inboundSchema),
+  ).optional(),
 }).transform((v) => {
   return remap$(v, {
     "edit_date": "editDate",
@@ -243,7 +224,7 @@ export type KnowledgeArticle$Outbound = {
   content?: string | undefined;
   article_type?: string | undefined;
   tags?: string | undefined;
-  relationships?: Array<Relationship$Outbound> | undefined;
+  relationships?: Array<KnowledgeArticleRelationship$Outbound> | undefined;
 };
 
 /** @internal */
@@ -259,7 +240,9 @@ export const KnowledgeArticle$outboundSchema: z.ZodType<
   content: z.string().optional(),
   articleType: z.string().optional(),
   tags: z.string().optional(),
-  relationships: z.array(z.lazy(() => Relationship$outboundSchema)).optional(),
+  relationships: z.array(
+    z.lazy(() => KnowledgeArticleRelationship$outboundSchema),
+  ).optional(),
 }).transform((v) => {
   return remap$(v, {
     editDate: "edit_date",
@@ -295,85 +278,5 @@ export function knowledgeArticleFromJSON(
     jsonString,
     (x) => KnowledgeArticle$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'KnowledgeArticle' from JSON`,
-  );
-}
-
-/** @internal */
-export const KnowledgeArticleInput$inboundSchema: z.ZodType<
-  KnowledgeArticleInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: KnowledgeArticleActive$inboundSchema.default(1),
-  name: z.string(),
-  content: z.string().optional(),
-  article_type: z.string().optional(),
-  tags: z.string().optional(),
-  relationships: z.array(z.lazy(() => Relationship$inboundSchema)).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "article_type": "articleType",
-  });
-});
-
-/** @internal */
-export type KnowledgeArticleInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  name: string;
-  content?: string | undefined;
-  article_type?: string | undefined;
-  tags?: string | undefined;
-  relationships?: Array<Relationship$Outbound> | undefined;
-};
-
-/** @internal */
-export const KnowledgeArticleInput$outboundSchema: z.ZodType<
-  KnowledgeArticleInput$Outbound,
-  z.ZodTypeDef,
-  KnowledgeArticleInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: KnowledgeArticleActive$outboundSchema.default(1),
-  name: z.string(),
-  content: z.string().optional(),
-  articleType: z.string().optional(),
-  tags: z.string().optional(),
-  relationships: z.array(z.lazy(() => Relationship$outboundSchema)).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    articleType: "article_type",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KnowledgeArticleInput$ {
-  /** @deprecated use `KnowledgeArticleInput$inboundSchema` instead. */
-  export const inboundSchema = KnowledgeArticleInput$inboundSchema;
-  /** @deprecated use `KnowledgeArticleInput$outboundSchema` instead. */
-  export const outboundSchema = KnowledgeArticleInput$outboundSchema;
-  /** @deprecated use `KnowledgeArticleInput$Outbound` instead. */
-  export type Outbound = KnowledgeArticleInput$Outbound;
-}
-
-export function knowledgeArticleInputToJSON(
-  knowledgeArticleInput: KnowledgeArticleInput,
-): string {
-  return JSON.stringify(
-    KnowledgeArticleInput$outboundSchema.parse(knowledgeArticleInput),
-  );
-}
-
-export function knowledgeArticleInputFromJSON(
-  jsonString: string,
-): SafeParseResult<KnowledgeArticleInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => KnowledgeArticleInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'KnowledgeArticleInput' from JSON`,
   );
 }

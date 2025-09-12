@@ -275,6 +275,14 @@ run();
 * [updateAssetTypes](docs/sdks/assettypes/README.md#updateassettypes) - Update an Asset Type
 * [deleteAssetTypes](docs/sdks/assettypes/README.md#deleteassettypes) - Delete an Asset Type
 
+### [attachments](docs/sdks/attachments/README.md)
+
+* [listAttachments](docs/sdks/attachments/README.md#listattachments) - List all Attachments
+* [createAttachments](docs/sdks/attachments/README.md#createattachments) - Create a new Attachment
+* [getAttachments](docs/sdks/attachments/README.md#getattachments) - Retrieve an Attachment
+* [updateAttachments](docs/sdks/attachments/README.md#updateattachments) - Update an Attachment
+* [deleteAttachments](docs/sdks/attachments/README.md#deleteattachments) - Delete an Attachment
+
 ### [badges](docs/sdks/badges/README.md)
 
 * [listBadges](docs/sdks/badges/README.md#listbadges) - List all Badges
@@ -477,6 +485,14 @@ run();
 * [updateMaterials](docs/sdks/materials/README.md#updatematerials) - Update a Material
 * [deleteMaterials](docs/sdks/materials/README.md#deletematerials) - Delete a Material
 
+### [notes](docs/sdks/notes/README.md)
+
+* [listNotes](docs/sdks/notes/README.md#listnotes) - List all Notes
+* [createNotes](docs/sdks/notes/README.md#createnotes) - Create a new Note
+* [getNotes](docs/sdks/notes/README.md#getnotes) - Retrieve a Note
+* [updateNotes](docs/sdks/notes/README.md#updatenotes) - Update a Note
+* [deleteNotes](docs/sdks/notes/README.md#deletenotes) - Delete a Note
+
 ### [search](docs/sdks/search/README.md)
 
 * [generalSearch](docs/sdks/search/README.md#generalsearch) - Search across multiple object types
@@ -571,6 +587,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`assetTypesGetAssetTypes`](docs/sdks/assettypes/README.md#getassettypes) - Retrieve an Asset Type
 - [`assetTypesListAssetTypes`](docs/sdks/assettypes/README.md#listassettypes) - List all Asset Types
 - [`assetTypesUpdateAssetTypes`](docs/sdks/assettypes/README.md#updateassettypes) - Update an Asset Type
+- [`attachmentsCreateAttachments`](docs/sdks/attachments/README.md#createattachments) - Create a new Attachment
+- [`attachmentsDeleteAttachments`](docs/sdks/attachments/README.md#deleteattachments) - Delete an Attachment
+- [`attachmentsGetAttachments`](docs/sdks/attachments/README.md#getattachments) - Retrieve an Attachment
+- [`attachmentsListAttachments`](docs/sdks/attachments/README.md#listattachments) - List all Attachments
+- [`attachmentsUpdateAttachments`](docs/sdks/attachments/README.md#updateattachments) - Update an Attachment
 - [`badgesCreateBadges`](docs/sdks/badges/README.md#createbadges) - Create a new Badge
 - [`badgesDeleteBadges`](docs/sdks/badges/README.md#deletebadges) - Delete a Badge
 - [`badgesGetBadges`](docs/sdks/badges/README.md#getbadges) - Retrieve a Badge
@@ -698,6 +719,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`materialsGetMaterials`](docs/sdks/materials/README.md#getmaterials) - Retrieve a Material
 - [`materialsListMaterials`](docs/sdks/materials/README.md#listmaterials) - List all Materials
 - [`materialsUpdateMaterials`](docs/sdks/materials/README.md#updatematerials) - Update a Material
+- [`notesCreateNotes`](docs/sdks/notes/README.md#createnotes) - Create a new Note
+- [`notesDeleteNotes`](docs/sdks/notes/README.md#deletenotes) - Delete a Note
+- [`notesGetNotes`](docs/sdks/notes/README.md#getnotes) - Retrieve a Note
+- [`notesListNotes`](docs/sdks/notes/README.md#listnotes) - List all Notes
+- [`notesUpdateNotes`](docs/sdks/notes/README.md#updatenotes) - Update a Note
 - [`searchGeneralSearch`](docs/sdks/search/README.md#generalsearch) - Search across multiple object types
 - [`searchJobEmbeddingSearch`](docs/sdks/search/README.md#jobembeddingsearch) - Semantic search for jobs
 - [`searchObjectSearch`](docs/sdks/search/README.md#objectsearch) - Search within a specific object type
@@ -873,7 +899,7 @@ run();
 
 
 **Inherit from [`ServiceM8Error`](./src/models/errors/servicem8error.ts)**:
-* [`NotFoundError`](./src/models/errors/notfounderror.ts): Status code `404`. Applicable to 99 of 178 methods.*
+* [`NotFoundError`](./src/models/errors/notfounderror.ts): Status code `404`. Applicable to 105 of 188 methods.*
 * [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
 
 </details>

@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function knowledgeArticlesCreateKnowledgeArticles(
   client: ServiceM8Core,
-  request: components.KnowledgeArticleInput,
+  request: components.KnowledgeArticleCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function knowledgeArticlesCreateKnowledgeArticles(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.KnowledgeArticleInput,
+  request: components.KnowledgeArticleCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.KnowledgeArticleInput$outboundSchema.parse(value),
+    (value) => components.KnowledgeArticleCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

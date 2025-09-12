@@ -127,15 +127,13 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobActivities.createJobActivities({
-    uuid: "123e4567-2b0d-4bdf-b964-233120a5f2eb",
-    jobUuid: "123e4567-897a-4552-bbb7-233127c1283b",
-    staffUuid: "123e4567-704d-40ab-9158-23312472a96b",
+    jobUuid: "123e4567-607c-47ba-9546-233c6a4ca03b",
+    staffUuid: "123e4567-f7ef-4f99-9693-233c687c459b",
     startDate: "2025-09-01 12:00:00",
     endDate: "2025-09-01 12:00:00",
     hasBeenOpenedTimestamp: "2025-09-01 12:00:00",
-    allocatedByStaffUuid: "123e4567-490c-4eb6-80ad-233121f26b9b",
-    allocatedTimestamp: "2025-09-01 12:00:00",
-    materialUuid: "123e4567-eacb-4e92-8c9e-233125383b2b",
+    materialUuid: "123e4567-d5f1-475f-babe-233c69341f5b",
+    uuid: "123e4567-f048-4366-91ad-233c683d8fbb",
   });
 
   console.log(result);
@@ -162,15 +160,13 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobActivitiesCreateJobActivities(serviceM8, {
-    uuid: "123e4567-2b0d-4bdf-b964-233120a5f2eb",
-    jobUuid: "123e4567-897a-4552-bbb7-233127c1283b",
-    staffUuid: "123e4567-704d-40ab-9158-23312472a96b",
+    jobUuid: "123e4567-607c-47ba-9546-233c6a4ca03b",
+    staffUuid: "123e4567-f7ef-4f99-9693-233c687c459b",
     startDate: "2025-09-01 12:00:00",
     endDate: "2025-09-01 12:00:00",
     hasBeenOpenedTimestamp: "2025-09-01 12:00:00",
-    allocatedByStaffUuid: "123e4567-490c-4eb6-80ad-233121f26b9b",
-    allocatedTimestamp: "2025-09-01 12:00:00",
-    materialUuid: "123e4567-eacb-4e92-8c9e-233125383b2b",
+    materialUuid: "123e4567-d5f1-475f-babe-233c69341f5b",
+    uuid: "123e4567-f048-4366-91ad-233c683d8fbb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -187,7 +183,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.JobActivityInput](../../models/components/jobactivityinput.md)                                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.JobActivityCreate](../../models/components/jobactivitycreate.md)                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -319,16 +315,14 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.jobActivities.updateJobActivities({
     uuid: "5ccaaaf0-ee37-4a96-a41a-cc701c3f1a65",
-    jobActivity: {
-      uuid: "123e4567-2b0d-4bdf-b964-233120a5f2eb",
-      jobUuid: "123e4567-897a-4552-bbb7-233127c1283b",
-      staffUuid: "123e4567-704d-40ab-9158-23312472a96b",
+    jobActivityCreate: {
+      jobUuid: "123e4567-607c-47ba-9546-233c6a4ca03b",
+      staffUuid: "123e4567-f7ef-4f99-9693-233c687c459b",
       startDate: "2025-09-01 12:00:00",
       endDate: "2025-09-01 12:00:00",
       hasBeenOpenedTimestamp: "2025-09-01 12:00:00",
-      allocatedByStaffUuid: "123e4567-490c-4eb6-80ad-233121f26b9b",
-      allocatedTimestamp: "2025-09-01 12:00:00",
-      materialUuid: "123e4567-eacb-4e92-8c9e-233125383b2b",
+      materialUuid: "123e4567-d5f1-475f-babe-233c69341f5b",
+      uuid: "123e4567-f048-4366-91ad-233c683d8fbb",
     },
   });
 
@@ -357,16 +351,14 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await jobActivitiesUpdateJobActivities(serviceM8, {
     uuid: "5ccaaaf0-ee37-4a96-a41a-cc701c3f1a65",
-    jobActivity: {
-      uuid: "123e4567-2b0d-4bdf-b964-233120a5f2eb",
-      jobUuid: "123e4567-897a-4552-bbb7-233127c1283b",
-      staffUuid: "123e4567-704d-40ab-9158-23312472a96b",
+    jobActivityCreate: {
+      jobUuid: "123e4567-607c-47ba-9546-233c6a4ca03b",
+      staffUuid: "123e4567-f7ef-4f99-9693-233c687c459b",
       startDate: "2025-09-01 12:00:00",
       endDate: "2025-09-01 12:00:00",
       hasBeenOpenedTimestamp: "2025-09-01 12:00:00",
-      allocatedByStaffUuid: "123e4567-490c-4eb6-80ad-233121f26b9b",
-      allocatedTimestamp: "2025-09-01 12:00:00",
-      materialUuid: "123e4567-eacb-4e92-8c9e-233125383b2b",
+      materialUuid: "123e4567-d5f1-475f-babe-233c69341f5b",
+      uuid: "123e4567-f048-4366-91ad-233c683d8fbb",
     },
   });
   if (res.ok) {

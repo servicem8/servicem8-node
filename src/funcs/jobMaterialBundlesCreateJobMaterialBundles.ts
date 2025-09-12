@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function jobMaterialBundlesCreateJobMaterialBundles(
   client: ServiceM8Core,
-  request: components.JobMaterialBundleInput,
+  request: components.JobMaterialBundleCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function jobMaterialBundlesCreateJobMaterialBundles(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.JobMaterialBundleInput,
+  request: components.JobMaterialBundleCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.JobMaterialBundleInput$outboundSchema.parse(value),
+    (value) => components.JobMaterialBundleCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

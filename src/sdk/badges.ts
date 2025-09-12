@@ -45,7 +45,7 @@ export class Badges extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createBadges(
-    request: components.BadgeInput,
+    request: components.BadgeCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateBadgesResponse> {
     return unwrapAsync(badgesCreateBadges(

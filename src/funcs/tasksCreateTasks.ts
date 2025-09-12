@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function tasksCreateTasks(
   client: ServiceM8Core,
-  request: components.TaskInput,
+  request: components.TaskCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function tasksCreateTasks(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.TaskInput,
+  request: components.TaskCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.TaskInput$outboundSchema.parse(value),
+    (value) => components.TaskCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

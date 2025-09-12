@@ -17,7 +17,7 @@ export type UpdateFeedbackRequest = {
   /**
    * Feedback fields to update
    */
-  feedback: components.FeedbackInput;
+  feedbackCreate: components.FeedbackCreate;
 };
 
 /** @internal */
@@ -27,17 +27,17 @@ export const UpdateFeedbackRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  Feedback: components.FeedbackInput$inboundSchema,
+  FeedbackCreate: components.FeedbackCreate$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "Feedback": "feedback",
+    "FeedbackCreate": "feedbackCreate",
   });
 });
 
 /** @internal */
 export type UpdateFeedbackRequest$Outbound = {
   uuid: string;
-  Feedback: components.FeedbackInput$Outbound;
+  FeedbackCreate: components.FeedbackCreate$Outbound;
 };
 
 /** @internal */
@@ -47,10 +47,10 @@ export const UpdateFeedbackRequest$outboundSchema: z.ZodType<
   UpdateFeedbackRequest
 > = z.object({
   uuid: z.string(),
-  feedback: components.FeedbackInput$outboundSchema,
+  feedbackCreate: components.FeedbackCreate$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    feedback: "Feedback",
+    feedbackCreate: "FeedbackCreate",
   });
 });
 

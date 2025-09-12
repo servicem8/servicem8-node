@@ -45,7 +45,7 @@ export class Clients extends ClientSDK {
    * UUID is optional for record creation. If no UUID is supplied, a UUID will be automatically generated for the new record and returned in the `x-record-uuid` response header.
    */
   async createClients(
-    request: components.CompanyInput,
+    request: components.CompanyCreate,
     options?: RequestOptions,
   ): Promise<operations.CreateClientsResponse> {
     return unwrapAsync(clientsCreateClients(

@@ -39,7 +39,7 @@ import { Result } from "../types/fp.js";
  */
 export function documentTemplatesCreateDocumentTemplates(
   client: ServiceM8Core,
-  request: components.DocumentTemplateInput,
+  request: components.DocumentTemplateCreate,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -67,7 +67,7 @@ export function documentTemplatesCreateDocumentTemplates(
 
 async function $do(
   client: ServiceM8Core,
-  request: components.DocumentTemplateInput,
+  request: components.DocumentTemplateCreate,
   options?: RequestOptions,
 ): Promise<
   [
@@ -91,7 +91,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.DocumentTemplateInput$outboundSchema.parse(value),
+    (value) => components.DocumentTemplateCreate$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

@@ -7,7 +7,7 @@ import * as components from "../../models/components/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: components.TaskInput$inboundSchema,
+  request: components.TaskCreate$inboundSchema,
 };
 
 export const tool$tasksCreateTasks: ToolDefinition<typeof args> = {

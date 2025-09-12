@@ -21,7 +21,7 @@ export const MaterialBundleActive = {
  */
 export type MaterialBundleActive = ClosedEnum<typeof MaterialBundleActive>;
 
-export type MaterialList = {
+export type MaterialBundleMaterialList = {
   /**
    * Must be the UUID of a Material record
    */
@@ -53,30 +53,7 @@ export type MaterialBundle = {
   /**
    * A JSON array containing the materials that make up this bundle. Each item includes the material's UUID and the quantity to be added when this bundle is used. Limited to between 1 and 50 items, with all quantities being positive numbers.
    */
-  materialList?: Array<MaterialList> | undefined;
-};
-
-export type MaterialBundleInput = {
-  /**
-   * Unique identifier for this record
-   */
-  uuid?: string | undefined;
-  /**
-   * Record active/deleted flag.  Valid values are [0,1]
-   */
-  active?: MaterialBundleActive | undefined;
-  /**
-   * Unique identifier for this bundle. Must be 30 characters or less and unique across both Materials and Bundles. Used when adding bundles to jobs.
-   */
-  itemNumber: string;
-  /**
-   * The display name of the bundle. Used for identification in the system and shows on documents when the bundle is added to a job.
-   */
-  name?: string | undefined;
-  /**
-   * A JSON array containing the materials that make up this bundle. Each item includes the material's UUID and the quantity to be added when this bundle is used. Limited to between 1 and 50 items, with all quantities being positive numbers.
-   */
-  materialList?: Array<MaterialList> | undefined;
+  materialList?: Array<MaterialBundleMaterialList> | undefined;
 };
 
 /** @internal */
@@ -101,8 +78,8 @@ export namespace MaterialBundleActive$ {
 }
 
 /** @internal */
-export const MaterialList$inboundSchema: z.ZodType<
-  MaterialList,
+export const MaterialBundleMaterialList$inboundSchema: z.ZodType<
+  MaterialBundleMaterialList,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -111,16 +88,16 @@ export const MaterialList$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type MaterialList$Outbound = {
+export type MaterialBundleMaterialList$Outbound = {
   uuid: string;
   quantity: number;
 };
 
 /** @internal */
-export const MaterialList$outboundSchema: z.ZodType<
-  MaterialList$Outbound,
+export const MaterialBundleMaterialList$outboundSchema: z.ZodType<
+  MaterialBundleMaterialList$Outbound,
   z.ZodTypeDef,
-  MaterialList
+  MaterialBundleMaterialList
 > = z.object({
   uuid: z.string(),
   quantity: z.number(),
@@ -130,26 +107,30 @@ export const MaterialList$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace MaterialList$ {
-  /** @deprecated use `MaterialList$inboundSchema` instead. */
-  export const inboundSchema = MaterialList$inboundSchema;
-  /** @deprecated use `MaterialList$outboundSchema` instead. */
-  export const outboundSchema = MaterialList$outboundSchema;
-  /** @deprecated use `MaterialList$Outbound` instead. */
-  export type Outbound = MaterialList$Outbound;
+export namespace MaterialBundleMaterialList$ {
+  /** @deprecated use `MaterialBundleMaterialList$inboundSchema` instead. */
+  export const inboundSchema = MaterialBundleMaterialList$inboundSchema;
+  /** @deprecated use `MaterialBundleMaterialList$outboundSchema` instead. */
+  export const outboundSchema = MaterialBundleMaterialList$outboundSchema;
+  /** @deprecated use `MaterialBundleMaterialList$Outbound` instead. */
+  export type Outbound = MaterialBundleMaterialList$Outbound;
 }
 
-export function materialListToJSON(materialList: MaterialList): string {
-  return JSON.stringify(MaterialList$outboundSchema.parse(materialList));
+export function materialBundleMaterialListToJSON(
+  materialBundleMaterialList: MaterialBundleMaterialList,
+): string {
+  return JSON.stringify(
+    MaterialBundleMaterialList$outboundSchema.parse(materialBundleMaterialList),
+  );
 }
 
-export function materialListFromJSON(
+export function materialBundleMaterialListFromJSON(
   jsonString: string,
-): SafeParseResult<MaterialList, SDKValidationError> {
+): SafeParseResult<MaterialBundleMaterialList, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => MaterialList$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'MaterialList' from JSON`,
+    (x) => MaterialBundleMaterialList$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'MaterialBundleMaterialList' from JSON`,
   );
 }
 
@@ -164,7 +145,8 @@ export const MaterialBundle$inboundSchema: z.ZodType<
   edit_date: z.any().optional(),
   item_number: z.string(),
   name: z.string().optional(),
-  material_list: z.array(z.lazy(() => MaterialList$inboundSchema)).optional(),
+  material_list: z.array(z.lazy(() => MaterialBundleMaterialList$inboundSchema))
+    .optional(),
 }).transform((v) => {
   return remap$(v, {
     "edit_date": "editDate",
@@ -180,7 +162,7 @@ export type MaterialBundle$Outbound = {
   edit_date?: any | undefined;
   item_number: string;
   name?: string | undefined;
-  material_list?: Array<MaterialList$Outbound> | undefined;
+  material_list?: Array<MaterialBundleMaterialList$Outbound> | undefined;
 };
 
 /** @internal */
@@ -194,7 +176,8 @@ export const MaterialBundle$outboundSchema: z.ZodType<
   editDate: z.any().optional(),
   itemNumber: z.string(),
   name: z.string().optional(),
-  materialList: z.array(z.lazy(() => MaterialList$outboundSchema)).optional(),
+  materialList: z.array(z.lazy(() => MaterialBundleMaterialList$outboundSchema))
+    .optional(),
 }).transform((v) => {
   return remap$(v, {
     editDate: "edit_date",
@@ -227,81 +210,5 @@ export function materialBundleFromJSON(
     jsonString,
     (x) => MaterialBundle$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'MaterialBundle' from JSON`,
-  );
-}
-
-/** @internal */
-export const MaterialBundleInput$inboundSchema: z.ZodType<
-  MaterialBundleInput,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: MaterialBundleActive$inboundSchema.default(1),
-  item_number: z.string(),
-  name: z.string().optional(),
-  material_list: z.array(z.lazy(() => MaterialList$inboundSchema)).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "item_number": "itemNumber",
-    "material_list": "materialList",
-  });
-});
-
-/** @internal */
-export type MaterialBundleInput$Outbound = {
-  uuid?: string | undefined;
-  active: number;
-  item_number: string;
-  name?: string | undefined;
-  material_list?: Array<MaterialList$Outbound> | undefined;
-};
-
-/** @internal */
-export const MaterialBundleInput$outboundSchema: z.ZodType<
-  MaterialBundleInput$Outbound,
-  z.ZodTypeDef,
-  MaterialBundleInput
-> = z.object({
-  uuid: z.string().optional(),
-  active: MaterialBundleActive$outboundSchema.default(1),
-  itemNumber: z.string(),
-  name: z.string().optional(),
-  materialList: z.array(z.lazy(() => MaterialList$outboundSchema)).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    itemNumber: "item_number",
-    materialList: "material_list",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaterialBundleInput$ {
-  /** @deprecated use `MaterialBundleInput$inboundSchema` instead. */
-  export const inboundSchema = MaterialBundleInput$inboundSchema;
-  /** @deprecated use `MaterialBundleInput$outboundSchema` instead. */
-  export const outboundSchema = MaterialBundleInput$outboundSchema;
-  /** @deprecated use `MaterialBundleInput$Outbound` instead. */
-  export type Outbound = MaterialBundleInput$Outbound;
-}
-
-export function materialBundleInputToJSON(
-  materialBundleInput: MaterialBundleInput,
-): string {
-  return JSON.stringify(
-    MaterialBundleInput$outboundSchema.parse(materialBundleInput),
-  );
-}
-
-export function materialBundleInputFromJSON(
-  jsonString: string,
-): SafeParseResult<MaterialBundleInput, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => MaterialBundleInput$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'MaterialBundleInput' from JSON`,
   );
 }
