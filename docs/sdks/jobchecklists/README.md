@@ -127,15 +127,15 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobChecklists.createJobChecklists({
-    uuid: "123e4567-3b58-4fa5-a403-233c66923ceb",
-    jobUuid: "123e4567-736e-4c45-a91a-233c6db608ab",
+    uuid: "123e4567-2bec-4c5f-8c3b-233c63bf883b",
+    jobUuid: "123e4567-5d46-474d-8d9e-233c6d529f6b",
     completedTimestamp: "2025-09-01 12:00:00",
-    completedByStaffUuid: "123e4567-50ac-42b6-b5cb-233c6af0c51b",
-    completedDuringCheckinUuid: "123e4567-aeb8-4ee6-b902-233c6175d0db",
-    regardingObjectUuid: "123e4567-3e80-4090-8b87-233c6b69398b",
-    fulfilledByObjectUuid: "123e4567-ed0d-43e5-8ab2-233c6111c06b",
+    completedByStaffUuid: "123e4567-5845-4cd2-9f21-233c64c00a7b",
+    completedDuringCheckinUuid: "123e4567-d284-4b2c-84b8-233c66e5b4ab",
+    regardingObjectUuid: "123e4567-65e4-4b31-be0e-233c683a667b",
+    fulfilledByObjectUuid: "123e4567-71f3-4e0e-9d3f-233c6c41ea5b",
     assignedToStaffUuids: [
-      "123e4567-5f30-4071-8272-233c6a1f22bb",
+      "123e4567-634f-407c-b835-233c6432879b",
     ],
   });
 
@@ -163,15 +163,15 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobChecklistsCreateJobChecklists(serviceM8, {
-    uuid: "123e4567-3b58-4fa5-a403-233c66923ceb",
-    jobUuid: "123e4567-736e-4c45-a91a-233c6db608ab",
+    uuid: "123e4567-2bec-4c5f-8c3b-233c63bf883b",
+    jobUuid: "123e4567-5d46-474d-8d9e-233c6d529f6b",
     completedTimestamp: "2025-09-01 12:00:00",
-    completedByStaffUuid: "123e4567-50ac-42b6-b5cb-233c6af0c51b",
-    completedDuringCheckinUuid: "123e4567-aeb8-4ee6-b902-233c6175d0db",
-    regardingObjectUuid: "123e4567-3e80-4090-8b87-233c6b69398b",
-    fulfilledByObjectUuid: "123e4567-ed0d-43e5-8ab2-233c6111c06b",
+    completedByStaffUuid: "123e4567-5845-4cd2-9f21-233c64c00a7b",
+    completedDuringCheckinUuid: "123e4567-d284-4b2c-84b8-233c66e5b4ab",
+    regardingObjectUuid: "123e4567-65e4-4b31-be0e-233c683a667b",
+    fulfilledByObjectUuid: "123e4567-71f3-4e0e-9d3f-233c6c41ea5b",
     assignedToStaffUuids: [
-      "123e4567-5f30-4071-8272-233c6a1f22bb",
+      "123e4567-634f-407c-b835-233c6432879b",
     ],
   });
   if (res.ok) {
@@ -322,15 +322,15 @@ async function run() {
   const result = await serviceM8.jobChecklists.updateJobChecklists({
     uuid: "cd24d8b9-7620-4771-805e-b96a73214740",
     jobChecklistCreate: {
-      uuid: "123e4567-3b58-4fa5-a403-233c66923ceb",
-      jobUuid: "123e4567-736e-4c45-a91a-233c6db608ab",
+      uuid: "123e4567-2bec-4c5f-8c3b-233c63bf883b",
+      jobUuid: "123e4567-5d46-474d-8d9e-233c6d529f6b",
       completedTimestamp: "2025-09-01 12:00:00",
-      completedByStaffUuid: "123e4567-50ac-42b6-b5cb-233c6af0c51b",
-      completedDuringCheckinUuid: "123e4567-aeb8-4ee6-b902-233c6175d0db",
-      regardingObjectUuid: "123e4567-3e80-4090-8b87-233c6b69398b",
-      fulfilledByObjectUuid: "123e4567-ed0d-43e5-8ab2-233c6111c06b",
+      completedByStaffUuid: "123e4567-5845-4cd2-9f21-233c64c00a7b",
+      completedDuringCheckinUuid: "123e4567-d284-4b2c-84b8-233c66e5b4ab",
+      regardingObjectUuid: "123e4567-65e4-4b31-be0e-233c683a667b",
+      fulfilledByObjectUuid: "123e4567-71f3-4e0e-9d3f-233c6c41ea5b",
       assignedToStaffUuids: [
-        "123e4567-5f30-4071-8272-233c6a1f22bb",
+        "123e4567-634f-407c-b835-233c6432879b",
       ],
     },
   });
@@ -361,15 +361,15 @@ async function run() {
   const res = await jobChecklistsUpdateJobChecklists(serviceM8, {
     uuid: "cd24d8b9-7620-4771-805e-b96a73214740",
     jobChecklistCreate: {
-      uuid: "123e4567-3b58-4fa5-a403-233c66923ceb",
-      jobUuid: "123e4567-736e-4c45-a91a-233c6db608ab",
+      uuid: "123e4567-2bec-4c5f-8c3b-233c63bf883b",
+      jobUuid: "123e4567-5d46-474d-8d9e-233c6d529f6b",
       completedTimestamp: "2025-09-01 12:00:00",
-      completedByStaffUuid: "123e4567-50ac-42b6-b5cb-233c6af0c51b",
-      completedDuringCheckinUuid: "123e4567-aeb8-4ee6-b902-233c6175d0db",
-      regardingObjectUuid: "123e4567-3e80-4090-8b87-233c6b69398b",
-      fulfilledByObjectUuid: "123e4567-ed0d-43e5-8ab2-233c6111c06b",
+      completedByStaffUuid: "123e4567-5845-4cd2-9f21-233c64c00a7b",
+      completedDuringCheckinUuid: "123e4567-d284-4b2c-84b8-233c66e5b4ab",
+      regardingObjectUuid: "123e4567-65e4-4b31-be0e-233c683a667b",
+      fulfilledByObjectUuid: "123e4567-71f3-4e0e-9d3f-233c6c41ea5b",
       assignedToStaffUuids: [
-        "123e4567-5f30-4071-8272-233c6a1f22bb",
+        "123e4567-634f-407c-b835-233c6432879b",
       ],
     },
   });
