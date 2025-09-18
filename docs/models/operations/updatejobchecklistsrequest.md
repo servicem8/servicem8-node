@@ -8,15 +8,15 @@ import { UpdateJobChecklistsRequest } from "servicem8/models/operations";
 let value: UpdateJobChecklistsRequest = {
   uuid: "5e7f0491-d1f8-419b-aa52-18ad94c91066",
   jobChecklistCreate: {
-    uuid: "123e4567-2bec-4c5f-8c3b-233c63bf883b",
-    jobUuid: "123e4567-5d46-474d-8d9e-233c6d529f6b",
+    uuid: "123e4567-329d-49ef-b818-23422bccbc0b",
+    jobUuid: "123e4567-7ed2-4a64-b822-2342218c69cb",
     completedTimestamp: "2025-09-01 12:00:00",
-    completedByStaffUuid: "123e4567-5845-4cd2-9f21-233c64c00a7b",
-    completedDuringCheckinUuid: "123e4567-d284-4b2c-84b8-233c66e5b4ab",
-    regardingObjectUuid: "123e4567-65e4-4b31-be0e-233c683a667b",
-    fulfilledByObjectUuid: "123e4567-71f3-4e0e-9d3f-233c6c41ea5b",
+    completedByStaffUuid: "123e4567-4a43-4055-82fe-23422ee3aa8b",
+    completedDuringCheckinUuid: "123e4567-1183-41cd-9026-2342206e9c3b",
+    regardingObjectUuid: "123e4567-624a-4f4c-8e99-234223981e5b",
+    fulfilledByObjectUuid: "123e4567-208b-4a19-aa5b-234229e7763b",
     assignedToStaffUuids: [
-      "123e4567-634f-407c-b835-233c6432879b",
+      "123e4567-a7f5-4fa3-baac-23422532933b",
     ],
   },
 };

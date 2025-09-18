@@ -131,13 +131,13 @@ async function run() {
     last: "<value>",
     email: "Larissa_Pfannerstill75@hotmail.com",
     geoTimestamp: "2025-09-01 12:00:00",
-    navigatingToJobUuid: "123e4567-775e-4460-9614-233c61a4767b",
+    navigatingToJobUuid: "123e4567-1e5e-4d72-94b9-234226f6986b",
     navigatingTimestamp: "2025-09-01 12:00:00",
     navigatingExpiryTimestamp: "2025-09-01 12:00:00",
     statusMessageTimestamp: "2025-09-01 12:00:00",
-    uuid: "123e4567-b9eb-469b-b6e5-233c6e0eaeab",
-    securityRoleUuid: "123e4567-f63b-482c-9626-233c67431b9b",
-    labourMaterialUuid: "123e4567-c61d-44e2-8251-233c6fdaa5eb",
+    uuid: "123e4567-e341-4f84-b8fd-234225278b6b",
+    securityRoleUuid: "123e4567-ae4e-45a4-ae6b-234227e25d7b",
+    labourMaterialUuid: "123e4567-3874-49a8-95ee-23422ab2f5cb",
   });
 
   console.log(result);
@@ -168,13 +168,13 @@ async function run() {
     last: "<value>",
     email: "Larissa_Pfannerstill75@hotmail.com",
     geoTimestamp: "2025-09-01 12:00:00",
-    navigatingToJobUuid: "123e4567-775e-4460-9614-233c61a4767b",
+    navigatingToJobUuid: "123e4567-1e5e-4d72-94b9-234226f6986b",
     navigatingTimestamp: "2025-09-01 12:00:00",
     navigatingExpiryTimestamp: "2025-09-01 12:00:00",
     statusMessageTimestamp: "2025-09-01 12:00:00",
-    uuid: "123e4567-b9eb-469b-b6e5-233c6e0eaeab",
-    securityRoleUuid: "123e4567-f63b-482c-9626-233c67431b9b",
-    labourMaterialUuid: "123e4567-c61d-44e2-8251-233c6fdaa5eb",
+    uuid: "123e4567-e341-4f84-b8fd-234225278b6b",
+    securityRoleUuid: "123e4567-ae4e-45a4-ae6b-234227e25d7b",
+    labourMaterialUuid: "123e4567-3874-49a8-95ee-23422ab2f5cb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -328,13 +328,13 @@ async function run() {
       last: "<value>",
       email: "Mckenna_Yundt@hotmail.com",
       geoTimestamp: "2025-09-01 12:00:00",
-      navigatingToJobUuid: "123e4567-775e-4460-9614-233c61a4767b",
+      navigatingToJobUuid: "123e4567-1e5e-4d72-94b9-234226f6986b",
       navigatingTimestamp: "2025-09-01 12:00:00",
       navigatingExpiryTimestamp: "2025-09-01 12:00:00",
       statusMessageTimestamp: "2025-09-01 12:00:00",
-      uuid: "123e4567-b9eb-469b-b6e5-233c6e0eaeab",
-      securityRoleUuid: "123e4567-f63b-482c-9626-233c67431b9b",
-      labourMaterialUuid: "123e4567-c61d-44e2-8251-233c6fdaa5eb",
+      uuid: "123e4567-e341-4f84-b8fd-234225278b6b",
+      securityRoleUuid: "123e4567-ae4e-45a4-ae6b-234227e25d7b",
+      labourMaterialUuid: "123e4567-3874-49a8-95ee-23422ab2f5cb",
     },
   });
 
@@ -368,13 +368,13 @@ async function run() {
       last: "<value>",
       email: "Mckenna_Yundt@hotmail.com",
       geoTimestamp: "2025-09-01 12:00:00",
-      navigatingToJobUuid: "123e4567-775e-4460-9614-233c61a4767b",
+      navigatingToJobUuid: "123e4567-1e5e-4d72-94b9-234226f6986b",
       navigatingTimestamp: "2025-09-01 12:00:00",
       navigatingExpiryTimestamp: "2025-09-01 12:00:00",
       statusMessageTimestamp: "2025-09-01 12:00:00",
-      uuid: "123e4567-b9eb-469b-b6e5-233c6e0eaeab",
-      securityRoleUuid: "123e4567-f63b-482c-9626-233c67431b9b",
-      labourMaterialUuid: "123e4567-c61d-44e2-8251-233c6fdaa5eb",
+      uuid: "123e4567-e341-4f84-b8fd-234225278b6b",
+      securityRoleUuid: "123e4567-ae4e-45a4-ae6b-234227e25d7b",
+      labourMaterialUuid: "123e4567-3874-49a8-95ee-23422ab2f5cb",
     },
   });
   if (res.ok) {

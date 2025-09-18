@@ -8,7 +8,7 @@ import { UpdateKnowledgeArticlesRequest } from "servicem8/models/operations";
 let value: UpdateKnowledgeArticlesRequest = {
   uuid: "a84d72fc-3739-4e59-96a9-b9b943125297",
   knowledgeArticleCreate: {
-    uuid: "123e4567-49f4-48f5-8f51-233c670e4d7b",
+    uuid: "123e4567-aa25-4b0f-96f3-2342287eb84b",
     name: "<value>",
   },
 };
