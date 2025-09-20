@@ -979,7 +979,7 @@ httpClient.addHook("requestError", (error, request) => {
   console.groupEnd();
 });
 
-const sdk = new ServiceM8({ httpClient });
+const sdk = new ServiceM8({ httpClient: httpClient });
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
