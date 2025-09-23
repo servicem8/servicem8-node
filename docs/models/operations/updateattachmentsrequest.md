@@ -8,9 +8,9 @@ import { UpdateAttachmentsRequest } from "servicem8/models/operations";
 let value: UpdateAttachmentsRequest = {
   uuid: "2d413eb8-211a-4525-a453-772909b53404",
   attachmentCreate: {
-    relatedObjectUuid: "123e4567-c116-4bc1-afc4-23422d625cfb",
-    uuid: "123e4567-7f9d-459c-9e68-2342268fad8b",
-    createdByStaffUuid: "123e4567-ceda-4fc8-b6c6-23422f3c21ab",
+    relatedObjectUuid: "123e4567-f0d3-4fef-af94-234671f0b5cb",
+    uuid: "123e4567-0fac-4161-867a-23467f3674bb",
+    createdByStaffUuid: "123e4567-c015-4d6c-b4f1-2346751d1e0b",
   },
 };
 ```

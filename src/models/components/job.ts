@@ -26,14 +26,14 @@ export type JobStatus = ClosedEnum<typeof JobStatus>;
 /**
  * Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used. (Read only).  Valid values are [0,1]
  */
-export const GeoIsValid = {
+export const JobGeoIsValid = {
   Zero: 0,
   One: 1,
 } as const;
 /**
  * Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used. (Read only).  Valid values are [0,1]
  */
-export type GeoIsValid = ClosedEnum<typeof GeoIsValid>;
+export type JobGeoIsValid = ClosedEnum<typeof JobGeoIsValid>;
 
 /**
  * Indicates whether an invoice has been sent for this job..  Valid values are [0,1]
@@ -151,7 +151,7 @@ export type Job = {
   /**
    * Indicates whether the geocoding for the job address is valid. If this is false, the lat, lng, and other geo_ fields should not be used. (Read only).  Valid values are [0,1]
    */
-  geoIsValid?: GeoIsValid | undefined;
+  geoIsValid?: JobGeoIsValid | undefined;
   /**
    * Client purchase order reference number for this job. Used for cross-referencing with external accounting or order management systems.
    */
@@ -319,22 +319,24 @@ export namespace JobStatus$ {
 }
 
 /** @internal */
-export const GeoIsValid$inboundSchema: z.ZodNativeEnum<typeof GeoIsValid> = z
-  .nativeEnum(GeoIsValid);
+export const JobGeoIsValid$inboundSchema: z.ZodNativeEnum<
+  typeof JobGeoIsValid
+> = z.nativeEnum(JobGeoIsValid);
 
 /** @internal */
-export const GeoIsValid$outboundSchema: z.ZodNativeEnum<typeof GeoIsValid> =
-  GeoIsValid$inboundSchema;
+export const JobGeoIsValid$outboundSchema: z.ZodNativeEnum<
+  typeof JobGeoIsValid
+> = JobGeoIsValid$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GeoIsValid$ {
-  /** @deprecated use `GeoIsValid$inboundSchema` instead. */
-  export const inboundSchema = GeoIsValid$inboundSchema;
-  /** @deprecated use `GeoIsValid$outboundSchema` instead. */
-  export const outboundSchema = GeoIsValid$outboundSchema;
+export namespace JobGeoIsValid$ {
+  /** @deprecated use `JobGeoIsValid$inboundSchema` instead. */
+  export const inboundSchema = JobGeoIsValid$inboundSchema;
+  /** @deprecated use `JobGeoIsValid$outboundSchema` instead. */
+  export const outboundSchema = JobGeoIsValid$outboundSchema;
 }
 
 /** @internal */
@@ -454,7 +456,7 @@ export const Job$inboundSchema: z.ZodType<Job, z.ZodTypeDef, unknown> = z
     payment_amount: z.string().optional(),
     category_uuid: z.string().optional(),
     payment_note: z.string().optional(),
-    geo_is_valid: GeoIsValid$inboundSchema.optional(),
+    geo_is_valid: JobGeoIsValid$inboundSchema.optional(),
     purchase_order_number: z.string().optional(),
     invoice_sent: JobInvoiceSent$inboundSchema.optional(),
     invoice_sent_stamp: z.string().optional(),
@@ -612,7 +614,7 @@ export const Job$outboundSchema: z.ZodType<Job$Outbound, z.ZodTypeDef, Job> = z
     paymentAmount: z.string().optional(),
     categoryUuid: z.string().optional(),
     paymentNote: z.string().optional(),
-    geoIsValid: GeoIsValid$outboundSchema.optional(),
+    geoIsValid: JobGeoIsValid$outboundSchema.optional(),
     purchaseOrderNumber: z.string().optional(),
     invoiceSent: JobInvoiceSent$outboundSchema.optional(),
     invoiceSentStamp: z.string().optional(),

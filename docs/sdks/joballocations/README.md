@@ -127,16 +127,16 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobAllocations.createJobAllocations({
-    jobUuid: "123e4567-f1a8-48cb-8a3e-2342260ae23b",
-    staffUuid: "123e4567-a01d-4354-80d9-23422f56f06b",
+    jobUuid: "123e4567-91f3-46d2-a172-234675ac3d4b",
+    staffUuid: "123e4567-853a-42ab-9c5c-2346792bfa3b",
     allocationDate: "2025-09-01 12:00:00",
-    allocationWindowUuid: "123e4567-ff19-4540-98a4-23422906a49b",
-    allocatedByStaffUuid: "123e4567-8d47-42a4-b762-234225e601eb",
+    allocationWindowUuid: "123e4567-8d3c-414b-9156-2346722dda4b",
+    allocatedByStaffUuid: "123e4567-7451-494a-96df-234679dffc4b",
     allocatedTimestamp: "2025-09-01 12:00:00",
     expiryTimestamp: "2025-09-01 12:00:00",
     readTimestamp: "2025-09-01 12:00:00",
     completionTimestamp: "2025-09-01 12:00:00",
-    uuid: "123e4567-860a-4117-905c-23422dfe739b",
+    uuid: "123e4567-a75e-4c92-ab5b-23467484d98b",
   });
 
   console.log(result);
@@ -163,16 +163,16 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobAllocationsCreateJobAllocations(serviceM8, {
-    jobUuid: "123e4567-f1a8-48cb-8a3e-2342260ae23b",
-    staffUuid: "123e4567-a01d-4354-80d9-23422f56f06b",
+    jobUuid: "123e4567-91f3-46d2-a172-234675ac3d4b",
+    staffUuid: "123e4567-853a-42ab-9c5c-2346792bfa3b",
     allocationDate: "2025-09-01 12:00:00",
-    allocationWindowUuid: "123e4567-ff19-4540-98a4-23422906a49b",
-    allocatedByStaffUuid: "123e4567-8d47-42a4-b762-234225e601eb",
+    allocationWindowUuid: "123e4567-8d3c-414b-9156-2346722dda4b",
+    allocatedByStaffUuid: "123e4567-7451-494a-96df-234679dffc4b",
     allocatedTimestamp: "2025-09-01 12:00:00",
     expiryTimestamp: "2025-09-01 12:00:00",
     readTimestamp: "2025-09-01 12:00:00",
     completionTimestamp: "2025-09-01 12:00:00",
-    uuid: "123e4567-860a-4117-905c-23422dfe739b",
+    uuid: "123e4567-a75e-4c92-ab5b-23467484d98b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -322,16 +322,16 @@ async function run() {
   const result = await serviceM8.jobAllocations.updateJobAllocations({
     uuid: "583058ca-b387-4a2b-86cf-ca46e5b89aba",
     jobAllocationCreate: {
-      jobUuid: "123e4567-f1a8-48cb-8a3e-2342260ae23b",
-      staffUuid: "123e4567-a01d-4354-80d9-23422f56f06b",
+      jobUuid: "123e4567-91f3-46d2-a172-234675ac3d4b",
+      staffUuid: "123e4567-853a-42ab-9c5c-2346792bfa3b",
       allocationDate: "2025-09-01 12:00:00",
-      allocationWindowUuid: "123e4567-ff19-4540-98a4-23422906a49b",
-      allocatedByStaffUuid: "123e4567-8d47-42a4-b762-234225e601eb",
+      allocationWindowUuid: "123e4567-8d3c-414b-9156-2346722dda4b",
+      allocatedByStaffUuid: "123e4567-7451-494a-96df-234679dffc4b",
       allocatedTimestamp: "2025-09-01 12:00:00",
       expiryTimestamp: "2025-09-01 12:00:00",
       readTimestamp: "2025-09-01 12:00:00",
       completionTimestamp: "2025-09-01 12:00:00",
-      uuid: "123e4567-860a-4117-905c-23422dfe739b",
+      uuid: "123e4567-a75e-4c92-ab5b-23467484d98b",
     },
   });
 
@@ -361,16 +361,16 @@ async function run() {
   const res = await jobAllocationsUpdateJobAllocations(serviceM8, {
     uuid: "583058ca-b387-4a2b-86cf-ca46e5b89aba",
     jobAllocationCreate: {
-      jobUuid: "123e4567-f1a8-48cb-8a3e-2342260ae23b",
-      staffUuid: "123e4567-a01d-4354-80d9-23422f56f06b",
+      jobUuid: "123e4567-91f3-46d2-a172-234675ac3d4b",
+      staffUuid: "123e4567-853a-42ab-9c5c-2346792bfa3b",
       allocationDate: "2025-09-01 12:00:00",
-      allocationWindowUuid: "123e4567-ff19-4540-98a4-23422906a49b",
-      allocatedByStaffUuid: "123e4567-8d47-42a4-b762-234225e601eb",
+      allocationWindowUuid: "123e4567-8d3c-414b-9156-2346722dda4b",
+      allocatedByStaffUuid: "123e4567-7451-494a-96df-234679dffc4b",
       allocatedTimestamp: "2025-09-01 12:00:00",
       expiryTimestamp: "2025-09-01 12:00:00",
       readTimestamp: "2025-09-01 12:00:00",
       completionTimestamp: "2025-09-01 12:00:00",
-      uuid: "123e4567-860a-4117-905c-23422dfe739b",
+      uuid: "123e4567-a75e-4c92-ab5b-23467484d98b",
     },
   });
   if (res.ok) {

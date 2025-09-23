@@ -15,9 +15,9 @@ export type CreateJobFromTemplateRequest = {
    */
   uuid: string;
   /**
-   * Optional field overrides for the new job
+   * Field overrides for the new job (send an empty object to use template defaults)
    */
-  jobTemplateOverrides?: components.JobTemplateOverrides | undefined;
+  jobTemplateOverrides: components.JobTemplateOverrides;
 };
 
 /**
@@ -50,8 +50,7 @@ export const CreateJobFromTemplateRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  JobTemplateOverrides: components.JobTemplateOverrides$inboundSchema
-    .optional(),
+  JobTemplateOverrides: components.JobTemplateOverrides$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "JobTemplateOverrides": "jobTemplateOverrides",
@@ -61,7 +60,7 @@ export const CreateJobFromTemplateRequest$inboundSchema: z.ZodType<
 /** @internal */
 export type CreateJobFromTemplateRequest$Outbound = {
   uuid: string;
-  JobTemplateOverrides?: components.JobTemplateOverrides$Outbound | undefined;
+  JobTemplateOverrides: components.JobTemplateOverrides$Outbound;
 };
 
 /** @internal */
@@ -71,8 +70,7 @@ export const CreateJobFromTemplateRequest$outboundSchema: z.ZodType<
   CreateJobFromTemplateRequest
 > = z.object({
   uuid: z.string(),
-  jobTemplateOverrides: components.JobTemplateOverrides$outboundSchema
-    .optional(),
+  jobTemplateOverrides: components.JobTemplateOverrides$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     jobTemplateOverrides: "JobTemplateOverrides",

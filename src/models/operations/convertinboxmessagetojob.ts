@@ -14,7 +14,10 @@ export type ConvertInboxMessageToJobRequest = {
    * UUID of the inbox message
    */
   uuid: string;
-  convertToJobRequest?: components.ConvertToJobRequest | undefined;
+  /**
+   * Parameters for converting the inbox message into a job (send an empty object to accept defaults)
+   */
+  convertToJobRequest: components.ConvertToJobRequest;
 };
 
 /** @internal */
@@ -24,7 +27,7 @@ export const ConvertInboxMessageToJobRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   uuid: z.string(),
-  ConvertToJobRequest: components.ConvertToJobRequest$inboundSchema.optional(),
+  ConvertToJobRequest: components.ConvertToJobRequest$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "ConvertToJobRequest": "convertToJobRequest",
@@ -34,7 +37,7 @@ export const ConvertInboxMessageToJobRequest$inboundSchema: z.ZodType<
 /** @internal */
 export type ConvertInboxMessageToJobRequest$Outbound = {
   uuid: string;
-  ConvertToJobRequest?: components.ConvertToJobRequest$Outbound | undefined;
+  ConvertToJobRequest: components.ConvertToJobRequest$Outbound;
 };
 
 /** @internal */
@@ -44,7 +47,7 @@ export const ConvertInboxMessageToJobRequest$outboundSchema: z.ZodType<
   ConvertInboxMessageToJobRequest
 > = z.object({
   uuid: z.string(),
-  convertToJobRequest: components.ConvertToJobRequest$outboundSchema.optional(),
+  convertToJobRequest: components.ConvertToJobRequest$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     convertToJobRequest: "ConvertToJobRequest",

@@ -11,3 +11,4 @@ export * from "./notfounderror.js";
 export * from "./ratelimiterror.js";
 export * from "./responsevalidationerror.js";
 export * from "./sdkvalidationerror.js";
+export * from "./servicem8error.js";

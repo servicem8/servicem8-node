@@ -529,6 +529,14 @@ run();
 * [updateStaffMessages](docs/sdks/staffmessages/README.md#updatestaffmessages) - Update a Staff Message
 * [deleteStaffMessages](docs/sdks/staffmessages/README.md#deletestaffmessages) - Delete a Staff Message
 
+### [suppliers](docs/sdks/suppliers/README.md)
+
+* [listSuppliers](docs/sdks/suppliers/README.md#listsuppliers) - List all Suppliers
+* [createSuppliers](docs/sdks/suppliers/README.md#createsuppliers) - Create a new Supplier
+* [getSuppliers](docs/sdks/suppliers/README.md#getsuppliers) - Retrieve a Supplier
+* [updateSuppliers](docs/sdks/suppliers/README.md#updatesuppliers) - Update a Supplier
+* [deleteSuppliers](docs/sdks/suppliers/README.md#deletesuppliers) - Delete a Supplier
+
 ### [tasks](docs/sdks/tasks/README.md)
 
 * [listTasks](docs/sdks/tasks/README.md#listtasks) - List all Tasks
@@ -744,6 +752,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`staffMessagesGetStaffMessages`](docs/sdks/staffmessages/README.md#getstaffmessages) - Retrieve a Staff Message
 - [`staffMessagesListStaffMessages`](docs/sdks/staffmessages/README.md#liststaffmessages) - List all Staff Messages
 - [`staffMessagesUpdateStaffMessages`](docs/sdks/staffmessages/README.md#updatestaffmessages) - Update a Staff Message
+- [`suppliersCreateSuppliers`](docs/sdks/suppliers/README.md#createsuppliers) - Create a new Supplier
+- [`suppliersDeleteSuppliers`](docs/sdks/suppliers/README.md#deletesuppliers) - Delete a Supplier
+- [`suppliersGetSuppliers`](docs/sdks/suppliers/README.md#getsuppliers) - Retrieve a Supplier
+- [`suppliersListSuppliers`](docs/sdks/suppliers/README.md#listsuppliers) - List all Suppliers
+- [`suppliersUpdateSuppliers`](docs/sdks/suppliers/README.md#updatesuppliers) - Update a Supplier
 - [`tasksCreateTasks`](docs/sdks/tasks/README.md#createtasks) - Create a new Task
 - [`tasksDeleteTasks`](docs/sdks/tasks/README.md#deletetasks) - Delete a Task
 - [`tasksGetTasks`](docs/sdks/tasks/README.md#gettasks) - Retrieve a Task
@@ -899,7 +912,7 @@ run();
 
 
 **Inherit from [`ServiceM8Error`](./src/models/errors/servicem8error.ts)**:
-* [`NotFoundError`](./src/models/errors/notfounderror.ts): Status code `404`. Applicable to 105 of 188 methods.*
+* [`NotFoundError`](./src/models/errors/notfounderror.ts): Status code `404`. Applicable to 108 of 193 methods.*
 * [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
 
 </details>
@@ -979,7 +992,7 @@ httpClient.addHook("requestError", (error, request) => {
   console.groupEnd();
 });
 
-const sdk = new ServiceM8({ httpClient });
+const sdk = new ServiceM8({ httpClient: httpClient });
 ```
 <!-- End Custom HTTP Client [http-client] -->
 

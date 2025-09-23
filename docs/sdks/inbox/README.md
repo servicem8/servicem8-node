@@ -504,6 +504,7 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.inbox.convertInboxMessageToJob({
     uuid: "d496f944-2744-45ce-b1be-ee61f1bd32cf",
+    convertToJobRequest: {},
   });
 
   console.log(result);
@@ -531,6 +532,7 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await inboxConvertInboxMessageToJob(serviceM8, {
     uuid: "d496f944-2744-45ce-b1be-ee61f1bd32cf",
+    convertToJobRequest: {},
   });
   if (res.ok) {
     const { value: result } = res;

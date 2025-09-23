@@ -39,6 +39,7 @@ import { SecurityRoles } from "./securityroles.js";
 import { SMSTemplates } from "./smstemplates.js";
 import { StaffMembers } from "./staffmembers.js";
 import { StaffMessages } from "./staffmessages.js";
+import { Suppliers } from "./suppliers.js";
 import { Tasks } from "./tasks.js";
 import { TaxRates } from "./taxrates.js";
 import { Vendors } from "./vendors.js";
@@ -212,6 +213,11 @@ export class ServiceM8 extends ClientSDK {
   private _staffMessages?: StaffMessages;
   get staffMessages(): StaffMessages {
     return (this._staffMessages ??= new StaffMessages(this._options));
+  }
+
+  private _suppliers?: Suppliers;
+  get suppliers(): Suppliers {
+    return (this._suppliers ??= new Suppliers(this._options));
   }
 
   private _tasks?: Tasks;

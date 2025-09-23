@@ -7,12 +7,13 @@ import { ConvertInboxMessageToJobRequest } from "servicem8/models/operations";
 
 let value: ConvertInboxMessageToJobRequest = {
   uuid: "917e6d3c-0df3-4234-8e18-d5fb55dba4c7",
+  convertToJobRequest: {},
 };
 ```
 
 ## Fields
 
-| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `uuid`                                                                           | *string*                                                                         | :heavy_check_mark:                                                               | UUID of the inbox message                                                        |
-| `convertToJobRequest`                                                            | [components.ConvertToJobRequest](../../models/components/converttojobrequest.md) | :heavy_minus_sign:                                                               | N/A                                                                              |
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `uuid`                                                                                           | *string*                                                                                         | :heavy_check_mark:                                                                               | UUID of the inbox message                                                                        |
+| `convertToJobRequest`                                                                            | [components.ConvertToJobRequest](../../models/components/converttojobrequest.md)                 | :heavy_check_mark:                                                                               | Parameters for converting the inbox message into a job (send an empty object to accept defaults) |

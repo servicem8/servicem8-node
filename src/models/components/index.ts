@@ -88,6 +88,8 @@ export * from "./staffcreate.js";
 export * from "./staffmessage.js";
 export * from "./staffmessagecreate.js";
 export * from "./successresponse.js";
+export * from "./supplier.js";
+export * from "./suppliercreate.js";
 export * from "./task.js";
 export * from "./taskcreate.js";
 export * from "./taxrate.js";

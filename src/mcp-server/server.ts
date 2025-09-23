@@ -189,6 +189,11 @@ import { tool$staffMessagesDeleteStaffMessages } from "./tools/staffMessagesDele
 import { tool$staffMessagesGetStaffMessages } from "./tools/staffMessagesGetStaffMessages.js";
 import { tool$staffMessagesListStaffMessages } from "./tools/staffMessagesListStaffMessages.js";
 import { tool$staffMessagesUpdateStaffMessages } from "./tools/staffMessagesUpdateStaffMessages.js";
+import { tool$suppliersCreateSuppliers } from "./tools/suppliersCreateSuppliers.js";
+import { tool$suppliersDeleteSuppliers } from "./tools/suppliersDeleteSuppliers.js";
+import { tool$suppliersGetSuppliers } from "./tools/suppliersGetSuppliers.js";
+import { tool$suppliersListSuppliers } from "./tools/suppliersListSuppliers.js";
+import { tool$suppliersUpdateSuppliers } from "./tools/suppliersUpdateSuppliers.js";
 import { tool$tasksCreateTasks } from "./tools/tasksCreateTasks.js";
 import { tool$tasksDeleteTasks } from "./tools/tasksDeleteTasks.js";
 import { tool$tasksGetTasks } from "./tools/tasksGetTasks.js";
@@ -212,7 +217,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "ServiceM8",
-    version: "0.9.49",
+    version: "0.9.50",
   });
 
   const client = new ServiceM8Core({
@@ -406,6 +411,11 @@ export function createMCPServer(deps: {
   tool(tool$staffMessagesGetStaffMessages);
   tool(tool$staffMessagesUpdateStaffMessages);
   tool(tool$staffMessagesDeleteStaffMessages);
+  tool(tool$suppliersListSuppliers);
+  tool(tool$suppliersCreateSuppliers);
+  tool(tool$suppliersGetSuppliers);
+  tool(tool$suppliersUpdateSuppliers);
+  tool(tool$suppliersDeleteSuppliers);
   tool(tool$tasksListTasks);
   tool(tool$tasksCreateTasks);
   tool(tool$tasksGetTasks);
