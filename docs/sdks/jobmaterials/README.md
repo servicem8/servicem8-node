@@ -127,12 +127,12 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobMaterials.createJobMaterials({
-    jobUuid: "123e4567-9fc9-48a4-890d-2346740a9abb",
-    materialUuid: "123e4567-254b-4900-bc16-234675b70bcb",
+    jobUuid: "123e4567-34aa-486d-8669-23482137beeb",
+    materialUuid: "123e4567-ffb3-461c-b915-23482c6dce9b",
     quantity: "<value>",
-    taxRateUuid: "123e4567-f190-40a7-a240-234671b7cafb",
-    uuid: "123e4567-1ba7-4870-b862-23467e2bedcb",
-    jobMaterialBundleUuid: "123e4567-07b8-403a-aaaf-23467049b34b",
+    taxRateUuid: "123e4567-f49b-44a9-9545-23482a94897b",
+    uuid: "123e4567-9d98-4d4f-b1f1-234822b8835b",
+    jobMaterialBundleUuid: "123e4567-10e4-494f-bfa0-2348255e4feb",
   });
 
   console.log(result);
@@ -159,12 +159,12 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobMaterialsCreateJobMaterials(serviceM8, {
-    jobUuid: "123e4567-9fc9-48a4-890d-2346740a9abb",
-    materialUuid: "123e4567-254b-4900-bc16-234675b70bcb",
+    jobUuid: "123e4567-34aa-486d-8669-23482137beeb",
+    materialUuid: "123e4567-ffb3-461c-b915-23482c6dce9b",
     quantity: "<value>",
-    taxRateUuid: "123e4567-f190-40a7-a240-234671b7cafb",
-    uuid: "123e4567-1ba7-4870-b862-23467e2bedcb",
-    jobMaterialBundleUuid: "123e4567-07b8-403a-aaaf-23467049b34b",
+    taxRateUuid: "123e4567-f49b-44a9-9545-23482a94897b",
+    uuid: "123e4567-9d98-4d4f-b1f1-234822b8835b",
+    jobMaterialBundleUuid: "123e4567-10e4-494f-bfa0-2348255e4feb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -314,12 +314,12 @@ async function run() {
   const result = await serviceM8.jobMaterials.updateJobMaterials({
     uuid: "0afa4bc5-4269-47e6-81bd-da437fd2e097",
     jobMaterialCreate: {
-      jobUuid: "123e4567-9fc9-48a4-890d-2346740a9abb",
-      materialUuid: "123e4567-254b-4900-bc16-234675b70bcb",
+      jobUuid: "123e4567-34aa-486d-8669-23482137beeb",
+      materialUuid: "123e4567-ffb3-461c-b915-23482c6dce9b",
       quantity: "<value>",
-      taxRateUuid: "123e4567-f190-40a7-a240-234671b7cafb",
-      uuid: "123e4567-1ba7-4870-b862-23467e2bedcb",
-      jobMaterialBundleUuid: "123e4567-07b8-403a-aaaf-23467049b34b",
+      taxRateUuid: "123e4567-f49b-44a9-9545-23482a94897b",
+      uuid: "123e4567-9d98-4d4f-b1f1-234822b8835b",
+      jobMaterialBundleUuid: "123e4567-10e4-494f-bfa0-2348255e4feb",
     },
   });
 
@@ -349,12 +349,12 @@ async function run() {
   const res = await jobMaterialsUpdateJobMaterials(serviceM8, {
     uuid: "0afa4bc5-4269-47e6-81bd-da437fd2e097",
     jobMaterialCreate: {
-      jobUuid: "123e4567-9fc9-48a4-890d-2346740a9abb",
-      materialUuid: "123e4567-254b-4900-bc16-234675b70bcb",
+      jobUuid: "123e4567-34aa-486d-8669-23482137beeb",
+      materialUuid: "123e4567-ffb3-461c-b915-23482c6dce9b",
       quantity: "<value>",
-      taxRateUuid: "123e4567-f190-40a7-a240-234671b7cafb",
-      uuid: "123e4567-1ba7-4870-b862-23467e2bedcb",
-      jobMaterialBundleUuid: "123e4567-07b8-403a-aaaf-23467049b34b",
+      taxRateUuid: "123e4567-f49b-44a9-9545-23482a94897b",
+      uuid: "123e4567-9d98-4d4f-b1f1-234822b8835b",
+      jobMaterialBundleUuid: "123e4567-10e4-494f-bfa0-2348255e4feb",
     },
   });
   if (res.ok) {

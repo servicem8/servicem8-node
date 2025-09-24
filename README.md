@@ -78,10 +78,7 @@ bun add servicem8
 ### Yarn
 
 ```bash
-yarn add servicem8 zod
-
-# Note that Yarn does not install peer dependencies automatically. You will need
-# to install zod as shown above.
+yarn add servicem8
 ```
 
 > [!NOTE]

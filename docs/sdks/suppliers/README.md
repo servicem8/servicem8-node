@@ -127,7 +127,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.suppliers.createSuppliers({
-    uuid: "123e4567-faa8-4f31-9760-23467743e47b",
+    uuid: "123e4567-ae2d-444a-b0e2-23482bc65e8b",
   });
 
   console.log(result);
@@ -154,7 +154,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await suppliersCreateSuppliers(serviceM8, {
-    uuid: "123e4567-faa8-4f31-9760-23467743e47b",
+    uuid: "123e4567-ae2d-444a-b0e2-23482bc65e8b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -304,7 +304,7 @@ async function run() {
   const result = await serviceM8.suppliers.updateSuppliers({
     uuid: "30f92dc0-c0e9-4396-8f83-3b2ad7bdd688",
     supplierCreate: {
-      uuid: "123e4567-faa8-4f31-9760-23467743e47b",
+      uuid: "123e4567-ae2d-444a-b0e2-23482bc65e8b",
     },
   });
 
@@ -334,7 +334,7 @@ async function run() {
   const res = await suppliersUpdateSuppliers(serviceM8, {
     uuid: "30f92dc0-c0e9-4396-8f83-3b2ad7bdd688",
     supplierCreate: {
-      uuid: "123e4567-faa8-4f31-9760-23467743e47b",
+      uuid: "123e4567-ae2d-444a-b0e2-23482bc65e8b",
     },
   });
   if (res.ok) {
