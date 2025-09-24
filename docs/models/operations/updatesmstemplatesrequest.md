@@ -9,7 +9,7 @@ let value: UpdateSMSTemplatesRequest = {
   uuid: "148094e8-1776-4912-988b-3fdd8fc6b61c",
   smsTemplateCreate: {
     name: "<value>",
-    uuid: "123e4567-9dd6-43a8-874c-2348283ddc0b",
+    uuid: "123e4567-1c34-4ec6-8b56-23482ac0c97b",
   },
 };
 ```

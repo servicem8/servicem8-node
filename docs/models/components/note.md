@@ -6,11 +6,11 @@
 import { Note } from "servicem8/models/components";
 
 let value: Note = {
-  uuid: "123e4567-714d-4ff1-9d0a-23482c798f7b",
+  uuid: "123e4567-9a19-4ea6-a168-23482e49809b",
   editDate: "2025-09-01 12:00:00",
-  relatedObjectUuid: "123e4567-5b90-429e-8d03-2348218a134b",
-  actionCompletedByStaffUuid: "123e4567-bc02-4a2d-a652-23482789674b",
-  editByStaffUuid: "123e4567-11a5-406f-a0e7-23482256f69b",
+  relatedObjectUuid: "123e4567-4c31-41ab-89f0-23482a20f15b",
+  actionCompletedByStaffUuid: "123e4567-37b9-4b06-aefe-234827aa6fbb",
+  editByStaffUuid: "123e4567-f095-4614-9d7f-23482ff4ec6b",
   createDate: "2025-09-01 12:00:00",
 };
 ```
@@ -19,13 +19,13 @@ let value: Note = {
 
 | Field                                                          | Type                                                           | Required                                                       | Description                                                    | Example                                                        |
 | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `uuid`                                                         | *string*                                                       | :heavy_minus_sign:                                             | Unique identifier for this record                              | 123e4567-714d-4ff1-9d0a-23482c798f7b                           |
+| `uuid`                                                         | *string*                                                       | :heavy_minus_sign:                                             | Unique identifier for this record                              | 123e4567-9a19-4ea6-a168-23482e49809b                           |
 | `active`                                                       | [components.NoteActive](../../models/components/noteactive.md) | :heavy_minus_sign:                                             | Record active/deleted flag.  Valid values are [0,1]            |                                                                |
 | `editDate`                                                     | *any*                                                          | :heavy_minus_sign:                                             | Timestamp at which record was last modified                    | 2025-09-01 12:00:00                                            |
 | `relatedObject`                                                | *string*                                                       | :heavy_minus_sign:                                             | N/A                                                            |                                                                |
-| `relatedObjectUuid`                                            | *string*                                                       | :heavy_minus_sign:                                             | N/A                                                            | 123e4567-5b90-429e-8d03-2348218a134b                           |
+| `relatedObjectUuid`                                            | *string*                                                       | :heavy_minus_sign:                                             | N/A                                                            | 123e4567-4c31-41ab-89f0-23482a20f15b                           |
 | `note`                                                         | *string*                                                       | :heavy_minus_sign:                                             | N/A                                                            |                                                                |
 | `actionRequired`                                               | *string*                                                       | :heavy_minus_sign:                                             | N/A                                                            |                                                                |
-| `actionCompletedByStaffUuid`                                   | *string*                                                       | :heavy_minus_sign:                                             | N/A                                                            | 123e4567-bc02-4a2d-a652-23482789674b                           |
-| `editByStaffUuid`                                              | *any*                                                          | :heavy_minus_sign:                                             | UUID of Staff Member who last modified record                  | 123e4567-11a5-406f-a0e7-23482256f69b                           |
+| `actionCompletedByStaffUuid`                                   | *string*                                                       | :heavy_minus_sign:                                             | N/A                                                            | 123e4567-37b9-4b06-aefe-234827aa6fbb                           |
+| `editByStaffUuid`                                              | *any*                                                          | :heavy_minus_sign:                                             | UUID of Staff Member who last modified record                  | 123e4567-f095-4614-9d7f-23482ff4ec6b                           |
 | `createDate`                                                   | *any*                                                          | :heavy_minus_sign:                                             | Timestamp at which record was last modified                    | 2025-09-01 12:00:00                                            |

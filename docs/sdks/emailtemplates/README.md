@@ -128,7 +128,7 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.emailTemplates.createEmailTemplates({
     name: "<value>",
-    uuid: "123e4567-69a8-4d40-8cef-234828310f3b",
+    uuid: "123e4567-ffb8-4f55-a980-234823262e7b",
   });
 
   console.log(result);
@@ -156,7 +156,7 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await emailTemplatesCreateEmailTemplates(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-69a8-4d40-8cef-234828310f3b",
+    uuid: "123e4567-ffb8-4f55-a980-234823262e7b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -307,7 +307,7 @@ async function run() {
     uuid: "a3ce5f33-781a-4062-b068-2e3f8605b008",
     emailTemplateCreate: {
       name: "<value>",
-      uuid: "123e4567-69a8-4d40-8cef-234828310f3b",
+      uuid: "123e4567-ffb8-4f55-a980-234823262e7b",
     },
   });
 
@@ -338,7 +338,7 @@ async function run() {
     uuid: "a3ce5f33-781a-4062-b068-2e3f8605b008",
     emailTemplateCreate: {
       name: "<value>",
-      uuid: "123e4567-69a8-4d40-8cef-234828310f3b",
+      uuid: "123e4567-ffb8-4f55-a980-234823262e7b",
     },
   });
   if (res.ok) {
