@@ -3,10 +3,12 @@ id: 5292d1b1-a456-4df8-b793-88d92b92bb91
 management:
   docChecksum: e96fbba0a05e7cf3216bc612da0891bc
   docVersion: 1.0.0
-  speakeasyVersion: 1.624.0
-  generationVersion: 2.714.0
-  releaseVersion: 0.9.52
-  configChecksum: 1216843112395ae7cec634e7c1ffc592
+  speakeasyVersion: 1.631.0
+  generationVersion: 2.716.10
+  releaseVersion: 0.9.53
+  configChecksum: 19b0c38e0df47f87dde3b97db0eef38e
+  repoURL: https://github.com/servicem8/servicem8-node.git
+  installationURL: https://github.com/servicem8/servicem8-node
   published: true
 features:
   typescript:
@@ -26,7 +28,7 @@ features:
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.3.0
-    unions: 2.85.11
+    unions: 2.85.12
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
