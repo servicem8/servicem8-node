@@ -120,6 +120,11 @@ export class ServiceM8 extends ClientSDK {
     return (this._formResponses ??= new FormResponses(this._options));
   }
 
+  private _inbox?: Inbox;
+  get inbox(): Inbox {
+    return (this._inbox ??= new Inbox(this._options));
+  }
+
   private _jobs?: Jobs;
   get jobs(): Jobs {
     return (this._jobs ??= new Jobs(this._options));
@@ -233,11 +238,6 @@ export class ServiceM8 extends ClientSDK {
   private _vendors?: Vendors;
   get vendors(): Vendors {
     return (this._vendors ??= new Vendors(this._options));
-  }
-
-  private _inbox?: Inbox;
-  get inbox(): Inbox {
-    return (this._inbox ??= new Inbox(this._options));
   }
 
   private _search?: Search;

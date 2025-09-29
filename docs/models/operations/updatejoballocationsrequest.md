@@ -8,16 +8,16 @@ import { UpdateJobAllocationsRequest } from "servicem8/models/operations";
 let value: UpdateJobAllocationsRequest = {
   uuid: "3eaf1248-31d8-4775-a805-14e8c85b6e96",
   jobAllocationCreate: {
-    jobUuid: "123e4567-b3d6-464b-ad2b-23482eb648fb",
-    staffUuid: "123e4567-531a-45e8-9b26-23482037810b",
+    jobUuid: "123e4567-1c73-4b8a-b9a6-23497ffcf6ab",
+    staffUuid: "123e4567-f619-4ead-8719-234973ae91eb",
     allocationDate: "2025-09-01 12:00:00",
-    allocationWindowUuid: "123e4567-662f-45ee-b4ee-23482143ad7b",
-    allocatedByStaffUuid: "123e4567-6096-4405-b2ea-23482fad8e7b",
+    allocationWindowUuid: "123e4567-4276-404e-9c10-234976627d7b",
+    allocatedByStaffUuid: "123e4567-d212-48d5-a35c-2349749bbb3b",
     allocatedTimestamp: "2025-09-01 12:00:00",
     expiryTimestamp: "2025-09-01 12:00:00",
     readTimestamp: "2025-09-01 12:00:00",
     completionTimestamp: "2025-09-01 12:00:00",
-    uuid: "123e4567-a2c0-4206-9c5d-2348200e298b",
+    uuid: "123e4567-94c2-4555-9162-23497750d3fb",
   },
 };
 ```

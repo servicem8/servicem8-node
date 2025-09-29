@@ -217,7 +217,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "ServiceM8",
-    version: "0.9.52",
+    version: "0.9.53",
   });
 
   const client = new ServiceM8Core({
@@ -321,6 +321,15 @@ export function createMCPServer(deps: {
   tool(tool$formResponsesGetFormResponses);
   tool(tool$formResponsesUpdateFormResponses);
   tool(tool$formResponsesDeleteFormResponses);
+  tool(tool$inboxListInboxMessages);
+  tool(tool$inboxCreateInboxMessage);
+  tool(tool$inboxGetInboxMessage);
+  tool(tool$inboxMarkInboxMessageAsRead);
+  tool(tool$inboxArchiveInboxMessage);
+  tool(tool$inboxSnoozeInboxMessage);
+  tool(tool$inboxConvertInboxMessageToJob);
+  tool(tool$inboxAttachInboxMessageToJob);
+  tool(tool$inboxAddNoteToInboxMessage);
   tool(tool$jobsListJobs);
   tool(tool$jobsCreateJobs);
   tool(tool$jobsGetJobs);
@@ -428,15 +437,6 @@ export function createMCPServer(deps: {
   tool(tool$taxRatesDeleteTaxRates);
   tool(tool$vendorsListVendors);
   tool(tool$vendorsGetVendors);
-  tool(tool$inboxListInboxMessages);
-  tool(tool$inboxCreateInboxMessage);
-  tool(tool$inboxGetInboxMessage);
-  tool(tool$inboxMarkInboxMessageAsRead);
-  tool(tool$inboxArchiveInboxMessage);
-  tool(tool$inboxSnoozeInboxMessage);
-  tool(tool$inboxConvertInboxMessageToJob);
-  tool(tool$inboxAttachInboxMessageToJob);
-  tool(tool$inboxAddNoteToInboxMessage);
   tool(tool$searchGeneralSearch);
   tool(tool$searchObjectSearch);
   tool(tool$searchJobEmbeddingSearch);
