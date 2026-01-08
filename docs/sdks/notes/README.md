@@ -1,5 +1,4 @@
 # Notes
-(*notes*)
 
 ## Overview
 
@@ -127,10 +126,10 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.notes.createNotes({
-    uuid: "123e4567-5d50-4b4d-a017-234d5df6eb7b",
-    relatedObjectUuid: "123e4567-56b9-4772-906f-234d5bebd0eb",
-    actionCompletedByStaffUuid: "123e4567-8f1f-448e-be3c-234d5d361acb",
-    createDate: "2025-09-01 12:00:00",
+    uuid: "123e4567-d2c1-4f18-88d4-23b2e5ec24bb",
+    relatedObjectUuid: "123e4567-9e6a-43b5-8f90-23b2e897685b",
+    actionCompletedByStaffUuid: "123e4567-8ca3-4f41-bc87-23b2ecc578eb",
+    createDate: "2026-01-01 12:00:00",
   });
 
   console.log(result);
@@ -157,10 +156,10 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await notesCreateNotes(serviceM8, {
-    uuid: "123e4567-5d50-4b4d-a017-234d5df6eb7b",
-    relatedObjectUuid: "123e4567-56b9-4772-906f-234d5bebd0eb",
-    actionCompletedByStaffUuid: "123e4567-8f1f-448e-be3c-234d5d361acb",
-    createDate: "2025-09-01 12:00:00",
+    uuid: "123e4567-d2c1-4f18-88d4-23b2e5ec24bb",
+    relatedObjectUuid: "123e4567-9e6a-43b5-8f90-23b2e897685b",
+    actionCompletedByStaffUuid: "123e4567-8ca3-4f41-bc87-23b2ecc578eb",
+    createDate: "2026-01-01 12:00:00",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -310,10 +309,10 @@ async function run() {
   const result = await serviceM8.notes.updateNotes({
     uuid: "1607abff-6202-4423-ae91-39b08699f830",
     noteCreate: {
-      uuid: "123e4567-5d50-4b4d-a017-234d5df6eb7b",
-      relatedObjectUuid: "123e4567-56b9-4772-906f-234d5bebd0eb",
-      actionCompletedByStaffUuid: "123e4567-8f1f-448e-be3c-234d5d361acb",
-      createDate: "2025-09-01 12:00:00",
+      uuid: "123e4567-d2c1-4f18-88d4-23b2e5ec24bb",
+      relatedObjectUuid: "123e4567-9e6a-43b5-8f90-23b2e897685b",
+      actionCompletedByStaffUuid: "123e4567-8ca3-4f41-bc87-23b2ecc578eb",
+      createDate: "2026-01-01 12:00:00",
     },
   });
 
@@ -343,10 +342,10 @@ async function run() {
   const res = await notesUpdateNotes(serviceM8, {
     uuid: "1607abff-6202-4423-ae91-39b08699f830",
     noteCreate: {
-      uuid: "123e4567-5d50-4b4d-a017-234d5df6eb7b",
-      relatedObjectUuid: "123e4567-56b9-4772-906f-234d5bebd0eb",
-      actionCompletedByStaffUuid: "123e4567-8f1f-448e-be3c-234d5d361acb",
-      createDate: "2025-09-01 12:00:00",
+      uuid: "123e4567-d2c1-4f18-88d4-23b2e5ec24bb",
+      relatedObjectUuid: "123e4567-9e6a-43b5-8f90-23b2e897685b",
+      actionCompletedByStaffUuid: "123e4567-8ca3-4f41-bc87-23b2ecc578eb",
+      createDate: "2026-01-01 12:00:00",
     },
   });
   if (res.ok) {

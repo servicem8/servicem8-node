@@ -1,5 +1,4 @@
 # JobTemplates
-(*jobTemplates*)
 
 ## Overview
 

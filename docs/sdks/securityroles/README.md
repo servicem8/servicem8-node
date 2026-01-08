@@ -1,5 +1,4 @@
 # SecurityRoles
-(*securityRoles*)
 
 ## Overview
 

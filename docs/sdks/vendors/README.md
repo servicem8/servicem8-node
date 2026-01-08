@@ -1,5 +1,4 @@
 # Vendors
-(*vendors*)
 
 ## Overview
 

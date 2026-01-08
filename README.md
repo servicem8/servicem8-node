@@ -241,7 +241,7 @@ run();
 <details open>
 <summary>Available methods</summary>
 
-### [allocationWindows](docs/sdks/allocationwindows/README.md)
+### [AllocationWindows](docs/sdks/allocationwindows/README.md)
 
 * [listAllocationWindows](docs/sdks/allocationwindows/README.md#listallocationwindows) - List all Allocation Windows
 * [createAllocationWindows](docs/sdks/allocationwindows/README.md#createallocationwindows) - Create a new Allocation Window
@@ -249,14 +249,7 @@ run();
 * [updateAllocationWindows](docs/sdks/allocationwindows/README.md#updateallocationwindows) - Update an Allocation Window
 * [deleteAllocationWindows](docs/sdks/allocationwindows/README.md#deleteallocationwindows) - Delete an Allocation Window
 
-### [assets](docs/sdks/assets/README.md)
-
-* [listAssets](docs/sdks/assets/README.md#listassets) - List all Assets
-* [getAssets](docs/sdks/assets/README.md#getassets) - Retrieve an Asset
-* [updateAssets](docs/sdks/assets/README.md#updateassets) - Update an Asset
-* [deleteAssets](docs/sdks/assets/README.md#deleteassets) - Delete an Asset
-
-### [assetTypeFields](docs/sdks/assettypefields/README.md)
+### [AssetTypeFields](docs/sdks/assettypefields/README.md)
 
 * [listAssetTypeFields](docs/sdks/assettypefields/README.md#listassettypefields) - List all Asset Type Fields
 * [createAssetTypeFields](docs/sdks/assettypefields/README.md#createassettypefields) - Create a new Asset Type Field
@@ -264,7 +257,7 @@ run();
 * [updateAssetTypeFields](docs/sdks/assettypefields/README.md#updateassettypefields) - Update an Asset Type Field
 * [deleteAssetTypeFields](docs/sdks/assettypefields/README.md#deleteassettypefields) - Delete an Asset Type Field
 
-### [assetTypes](docs/sdks/assettypes/README.md)
+### [AssetTypes](docs/sdks/assettypes/README.md)
 
 * [listAssetTypes](docs/sdks/assettypes/README.md#listassettypes) - List all Asset Types
 * [createAssetTypes](docs/sdks/assettypes/README.md#createassettypes) - Create a new Asset Type
@@ -272,7 +265,14 @@ run();
 * [updateAssetTypes](docs/sdks/assettypes/README.md#updateassettypes) - Update an Asset Type
 * [deleteAssetTypes](docs/sdks/assettypes/README.md#deleteassettypes) - Delete an Asset Type
 
-### [attachments](docs/sdks/attachments/README.md)
+### [Assets](docs/sdks/assets/README.md)
+
+* [listAssets](docs/sdks/assets/README.md#listassets) - List all Assets
+* [getAssets](docs/sdks/assets/README.md#getassets) - Retrieve an Asset
+* [updateAssets](docs/sdks/assets/README.md#updateassets) - Update an Asset
+* [deleteAssets](docs/sdks/assets/README.md#deleteassets) - Delete an Asset
+
+### [Attachments](docs/sdks/attachments/README.md)
 
 * [listAttachments](docs/sdks/attachments/README.md#listattachments) - List all Attachments
 * [createAttachments](docs/sdks/attachments/README.md#createattachments) - Create a new Attachment
@@ -280,7 +280,7 @@ run();
 * [updateAttachments](docs/sdks/attachments/README.md#updateattachments) - Update an Attachment
 * [deleteAttachments](docs/sdks/attachments/README.md#deleteattachments) - Delete an Attachment
 
-### [badges](docs/sdks/badges/README.md)
+### [Badges](docs/sdks/badges/README.md)
 
 * [listBadges](docs/sdks/badges/README.md#listbadges) - List all Badges
 * [createBadges](docs/sdks/badges/README.md#createbadges) - Create a new Badge
@@ -288,7 +288,7 @@ run();
 * [updateBadges](docs/sdks/badges/README.md#updatebadges) - Update a Badge
 * [deleteBadges](docs/sdks/badges/README.md#deletebadges) - Delete a Badge
 
-### [bundles](docs/sdks/bundles/README.md)
+### [Bundles](docs/sdks/bundles/README.md)
 
 * [listBundles](docs/sdks/bundles/README.md#listbundles) - List all Bundles
 * [createBundles](docs/sdks/bundles/README.md#createbundles) - Create a new Bundle
@@ -296,7 +296,7 @@ run();
 * [updateBundles](docs/sdks/bundles/README.md#updatebundles) - Update a Bundle
 * [deleteBundles](docs/sdks/bundles/README.md#deletebundles) - Delete a Bundle
 
-### [categories](docs/sdks/categories/README.md)
+### [Categories](docs/sdks/categories/README.md)
 
 * [listCategories](docs/sdks/categories/README.md#listcategories) - List all Categories
 * [createCategories](docs/sdks/categories/README.md#createcategories) - Create a new Category
@@ -304,7 +304,7 @@ run();
 * [updateCategories](docs/sdks/categories/README.md#updatecategories) - Update a Category
 * [deleteCategories](docs/sdks/categories/README.md#deletecategories) - Delete a Category
 
-### [clients](docs/sdks/clients/README.md)
+### [Clients](docs/sdks/clients/README.md)
 
 * [listClients](docs/sdks/clients/README.md#listclients) - List all Clients
 * [createClients](docs/sdks/clients/README.md#createclients) - Create a new Client
@@ -312,7 +312,7 @@ run();
 * [updateClients](docs/sdks/clients/README.md#updateclients) - Update a Client
 * [deleteClients](docs/sdks/clients/README.md#deleteclients) - Delete a Client
 
-### [companyContacts](docs/sdks/companycontacts/README.md)
+### [CompanyContacts](docs/sdks/companycontacts/README.md)
 
 * [listCompanyContacts](docs/sdks/companycontacts/README.md#listcompanycontacts) - List all Company Contacts
 * [createCompanyContacts](docs/sdks/companycontacts/README.md#createcompanycontacts) - Create a new Company Contact
@@ -320,7 +320,7 @@ run();
 * [updateCompanyContacts](docs/sdks/companycontacts/README.md#updatecompanycontacts) - Update a Company Contact
 * [deleteCompanyContacts](docs/sdks/companycontacts/README.md#deletecompanycontacts) - Delete a Company Contact
 
-### [documentTemplates](docs/sdks/documenttemplates/README.md)
+### [DocumentTemplates](docs/sdks/documenttemplates/README.md)
 
 * [listDocumentTemplates](docs/sdks/documenttemplates/README.md#listdocumenttemplates) - List all Document Templates
 * [createDocumentTemplates](docs/sdks/documenttemplates/README.md#createdocumenttemplates) - Create a new Document Template
@@ -328,7 +328,7 @@ run();
 * [updateDocumentTemplates](docs/sdks/documenttemplates/README.md#updatedocumenttemplates) - Update a Document Template
 * [deleteDocumentTemplates](docs/sdks/documenttemplates/README.md#deletedocumenttemplates) - Delete a Document Template
 
-### [emailTemplates](docs/sdks/emailtemplates/README.md)
+### [EmailTemplates](docs/sdks/emailtemplates/README.md)
 
 * [listEmailTemplates](docs/sdks/emailtemplates/README.md#listemailtemplates) - List all Email Templates
 * [createEmailTemplates](docs/sdks/emailtemplates/README.md#createemailtemplates) - Create a new Email Template
@@ -336,7 +336,7 @@ run();
 * [updateEmailTemplates](docs/sdks/emailtemplates/README.md#updateemailtemplates) - Update an Email Template
 * [deleteEmailTemplates](docs/sdks/emailtemplates/README.md#deleteemailtemplates) - Delete an Email Template
 
-### [feedback](docs/sdks/feedback/README.md)
+### [Feedback](docs/sdks/feedback/README.md)
 
 * [listFeedback](docs/sdks/feedback/README.md#listfeedback) - List all Feedback
 * [createFeedback](docs/sdks/feedback/README.md#createfeedback) - Create a new Feedback
@@ -344,7 +344,7 @@ run();
 * [updateFeedback](docs/sdks/feedback/README.md#updatefeedback) - Update a Feedback
 * [deleteFeedback](docs/sdks/feedback/README.md#deletefeedback) - Delete a Feedback
 
-### [formFields](docs/sdks/formfields/README.md)
+### [FormFields](docs/sdks/formfields/README.md)
 
 * [listFormFields](docs/sdks/formfields/README.md#listformfields) - List all Form Fields
 * [createFormFields](docs/sdks/formfields/README.md#createformfields) - Create a new Form Field
@@ -352,7 +352,7 @@ run();
 * [updateFormFields](docs/sdks/formfields/README.md#updateformfields) - Update a Form Field
 * [deleteFormFields](docs/sdks/formfields/README.md#deleteformfields) - Delete a Form Field
 
-### [formResponses](docs/sdks/formresponses/README.md)
+### [FormResponses](docs/sdks/formresponses/README.md)
 
 * [listFormResponses](docs/sdks/formresponses/README.md#listformresponses) - List all Form Responses
 * [createFormResponses](docs/sdks/formresponses/README.md#createformresponses) - Create a new Form Response
@@ -360,7 +360,7 @@ run();
 * [updateFormResponses](docs/sdks/formresponses/README.md#updateformresponses) - Update a Form Response
 * [deleteFormResponses](docs/sdks/formresponses/README.md#deleteformresponses) - Delete a Form Response
 
-### [forms](docs/sdks/forms/README.md)
+### [Forms](docs/sdks/forms/README.md)
 
 * [listForms](docs/sdks/forms/README.md#listforms) - List all Forms
 * [createForms](docs/sdks/forms/README.md#createforms) - Create a new Form
@@ -368,7 +368,7 @@ run();
 * [updateForms](docs/sdks/forms/README.md#updateforms) - Update a Form
 * [deleteForms](docs/sdks/forms/README.md#deleteforms) - Delete a Form
 
-### [inbox](docs/sdks/inbox/README.md)
+### [Inbox](docs/sdks/inbox/README.md)
 
 * [listInboxMessages](docs/sdks/inbox/README.md#listinboxmessages) - List inbox messages
 * [createInboxMessage](docs/sdks/inbox/README.md#createinboxmessage) - Create a new inbox message
@@ -380,7 +380,7 @@ run();
 * [attachInboxMessageToJob](docs/sdks/inbox/README.md#attachinboxmessagetojob) - Attach message to existing job
 * [addNoteToInboxMessage](docs/sdks/inbox/README.md#addnotetoinboxmessage) - Add note to message
 
-### [jobActivities](docs/sdks/jobactivities/README.md)
+### [JobActivities](docs/sdks/jobactivities/README.md)
 
 * [listJobActivities](docs/sdks/jobactivities/README.md#listjobactivities) - List all Job Activities
 * [createJobActivities](docs/sdks/jobactivities/README.md#createjobactivities) - Create a new Job Activity
@@ -388,7 +388,7 @@ run();
 * [updateJobActivities](docs/sdks/jobactivities/README.md#updatejobactivities) - Update a Job Activity
 * [deleteJobActivities](docs/sdks/jobactivities/README.md#deletejobactivities) - Delete a Job Activity
 
-### [jobAllocations](docs/sdks/joballocations/README.md)
+### [JobAllocations](docs/sdks/joballocations/README.md)
 
 * [listJobAllocations](docs/sdks/joballocations/README.md#listjoballocations) - List all Job Allocations
 * [createJobAllocations](docs/sdks/joballocations/README.md#createjoballocations) - Create a new Job Allocation
@@ -396,7 +396,7 @@ run();
 * [updateJobAllocations](docs/sdks/joballocations/README.md#updatejoballocations) - Update a Job Allocation
 * [deleteJobAllocations](docs/sdks/joballocations/README.md#deletejoballocations) - Delete a Job Allocation
 
-### [jobChecklists](docs/sdks/jobchecklists/README.md)
+### [JobChecklists](docs/sdks/jobchecklists/README.md)
 
 * [listJobChecklists](docs/sdks/jobchecklists/README.md#listjobchecklists) - List all Job Checklists
 * [createJobChecklists](docs/sdks/jobchecklists/README.md#createjobchecklists) - Create a new Job Checklist
@@ -404,7 +404,7 @@ run();
 * [updateJobChecklists](docs/sdks/jobchecklists/README.md#updatejobchecklists) - Update a Job Checklist
 * [deleteJobChecklists](docs/sdks/jobchecklists/README.md#deletejobchecklists) - Delete a Job Checklist
 
-### [jobContacts](docs/sdks/jobcontacts/README.md)
+### [JobContacts](docs/sdks/jobcontacts/README.md)
 
 * [listJobContacts](docs/sdks/jobcontacts/README.md#listjobcontacts) - List all Job Contacts
 * [createJobContacts](docs/sdks/jobcontacts/README.md#createjobcontacts) - Create a new Job Contact
@@ -412,7 +412,7 @@ run();
 * [updateJobContacts](docs/sdks/jobcontacts/README.md#updatejobcontacts) - Update a Job Contact
 * [deleteJobContacts](docs/sdks/jobcontacts/README.md#deletejobcontacts) - Delete a Job Contact
 
-### [jobMaterialBundles](docs/sdks/jobmaterialbundles/README.md)
+### [JobMaterialBundles](docs/sdks/jobmaterialbundles/README.md)
 
 * [listJobMaterialBundles](docs/sdks/jobmaterialbundles/README.md#listjobmaterialbundles) - List all Job Material Bundles
 * [createJobMaterialBundles](docs/sdks/jobmaterialbundles/README.md#createjobmaterialbundles) - Create a new Job Material Bundle
@@ -420,7 +420,7 @@ run();
 * [updateJobMaterialBundles](docs/sdks/jobmaterialbundles/README.md#updatejobmaterialbundles) - Update a Job Material Bundle
 * [deleteJobMaterialBundles](docs/sdks/jobmaterialbundles/README.md#deletejobmaterialbundles) - Delete a Job Material Bundle
 
-### [jobMaterials](docs/sdks/jobmaterials/README.md)
+### [JobMaterials](docs/sdks/jobmaterials/README.md)
 
 * [listJobMaterials](docs/sdks/jobmaterials/README.md#listjobmaterials) - List all Job Materials
 * [createJobMaterials](docs/sdks/jobmaterials/README.md#createjobmaterials) - Create a new Job Material
@@ -428,7 +428,7 @@ run();
 * [updateJobMaterials](docs/sdks/jobmaterials/README.md#updatejobmaterials) - Update a Job Material
 * [deleteJobMaterials](docs/sdks/jobmaterials/README.md#deletejobmaterials) - Delete a Job Material
 
-### [jobPayments](docs/sdks/jobpayments/README.md)
+### [JobPayments](docs/sdks/jobpayments/README.md)
 
 * [listJobPayments](docs/sdks/jobpayments/README.md#listjobpayments) - List all Job Payments
 * [createJobPayments](docs/sdks/jobpayments/README.md#createjobpayments) - Create a new Job Payment
@@ -436,7 +436,7 @@ run();
 * [updateJobPayments](docs/sdks/jobpayments/README.md#updatejobpayments) - Update a Job Payment
 * [deleteJobPayments](docs/sdks/jobpayments/README.md#deletejobpayments) - Delete a Job Payment
 
-### [jobQueues](docs/sdks/jobqueues/README.md)
+### [JobQueues](docs/sdks/jobqueues/README.md)
 
 * [listJobQueues](docs/sdks/jobqueues/README.md#listjobqueues) - List all Job Queues
 * [createJobQueues](docs/sdks/jobqueues/README.md#createjobqueues) - Create a new Job Queue
@@ -444,7 +444,13 @@ run();
 * [updateJobQueues](docs/sdks/jobqueues/README.md#updatejobqueues) - Update a Job Queue
 * [deleteJobQueues](docs/sdks/jobqueues/README.md#deletejobqueues) - Delete a Job Queue
 
-### [jobs](docs/sdks/jobs/README.md)
+### [JobTemplates](docs/sdks/jobtemplates/README.md)
+
+* [listJobTemplates](docs/sdks/jobtemplates/README.md#listjobtemplates) - List all Job Templates
+* [getJobTemplates](docs/sdks/jobtemplates/README.md#getjobtemplates) - Retrieve a Job Template
+* [createJobFromTemplate](docs/sdks/jobtemplates/README.md#createjobfromtemplate) - Create a job from a template
+
+### [Jobs](docs/sdks/jobs/README.md)
 
 * [listJobs](docs/sdks/jobs/README.md#listjobs) - List all Jobs
 * [createJobs](docs/sdks/jobs/README.md#createjobs) - Create a new Job
@@ -452,13 +458,7 @@ run();
 * [updateJobs](docs/sdks/jobs/README.md#updatejobs) - Update a Job
 * [deleteJobs](docs/sdks/jobs/README.md#deletejobs) - Delete a Job
 
-### [jobTemplates](docs/sdks/jobtemplates/README.md)
-
-* [listJobTemplates](docs/sdks/jobtemplates/README.md#listjobtemplates) - List all Job Templates
-* [getJobTemplates](docs/sdks/jobtemplates/README.md#getjobtemplates) - Retrieve a Job Template
-* [createJobFromTemplate](docs/sdks/jobtemplates/README.md#createjobfromtemplate) - Create a job from a template
-
-### [knowledgeArticles](docs/sdks/knowledgearticles/README.md)
+### [KnowledgeArticles](docs/sdks/knowledgearticles/README.md)
 
 * [listKnowledgeArticles](docs/sdks/knowledgearticles/README.md#listknowledgearticles) - List all Knowledge Articles
 * [createKnowledgeArticles](docs/sdks/knowledgearticles/README.md#createknowledgearticles) - Create a new Knowledge Article
@@ -466,7 +466,7 @@ run();
 * [updateKnowledgeArticles](docs/sdks/knowledgearticles/README.md#updateknowledgearticles) - Update a Knowledge Article
 * [deleteKnowledgeArticles](docs/sdks/knowledgearticles/README.md#deleteknowledgearticles) - Delete a Knowledge Article
 
-### [locations](docs/sdks/locations/README.md)
+### [Locations](docs/sdks/locations/README.md)
 
 * [listLocations](docs/sdks/locations/README.md#listlocations) - List all Locations
 * [createLocations](docs/sdks/locations/README.md#createlocations) - Create a new Location
@@ -474,7 +474,7 @@ run();
 * [updateLocations](docs/sdks/locations/README.md#updatelocations) - Update a Location
 * [deleteLocations](docs/sdks/locations/README.md#deletelocations) - Delete a Location
 
-### [materials](docs/sdks/materials/README.md)
+### [Materials](docs/sdks/materials/README.md)
 
 * [listMaterials](docs/sdks/materials/README.md#listmaterials) - List all Materials
 * [createMaterials](docs/sdks/materials/README.md#creatematerials) - Create a new Material
@@ -482,7 +482,7 @@ run();
 * [updateMaterials](docs/sdks/materials/README.md#updatematerials) - Update a Material
 * [deleteMaterials](docs/sdks/materials/README.md#deletematerials) - Delete a Material
 
-### [notes](docs/sdks/notes/README.md)
+### [Notes](docs/sdks/notes/README.md)
 
 * [listNotes](docs/sdks/notes/README.md#listnotes) - List all Notes
 * [createNotes](docs/sdks/notes/README.md#createnotes) - Create a new Note
@@ -490,19 +490,18 @@ run();
 * [updateNotes](docs/sdks/notes/README.md#updatenotes) - Update a Note
 * [deleteNotes](docs/sdks/notes/README.md#deletenotes) - Delete a Note
 
-### [search](docs/sdks/search/README.md)
+### [Search](docs/sdks/search/README.md)
 
 * [generalSearch](docs/sdks/search/README.md#generalsearch) - Search across multiple object types
 * [objectSearch](docs/sdks/search/README.md#objectsearch) - Search within a specific object type
 * [jobEmbeddingSearch](docs/sdks/search/README.md#jobembeddingsearch) - Semantic search for jobs
 
-### [securityRoles](docs/sdks/securityroles/README.md)
+### [SecurityRoles](docs/sdks/securityroles/README.md)
 
 * [listSecurityRoles](docs/sdks/securityroles/README.md#listsecurityroles) - List all Security Roles
 * [getSecurityRoles](docs/sdks/securityroles/README.md#getsecurityroles) - Retrieve a Security Role
 
-
-### [smsTemplates](docs/sdks/smstemplates/README.md)
+### [SMSTemplates](docs/sdks/smstemplates/README.md)
 
 * [listSMSTemplates](docs/sdks/smstemplates/README.md#listsmstemplates) - List all SMS Templates
 * [createSMSTemplates](docs/sdks/smstemplates/README.md#createsmstemplates) - Create a new SMS Template
@@ -510,7 +509,7 @@ run();
 * [updateSMSTemplates](docs/sdks/smstemplates/README.md#updatesmstemplates) - Update a SMS Template
 * [deleteSMSTemplates](docs/sdks/smstemplates/README.md#deletesmstemplates) - Delete a SMS Template
 
-### [staffMembers](docs/sdks/staffmembers/README.md)
+### [StaffMembers](docs/sdks/staffmembers/README.md)
 
 * [listStaffMembers](docs/sdks/staffmembers/README.md#liststaffmembers) - List all Staff Members
 * [createStaffMembers](docs/sdks/staffmembers/README.md#createstaffmembers) - Create a new Staff Member
@@ -518,7 +517,7 @@ run();
 * [updateStaffMembers](docs/sdks/staffmembers/README.md#updatestaffmembers) - Update a Staff Member
 * [deleteStaffMembers](docs/sdks/staffmembers/README.md#deletestaffmembers) - Delete a Staff Member
 
-### [staffMessages](docs/sdks/staffmessages/README.md)
+### [StaffMessages](docs/sdks/staffmessages/README.md)
 
 * [listStaffMessages](docs/sdks/staffmessages/README.md#liststaffmessages) - List all Staff Messages
 * [createStaffMessages](docs/sdks/staffmessages/README.md#createstaffmessages) - Create a new Staff Message
@@ -526,7 +525,7 @@ run();
 * [updateStaffMessages](docs/sdks/staffmessages/README.md#updatestaffmessages) - Update a Staff Message
 * [deleteStaffMessages](docs/sdks/staffmessages/README.md#deletestaffmessages) - Delete a Staff Message
 
-### [suppliers](docs/sdks/suppliers/README.md)
+### [Suppliers](docs/sdks/suppliers/README.md)
 
 * [listSuppliers](docs/sdks/suppliers/README.md#listsuppliers) - List all Suppliers
 * [createSuppliers](docs/sdks/suppliers/README.md#createsuppliers) - Create a new Supplier
@@ -534,7 +533,7 @@ run();
 * [updateSuppliers](docs/sdks/suppliers/README.md#updatesuppliers) - Update a Supplier
 * [deleteSuppliers](docs/sdks/suppliers/README.md#deletesuppliers) - Delete a Supplier
 
-### [tasks](docs/sdks/tasks/README.md)
+### [Tasks](docs/sdks/tasks/README.md)
 
 * [listTasks](docs/sdks/tasks/README.md#listtasks) - List all Tasks
 * [createTasks](docs/sdks/tasks/README.md#createtasks) - Create a new Task
@@ -542,7 +541,7 @@ run();
 * [updateTasks](docs/sdks/tasks/README.md#updatetasks) - Update a Task
 * [deleteTasks](docs/sdks/tasks/README.md#deletetasks) - Delete a Task
 
-### [taxRates](docs/sdks/taxrates/README.md)
+### [TaxRates](docs/sdks/taxrates/README.md)
 
 * [listTaxRates](docs/sdks/taxrates/README.md#listtaxrates) - List all Tax Rates
 * [createTaxRates](docs/sdks/taxrates/README.md#createtaxrates) - Create a new Tax Rate
@@ -550,7 +549,7 @@ run();
 * [updateTaxRates](docs/sdks/taxrates/README.md#updatetaxrates) - Update a Tax Rate
 * [deleteTaxRates](docs/sdks/taxrates/README.md#deletetaxrates) - Delete a Tax Rate
 
-### [vendors](docs/sdks/vendors/README.md)
+### [Vendors](docs/sdks/vendors/README.md)
 
 * [listVendors](docs/sdks/vendors/README.md#listvendors) - List all Vendors
 * [getVendors](docs/sdks/vendors/README.md#getvendors) - Retrieve a Vendor

@@ -1,5 +1,4 @@
 # Categories
-(*categories*)
 
 ## Overview
 
@@ -128,7 +127,7 @@ const serviceM8 = new ServiceM8({
 async function run() {
   const result = await serviceM8.categories.createCategories({
     name: "<value>",
-    uuid: "123e4567-1a1c-43a0-97fc-234d50db046b",
+    uuid: "123e4567-6b8f-49e7-b5a3-23b2e930bdeb",
   });
 
   console.log(result);
@@ -156,7 +155,7 @@ const serviceM8 = new ServiceM8Core({
 async function run() {
   const res = await categoriesCreateCategories(serviceM8, {
     name: "<value>",
-    uuid: "123e4567-1a1c-43a0-97fc-234d50db046b",
+    uuid: "123e4567-6b8f-49e7-b5a3-23b2e930bdeb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -307,7 +306,7 @@ async function run() {
     uuid: "c830c901-e3ae-427d-8f08-cf28c94b319f",
     categoryCreate: {
       name: "<value>",
-      uuid: "123e4567-1a1c-43a0-97fc-234d50db046b",
+      uuid: "123e4567-6b8f-49e7-b5a3-23b2e930bdeb",
     },
   });
 
@@ -338,7 +337,7 @@ async function run() {
     uuid: "c830c901-e3ae-427d-8f08-cf28c94b319f",
     categoryCreate: {
       name: "<value>",
-      uuid: "123e4567-1a1c-43a0-97fc-234d50db046b",
+      uuid: "123e4567-6b8f-49e7-b5a3-23b2e930bdeb",
     },
   });
   if (res.ok) {

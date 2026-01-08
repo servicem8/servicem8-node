@@ -1,5 +1,4 @@
 # Jobs
-(*jobs*)
 
 ## Overview
 
@@ -127,21 +126,21 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobs.createJobs({
-    createdByStaffUuid: "123e4567-3ba5-4872-9854-234d584a78bb",
+    createdByStaffUuid: "123e4567-2f6d-47bc-9c1f-23b2eb5cb50b",
     date: "YYYY-MM-DD",
-    companyUuid: "123e4567-c26d-4729-85e2-234d5c834b2b",
+    companyUuid: "123e4567-2181-4e53-99ed-23b2e8ca051b",
     status: "Unsuccessful",
-    paymentDate: "2025-09-01 12:00:00",
-    paymentActionedByUuid: "123e4567-b127-417a-bbd0-234d594db8bb",
-    categoryUuid: "123e4567-59da-4849-b73b-234d5a80d72b",
-    queueUuid: "123e4567-344d-44e9-ad5c-234d56582d9b",
-    queueExpiryDate: "2025-09-01 12:00:00",
-    queueAssignedStaffUuid: "123e4567-3df0-4988-a9f9-234d590d635b",
-    quoteDate: "2025-09-01 12:00:00",
-    workOrderDate: "2025-09-01 12:00:00",
-    uuid: "123e4567-ea57-4245-a8a0-234d52bc61ab",
-    completionDate: "2025-09-01 12:00:00",
-    unsuccessfulDate: "2025-09-01 12:00:00",
+    paymentDate: "2026-01-01 12:00:00",
+    paymentActionedByUuid: "123e4567-1ba2-4eaa-b3f6-23b2e00342eb",
+    categoryUuid: "123e4567-0b06-4941-9a80-23b2e95ae10b",
+    queueUuid: "123e4567-6797-4331-9adf-23b2ef59991b",
+    queueExpiryDate: "2026-01-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-e3b0-44d4-8dd3-23b2e439993b",
+    quoteDate: "2026-01-01 12:00:00",
+    workOrderDate: "2026-01-01 12:00:00",
+    uuid: "123e4567-28d6-43c5-81b8-23b2e254a20b",
+    completionDate: "2026-01-01 12:00:00",
+    unsuccessfulDate: "2026-01-01 12:00:00",
   });
 
   console.log(result);
@@ -168,21 +167,21 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobsCreateJobs(serviceM8, {
-    createdByStaffUuid: "123e4567-3ba5-4872-9854-234d584a78bb",
+    createdByStaffUuid: "123e4567-2f6d-47bc-9c1f-23b2eb5cb50b",
     date: "YYYY-MM-DD",
-    companyUuid: "123e4567-c26d-4729-85e2-234d5c834b2b",
+    companyUuid: "123e4567-2181-4e53-99ed-23b2e8ca051b",
     status: "Unsuccessful",
-    paymentDate: "2025-09-01 12:00:00",
-    paymentActionedByUuid: "123e4567-b127-417a-bbd0-234d594db8bb",
-    categoryUuid: "123e4567-59da-4849-b73b-234d5a80d72b",
-    queueUuid: "123e4567-344d-44e9-ad5c-234d56582d9b",
-    queueExpiryDate: "2025-09-01 12:00:00",
-    queueAssignedStaffUuid: "123e4567-3df0-4988-a9f9-234d590d635b",
-    quoteDate: "2025-09-01 12:00:00",
-    workOrderDate: "2025-09-01 12:00:00",
-    uuid: "123e4567-ea57-4245-a8a0-234d52bc61ab",
-    completionDate: "2025-09-01 12:00:00",
-    unsuccessfulDate: "2025-09-01 12:00:00",
+    paymentDate: "2026-01-01 12:00:00",
+    paymentActionedByUuid: "123e4567-1ba2-4eaa-b3f6-23b2e00342eb",
+    categoryUuid: "123e4567-0b06-4941-9a80-23b2e95ae10b",
+    queueUuid: "123e4567-6797-4331-9adf-23b2ef59991b",
+    queueExpiryDate: "2026-01-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-e3b0-44d4-8dd3-23b2e439993b",
+    quoteDate: "2026-01-01 12:00:00",
+    workOrderDate: "2026-01-01 12:00:00",
+    uuid: "123e4567-28d6-43c5-81b8-23b2e254a20b",
+    completionDate: "2026-01-01 12:00:00",
+    unsuccessfulDate: "2026-01-01 12:00:00",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -332,21 +331,21 @@ async function run() {
   const result = await serviceM8.jobs.updateJobs({
     uuid: "f751bf5c-f1f2-4a20-8df3-7628082340b1",
     jobCreate: {
-      createdByStaffUuid: "123e4567-3ba5-4872-9854-234d584a78bb",
+      createdByStaffUuid: "123e4567-2f6d-47bc-9c1f-23b2eb5cb50b",
       date: "YYYY-MM-DD",
-      companyUuid: "123e4567-c26d-4729-85e2-234d5c834b2b",
+      companyUuid: "123e4567-2181-4e53-99ed-23b2e8ca051b",
       status: "Work Order",
-      paymentDate: "2025-09-01 12:00:00",
-      paymentActionedByUuid: "123e4567-b127-417a-bbd0-234d594db8bb",
-      categoryUuid: "123e4567-59da-4849-b73b-234d5a80d72b",
-      queueUuid: "123e4567-344d-44e9-ad5c-234d56582d9b",
-      queueExpiryDate: "2025-09-01 12:00:00",
-      queueAssignedStaffUuid: "123e4567-3df0-4988-a9f9-234d590d635b",
-      quoteDate: "2025-09-01 12:00:00",
-      workOrderDate: "2025-09-01 12:00:00",
-      uuid: "123e4567-ea57-4245-a8a0-234d52bc61ab",
-      completionDate: "2025-09-01 12:00:00",
-      unsuccessfulDate: "2025-09-01 12:00:00",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-1ba2-4eaa-b3f6-23b2e00342eb",
+      categoryUuid: "123e4567-0b06-4941-9a80-23b2e95ae10b",
+      queueUuid: "123e4567-6797-4331-9adf-23b2ef59991b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-e3b0-44d4-8dd3-23b2e439993b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-28d6-43c5-81b8-23b2e254a20b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
     },
   });
 
@@ -376,21 +375,21 @@ async function run() {
   const res = await jobsUpdateJobs(serviceM8, {
     uuid: "f751bf5c-f1f2-4a20-8df3-7628082340b1",
     jobCreate: {
-      createdByStaffUuid: "123e4567-3ba5-4872-9854-234d584a78bb",
+      createdByStaffUuid: "123e4567-2f6d-47bc-9c1f-23b2eb5cb50b",
       date: "YYYY-MM-DD",
-      companyUuid: "123e4567-c26d-4729-85e2-234d5c834b2b",
+      companyUuid: "123e4567-2181-4e53-99ed-23b2e8ca051b",
       status: "Work Order",
-      paymentDate: "2025-09-01 12:00:00",
-      paymentActionedByUuid: "123e4567-b127-417a-bbd0-234d594db8bb",
-      categoryUuid: "123e4567-59da-4849-b73b-234d5a80d72b",
-      queueUuid: "123e4567-344d-44e9-ad5c-234d56582d9b",
-      queueExpiryDate: "2025-09-01 12:00:00",
-      queueAssignedStaffUuid: "123e4567-3df0-4988-a9f9-234d590d635b",
-      quoteDate: "2025-09-01 12:00:00",
-      workOrderDate: "2025-09-01 12:00:00",
-      uuid: "123e4567-ea57-4245-a8a0-234d52bc61ab",
-      completionDate: "2025-09-01 12:00:00",
-      unsuccessfulDate: "2025-09-01 12:00:00",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-1ba2-4eaa-b3f6-23b2e00342eb",
+      categoryUuid: "123e4567-0b06-4941-9a80-23b2e95ae10b",
+      queueUuid: "123e4567-6797-4331-9adf-23b2ef59991b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-e3b0-44d4-8dd3-23b2e439993b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-28d6-43c5-81b8-23b2e254a20b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
     },
   });
   if (res.ok) {

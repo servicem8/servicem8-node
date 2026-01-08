@@ -6,7 +6,7 @@
 import { DocumentTemplateCreate } from "servicem8/models/components";
 
 let value: DocumentTemplateCreate = {
-  uuid: "123e4567-c320-402b-bad1-234d54e9f0ab",
+  uuid: "123e4567-564d-4009-b146-23b2e93c15eb",
 };
 ```
 
@@ -14,5 +14,5 @@ let value: DocumentTemplateCreate = {
 
 | Field                                | Type                                 | Required                             | Description                          | Example                              |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| `uuid`                               | *string*                             | :heavy_minus_sign:                   | Unique identifier for this record    | 123e4567-c320-402b-bad1-234d54e9f0ab |
+| `uuid`                               | *string*                             | :heavy_minus_sign:                   | Unique identifier for this record    | 123e4567-564d-4009-b146-23b2e93c15eb |
 | `name`                               | *string*                             | :heavy_minus_sign:                   | N/A                                  |                                      |

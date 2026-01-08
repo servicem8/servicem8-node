@@ -9,7 +9,7 @@ let value: UpdateTaxRatesRequest = {
   uuid: "454d7816-ba3d-4ece-ab28-bf8ea8608925",
   taxRateCreate: {
     name: "<value>",
-    uuid: "123e4567-19bc-40fc-a9a6-234d5211ac1b",
+    uuid: "123e4567-51ae-4e6d-a9dc-23b2ef0c262b",
   },
 };
 ```

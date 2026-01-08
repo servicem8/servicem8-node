@@ -13,7 +13,8 @@ let value: MaterialBundleMaterialList = {
 
 ## Fields
 
-| Field                                 | Type                                  | Required                              | Description                           |
-| ------------------------------------- | ------------------------------------- | ------------------------------------- | ------------------------------------- |
-| `uuid`                                | *string*                              | :heavy_check_mark:                    | Must be the UUID of a Material record |
-| `quantity`                            | *number*                              | :heavy_check_mark:                    | N/A                                   |
+| Field                                           | Type                                            | Required                                        | Description                                     |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `uuid`                                          | *string*                                        | :heavy_check_mark:                              | Must be the UUID of a Material record           |
+| `quantity`                                      | *number*                                        | :heavy_check_mark:                              | N/A                                             |
+| `sortOrder`                                     | *number*                                        | :heavy_minus_sign:                              | Optional sort order for materials in the bundle |
