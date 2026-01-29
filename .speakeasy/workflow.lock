@@ -6,6 +6,7 @@ sources:
         sourceBlobDigest: sha256:1029269ea34a5f075a756c8e88225ba8ba66c07eaebcd6700604bdac7d7bb025
         tags:
             - latest
+            - speakeasy-sdk-regen-1754438919
             - 1.0.0
 targets:
     service-m-8:
@@ -28,7 +29,7 @@ targets:
         sourceRevisionDigest: sha256:f43b95fe78bbc10c9f1d4d2cab14a618db2a763c0ffcede487c785cd589e7e57
         sourceBlobDigest: sha256:1029269ea34a5f075a756c8e88225ba8ba66c07eaebcd6700604bdac7d7bb025
         codeSamplesNamespace: service-m-8-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:ef196eaded09e3604568c7a33cd8da9cde2f677db898235d930e4f15d1720482
+        codeSamplesRevisionDigest: sha256:decf6cea2caaf35ecd79b11f03b0271ce8065dc1dabae1a91a4d627f175c1111
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
