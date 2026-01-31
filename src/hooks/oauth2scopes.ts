@@ -3,7 +3,7 @@
  */
 
 /**
- * Available scopes for the  OAuth 2.0 scheme (authorizationCode flow).
+ * Available scopes for the oauth2 OAuth 2.0 scheme (authorizationCode flow).
  */
 export type OAuth2Scope =
   /**

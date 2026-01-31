@@ -126,7 +126,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.jobQueues.createJobQueues({
-    uuid: "123e4567-6101-43c8-a4a5-23b2e008dbcb",
+    uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
   });
 
   console.log(result);
@@ -153,7 +153,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await jobQueuesCreateJobQueues(serviceM8, {
-    uuid: "123e4567-6101-43c8-a4a5-23b2e008dbcb",
+    uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -303,7 +303,7 @@ async function run() {
   const result = await serviceM8.jobQueues.updateJobQueues({
     uuid: "d5fb31ee-995a-4e2f-8fa6-92068fea17a2",
     queueCreate: {
-      uuid: "123e4567-6101-43c8-a4a5-23b2e008dbcb",
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
     },
   });
 
@@ -333,7 +333,7 @@ async function run() {
   const res = await jobQueuesUpdateJobQueues(serviceM8, {
     uuid: "d5fb31ee-995a-4e2f-8fa6-92068fea17a2",
     queueCreate: {
-      uuid: "123e4567-6101-43c8-a4a5-23b2e008dbcb",
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
     },
   });
   if (res.ok) {

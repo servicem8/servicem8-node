@@ -126,7 +126,7 @@ const serviceM8 = new ServiceM8({
 
 async function run() {
   const result = await serviceM8.assetTypes.createAssetTypes({
-    uuid: "123e4567-4a81-427c-9a07-23b2e1f1712b",
+    uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
   });
 
   console.log(result);
@@ -153,7 +153,7 @@ const serviceM8 = new ServiceM8Core({
 
 async function run() {
   const res = await assetTypesCreateAssetTypes(serviceM8, {
-    uuid: "123e4567-4a81-427c-9a07-23b2e1f1712b",
+    uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -303,7 +303,7 @@ async function run() {
   const result = await serviceM8.assetTypes.updateAssetTypes({
     uuid: "f89ce1c3-90b1-4b51-89a7-5bc9443eac2b",
     assetTypeCreate: {
-      uuid: "123e4567-4a81-427c-9a07-23b2e1f1712b",
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
     },
   });
 
@@ -333,7 +333,7 @@ async function run() {
   const res = await assetTypesUpdateAssetTypes(serviceM8, {
     uuid: "f89ce1c3-90b1-4b51-89a7-5bc9443eac2b",
     assetTypeCreate: {
-      uuid: "123e4567-4a81-427c-9a07-23b2e1f1712b",
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
     },
   });
   if (res.ok) {
