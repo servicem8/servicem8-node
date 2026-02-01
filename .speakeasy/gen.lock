@@ -5,13 +5,15 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.700.2
   generationVersion: 2.801.2
-  releaseVersion: 0.10.1
-  configChecksum: 1790f8ae030cbce102471f75b8ebbe13
+  releaseVersion: 0.10.2
+  configChecksum: e7aeb1efde7ff232d81d5b61100db0cc
+  repoURL: https://github.com/servicem8/servicem8-node.git
+  installationURL: https://github.com/servicem8/servicem8-node
   published: true
 persistentEdits:
-  generation_id: ec2cf026-67f9-46ae-8166-323949df004a
-  pristine_commit_hash: be6dd76a0b7ccbd62278730e1533985146b4045c
-  pristine_tree_hash: 830f8b21879c5c08d269d228f2b8d2dd0321a9e7
+  generation_id: c6a0d203-db39-469c-bdc0-abe89c7e2a11
+  pristine_commit_hash: c7266e0d777dac0a4013b22aa833d49c9fa68cf5
+  pristine_tree_hash: de750f5b44d3ecca238a07bd4d1602de3048e9f2
 features:
   typescript:
     additionalDependencies: 0.1.0
@@ -34,8 +36,8 @@ features:
 trackedFiles:
   .devcontainer/README.md:
     id: b170c0f184ac
-    last_write_checksum: sha1:b7532ce4970c748af02c17a76d92c1212cc3ce49
-    pristine_git_object: 222c1bbc56b7a3e8a251c2b8552544a836e3e076
+    last_write_checksum: sha1:e44c5d11d912e9d42d24c4a04ff39dc94a33fd05
+    pristine_git_object: ff34c3ff9485feba7f90173ceba28cacf743d6ec
   .devcontainer/devcontainer.json:
     id: b34062a34eb1
     last_write_checksum: sha1:d0b15193202c961e7d1875864ddb15f9d17c84dd
@@ -1674,12 +1676,12 @@ trackedFiles:
     pristine_git_object: aec2e9ea2cf790e674d1a15b7f5805705c84621c
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:878871648e6afa0fd738a4a6c68b00875245bfed
-    pristine_git_object: 30b3e42fc2ba4e8d95deefc9963d49fb5d28e7f8
+    last_write_checksum: sha1:306f7bbdaf2ec75396abce27856457118da2328b
+    pristine_git_object: 0a6dd6f3f5253d5b4ac0de6be0a1cfb16dbd1864
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:60816a00af86ee5433afa477f59603ac0a1b9117
-    pristine_git_object: 0155d80152ac3432d237610f64d704c26f7acd71
+    last_write_checksum: sha1:a51ac03ac3f795d4d03c0bd65dd1db3a48306360
+    pristine_git_object: 2723cd0b088e113d4bcf37616f0ee37c87814352
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:e5057df9325d9c938c8601007d74fd68edfc511b
@@ -2482,8 +2484,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:117e724d8e6b061ab5e62e414aebba97c0dacea8
-    pristine_git_object: cdacdb948524e1d6ab236fd94d3df3a017ae174e
+    last_write_checksum: sha1:8ed0bf7b1191f74ffb735fe8c66decd4a49b7cc1
+    pristine_git_object: ae9256eeaa2dd4952240f202b9cb18dfdf27334c
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -2566,8 +2568,8 @@ trackedFiles:
     pristine_git_object: 0955a573c2ce989d63c737410ab8cc28706d9f74
   src/mcp-server/mcp-server.ts:
     id: aabbc4ab07c1
-    last_write_checksum: sha1:59ba0ef6b526c5f5107942f93e16ac318ad227cd
-    pristine_git_object: 17944829487ccbc32262ff204f17fd5f24dd7472
+    last_write_checksum: sha1:0149bf06af82e24036e49b6ba5eb1eda9b4a0ff6
+    pristine_git_object: 90be5989a95a1300c33c9d9b4aad747e4c400a19
   src/mcp-server/prompts.ts:
     id: 26f3d73cbf31
     last_write_checksum: sha1:e2bf624bd231bb42a9298a36994df100f589fe80
@@ -2582,8 +2584,8 @@ trackedFiles:
     pristine_git_object: c25696d4c4f70e081fa5d87ad6891874c509a577
   src/mcp-server/server.ts:
     id: 2784dd48e82a
-    last_write_checksum: sha1:71f7399f04db18251adf698b7193f268906ffe71
-    pristine_git_object: ac530e9660b8657f932cc46845b4fe1051f7331f
+    last_write_checksum: sha1:58d714df80ec704747fe4babd3713da0bbd39d4b
+    pristine_git_object: 6ff3a5317899bf207a6fb4ab0bc05d51ee6866e4
   src/mcp-server/shared.ts:
     id: 074e80d4be1e
     last_write_checksum: sha1:56c73d4429691516e35541825e759a0285747a2b
