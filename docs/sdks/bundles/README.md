@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_inventory**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listBundles" method="get" path="/materialbundle.json" -->
+<!-- UsageSnippet language="typescript" operationID="listBundles" method="get" path="/materialbundle.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,284 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createBundles" method="post" path="/materialbundle.json" -->
+<!-- UsageSnippet language="typescript" operationID="createBundles" method="post" path="/materialbundle.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.bundles.createBundles({
+    uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+    itemNumber: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { bundlesCreateBundles } from "servicem8/funcs/bundlesCreateBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await bundlesCreateBundles(serviceM8, {
+    uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+    itemNumber: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesCreateBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createBundles" method="post" path="/materialbundle.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.bundles.createBundles({
+    uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+    itemNumber: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { bundlesCreateBundles } from "servicem8/funcs/bundlesCreateBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await bundlesCreateBundles(serviceM8, {
+    uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+    itemNumber: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesCreateBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createBundles" method="post" path="/materialbundle.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.bundles.createBundles({
+    uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+    itemNumber: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { bundlesCreateBundles } from "servicem8/funcs/bundlesCreateBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await bundlesCreateBundles(serviceM8, {
+    uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+    itemNumber: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesCreateBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createBundles" method="post" path="/materialbundle.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.bundles.createBundles({
+    uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+    itemNumber: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { bundlesCreateBundles } from "servicem8/funcs/bundlesCreateBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await bundlesCreateBundles(serviceM8, {
+    uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+    itemNumber: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesCreateBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createBundles" method="post" path="/materialbundle.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.bundles.createBundles({
+    uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+    itemNumber: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { bundlesCreateBundles } from "servicem8/funcs/bundlesCreateBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await bundlesCreateBundles(serviceM8, {
+    uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+    itemNumber: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesCreateBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createBundles" method="post" path="/materialbundle.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -203,7 +478,7 @@ This endpoint requires the following OAuth scope **read_inventory**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getBundles" method="get" path="/materialbundle/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getBundles" method="get" path="/materialbundle/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,9 +564,375 @@ This endpoint requires the following OAuth scope **manage_inventory**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateBundles" method="post" path="/materialbundle/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateBundles" method="post" path="/materialbundle/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.bundles.updateBundles({
+    uuid: "04c59a6d-27d1-4e79-8ad6-8951bdc7f38a",
+    materialBundleCreate: {
+      uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+      itemNumber: "<value>",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { bundlesUpdateBundles } from "servicem8/funcs/bundlesUpdateBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await bundlesUpdateBundles(serviceM8, {
+    uuid: "04c59a6d-27d1-4e79-8ad6-8951bdc7f38a",
+    materialBundleCreate: {
+      uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+      itemNumber: "<value>",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesUpdateBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateBundles" method="post" path="/materialbundle/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.bundles.updateBundles({
+    uuid: "04c59a6d-27d1-4e79-8ad6-8951bdc7f38a",
+    materialBundleCreate: {
+      uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+      itemNumber: "<value>",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { bundlesUpdateBundles } from "servicem8/funcs/bundlesUpdateBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await bundlesUpdateBundles(serviceM8, {
+    uuid: "04c59a6d-27d1-4e79-8ad6-8951bdc7f38a",
+    materialBundleCreate: {
+      uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+      itemNumber: "<value>",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesUpdateBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateBundles" method="post" path="/materialbundle/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.bundles.updateBundles({
+    uuid: "3aeb61ee-ff12-4800-a236-1c20771061e8",
+    materialBundleCreate: {
+      uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+      itemNumber: "<value>",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { bundlesUpdateBundles } from "servicem8/funcs/bundlesUpdateBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await bundlesUpdateBundles(serviceM8, {
+    uuid: "3aeb61ee-ff12-4800-a236-1c20771061e8",
+    materialBundleCreate: {
+      uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+      itemNumber: "<value>",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesUpdateBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateBundles" method="post" path="/materialbundle/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.bundles.updateBundles({
+    uuid: "cddea772-d904-4eb7-a764-58b71cf2db43",
+    materialBundleCreate: {
+      uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+      itemNumber: "<value>",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { bundlesUpdateBundles } from "servicem8/funcs/bundlesUpdateBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await bundlesUpdateBundles(serviceM8, {
+    uuid: "cddea772-d904-4eb7-a764-58b71cf2db43",
+    materialBundleCreate: {
+      uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+      itemNumber: "<value>",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesUpdateBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateBundles" method="post" path="/materialbundle/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.bundles.updateBundles({
+    uuid: "6262a4ed-0390-4ae7-bc9c-e7f6a93084f1",
+    materialBundleCreate: {
+      uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+      itemNumber: "<value>",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { bundlesUpdateBundles } from "servicem8/funcs/bundlesUpdateBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await bundlesUpdateBundles(serviceM8, {
+    uuid: "6262a4ed-0390-4ae7-bc9c-e7f6a93084f1",
+    materialBundleCreate: {
+      uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+      itemNumber: "<value>",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesUpdateBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateBundles" method="post" path="/materialbundle/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.bundles.updateBundles({
+    uuid: "92d0296e-677d-4cfc-a0ec-84e1809ff960",
+    materialBundleCreate: {
+      uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+      itemNumber: "<value>",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { bundlesUpdateBundles } from "servicem8/funcs/bundlesUpdateBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await bundlesUpdateBundles(serviceM8, {
+    uuid: "92d0296e-677d-4cfc-a0ec-84e1809ff960",
+    materialBundleCreate: {
+      uuid: "123e4567-edf3-466b-b94a-23c6f6608adb",
+      itemNumber: "<value>",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("bundlesUpdateBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateBundles" method="post" path="/materialbundle/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -391,7 +1032,7 @@ This endpoint requires the following OAuth scope **manage_inventory**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteBundles" method="delete" path="/materialbundle/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteBundles" method="delete" path="/materialbundle/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

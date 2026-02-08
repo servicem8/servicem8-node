@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_job_contacts**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listJobContacts" method="get" path="/jobcontact.json" -->
+<!-- UsageSnippet language="typescript" operationID="listJobContacts" method="get" path="/jobcontact.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,284 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createJobContacts" method="post" path="/jobcontact.json" -->
+<!-- UsageSnippet language="typescript" operationID="createJobContacts" method="post" path="/jobcontact.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobContacts.createJobContacts({
+    jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+    uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobContactsCreateJobContacts } from "servicem8/funcs/jobContactsCreateJobContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobContactsCreateJobContacts(serviceM8, {
+    jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+    uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobContactsCreateJobContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createJobContacts" method="post" path="/jobcontact.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobContacts.createJobContacts({
+    jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+    uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobContactsCreateJobContacts } from "servicem8/funcs/jobContactsCreateJobContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobContactsCreateJobContacts(serviceM8, {
+    jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+    uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobContactsCreateJobContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createJobContacts" method="post" path="/jobcontact.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobContacts.createJobContacts({
+    jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+    uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobContactsCreateJobContacts } from "servicem8/funcs/jobContactsCreateJobContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobContactsCreateJobContacts(serviceM8, {
+    jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+    uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobContactsCreateJobContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createJobContacts" method="post" path="/jobcontact.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobContacts.createJobContacts({
+    jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+    uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobContactsCreateJobContacts } from "servicem8/funcs/jobContactsCreateJobContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobContactsCreateJobContacts(serviceM8, {
+    jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+    uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobContactsCreateJobContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createJobContacts" method="post" path="/jobcontact.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobContacts.createJobContacts({
+    jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+    uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobContactsCreateJobContacts } from "servicem8/funcs/jobContactsCreateJobContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobContactsCreateJobContacts(serviceM8, {
+    jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+    uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobContactsCreateJobContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createJobContacts" method="post" path="/jobcontact.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -203,7 +478,7 @@ This endpoint requires the following OAuth scope **read_job_contacts**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getJobContacts" method="get" path="/jobcontact/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getJobContacts" method="get" path="/jobcontact/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,9 +564,375 @@ This endpoint requires the following OAuth scope **manage_job_contacts**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateJobContacts" method="post" path="/jobcontact/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateJobContacts" method="post" path="/jobcontact/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobContacts.updateJobContacts({
+    uuid: "b3b61b18-8cbc-4034-b615-082857d01211",
+    jobContactCreate: {
+      jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+      uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobContactsUpdateJobContacts } from "servicem8/funcs/jobContactsUpdateJobContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobContactsUpdateJobContacts(serviceM8, {
+    uuid: "b3b61b18-8cbc-4034-b615-082857d01211",
+    jobContactCreate: {
+      jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+      uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobContactsUpdateJobContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateJobContacts" method="post" path="/jobcontact/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobContacts.updateJobContacts({
+    uuid: "b3b61b18-8cbc-4034-b615-082857d01211",
+    jobContactCreate: {
+      jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+      uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobContactsUpdateJobContacts } from "servicem8/funcs/jobContactsUpdateJobContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobContactsUpdateJobContacts(serviceM8, {
+    uuid: "b3b61b18-8cbc-4034-b615-082857d01211",
+    jobContactCreate: {
+      jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+      uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobContactsUpdateJobContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateJobContacts" method="post" path="/jobcontact/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobContacts.updateJobContacts({
+    uuid: "33d614f5-6495-414c-9be6-c644cf5eabb6",
+    jobContactCreate: {
+      jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+      uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobContactsUpdateJobContacts } from "servicem8/funcs/jobContactsUpdateJobContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobContactsUpdateJobContacts(serviceM8, {
+    uuid: "33d614f5-6495-414c-9be6-c644cf5eabb6",
+    jobContactCreate: {
+      jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+      uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobContactsUpdateJobContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateJobContacts" method="post" path="/jobcontact/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobContacts.updateJobContacts({
+    uuid: "b832fb93-ceb5-4ff1-852e-947d1315429a",
+    jobContactCreate: {
+      jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+      uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobContactsUpdateJobContacts } from "servicem8/funcs/jobContactsUpdateJobContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobContactsUpdateJobContacts(serviceM8, {
+    uuid: "b832fb93-ceb5-4ff1-852e-947d1315429a",
+    jobContactCreate: {
+      jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+      uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobContactsUpdateJobContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateJobContacts" method="post" path="/jobcontact/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobContacts.updateJobContacts({
+    uuid: "e772d731-006e-4cbc-ba65-cec06ef0c1a1",
+    jobContactCreate: {
+      jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+      uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobContactsUpdateJobContacts } from "servicem8/funcs/jobContactsUpdateJobContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobContactsUpdateJobContacts(serviceM8, {
+    uuid: "e772d731-006e-4cbc-ba65-cec06ef0c1a1",
+    jobContactCreate: {
+      jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+      uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobContactsUpdateJobContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateJobContacts" method="post" path="/jobcontact/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobContacts.updateJobContacts({
+    uuid: "9ce8245c-9fb9-4361-8f7f-25eba557ff71",
+    jobContactCreate: {
+      jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+      uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobContactsUpdateJobContacts } from "servicem8/funcs/jobContactsUpdateJobContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobContactsUpdateJobContacts(serviceM8, {
+    uuid: "9ce8245c-9fb9-4361-8f7f-25eba557ff71",
+    jobContactCreate: {
+      jobUuid: "123e4567-152b-4287-9d40-23c6f95caf3b",
+      uuid: "123e4567-72af-4f70-8b59-23c6f7f67c2b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobContactsUpdateJobContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateJobContacts" method="post" path="/jobcontact/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -391,7 +1032,7 @@ This endpoint requires the following OAuth scope **manage_job_contacts**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteJobContacts" method="delete" path="/jobcontact/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteJobContacts" method="delete" path="/jobcontact/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
