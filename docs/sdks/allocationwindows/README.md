@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_schedule**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listAllocationWindows" method="get" path="/allocationwindow.json" -->
+<!-- UsageSnippet language="typescript" operationID="listAllocationWindows" method="get" path="/allocationwindow.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,274 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createAllocationWindows" method="post" path="/allocationwindow.json" -->
+<!-- UsageSnippet language="typescript" operationID="createAllocationWindows" method="post" path="/allocationwindow.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.allocationWindows.createAllocationWindows({
+    uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { allocationWindowsCreateAllocationWindows } from "servicem8/funcs/allocationWindowsCreateAllocationWindows.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await allocationWindowsCreateAllocationWindows(serviceM8, {
+    uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsCreateAllocationWindows failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createAllocationWindows" method="post" path="/allocationwindow.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.allocationWindows.createAllocationWindows({
+    uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { allocationWindowsCreateAllocationWindows } from "servicem8/funcs/allocationWindowsCreateAllocationWindows.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await allocationWindowsCreateAllocationWindows(serviceM8, {
+    uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsCreateAllocationWindows failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createAllocationWindows" method="post" path="/allocationwindow.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.allocationWindows.createAllocationWindows({
+    uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { allocationWindowsCreateAllocationWindows } from "servicem8/funcs/allocationWindowsCreateAllocationWindows.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await allocationWindowsCreateAllocationWindows(serviceM8, {
+    uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsCreateAllocationWindows failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createAllocationWindows" method="post" path="/allocationwindow.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.allocationWindows.createAllocationWindows({
+    uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { allocationWindowsCreateAllocationWindows } from "servicem8/funcs/allocationWindowsCreateAllocationWindows.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await allocationWindowsCreateAllocationWindows(serviceM8, {
+    uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsCreateAllocationWindows failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createAllocationWindows" method="post" path="/allocationwindow.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.allocationWindows.createAllocationWindows({
+    uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { allocationWindowsCreateAllocationWindows } from "servicem8/funcs/allocationWindowsCreateAllocationWindows.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await allocationWindowsCreateAllocationWindows(serviceM8, {
+    uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsCreateAllocationWindows failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createAllocationWindows" method="post" path="/allocationwindow.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -201,7 +466,7 @@ This endpoint requires the following OAuth scope **read_schedule**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getAllocationWindows" method="get" path="/allocationwindow/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getAllocationWindows" method="get" path="/allocationwindow/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -287,9 +552,363 @@ This endpoint requires the following OAuth scope **manage_schedule**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateAllocationWindows" method="post" path="/allocationwindow/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateAllocationWindows" method="post" path="/allocationwindow/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.allocationWindows.updateAllocationWindows({
+    uuid: "435a8b6f-2a26-4ca0-98a1-ad77b8fc1324",
+    allocationWindowCreate: {
+      uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { allocationWindowsUpdateAllocationWindows } from "servicem8/funcs/allocationWindowsUpdateAllocationWindows.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await allocationWindowsUpdateAllocationWindows(serviceM8, {
+    uuid: "435a8b6f-2a26-4ca0-98a1-ad77b8fc1324",
+    allocationWindowCreate: {
+      uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsUpdateAllocationWindows failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateAllocationWindows" method="post" path="/allocationwindow/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.allocationWindows.updateAllocationWindows({
+    uuid: "435a8b6f-2a26-4ca0-98a1-ad77b8fc1324",
+    allocationWindowCreate: {
+      uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { allocationWindowsUpdateAllocationWindows } from "servicem8/funcs/allocationWindowsUpdateAllocationWindows.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await allocationWindowsUpdateAllocationWindows(serviceM8, {
+    uuid: "435a8b6f-2a26-4ca0-98a1-ad77b8fc1324",
+    allocationWindowCreate: {
+      uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsUpdateAllocationWindows failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateAllocationWindows" method="post" path="/allocationwindow/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.allocationWindows.updateAllocationWindows({
+    uuid: "ff2ecf75-72fa-4ec7-855e-1eb68ac5c331",
+    allocationWindowCreate: {
+      uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { allocationWindowsUpdateAllocationWindows } from "servicem8/funcs/allocationWindowsUpdateAllocationWindows.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await allocationWindowsUpdateAllocationWindows(serviceM8, {
+    uuid: "ff2ecf75-72fa-4ec7-855e-1eb68ac5c331",
+    allocationWindowCreate: {
+      uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsUpdateAllocationWindows failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateAllocationWindows" method="post" path="/allocationwindow/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.allocationWindows.updateAllocationWindows({
+    uuid: "796d1e53-1ca8-4482-bc1d-96736fa6d82f",
+    allocationWindowCreate: {
+      uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { allocationWindowsUpdateAllocationWindows } from "servicem8/funcs/allocationWindowsUpdateAllocationWindows.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await allocationWindowsUpdateAllocationWindows(serviceM8, {
+    uuid: "796d1e53-1ca8-4482-bc1d-96736fa6d82f",
+    allocationWindowCreate: {
+      uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsUpdateAllocationWindows failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateAllocationWindows" method="post" path="/allocationwindow/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.allocationWindows.updateAllocationWindows({
+    uuid: "dce058b6-deec-47af-a717-c7928590b54a",
+    allocationWindowCreate: {
+      uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { allocationWindowsUpdateAllocationWindows } from "servicem8/funcs/allocationWindowsUpdateAllocationWindows.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await allocationWindowsUpdateAllocationWindows(serviceM8, {
+    uuid: "dce058b6-deec-47af-a717-c7928590b54a",
+    allocationWindowCreate: {
+      uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsUpdateAllocationWindows failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateAllocationWindows" method="post" path="/allocationwindow/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.allocationWindows.updateAllocationWindows({
+    uuid: "4cd38297-8da6-4b29-8742-4f293110085d",
+    allocationWindowCreate: {
+      uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { allocationWindowsUpdateAllocationWindows } from "servicem8/funcs/allocationWindowsUpdateAllocationWindows.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await allocationWindowsUpdateAllocationWindows(serviceM8, {
+    uuid: "4cd38297-8da6-4b29-8742-4f293110085d",
+    allocationWindowCreate: {
+      uuid: "123e4567-554d-4cc7-b1a9-23c6f751245b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("allocationWindowsUpdateAllocationWindows failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateAllocationWindows" method="post" path="/allocationwindow/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -387,7 +1006,7 @@ This endpoint requires the following OAuth scope **manage_schedule**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteAllocationWindows" method="delete" path="/allocationwindow/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteAllocationWindows" method="delete" path="/allocationwindow/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

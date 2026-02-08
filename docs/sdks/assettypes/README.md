@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_assets**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listAssetTypes" method="get" path="/assettype.json" -->
+<!-- UsageSnippet language="typescript" operationID="listAssetTypes" method="get" path="/assettype.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,274 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createAssetTypes" method="post" path="/assettype.json" -->
+<!-- UsageSnippet language="typescript" operationID="createAssetTypes" method="post" path="/assettype.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.createAssetTypes({
+    uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesCreateAssetTypes } from "servicem8/funcs/assetTypesCreateAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesCreateAssetTypes(serviceM8, {
+    uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesCreateAssetTypes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createAssetTypes" method="post" path="/assettype.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.createAssetTypes({
+    uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesCreateAssetTypes } from "servicem8/funcs/assetTypesCreateAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesCreateAssetTypes(serviceM8, {
+    uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesCreateAssetTypes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createAssetTypes" method="post" path="/assettype.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.createAssetTypes({
+    uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesCreateAssetTypes } from "servicem8/funcs/assetTypesCreateAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesCreateAssetTypes(serviceM8, {
+    uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesCreateAssetTypes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createAssetTypes" method="post" path="/assettype.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.createAssetTypes({
+    uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesCreateAssetTypes } from "servicem8/funcs/assetTypesCreateAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesCreateAssetTypes(serviceM8, {
+    uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesCreateAssetTypes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createAssetTypes" method="post" path="/assettype.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.createAssetTypes({
+    uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesCreateAssetTypes } from "servicem8/funcs/assetTypesCreateAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesCreateAssetTypes(serviceM8, {
+    uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesCreateAssetTypes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createAssetTypes" method="post" path="/assettype.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -201,7 +466,7 @@ This endpoint requires the following OAuth scope **read_assets**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getAssetTypes" method="get" path="/assettype/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getAssetTypes" method="get" path="/assettype/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -287,9 +552,363 @@ This endpoint requires the following OAuth scope **manage_assets**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateAssetTypes" method="post" path="/assettype/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateAssetTypes" method="post" path="/assettype/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.updateAssetTypes({
+    uuid: "fba3f624-7b55-47fe-b75c-663b46160d94",
+    assetTypeCreate: {
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesUpdateAssetTypes } from "servicem8/funcs/assetTypesUpdateAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesUpdateAssetTypes(serviceM8, {
+    uuid: "fba3f624-7b55-47fe-b75c-663b46160d94",
+    assetTypeCreate: {
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesUpdateAssetTypes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateAssetTypes" method="post" path="/assettype/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.updateAssetTypes({
+    uuid: "fba3f624-7b55-47fe-b75c-663b46160d94",
+    assetTypeCreate: {
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesUpdateAssetTypes } from "servicem8/funcs/assetTypesUpdateAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesUpdateAssetTypes(serviceM8, {
+    uuid: "fba3f624-7b55-47fe-b75c-663b46160d94",
+    assetTypeCreate: {
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesUpdateAssetTypes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateAssetTypes" method="post" path="/assettype/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.updateAssetTypes({
+    uuid: "73055e40-74c6-4150-b663-e92aaaf24a30",
+    assetTypeCreate: {
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesUpdateAssetTypes } from "servicem8/funcs/assetTypesUpdateAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesUpdateAssetTypes(serviceM8, {
+    uuid: "73055e40-74c6-4150-b663-e92aaaf24a30",
+    assetTypeCreate: {
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesUpdateAssetTypes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateAssetTypes" method="post" path="/assettype/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.updateAssetTypes({
+    uuid: "de333b5f-150e-4816-8c61-eb43e5a0c3cc",
+    assetTypeCreate: {
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesUpdateAssetTypes } from "servicem8/funcs/assetTypesUpdateAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesUpdateAssetTypes(serviceM8, {
+    uuid: "de333b5f-150e-4816-8c61-eb43e5a0c3cc",
+    assetTypeCreate: {
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesUpdateAssetTypes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateAssetTypes" method="post" path="/assettype/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.updateAssetTypes({
+    uuid: "2ca91d17-23d8-40bb-9b99-525181a08fa9",
+    assetTypeCreate: {
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesUpdateAssetTypes } from "servicem8/funcs/assetTypesUpdateAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesUpdateAssetTypes(serviceM8, {
+    uuid: "2ca91d17-23d8-40bb-9b99-525181a08fa9",
+    assetTypeCreate: {
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesUpdateAssetTypes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateAssetTypes" method="post" path="/assettype/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assetTypes.updateAssetTypes({
+    uuid: "f89ce1c3-90b1-4b51-89a7-5bc9443eac2b",
+    assetTypeCreate: {
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetTypesUpdateAssetTypes } from "servicem8/funcs/assetTypesUpdateAssetTypes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetTypesUpdateAssetTypes(serviceM8, {
+    uuid: "f89ce1c3-90b1-4b51-89a7-5bc9443eac2b",
+    assetTypeCreate: {
+      uuid: "123e4567-7f78-4f87-93f4-23c6f0236b8b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetTypesUpdateAssetTypes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateAssetTypes" method="post" path="/assettype/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -387,7 +1006,7 @@ This endpoint requires the following OAuth scope **manage_assets**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteAssetTypes" method="delete" path="/assettype/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteAssetTypes" method="delete" path="/assettype/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

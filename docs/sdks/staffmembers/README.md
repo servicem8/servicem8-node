@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_staff**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listStaffMembers" method="get" path="/staff.json" -->
+<!-- UsageSnippet language="typescript" operationID="listStaffMembers" method="get" path="/staff.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,374 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createStaffMembers" method="post" path="/staff.json" -->
+<!-- UsageSnippet language="typescript" operationID="createStaffMembers" method="post" path="/staff.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMembers.createStaffMembers({
+    first: "<value>",
+    last: "<value>",
+    email: "Larissa_Pfannerstill75@hotmail.com",
+    geoTimestamp: "2026-01-01 12:00:00",
+    navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+    navigatingTimestamp: "2026-01-01 12:00:00",
+    navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+    statusMessageTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+    securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+    labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMembersCreateStaffMembers } from "servicem8/funcs/staffMembersCreateStaffMembers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMembersCreateStaffMembers(serviceM8, {
+    first: "<value>",
+    last: "<value>",
+    email: "Larissa_Pfannerstill75@hotmail.com",
+    geoTimestamp: "2026-01-01 12:00:00",
+    navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+    navigatingTimestamp: "2026-01-01 12:00:00",
+    navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+    statusMessageTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+    securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+    labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersCreateStaffMembers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createStaffMembers" method="post" path="/staff.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMembers.createStaffMembers({
+    first: "<value>",
+    last: "<value>",
+    email: "Larissa_Pfannerstill75@hotmail.com",
+    geoTimestamp: "2026-01-01 12:00:00",
+    navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+    navigatingTimestamp: "2026-01-01 12:00:00",
+    navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+    statusMessageTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+    securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+    labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMembersCreateStaffMembers } from "servicem8/funcs/staffMembersCreateStaffMembers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMembersCreateStaffMembers(serviceM8, {
+    first: "<value>",
+    last: "<value>",
+    email: "Larissa_Pfannerstill75@hotmail.com",
+    geoTimestamp: "2026-01-01 12:00:00",
+    navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+    navigatingTimestamp: "2026-01-01 12:00:00",
+    navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+    statusMessageTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+    securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+    labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersCreateStaffMembers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createStaffMembers" method="post" path="/staff.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMembers.createStaffMembers({
+    first: "<value>",
+    last: "<value>",
+    email: "Larissa_Pfannerstill75@hotmail.com",
+    geoTimestamp: "2026-01-01 12:00:00",
+    navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+    navigatingTimestamp: "2026-01-01 12:00:00",
+    navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+    statusMessageTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+    securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+    labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMembersCreateStaffMembers } from "servicem8/funcs/staffMembersCreateStaffMembers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMembersCreateStaffMembers(serviceM8, {
+    first: "<value>",
+    last: "<value>",
+    email: "Larissa_Pfannerstill75@hotmail.com",
+    geoTimestamp: "2026-01-01 12:00:00",
+    navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+    navigatingTimestamp: "2026-01-01 12:00:00",
+    navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+    statusMessageTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+    securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+    labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersCreateStaffMembers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createStaffMembers" method="post" path="/staff.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMembers.createStaffMembers({
+    first: "<value>",
+    last: "<value>",
+    email: "Larissa_Pfannerstill75@hotmail.com",
+    geoTimestamp: "2026-01-01 12:00:00",
+    navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+    navigatingTimestamp: "2026-01-01 12:00:00",
+    navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+    statusMessageTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+    securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+    labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMembersCreateStaffMembers } from "servicem8/funcs/staffMembersCreateStaffMembers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMembersCreateStaffMembers(serviceM8, {
+    first: "<value>",
+    last: "<value>",
+    email: "Larissa_Pfannerstill75@hotmail.com",
+    geoTimestamp: "2026-01-01 12:00:00",
+    navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+    navigatingTimestamp: "2026-01-01 12:00:00",
+    navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+    statusMessageTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+    securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+    labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersCreateStaffMembers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createStaffMembers" method="post" path="/staff.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMembers.createStaffMembers({
+    first: "<value>",
+    last: "<value>",
+    email: "Larissa_Pfannerstill75@hotmail.com",
+    geoTimestamp: "2026-01-01 12:00:00",
+    navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+    navigatingTimestamp: "2026-01-01 12:00:00",
+    navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+    statusMessageTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+    securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+    labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMembersCreateStaffMembers } from "servicem8/funcs/staffMembersCreateStaffMembers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMembersCreateStaffMembers(serviceM8, {
+    first: "<value>",
+    last: "<value>",
+    email: "Larissa_Pfannerstill75@hotmail.com",
+    geoTimestamp: "2026-01-01 12:00:00",
+    navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+    navigatingTimestamp: "2026-01-01 12:00:00",
+    navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+    statusMessageTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+    securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+    labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersCreateStaffMembers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createStaffMembers" method="post" path="/staff.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -221,7 +586,7 @@ This endpoint requires the following OAuth scope **read_staff**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getStaffMembers" method="get" path="/staff/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getStaffMembers" method="get" path="/staff/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -307,9 +672,404 @@ This endpoint requires the following OAuth scope **manage_staff**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateStaffMembers" method="post" path="/staff/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateStaffMembers" method="post" path="/staff/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMembers.updateStaffMembers({
+    uuid: "fe6f0c12-505f-402b-9926-ce0b5097e694",
+    staffCreate: {
+      first: "<value>",
+      last: "<value>",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2026-01-01 12:00:00",
+      navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+      navigatingTimestamp: "2026-01-01 12:00:00",
+      navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+      statusMessageTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+      securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+      labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMembersUpdateStaffMembers } from "servicem8/funcs/staffMembersUpdateStaffMembers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMembersUpdateStaffMembers(serviceM8, {
+    uuid: "fe6f0c12-505f-402b-9926-ce0b5097e694",
+    staffCreate: {
+      first: "<value>",
+      last: "<value>",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2026-01-01 12:00:00",
+      navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+      navigatingTimestamp: "2026-01-01 12:00:00",
+      navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+      statusMessageTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+      securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+      labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersUpdateStaffMembers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateStaffMembers" method="post" path="/staff/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMembers.updateStaffMembers({
+    uuid: "cea57e3f-e6f0-4c12-8505-f02b926ce0b5",
+    staffCreate: {
+      first: "<value>",
+      last: "<value>",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2026-01-01 12:00:00",
+      navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+      navigatingTimestamp: "2026-01-01 12:00:00",
+      navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+      statusMessageTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+      securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+      labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMembersUpdateStaffMembers } from "servicem8/funcs/staffMembersUpdateStaffMembers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMembersUpdateStaffMembers(serviceM8, {
+    uuid: "cea57e3f-e6f0-4c12-8505-f02b926ce0b5",
+    staffCreate: {
+      first: "<value>",
+      last: "<value>",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2026-01-01 12:00:00",
+      navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+      navigatingTimestamp: "2026-01-01 12:00:00",
+      navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+      statusMessageTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+      securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+      labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersUpdateStaffMembers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateStaffMembers" method="post" path="/staff/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMembers.updateStaffMembers({
+    uuid: "97e6945c-cd82-46f6-8741-6f2591b364db",
+    staffCreate: {
+      first: "<value>",
+      last: "<value>",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2026-01-01 12:00:00",
+      navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+      navigatingTimestamp: "2026-01-01 12:00:00",
+      navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+      statusMessageTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+      securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+      labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMembersUpdateStaffMembers } from "servicem8/funcs/staffMembersUpdateStaffMembers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMembersUpdateStaffMembers(serviceM8, {
+    uuid: "97e6945c-cd82-46f6-8741-6f2591b364db",
+    staffCreate: {
+      first: "<value>",
+      last: "<value>",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2026-01-01 12:00:00",
+      navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+      navigatingTimestamp: "2026-01-01 12:00:00",
+      navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+      statusMessageTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+      securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+      labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersUpdateStaffMembers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateStaffMembers" method="post" path="/staff/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMembers.updateStaffMembers({
+    uuid: "31dec1c6-94dc-42eb-9aa4-686b63357deb",
+    staffCreate: {
+      first: "<value>",
+      last: "<value>",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2026-01-01 12:00:00",
+      navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+      navigatingTimestamp: "2026-01-01 12:00:00",
+      navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+      statusMessageTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+      securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+      labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMembersUpdateStaffMembers } from "servicem8/funcs/staffMembersUpdateStaffMembers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMembersUpdateStaffMembers(serviceM8, {
+    uuid: "31dec1c6-94dc-42eb-9aa4-686b63357deb",
+    staffCreate: {
+      first: "<value>",
+      last: "<value>",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2026-01-01 12:00:00",
+      navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+      navigatingTimestamp: "2026-01-01 12:00:00",
+      navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+      statusMessageTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+      securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+      labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersUpdateStaffMembers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateStaffMembers" method="post" path="/staff/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMembers.updateStaffMembers({
+    uuid: "784372f8-205f-44cf-9cd3-26712bce57ab",
+    staffCreate: {
+      first: "<value>",
+      last: "<value>",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2026-01-01 12:00:00",
+      navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+      navigatingTimestamp: "2026-01-01 12:00:00",
+      navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+      statusMessageTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+      securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+      labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMembersUpdateStaffMembers } from "servicem8/funcs/staffMembersUpdateStaffMembers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMembersUpdateStaffMembers(serviceM8, {
+    uuid: "784372f8-205f-44cf-9cd3-26712bce57ab",
+    staffCreate: {
+      first: "<value>",
+      last: "<value>",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2026-01-01 12:00:00",
+      navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+      navigatingTimestamp: "2026-01-01 12:00:00",
+      navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+      statusMessageTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+      securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+      labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersUpdateStaffMembers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateStaffMembers" method="post" path="/staff/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -386,6 +1146,85 @@ async function run() {
 
 run();
 ```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateStaffMembers" method="post" path="/staff/{uuid}.json" example="unauthorized" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMembers.updateStaffMembers({
+    uuid: "bbdfd386-cd53-44f3-a627-16ec887e8e6e",
+    staffCreate: {
+      first: "<value>",
+      last: "<value>",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2026-01-01 12:00:00",
+      navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+      navigatingTimestamp: "2026-01-01 12:00:00",
+      navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+      statusMessageTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+      securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+      labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMembersUpdateStaffMembers } from "servicem8/funcs/staffMembersUpdateStaffMembers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMembersUpdateStaffMembers(serviceM8, {
+    uuid: "bbdfd386-cd53-44f3-a627-16ec887e8e6e",
+    staffCreate: {
+      first: "<value>",
+      last: "<value>",
+      email: "Mckenna_Yundt@hotmail.com",
+      geoTimestamp: "2026-01-01 12:00:00",
+      navigatingToJobUuid: "123e4567-4030-4c3d-af74-23c6fea2126b",
+      navigatingTimestamp: "2026-01-01 12:00:00",
+      navigatingExpiryTimestamp: "2026-01-01 12:00:00",
+      statusMessageTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-ced7-4ae8-80f4-23c6fb245c7b",
+      securityRoleUuid: "123e4567-d4c6-4d84-ab87-23c6f401466b",
+      labourMaterialUuid: "123e4567-b82e-4f29-b73d-23c6f42700bb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMembersUpdateStaffMembers failed:", res.error);
+  }
+}
+
+run();
+```
 
 ### Parameters
 
@@ -427,7 +1266,7 @@ This endpoint requires the following OAuth scope **manage_staff**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteStaffMembers" method="delete" path="/staff/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteStaffMembers" method="delete" path="/staff/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

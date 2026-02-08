@@ -26,7 +26,7 @@ This endpoint requires the following OAuth scope **vendor**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listVendors" method="get" path="/vendor.json" -->
+<!-- UsageSnippet language="typescript" operationID="listVendors" method="get" path="/vendor.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -110,7 +110,7 @@ This endpoint requires the following OAuth scope **vendor**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getVendors" method="get" path="/vendor/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getVendors" method="get" path="/vendor/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

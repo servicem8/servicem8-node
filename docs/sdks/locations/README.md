@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_locations**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listLocations" method="get" path="/location.json" -->
+<!-- UsageSnippet language="typescript" operationID="listLocations" method="get" path="/location.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,284 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createLocations" method="post" path="/location.json" -->
+<!-- UsageSnippet language="typescript" operationID="createLocations" method="post" path="/location.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.locations.createLocations({
+    name: "<value>",
+    uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { locationsCreateLocations } from "servicem8/funcs/locationsCreateLocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await locationsCreateLocations(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsCreateLocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createLocations" method="post" path="/location.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.locations.createLocations({
+    name: "<value>",
+    uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { locationsCreateLocations } from "servicem8/funcs/locationsCreateLocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await locationsCreateLocations(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsCreateLocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createLocations" method="post" path="/location.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.locations.createLocations({
+    name: "<value>",
+    uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { locationsCreateLocations } from "servicem8/funcs/locationsCreateLocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await locationsCreateLocations(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsCreateLocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createLocations" method="post" path="/location.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.locations.createLocations({
+    name: "<value>",
+    uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { locationsCreateLocations } from "servicem8/funcs/locationsCreateLocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await locationsCreateLocations(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsCreateLocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createLocations" method="post" path="/location.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.locations.createLocations({
+    name: "<value>",
+    uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { locationsCreateLocations } from "servicem8/funcs/locationsCreateLocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await locationsCreateLocations(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsCreateLocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createLocations" method="post" path="/location.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -203,7 +478,7 @@ This endpoint requires the following OAuth scope **read_locations**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getLocations" method="get" path="/location/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getLocations" method="get" path="/location/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,9 +564,375 @@ This endpoint requires the following OAuth scope **manage_locations**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateLocations" method="post" path="/location/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateLocations" method="post" path="/location/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.locations.updateLocations({
+    uuid: "ed8fdfb5-cd7a-4553-94ee-fb5e7e71e103",
+    locationCreate: {
+      name: "<value>",
+      uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { locationsUpdateLocations } from "servicem8/funcs/locationsUpdateLocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await locationsUpdateLocations(serviceM8, {
+    uuid: "ed8fdfb5-cd7a-4553-94ee-fb5e7e71e103",
+    locationCreate: {
+      name: "<value>",
+      uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsUpdateLocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateLocations" method="post" path="/location/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.locations.updateLocations({
+    uuid: "ed8fdfb5-cd7a-4553-94ee-fb5e7e71e103",
+    locationCreate: {
+      name: "<value>",
+      uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { locationsUpdateLocations } from "servicem8/funcs/locationsUpdateLocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await locationsUpdateLocations(serviceM8, {
+    uuid: "ed8fdfb5-cd7a-4553-94ee-fb5e7e71e103",
+    locationCreate: {
+      name: "<value>",
+      uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsUpdateLocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateLocations" method="post" path="/location/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.locations.updateLocations({
+    uuid: "da2135bf-160e-40f5-a833-a3c1607a04fd",
+    locationCreate: {
+      name: "<value>",
+      uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { locationsUpdateLocations } from "servicem8/funcs/locationsUpdateLocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await locationsUpdateLocations(serviceM8, {
+    uuid: "da2135bf-160e-40f5-a833-a3c1607a04fd",
+    locationCreate: {
+      name: "<value>",
+      uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsUpdateLocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateLocations" method="post" path="/location/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.locations.updateLocations({
+    uuid: "c1f1cc84-4bb2-4389-8ba7-04d9c9c1563a",
+    locationCreate: {
+      name: "<value>",
+      uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { locationsUpdateLocations } from "servicem8/funcs/locationsUpdateLocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await locationsUpdateLocations(serviceM8, {
+    uuid: "c1f1cc84-4bb2-4389-8ba7-04d9c9c1563a",
+    locationCreate: {
+      name: "<value>",
+      uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsUpdateLocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateLocations" method="post" path="/location/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.locations.updateLocations({
+    uuid: "89202113-d94f-4d98-950e-a0519501ac17",
+    locationCreate: {
+      name: "<value>",
+      uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { locationsUpdateLocations } from "servicem8/funcs/locationsUpdateLocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await locationsUpdateLocations(serviceM8, {
+    uuid: "89202113-d94f-4d98-950e-a0519501ac17",
+    locationCreate: {
+      name: "<value>",
+      uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsUpdateLocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateLocations" method="post" path="/location/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.locations.updateLocations({
+    uuid: "fee3b1fa-ab4e-4094-823d-0885a2f7b69f",
+    locationCreate: {
+      name: "<value>",
+      uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { locationsUpdateLocations } from "servicem8/funcs/locationsUpdateLocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await locationsUpdateLocations(serviceM8, {
+    uuid: "fee3b1fa-ab4e-4094-823d-0885a2f7b69f",
+    locationCreate: {
+      name: "<value>",
+      uuid: "123e4567-40da-4039-9a67-23c6fdbfb3cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationsUpdateLocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateLocations" method="post" path="/location/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -391,7 +1032,7 @@ This endpoint requires the following OAuth scope **manage_locations**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteLocations" method="delete" path="/location/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteLocations" method="delete" path="/location/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

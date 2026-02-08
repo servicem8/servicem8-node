@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_jobs**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listJobs" method="get" path="/job.json" -->
+<!-- UsageSnippet language="typescript" operationID="listJobs" method="get" path="/job.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,414 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createJobs" method="post" path="/job.json" -->
+<!-- UsageSnippet language="typescript" operationID="createJobs" method="post" path="/job.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobs.createJobs({
+    createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+    date: "YYYY-MM-DD",
+    companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+    status: "Unsuccessful",
+    paymentDate: "2026-01-01 12:00:00",
+    paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+    categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+    queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+    queueExpiryDate: "2026-01-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+    quoteDate: "2026-01-01 12:00:00",
+    workOrderDate: "2026-01-01 12:00:00",
+    uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+    completionDate: "2026-01-01 12:00:00",
+    unsuccessfulDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobsCreateJobs } from "servicem8/funcs/jobsCreateJobs.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobsCreateJobs(serviceM8, {
+    createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+    date: "YYYY-MM-DD",
+    companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+    status: "Unsuccessful",
+    paymentDate: "2026-01-01 12:00:00",
+    paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+    categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+    queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+    queueExpiryDate: "2026-01-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+    quoteDate: "2026-01-01 12:00:00",
+    workOrderDate: "2026-01-01 12:00:00",
+    uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+    completionDate: "2026-01-01 12:00:00",
+    unsuccessfulDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsCreateJobs failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createJobs" method="post" path="/job.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobs.createJobs({
+    createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+    date: "YYYY-MM-DD",
+    companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+    status: "Unsuccessful",
+    paymentDate: "2026-01-01 12:00:00",
+    paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+    categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+    queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+    queueExpiryDate: "2026-01-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+    quoteDate: "2026-01-01 12:00:00",
+    workOrderDate: "2026-01-01 12:00:00",
+    uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+    completionDate: "2026-01-01 12:00:00",
+    unsuccessfulDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobsCreateJobs } from "servicem8/funcs/jobsCreateJobs.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobsCreateJobs(serviceM8, {
+    createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+    date: "YYYY-MM-DD",
+    companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+    status: "Unsuccessful",
+    paymentDate: "2026-01-01 12:00:00",
+    paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+    categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+    queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+    queueExpiryDate: "2026-01-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+    quoteDate: "2026-01-01 12:00:00",
+    workOrderDate: "2026-01-01 12:00:00",
+    uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+    completionDate: "2026-01-01 12:00:00",
+    unsuccessfulDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsCreateJobs failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createJobs" method="post" path="/job.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobs.createJobs({
+    createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+    date: "YYYY-MM-DD",
+    companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+    status: "Unsuccessful",
+    paymentDate: "2026-01-01 12:00:00",
+    paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+    categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+    queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+    queueExpiryDate: "2026-01-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+    quoteDate: "2026-01-01 12:00:00",
+    workOrderDate: "2026-01-01 12:00:00",
+    uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+    completionDate: "2026-01-01 12:00:00",
+    unsuccessfulDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobsCreateJobs } from "servicem8/funcs/jobsCreateJobs.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobsCreateJobs(serviceM8, {
+    createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+    date: "YYYY-MM-DD",
+    companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+    status: "Unsuccessful",
+    paymentDate: "2026-01-01 12:00:00",
+    paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+    categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+    queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+    queueExpiryDate: "2026-01-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+    quoteDate: "2026-01-01 12:00:00",
+    workOrderDate: "2026-01-01 12:00:00",
+    uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+    completionDate: "2026-01-01 12:00:00",
+    unsuccessfulDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsCreateJobs failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createJobs" method="post" path="/job.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobs.createJobs({
+    createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+    date: "YYYY-MM-DD",
+    companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+    status: "Unsuccessful",
+    paymentDate: "2026-01-01 12:00:00",
+    paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+    categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+    queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+    queueExpiryDate: "2026-01-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+    quoteDate: "2026-01-01 12:00:00",
+    workOrderDate: "2026-01-01 12:00:00",
+    uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+    completionDate: "2026-01-01 12:00:00",
+    unsuccessfulDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobsCreateJobs } from "servicem8/funcs/jobsCreateJobs.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobsCreateJobs(serviceM8, {
+    createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+    date: "YYYY-MM-DD",
+    companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+    status: "Unsuccessful",
+    paymentDate: "2026-01-01 12:00:00",
+    paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+    categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+    queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+    queueExpiryDate: "2026-01-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+    quoteDate: "2026-01-01 12:00:00",
+    workOrderDate: "2026-01-01 12:00:00",
+    uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+    completionDate: "2026-01-01 12:00:00",
+    unsuccessfulDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsCreateJobs failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createJobs" method="post" path="/job.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobs.createJobs({
+    createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+    date: "YYYY-MM-DD",
+    companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+    status: "Unsuccessful",
+    paymentDate: "2026-01-01 12:00:00",
+    paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+    categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+    queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+    queueExpiryDate: "2026-01-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+    quoteDate: "2026-01-01 12:00:00",
+    workOrderDate: "2026-01-01 12:00:00",
+    uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+    completionDate: "2026-01-01 12:00:00",
+    unsuccessfulDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobsCreateJobs } from "servicem8/funcs/jobsCreateJobs.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobsCreateJobs(serviceM8, {
+    createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+    date: "YYYY-MM-DD",
+    companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+    status: "Unsuccessful",
+    paymentDate: "2026-01-01 12:00:00",
+    paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+    categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+    queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+    queueExpiryDate: "2026-01-01 12:00:00",
+    queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+    quoteDate: "2026-01-01 12:00:00",
+    workOrderDate: "2026-01-01 12:00:00",
+    uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+    completionDate: "2026-01-01 12:00:00",
+    unsuccessfulDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsCreateJobs failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createJobs" method="post" path="/job.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -229,7 +634,7 @@ This endpoint requires the following OAuth scope **read_jobs**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getJobs" method="get" path="/job/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getJobs" method="get" path="/job/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -315,9 +720,444 @@ This endpoint requires the following OAuth scope **manage_jobs**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateJobs" method="post" path="/job/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateJobs" method="post" path="/job/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobs.updateJobs({
+    uuid: "39a5c5ce-872d-415a-a370-5dcc9c893641",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+      date: "YYYY-MM-DD",
+      companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+      status: "Work Order",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+      categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+      queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobsUpdateJobs } from "servicem8/funcs/jobsUpdateJobs.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobsUpdateJobs(serviceM8, {
+    uuid: "39a5c5ce-872d-415a-a370-5dcc9c893641",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+      date: "YYYY-MM-DD",
+      companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+      status: "Work Order",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+      categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+      queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsUpdateJobs failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateJobs" method="post" path="/job/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobs.updateJobs({
+    uuid: "139a5c5c-e872-4d15-8a37-05dcc9c89364",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+      date: "YYYY-MM-DD",
+      companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+      status: "Work Order",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+      categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+      queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobsUpdateJobs } from "servicem8/funcs/jobsUpdateJobs.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobsUpdateJobs(serviceM8, {
+    uuid: "139a5c5c-e872-4d15-8a37-05dcc9c89364",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+      date: "YYYY-MM-DD",
+      companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+      status: "Work Order",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+      categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+      queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsUpdateJobs failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateJobs" method="post" path="/job/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobs.updateJobs({
+    uuid: "bcf80c00-9321-438b-941d-5a1dd923cff3",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+      date: "YYYY-MM-DD",
+      companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+      status: "Work Order",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+      categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+      queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobsUpdateJobs } from "servicem8/funcs/jobsUpdateJobs.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobsUpdateJobs(serviceM8, {
+    uuid: "bcf80c00-9321-438b-941d-5a1dd923cff3",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+      date: "YYYY-MM-DD",
+      companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+      status: "Work Order",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+      categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+      queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsUpdateJobs failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateJobs" method="post" path="/job/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobs.updateJobs({
+    uuid: "4daeea82-f51f-4e7c-ad40-dcc18bc88dca",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+      date: "YYYY-MM-DD",
+      companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+      status: "Work Order",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+      categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+      queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobsUpdateJobs } from "servicem8/funcs/jobsUpdateJobs.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobsUpdateJobs(serviceM8, {
+    uuid: "4daeea82-f51f-4e7c-ad40-dcc18bc88dca",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+      date: "YYYY-MM-DD",
+      companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+      status: "Work Order",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+      categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+      queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsUpdateJobs failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateJobs" method="post" path="/job/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobs.updateJobs({
+    uuid: "0b1dd461-5171-4044-87ae-5a6f9acf5e67",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+      date: "YYYY-MM-DD",
+      companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+      status: "Work Order",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+      categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+      queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobsUpdateJobs } from "servicem8/funcs/jobsUpdateJobs.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobsUpdateJobs(serviceM8, {
+    uuid: "0b1dd461-5171-4044-87ae-5a6f9acf5e67",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+      date: "YYYY-MM-DD",
+      companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+      status: "Work Order",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+      categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+      queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsUpdateJobs failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateJobs" method="post" path="/job/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -402,6 +1242,93 @@ async function run() {
 
 run();
 ```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateJobs" method="post" path="/job/{uuid}.json" example="unauthorized" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobs.updateJobs({
+    uuid: "5f751bf5-cf1f-42a2-80df-37628082340b",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+      date: "YYYY-MM-DD",
+      companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+      status: "Work Order",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+      categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+      queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobsUpdateJobs } from "servicem8/funcs/jobsUpdateJobs.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobsUpdateJobs(serviceM8, {
+    uuid: "5f751bf5-cf1f-42a2-80df-37628082340b",
+    jobCreate: {
+      createdByStaffUuid: "123e4567-e583-4317-9e7f-23c6f8ea30db",
+      date: "YYYY-MM-DD",
+      companyUuid: "123e4567-8b0a-4bb2-99fe-23c6f43fe25b",
+      status: "Work Order",
+      paymentDate: "2026-01-01 12:00:00",
+      paymentActionedByUuid: "123e4567-f9bc-42f5-92d1-23c6f8a2907b",
+      categoryUuid: "123e4567-3139-4cd1-a745-23c6f104500b",
+      queueUuid: "123e4567-6d88-4b78-9c58-23c6f931fa5b",
+      queueExpiryDate: "2026-01-01 12:00:00",
+      queueAssignedStaffUuid: "123e4567-bfa3-40b5-900c-23c6fb48431b",
+      quoteDate: "2026-01-01 12:00:00",
+      workOrderDate: "2026-01-01 12:00:00",
+      uuid: "123e4567-bb4b-441d-a0ab-23c6fcd4d80b",
+      completionDate: "2026-01-01 12:00:00",
+      unsuccessfulDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobsUpdateJobs failed:", res.error);
+  }
+}
+
+run();
+```
 
 ### Parameters
 
@@ -443,7 +1370,7 @@ This endpoint requires the following OAuth scope **manage_jobs**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteJobs" method="delete" path="/job/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteJobs" method="delete" path="/job/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

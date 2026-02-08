@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_customers**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listClients" method="get" path="/company.json" -->
+<!-- UsageSnippet language="typescript" operationID="listClients" method="get" path="/company.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,294 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createClients" method="post" path="/company.json" -->
+<!-- UsageSnippet language="typescript" operationID="createClients" method="post" path="/company.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.clients.createClients({
+    name: "<value>",
+    uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+    taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { clientsCreateClients } from "servicem8/funcs/clientsCreateClients.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await clientsCreateClients(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+    taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsCreateClients failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createClients" method="post" path="/company.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.clients.createClients({
+    name: "<value>",
+    uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+    taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { clientsCreateClients } from "servicem8/funcs/clientsCreateClients.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await clientsCreateClients(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+    taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsCreateClients failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createClients" method="post" path="/company.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.clients.createClients({
+    name: "<value>",
+    uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+    taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { clientsCreateClients } from "servicem8/funcs/clientsCreateClients.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await clientsCreateClients(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+    taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsCreateClients failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createClients" method="post" path="/company.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.clients.createClients({
+    name: "<value>",
+    uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+    taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { clientsCreateClients } from "servicem8/funcs/clientsCreateClients.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await clientsCreateClients(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+    taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsCreateClients failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createClients" method="post" path="/company.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.clients.createClients({
+    name: "<value>",
+    uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+    taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { clientsCreateClients } from "servicem8/funcs/clientsCreateClients.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await clientsCreateClients(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+    taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsCreateClients failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createClients" method="post" path="/company.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -205,7 +490,7 @@ This endpoint requires the following OAuth scope **read_customers**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getClients" method="get" path="/company/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getClients" method="get" path="/company/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -291,9 +576,387 @@ This endpoint requires the following OAuth scope **manage_customers**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateClients" method="post" path="/company/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateClients" method="post" path="/company/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.clients.updateClients({
+    uuid: "8c1cd729-b04a-4f32-bc60-a0a48fac184a",
+    companyCreate: {
+      name: "<value>",
+      uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+      taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { clientsUpdateClients } from "servicem8/funcs/clientsUpdateClients.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await clientsUpdateClients(serviceM8, {
+    uuid: "8c1cd729-b04a-4f32-bc60-a0a48fac184a",
+    companyCreate: {
+      name: "<value>",
+      uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+      taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsUpdateClients failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateClients" method="post" path="/company/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.clients.updateClients({
+    uuid: "8c1cd729-b04a-4f32-bc60-a0a48fac184a",
+    companyCreate: {
+      name: "<value>",
+      uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+      taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { clientsUpdateClients } from "servicem8/funcs/clientsUpdateClients.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await clientsUpdateClients(serviceM8, {
+    uuid: "8c1cd729-b04a-4f32-bc60-a0a48fac184a",
+    companyCreate: {
+      name: "<value>",
+      uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+      taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsUpdateClients failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateClients" method="post" path="/company/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.clients.updateClients({
+    uuid: "d65c05e4-aca2-46c5-959a-76ebfa40abd8",
+    companyCreate: {
+      name: "<value>",
+      uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+      taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { clientsUpdateClients } from "servicem8/funcs/clientsUpdateClients.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await clientsUpdateClients(serviceM8, {
+    uuid: "d65c05e4-aca2-46c5-959a-76ebfa40abd8",
+    companyCreate: {
+      name: "<value>",
+      uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+      taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsUpdateClients failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateClients" method="post" path="/company/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.clients.updateClients({
+    uuid: "29a79b7d-eb9d-44bf-94a2-d09679ff9d58",
+    companyCreate: {
+      name: "<value>",
+      uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+      taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { clientsUpdateClients } from "servicem8/funcs/clientsUpdateClients.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await clientsUpdateClients(serviceM8, {
+    uuid: "29a79b7d-eb9d-44bf-94a2-d09679ff9d58",
+    companyCreate: {
+      name: "<value>",
+      uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+      taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsUpdateClients failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateClients" method="post" path="/company/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.clients.updateClients({
+    uuid: "20e28d07-5d3c-4485-a56b-033b4848959c",
+    companyCreate: {
+      name: "<value>",
+      uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+      taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { clientsUpdateClients } from "servicem8/funcs/clientsUpdateClients.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await clientsUpdateClients(serviceM8, {
+    uuid: "20e28d07-5d3c-4485-a56b-033b4848959c",
+    companyCreate: {
+      name: "<value>",
+      uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+      taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsUpdateClients failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateClients" method="post" path="/company/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.clients.updateClients({
+    uuid: "55f6bcc0-3bb7-4509-b13b-98c02374f910",
+    companyCreate: {
+      name: "<value>",
+      uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+      taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { clientsUpdateClients } from "servicem8/funcs/clientsUpdateClients.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await clientsUpdateClients(serviceM8, {
+    uuid: "55f6bcc0-3bb7-4509-b13b-98c02374f910",
+    companyCreate: {
+      name: "<value>",
+      uuid: "123e4567-5ce5-43cb-b7b1-23c6ffe0d23b",
+      taxRateUuid: "123e4567-00fd-45cb-a21b-23c6f4d5cc3b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clientsUpdateClients failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateClients" method="post" path="/company/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -395,7 +1058,7 @@ This endpoint requires the following OAuth scope **manage_customers**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteClients" method="delete" path="/company/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteClients" method="delete" path="/company/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
