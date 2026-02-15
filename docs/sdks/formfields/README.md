@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_forms**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listFormFields" method="get" path="/formfield.json" -->
+<!-- UsageSnippet language="typescript" operationID="listFormFields" method="get" path="/formfield.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,284 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createFormFields" method="post" path="/formfield.json" -->
+<!-- UsageSnippet language="typescript" operationID="createFormFields" method="post" path="/formfield.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formFields.createFormFields({
+    formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+    uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formFieldsCreateFormFields } from "servicem8/funcs/formFieldsCreateFormFields.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formFieldsCreateFormFields(serviceM8, {
+    formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+    uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsCreateFormFields failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createFormFields" method="post" path="/formfield.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formFields.createFormFields({
+    formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+    uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formFieldsCreateFormFields } from "servicem8/funcs/formFieldsCreateFormFields.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formFieldsCreateFormFields(serviceM8, {
+    formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+    uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsCreateFormFields failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createFormFields" method="post" path="/formfield.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formFields.createFormFields({
+    formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+    uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formFieldsCreateFormFields } from "servicem8/funcs/formFieldsCreateFormFields.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formFieldsCreateFormFields(serviceM8, {
+    formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+    uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsCreateFormFields failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createFormFields" method="post" path="/formfield.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formFields.createFormFields({
+    formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+    uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formFieldsCreateFormFields } from "servicem8/funcs/formFieldsCreateFormFields.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formFieldsCreateFormFields(serviceM8, {
+    formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+    uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsCreateFormFields failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createFormFields" method="post" path="/formfield.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formFields.createFormFields({
+    formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+    uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formFieldsCreateFormFields } from "servicem8/funcs/formFieldsCreateFormFields.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formFieldsCreateFormFields(serviceM8, {
+    formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+    uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsCreateFormFields failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createFormFields" method="post" path="/formfield.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -203,7 +478,7 @@ This endpoint requires the following OAuth scope **read_forms**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getFormFields" method="get" path="/formfield/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getFormFields" method="get" path="/formfield/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,9 +564,375 @@ This endpoint requires the following OAuth scope **manage_forms**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateFormFields" method="post" path="/formfield/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateFormFields" method="post" path="/formfield/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formFields.updateFormFields({
+    uuid: "2bece24d-e210-45c0-83fa-64c64041bb06",
+    formFieldCreate: {
+      formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+      uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formFieldsUpdateFormFields } from "servicem8/funcs/formFieldsUpdateFormFields.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formFieldsUpdateFormFields(serviceM8, {
+    uuid: "2bece24d-e210-45c0-83fa-64c64041bb06",
+    formFieldCreate: {
+      formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+      uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsUpdateFormFields failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateFormFields" method="post" path="/formfield/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formFields.updateFormFields({
+    uuid: "2bece24d-e210-45c0-83fa-64c64041bb06",
+    formFieldCreate: {
+      formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+      uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formFieldsUpdateFormFields } from "servicem8/funcs/formFieldsUpdateFormFields.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formFieldsUpdateFormFields(serviceM8, {
+    uuid: "2bece24d-e210-45c0-83fa-64c64041bb06",
+    formFieldCreate: {
+      formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+      uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsUpdateFormFields failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateFormFields" method="post" path="/formfield/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formFields.updateFormFields({
+    uuid: "ccde9fcb-f653-4592-bce6-bb394523b0c4",
+    formFieldCreate: {
+      formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+      uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formFieldsUpdateFormFields } from "servicem8/funcs/formFieldsUpdateFormFields.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formFieldsUpdateFormFields(serviceM8, {
+    uuid: "ccde9fcb-f653-4592-bce6-bb394523b0c4",
+    formFieldCreate: {
+      formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+      uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsUpdateFormFields failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateFormFields" method="post" path="/formfield/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formFields.updateFormFields({
+    uuid: "5f07c50e-f883-41f3-af06-f04ee3d46f4b",
+    formFieldCreate: {
+      formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+      uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formFieldsUpdateFormFields } from "servicem8/funcs/formFieldsUpdateFormFields.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formFieldsUpdateFormFields(serviceM8, {
+    uuid: "5f07c50e-f883-41f3-af06-f04ee3d46f4b",
+    formFieldCreate: {
+      formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+      uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsUpdateFormFields failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateFormFields" method="post" path="/formfield/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formFields.updateFormFields({
+    uuid: "c84dfea7-4805-4cc9-a263-199bfae1ec9a",
+    formFieldCreate: {
+      formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+      uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formFieldsUpdateFormFields } from "servicem8/funcs/formFieldsUpdateFormFields.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formFieldsUpdateFormFields(serviceM8, {
+    uuid: "c84dfea7-4805-4cc9-a263-199bfae1ec9a",
+    formFieldCreate: {
+      formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+      uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsUpdateFormFields failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateFormFields" method="post" path="/formfield/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formFields.updateFormFields({
+    uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
+    formFieldCreate: {
+      formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+      uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formFieldsUpdateFormFields } from "servicem8/funcs/formFieldsUpdateFormFields.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formFieldsUpdateFormFields(serviceM8, {
+    uuid: "21a23c6a-1fd9-4be5-84ed-065250f0e6a3",
+    formFieldCreate: {
+      formUuid: "123e4567-373a-4d3a-a4f7-23c6f62921db",
+      uuid: "123e4567-d930-4102-9d4a-23c6f9ecd58b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formFieldsUpdateFormFields failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateFormFields" method="post" path="/formfield/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -391,7 +1032,7 @@ This endpoint requires the following OAuth scope **manage_forms**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteFormFields" method="delete" path="/formfield/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteFormFields" method="delete" path="/formfield/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

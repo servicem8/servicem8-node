@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_schedule**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listJobAllocations" method="get" path="/joballocation.json" -->
+<!-- UsageSnippet language="typescript" operationID="listJobAllocations" method="get" path="/joballocation.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,364 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createJobAllocations" method="post" path="/joballocation.json" -->
+<!-- UsageSnippet language="typescript" operationID="createJobAllocations" method="post" path="/joballocation.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobAllocations.createJobAllocations({
+    jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+    staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+    allocationDate: "2026-01-01 12:00:00",
+    allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+    allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+    allocatedTimestamp: "2026-01-01 12:00:00",
+    expiryTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    completionTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobAllocationsCreateJobAllocations } from "servicem8/funcs/jobAllocationsCreateJobAllocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobAllocationsCreateJobAllocations(serviceM8, {
+    jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+    staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+    allocationDate: "2026-01-01 12:00:00",
+    allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+    allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+    allocatedTimestamp: "2026-01-01 12:00:00",
+    expiryTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    completionTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobAllocationsCreateJobAllocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createJobAllocations" method="post" path="/joballocation.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobAllocations.createJobAllocations({
+    jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+    staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+    allocationDate: "2026-01-01 12:00:00",
+    allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+    allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+    allocatedTimestamp: "2026-01-01 12:00:00",
+    expiryTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    completionTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobAllocationsCreateJobAllocations } from "servicem8/funcs/jobAllocationsCreateJobAllocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobAllocationsCreateJobAllocations(serviceM8, {
+    jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+    staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+    allocationDate: "2026-01-01 12:00:00",
+    allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+    allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+    allocatedTimestamp: "2026-01-01 12:00:00",
+    expiryTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    completionTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobAllocationsCreateJobAllocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createJobAllocations" method="post" path="/joballocation.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobAllocations.createJobAllocations({
+    jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+    staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+    allocationDate: "2026-01-01 12:00:00",
+    allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+    allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+    allocatedTimestamp: "2026-01-01 12:00:00",
+    expiryTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    completionTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobAllocationsCreateJobAllocations } from "servicem8/funcs/jobAllocationsCreateJobAllocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobAllocationsCreateJobAllocations(serviceM8, {
+    jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+    staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+    allocationDate: "2026-01-01 12:00:00",
+    allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+    allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+    allocatedTimestamp: "2026-01-01 12:00:00",
+    expiryTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    completionTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobAllocationsCreateJobAllocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createJobAllocations" method="post" path="/joballocation.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobAllocations.createJobAllocations({
+    jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+    staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+    allocationDate: "2026-01-01 12:00:00",
+    allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+    allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+    allocatedTimestamp: "2026-01-01 12:00:00",
+    expiryTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    completionTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobAllocationsCreateJobAllocations } from "servicem8/funcs/jobAllocationsCreateJobAllocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobAllocationsCreateJobAllocations(serviceM8, {
+    jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+    staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+    allocationDate: "2026-01-01 12:00:00",
+    allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+    allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+    allocatedTimestamp: "2026-01-01 12:00:00",
+    expiryTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    completionTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobAllocationsCreateJobAllocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createJobAllocations" method="post" path="/joballocation.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobAllocations.createJobAllocations({
+    jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+    staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+    allocationDate: "2026-01-01 12:00:00",
+    allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+    allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+    allocatedTimestamp: "2026-01-01 12:00:00",
+    expiryTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    completionTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobAllocationsCreateJobAllocations } from "servicem8/funcs/jobAllocationsCreateJobAllocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobAllocationsCreateJobAllocations(serviceM8, {
+    jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+    staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+    allocationDate: "2026-01-01 12:00:00",
+    allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+    allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+    allocatedTimestamp: "2026-01-01 12:00:00",
+    expiryTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    completionTimestamp: "2026-01-01 12:00:00",
+    uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobAllocationsCreateJobAllocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createJobAllocations" method="post" path="/joballocation.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -219,7 +574,7 @@ This endpoint requires the following OAuth scope **read_schedule**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getJobAllocations" method="get" path="/joballocation/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getJobAllocations" method="get" path="/joballocation/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -305,9 +660,471 @@ This endpoint requires the following OAuth scope **manage_schedule**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateJobAllocations" method="post" path="/joballocation/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateJobAllocations" method="post" path="/joballocation/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobAllocations.updateJobAllocations({
+    uuid: "0747c9dc-c74b-43eb-814a-ae1a214754a4",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+      staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+      allocationDate: "2026-01-01 12:00:00",
+      allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+      allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+      allocatedTimestamp: "2026-01-01 12:00:00",
+      expiryTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      completionTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobAllocationsUpdateJobAllocations } from "servicem8/funcs/jobAllocationsUpdateJobAllocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobAllocationsUpdateJobAllocations(serviceM8, {
+    uuid: "0747c9dc-c74b-43eb-814a-ae1a214754a4",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+      staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+      allocationDate: "2026-01-01 12:00:00",
+      allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+      allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+      allocatedTimestamp: "2026-01-01 12:00:00",
+      expiryTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      completionTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobAllocationsUpdateJobAllocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateJobAllocations" method="post" path="/joballocation/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobAllocations.updateJobAllocations({
+    uuid: "0747c9dc-c74b-43eb-814a-ae1a214754a4",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+      staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+      allocationDate: "2026-01-01 12:00:00",
+      allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+      allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+      allocatedTimestamp: "2026-01-01 12:00:00",
+      expiryTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      completionTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobAllocationsUpdateJobAllocations } from "servicem8/funcs/jobAllocationsUpdateJobAllocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobAllocationsUpdateJobAllocations(serviceM8, {
+    uuid: "0747c9dc-c74b-43eb-814a-ae1a214754a4",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+      staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+      allocationDate: "2026-01-01 12:00:00",
+      allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+      allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+      allocatedTimestamp: "2026-01-01 12:00:00",
+      expiryTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      completionTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobAllocationsUpdateJobAllocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateJobAllocations" method="post" path="/joballocation/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobAllocations.updateJobAllocations({
+    uuid: "b2ead65c-b1be-423f-a70a-7fce99e94cec",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+      staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+      allocationDate: "2026-01-01 12:00:00",
+      allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+      allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+      allocatedTimestamp: "2026-01-01 12:00:00",
+      expiryTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      completionTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobAllocationsUpdateJobAllocations } from "servicem8/funcs/jobAllocationsUpdateJobAllocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobAllocationsUpdateJobAllocations(serviceM8, {
+    uuid: "b2ead65c-b1be-423f-a70a-7fce99e94cec",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+      staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+      allocationDate: "2026-01-01 12:00:00",
+      allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+      allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+      allocatedTimestamp: "2026-01-01 12:00:00",
+      expiryTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      completionTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobAllocationsUpdateJobAllocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateJobAllocations" method="post" path="/joballocation/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobAllocations.updateJobAllocations({
+    uuid: "1287c61b-ba58-4112-bbbd-5af201a91282",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+      staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+      allocationDate: "2026-01-01 12:00:00",
+      allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+      allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+      allocatedTimestamp: "2026-01-01 12:00:00",
+      expiryTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      completionTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobAllocationsUpdateJobAllocations } from "servicem8/funcs/jobAllocationsUpdateJobAllocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobAllocationsUpdateJobAllocations(serviceM8, {
+    uuid: "1287c61b-ba58-4112-bbbd-5af201a91282",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+      staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+      allocationDate: "2026-01-01 12:00:00",
+      allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+      allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+      allocatedTimestamp: "2026-01-01 12:00:00",
+      expiryTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      completionTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobAllocationsUpdateJobAllocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateJobAllocations" method="post" path="/joballocation/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobAllocations.updateJobAllocations({
+    uuid: "660cb041-ecc9-483f-8d7a-cac09ae7c6c2",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+      staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+      allocationDate: "2026-01-01 12:00:00",
+      allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+      allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+      allocatedTimestamp: "2026-01-01 12:00:00",
+      expiryTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      completionTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobAllocationsUpdateJobAllocations } from "servicem8/funcs/jobAllocationsUpdateJobAllocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobAllocationsUpdateJobAllocations(serviceM8, {
+    uuid: "660cb041-ecc9-483f-8d7a-cac09ae7c6c2",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+      staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+      allocationDate: "2026-01-01 12:00:00",
+      allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+      allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+      allocatedTimestamp: "2026-01-01 12:00:00",
+      expiryTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      completionTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobAllocationsUpdateJobAllocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateJobAllocations" method="post" path="/joballocation/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobAllocations.updateJobAllocations({
+    uuid: "583058ca-b387-4a2b-86cf-ca46e5b89aba",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+      staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+      allocationDate: "2026-01-01 12:00:00",
+      allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+      allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+      allocatedTimestamp: "2026-01-01 12:00:00",
+      expiryTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      completionTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobAllocationsUpdateJobAllocations } from "servicem8/funcs/jobAllocationsUpdateJobAllocations.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobAllocationsUpdateJobAllocations(serviceM8, {
+    uuid: "583058ca-b387-4a2b-86cf-ca46e5b89aba",
+    jobAllocationCreate: {
+      jobUuid: "123e4567-86a1-447c-a7e2-23c6f0b215eb",
+      staffUuid: "123e4567-6118-40ac-bcff-23c6f1ea382b",
+      allocationDate: "2026-01-01 12:00:00",
+      allocationWindowUuid: "123e4567-cdd8-47db-b1bd-23c6fd498fbb",
+      allocatedByStaffUuid: "123e4567-373c-493d-9f5f-23c6fb14db8b",
+      allocatedTimestamp: "2026-01-01 12:00:00",
+      expiryTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      completionTimestamp: "2026-01-01 12:00:00",
+      uuid: "123e4567-f58b-4046-b1f6-23c6f9e1609b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobAllocationsUpdateJobAllocations failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateJobAllocations" method="post" path="/joballocation/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -423,7 +1240,7 @@ This endpoint requires the following OAuth scope **manage_schedule**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteJobAllocations" method="delete" path="/joballocation/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteJobAllocations" method="delete" path="/joballocation/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

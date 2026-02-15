@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **manage_badges**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listBadges" method="get" path="/badge.json" -->
+<!-- UsageSnippet language="typescript" operationID="listBadges" method="get" path="/badge.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,304 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createBadges" method="post" path="/badge.json" -->
+<!-- UsageSnippet language="typescript" operationID="createBadges" method="post" path="/badge.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.badges.createBadges({
+    uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+    name: "<value>",
+    regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+    regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { badgesCreateBadges } from "servicem8/funcs/badgesCreateBadges.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await badgesCreateBadges(serviceM8, {
+    uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+    name: "<value>",
+    regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+    regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesCreateBadges failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createBadges" method="post" path="/badge.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.badges.createBadges({
+    uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+    name: "<value>",
+    regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+    regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { badgesCreateBadges } from "servicem8/funcs/badgesCreateBadges.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await badgesCreateBadges(serviceM8, {
+    uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+    name: "<value>",
+    regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+    regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesCreateBadges failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createBadges" method="post" path="/badge.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.badges.createBadges({
+    uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+    name: "<value>",
+    regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+    regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { badgesCreateBadges } from "servicem8/funcs/badgesCreateBadges.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await badgesCreateBadges(serviceM8, {
+    uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+    name: "<value>",
+    regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+    regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesCreateBadges failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createBadges" method="post" path="/badge.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.badges.createBadges({
+    uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+    name: "<value>",
+    regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+    regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { badgesCreateBadges } from "servicem8/funcs/badgesCreateBadges.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await badgesCreateBadges(serviceM8, {
+    uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+    name: "<value>",
+    regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+    regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesCreateBadges failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createBadges" method="post" path="/badge.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.badges.createBadges({
+    uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+    name: "<value>",
+    regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+    regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { badgesCreateBadges } from "servicem8/funcs/badgesCreateBadges.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await badgesCreateBadges(serviceM8, {
+    uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+    name: "<value>",
+    regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+    regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesCreateBadges failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createBadges" method="post" path="/badge.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -207,7 +502,7 @@ This endpoint requires the following OAuth scope **manage_badges**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getBadges" method="get" path="/badge/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getBadges" method="get" path="/badge/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -293,9 +588,399 @@ This endpoint requires the following OAuth scope **manage_badges**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateBadges" method="post" path="/badge/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateBadges" method="post" path="/badge/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.badges.updateBadges({
+    uuid: "8c59ce59-d7c2-4a7d-9e1d-52fc4838161c",
+    badgeCreate: {
+      uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+      name: "<value>",
+      regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+      regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { badgesUpdateBadges } from "servicem8/funcs/badgesUpdateBadges.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await badgesUpdateBadges(serviceM8, {
+    uuid: "8c59ce59-d7c2-4a7d-9e1d-52fc4838161c",
+    badgeCreate: {
+      uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+      name: "<value>",
+      regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+      regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesUpdateBadges failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateBadges" method="post" path="/badge/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.badges.updateBadges({
+    uuid: "8c59ce59-d7c2-4a7d-9e1d-52fc4838161c",
+    badgeCreate: {
+      uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+      name: "<value>",
+      regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+      regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { badgesUpdateBadges } from "servicem8/funcs/badgesUpdateBadges.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await badgesUpdateBadges(serviceM8, {
+    uuid: "8c59ce59-d7c2-4a7d-9e1d-52fc4838161c",
+    badgeCreate: {
+      uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+      name: "<value>",
+      regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+      regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesUpdateBadges failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateBadges" method="post" path="/badge/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.badges.updateBadges({
+    uuid: "e3eda3bb-fb7b-4a0e-8b31-8e2fc6bfc1b6",
+    badgeCreate: {
+      uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+      name: "<value>",
+      regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+      regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { badgesUpdateBadges } from "servicem8/funcs/badgesUpdateBadges.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await badgesUpdateBadges(serviceM8, {
+    uuid: "e3eda3bb-fb7b-4a0e-8b31-8e2fc6bfc1b6",
+    badgeCreate: {
+      uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+      name: "<value>",
+      regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+      regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesUpdateBadges failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateBadges" method="post" path="/badge/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.badges.updateBadges({
+    uuid: "1c126329-d8c7-410f-a765-fc22dd509255",
+    badgeCreate: {
+      uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+      name: "<value>",
+      regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+      regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { badgesUpdateBadges } from "servicem8/funcs/badgesUpdateBadges.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await badgesUpdateBadges(serviceM8, {
+    uuid: "1c126329-d8c7-410f-a765-fc22dd509255",
+    badgeCreate: {
+      uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+      name: "<value>",
+      regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+      regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesUpdateBadges failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateBadges" method="post" path="/badge/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.badges.updateBadges({
+    uuid: "6102ab1c-f446-4d01-908d-8c4a8b0773cc",
+    badgeCreate: {
+      uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+      name: "<value>",
+      regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+      regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { badgesUpdateBadges } from "servicem8/funcs/badgesUpdateBadges.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await badgesUpdateBadges(serviceM8, {
+    uuid: "6102ab1c-f446-4d01-908d-8c4a8b0773cc",
+    badgeCreate: {
+      uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+      name: "<value>",
+      regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+      regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesUpdateBadges failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateBadges" method="post" path="/badge/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.badges.updateBadges({
+    uuid: "444f2947-b065-4aac-8159-0ffca6278fd2",
+    badgeCreate: {
+      uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+      name: "<value>",
+      regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+      regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { badgesUpdateBadges } from "servicem8/funcs/badgesUpdateBadges.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await badgesUpdateBadges(serviceM8, {
+    uuid: "444f2947-b065-4aac-8159-0ffca6278fd2",
+    badgeCreate: {
+      uuid: "123e4567-3688-4e49-83a4-23c6ff2cf24b",
+      name: "<value>",
+      regardingFormUuid: "123e4567-d347-4efa-90b3-23c6fa077f1b",
+      regardingAssetTypeUuid: "123e4567-c12b-46c8-aa98-23c6f1d73fcb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesUpdateBadges failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateBadges" method="post" path="/badge/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -399,7 +1084,7 @@ This endpoint requires the following OAuth scope **manage_badges**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteBadges" method="delete" path="/badge/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteBadges" method="delete" path="/badge/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

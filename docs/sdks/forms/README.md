@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_forms**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listForms" method="get" path="/form.json" -->
+<!-- UsageSnippet language="typescript" operationID="listForms" method="get" path="/form.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,284 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createForms" method="post" path="/form.json" -->
+<!-- UsageSnippet language="typescript" operationID="createForms" method="post" path="/form.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.forms.createForms({
+    documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+    uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formsCreateForms } from "servicem8/funcs/formsCreateForms.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formsCreateForms(serviceM8, {
+    documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+    uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsCreateForms failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createForms" method="post" path="/form.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.forms.createForms({
+    documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+    uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formsCreateForms } from "servicem8/funcs/formsCreateForms.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formsCreateForms(serviceM8, {
+    documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+    uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsCreateForms failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createForms" method="post" path="/form.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.forms.createForms({
+    documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+    uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formsCreateForms } from "servicem8/funcs/formsCreateForms.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formsCreateForms(serviceM8, {
+    documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+    uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsCreateForms failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createForms" method="post" path="/form.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.forms.createForms({
+    documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+    uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formsCreateForms } from "servicem8/funcs/formsCreateForms.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formsCreateForms(serviceM8, {
+    documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+    uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsCreateForms failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createForms" method="post" path="/form.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.forms.createForms({
+    documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+    uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formsCreateForms } from "servicem8/funcs/formsCreateForms.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formsCreateForms(serviceM8, {
+    documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+    uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsCreateForms failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createForms" method="post" path="/form.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -203,7 +478,7 @@ This endpoint requires the following OAuth scope **read_forms**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getForms" method="get" path="/form/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getForms" method="get" path="/form/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,9 +564,375 @@ This endpoint requires the following OAuth scope **manage_forms**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateForms" method="post" path="/form/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateForms" method="post" path="/form/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.forms.updateForms({
+    uuid: "820ca91a-aae8-4f84-8ed0-b42d677309ed",
+    formCreate: {
+      documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+      uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formsUpdateForms } from "servicem8/funcs/formsUpdateForms.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formsUpdateForms(serviceM8, {
+    uuid: "820ca91a-aae8-4f84-8ed0-b42d677309ed",
+    formCreate: {
+      documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+      uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsUpdateForms failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateForms" method="post" path="/form/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.forms.updateForms({
+    uuid: "820ca91a-aae8-4f84-8ed0-b42d677309ed",
+    formCreate: {
+      documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+      uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formsUpdateForms } from "servicem8/funcs/formsUpdateForms.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formsUpdateForms(serviceM8, {
+    uuid: "820ca91a-aae8-4f84-8ed0-b42d677309ed",
+    formCreate: {
+      documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+      uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsUpdateForms failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateForms" method="post" path="/form/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.forms.updateForms({
+    uuid: "1d7dd7c7-752a-40e9-ab92-ee36a0beaf92",
+    formCreate: {
+      documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+      uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formsUpdateForms } from "servicem8/funcs/formsUpdateForms.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formsUpdateForms(serviceM8, {
+    uuid: "1d7dd7c7-752a-40e9-ab92-ee36a0beaf92",
+    formCreate: {
+      documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+      uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsUpdateForms failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateForms" method="post" path="/form/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.forms.updateForms({
+    uuid: "4f2d2ff7-0092-4d05-a6ee-e21c72ee0303",
+    formCreate: {
+      documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+      uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formsUpdateForms } from "servicem8/funcs/formsUpdateForms.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formsUpdateForms(serviceM8, {
+    uuid: "4f2d2ff7-0092-4d05-a6ee-e21c72ee0303",
+    formCreate: {
+      documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+      uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsUpdateForms failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateForms" method="post" path="/form/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.forms.updateForms({
+    uuid: "376ca32d-f767-477a-ac19-a69a7fb7a41a",
+    formCreate: {
+      documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+      uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formsUpdateForms } from "servicem8/funcs/formsUpdateForms.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formsUpdateForms(serviceM8, {
+    uuid: "376ca32d-f767-477a-ac19-a69a7fb7a41a",
+    formCreate: {
+      documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+      uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsUpdateForms failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateForms" method="post" path="/form/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.forms.updateForms({
+    uuid: "2473c622-cde4-4803-b91a-cd7a656f7e3b",
+    formCreate: {
+      documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+      uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formsUpdateForms } from "servicem8/funcs/formsUpdateForms.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formsUpdateForms(serviceM8, {
+    uuid: "2473c622-cde4-4803-b91a-cd7a656f7e3b",
+    formCreate: {
+      documentTemplateUuid: "123e4567-8aac-43dc-8285-23c6f3676adb",
+      uuid: "123e4567-bc68-4539-89ef-23c6f57891cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formsUpdateForms failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateForms" method="post" path="/form/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -391,7 +1032,7 @@ This endpoint requires the following OAuth scope **manage_forms**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteForms" method="delete" path="/form/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteForms" method="delete" path="/form/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

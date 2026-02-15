@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_job_notes**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listNotes" method="get" path="/note.json" -->
+<!-- UsageSnippet language="typescript" operationID="listNotes" method="get" path="/note.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,304 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createNotes" method="post" path="/note.json" -->
+<!-- UsageSnippet language="typescript" operationID="createNotes" method="post" path="/note.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.notes.createNotes({
+    uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+    relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+    actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+    createDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { notesCreateNotes } from "servicem8/funcs/notesCreateNotes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await notesCreateNotes(serviceM8, {
+    uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+    relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+    actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+    createDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesCreateNotes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createNotes" method="post" path="/note.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.notes.createNotes({
+    uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+    relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+    actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+    createDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { notesCreateNotes } from "servicem8/funcs/notesCreateNotes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await notesCreateNotes(serviceM8, {
+    uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+    relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+    actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+    createDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesCreateNotes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createNotes" method="post" path="/note.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.notes.createNotes({
+    uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+    relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+    actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+    createDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { notesCreateNotes } from "servicem8/funcs/notesCreateNotes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await notesCreateNotes(serviceM8, {
+    uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+    relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+    actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+    createDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesCreateNotes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createNotes" method="post" path="/note.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.notes.createNotes({
+    uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+    relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+    actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+    createDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { notesCreateNotes } from "servicem8/funcs/notesCreateNotes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await notesCreateNotes(serviceM8, {
+    uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+    relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+    actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+    createDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesCreateNotes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createNotes" method="post" path="/note.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.notes.createNotes({
+    uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+    relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+    actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+    createDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { notesCreateNotes } from "servicem8/funcs/notesCreateNotes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await notesCreateNotes(serviceM8, {
+    uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+    relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+    actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+    createDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesCreateNotes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createNotes" method="post" path="/note.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -207,7 +502,7 @@ This endpoint requires the following OAuth scope **read_job_notes**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getNotes" method="get" path="/dbonote/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getNotes" method="get" path="/dbonote/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -293,9 +588,399 @@ This endpoint requires the following OAuth scope **publish_job_notes**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateNotes" method="post" path="/dbonote/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateNotes" method="post" path="/dbonote/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.notes.updateNotes({
+    uuid: "c30d61ce-eaed-4c05-878e-10131d660f54",
+    noteCreate: {
+      uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+      relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+      actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { notesUpdateNotes } from "servicem8/funcs/notesUpdateNotes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await notesUpdateNotes(serviceM8, {
+    uuid: "c30d61ce-eaed-4c05-878e-10131d660f54",
+    noteCreate: {
+      uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+      relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+      actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesUpdateNotes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateNotes" method="post" path="/dbonote/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.notes.updateNotes({
+    uuid: "c30d61ce-eaed-4c05-878e-10131d660f54",
+    noteCreate: {
+      uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+      relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+      actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { notesUpdateNotes } from "servicem8/funcs/notesUpdateNotes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await notesUpdateNotes(serviceM8, {
+    uuid: "c30d61ce-eaed-4c05-878e-10131d660f54",
+    noteCreate: {
+      uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+      relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+      actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesUpdateNotes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateNotes" method="post" path="/dbonote/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.notes.updateNotes({
+    uuid: "ee826e17-ae70-42b2-a1cb-080575220b61",
+    noteCreate: {
+      uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+      relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+      actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { notesUpdateNotes } from "servicem8/funcs/notesUpdateNotes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await notesUpdateNotes(serviceM8, {
+    uuid: "ee826e17-ae70-42b2-a1cb-080575220b61",
+    noteCreate: {
+      uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+      relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+      actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesUpdateNotes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateNotes" method="post" path="/dbonote/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.notes.updateNotes({
+    uuid: "53c5596d-1d73-4461-8cc2-06b0af738afe",
+    noteCreate: {
+      uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+      relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+      actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { notesUpdateNotes } from "servicem8/funcs/notesUpdateNotes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await notesUpdateNotes(serviceM8, {
+    uuid: "53c5596d-1d73-4461-8cc2-06b0af738afe",
+    noteCreate: {
+      uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+      relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+      actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesUpdateNotes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateNotes" method="post" path="/dbonote/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.notes.updateNotes({
+    uuid: "04189c6c-e267-4d0f-96aa-16ea8aba6fdc",
+    noteCreate: {
+      uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+      relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+      actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { notesUpdateNotes } from "servicem8/funcs/notesUpdateNotes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await notesUpdateNotes(serviceM8, {
+    uuid: "04189c6c-e267-4d0f-96aa-16ea8aba6fdc",
+    noteCreate: {
+      uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+      relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+      actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesUpdateNotes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateNotes" method="post" path="/dbonote/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.notes.updateNotes({
+    uuid: "1607abff-6202-4423-ae91-39b08699f830",
+    noteCreate: {
+      uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+      relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+      actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { notesUpdateNotes } from "servicem8/funcs/notesUpdateNotes.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await notesUpdateNotes(serviceM8, {
+    uuid: "1607abff-6202-4423-ae91-39b08699f830",
+    noteCreate: {
+      uuid: "123e4567-c4fe-4999-b402-23c6f7957cfb",
+      relatedObjectUuid: "123e4567-a082-41c6-acae-23c6ffe55c3b",
+      actionCompletedByStaffUuid: "123e4567-f24d-4caa-b48e-23c6f03e744b",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("notesUpdateNotes failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateNotes" method="post" path="/dbonote/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -399,7 +1084,7 @@ This endpoint requires the following OAuth scope **publish_job_notes**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteNotes" method="delete" path="/dbonote/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteNotes" method="delete" path="/dbonote/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

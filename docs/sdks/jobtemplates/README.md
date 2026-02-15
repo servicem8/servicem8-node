@@ -25,7 +25,7 @@ This endpoint requires the following OAuth scope **read_jobs**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listJobTemplates" method="get" path="/jobtemplate.json" -->
+<!-- UsageSnippet language="typescript" operationID="listJobTemplates" method="get" path="/jobtemplate.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -107,7 +107,7 @@ This endpoint requires the following OAuth scope **read_jobs**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getJobTemplates" method="get" path="/jobtemplate/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getJobTemplates" method="get" path="/jobtemplate/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -202,9 +202,298 @@ Any other fields in the request body will be ignored.
 #### OAuth Scope
 This endpoint requires the following OAuth scope **create_jobs**.
 
-### Example Usage
+### Example Usage: bothCompanyFields
 
-<!-- UsageSnippet language="typescript" operationID="createJobFromTemplate" method="post" path="/jobtemplate/{uuid}/job.json" -->
+<!-- UsageSnippet language="typescript" operationID="createJobFromTemplate" method="post" path="/jobtemplate/{uuid}/job.json" example="bothCompanyFields" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobTemplates.createJobFromTemplate({
+    uuid: "550e8400-e29b-41d4-a716-446655440000",
+    jobTemplateOverrides: {},
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobTemplatesCreateJobFromTemplate } from "servicem8/funcs/jobTemplatesCreateJobFromTemplate.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobTemplatesCreateJobFromTemplate(serviceM8, {
+    uuid: "550e8400-e29b-41d4-a716-446655440000",
+    jobTemplateOverrides: {},
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobTemplatesCreateJobFromTemplate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: companyName
+
+<!-- UsageSnippet language="typescript" operationID="createJobFromTemplate" method="post" path="/jobtemplate/{uuid}/job.json" example="companyName" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobTemplates.createJobFromTemplate({
+    uuid: "550e8400-e29b-41d4-a716-446655440000",
+    jobTemplateOverrides: {
+      companyName: "ACME Corporation",
+      jobAddress: "456 Oak Avenue",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobTemplatesCreateJobFromTemplate } from "servicem8/funcs/jobTemplatesCreateJobFromTemplate.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobTemplatesCreateJobFromTemplate(serviceM8, {
+    uuid: "550e8400-e29b-41d4-a716-446655440000",
+    jobTemplateOverrides: {
+      companyName: "ACME Corporation",
+      jobAddress: "456 Oak Avenue",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobTemplatesCreateJobFromTemplate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: full
+
+<!-- UsageSnippet language="typescript" operationID="createJobFromTemplate" method="post" path="/jobtemplate/{uuid}/job.json" example="full" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobTemplates.createJobFromTemplate({
+    uuid: "550e8400-e29b-41d4-a716-446655440000",
+    jobTemplateOverrides: {
+      jobDescription: "Annual HVAC maintenance",
+      companyUuid: "550e8400-e29b-41d4-a716-446655440001",
+      jobAddress: "123 Main Street",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobTemplatesCreateJobFromTemplate } from "servicem8/funcs/jobTemplatesCreateJobFromTemplate.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobTemplatesCreateJobFromTemplate(serviceM8, {
+    uuid: "550e8400-e29b-41d4-a716-446655440000",
+    jobTemplateOverrides: {
+      jobDescription: "Annual HVAC maintenance",
+      companyUuid: "550e8400-e29b-41d4-a716-446655440001",
+      jobAddress: "123 Main Street",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobTemplatesCreateJobFromTemplate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: invalidJSON
+
+<!-- UsageSnippet language="typescript" operationID="createJobFromTemplate" method="post" path="/jobtemplate/{uuid}/job.json" example="invalidJSON" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobTemplates.createJobFromTemplate({
+    uuid: "550e8400-e29b-41d4-a716-446655440000",
+    jobTemplateOverrides: {},
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobTemplatesCreateJobFromTemplate } from "servicem8/funcs/jobTemplatesCreateJobFromTemplate.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobTemplatesCreateJobFromTemplate(serviceM8, {
+    uuid: "550e8400-e29b-41d4-a716-446655440000",
+    jobTemplateOverrides: {},
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobTemplatesCreateJobFromTemplate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: invalidUUID
+
+<!-- UsageSnippet language="typescript" operationID="createJobFromTemplate" method="post" path="/jobtemplate/{uuid}/job.json" example="invalidUUID" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobTemplates.createJobFromTemplate({
+    uuid: "550e8400-e29b-41d4-a716-446655440000",
+    jobTemplateOverrides: {},
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobTemplatesCreateJobFromTemplate } from "servicem8/funcs/jobTemplatesCreateJobFromTemplate.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobTemplatesCreateJobFromTemplate(serviceM8, {
+    uuid: "550e8400-e29b-41d4-a716-446655440000",
+    jobTemplateOverrides: {},
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobTemplatesCreateJobFromTemplate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: minimal
+
+<!-- UsageSnippet language="typescript" operationID="createJobFromTemplate" method="post" path="/jobtemplate/{uuid}/job.json" example="minimal" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -250,6 +539,61 @@ async function run() {
     jobTemplateOverrides: {
       companyUuid: "550e8400-e29b-41d4-a716-446655440001",
     },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobTemplatesCreateJobFromTemplate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createJobFromTemplate" method="post" path="/jobtemplate/{uuid}/job.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobTemplates.createJobFromTemplate({
+    uuid: "550e8400-e29b-41d4-a716-446655440000",
+    jobTemplateOverrides: {},
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobTemplatesCreateJobFromTemplate } from "servicem8/funcs/jobTemplatesCreateJobFromTemplate.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobTemplatesCreateJobFromTemplate(serviceM8, {
+    uuid: "550e8400-e29b-41d4-a716-446655440000",
+    jobTemplateOverrides: {},
   });
   if (res.ok) {
     const { value: result } = res;

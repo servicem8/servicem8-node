@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_feedback**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listFeedback" method="get" path="/feedback.json" -->
+<!-- UsageSnippet language="typescript" operationID="listFeedback" method="get" path="/feedback.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,284 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createFeedback" method="post" path="/feedback.json" -->
+<!-- UsageSnippet language="typescript" operationID="createFeedback" method="post" path="/feedback.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.feedback.createFeedback({
+    relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+    uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { feedbackCreateFeedback } from "servicem8/funcs/feedbackCreateFeedback.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await feedbackCreateFeedback(serviceM8, {
+    relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+    uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedbackCreateFeedback failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createFeedback" method="post" path="/feedback.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.feedback.createFeedback({
+    relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+    uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { feedbackCreateFeedback } from "servicem8/funcs/feedbackCreateFeedback.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await feedbackCreateFeedback(serviceM8, {
+    relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+    uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedbackCreateFeedback failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createFeedback" method="post" path="/feedback.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.feedback.createFeedback({
+    relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+    uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { feedbackCreateFeedback } from "servicem8/funcs/feedbackCreateFeedback.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await feedbackCreateFeedback(serviceM8, {
+    relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+    uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedbackCreateFeedback failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createFeedback" method="post" path="/feedback.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.feedback.createFeedback({
+    relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+    uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { feedbackCreateFeedback } from "servicem8/funcs/feedbackCreateFeedback.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await feedbackCreateFeedback(serviceM8, {
+    relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+    uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedbackCreateFeedback failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createFeedback" method="post" path="/feedback.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.feedback.createFeedback({
+    relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+    uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { feedbackCreateFeedback } from "servicem8/funcs/feedbackCreateFeedback.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await feedbackCreateFeedback(serviceM8, {
+    relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+    uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedbackCreateFeedback failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createFeedback" method="post" path="/feedback.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -203,7 +478,7 @@ This endpoint requires the following OAuth scope **read_feedback**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getFeedback" method="get" path="/feedback/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getFeedback" method="get" path="/feedback/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,9 +564,375 @@ This endpoint requires the following OAuth scope **manage_feedback**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateFeedback" method="post" path="/feedback/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateFeedback" method="post" path="/feedback/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.feedback.updateFeedback({
+    uuid: "777086b6-20a1-4ef9-b306-874fd4dd014b",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+      uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { feedbackUpdateFeedback } from "servicem8/funcs/feedbackUpdateFeedback.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await feedbackUpdateFeedback(serviceM8, {
+    uuid: "777086b6-20a1-4ef9-b306-874fd4dd014b",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+      uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedbackUpdateFeedback failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateFeedback" method="post" path="/feedback/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.feedback.updateFeedback({
+    uuid: "777086b6-20a1-4ef9-b306-874fd4dd014b",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+      uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { feedbackUpdateFeedback } from "servicem8/funcs/feedbackUpdateFeedback.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await feedbackUpdateFeedback(serviceM8, {
+    uuid: "777086b6-20a1-4ef9-b306-874fd4dd014b",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+      uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedbackUpdateFeedback failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateFeedback" method="post" path="/feedback/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.feedback.updateFeedback({
+    uuid: "290e94ef-7cc3-418b-8a64-ed90bc4b020d",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+      uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { feedbackUpdateFeedback } from "servicem8/funcs/feedbackUpdateFeedback.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await feedbackUpdateFeedback(serviceM8, {
+    uuid: "290e94ef-7cc3-418b-8a64-ed90bc4b020d",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+      uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedbackUpdateFeedback failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateFeedback" method="post" path="/feedback/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.feedback.updateFeedback({
+    uuid: "485577d7-0155-492c-a986-9f625f0c8d71",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+      uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { feedbackUpdateFeedback } from "servicem8/funcs/feedbackUpdateFeedback.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await feedbackUpdateFeedback(serviceM8, {
+    uuid: "485577d7-0155-492c-a986-9f625f0c8d71",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+      uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedbackUpdateFeedback failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateFeedback" method="post" path="/feedback/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.feedback.updateFeedback({
+    uuid: "e39bc038-a7ac-4ac0-a0c9-4324cb7d9bc6",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+      uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { feedbackUpdateFeedback } from "servicem8/funcs/feedbackUpdateFeedback.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await feedbackUpdateFeedback(serviceM8, {
+    uuid: "e39bc038-a7ac-4ac0-a0c9-4324cb7d9bc6",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+      uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedbackUpdateFeedback failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateFeedback" method="post" path="/feedback/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.feedback.updateFeedback({
+    uuid: "4b9b8627-caa7-402a-94b0-02cb8641823c",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+      uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { feedbackUpdateFeedback } from "servicem8/funcs/feedbackUpdateFeedback.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await feedbackUpdateFeedback(serviceM8, {
+    uuid: "4b9b8627-caa7-402a-94b0-02cb8641823c",
+    feedbackCreate: {
+      relatedObjectUuid: "123e4567-cced-48ed-b676-23c6f4d0fe9b",
+      uuid: "123e4567-ff0c-4bfd-afd8-23c6f5c4f1db",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedbackUpdateFeedback failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateFeedback" method="post" path="/feedback/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -391,7 +1032,7 @@ This endpoint requires the following OAuth scope **manage_feedback**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteFeedback" method="delete" path="/feedback/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteFeedback" method="delete" path="/feedback/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_job_categories**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCategories" method="get" path="/category.json" -->
+<!-- UsageSnippet language="typescript" operationID="listCategories" method="get" path="/category.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,284 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createCategories" method="post" path="/category.json" -->
+<!-- UsageSnippet language="typescript" operationID="createCategories" method="post" path="/category.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.categories.createCategories({
+    name: "<value>",
+    uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { categoriesCreateCategories } from "servicem8/funcs/categoriesCreateCategories.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await categoriesCreateCategories(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesCreateCategories failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createCategories" method="post" path="/category.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.categories.createCategories({
+    name: "<value>",
+    uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { categoriesCreateCategories } from "servicem8/funcs/categoriesCreateCategories.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await categoriesCreateCategories(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesCreateCategories failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createCategories" method="post" path="/category.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.categories.createCategories({
+    name: "<value>",
+    uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { categoriesCreateCategories } from "servicem8/funcs/categoriesCreateCategories.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await categoriesCreateCategories(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesCreateCategories failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createCategories" method="post" path="/category.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.categories.createCategories({
+    name: "<value>",
+    uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { categoriesCreateCategories } from "servicem8/funcs/categoriesCreateCategories.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await categoriesCreateCategories(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesCreateCategories failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createCategories" method="post" path="/category.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.categories.createCategories({
+    name: "<value>",
+    uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { categoriesCreateCategories } from "servicem8/funcs/categoriesCreateCategories.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await categoriesCreateCategories(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesCreateCategories failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createCategories" method="post" path="/category.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -203,7 +478,7 @@ This endpoint requires the following OAuth scope **read_job_categories**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCategories" method="get" path="/category/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getCategories" method="get" path="/category/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,9 +564,375 @@ This endpoint requires the following OAuth scope **manage_job_categories**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateCategories" method="post" path="/category/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateCategories" method="post" path="/category/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.categories.updateCategories({
+    uuid: "433bef58-ff15-4e7b-b9be-3a21b7c5efda",
+    categoryCreate: {
+      name: "<value>",
+      uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { categoriesUpdateCategories } from "servicem8/funcs/categoriesUpdateCategories.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await categoriesUpdateCategories(serviceM8, {
+    uuid: "433bef58-ff15-4e7b-b9be-3a21b7c5efda",
+    categoryCreate: {
+      name: "<value>",
+      uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesUpdateCategories failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateCategories" method="post" path="/category/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.categories.updateCategories({
+    uuid: "433bef58-ff15-4e7b-b9be-3a21b7c5efda",
+    categoryCreate: {
+      name: "<value>",
+      uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { categoriesUpdateCategories } from "servicem8/funcs/categoriesUpdateCategories.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await categoriesUpdateCategories(serviceM8, {
+    uuid: "433bef58-ff15-4e7b-b9be-3a21b7c5efda",
+    categoryCreate: {
+      name: "<value>",
+      uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesUpdateCategories failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateCategories" method="post" path="/category/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.categories.updateCategories({
+    uuid: "686be213-0754-43d2-a187-6f0c97a309b0",
+    categoryCreate: {
+      name: "<value>",
+      uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { categoriesUpdateCategories } from "servicem8/funcs/categoriesUpdateCategories.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await categoriesUpdateCategories(serviceM8, {
+    uuid: "686be213-0754-43d2-a187-6f0c97a309b0",
+    categoryCreate: {
+      name: "<value>",
+      uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesUpdateCategories failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateCategories" method="post" path="/category/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.categories.updateCategories({
+    uuid: "4204e6c5-8926-4f7b-9b41-2c2c6a8b8dcb",
+    categoryCreate: {
+      name: "<value>",
+      uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { categoriesUpdateCategories } from "servicem8/funcs/categoriesUpdateCategories.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await categoriesUpdateCategories(serviceM8, {
+    uuid: "4204e6c5-8926-4f7b-9b41-2c2c6a8b8dcb",
+    categoryCreate: {
+      name: "<value>",
+      uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesUpdateCategories failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateCategories" method="post" path="/category/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.categories.updateCategories({
+    uuid: "1685e21a-11e2-4624-bb50-a4958854e4c8",
+    categoryCreate: {
+      name: "<value>",
+      uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { categoriesUpdateCategories } from "servicem8/funcs/categoriesUpdateCategories.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await categoriesUpdateCategories(serviceM8, {
+    uuid: "1685e21a-11e2-4624-bb50-a4958854e4c8",
+    categoryCreate: {
+      name: "<value>",
+      uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesUpdateCategories failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateCategories" method="post" path="/category/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.categories.updateCategories({
+    uuid: "c830c901-e3ae-427d-8f08-cf28c94b319f",
+    categoryCreate: {
+      name: "<value>",
+      uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { categoriesUpdateCategories } from "servicem8/funcs/categoriesUpdateCategories.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await categoriesUpdateCategories(serviceM8, {
+    uuid: "c830c901-e3ae-427d-8f08-cf28c94b319f",
+    categoryCreate: {
+      name: "<value>",
+      uuid: "123e4567-68e6-4e74-8f40-23c6ff764bbb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoriesUpdateCategories failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateCategories" method="post" path="/category/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -391,7 +1032,7 @@ This endpoint requires the following OAuth scope **manage_job_categories**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteCategories" method="delete" path="/category/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteCategories" method="delete" path="/category/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

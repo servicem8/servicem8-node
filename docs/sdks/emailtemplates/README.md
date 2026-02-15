@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **manage_templates**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listEmailTemplates" method="get" path="/emailtemplate.json" -->
+<!-- UsageSnippet language="typescript" operationID="listEmailTemplates" method="get" path="/emailtemplate.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,284 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createEmailTemplates" method="post" path="/emailtemplate.json" -->
+<!-- UsageSnippet language="typescript" operationID="createEmailTemplates" method="post" path="/emailtemplate.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.emailTemplates.createEmailTemplates({
+    name: "<value>",
+    uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { emailTemplatesCreateEmailTemplates } from "servicem8/funcs/emailTemplatesCreateEmailTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await emailTemplatesCreateEmailTemplates(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesCreateEmailTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createEmailTemplates" method="post" path="/emailtemplate.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.emailTemplates.createEmailTemplates({
+    name: "<value>",
+    uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { emailTemplatesCreateEmailTemplates } from "servicem8/funcs/emailTemplatesCreateEmailTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await emailTemplatesCreateEmailTemplates(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesCreateEmailTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createEmailTemplates" method="post" path="/emailtemplate.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.emailTemplates.createEmailTemplates({
+    name: "<value>",
+    uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { emailTemplatesCreateEmailTemplates } from "servicem8/funcs/emailTemplatesCreateEmailTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await emailTemplatesCreateEmailTemplates(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesCreateEmailTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createEmailTemplates" method="post" path="/emailtemplate.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.emailTemplates.createEmailTemplates({
+    name: "<value>",
+    uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { emailTemplatesCreateEmailTemplates } from "servicem8/funcs/emailTemplatesCreateEmailTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await emailTemplatesCreateEmailTemplates(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesCreateEmailTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createEmailTemplates" method="post" path="/emailtemplate.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.emailTemplates.createEmailTemplates({
+    name: "<value>",
+    uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { emailTemplatesCreateEmailTemplates } from "servicem8/funcs/emailTemplatesCreateEmailTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await emailTemplatesCreateEmailTemplates(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesCreateEmailTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createEmailTemplates" method="post" path="/emailtemplate.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -203,7 +478,7 @@ This endpoint requires the following OAuth scope **manage_templates**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getEmailTemplates" method="get" path="/emailtemplate/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getEmailTemplates" method="get" path="/emailtemplate/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,9 +564,375 @@ This endpoint requires the following OAuth scope **manage_templates**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateEmailTemplates" method="post" path="/emailtemplate/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateEmailTemplates" method="post" path="/emailtemplate/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.emailTemplates.updateEmailTemplates({
+    uuid: "a7e844a4-6303-4f97-b1cc-21f38f44b3c8",
+    emailTemplateCreate: {
+      name: "<value>",
+      uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { emailTemplatesUpdateEmailTemplates } from "servicem8/funcs/emailTemplatesUpdateEmailTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await emailTemplatesUpdateEmailTemplates(serviceM8, {
+    uuid: "a7e844a4-6303-4f97-b1cc-21f38f44b3c8",
+    emailTemplateCreate: {
+      name: "<value>",
+      uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesUpdateEmailTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateEmailTemplates" method="post" path="/emailtemplate/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.emailTemplates.updateEmailTemplates({
+    uuid: "a7e844a4-6303-4f97-b1cc-21f38f44b3c8",
+    emailTemplateCreate: {
+      name: "<value>",
+      uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { emailTemplatesUpdateEmailTemplates } from "servicem8/funcs/emailTemplatesUpdateEmailTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await emailTemplatesUpdateEmailTemplates(serviceM8, {
+    uuid: "a7e844a4-6303-4f97-b1cc-21f38f44b3c8",
+    emailTemplateCreate: {
+      name: "<value>",
+      uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesUpdateEmailTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateEmailTemplates" method="post" path="/emailtemplate/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.emailTemplates.updateEmailTemplates({
+    uuid: "1861748a-290a-4df6-ba97-efdbfa1f8afb",
+    emailTemplateCreate: {
+      name: "<value>",
+      uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { emailTemplatesUpdateEmailTemplates } from "servicem8/funcs/emailTemplatesUpdateEmailTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await emailTemplatesUpdateEmailTemplates(serviceM8, {
+    uuid: "1861748a-290a-4df6-ba97-efdbfa1f8afb",
+    emailTemplateCreate: {
+      name: "<value>",
+      uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesUpdateEmailTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateEmailTemplates" method="post" path="/emailtemplate/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.emailTemplates.updateEmailTemplates({
+    uuid: "d6aae87d-b732-4aa6-9083-84f8345ecacb",
+    emailTemplateCreate: {
+      name: "<value>",
+      uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { emailTemplatesUpdateEmailTemplates } from "servicem8/funcs/emailTemplatesUpdateEmailTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await emailTemplatesUpdateEmailTemplates(serviceM8, {
+    uuid: "d6aae87d-b732-4aa6-9083-84f8345ecacb",
+    emailTemplateCreate: {
+      name: "<value>",
+      uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesUpdateEmailTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateEmailTemplates" method="post" path="/emailtemplate/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.emailTemplates.updateEmailTemplates({
+    uuid: "399b563b-0f5e-44d2-b354-e4a137d947ad",
+    emailTemplateCreate: {
+      name: "<value>",
+      uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { emailTemplatesUpdateEmailTemplates } from "servicem8/funcs/emailTemplatesUpdateEmailTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await emailTemplatesUpdateEmailTemplates(serviceM8, {
+    uuid: "399b563b-0f5e-44d2-b354-e4a137d947ad",
+    emailTemplateCreate: {
+      name: "<value>",
+      uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesUpdateEmailTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateEmailTemplates" method="post" path="/emailtemplate/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.emailTemplates.updateEmailTemplates({
+    uuid: "a3ce5f33-781a-4062-b068-2e3f8605b008",
+    emailTemplateCreate: {
+      name: "<value>",
+      uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { emailTemplatesUpdateEmailTemplates } from "servicem8/funcs/emailTemplatesUpdateEmailTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await emailTemplatesUpdateEmailTemplates(serviceM8, {
+    uuid: "a3ce5f33-781a-4062-b068-2e3f8605b008",
+    emailTemplateCreate: {
+      name: "<value>",
+      uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("emailTemplatesUpdateEmailTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateEmailTemplates" method="post" path="/emailtemplate/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -391,7 +1032,7 @@ This endpoint requires the following OAuth scope **manage_templates**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteEmailTemplates" method="delete" path="/emailtemplate/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteEmailTemplates" method="delete" path="/emailtemplate/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

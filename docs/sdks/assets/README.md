@@ -26,7 +26,7 @@ This endpoint requires the following OAuth scope **read_assets**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listAssets" method="get" path="/asset.json" -->
+<!-- UsageSnippet language="typescript" operationID="listAssets" method="get" path="/asset.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -108,7 +108,7 @@ This endpoint requires the following OAuth scope **read_assets**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getAssets" method="get" path="/asset/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getAssets" method="get" path="/asset/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -194,9 +194,387 @@ This endpoint requires the following OAuth scope **manage_assets**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateAssets" method="post" path="/asset/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateAssets" method="post" path="/asset/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assets.updateAssets({
+    uuid: "30150d4d-c528-43ec-aba4-539d782a6148",
+    assetCreate: {
+      uuid: "123e4567-f21d-4a2d-b971-23c6f8b29dfb",
+      companyUuid: "123e4567-474d-4e69-b92a-23c6fa6e2f4b",
+      geoTimestamp: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetsUpdateAssets } from "servicem8/funcs/assetsUpdateAssets.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetsUpdateAssets(serviceM8, {
+    uuid: "30150d4d-c528-43ec-aba4-539d782a6148",
+    assetCreate: {
+      uuid: "123e4567-f21d-4a2d-b971-23c6f8b29dfb",
+      companyUuid: "123e4567-474d-4e69-b92a-23c6fa6e2f4b",
+      geoTimestamp: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetsUpdateAssets failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateAssets" method="post" path="/asset/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assets.updateAssets({
+    uuid: "30150d4d-c528-43ec-aba4-539d782a6148",
+    assetCreate: {
+      uuid: "123e4567-f21d-4a2d-b971-23c6f8b29dfb",
+      companyUuid: "123e4567-474d-4e69-b92a-23c6fa6e2f4b",
+      geoTimestamp: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetsUpdateAssets } from "servicem8/funcs/assetsUpdateAssets.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetsUpdateAssets(serviceM8, {
+    uuid: "30150d4d-c528-43ec-aba4-539d782a6148",
+    assetCreate: {
+      uuid: "123e4567-f21d-4a2d-b971-23c6f8b29dfb",
+      companyUuid: "123e4567-474d-4e69-b92a-23c6fa6e2f4b",
+      geoTimestamp: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetsUpdateAssets failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateAssets" method="post" path="/asset/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assets.updateAssets({
+    uuid: "dace251c-ba0d-463f-a7d0-1b9a4cf5ac6e",
+    assetCreate: {
+      uuid: "123e4567-f21d-4a2d-b971-23c6f8b29dfb",
+      companyUuid: "123e4567-474d-4e69-b92a-23c6fa6e2f4b",
+      geoTimestamp: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetsUpdateAssets } from "servicem8/funcs/assetsUpdateAssets.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetsUpdateAssets(serviceM8, {
+    uuid: "dace251c-ba0d-463f-a7d0-1b9a4cf5ac6e",
+    assetCreate: {
+      uuid: "123e4567-f21d-4a2d-b971-23c6f8b29dfb",
+      companyUuid: "123e4567-474d-4e69-b92a-23c6fa6e2f4b",
+      geoTimestamp: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetsUpdateAssets failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateAssets" method="post" path="/asset/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assets.updateAssets({
+    uuid: "cedec9c5-eaf4-410b-b459-b8e9fe819679",
+    assetCreate: {
+      uuid: "123e4567-f21d-4a2d-b971-23c6f8b29dfb",
+      companyUuid: "123e4567-474d-4e69-b92a-23c6fa6e2f4b",
+      geoTimestamp: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetsUpdateAssets } from "servicem8/funcs/assetsUpdateAssets.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetsUpdateAssets(serviceM8, {
+    uuid: "cedec9c5-eaf4-410b-b459-b8e9fe819679",
+    assetCreate: {
+      uuid: "123e4567-f21d-4a2d-b971-23c6f8b29dfb",
+      companyUuid: "123e4567-474d-4e69-b92a-23c6fa6e2f4b",
+      geoTimestamp: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetsUpdateAssets failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateAssets" method="post" path="/asset/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assets.updateAssets({
+    uuid: "97a7d81b-2b79-49e9-8143-e617f8862401",
+    assetCreate: {
+      uuid: "123e4567-f21d-4a2d-b971-23c6f8b29dfb",
+      companyUuid: "123e4567-474d-4e69-b92a-23c6fa6e2f4b",
+      geoTimestamp: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetsUpdateAssets } from "servicem8/funcs/assetsUpdateAssets.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetsUpdateAssets(serviceM8, {
+    uuid: "97a7d81b-2b79-49e9-8143-e617f8862401",
+    assetCreate: {
+      uuid: "123e4567-f21d-4a2d-b971-23c6f8b29dfb",
+      companyUuid: "123e4567-474d-4e69-b92a-23c6fa6e2f4b",
+      geoTimestamp: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetsUpdateAssets failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateAssets" method="post" path="/asset/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.assets.updateAssets({
+    uuid: "5b24eb53-3f3d-4b60-b9e9-e44934a80c53",
+    assetCreate: {
+      uuid: "123e4567-f21d-4a2d-b971-23c6f8b29dfb",
+      companyUuid: "123e4567-474d-4e69-b92a-23c6fa6e2f4b",
+      geoTimestamp: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { assetsUpdateAssets } from "servicem8/funcs/assetsUpdateAssets.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await assetsUpdateAssets(serviceM8, {
+    uuid: "5b24eb53-3f3d-4b60-b9e9-e44934a80c53",
+    assetCreate: {
+      uuid: "123e4567-f21d-4a2d-b971-23c6f8b29dfb",
+      companyUuid: "123e4567-474d-4e69-b92a-23c6fa6e2f4b",
+      geoTimestamp: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("assetsUpdateAssets failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateAssets" method="post" path="/asset/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -298,7 +676,7 @@ This endpoint requires the following OAuth scope **manage_assets**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteAssets" method="delete" path="/asset/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteAssets" method="delete" path="/asset/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
