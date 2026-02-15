@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_suppliers**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listSuppliers" method="get" path="/supplier.json" -->
+<!-- UsageSnippet language="typescript" operationID="listSuppliers" method="get" path="/supplier.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,274 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createSuppliers" method="post" path="/supplier.json" -->
+<!-- UsageSnippet language="typescript" operationID="createSuppliers" method="post" path="/supplier.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.suppliers.createSuppliers({
+    uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { suppliersCreateSuppliers } from "servicem8/funcs/suppliersCreateSuppliers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await suppliersCreateSuppliers(serviceM8, {
+    uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("suppliersCreateSuppliers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createSuppliers" method="post" path="/supplier.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.suppliers.createSuppliers({
+    uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { suppliersCreateSuppliers } from "servicem8/funcs/suppliersCreateSuppliers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await suppliersCreateSuppliers(serviceM8, {
+    uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("suppliersCreateSuppliers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createSuppliers" method="post" path="/supplier.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.suppliers.createSuppliers({
+    uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { suppliersCreateSuppliers } from "servicem8/funcs/suppliersCreateSuppliers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await suppliersCreateSuppliers(serviceM8, {
+    uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("suppliersCreateSuppliers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createSuppliers" method="post" path="/supplier.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.suppliers.createSuppliers({
+    uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { suppliersCreateSuppliers } from "servicem8/funcs/suppliersCreateSuppliers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await suppliersCreateSuppliers(serviceM8, {
+    uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("suppliersCreateSuppliers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createSuppliers" method="post" path="/supplier.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.suppliers.createSuppliers({
+    uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { suppliersCreateSuppliers } from "servicem8/funcs/suppliersCreateSuppliers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await suppliersCreateSuppliers(serviceM8, {
+    uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("suppliersCreateSuppliers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createSuppliers" method="post" path="/supplier.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -201,7 +466,7 @@ This endpoint requires the following OAuth scope **read_suppliers**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getSuppliers" method="get" path="/supplier/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getSuppliers" method="get" path="/supplier/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -287,9 +552,304 @@ This endpoint requires the following OAuth scope **manage_suppliers**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateSuppliers" method="post" path="/supplier/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateSuppliers" method="post" path="/supplier/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.suppliers.updateSuppliers({
+    uuid: "d48a675c-bc10-4104-92c5-b810afd7dfe0",
+    supplierCreate: {
+      uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { suppliersUpdateSuppliers } from "servicem8/funcs/suppliersUpdateSuppliers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await suppliersUpdateSuppliers(serviceM8, {
+    uuid: "d48a675c-bc10-4104-92c5-b810afd7dfe0",
+    supplierCreate: {
+      uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("suppliersUpdateSuppliers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateSuppliers" method="post" path="/supplier/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.suppliers.updateSuppliers({
+    uuid: "ced040cd-4603-4ff5-8946-6580d2ae0752",
+    supplierCreate: {
+      uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { suppliersUpdateSuppliers } from "servicem8/funcs/suppliersUpdateSuppliers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await suppliersUpdateSuppliers(serviceM8, {
+    uuid: "ced040cd-4603-4ff5-8946-6580d2ae0752",
+    supplierCreate: {
+      uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("suppliersUpdateSuppliers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateSuppliers" method="post" path="/supplier/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.suppliers.updateSuppliers({
+    uuid: "40638c9c-f7fa-4853-b0bb-50c600ea37d8",
+    supplierCreate: {
+      uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { suppliersUpdateSuppliers } from "servicem8/funcs/suppliersUpdateSuppliers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await suppliersUpdateSuppliers(serviceM8, {
+    uuid: "40638c9c-f7fa-4853-b0bb-50c600ea37d8",
+    supplierCreate: {
+      uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("suppliersUpdateSuppliers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateSuppliers" method="post" path="/supplier/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.suppliers.updateSuppliers({
+    uuid: "0417e2a3-15f2-4c85-acb9-9dfd1c243ac8",
+    supplierCreate: {
+      uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { suppliersUpdateSuppliers } from "servicem8/funcs/suppliersUpdateSuppliers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await suppliersUpdateSuppliers(serviceM8, {
+    uuid: "0417e2a3-15f2-4c85-acb9-9dfd1c243ac8",
+    supplierCreate: {
+      uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("suppliersUpdateSuppliers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateSuppliers" method="post" path="/supplier/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.suppliers.updateSuppliers({
+    uuid: "43ea88ca-ae0f-486c-b8ee-d410bcb9564a",
+    supplierCreate: {
+      uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { suppliersUpdateSuppliers } from "servicem8/funcs/suppliersUpdateSuppliers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await suppliersUpdateSuppliers(serviceM8, {
+    uuid: "43ea88ca-ae0f-486c-b8ee-d410bcb9564a",
+    supplierCreate: {
+      uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("suppliersUpdateSuppliers failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateSuppliers" method="post" path="/supplier/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -346,6 +906,65 @@ async function run() {
 
 run();
 ```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateSuppliers" method="post" path="/supplier/{uuid}.json" example="unauthorized" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.suppliers.updateSuppliers({
+    uuid: "58e54f3f-658a-42ec-93c2-89211c0290c6",
+    supplierCreate: {
+      uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { suppliersUpdateSuppliers } from "servicem8/funcs/suppliersUpdateSuppliers.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await suppliersUpdateSuppliers(serviceM8, {
+    uuid: "58e54f3f-658a-42ec-93c2-89211c0290c6",
+    supplierCreate: {
+      uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("suppliersUpdateSuppliers failed:", res.error);
+  }
+}
+
+run();
+```
 
 ### Parameters
 
@@ -387,7 +1006,7 @@ This endpoint requires the following OAuth scope **manage_suppliers**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteSuppliers" method="delete" path="/supplier/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteSuppliers" method="delete" path="/supplier/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

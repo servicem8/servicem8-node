@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **manage_templates**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listDocumentTemplates" method="get" path="/documenttemplate.json" -->
+<!-- UsageSnippet language="typescript" operationID="listDocumentTemplates" method="get" path="/documenttemplate.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,274 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createDocumentTemplates" method="post" path="/documenttemplate.json" -->
+<!-- UsageSnippet language="typescript" operationID="createDocumentTemplates" method="post" path="/documenttemplate.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.documentTemplates.createDocumentTemplates({
+    uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { documentTemplatesCreateDocumentTemplates } from "servicem8/funcs/documentTemplatesCreateDocumentTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await documentTemplatesCreateDocumentTemplates(serviceM8, {
+    uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentTemplatesCreateDocumentTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createDocumentTemplates" method="post" path="/documenttemplate.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.documentTemplates.createDocumentTemplates({
+    uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { documentTemplatesCreateDocumentTemplates } from "servicem8/funcs/documentTemplatesCreateDocumentTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await documentTemplatesCreateDocumentTemplates(serviceM8, {
+    uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentTemplatesCreateDocumentTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createDocumentTemplates" method="post" path="/documenttemplate.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.documentTemplates.createDocumentTemplates({
+    uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { documentTemplatesCreateDocumentTemplates } from "servicem8/funcs/documentTemplatesCreateDocumentTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await documentTemplatesCreateDocumentTemplates(serviceM8, {
+    uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentTemplatesCreateDocumentTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createDocumentTemplates" method="post" path="/documenttemplate.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.documentTemplates.createDocumentTemplates({
+    uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { documentTemplatesCreateDocumentTemplates } from "servicem8/funcs/documentTemplatesCreateDocumentTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await documentTemplatesCreateDocumentTemplates(serviceM8, {
+    uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentTemplatesCreateDocumentTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createDocumentTemplates" method="post" path="/documenttemplate.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.documentTemplates.createDocumentTemplates({
+    uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { documentTemplatesCreateDocumentTemplates } from "servicem8/funcs/documentTemplatesCreateDocumentTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await documentTemplatesCreateDocumentTemplates(serviceM8, {
+    uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentTemplatesCreateDocumentTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createDocumentTemplates" method="post" path="/documenttemplate.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -201,7 +466,7 @@ This endpoint requires the following OAuth scope **manage_templates**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getDocumentTemplates" method="get" path="/documenttemplate/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getDocumentTemplates" method="get" path="/documenttemplate/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -287,9 +552,363 @@ This endpoint requires the following OAuth scope **manage_templates**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateDocumentTemplates" method="post" path="/documenttemplate/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateDocumentTemplates" method="post" path="/documenttemplate/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.documentTemplates.updateDocumentTemplates({
+    uuid: "cface16c-1514-40ca-9d0b-8e3beb5e082c",
+    documentTemplateCreate: {
+      uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { documentTemplatesUpdateDocumentTemplates } from "servicem8/funcs/documentTemplatesUpdateDocumentTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await documentTemplatesUpdateDocumentTemplates(serviceM8, {
+    uuid: "cface16c-1514-40ca-9d0b-8e3beb5e082c",
+    documentTemplateCreate: {
+      uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentTemplatesUpdateDocumentTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateDocumentTemplates" method="post" path="/documenttemplate/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.documentTemplates.updateDocumentTemplates({
+    uuid: "cface16c-1514-40ca-9d0b-8e3beb5e082c",
+    documentTemplateCreate: {
+      uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { documentTemplatesUpdateDocumentTemplates } from "servicem8/funcs/documentTemplatesUpdateDocumentTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await documentTemplatesUpdateDocumentTemplates(serviceM8, {
+    uuid: "cface16c-1514-40ca-9d0b-8e3beb5e082c",
+    documentTemplateCreate: {
+      uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentTemplatesUpdateDocumentTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateDocumentTemplates" method="post" path="/documenttemplate/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.documentTemplates.updateDocumentTemplates({
+    uuid: "d71146a5-0f9c-4344-b17b-ea97ba6de50a",
+    documentTemplateCreate: {
+      uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { documentTemplatesUpdateDocumentTemplates } from "servicem8/funcs/documentTemplatesUpdateDocumentTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await documentTemplatesUpdateDocumentTemplates(serviceM8, {
+    uuid: "d71146a5-0f9c-4344-b17b-ea97ba6de50a",
+    documentTemplateCreate: {
+      uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentTemplatesUpdateDocumentTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateDocumentTemplates" method="post" path="/documenttemplate/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.documentTemplates.updateDocumentTemplates({
+    uuid: "4cc6479d-475e-46e5-9e3b-a16fab6fe6ad",
+    documentTemplateCreate: {
+      uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { documentTemplatesUpdateDocumentTemplates } from "servicem8/funcs/documentTemplatesUpdateDocumentTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await documentTemplatesUpdateDocumentTemplates(serviceM8, {
+    uuid: "4cc6479d-475e-46e5-9e3b-a16fab6fe6ad",
+    documentTemplateCreate: {
+      uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentTemplatesUpdateDocumentTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateDocumentTemplates" method="post" path="/documenttemplate/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.documentTemplates.updateDocumentTemplates({
+    uuid: "9be02cf7-f759-4e65-87df-20db738f4d86",
+    documentTemplateCreate: {
+      uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { documentTemplatesUpdateDocumentTemplates } from "servicem8/funcs/documentTemplatesUpdateDocumentTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await documentTemplatesUpdateDocumentTemplates(serviceM8, {
+    uuid: "9be02cf7-f759-4e65-87df-20db738f4d86",
+    documentTemplateCreate: {
+      uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentTemplatesUpdateDocumentTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateDocumentTemplates" method="post" path="/documenttemplate/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.documentTemplates.updateDocumentTemplates({
+    uuid: "e371a482-2feb-4b5b-a72a-56796a683d72",
+    documentTemplateCreate: {
+      uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { documentTemplatesUpdateDocumentTemplates } from "servicem8/funcs/documentTemplatesUpdateDocumentTemplates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await documentTemplatesUpdateDocumentTemplates(serviceM8, {
+    uuid: "e371a482-2feb-4b5b-a72a-56796a683d72",
+    documentTemplateCreate: {
+      uuid: "123e4567-54aa-4d7a-ac6a-23c6f271a2db",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentTemplatesUpdateDocumentTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateDocumentTemplates" method="post" path="/documenttemplate/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -387,7 +1006,7 @@ This endpoint requires the following OAuth scope **manage_templates**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteDocumentTemplates" method="delete" path="/documenttemplate/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteDocumentTemplates" method="delete" path="/documenttemplate/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

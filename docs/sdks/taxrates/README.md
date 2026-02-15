@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_tax_rates**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listTaxRates" method="get" path="/taxrate.json" -->
+<!-- UsageSnippet language="typescript" operationID="listTaxRates" method="get" path="/taxrate.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,284 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createTaxRates" method="post" path="/taxrate.json" -->
+<!-- UsageSnippet language="typescript" operationID="createTaxRates" method="post" path="/taxrate.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.taxRates.createTaxRates({
+    name: "<value>",
+    uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { taxRatesCreateTaxRates } from "servicem8/funcs/taxRatesCreateTaxRates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await taxRatesCreateTaxRates(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesCreateTaxRates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createTaxRates" method="post" path="/taxrate.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.taxRates.createTaxRates({
+    name: "<value>",
+    uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { taxRatesCreateTaxRates } from "servicem8/funcs/taxRatesCreateTaxRates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await taxRatesCreateTaxRates(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesCreateTaxRates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createTaxRates" method="post" path="/taxrate.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.taxRates.createTaxRates({
+    name: "<value>",
+    uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { taxRatesCreateTaxRates } from "servicem8/funcs/taxRatesCreateTaxRates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await taxRatesCreateTaxRates(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesCreateTaxRates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createTaxRates" method="post" path="/taxrate.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.taxRates.createTaxRates({
+    name: "<value>",
+    uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { taxRatesCreateTaxRates } from "servicem8/funcs/taxRatesCreateTaxRates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await taxRatesCreateTaxRates(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesCreateTaxRates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createTaxRates" method="post" path="/taxrate.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.taxRates.createTaxRates({
+    name: "<value>",
+    uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { taxRatesCreateTaxRates } from "servicem8/funcs/taxRatesCreateTaxRates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await taxRatesCreateTaxRates(serviceM8, {
+    name: "<value>",
+    uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesCreateTaxRates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createTaxRates" method="post" path="/taxrate.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -203,7 +478,7 @@ This endpoint requires the following OAuth scope **read_tax_rates**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getTaxRates" method="get" path="/taxrate/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getTaxRates" method="get" path="/taxrate/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,9 +564,375 @@ This endpoint requires the following OAuth scope **manage_tax_rates**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateTaxRates" method="post" path="/taxrate/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateTaxRates" method="post" path="/taxrate/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.taxRates.updateTaxRates({
+    uuid: "1698625d-cf9e-4b2d-b5ef-bb9580502169",
+    taxRateCreate: {
+      name: "<value>",
+      uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { taxRatesUpdateTaxRates } from "servicem8/funcs/taxRatesUpdateTaxRates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await taxRatesUpdateTaxRates(serviceM8, {
+    uuid: "1698625d-cf9e-4b2d-b5ef-bb9580502169",
+    taxRateCreate: {
+      name: "<value>",
+      uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesUpdateTaxRates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateTaxRates" method="post" path="/taxrate/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.taxRates.updateTaxRates({
+    uuid: "1698625d-cf9e-4b2d-b5ef-bb9580502169",
+    taxRateCreate: {
+      name: "<value>",
+      uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { taxRatesUpdateTaxRates } from "servicem8/funcs/taxRatesUpdateTaxRates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await taxRatesUpdateTaxRates(serviceM8, {
+    uuid: "1698625d-cf9e-4b2d-b5ef-bb9580502169",
+    taxRateCreate: {
+      name: "<value>",
+      uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesUpdateTaxRates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateTaxRates" method="post" path="/taxrate/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.taxRates.updateTaxRates({
+    uuid: "cf48920b-19ec-45cb-901d-019b965656a5",
+    taxRateCreate: {
+      name: "<value>",
+      uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { taxRatesUpdateTaxRates } from "servicem8/funcs/taxRatesUpdateTaxRates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await taxRatesUpdateTaxRates(serviceM8, {
+    uuid: "cf48920b-19ec-45cb-901d-019b965656a5",
+    taxRateCreate: {
+      name: "<value>",
+      uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesUpdateTaxRates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateTaxRates" method="post" path="/taxrate/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.taxRates.updateTaxRates({
+    uuid: "255f898d-5521-44a2-ad73-64510a4094bd",
+    taxRateCreate: {
+      name: "<value>",
+      uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { taxRatesUpdateTaxRates } from "servicem8/funcs/taxRatesUpdateTaxRates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await taxRatesUpdateTaxRates(serviceM8, {
+    uuid: "255f898d-5521-44a2-ad73-64510a4094bd",
+    taxRateCreate: {
+      name: "<value>",
+      uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesUpdateTaxRates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateTaxRates" method="post" path="/taxrate/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.taxRates.updateTaxRates({
+    uuid: "0b592381-2342-4145-ae4b-ab84ce4eca9c",
+    taxRateCreate: {
+      name: "<value>",
+      uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { taxRatesUpdateTaxRates } from "servicem8/funcs/taxRatesUpdateTaxRates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await taxRatesUpdateTaxRates(serviceM8, {
+    uuid: "0b592381-2342-4145-ae4b-ab84ce4eca9c",
+    taxRateCreate: {
+      name: "<value>",
+      uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesUpdateTaxRates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateTaxRates" method="post" path="/taxrate/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.taxRates.updateTaxRates({
+    uuid: "276d45f4-bf8b-41ae-82d4-264af7ec45cc",
+    taxRateCreate: {
+      name: "<value>",
+      uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { taxRatesUpdateTaxRates } from "servicem8/funcs/taxRatesUpdateTaxRates.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await taxRatesUpdateTaxRates(serviceM8, {
+    uuid: "276d45f4-bf8b-41ae-82d4-264af7ec45cc",
+    taxRateCreate: {
+      name: "<value>",
+      uuid: "123e4567-49ab-4405-a2fb-23c6fcd73c2b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxRatesUpdateTaxRates failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateTaxRates" method="post" path="/taxrate/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -391,7 +1032,7 @@ This endpoint requires the following OAuth scope **manage_tax_rates**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteTaxRates" method="delete" path="/taxrate/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteTaxRates" method="delete" path="/taxrate/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

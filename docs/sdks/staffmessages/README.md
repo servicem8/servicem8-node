@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_messages**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listStaffMessages" method="get" path="/staffmessage.json" -->
+<!-- UsageSnippet language="typescript" operationID="listStaffMessages" method="get" path="/staffmessage.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,334 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createStaffMessages" method="post" path="/staffmessage.json" -->
+<!-- UsageSnippet language="typescript" operationID="createStaffMessages" method="post" path="/staffmessage.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMessages.createStaffMessages({
+    fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+    toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+    sentTimestamp: "2026-01-01 12:00:00",
+    deliveredTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+    uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMessagesCreateStaffMessages } from "servicem8/funcs/staffMessagesCreateStaffMessages.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMessagesCreateStaffMessages(serviceM8, {
+    fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+    toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+    sentTimestamp: "2026-01-01 12:00:00",
+    deliveredTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+    uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesCreateStaffMessages failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createStaffMessages" method="post" path="/staffmessage.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMessages.createStaffMessages({
+    fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+    toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+    sentTimestamp: "2026-01-01 12:00:00",
+    deliveredTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+    uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMessagesCreateStaffMessages } from "servicem8/funcs/staffMessagesCreateStaffMessages.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMessagesCreateStaffMessages(serviceM8, {
+    fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+    toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+    sentTimestamp: "2026-01-01 12:00:00",
+    deliveredTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+    uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesCreateStaffMessages failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createStaffMessages" method="post" path="/staffmessage.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMessages.createStaffMessages({
+    fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+    toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+    sentTimestamp: "2026-01-01 12:00:00",
+    deliveredTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+    uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMessagesCreateStaffMessages } from "servicem8/funcs/staffMessagesCreateStaffMessages.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMessagesCreateStaffMessages(serviceM8, {
+    fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+    toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+    sentTimestamp: "2026-01-01 12:00:00",
+    deliveredTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+    uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesCreateStaffMessages failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createStaffMessages" method="post" path="/staffmessage.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMessages.createStaffMessages({
+    fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+    toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+    sentTimestamp: "2026-01-01 12:00:00",
+    deliveredTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+    uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMessagesCreateStaffMessages } from "servicem8/funcs/staffMessagesCreateStaffMessages.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMessagesCreateStaffMessages(serviceM8, {
+    fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+    toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+    sentTimestamp: "2026-01-01 12:00:00",
+    deliveredTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+    uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesCreateStaffMessages failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createStaffMessages" method="post" path="/staffmessage.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMessages.createStaffMessages({
+    fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+    toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+    sentTimestamp: "2026-01-01 12:00:00",
+    deliveredTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+    uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMessagesCreateStaffMessages } from "servicem8/funcs/staffMessagesCreateStaffMessages.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMessagesCreateStaffMessages(serviceM8, {
+    fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+    toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+    sentTimestamp: "2026-01-01 12:00:00",
+    deliveredTimestamp: "2026-01-01 12:00:00",
+    readTimestamp: "2026-01-01 12:00:00",
+    regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+    uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesCreateStaffMessages failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createStaffMessages" method="post" path="/staffmessage.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -213,7 +538,7 @@ This endpoint requires the following OAuth scope **read_messages**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getStaffMessages" method="get" path="/staffmessage/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getStaffMessages" method="get" path="/staffmessage/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -299,9 +624,435 @@ This endpoint requires the following OAuth scope **publish_messages**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateStaffMessages" method="post" path="/staffmessage/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateStaffMessages" method="post" path="/staffmessage/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMessages.updateStaffMessages({
+    uuid: "7a8b58d7-937e-4a2b-b266-ed496ee62b75",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+      toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+      sentTimestamp: "2026-01-01 12:00:00",
+      deliveredTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+      uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMessagesUpdateStaffMessages } from "servicem8/funcs/staffMessagesUpdateStaffMessages.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMessagesUpdateStaffMessages(serviceM8, {
+    uuid: "7a8b58d7-937e-4a2b-b266-ed496ee62b75",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+      toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+      sentTimestamp: "2026-01-01 12:00:00",
+      deliveredTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+      uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesUpdateStaffMessages failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateStaffMessages" method="post" path="/staffmessage/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMessages.updateStaffMessages({
+    uuid: "7a8b58d7-937e-4a2b-b266-ed496ee62b75",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+      toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+      sentTimestamp: "2026-01-01 12:00:00",
+      deliveredTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+      uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMessagesUpdateStaffMessages } from "servicem8/funcs/staffMessagesUpdateStaffMessages.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMessagesUpdateStaffMessages(serviceM8, {
+    uuid: "7a8b58d7-937e-4a2b-b266-ed496ee62b75",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+      toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+      sentTimestamp: "2026-01-01 12:00:00",
+      deliveredTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+      uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesUpdateStaffMessages failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateStaffMessages" method="post" path="/staffmessage/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMessages.updateStaffMessages({
+    uuid: "3c3bb2df-6dc6-4f49-a81f-d6d9d9c1c553",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+      toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+      sentTimestamp: "2026-01-01 12:00:00",
+      deliveredTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+      uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMessagesUpdateStaffMessages } from "servicem8/funcs/staffMessagesUpdateStaffMessages.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMessagesUpdateStaffMessages(serviceM8, {
+    uuid: "3c3bb2df-6dc6-4f49-a81f-d6d9d9c1c553",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+      toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+      sentTimestamp: "2026-01-01 12:00:00",
+      deliveredTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+      uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesUpdateStaffMessages failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateStaffMessages" method="post" path="/staffmessage/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMessages.updateStaffMessages({
+    uuid: "844c31c3-e2d9-46e2-bd30-22a53c6ceea1",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+      toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+      sentTimestamp: "2026-01-01 12:00:00",
+      deliveredTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+      uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMessagesUpdateStaffMessages } from "servicem8/funcs/staffMessagesUpdateStaffMessages.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMessagesUpdateStaffMessages(serviceM8, {
+    uuid: "844c31c3-e2d9-46e2-bd30-22a53c6ceea1",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+      toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+      sentTimestamp: "2026-01-01 12:00:00",
+      deliveredTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+      uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesUpdateStaffMessages failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateStaffMessages" method="post" path="/staffmessage/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMessages.updateStaffMessages({
+    uuid: "32263d75-1471-4bb2-a71d-9a329125e724",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+      toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+      sentTimestamp: "2026-01-01 12:00:00",
+      deliveredTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+      uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMessagesUpdateStaffMessages } from "servicem8/funcs/staffMessagesUpdateStaffMessages.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMessagesUpdateStaffMessages(serviceM8, {
+    uuid: "32263d75-1471-4bb2-a71d-9a329125e724",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+      toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+      sentTimestamp: "2026-01-01 12:00:00",
+      deliveredTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+      uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesUpdateStaffMessages failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateStaffMessages" method="post" path="/staffmessage/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.staffMessages.updateStaffMessages({
+    uuid: "b5fd0f7a-6810-4261-acdb-e8e543cf4e72",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+      toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+      sentTimestamp: "2026-01-01 12:00:00",
+      deliveredTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+      uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { staffMessagesUpdateStaffMessages } from "servicem8/funcs/staffMessagesUpdateStaffMessages.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await staffMessagesUpdateStaffMessages(serviceM8, {
+    uuid: "b5fd0f7a-6810-4261-acdb-e8e543cf4e72",
+    staffMessageCreate: {
+      fromStaffUuid: "123e4567-fa45-4342-aed9-23c6fd268b8b",
+      toStaffUuid: "123e4567-40db-4be3-8b7a-23c6f8e9222b",
+      sentTimestamp: "2026-01-01 12:00:00",
+      deliveredTimestamp: "2026-01-01 12:00:00",
+      readTimestamp: "2026-01-01 12:00:00",
+      regardingJobUuid: "123e4567-91f2-4325-9a55-23c6f8fae9cb",
+      uuid: "123e4567-29de-4d23-8aaf-23c6f9c764fb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("staffMessagesUpdateStaffMessages failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateStaffMessages" method="post" path="/staffmessage/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -411,7 +1162,7 @@ This endpoint requires the following OAuth scope **publish_messages**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteStaffMessages" method="delete" path="/staffmessage/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteStaffMessages" method="delete" path="/staffmessage/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

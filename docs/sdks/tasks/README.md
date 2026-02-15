@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_tasks**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listTasks" method="get" path="/task.json" -->
+<!-- UsageSnippet language="typescript" operationID="listTasks" method="get" path="/task.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,354 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createTasks" method="post" path="/task.json" -->
+<!-- UsageSnippet language="typescript" operationID="createTasks" method="post" path="/task.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.tasks.createTasks({
+    dueDate: "YYYY-MM-DD",
+    name: "<value>",
+    relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+    completedTimestamp: "2026-01-01 12:00:00",
+    completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+    assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+    uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+    createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+    createDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { tasksCreateTasks } from "servicem8/funcs/tasksCreateTasks.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await tasksCreateTasks(serviceM8, {
+    dueDate: "YYYY-MM-DD",
+    name: "<value>",
+    relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+    completedTimestamp: "2026-01-01 12:00:00",
+    completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+    assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+    uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+    createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+    createDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksCreateTasks failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createTasks" method="post" path="/task.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.tasks.createTasks({
+    dueDate: "YYYY-MM-DD",
+    name: "<value>",
+    relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+    completedTimestamp: "2026-01-01 12:00:00",
+    completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+    assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+    uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+    createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+    createDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { tasksCreateTasks } from "servicem8/funcs/tasksCreateTasks.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await tasksCreateTasks(serviceM8, {
+    dueDate: "YYYY-MM-DD",
+    name: "<value>",
+    relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+    completedTimestamp: "2026-01-01 12:00:00",
+    completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+    assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+    uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+    createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+    createDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksCreateTasks failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createTasks" method="post" path="/task.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.tasks.createTasks({
+    dueDate: "YYYY-MM-DD",
+    name: "<value>",
+    relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+    completedTimestamp: "2026-01-01 12:00:00",
+    completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+    assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+    uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+    createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+    createDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { tasksCreateTasks } from "servicem8/funcs/tasksCreateTasks.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await tasksCreateTasks(serviceM8, {
+    dueDate: "YYYY-MM-DD",
+    name: "<value>",
+    relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+    completedTimestamp: "2026-01-01 12:00:00",
+    completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+    assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+    uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+    createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+    createDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksCreateTasks failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createTasks" method="post" path="/task.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.tasks.createTasks({
+    dueDate: "YYYY-MM-DD",
+    name: "<value>",
+    relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+    completedTimestamp: "2026-01-01 12:00:00",
+    completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+    assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+    uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+    createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+    createDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { tasksCreateTasks } from "servicem8/funcs/tasksCreateTasks.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await tasksCreateTasks(serviceM8, {
+    dueDate: "YYYY-MM-DD",
+    name: "<value>",
+    relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+    completedTimestamp: "2026-01-01 12:00:00",
+    completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+    assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+    uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+    createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+    createDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksCreateTasks failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createTasks" method="post" path="/task.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.tasks.createTasks({
+    dueDate: "YYYY-MM-DD",
+    name: "<value>",
+    relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+    completedTimestamp: "2026-01-01 12:00:00",
+    completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+    assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+    uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+    createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+    createDate: "2026-01-01 12:00:00",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { tasksCreateTasks } from "servicem8/funcs/tasksCreateTasks.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await tasksCreateTasks(serviceM8, {
+    dueDate: "YYYY-MM-DD",
+    name: "<value>",
+    relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+    completedTimestamp: "2026-01-01 12:00:00",
+    completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+    assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+    uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+    createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+    createDate: "2026-01-01 12:00:00",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksCreateTasks failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createTasks" method="post" path="/task.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -217,7 +562,7 @@ This endpoint requires the following OAuth scope **read_tasks**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getTasks" method="get" path="/task/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getTasks" method="get" path="/task/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -303,9 +648,459 @@ This endpoint requires the following OAuth scope **manage_tasks**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateTasks" method="post" path="/task/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateTasks" method="post" path="/task/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.tasks.updateTasks({
+    uuid: "cea8cd10-c866-4b19-8512-eaac32cffaea",
+    taskCreate: {
+      dueDate: "YYYY-MM-DD",
+      name: "<value>",
+      relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+      completedTimestamp: "2026-01-01 12:00:00",
+      completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+      assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+      uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+      createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { tasksUpdateTasks } from "servicem8/funcs/tasksUpdateTasks.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await tasksUpdateTasks(serviceM8, {
+    uuid: "cea8cd10-c866-4b19-8512-eaac32cffaea",
+    taskCreate: {
+      dueDate: "YYYY-MM-DD",
+      name: "<value>",
+      relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+      completedTimestamp: "2026-01-01 12:00:00",
+      completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+      assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+      uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+      createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksUpdateTasks failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateTasks" method="post" path="/task/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.tasks.updateTasks({
+    uuid: "cea8cd10-c866-4b19-8512-eaac32cffaea",
+    taskCreate: {
+      dueDate: "YYYY-MM-DD",
+      name: "<value>",
+      relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+      completedTimestamp: "2026-01-01 12:00:00",
+      completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+      assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+      uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+      createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { tasksUpdateTasks } from "servicem8/funcs/tasksUpdateTasks.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await tasksUpdateTasks(serviceM8, {
+    uuid: "cea8cd10-c866-4b19-8512-eaac32cffaea",
+    taskCreate: {
+      dueDate: "YYYY-MM-DD",
+      name: "<value>",
+      relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+      completedTimestamp: "2026-01-01 12:00:00",
+      completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+      assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+      uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+      createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksUpdateTasks failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateTasks" method="post" path="/task/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.tasks.updateTasks({
+    uuid: "0fc89684-661e-482c-ba85-00f166a12f60",
+    taskCreate: {
+      dueDate: "YYYY-MM-DD",
+      name: "<value>",
+      relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+      completedTimestamp: "2026-01-01 12:00:00",
+      completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+      assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+      uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+      createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { tasksUpdateTasks } from "servicem8/funcs/tasksUpdateTasks.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await tasksUpdateTasks(serviceM8, {
+    uuid: "0fc89684-661e-482c-ba85-00f166a12f60",
+    taskCreate: {
+      dueDate: "YYYY-MM-DD",
+      name: "<value>",
+      relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+      completedTimestamp: "2026-01-01 12:00:00",
+      completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+      assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+      uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+      createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksUpdateTasks failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateTasks" method="post" path="/task/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.tasks.updateTasks({
+    uuid: "f9bfbf31-0104-4e0f-9621-4767ed21b6da",
+    taskCreate: {
+      dueDate: "YYYY-MM-DD",
+      name: "<value>",
+      relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+      completedTimestamp: "2026-01-01 12:00:00",
+      completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+      assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+      uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+      createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { tasksUpdateTasks } from "servicem8/funcs/tasksUpdateTasks.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await tasksUpdateTasks(serviceM8, {
+    uuid: "f9bfbf31-0104-4e0f-9621-4767ed21b6da",
+    taskCreate: {
+      dueDate: "YYYY-MM-DD",
+      name: "<value>",
+      relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+      completedTimestamp: "2026-01-01 12:00:00",
+      completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+      assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+      uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+      createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksUpdateTasks failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateTasks" method="post" path="/task/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.tasks.updateTasks({
+    uuid: "2283c776-0bb3-4350-a9c1-c03204f5a8c4",
+    taskCreate: {
+      dueDate: "YYYY-MM-DD",
+      name: "<value>",
+      relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+      completedTimestamp: "2026-01-01 12:00:00",
+      completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+      assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+      uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+      createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { tasksUpdateTasks } from "servicem8/funcs/tasksUpdateTasks.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await tasksUpdateTasks(serviceM8, {
+    uuid: "2283c776-0bb3-4350-a9c1-c03204f5a8c4",
+    taskCreate: {
+      dueDate: "YYYY-MM-DD",
+      name: "<value>",
+      relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+      completedTimestamp: "2026-01-01 12:00:00",
+      completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+      assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+      uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+      createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksUpdateTasks failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateTasks" method="post" path="/task/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.tasks.updateTasks({
+    uuid: "fc5a7972-ff2f-4bbb-a4fb-c4e583b9d183",
+    taskCreate: {
+      dueDate: "YYYY-MM-DD",
+      name: "<value>",
+      relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+      completedTimestamp: "2026-01-01 12:00:00",
+      completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+      assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+      uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+      createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { tasksUpdateTasks } from "servicem8/funcs/tasksUpdateTasks.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await tasksUpdateTasks(serviceM8, {
+    uuid: "fc5a7972-ff2f-4bbb-a4fb-c4e583b9d183",
+    taskCreate: {
+      dueDate: "YYYY-MM-DD",
+      name: "<value>",
+      relatedObjectUuid: "123e4567-c607-4f2d-9c5a-23c6f24754fb",
+      completedTimestamp: "2026-01-01 12:00:00",
+      completedByStaffUuid: "123e4567-3794-45f8-84ee-23c6f97be96b",
+      assignedToStaffUuid: "123e4567-0d03-4a07-88b3-23c6f6e4f3eb",
+      uuid: "123e4567-7949-40b6-aef6-23c6f0af9b2b",
+      createdByStaffUuid: "123e4567-ceb0-4f2e-84d2-23c6fa453cfb",
+      createDate: "2026-01-01 12:00:00",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("tasksUpdateTasks failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateTasks" method="post" path="/task/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -419,7 +1214,7 @@ This endpoint requires the following OAuth scope **manage_tasks**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteTasks" method="delete" path="/task/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteTasks" method="delete" path="/task/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

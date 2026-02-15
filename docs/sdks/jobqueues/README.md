@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_job_queues**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listJobQueues" method="get" path="/queue.json" -->
+<!-- UsageSnippet language="typescript" operationID="listJobQueues" method="get" path="/queue.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,274 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createJobQueues" method="post" path="/queue.json" -->
+<!-- UsageSnippet language="typescript" operationID="createJobQueues" method="post" path="/queue.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobQueues.createJobQueues({
+    uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobQueuesCreateJobQueues } from "servicem8/funcs/jobQueuesCreateJobQueues.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobQueuesCreateJobQueues(serviceM8, {
+    uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesCreateJobQueues failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createJobQueues" method="post" path="/queue.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobQueues.createJobQueues({
+    uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobQueuesCreateJobQueues } from "servicem8/funcs/jobQueuesCreateJobQueues.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobQueuesCreateJobQueues(serviceM8, {
+    uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesCreateJobQueues failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createJobQueues" method="post" path="/queue.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobQueues.createJobQueues({
+    uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobQueuesCreateJobQueues } from "servicem8/funcs/jobQueuesCreateJobQueues.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobQueuesCreateJobQueues(serviceM8, {
+    uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesCreateJobQueues failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createJobQueues" method="post" path="/queue.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobQueues.createJobQueues({
+    uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobQueuesCreateJobQueues } from "servicem8/funcs/jobQueuesCreateJobQueues.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobQueuesCreateJobQueues(serviceM8, {
+    uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesCreateJobQueues failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createJobQueues" method="post" path="/queue.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobQueues.createJobQueues({
+    uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobQueuesCreateJobQueues } from "servicem8/funcs/jobQueuesCreateJobQueues.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobQueuesCreateJobQueues(serviceM8, {
+    uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesCreateJobQueues failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createJobQueues" method="post" path="/queue.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -201,7 +466,7 @@ This endpoint requires the following OAuth scope **read_job_queues**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getJobQueues" method="get" path="/queue/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getJobQueues" method="get" path="/queue/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -287,9 +552,363 @@ This endpoint requires the following OAuth scope **manage_job_queues**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateJobQueues" method="post" path="/queue/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateJobQueues" method="post" path="/queue/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobQueues.updateJobQueues({
+    uuid: "46d4a0f6-2489-4703-a77b-72c8100be1b5",
+    queueCreate: {
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobQueuesUpdateJobQueues } from "servicem8/funcs/jobQueuesUpdateJobQueues.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobQueuesUpdateJobQueues(serviceM8, {
+    uuid: "46d4a0f6-2489-4703-a77b-72c8100be1b5",
+    queueCreate: {
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesUpdateJobQueues failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateJobQueues" method="post" path="/queue/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobQueues.updateJobQueues({
+    uuid: "46d4a0f6-2489-4703-a77b-72c8100be1b5",
+    queueCreate: {
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobQueuesUpdateJobQueues } from "servicem8/funcs/jobQueuesUpdateJobQueues.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobQueuesUpdateJobQueues(serviceM8, {
+    uuid: "46d4a0f6-2489-4703-a77b-72c8100be1b5",
+    queueCreate: {
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesUpdateJobQueues failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateJobQueues" method="post" path="/queue/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobQueues.updateJobQueues({
+    uuid: "7b94ae90-7266-4c78-822e-cfe474d4f31b",
+    queueCreate: {
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobQueuesUpdateJobQueues } from "servicem8/funcs/jobQueuesUpdateJobQueues.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobQueuesUpdateJobQueues(serviceM8, {
+    uuid: "7b94ae90-7266-4c78-822e-cfe474d4f31b",
+    queueCreate: {
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesUpdateJobQueues failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateJobQueues" method="post" path="/queue/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobQueues.updateJobQueues({
+    uuid: "fa0348c1-885f-45a3-98d0-ed501c35e61b",
+    queueCreate: {
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobQueuesUpdateJobQueues } from "servicem8/funcs/jobQueuesUpdateJobQueues.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobQueuesUpdateJobQueues(serviceM8, {
+    uuid: "fa0348c1-885f-45a3-98d0-ed501c35e61b",
+    queueCreate: {
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesUpdateJobQueues failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateJobQueues" method="post" path="/queue/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobQueues.updateJobQueues({
+    uuid: "4c3d35ae-da26-4dcd-8a95-67dcf6075ab1",
+    queueCreate: {
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobQueuesUpdateJobQueues } from "servicem8/funcs/jobQueuesUpdateJobQueues.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobQueuesUpdateJobQueues(serviceM8, {
+    uuid: "4c3d35ae-da26-4dcd-8a95-67dcf6075ab1",
+    queueCreate: {
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesUpdateJobQueues failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateJobQueues" method="post" path="/queue/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobQueues.updateJobQueues({
+    uuid: "d5fb31ee-995a-4e2f-8fa6-92068fea17a2",
+    queueCreate: {
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobQueuesUpdateJobQueues } from "servicem8/funcs/jobQueuesUpdateJobQueues.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobQueuesUpdateJobQueues(serviceM8, {
+    uuid: "d5fb31ee-995a-4e2f-8fa6-92068fea17a2",
+    queueCreate: {
+      uuid: "123e4567-8569-4fa7-9b08-23c6f3ec70fb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobQueuesUpdateJobQueues failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateJobQueues" method="post" path="/queue/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -387,7 +1006,7 @@ This endpoint requires the following OAuth scope **manage_job_queues**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteJobQueues" method="delete" path="/queue/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteJobQueues" method="delete" path="/queue/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
