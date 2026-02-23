@@ -9,7 +9,7 @@ let value: UpdateEmailTemplatesRequest = {
   uuid: "294097a8-e371-45a8-ad02-d6ffca8fc57b",
   emailTemplateCreate: {
     name: "<value>",
-    uuid: "123e4567-d7dc-4c5e-bdb8-23c6fa3ed46b",
+    uuid: "123e4567-5a62-4c1c-b182-23d59561742b",
   },
 };
 ```

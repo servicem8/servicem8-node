@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_customer_contacts**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCompanyContacts" method="get" path="/companycontact.json" -->
+<!-- UsageSnippet language="typescript" operationID="listCompanyContacts" method="get" path="/companycontact.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,284 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createCompanyContacts" method="post" path="/companycontact.json" -->
+<!-- UsageSnippet language="typescript" operationID="createCompanyContacts" method="post" path="/companycontact.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.companyContacts.createCompanyContacts({
+    companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+    uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { companyContactsCreateCompanyContacts } from "servicem8/funcs/companyContactsCreateCompanyContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await companyContactsCreateCompanyContacts(serviceM8, {
+    companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+    uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsCreateCompanyContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createCompanyContacts" method="post" path="/companycontact.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.companyContacts.createCompanyContacts({
+    companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+    uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { companyContactsCreateCompanyContacts } from "servicem8/funcs/companyContactsCreateCompanyContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await companyContactsCreateCompanyContacts(serviceM8, {
+    companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+    uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsCreateCompanyContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createCompanyContacts" method="post" path="/companycontact.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.companyContacts.createCompanyContacts({
+    companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+    uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { companyContactsCreateCompanyContacts } from "servicem8/funcs/companyContactsCreateCompanyContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await companyContactsCreateCompanyContacts(serviceM8, {
+    companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+    uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsCreateCompanyContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createCompanyContacts" method="post" path="/companycontact.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.companyContacts.createCompanyContacts({
+    companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+    uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { companyContactsCreateCompanyContacts } from "servicem8/funcs/companyContactsCreateCompanyContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await companyContactsCreateCompanyContacts(serviceM8, {
+    companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+    uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsCreateCompanyContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createCompanyContacts" method="post" path="/companycontact.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.companyContacts.createCompanyContacts({
+    companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+    uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { companyContactsCreateCompanyContacts } from "servicem8/funcs/companyContactsCreateCompanyContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await companyContactsCreateCompanyContacts(serviceM8, {
+    companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+    uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsCreateCompanyContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createCompanyContacts" method="post" path="/companycontact.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -203,7 +478,7 @@ This endpoint requires the following OAuth scope **read_customer_contacts**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCompanyContacts" method="get" path="/companycontact/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getCompanyContacts" method="get" path="/companycontact/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,9 +564,375 @@ This endpoint requires the following OAuth scope **manage_customer_contacts**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateCompanyContacts" method="post" path="/companycontact/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateCompanyContacts" method="post" path="/companycontact/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.companyContacts.updateCompanyContacts({
+    uuid: "0abfbd07-4bd7-4197-beb6-63c14b0d07bf",
+    companyContactCreate: {
+      companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+      uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { companyContactsUpdateCompanyContacts } from "servicem8/funcs/companyContactsUpdateCompanyContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await companyContactsUpdateCompanyContacts(serviceM8, {
+    uuid: "0abfbd07-4bd7-4197-beb6-63c14b0d07bf",
+    companyContactCreate: {
+      companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+      uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsUpdateCompanyContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateCompanyContacts" method="post" path="/companycontact/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.companyContacts.updateCompanyContacts({
+    uuid: "0abfbd07-4bd7-4197-beb6-63c14b0d07bf",
+    companyContactCreate: {
+      companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+      uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { companyContactsUpdateCompanyContacts } from "servicem8/funcs/companyContactsUpdateCompanyContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await companyContactsUpdateCompanyContacts(serviceM8, {
+    uuid: "0abfbd07-4bd7-4197-beb6-63c14b0d07bf",
+    companyContactCreate: {
+      companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+      uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsUpdateCompanyContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateCompanyContacts" method="post" path="/companycontact/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.companyContacts.updateCompanyContacts({
+    uuid: "a93aec07-3caf-4fe5-a3df-897a9da72153",
+    companyContactCreate: {
+      companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+      uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { companyContactsUpdateCompanyContacts } from "servicem8/funcs/companyContactsUpdateCompanyContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await companyContactsUpdateCompanyContacts(serviceM8, {
+    uuid: "a93aec07-3caf-4fe5-a3df-897a9da72153",
+    companyContactCreate: {
+      companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+      uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsUpdateCompanyContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateCompanyContacts" method="post" path="/companycontact/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.companyContacts.updateCompanyContacts({
+    uuid: "e6113741-6309-47b2-a238-f25c894b3a81",
+    companyContactCreate: {
+      companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+      uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { companyContactsUpdateCompanyContacts } from "servicem8/funcs/companyContactsUpdateCompanyContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await companyContactsUpdateCompanyContacts(serviceM8, {
+    uuid: "e6113741-6309-47b2-a238-f25c894b3a81",
+    companyContactCreate: {
+      companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+      uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsUpdateCompanyContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateCompanyContacts" method="post" path="/companycontact/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.companyContacts.updateCompanyContacts({
+    uuid: "f59b6e2d-171c-4e82-84f5-053501789563",
+    companyContactCreate: {
+      companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+      uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { companyContactsUpdateCompanyContacts } from "servicem8/funcs/companyContactsUpdateCompanyContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await companyContactsUpdateCompanyContacts(serviceM8, {
+    uuid: "f59b6e2d-171c-4e82-84f5-053501789563",
+    companyContactCreate: {
+      companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+      uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsUpdateCompanyContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateCompanyContacts" method="post" path="/companycontact/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.companyContacts.updateCompanyContacts({
+    uuid: "14a84f05-390e-4d88-ad00-a75bba477a48",
+    companyContactCreate: {
+      companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+      uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { companyContactsUpdateCompanyContacts } from "servicem8/funcs/companyContactsUpdateCompanyContacts.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await companyContactsUpdateCompanyContacts(serviceM8, {
+    uuid: "14a84f05-390e-4d88-ad00-a75bba477a48",
+    companyContactCreate: {
+      companyUuid: "123e4567-37e9-4ecc-ba24-23c6f0fbbe5b",
+      uuid: "123e4567-5120-4094-bb89-23c6f5b492cb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("companyContactsUpdateCompanyContacts failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateCompanyContacts" method="post" path="/companycontact/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -391,7 +1032,7 @@ This endpoint requires the following OAuth scope **manage_customer_contacts**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteCompanyContacts" method="delete" path="/companycontact/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteCompanyContacts" method="delete" path="/companycontact/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

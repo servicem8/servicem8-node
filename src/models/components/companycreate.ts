@@ -34,7 +34,6 @@ export type CompanyCreate = {
    */
   uuid?: string | undefined;
   website?: string | undefined;
-  isIndividual?: string | undefined;
   addressStreet?: string | undefined;
   addressCity?: string | undefined;
   addressState?: string | undefined;
@@ -63,7 +62,6 @@ export const CompanyCreate$inboundSchema: z.ZodType<
   parent_company_uuid: z.any().optional(),
   uuid: z.string().optional(),
   website: z.string().optional(),
-  is_individual: z.string().optional(),
   address_street: z.string().optional(),
   address_city: z.string().optional(),
   address_state: z.string().optional(),
@@ -79,7 +77,6 @@ export const CompanyCreate$inboundSchema: z.ZodType<
     "abn_number": "abnNumber",
     "billing_address": "billingAddress",
     "parent_company_uuid": "parentCompanyUuid",
-    "is_individual": "isIndividual",
     "address_street": "addressStreet",
     "address_city": "addressCity",
     "address_state": "addressState",
@@ -100,7 +97,6 @@ export type CompanyCreate$Outbound = {
   parent_company_uuid?: any | undefined;
   uuid?: string | undefined;
   website?: string | undefined;
-  is_individual?: string | undefined;
   address_street?: string | undefined;
   address_city?: string | undefined;
   address_state?: string | undefined;
@@ -126,7 +122,6 @@ export const CompanyCreate$outboundSchema: z.ZodType<
   parentCompanyUuid: z.any().optional(),
   uuid: z.string().optional(),
   website: z.string().optional(),
-  isIndividual: z.string().optional(),
   addressStreet: z.string().optional(),
   addressCity: z.string().optional(),
   addressState: z.string().optional(),
@@ -142,7 +137,6 @@ export const CompanyCreate$outboundSchema: z.ZodType<
     abnNumber: "abn_number",
     billingAddress: "billing_address",
     parentCompanyUuid: "parent_company_uuid",
-    isIndividual: "is_individual",
     addressStreet: "address_street",
     addressCity: "address_city",
     addressState: "address_state",

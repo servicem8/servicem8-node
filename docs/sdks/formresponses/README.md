@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_forms**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listFormResponses" method="get" path="/formresponse.json" -->
+<!-- UsageSnippet language="typescript" operationID="listFormResponses" method="get" path="/formresponse.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,344 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createFormResponses" method="post" path="/formresponse.json" -->
+<!-- UsageSnippet language="typescript" operationID="createFormResponses" method="post" path="/formresponse.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.createFormResponses({
+    formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+    staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+    regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+    timestamp: "2026-01-01 12:00:00",
+    formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+    documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+    assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+    uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesCreateFormResponses } from "servicem8/funcs/formResponsesCreateFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesCreateFormResponses(serviceM8, {
+    formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+    staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+    regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+    timestamp: "2026-01-01 12:00:00",
+    formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+    documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+    assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+    uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesCreateFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createFormResponses" method="post" path="/formresponse.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.createFormResponses({
+    formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+    staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+    regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+    timestamp: "2026-01-01 12:00:00",
+    formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+    documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+    assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+    uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesCreateFormResponses } from "servicem8/funcs/formResponsesCreateFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesCreateFormResponses(serviceM8, {
+    formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+    staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+    regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+    timestamp: "2026-01-01 12:00:00",
+    formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+    documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+    assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+    uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesCreateFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createFormResponses" method="post" path="/formresponse.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.createFormResponses({
+    formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+    staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+    regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+    timestamp: "2026-01-01 12:00:00",
+    formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+    documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+    assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+    uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesCreateFormResponses } from "servicem8/funcs/formResponsesCreateFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesCreateFormResponses(serviceM8, {
+    formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+    staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+    regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+    timestamp: "2026-01-01 12:00:00",
+    formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+    documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+    assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+    uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesCreateFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createFormResponses" method="post" path="/formresponse.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.createFormResponses({
+    formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+    staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+    regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+    timestamp: "2026-01-01 12:00:00",
+    formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+    documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+    assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+    uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesCreateFormResponses } from "servicem8/funcs/formResponsesCreateFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesCreateFormResponses(serviceM8, {
+    formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+    staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+    regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+    timestamp: "2026-01-01 12:00:00",
+    formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+    documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+    assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+    uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesCreateFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createFormResponses" method="post" path="/formresponse.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.createFormResponses({
+    formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+    staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+    regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+    timestamp: "2026-01-01 12:00:00",
+    formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+    documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+    assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+    uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesCreateFormResponses } from "servicem8/funcs/formResponsesCreateFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesCreateFormResponses(serviceM8, {
+    formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+    staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+    regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+    timestamp: "2026-01-01 12:00:00",
+    formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+    documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+    assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+    uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesCreateFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createFormResponses" method="post" path="/formresponse.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -215,7 +550,7 @@ This endpoint requires the following OAuth scope **read_forms**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getFormResponses" method="get" path="/formresponse/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getFormResponses" method="get" path="/formresponse/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -301,9 +636,447 @@ This endpoint requires the following OAuth scope **manage_forms**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateFormResponses" method="post" path="/formresponse/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateFormResponses" method="post" path="/formresponse/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.updateFormResponses({
+    uuid: "251eb54f-b088-474c-8772-10efe987e2a1",
+    formResponseCreate: {
+      formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+      staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+      regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+      timestamp: "2026-01-01 12:00:00",
+      formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+      documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+      assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+      uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesUpdateFormResponses } from "servicem8/funcs/formResponsesUpdateFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesUpdateFormResponses(serviceM8, {
+    uuid: "251eb54f-b088-474c-8772-10efe987e2a1",
+    formResponseCreate: {
+      formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+      staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+      regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+      timestamp: "2026-01-01 12:00:00",
+      formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+      documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+      assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+      uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesUpdateFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateFormResponses" method="post" path="/formresponse/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.updateFormResponses({
+    uuid: "251eb54f-b088-474c-8772-10efe987e2a1",
+    formResponseCreate: {
+      formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+      staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+      regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+      timestamp: "2026-01-01 12:00:00",
+      formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+      documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+      assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+      uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesUpdateFormResponses } from "servicem8/funcs/formResponsesUpdateFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesUpdateFormResponses(serviceM8, {
+    uuid: "251eb54f-b088-474c-8772-10efe987e2a1",
+    formResponseCreate: {
+      formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+      staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+      regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+      timestamp: "2026-01-01 12:00:00",
+      formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+      documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+      assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+      uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesUpdateFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateFormResponses" method="post" path="/formresponse/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.updateFormResponses({
+    uuid: "10edc836-b55b-4afe-8527-16cb8a71c43e",
+    formResponseCreate: {
+      formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+      staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+      regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+      timestamp: "2026-01-01 12:00:00",
+      formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+      documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+      assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+      uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesUpdateFormResponses } from "servicem8/funcs/formResponsesUpdateFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesUpdateFormResponses(serviceM8, {
+    uuid: "10edc836-b55b-4afe-8527-16cb8a71c43e",
+    formResponseCreate: {
+      formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+      staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+      regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+      timestamp: "2026-01-01 12:00:00",
+      formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+      documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+      assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+      uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesUpdateFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateFormResponses" method="post" path="/formresponse/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.updateFormResponses({
+    uuid: "8994bb79-484c-4f3e-81e1-950730b49a9a",
+    formResponseCreate: {
+      formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+      staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+      regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+      timestamp: "2026-01-01 12:00:00",
+      formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+      documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+      assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+      uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesUpdateFormResponses } from "servicem8/funcs/formResponsesUpdateFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesUpdateFormResponses(serviceM8, {
+    uuid: "8994bb79-484c-4f3e-81e1-950730b49a9a",
+    formResponseCreate: {
+      formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+      staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+      regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+      timestamp: "2026-01-01 12:00:00",
+      formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+      documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+      assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+      uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesUpdateFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateFormResponses" method="post" path="/formresponse/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.updateFormResponses({
+    uuid: "97d48597-0bef-4fa7-912f-ce5e715a8b4d",
+    formResponseCreate: {
+      formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+      staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+      regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+      timestamp: "2026-01-01 12:00:00",
+      formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+      documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+      assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+      uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesUpdateFormResponses } from "servicem8/funcs/formResponsesUpdateFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesUpdateFormResponses(serviceM8, {
+    uuid: "97d48597-0bef-4fa7-912f-ce5e715a8b4d",
+    formResponseCreate: {
+      formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+      staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+      regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+      timestamp: "2026-01-01 12:00:00",
+      formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+      documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+      assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+      uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesUpdateFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateFormResponses" method="post" path="/formresponse/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.formResponses.updateFormResponses({
+    uuid: "5f593a3c-772d-4259-856d-86a8df7ae53d",
+    formResponseCreate: {
+      formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+      staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+      regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+      timestamp: "2026-01-01 12:00:00",
+      formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+      documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+      assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+      uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { formResponsesUpdateFormResponses } from "servicem8/funcs/formResponsesUpdateFormResponses.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await formResponsesUpdateFormResponses(serviceM8, {
+    uuid: "5f593a3c-772d-4259-856d-86a8df7ae53d",
+    formResponseCreate: {
+      formUuid: "123e4567-a981-4548-83ff-23c6f194b3bb",
+      staffUuid: "123e4567-b941-4519-b431-23c6f5ffe6fb",
+      regardingObjectUuid: "123e4567-0398-438e-95fc-23c6fdb8519b",
+      timestamp: "2026-01-01 12:00:00",
+      formByStaffUuid: "123e4567-9e60-4750-b15c-23c6f95da17b",
+      documentAttachmentUuid: "123e4567-2878-4340-8a11-23c6f282b16b",
+      assetUuid: "123e4567-3daf-45a2-b972-23c6f010c54b",
+      uuid: "123e4567-2807-4f3c-8af2-23c6fbee200b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("formResponsesUpdateFormResponses failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateFormResponses" method="post" path="/formresponse/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -415,7 +1188,7 @@ This endpoint requires the following OAuth scope **manage_forms**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteFormResponses" method="delete" path="/formresponse/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteFormResponses" method="delete" path="/formresponse/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

@@ -24,7 +24,7 @@ This endpoint requires the following OAuth scope **read_security_roles**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listSecurityRoles" method="get" path="/securityrole.json" -->
+<!-- UsageSnippet language="typescript" operationID="listSecurityRoles" method="get" path="/securityrole.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -106,7 +106,7 @@ This endpoint requires the following OAuth scope **read_security_roles**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getSecurityRoles" method="get" path="/securityrole/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getSecurityRoles" method="get" path="/securityrole/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_knowledge**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listKnowledgeArticles" method="get" path="/knowledgearticle.json" -->
+<!-- UsageSnippet language="typescript" operationID="listKnowledgeArticles" method="get" path="/knowledgearticle.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,284 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createKnowledgeArticles" method="post" path="/knowledgearticle.json" -->
+<!-- UsageSnippet language="typescript" operationID="createKnowledgeArticles" method="post" path="/knowledgearticle.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.knowledgeArticles.createKnowledgeArticles({
+    uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+    name: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { knowledgeArticlesCreateKnowledgeArticles } from "servicem8/funcs/knowledgeArticlesCreateKnowledgeArticles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await knowledgeArticlesCreateKnowledgeArticles(serviceM8, {
+    uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+    name: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesCreateKnowledgeArticles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createKnowledgeArticles" method="post" path="/knowledgearticle.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.knowledgeArticles.createKnowledgeArticles({
+    uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+    name: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { knowledgeArticlesCreateKnowledgeArticles } from "servicem8/funcs/knowledgeArticlesCreateKnowledgeArticles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await knowledgeArticlesCreateKnowledgeArticles(serviceM8, {
+    uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+    name: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesCreateKnowledgeArticles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createKnowledgeArticles" method="post" path="/knowledgearticle.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.knowledgeArticles.createKnowledgeArticles({
+    uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+    name: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { knowledgeArticlesCreateKnowledgeArticles } from "servicem8/funcs/knowledgeArticlesCreateKnowledgeArticles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await knowledgeArticlesCreateKnowledgeArticles(serviceM8, {
+    uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+    name: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesCreateKnowledgeArticles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createKnowledgeArticles" method="post" path="/knowledgearticle.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.knowledgeArticles.createKnowledgeArticles({
+    uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+    name: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { knowledgeArticlesCreateKnowledgeArticles } from "servicem8/funcs/knowledgeArticlesCreateKnowledgeArticles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await knowledgeArticlesCreateKnowledgeArticles(serviceM8, {
+    uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+    name: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesCreateKnowledgeArticles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createKnowledgeArticles" method="post" path="/knowledgearticle.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.knowledgeArticles.createKnowledgeArticles({
+    uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+    name: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { knowledgeArticlesCreateKnowledgeArticles } from "servicem8/funcs/knowledgeArticlesCreateKnowledgeArticles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await knowledgeArticlesCreateKnowledgeArticles(serviceM8, {
+    uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+    name: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesCreateKnowledgeArticles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createKnowledgeArticles" method="post" path="/knowledgearticle.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -203,7 +478,7 @@ This endpoint requires the following OAuth scope **read_knowledge**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getKnowledgeArticles" method="get" path="/knowledgearticle/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getKnowledgeArticles" method="get" path="/knowledgearticle/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -289,9 +564,375 @@ This endpoint requires the following OAuth scope **manage_knowledge**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateKnowledgeArticles" method="post" path="/knowledgearticle/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateKnowledgeArticles" method="post" path="/knowledgearticle/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.knowledgeArticles.updateKnowledgeArticles({
+    uuid: "88dd5ca4-b609-4ab0-9824-45ad96100237",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+      name: "<value>",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { knowledgeArticlesUpdateKnowledgeArticles } from "servicem8/funcs/knowledgeArticlesUpdateKnowledgeArticles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await knowledgeArticlesUpdateKnowledgeArticles(serviceM8, {
+    uuid: "88dd5ca4-b609-4ab0-9824-45ad96100237",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+      name: "<value>",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesUpdateKnowledgeArticles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateKnowledgeArticles" method="post" path="/knowledgearticle/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.knowledgeArticles.updateKnowledgeArticles({
+    uuid: "88dd5ca4-b609-4ab0-9824-45ad96100237",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+      name: "<value>",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { knowledgeArticlesUpdateKnowledgeArticles } from "servicem8/funcs/knowledgeArticlesUpdateKnowledgeArticles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await knowledgeArticlesUpdateKnowledgeArticles(serviceM8, {
+    uuid: "88dd5ca4-b609-4ab0-9824-45ad96100237",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+      name: "<value>",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesUpdateKnowledgeArticles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateKnowledgeArticles" method="post" path="/knowledgearticle/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.knowledgeArticles.updateKnowledgeArticles({
+    uuid: "321dfe8b-0bdd-4dfc-9b19-69f54a9c3a81",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+      name: "<value>",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { knowledgeArticlesUpdateKnowledgeArticles } from "servicem8/funcs/knowledgeArticlesUpdateKnowledgeArticles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await knowledgeArticlesUpdateKnowledgeArticles(serviceM8, {
+    uuid: "321dfe8b-0bdd-4dfc-9b19-69f54a9c3a81",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+      name: "<value>",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesUpdateKnowledgeArticles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateKnowledgeArticles" method="post" path="/knowledgearticle/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.knowledgeArticles.updateKnowledgeArticles({
+    uuid: "00f37526-b820-4627-8ef5-96d2a1160e9f",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+      name: "<value>",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { knowledgeArticlesUpdateKnowledgeArticles } from "servicem8/funcs/knowledgeArticlesUpdateKnowledgeArticles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await knowledgeArticlesUpdateKnowledgeArticles(serviceM8, {
+    uuid: "00f37526-b820-4627-8ef5-96d2a1160e9f",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+      name: "<value>",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesUpdateKnowledgeArticles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateKnowledgeArticles" method="post" path="/knowledgearticle/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.knowledgeArticles.updateKnowledgeArticles({
+    uuid: "509e7625-14bf-4877-9c2c-e5e842d985bc",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+      name: "<value>",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { knowledgeArticlesUpdateKnowledgeArticles } from "servicem8/funcs/knowledgeArticlesUpdateKnowledgeArticles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await knowledgeArticlesUpdateKnowledgeArticles(serviceM8, {
+    uuid: "509e7625-14bf-4877-9c2c-e5e842d985bc",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+      name: "<value>",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesUpdateKnowledgeArticles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateKnowledgeArticles" method="post" path="/knowledgearticle/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.knowledgeArticles.updateKnowledgeArticles({
+    uuid: "a643fa14-496b-46a5-88bc-4e67bb92bafd",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+      name: "<value>",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { knowledgeArticlesUpdateKnowledgeArticles } from "servicem8/funcs/knowledgeArticlesUpdateKnowledgeArticles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await knowledgeArticlesUpdateKnowledgeArticles(serviceM8, {
+    uuid: "a643fa14-496b-46a5-88bc-4e67bb92bafd",
+    knowledgeArticleCreate: {
+      uuid: "123e4567-903c-45fc-bcc0-23c6f1fe5c8b",
+      name: "<value>",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("knowledgeArticlesUpdateKnowledgeArticles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateKnowledgeArticles" method="post" path="/knowledgearticle/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -391,7 +1032,7 @@ This endpoint requires the following OAuth scope **manage_knowledge**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteKnowledgeArticles" method="delete" path="/knowledgearticle/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteKnowledgeArticles" method="delete" path="/knowledgearticle/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

@@ -10,6 +10,18 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
+ * Derived flag indicating whether the client is an individual. This value is set automatically based on the company name and contact first/last name, and cannot be set via the API..  Valid values are [0,1]
+ */
+export const IsIndividual = {
+  Zero: 0,
+  One: 1,
+} as const;
+/**
+ * Derived flag indicating whether the client is an individual. This value is set automatically based on the company name and contact first/last name, and cannot be set via the API..  Valid values are [0,1]
+ */
+export type IsIndividual = ClosedEnum<typeof IsIndividual>;
+
+/**
  * Record active/deleted flag.  Valid values are [0,1]
  */
 export const CompanyActive = {
@@ -39,6 +51,10 @@ export type Company = {
    */
   billingAddress?: string | undefined;
   /**
+   * Derived flag indicating whether the client is an individual. This value is set automatically based on the company name and contact first/last name, and cannot be set via the API..  Valid values are [0,1]
+   */
+  isIndividual?: IsIndividual | undefined;
+  /**
    * If provided, specifies the UUID of this Site's parent Company. If blank, this record is a Head Office rather than a Site. This field is only present on ServiceM8 Accounts with the Company Sites addon activated.
    */
   parentCompanyUuid?: any | undefined;
@@ -55,7 +71,6 @@ export type Company = {
    */
   editDate?: any | undefined;
   website?: string | undefined;
-  isIndividual?: string | undefined;
   addressStreet?: string | undefined;
   addressCity?: string | undefined;
   addressState?: string | undefined;
@@ -70,6 +85,13 @@ export type Company = {
   billingAttention?: string | undefined;
   paymentTerms?: string | undefined;
 };
+
+/** @internal */
+export const IsIndividual$inboundSchema: z.ZodNativeEnum<typeof IsIndividual> =
+  z.nativeEnum(IsIndividual);
+/** @internal */
+export const IsIndividual$outboundSchema: z.ZodNativeEnum<typeof IsIndividual> =
+  IsIndividual$inboundSchema;
 
 /** @internal */
 export const CompanyActive$inboundSchema: z.ZodNativeEnum<
@@ -87,12 +109,12 @@ export const Company$inboundSchema: z.ZodType<Company, z.ZodTypeDef, unknown> =
     abn_number: z.string().optional(),
     address: z.string().optional(),
     billing_address: z.string().optional(),
+    is_individual: IsIndividual$inboundSchema.optional(),
     parent_company_uuid: z.any().optional(),
     uuid: z.string().optional(),
     active: CompanyActive$inboundSchema.default(1),
     edit_date: z.any().optional(),
     website: z.string().optional(),
-    is_individual: z.string().optional(),
     address_street: z.string().optional(),
     address_city: z.string().optional(),
     address_state: z.string().optional(),
@@ -107,9 +129,9 @@ export const Company$inboundSchema: z.ZodType<Company, z.ZodTypeDef, unknown> =
     return remap$(v, {
       "abn_number": "abnNumber",
       "billing_address": "billingAddress",
+      "is_individual": "isIndividual",
       "parent_company_uuid": "parentCompanyUuid",
       "edit_date": "editDate",
-      "is_individual": "isIndividual",
       "address_street": "addressStreet",
       "address_city": "addressCity",
       "address_state": "addressState",
@@ -127,12 +149,12 @@ export type Company$Outbound = {
   abn_number?: string | undefined;
   address?: string | undefined;
   billing_address?: string | undefined;
+  is_individual?: number | undefined;
   parent_company_uuid?: any | undefined;
   uuid?: string | undefined;
   active: number;
   edit_date?: any | undefined;
   website?: string | undefined;
-  is_individual?: string | undefined;
   address_street?: string | undefined;
   address_city?: string | undefined;
   address_state?: string | undefined;
@@ -155,12 +177,12 @@ export const Company$outboundSchema: z.ZodType<
   abnNumber: z.string().optional(),
   address: z.string().optional(),
   billingAddress: z.string().optional(),
+  isIndividual: IsIndividual$outboundSchema.optional(),
   parentCompanyUuid: z.any().optional(),
   uuid: z.string().optional(),
   active: CompanyActive$outboundSchema.default(1),
   editDate: z.any().optional(),
   website: z.string().optional(),
-  isIndividual: z.string().optional(),
   addressStreet: z.string().optional(),
   addressCity: z.string().optional(),
   addressState: z.string().optional(),
@@ -175,9 +197,9 @@ export const Company$outboundSchema: z.ZodType<
   return remap$(v, {
     abnNumber: "abn_number",
     billingAddress: "billing_address",
+    isIndividual: "is_individual",
     parentCompanyUuid: "parent_company_uuid",
     editDate: "edit_date",
-    isIndividual: "is_individual",
     addressStreet: "address_street",
     addressCity: "address_city",
     addressState: "address_state",

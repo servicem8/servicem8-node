@@ -6,7 +6,7 @@
 import { SupplierCreate } from "servicem8/models/components";
 
 let value: SupplierCreate = {
-  uuid: "123e4567-83b3-4d58-a0ed-23c6fa0f8edb",
+  uuid: "123e4567-cdab-4886-9e63-23d59cace2bb",
 };
 ```
 
@@ -14,7 +14,7 @@ let value: SupplierCreate = {
 
 | Field                                         | Type                                          | Required                                      | Description                                   | Example                                       |
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| `uuid`                                        | *string*                                      | :heavy_minus_sign:                            | Unique identifier for this record             | 123e4567-83b3-4d58-a0ed-23c6fa0f8edb          |
+| `uuid`                                        | *string*                                      | :heavy_minus_sign:                            | Unique identifier for this record             | 123e4567-cdab-4886-9e63-23d59cace2bb          |
 | `name`                                        | *string*                                      | :heavy_minus_sign:                            | The name of the supplier company              |                                               |
 | `businessNumber`                              | *string*                                      | :heavy_minus_sign:                            | Business registration number (e.g., ABN, EIN) |                                               |
 | `address`                                     | *string*                                      | :heavy_minus_sign:                            | Physical address of the supplier store        |                                               |

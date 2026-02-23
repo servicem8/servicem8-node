@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_job_materials**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listJobMaterialBundles" method="get" path="/jobmaterialbundle.json" -->
+<!-- UsageSnippet language="typescript" operationID="listJobMaterialBundles" method="get" path="/jobmaterialbundle.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,294 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createJobMaterialBundles" method="post" path="/jobmaterialbundle.json" -->
+<!-- UsageSnippet language="typescript" operationID="createJobMaterialBundles" method="post" path="/jobmaterialbundle.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobMaterialBundles.createJobMaterialBundles({
+    uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+    materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+    jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobMaterialBundlesCreateJobMaterialBundles } from "servicem8/funcs/jobMaterialBundlesCreateJobMaterialBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobMaterialBundlesCreateJobMaterialBundles(serviceM8, {
+    uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+    materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+    jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesCreateJobMaterialBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createJobMaterialBundles" method="post" path="/jobmaterialbundle.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobMaterialBundles.createJobMaterialBundles({
+    uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+    materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+    jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobMaterialBundlesCreateJobMaterialBundles } from "servicem8/funcs/jobMaterialBundlesCreateJobMaterialBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobMaterialBundlesCreateJobMaterialBundles(serviceM8, {
+    uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+    materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+    jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesCreateJobMaterialBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createJobMaterialBundles" method="post" path="/jobmaterialbundle.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobMaterialBundles.createJobMaterialBundles({
+    uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+    materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+    jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobMaterialBundlesCreateJobMaterialBundles } from "servicem8/funcs/jobMaterialBundlesCreateJobMaterialBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobMaterialBundlesCreateJobMaterialBundles(serviceM8, {
+    uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+    materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+    jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesCreateJobMaterialBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createJobMaterialBundles" method="post" path="/jobmaterialbundle.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobMaterialBundles.createJobMaterialBundles({
+    uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+    materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+    jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobMaterialBundlesCreateJobMaterialBundles } from "servicem8/funcs/jobMaterialBundlesCreateJobMaterialBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobMaterialBundlesCreateJobMaterialBundles(serviceM8, {
+    uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+    materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+    jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesCreateJobMaterialBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createJobMaterialBundles" method="post" path="/jobmaterialbundle.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobMaterialBundles.createJobMaterialBundles({
+    uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+    materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+    jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobMaterialBundlesCreateJobMaterialBundles } from "servicem8/funcs/jobMaterialBundlesCreateJobMaterialBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobMaterialBundlesCreateJobMaterialBundles(serviceM8, {
+    uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+    materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+    jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesCreateJobMaterialBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createJobMaterialBundles" method="post" path="/jobmaterialbundle.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -205,7 +490,7 @@ This endpoint requires the following OAuth scope **read_job_materials**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getJobMaterialBundles" method="get" path="/jobmaterialbundle/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getJobMaterialBundles" method="get" path="/jobmaterialbundle/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -291,9 +576,387 @@ This endpoint requires the following OAuth scope **manage_job_materials**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateJobMaterialBundles" method="post" path="/jobmaterialbundle/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateJobMaterialBundles" method="post" path="/jobmaterialbundle/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobMaterialBundles.updateJobMaterialBundles({
+    uuid: "31e80e90-8d48-4802-a175-d4e8861bb7fc",
+    jobMaterialBundleCreate: {
+      uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+      materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+      jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobMaterialBundlesUpdateJobMaterialBundles } from "servicem8/funcs/jobMaterialBundlesUpdateJobMaterialBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobMaterialBundlesUpdateJobMaterialBundles(serviceM8, {
+    uuid: "31e80e90-8d48-4802-a175-d4e8861bb7fc",
+    jobMaterialBundleCreate: {
+      uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+      materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+      jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesUpdateJobMaterialBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateJobMaterialBundles" method="post" path="/jobmaterialbundle/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobMaterialBundles.updateJobMaterialBundles({
+    uuid: "31e80e90-8d48-4802-a175-d4e8861bb7fc",
+    jobMaterialBundleCreate: {
+      uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+      materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+      jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobMaterialBundlesUpdateJobMaterialBundles } from "servicem8/funcs/jobMaterialBundlesUpdateJobMaterialBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobMaterialBundlesUpdateJobMaterialBundles(serviceM8, {
+    uuid: "31e80e90-8d48-4802-a175-d4e8861bb7fc",
+    jobMaterialBundleCreate: {
+      uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+      materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+      jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesUpdateJobMaterialBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateJobMaterialBundles" method="post" path="/jobmaterialbundle/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobMaterialBundles.updateJobMaterialBundles({
+    uuid: "0b1a9541-41bf-4101-bb8d-6470d04669cb",
+    jobMaterialBundleCreate: {
+      uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+      materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+      jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobMaterialBundlesUpdateJobMaterialBundles } from "servicem8/funcs/jobMaterialBundlesUpdateJobMaterialBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobMaterialBundlesUpdateJobMaterialBundles(serviceM8, {
+    uuid: "0b1a9541-41bf-4101-bb8d-6470d04669cb",
+    jobMaterialBundleCreate: {
+      uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+      materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+      jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesUpdateJobMaterialBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateJobMaterialBundles" method="post" path="/jobmaterialbundle/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobMaterialBundles.updateJobMaterialBundles({
+    uuid: "e003f5d4-3cc0-4b11-baaa-8aa85a2ff051",
+    jobMaterialBundleCreate: {
+      uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+      materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+      jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobMaterialBundlesUpdateJobMaterialBundles } from "servicem8/funcs/jobMaterialBundlesUpdateJobMaterialBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobMaterialBundlesUpdateJobMaterialBundles(serviceM8, {
+    uuid: "e003f5d4-3cc0-4b11-baaa-8aa85a2ff051",
+    jobMaterialBundleCreate: {
+      uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+      materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+      jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesUpdateJobMaterialBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateJobMaterialBundles" method="post" path="/jobmaterialbundle/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobMaterialBundles.updateJobMaterialBundles({
+    uuid: "7b9e15df-8909-4f8d-9770-000d52b66e12",
+    jobMaterialBundleCreate: {
+      uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+      materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+      jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobMaterialBundlesUpdateJobMaterialBundles } from "servicem8/funcs/jobMaterialBundlesUpdateJobMaterialBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobMaterialBundlesUpdateJobMaterialBundles(serviceM8, {
+    uuid: "7b9e15df-8909-4f8d-9770-000d52b66e12",
+    jobMaterialBundleCreate: {
+      uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+      materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+      jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesUpdateJobMaterialBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateJobMaterialBundles" method="post" path="/jobmaterialbundle/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobMaterialBundles.updateJobMaterialBundles({
+    uuid: "6419b5e7-8edd-4c69-9648-b6ed7431256b",
+    jobMaterialBundleCreate: {
+      uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+      materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+      jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobMaterialBundlesUpdateJobMaterialBundles } from "servicem8/funcs/jobMaterialBundlesUpdateJobMaterialBundles.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobMaterialBundlesUpdateJobMaterialBundles(serviceM8, {
+    uuid: "6419b5e7-8edd-4c69-9648-b6ed7431256b",
+    jobMaterialBundleCreate: {
+      uuid: "123e4567-6694-4b08-8b0f-23c6f0be297b",
+      materialBundleUuid: "123e4567-b277-4731-a1a9-23c6ff50ebdb",
+      jobUuid: "123e4567-7889-4e69-874d-23c6fb0dfedb",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobMaterialBundlesUpdateJobMaterialBundles failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateJobMaterialBundles" method="post" path="/jobmaterialbundle/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -395,7 +1058,7 @@ This endpoint requires the following OAuth scope **manage_job_materials**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteJobMaterialBundles" method="delete" path="/jobmaterialbundle/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteJobMaterialBundles" method="delete" path="/jobmaterialbundle/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_schedule**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listJobActivities" method="get" path="/jobactivity.json" -->
+<!-- UsageSnippet language="typescript" operationID="listJobActivities" method="get" path="/jobactivity.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -112,9 +112,334 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="createJobActivities" method="post" path="/jobactivity.json" -->
+<!-- UsageSnippet language="typescript" operationID="createJobActivities" method="post" path="/jobactivity.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobActivities.createJobActivities({
+    jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+    staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+    startDate: "2026-01-01 12:00:00",
+    endDate: "2026-01-01 12:00:00",
+    hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+    materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+    uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobActivitiesCreateJobActivities } from "servicem8/funcs/jobActivitiesCreateJobActivities.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobActivitiesCreateJobActivities(serviceM8, {
+    jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+    staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+    startDate: "2026-01-01 12:00:00",
+    endDate: "2026-01-01 12:00:00",
+    hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+    materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+    uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesCreateJobActivities failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="createJobActivities" method="post" path="/jobactivity.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobActivities.createJobActivities({
+    jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+    staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+    startDate: "2026-01-01 12:00:00",
+    endDate: "2026-01-01 12:00:00",
+    hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+    materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+    uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobActivitiesCreateJobActivities } from "servicem8/funcs/jobActivitiesCreateJobActivities.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobActivitiesCreateJobActivities(serviceM8, {
+    jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+    staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+    startDate: "2026-01-01 12:00:00",
+    endDate: "2026-01-01 12:00:00",
+    hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+    materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+    uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesCreateJobActivities failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="createJobActivities" method="post" path="/jobactivity.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobActivities.createJobActivities({
+    jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+    staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+    startDate: "2026-01-01 12:00:00",
+    endDate: "2026-01-01 12:00:00",
+    hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+    materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+    uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobActivitiesCreateJobActivities } from "servicem8/funcs/jobActivitiesCreateJobActivities.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobActivitiesCreateJobActivities(serviceM8, {
+    jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+    staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+    startDate: "2026-01-01 12:00:00",
+    endDate: "2026-01-01 12:00:00",
+    hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+    materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+    uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesCreateJobActivities failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="createJobActivities" method="post" path="/jobactivity.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobActivities.createJobActivities({
+    jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+    staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+    startDate: "2026-01-01 12:00:00",
+    endDate: "2026-01-01 12:00:00",
+    hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+    materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+    uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobActivitiesCreateJobActivities } from "servicem8/funcs/jobActivitiesCreateJobActivities.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobActivitiesCreateJobActivities(serviceM8, {
+    jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+    staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+    startDate: "2026-01-01 12:00:00",
+    endDate: "2026-01-01 12:00:00",
+    hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+    materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+    uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesCreateJobActivities failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="createJobActivities" method="post" path="/jobactivity.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobActivities.createJobActivities({
+    jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+    staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+    startDate: "2026-01-01 12:00:00",
+    endDate: "2026-01-01 12:00:00",
+    hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+    materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+    uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobActivitiesCreateJobActivities } from "servicem8/funcs/jobActivitiesCreateJobActivities.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobActivitiesCreateJobActivities(serviceM8, {
+    jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+    staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+    startDate: "2026-01-01 12:00:00",
+    endDate: "2026-01-01 12:00:00",
+    hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+    materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+    uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesCreateJobActivities failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="createJobActivities" method="post" path="/jobactivity.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -213,7 +538,7 @@ This endpoint requires the following OAuth scope **read_schedule**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getJobActivities" method="get" path="/jobactivity/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="getJobActivities" method="get" path="/jobactivity/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -299,9 +624,435 @@ This endpoint requires the following OAuth scope **manage_schedule**.
 
 			
 
-### Example Usage
+### Example Usage: badRequest
 
-<!-- UsageSnippet language="typescript" operationID="updateJobActivities" method="post" path="/jobactivity/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="updateJobActivities" method="post" path="/jobactivity/{uuid}.json" example="badRequest" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobActivities.updateJobActivities({
+    uuid: "98c7dad8-4688-447e-b9a1-e0808cdf5d27",
+    jobActivityCreate: {
+      jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+      staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+      startDate: "2026-01-01 12:00:00",
+      endDate: "2026-01-01 12:00:00",
+      hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+      materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+      uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobActivitiesUpdateJobActivities } from "servicem8/funcs/jobActivitiesUpdateJobActivities.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobActivitiesUpdateJobActivities(serviceM8, {
+    uuid: "98c7dad8-4688-447e-b9a1-e0808cdf5d27",
+    jobActivityCreate: {
+      jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+      staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+      startDate: "2026-01-01 12:00:00",
+      endDate: "2026-01-01 12:00:00",
+      hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+      materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+      uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesUpdateJobActivities failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: forbidden
+
+<!-- UsageSnippet language="typescript" operationID="updateJobActivities" method="post" path="/jobactivity/{uuid}.json" example="forbidden" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobActivities.updateJobActivities({
+    uuid: "98c7dad8-4688-447e-b9a1-e0808cdf5d27",
+    jobActivityCreate: {
+      jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+      staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+      startDate: "2026-01-01 12:00:00",
+      endDate: "2026-01-01 12:00:00",
+      hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+      materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+      uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobActivitiesUpdateJobActivities } from "servicem8/funcs/jobActivitiesUpdateJobActivities.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobActivitiesUpdateJobActivities(serviceM8, {
+    uuid: "98c7dad8-4688-447e-b9a1-e0808cdf5d27",
+    jobActivityCreate: {
+      jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+      staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+      startDate: "2026-01-01 12:00:00",
+      endDate: "2026-01-01 12:00:00",
+      hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+      materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+      uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesUpdateJobActivities failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: notFound
+
+<!-- UsageSnippet language="typescript" operationID="updateJobActivities" method="post" path="/jobactivity/{uuid}.json" example="notFound" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobActivities.updateJobActivities({
+    uuid: "d5015aed-34f8-4b06-90ec-09b46a900bfd",
+    jobActivityCreate: {
+      jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+      staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+      startDate: "2026-01-01 12:00:00",
+      endDate: "2026-01-01 12:00:00",
+      hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+      materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+      uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobActivitiesUpdateJobActivities } from "servicem8/funcs/jobActivitiesUpdateJobActivities.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobActivitiesUpdateJobActivities(serviceM8, {
+    uuid: "d5015aed-34f8-4b06-90ec-09b46a900bfd",
+    jobActivityCreate: {
+      jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+      staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+      startDate: "2026-01-01 12:00:00",
+      endDate: "2026-01-01 12:00:00",
+      hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+      materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+      uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesUpdateJobActivities failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitDay
+
+<!-- UsageSnippet language="typescript" operationID="updateJobActivities" method="post" path="/jobactivity/{uuid}.json" example="rateLimitDay" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobActivities.updateJobActivities({
+    uuid: "7c63b28b-9ed2-4093-8254-5b2e7ef63118",
+    jobActivityCreate: {
+      jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+      staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+      startDate: "2026-01-01 12:00:00",
+      endDate: "2026-01-01 12:00:00",
+      hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+      materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+      uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobActivitiesUpdateJobActivities } from "servicem8/funcs/jobActivitiesUpdateJobActivities.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobActivitiesUpdateJobActivities(serviceM8, {
+    uuid: "7c63b28b-9ed2-4093-8254-5b2e7ef63118",
+    jobActivityCreate: {
+      jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+      staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+      startDate: "2026-01-01 12:00:00",
+      endDate: "2026-01-01 12:00:00",
+      hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+      materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+      uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesUpdateJobActivities failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rateLimitMinute
+
+<!-- UsageSnippet language="typescript" operationID="updateJobActivities" method="post" path="/jobactivity/{uuid}.json" example="rateLimitMinute" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobActivities.updateJobActivities({
+    uuid: "3ca606b7-c834-43af-8455-b043bf0c5be4",
+    jobActivityCreate: {
+      jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+      staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+      startDate: "2026-01-01 12:00:00",
+      endDate: "2026-01-01 12:00:00",
+      hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+      materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+      uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobActivitiesUpdateJobActivities } from "servicem8/funcs/jobActivitiesUpdateJobActivities.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobActivitiesUpdateJobActivities(serviceM8, {
+    uuid: "3ca606b7-c834-43af-8455-b043bf0c5be4",
+    jobActivityCreate: {
+      jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+      staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+      startDate: "2026-01-01 12:00:00",
+      endDate: "2026-01-01 12:00:00",
+      hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+      materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+      uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesUpdateJobActivities failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: success
+
+<!-- UsageSnippet language="typescript" operationID="updateJobActivities" method="post" path="/jobactivity/{uuid}.json" example="success" -->
+```typescript
+import { ServiceM8 } from "servicem8";
+
+const serviceM8 = new ServiceM8({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await serviceM8.jobActivities.updateJobActivities({
+    uuid: "5ccaaaf0-ee37-4a96-a41a-cc701c3f1a65",
+    jobActivityCreate: {
+      jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+      staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+      startDate: "2026-01-01 12:00:00",
+      endDate: "2026-01-01 12:00:00",
+      hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+      materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+      uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+    },
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { ServiceM8Core } from "servicem8/core.js";
+import { jobActivitiesUpdateJobActivities } from "servicem8/funcs/jobActivitiesUpdateJobActivities.js";
+
+// Use `ServiceM8Core` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const serviceM8 = new ServiceM8Core({
+  security: {
+    apiKey: process.env["SERVICEM8_API_KEY"] ?? "",
+  },
+});
+
+async function run() {
+  const res = await jobActivitiesUpdateJobActivities(serviceM8, {
+    uuid: "5ccaaaf0-ee37-4a96-a41a-cc701c3f1a65",
+    jobActivityCreate: {
+      jobUuid: "123e4567-8b70-438c-b907-23c6f5d95cbb",
+      staffUuid: "123e4567-793b-404b-90c2-23c6f99386bb",
+      startDate: "2026-01-01 12:00:00",
+      endDate: "2026-01-01 12:00:00",
+      hasBeenOpenedTimestamp: "2026-01-01 12:00:00",
+      materialUuid: "123e4567-e8e5-4bf8-859c-23c6fad1dd4b",
+      uuid: "123e4567-ceaf-4215-b28a-23c6ff37198b",
+    },
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobActivitiesUpdateJobActivities failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: unauthorized
+
+<!-- UsageSnippet language="typescript" operationID="updateJobActivities" method="post" path="/jobactivity/{uuid}.json" example="unauthorized" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 
@@ -411,7 +1162,7 @@ This endpoint requires the following OAuth scope **manage_schedule**.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="deleteJobActivities" method="delete" path="/jobactivity/{uuid}.json" -->
+<!-- UsageSnippet language="typescript" operationID="deleteJobActivities" method="delete" path="/jobactivity/{uuid}.json" example="success" -->
 ```typescript
 import { ServiceM8 } from "servicem8";
 

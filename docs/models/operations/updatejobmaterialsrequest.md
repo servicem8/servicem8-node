@@ -8,12 +8,12 @@ import { UpdateJobMaterialsRequest } from "servicem8/models/operations";
 let value: UpdateJobMaterialsRequest = {
   uuid: "8d4cf5b1-d4db-4391-b2eb-e84e3be3938f",
   jobMaterialCreate: {
-    jobUuid: "123e4567-d2d5-4f75-9e9d-23c6fefa5a4b",
-    materialUuid: "123e4567-eb6f-44a1-b747-23c6f99e571b",
+    jobUuid: "123e4567-2f4f-465b-9355-23d59354257b",
+    materialUuid: "123e4567-d355-4faf-ac69-23d59d10a55b",
     quantity: "<value>",
-    taxRateUuid: "123e4567-bf91-4210-b9a4-23c6f3ad990b",
-    uuid: "123e4567-2a62-46b1-b607-23c6f660db9b",
-    jobMaterialBundleUuid: "123e4567-f30a-4584-ae69-23c6fdf6d4eb",
+    taxRateUuid: "123e4567-5b31-4ee0-b79a-23d59967745b",
+    uuid: "123e4567-e779-4bc1-b604-23d59eeb975b",
+    jobMaterialBundleUuid: "123e4567-3b66-4a92-a2a2-23d593ba7f1b",
   },
 };
 ```
