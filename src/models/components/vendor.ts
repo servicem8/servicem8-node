@@ -23,7 +23,7 @@ export type VendorActive = ClosedEnum<typeof VendorActive>;
 
 export type Vendor = {
   /**
-   * The company's business identification number as required by the local tax authority. For example, ABN in Australia, EIN in the USA, VAT number in the EU, or business registration number. Format varies by country/region.
+   * Company Business Number
    */
   businessNumber?: string | undefined;
   /**
@@ -134,9 +134,6 @@ export type Vendor = {
    * Company Name
    */
   name: string;
-  /**
-   * Company ABN Number (Australian Accounts Only)
-   */
   abnNumber?: string | undefined;
   /**
    * Company Website address

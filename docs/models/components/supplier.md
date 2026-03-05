@@ -6,8 +6,8 @@
 import { Supplier } from "servicem8/models/components";
 
 let value: Supplier = {
-  uuid: "123e4567-b328-4be3-bade-23d5985b8f3b",
-  editDate: "2026-02-01 12:00:00",
+  uuid: "123e4567-c6fd-40ee-ad9d-23e9379857bb",
+  editDate: "2026-03-01 12:00:00",
 };
 ```
 
@@ -15,9 +15,9 @@ let value: Supplier = {
 
 | Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     | Example                                                                         |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `uuid`                                                                          | *string*                                                                        | :heavy_minus_sign:                                                              | Unique identifier for this record                                               | 123e4567-b328-4be3-bade-23d5985b8f3b                                            |
+| `uuid`                                                                          | *string*                                                                        | :heavy_minus_sign:                                                              | Unique identifier for this record                                               | 123e4567-c6fd-40ee-ad9d-23e9379857bb                                            |
 | `active`                                                                        | [components.SupplierActive](../../models/components/supplieractive.md)          | :heavy_minus_sign:                                                              | Record active/deleted flag.  Valid values are [0,1]                             |                                                                                 |
-| `editDate`                                                                      | *any*                                                                           | :heavy_minus_sign:                                                              | Timestamp at which record was last modified                                     | 2026-02-01 12:00:00                                                             |
+| `editDate`                                                                      | *any*                                                                           | :heavy_minus_sign:                                                              | Timestamp at which record was last modified                                     | 2026-03-01 12:00:00                                                             |
 | `name`                                                                          | *string*                                                                        | :heavy_minus_sign:                                                              | The name of the supplier company                                                |                                                                                 |
 | `businessNumber`                                                                | *string*                                                                        | :heavy_minus_sign:                                                              | Business registration number (e.g., ABN, EIN)                                   |                                                                                 |
 | `address`                                                                       | *string*                                                                        | :heavy_minus_sign:                                                              | Physical address of the supplier store                                          |                                                                                 |
