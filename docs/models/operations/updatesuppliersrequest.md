@@ -8,7 +8,7 @@ import { UpdateSuppliersRequest } from "servicem8/models/operations";
 let value: UpdateSuppliersRequest = {
   uuid: "7c635740-19b5-4bcb-be4c-5eef00d111d4",
   supplierCreate: {
-    uuid: "123e4567-138c-4088-97d5-23eb281a56cb",
+    uuid: "123e4567-006a-4515-bdea-23eb2a91dd5b",
   },
 };
 ```
