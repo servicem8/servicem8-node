@@ -8,14 +8,14 @@ import { UpdateFormResponsesRequest } from "servicem8/models/operations";
 let value: UpdateFormResponsesRequest = {
   uuid: "6c90f8b4-df87-458b-875e-3f2bbee4d921",
   formResponseCreate: {
-    formUuid: "123e4567-99a6-4309-be6e-23e93b2af0db",
-    staffUuid: "123e4567-3c0f-4e25-9198-23e93a3dcc4b",
-    regardingObjectUuid: "123e4567-6727-488e-bbe0-23e93280628b",
+    formUuid: "123e4567-d06d-4646-9131-23eb2e29f06b",
+    staffUuid: "123e4567-e831-4dd2-b5a5-23eb24192d0b",
+    regardingObjectUuid: "123e4567-07a8-4fb9-ac39-23eb29d31c5b",
     timestamp: "2026-03-01 12:00:00",
-    formByStaffUuid: "123e4567-5555-45ff-b617-23e933782e3b",
-    documentAttachmentUuid: "123e4567-b6cc-453a-9d96-23e93106a44b",
-    assetUuid: "123e4567-401b-4b97-9e25-23e93600399b",
-    uuid: "123e4567-2017-4d97-bead-23e93d2ebd9b",
+    formByStaffUuid: "123e4567-2700-428d-9cdb-23eb29d9d9eb",
+    documentAttachmentUuid: "123e4567-9fdf-4201-beb5-23eb28b28cfb",
+    assetUuid: "123e4567-0384-4950-8301-23eb2709156b",
+    uuid: "123e4567-8e46-4b7a-93cf-23eb242cdbcb",
   },
 };
 ```

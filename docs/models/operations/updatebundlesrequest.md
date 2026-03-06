@@ -8,7 +8,7 @@ import { UpdateBundlesRequest } from "servicem8/models/operations";
 let value: UpdateBundlesRequest = {
   uuid: "d45c0120-3311-46fc-88a9-f516add2d3b1",
   materialBundleCreate: {
-    uuid: "123e4567-08a5-4969-b652-23e9300c837b",
+    uuid: "123e4567-2fe4-4192-b4ed-23eb28f7f18b",
     itemNumber: "<value>",
   },
 };
