@@ -3,20 +3,22 @@ id: 5292d1b1-a456-4df8-b793-88d92b92bb91
 management:
   docChecksum: ca88a7b2918b7277e1467301cc3040ce
   docVersion: 1.0.0
-  speakeasyVersion: 1.745.0
-  generationVersion: 2.850.7
-  releaseVersion: 0.11.3
-  configChecksum: 32aa196654c59233521ef824edea2c78
+  speakeasyVersion: 1.755.0
+  generationVersion: 2.865.2
+  releaseVersion: 0.11.4
+  configChecksum: c4053caaea68a80b21d19f68a02244d7
+  repoURL: https://github.com/servicem8/servicem8-node.git
+  installationURL: https://github.com/servicem8/servicem8-node
   published: true
 persistentEdits:
-  generation_id: 0a9abca1-520d-4c37-869f-4c85a3eda76b
-  pristine_commit_hash: d26508c5db82407fbc043a05f0613c8799f20cb3
-  pristine_tree_hash: 8e3307f3782b7f42f1414d789d0c1bccea81ef93
+  generation_id: 2ffa5427-93c1-4101-bdd5-4e03a0aee375
+  pristine_commit_hash: bbda2d2ac3f063f9714e3808f837eeb7e4fc7760
+  pristine_tree_hash: 14bf0c84b0a4b4ead1962d8c91f7490970a15c6c
 features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.14
-    core: 3.26.41
+    core: 3.26.42
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.1
     enumUnions: 0.1.0
@@ -34,8 +36,8 @@ features:
 trackedFiles:
   .devcontainer/README.md:
     id: b170c0f184ac
-    last_write_checksum: sha1:b7532ce4970c748af02c17a76d92c1212cc3ce49
-    pristine_git_object: 222c1bbc56b7a3e8a251c2b8552544a836e3e076
+    last_write_checksum: sha1:e44c5d11d912e9d42d24c4a04ff39dc94a33fd05
+    pristine_git_object: ff34c3ff9485feba7f90173ceba28cacf743d6ec
   .devcontainer/devcontainer.json:
     id: b34062a34eb1
     last_write_checksum: sha1:d0b15193202c961e7d1875864ddb15f9d17c84dd
@@ -1678,12 +1680,12 @@ trackedFiles:
     pristine_git_object: aec2e9ea2cf790e674d1a15b7f5805705c84621c
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:e47fbf55aacb524430a0716c02eb072a1b2b3c22
-    pristine_git_object: e14e491a4157b1d950fc06473c0539297b908e5a
+    last_write_checksum: sha1:577066f545d025c74378ebba8137ee35b2fc1a78
+    pristine_git_object: db68fd28ecf075a30dd0b98c6886a62f805ec209
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:802ad72481915f3d48bc981433ac924da6912f18
-    pristine_git_object: be9a5196fec58e2046e6aeca33a2d647a0061bc7
+    last_write_checksum: sha1:9afd6868c42058ce55c90b50a5842859e06ee1b1
+    pristine_git_object: 945862aca3aea5934c059861ac1024f45788490c
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:e5057df9325d9c938c8601007d74fd68edfc511b
@@ -2486,8 +2488,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:876acb71b30eb06b2787df36f984113db0cb9bd0
-    pristine_git_object: 24ae4124c230a80dcaf6d2ba96e752cff4b3d32a
+    last_write_checksum: sha1:2079ae449c7a4db394bf9a05fc6a76cb236a9576
+    pristine_git_object: 8c4289974ebc9fac83cfb324d9be5233a2ee88b2
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -2570,8 +2572,8 @@ trackedFiles:
     pristine_git_object: 0955a573c2ce989d63c737410ab8cc28706d9f74
   src/mcp-server/mcp-server.ts:
     id: aabbc4ab07c1
-    last_write_checksum: sha1:458c2511fffdc1245122ac5cd3a2be2a81099747
-    pristine_git_object: d3542259ec8325903b080b77924492aee9acd08d
+    last_write_checksum: sha1:3cf6ad1fb8a6e4fe78b89ff19a6f96495974977c
+    pristine_git_object: c54a79b94976f2e79428ade333738e39f7e8ae4e
   src/mcp-server/prompts.ts:
     id: 26f3d73cbf31
     last_write_checksum: sha1:e2bf624bd231bb42a9298a36994df100f589fe80
@@ -2586,8 +2588,8 @@ trackedFiles:
     pristine_git_object: c25696d4c4f70e081fa5d87ad6891874c509a577
   src/mcp-server/server.ts:
     id: 2784dd48e82a
-    last_write_checksum: sha1:cac2c165cc2c5d2f3b4ccdfbdf96441860b97385
-    pristine_git_object: 5a66b788eeed4db84caec1dde756eb2bd478f78c
+    last_write_checksum: sha1:0046a7851ba9a29b997bf10ffdf278425c824c76
+    pristine_git_object: 0a3ea9e3081ed46dee88f357f34f1ad26d67babd
   src/mcp-server/shared.ts:
     id: 074e80d4be1e
     last_write_checksum: sha1:d89576cea2bef3856b7fc3e65b868875528be042
