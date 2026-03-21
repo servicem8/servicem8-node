@@ -105,7 +105,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/staffmessage/{uuid}.json")(pathParams);
 
   const headers = new Headers(compactMap({

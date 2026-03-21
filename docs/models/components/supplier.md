@@ -6,7 +6,7 @@
 import { Supplier } from "servicem8/models/components";
 
 let value: Supplier = {
-  uuid: "123e4567-a828-4bfa-9b06-23eb2f0bc3cb",
+  uuid: "123e4567-795b-4d35-b3f2-23f94676197b",
   editDate: "2026-03-01 12:00:00",
 };
 ```
@@ -15,7 +15,7 @@ let value: Supplier = {
 
 | Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     | Example                                                                         |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `uuid`                                                                          | *string*                                                                        | :heavy_minus_sign:                                                              | Unique identifier for this record                                               | 123e4567-a828-4bfa-9b06-23eb2f0bc3cb                                            |
+| `uuid`                                                                          | *string*                                                                        | :heavy_minus_sign:                                                              | Unique identifier for this record                                               | 123e4567-795b-4d35-b3f2-23f94676197b                                            |
 | `active`                                                                        | [components.SupplierActive](../../models/components/supplieractive.md)          | :heavy_minus_sign:                                                              | Record active/deleted flag.  Valid values are [0,1]                             |                                                                                 |
 | `editDate`                                                                      | *any*                                                                           | :heavy_minus_sign:                                                              | Timestamp at which record was last modified                                     | 2026-03-01 12:00:00                                                             |
 | `name`                                                                          | *string*                                                                        | :heavy_minus_sign:                                                              | The name of the supplier company                                                |                                                                                 |

@@ -105,7 +105,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/dbonote/{uuid}.json")(pathParams);
 
   const headers = new Headers(compactMap({

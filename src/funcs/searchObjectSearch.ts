@@ -95,7 +95,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/search/{objectType}.json")(pathParams);
 
   const query = encodeFormQuery({

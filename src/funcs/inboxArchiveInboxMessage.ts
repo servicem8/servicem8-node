@@ -93,7 +93,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/inboxmessage/{uuid}/archive.json")(pathParams);
 
   const headers = new Headers(compactMap({

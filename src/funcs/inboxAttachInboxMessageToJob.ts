@@ -98,7 +98,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/inboxmessage/{uuid}/attach-to-job.json")(
     pathParams,
   );

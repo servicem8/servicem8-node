@@ -107,7 +107,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/asset/{uuid}.json")(pathParams);
 
   const headers = new Headers(compactMap({

@@ -105,7 +105,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/taxrate/{uuid}.json")(pathParams);
 
   const headers = new Headers(compactMap({

@@ -105,7 +105,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/smstemplate/{uuid}.json")(pathParams);
 
   const headers = new Headers(compactMap({
