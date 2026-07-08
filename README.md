@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/servicem8-servicem8-node-badge.png)](https://mseep.ai/app/servicem8-servicem8-node)
+
 # servicem8
 
 Developer-friendly & type-safe Typescript SDK specifically catered to leverage *servicem8* API.
