@@ -20,7 +20,7 @@ Retrieves a paginated list of inbox messages with optional filtering`,
     const [result, apiCall] = await inboxListInboxMessages(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

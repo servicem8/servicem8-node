@@ -29,7 +29,7 @@ This endpoint requires the following OAuth scope **manage_job_contacts**.
     const [result, apiCall] = await jobContactsDeleteJobContacts(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

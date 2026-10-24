@@ -32,7 +32,7 @@ This isn't just search—it's AI that truly understands what you're looking for 
     const [result, apiCall] = await searchJobEmbeddingSearch(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
