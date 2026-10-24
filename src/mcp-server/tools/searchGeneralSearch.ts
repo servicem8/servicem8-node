@@ -20,7 +20,7 @@ Performs a text search across jobs, companies, and materials. Returns combined r
     const [result, apiCall] = await searchGeneralSearch(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

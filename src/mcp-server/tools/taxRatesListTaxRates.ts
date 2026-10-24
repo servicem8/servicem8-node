@@ -22,7 +22,7 @@ This endpoint requires the following OAuth scope **read_tax_rates**.
   tool: async (client, ctx) => {
     const [result, apiCall] = await taxRatesListTaxRates(
       client,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
