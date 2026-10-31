@@ -26,7 +26,7 @@ This endpoint requires the following OAuth scope **manage_staff**.
       const [result, apiCall] = await staffMembersUpdateStaffMembers(
         client,
         args.request,
-        { fetchOptions: { signal: ctx.signal } },
+        { fetchOptions: { signal: ctx.mcpReq.signal } },
       ).$inspect();
 
       if (!result.ok) {

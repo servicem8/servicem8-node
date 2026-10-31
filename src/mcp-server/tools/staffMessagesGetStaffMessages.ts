@@ -25,7 +25,7 @@ This endpoint requires the following OAuth scope **read_messages**.
     const [result, apiCall] = await staffMessagesGetStaffMessages(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
