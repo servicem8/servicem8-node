@@ -36,7 +36,7 @@ This endpoint requires the following OAuth scope **create_jobs**.`,
     const [result, apiCall] = await jobTemplatesCreateJobFromTemplate(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

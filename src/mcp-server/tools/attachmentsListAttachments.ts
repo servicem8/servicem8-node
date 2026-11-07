@@ -22,7 +22,7 @@ This endpoint requires the following OAuth scope **read_attachments**.
   tool: async (client, ctx) => {
     const [result, apiCall] = await attachmentsListAttachments(
       client,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

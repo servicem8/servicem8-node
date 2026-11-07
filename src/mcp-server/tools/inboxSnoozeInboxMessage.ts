@@ -20,7 +20,7 @@ Snoozes a message until a specified date/time or unsnoozes it`,
     const [result, apiCall] = await inboxSnoozeInboxMessage(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
