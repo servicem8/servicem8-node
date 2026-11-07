@@ -31,7 +31,7 @@ This endpoint requires the following OAuth scope **publish_messages**.
     const [result, apiCall] = await staffMessagesDeleteStaffMessages(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

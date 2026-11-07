@@ -29,7 +29,7 @@ This endpoint requires the following OAuth scope **manage_tasks**.
     const [result, apiCall] = await tasksDeleteTasks(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

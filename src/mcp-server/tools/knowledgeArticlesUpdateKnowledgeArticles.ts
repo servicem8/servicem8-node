@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **manage_knowledge**.
     const [result, apiCall] = await knowledgeArticlesUpdateKnowledgeArticles(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
