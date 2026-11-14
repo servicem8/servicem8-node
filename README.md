@@ -1012,7 +1012,7 @@ import { ServiceM8 } from "servicem8";
 const sdk = new ServiceM8({ debugLogger: console });
 ```
 
-You can also enable a default debug logger by setting an environment variable `SERVICEM8_DEBUG` to true.
+You can also enable a default debug logger by setting an environment variable `SERVICEM8_DEBUG` to `true`, `1`, `yes` or `on` (case-insensitive). Any other value leaves it off.
 <!-- End Debugging [debug] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

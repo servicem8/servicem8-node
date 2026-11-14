@@ -25,7 +25,7 @@ This endpoint requires the following OAuth scope **manage_assets**.
     const [result, apiCall] = await assetTypesUpdateAssetTypes(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

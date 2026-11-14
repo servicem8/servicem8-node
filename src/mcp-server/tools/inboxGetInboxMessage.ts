@@ -20,7 +20,7 @@ Retrieves detailed information about a specific inbox message including attachme
     const [result, apiCall] = await inboxGetInboxMessage(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

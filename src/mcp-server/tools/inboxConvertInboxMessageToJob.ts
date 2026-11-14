@@ -20,7 +20,7 @@ Converts an inbox message into a new job, optionally using a job template`,
     const [result, apiCall] = await inboxConvertInboxMessageToJob(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

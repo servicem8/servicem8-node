@@ -26,7 +26,7 @@ This endpoint requires the following OAuth scope **manage_templates**.
       const [result, apiCall] = await emailTemplatesGetEmailTemplates(
         client,
         args.request,
-        { fetchOptions: { signal: ctx.signal } },
+        { fetchOptions: { signal: ctx.mcpReq.signal } },
       ).$inspect();
 
       if (!result.ok) {
