@@ -25,7 +25,7 @@ This endpoint requires the following OAuth scope **read_security_roles**.
     const [result, apiCall] = await securityRolesGetSecurityRoles(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

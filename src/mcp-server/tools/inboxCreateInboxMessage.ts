@@ -20,7 +20,7 @@ Creates a new inbox message that will appear in the inbox`,
     const [result, apiCall] = await inboxCreateInboxMessage(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

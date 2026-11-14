@@ -22,7 +22,7 @@ This endpoint requires the following OAuth scope **read_job_checklists**.
   tool: async (client, ctx) => {
     const [result, apiCall] = await jobChecklistsListJobChecklists(
       client,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {
