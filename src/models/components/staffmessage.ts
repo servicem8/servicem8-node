@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -68,7 +68,7 @@ export type StaffMessage = {
 /** @internal */
 export const StaffMessageActive$inboundSchema: z.ZodNativeEnum<
   typeof StaffMessageActive
-> = z.nativeEnum(StaffMessageActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(StaffMessageActive));
 /** @internal */
 export const StaffMessageActive$outboundSchema: z.ZodNativeEnum<
   typeof StaffMessageActive
@@ -79,30 +79,32 @@ export const StaffMessage$inboundSchema: z.ZodType<
   StaffMessage,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  from_staff_uuid: z.string().optional(),
-  to_staff_uuid: z.string().optional(),
-  sent_timestamp: z.string().optional(),
-  delivered_timestamp: z.string().optional(),
-  read_timestamp: z.string().optional(),
-  message: z.string().optional(),
-  regarding_job_uuid: z.string().optional(),
-  uuid: z.string().optional(),
-  active: StaffMessageActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  attached_json: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "from_staff_uuid": "fromStaffUuid",
-    "to_staff_uuid": "toStaffUuid",
-    "sent_timestamp": "sentTimestamp",
-    "delivered_timestamp": "deliveredTimestamp",
-    "read_timestamp": "readTimestamp",
-    "regarding_job_uuid": "regardingJobUuid",
-    "edit_date": "editDate",
-    "attached_json": "attachedJson",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    from_staff_uuid: z.string().optional(),
+    to_staff_uuid: z.string().optional(),
+    sent_timestamp: z.string().optional(),
+    delivered_timestamp: z.string().optional(),
+    read_timestamp: z.string().optional(),
+    message: z.string().optional(),
+    regarding_job_uuid: z.string().optional(),
+    uuid: z.string().optional(),
+    active: StaffMessageActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    attached_json: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "from_staff_uuid": "fromStaffUuid",
+      "to_staff_uuid": "toStaffUuid",
+      "sent_timestamp": "sentTimestamp",
+      "delivered_timestamp": "deliveredTimestamp",
+      "read_timestamp": "readTimestamp",
+      "regarding_job_uuid": "regardingJobUuid",
+      "edit_date": "editDate",
+      "attached_json": "attachedJson",
+    });
+  })
+);
 /** @internal */
 export type StaffMessage$Outbound = {
   from_staff_uuid?: string | undefined;
@@ -123,30 +125,32 @@ export const StaffMessage$outboundSchema: z.ZodType<
   StaffMessage$Outbound,
   z.ZodTypeDef,
   StaffMessage
-> = z.object({
-  fromStaffUuid: z.string().optional(),
-  toStaffUuid: z.string().optional(),
-  sentTimestamp: z.string().optional(),
-  deliveredTimestamp: z.string().optional(),
-  readTimestamp: z.string().optional(),
-  message: z.string().optional(),
-  regardingJobUuid: z.string().optional(),
-  uuid: z.string().optional(),
-  active: StaffMessageActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  attachedJson: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    fromStaffUuid: "from_staff_uuid",
-    toStaffUuid: "to_staff_uuid",
-    sentTimestamp: "sent_timestamp",
-    deliveredTimestamp: "delivered_timestamp",
-    readTimestamp: "read_timestamp",
-    regardingJobUuid: "regarding_job_uuid",
-    editDate: "edit_date",
-    attachedJson: "attached_json",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    fromStaffUuid: z.string().optional(),
+    toStaffUuid: z.string().optional(),
+    sentTimestamp: z.string().optional(),
+    deliveredTimestamp: z.string().optional(),
+    readTimestamp: z.string().optional(),
+    message: z.string().optional(),
+    regardingJobUuid: z.string().optional(),
+    uuid: z.string().optional(),
+    active: StaffMessageActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    attachedJson: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      fromStaffUuid: "from_staff_uuid",
+      toStaffUuid: "to_staff_uuid",
+      sentTimestamp: "sent_timestamp",
+      deliveredTimestamp: "delivered_timestamp",
+      readTimestamp: "read_timestamp",
+      regardingJobUuid: "regarding_job_uuid",
+      editDate: "edit_date",
+      attachedJson: "attached_json",
+    });
+  })
+);
 
 export function staffMessageToJSON(staffMessage: StaffMessage): string {
   return JSON.stringify(StaffMessage$outboundSchema.parse(staffMessage));

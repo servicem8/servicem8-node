@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -47,7 +47,7 @@ export type SmsTemplate = {
 /** @internal */
 export const SmsTemplateActive$inboundSchema: z.ZodNativeEnum<
   typeof SmsTemplateActive
-> = z.nativeEnum(SmsTemplateActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(SmsTemplateActive));
 /** @internal */
 export const SmsTemplateActive$outboundSchema: z.ZodNativeEnum<
   typeof SmsTemplateActive
@@ -58,17 +58,19 @@ export const SmsTemplate$inboundSchema: z.ZodType<
   SmsTemplate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  message: z.string().optional(),
-  uuid: z.string().optional(),
-  active: SmsTemplateActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "edit_date": "editDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    message: z.string().optional(),
+    uuid: z.string().optional(),
+    active: SmsTemplateActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "edit_date": "editDate",
+    });
+  })
+);
 /** @internal */
 export type SmsTemplate$Outbound = {
   name: string;
@@ -83,17 +85,19 @@ export const SmsTemplate$outboundSchema: z.ZodType<
   SmsTemplate$Outbound,
   z.ZodTypeDef,
   SmsTemplate
-> = z.object({
-  name: z.string(),
-  message: z.string().optional(),
-  uuid: z.string().optional(),
-  active: SmsTemplateActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    message: z.string().optional(),
+    uuid: z.string().optional(),
+    active: SmsTemplateActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+    });
+  })
+);
 
 export function smsTemplateToJSON(smsTemplate: SmsTemplate): string {
   return JSON.stringify(SmsTemplate$outboundSchema.parse(smsTemplate));

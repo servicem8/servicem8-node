@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -42,8 +42,8 @@ export type ObjectSearchRequest = {
 };
 
 /** @internal */
-export const ObjectType$inboundSchema: z.ZodNativeEnum<typeof ObjectType> = z
-  .nativeEnum(ObjectType);
+export const ObjectType$inboundSchema: z.ZodNativeEnum<typeof ObjectType> =
+  /* @__PURE__ */ lazySchema$(() => z.nativeEnum(ObjectType));
 /** @internal */
 export const ObjectType$outboundSchema: z.ZodNativeEnum<typeof ObjectType> =
   ObjectType$inboundSchema;
@@ -53,11 +53,13 @@ export const ObjectSearchRequest$inboundSchema: z.ZodType<
   ObjectSearchRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  objectType: ObjectType$inboundSchema,
-  q: z.string(),
-  limit: z.number().int().default(50),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    objectType: ObjectType$inboundSchema,
+    q: z.string(),
+    limit: z.number().int().default(50),
+  })
+);
 /** @internal */
 export type ObjectSearchRequest$Outbound = {
   objectType: string;
@@ -70,11 +72,13 @@ export const ObjectSearchRequest$outboundSchema: z.ZodType<
   ObjectSearchRequest$Outbound,
   z.ZodTypeDef,
   ObjectSearchRequest
-> = z.object({
-  objectType: ObjectType$outboundSchema,
-  q: z.string(),
-  limit: z.number().int().default(50),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    objectType: ObjectType$outboundSchema,
+    q: z.string(),
+    limit: z.number().int().default(50),
+  })
+);
 
 export function objectSearchRequestToJSON(
   objectSearchRequest: ObjectSearchRequest,

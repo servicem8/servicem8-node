@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -40,19 +40,21 @@ export const FeedbackCreate$inboundSchema: z.ZodType<
   FeedbackCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  timestamp: z.string().optional(),
-  related_object: z.string().optional(),
-  related_object_uuid: z.string().optional(),
-  rating: z.string().optional(),
-  comment: z.string().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "related_object": "relatedObject",
-    "related_object_uuid": "relatedObjectUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    timestamp: z.string().optional(),
+    related_object: z.string().optional(),
+    related_object_uuid: z.string().optional(),
+    rating: z.string().optional(),
+    comment: z.string().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "related_object": "relatedObject",
+      "related_object_uuid": "relatedObjectUuid",
+    });
+  })
+);
 /** @internal */
 export type FeedbackCreate$Outbound = {
   timestamp?: string | undefined;
@@ -68,19 +70,21 @@ export const FeedbackCreate$outboundSchema: z.ZodType<
   FeedbackCreate$Outbound,
   z.ZodTypeDef,
   FeedbackCreate
-> = z.object({
-  timestamp: z.string().optional(),
-  relatedObject: z.string().optional(),
-  relatedObjectUuid: z.string().optional(),
-  rating: z.string().optional(),
-  comment: z.string().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    relatedObject: "related_object",
-    relatedObjectUuid: "related_object_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    timestamp: z.string().optional(),
+    relatedObject: z.string().optional(),
+    relatedObjectUuid: z.string().optional(),
+    rating: z.string().optional(),
+    comment: z.string().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      relatedObject: "related_object",
+      relatedObjectUuid: "related_object_uuid",
+    });
+  })
+);
 
 export function feedbackCreateToJSON(feedbackCreate: FeedbackCreate): string {
   return JSON.stringify(FeedbackCreate$outboundSchema.parse(feedbackCreate));

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -83,7 +83,7 @@ export type Location = {
 /** @internal */
 export const LocationActive$inboundSchema: z.ZodNativeEnum<
   typeof LocationActive
-> = z.nativeEnum(LocationActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(LocationActive));
 /** @internal */
 export const LocationActive$outboundSchema: z.ZodNativeEnum<
   typeof LocationActive
@@ -94,28 +94,30 @@ export const Location$inboundSchema: z.ZodType<
   Location,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  line1: z.string().optional(),
-  line2: z.string().optional(),
-  line3: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  post_code: z.string().optional(),
-  phone_1: z.string().optional(),
-  state: z.string().optional(),
-  lng: z.number().optional(),
-  lat: z.number().optional(),
-  uuid: z.string().optional(),
-  active: LocationActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "post_code": "postCode",
-    "phone_1": "phone1",
-    "edit_date": "editDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    line1: z.string().optional(),
+    line2: z.string().optional(),
+    line3: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    post_code: z.string().optional(),
+    phone_1: z.string().optional(),
+    state: z.string().optional(),
+    lng: z.number().optional(),
+    lat: z.number().optional(),
+    uuid: z.string().optional(),
+    active: LocationActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "post_code": "postCode",
+      "phone_1": "phone1",
+      "edit_date": "editDate",
+    });
+  })
+);
 /** @internal */
 export type Location$Outbound = {
   name: string;
@@ -139,28 +141,30 @@ export const Location$outboundSchema: z.ZodType<
   Location$Outbound,
   z.ZodTypeDef,
   Location
-> = z.object({
-  name: z.string(),
-  line1: z.string().optional(),
-  line2: z.string().optional(),
-  line3: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  postCode: z.string().optional(),
-  phone1: z.string().optional(),
-  state: z.string().optional(),
-  lng: z.number().optional(),
-  lat: z.number().optional(),
-  uuid: z.string().optional(),
-  active: LocationActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    postCode: "post_code",
-    phone1: "phone_1",
-    editDate: "edit_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    line1: z.string().optional(),
+    line2: z.string().optional(),
+    line3: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    postCode: z.string().optional(),
+    phone1: z.string().optional(),
+    state: z.string().optional(),
+    lng: z.number().optional(),
+    lat: z.number().optional(),
+    uuid: z.string().optional(),
+    active: LocationActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      postCode: "post_code",
+      phone1: "phone_1",
+      editDate: "edit_date",
+    });
+  })
+);
 
 export function locationToJSON(location: Location): string {
   return JSON.stringify(Location$outboundSchema.parse(location));

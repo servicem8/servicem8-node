@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateLocationsRequest$inboundSchema: z.ZodType<
   UpdateLocationsRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  LocationCreate: components.LocationCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "LocationCreate": "locationCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    LocationCreate: components.LocationCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "LocationCreate": "locationCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateLocationsRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateLocationsRequest$outboundSchema: z.ZodType<
   UpdateLocationsRequest$Outbound,
   z.ZodTypeDef,
   UpdateLocationsRequest
-> = z.object({
-  uuid: z.string(),
-  locationCreate: components.LocationCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    locationCreate: "LocationCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    locationCreate: components.LocationCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      locationCreate: "LocationCreate",
+    });
+  })
+);
 
 export function updateLocationsRequestToJSON(
   updateLocationsRequest: UpdateLocationsRequest,

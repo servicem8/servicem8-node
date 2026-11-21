@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -48,7 +48,7 @@ export type DocumentTemplate = {
 /** @internal */
 export const DocumentTemplateActive$inboundSchema: z.ZodNativeEnum<
   typeof DocumentTemplateActive
-> = z.nativeEnum(DocumentTemplateActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(DocumentTemplateActive));
 /** @internal */
 export const DocumentTemplateActive$outboundSchema: z.ZodNativeEnum<
   typeof DocumentTemplateActive
@@ -59,20 +59,22 @@ export const DocumentTemplate$inboundSchema: z.ZodType<
   DocumentTemplate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: DocumentTemplateActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  template_type: z.string().optional(),
-  related_object: z.string().optional(),
-  name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "edit_date": "editDate",
-    "template_type": "templateType",
-    "related_object": "relatedObject",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: DocumentTemplateActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    template_type: z.string().optional(),
+    related_object: z.string().optional(),
+    name: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "edit_date": "editDate",
+      "template_type": "templateType",
+      "related_object": "relatedObject",
+    });
+  })
+);
 /** @internal */
 export type DocumentTemplate$Outbound = {
   uuid?: string | undefined;
@@ -88,20 +90,22 @@ export const DocumentTemplate$outboundSchema: z.ZodType<
   DocumentTemplate$Outbound,
   z.ZodTypeDef,
   DocumentTemplate
-> = z.object({
-  uuid: z.string().optional(),
-  active: DocumentTemplateActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  templateType: z.string().optional(),
-  relatedObject: z.string().optional(),
-  name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-    templateType: "template_type",
-    relatedObject: "related_object",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: DocumentTemplateActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    templateType: z.string().optional(),
+    relatedObject: z.string().optional(),
+    name: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+      templateType: "template_type",
+      relatedObject: "related_object",
+    });
+  })
+);
 
 export function documentTemplateToJSON(
   documentTemplate: DocumentTemplate,

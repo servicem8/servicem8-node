@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -50,36 +50,38 @@ export type Note = {
 };
 
 /** @internal */
-export const NoteActive$inboundSchema: z.ZodNativeEnum<typeof NoteActive> = z
-  .nativeEnum(NoteActive);
+export const NoteActive$inboundSchema: z.ZodNativeEnum<typeof NoteActive> =
+  /* @__PURE__ */ lazySchema$(() => z.nativeEnum(NoteActive));
 /** @internal */
 export const NoteActive$outboundSchema: z.ZodNativeEnum<typeof NoteActive> =
   NoteActive$inboundSchema;
 
 /** @internal */
-export const Note$inboundSchema: z.ZodType<Note, z.ZodTypeDef, unknown> = z
-  .object({
-    uuid: z.string().optional(),
-    active: NoteActive$inboundSchema.default(1),
-    edit_date: z.any().optional(),
-    related_object: z.string().optional(),
-    related_object_uuid: z.string().optional(),
-    note: z.string().optional(),
-    action_required: z.string().optional(),
-    action_completed_by_staff_uuid: z.string().optional(),
-    edit_by_staff_uuid: z.any().optional(),
-    create_date: z.any().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "edit_date": "editDate",
-      "related_object": "relatedObject",
-      "related_object_uuid": "relatedObjectUuid",
-      "action_required": "actionRequired",
-      "action_completed_by_staff_uuid": "actionCompletedByStaffUuid",
-      "edit_by_staff_uuid": "editByStaffUuid",
-      "create_date": "createDate",
-    });
-  });
+export const Note$inboundSchema: z.ZodType<Note, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      uuid: z.string().optional(),
+      active: NoteActive$inboundSchema.default(1),
+      edit_date: z.any().optional(),
+      related_object: z.string().optional(),
+      related_object_uuid: z.string().optional(),
+      note: z.string().optional(),
+      action_required: z.string().optional(),
+      action_completed_by_staff_uuid: z.string().optional(),
+      edit_by_staff_uuid: z.any().optional(),
+      create_date: z.any().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "edit_date": "editDate",
+        "related_object": "relatedObject",
+        "related_object_uuid": "relatedObjectUuid",
+        "action_required": "actionRequired",
+        "action_completed_by_staff_uuid": "actionCompletedByStaffUuid",
+        "edit_by_staff_uuid": "editByStaffUuid",
+        "create_date": "createDate",
+      });
+    })
+  );
 /** @internal */
 export type Note$Outbound = {
   uuid?: string | undefined;
@@ -96,28 +98,30 @@ export type Note$Outbound = {
 
 /** @internal */
 export const Note$outboundSchema: z.ZodType<Note$Outbound, z.ZodTypeDef, Note> =
-  z.object({
-    uuid: z.string().optional(),
-    active: NoteActive$outboundSchema.default(1),
-    editDate: z.any().optional(),
-    relatedObject: z.string().optional(),
-    relatedObjectUuid: z.string().optional(),
-    note: z.string().optional(),
-    actionRequired: z.string().optional(),
-    actionCompletedByStaffUuid: z.string().optional(),
-    editByStaffUuid: z.any().optional(),
-    createDate: z.any().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      editDate: "edit_date",
-      relatedObject: "related_object",
-      relatedObjectUuid: "related_object_uuid",
-      actionRequired: "action_required",
-      actionCompletedByStaffUuid: "action_completed_by_staff_uuid",
-      editByStaffUuid: "edit_by_staff_uuid",
-      createDate: "create_date",
-    });
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      uuid: z.string().optional(),
+      active: NoteActive$outboundSchema.default(1),
+      editDate: z.any().optional(),
+      relatedObject: z.string().optional(),
+      relatedObjectUuid: z.string().optional(),
+      note: z.string().optional(),
+      actionRequired: z.string().optional(),
+      actionCompletedByStaffUuid: z.string().optional(),
+      editByStaffUuid: z.any().optional(),
+      createDate: z.any().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        editDate: "edit_date",
+        relatedObject: "related_object",
+        relatedObjectUuid: "related_object_uuid",
+        actionRequired: "action_required",
+        actionCompletedByStaffUuid: "action_completed_by_staff_uuid",
+        editByStaffUuid: "edit_by_staff_uuid",
+        createDate: "create_date",
+      });
+    })
+  );
 
 export function noteToJSON(note: Note): string {
   return JSON.stringify(Note$outboundSchema.parse(note));

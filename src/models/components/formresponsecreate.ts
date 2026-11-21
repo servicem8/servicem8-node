@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -56,29 +56,31 @@ export const FormResponseCreate$inboundSchema: z.ZodType<
   FormResponseCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  form_uuid: z.string().optional(),
-  staff_uuid: z.string().optional(),
-  regarding_object: z.string().optional(),
-  regarding_object_uuid: z.string().optional(),
-  field_data: z.string().optional(),
-  timestamp: z.string().optional(),
-  form_by_staff_uuid: z.string().optional(),
-  document_attachment_uuid: z.string().optional(),
-  asset_uuid: z.string().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "form_uuid": "formUuid",
-    "staff_uuid": "staffUuid",
-    "regarding_object": "regardingObject",
-    "regarding_object_uuid": "regardingObjectUuid",
-    "field_data": "fieldData",
-    "form_by_staff_uuid": "formByStaffUuid",
-    "document_attachment_uuid": "documentAttachmentUuid",
-    "asset_uuid": "assetUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    form_uuid: z.string().optional(),
+    staff_uuid: z.string().optional(),
+    regarding_object: z.string().optional(),
+    regarding_object_uuid: z.string().optional(),
+    field_data: z.string().optional(),
+    timestamp: z.string().optional(),
+    form_by_staff_uuid: z.string().optional(),
+    document_attachment_uuid: z.string().optional(),
+    asset_uuid: z.string().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "form_uuid": "formUuid",
+      "staff_uuid": "staffUuid",
+      "regarding_object": "regardingObject",
+      "regarding_object_uuid": "regardingObjectUuid",
+      "field_data": "fieldData",
+      "form_by_staff_uuid": "formByStaffUuid",
+      "document_attachment_uuid": "documentAttachmentUuid",
+      "asset_uuid": "assetUuid",
+    });
+  })
+);
 /** @internal */
 export type FormResponseCreate$Outbound = {
   form_uuid?: string | undefined;
@@ -98,29 +100,31 @@ export const FormResponseCreate$outboundSchema: z.ZodType<
   FormResponseCreate$Outbound,
   z.ZodTypeDef,
   FormResponseCreate
-> = z.object({
-  formUuid: z.string().optional(),
-  staffUuid: z.string().optional(),
-  regardingObject: z.string().optional(),
-  regardingObjectUuid: z.string().optional(),
-  fieldData: z.string().optional(),
-  timestamp: z.string().optional(),
-  formByStaffUuid: z.string().optional(),
-  documentAttachmentUuid: z.string().optional(),
-  assetUuid: z.string().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    formUuid: "form_uuid",
-    staffUuid: "staff_uuid",
-    regardingObject: "regarding_object",
-    regardingObjectUuid: "regarding_object_uuid",
-    fieldData: "field_data",
-    formByStaffUuid: "form_by_staff_uuid",
-    documentAttachmentUuid: "document_attachment_uuid",
-    assetUuid: "asset_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    formUuid: z.string().optional(),
+    staffUuid: z.string().optional(),
+    regardingObject: z.string().optional(),
+    regardingObjectUuid: z.string().optional(),
+    fieldData: z.string().optional(),
+    timestamp: z.string().optional(),
+    formByStaffUuid: z.string().optional(),
+    documentAttachmentUuid: z.string().optional(),
+    assetUuid: z.string().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      formUuid: "form_uuid",
+      staffUuid: "staff_uuid",
+      regardingObject: "regarding_object",
+      regardingObjectUuid: "regarding_object_uuid",
+      fieldData: "field_data",
+      formByStaffUuid: "form_by_staff_uuid",
+      documentAttachmentUuid: "document_attachment_uuid",
+      assetUuid: "asset_uuid",
+    });
+  })
+);
 
 export function formResponseCreateToJSON(
   formResponseCreate: FormResponseCreate,

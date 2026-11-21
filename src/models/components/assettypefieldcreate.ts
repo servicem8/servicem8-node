@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -50,7 +50,9 @@ export type AssetTypeFieldCreate = {
 /** @internal */
 export const AssetTypeFieldCreateFieldType$inboundSchema: z.ZodNativeEnum<
   typeof AssetTypeFieldCreateFieldType
-> = z.nativeEnum(AssetTypeFieldCreateFieldType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(AssetTypeFieldCreateFieldType)
+);
 /** @internal */
 export const AssetTypeFieldCreateFieldType$outboundSchema: z.ZodNativeEnum<
   typeof AssetTypeFieldCreateFieldType
@@ -61,11 +63,13 @@ export const AssetTypeFieldCreateFieldData$inboundSchema: z.ZodType<
   AssetTypeFieldCreateFieldData,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  fieldType: AssetTypeFieldCreateFieldType$inboundSchema,
-  mandatory: z.boolean(),
-  choices: z.array(z.string()).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    fieldType: AssetTypeFieldCreateFieldType$inboundSchema,
+    mandatory: z.boolean(),
+    choices: z.array(z.string()).optional(),
+  })
+);
 /** @internal */
 export type AssetTypeFieldCreateFieldData$Outbound = {
   fieldType: string;
@@ -78,11 +82,13 @@ export const AssetTypeFieldCreateFieldData$outboundSchema: z.ZodType<
   AssetTypeFieldCreateFieldData$Outbound,
   z.ZodTypeDef,
   AssetTypeFieldCreateFieldData
-> = z.object({
-  fieldType: AssetTypeFieldCreateFieldType$outboundSchema,
-  mandatory: z.boolean(),
-  choices: z.array(z.string()).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    fieldType: AssetTypeFieldCreateFieldType$outboundSchema,
+    mandatory: z.boolean(),
+    choices: z.array(z.string()).optional(),
+  })
+);
 
 export function assetTypeFieldCreateFieldDataToJSON(
   assetTypeFieldCreateFieldData: AssetTypeFieldCreateFieldData,
@@ -108,18 +114,20 @@ export const AssetTypeFieldCreate$inboundSchema: z.ZodType<
   AssetTypeFieldCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  name: z.string(),
-  field_data: z.lazy(() => AssetTypeFieldCreateFieldData$inboundSchema)
-    .optional(),
-  sort_order: z.number().int().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "field_data": "fieldData",
-    "sort_order": "sortOrder",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    name: z.string(),
+    field_data: z.lazy(() => AssetTypeFieldCreateFieldData$inboundSchema)
+      .optional(),
+    sort_order: z.number().int().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "field_data": "fieldData",
+      "sort_order": "sortOrder",
+    });
+  })
+);
 /** @internal */
 export type AssetTypeFieldCreate$Outbound = {
   uuid?: string | undefined;
@@ -133,18 +141,20 @@ export const AssetTypeFieldCreate$outboundSchema: z.ZodType<
   AssetTypeFieldCreate$Outbound,
   z.ZodTypeDef,
   AssetTypeFieldCreate
-> = z.object({
-  uuid: z.string().optional(),
-  name: z.string(),
-  fieldData: z.lazy(() => AssetTypeFieldCreateFieldData$outboundSchema)
-    .optional(),
-  sortOrder: z.number().int().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    fieldData: "field_data",
-    sortOrder: "sort_order",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    name: z.string(),
+    fieldData: z.lazy(() => AssetTypeFieldCreateFieldData$outboundSchema)
+      .optional(),
+    sortOrder: z.number().int().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      fieldData: "field_data",
+      sortOrder: "sort_order",
+    });
+  })
+);
 
 export function assetTypeFieldCreateToJSON(
   assetTypeFieldCreate: AssetTypeFieldCreate,

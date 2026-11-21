@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -47,7 +47,7 @@ export type Category = {
 /** @internal */
 export const CategoryActive$inboundSchema: z.ZodNativeEnum<
   typeof CategoryActive
-> = z.nativeEnum(CategoryActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(CategoryActive));
 /** @internal */
 export const CategoryActive$outboundSchema: z.ZodNativeEnum<
   typeof CategoryActive
@@ -58,17 +58,19 @@ export const Category$inboundSchema: z.ZodType<
   Category,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  colour: z.string().optional(),
-  uuid: z.string().optional(),
-  active: CategoryActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "edit_date": "editDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    colour: z.string().optional(),
+    uuid: z.string().optional(),
+    active: CategoryActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "edit_date": "editDate",
+    });
+  })
+);
 /** @internal */
 export type Category$Outbound = {
   name: string;
@@ -83,17 +85,19 @@ export const Category$outboundSchema: z.ZodType<
   Category$Outbound,
   z.ZodTypeDef,
   Category
-> = z.object({
-  name: z.string(),
-  colour: z.string().optional(),
-  uuid: z.string().optional(),
-  active: CategoryActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    colour: z.string().optional(),
+    uuid: z.string().optional(),
+    active: CategoryActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+    });
+  })
+);
 
 export function categoryToJSON(category: Category): string {
   return JSON.stringify(Category$outboundSchema.parse(category));

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -24,11 +24,13 @@ export const AttachToJobResponseJob$inboundSchema: z.ZodType<
   AttachToJobResponseJob,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  id: z.number().int().optional(),
-  location: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    id: z.number().int().optional(),
+    location: z.string().optional(),
+  })
+);
 /** @internal */
 export type AttachToJobResponseJob$Outbound = {
   uuid?: string | undefined;
@@ -41,11 +43,13 @@ export const AttachToJobResponseJob$outboundSchema: z.ZodType<
   AttachToJobResponseJob$Outbound,
   z.ZodTypeDef,
   AttachToJobResponseJob
-> = z.object({
-  uuid: z.string().optional(),
-  id: z.number().int().optional(),
-  location: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    id: z.number().int().optional(),
+    location: z.string().optional(),
+  })
+);
 
 export function attachToJobResponseJobToJSON(
   attachToJobResponseJob: AttachToJobResponseJob,
@@ -69,11 +73,13 @@ export const AttachToJobResponse$inboundSchema: z.ZodType<
   AttachToJobResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  success: z.boolean().optional(),
-  job: z.lazy(() => AttachToJobResponseJob$inboundSchema).optional(),
-  message: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    success: z.boolean().optional(),
+    job: z.lazy(() => AttachToJobResponseJob$inboundSchema).optional(),
+    message: z.string().optional(),
+  })
+);
 /** @internal */
 export type AttachToJobResponse$Outbound = {
   success?: boolean | undefined;
@@ -86,11 +92,13 @@ export const AttachToJobResponse$outboundSchema: z.ZodType<
   AttachToJobResponse$Outbound,
   z.ZodTypeDef,
   AttachToJobResponse
-> = z.object({
-  success: z.boolean().optional(),
-  job: z.lazy(() => AttachToJobResponseJob$outboundSchema).optional(),
-  message: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    success: z.boolean().optional(),
+    job: z.lazy(() => AttachToJobResponseJob$outboundSchema).optional(),
+    message: z.string().optional(),
+  })
+);
 
 export function attachToJobResponseToJSON(
   attachToJobResponse: AttachToJobResponse,

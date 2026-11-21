@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -87,8 +87,8 @@ export type Asset = {
 };
 
 /** @internal */
-export const AssetActive$inboundSchema: z.ZodNativeEnum<typeof AssetActive> = z
-  .nativeEnum(AssetActive);
+export const AssetActive$inboundSchema: z.ZodNativeEnum<typeof AssetActive> =
+  /* @__PURE__ */ lazySchema$(() => z.nativeEnum(AssetActive));
 /** @internal */
 export const AssetActive$outboundSchema: z.ZodNativeEnum<typeof AssetActive> =
   AssetActive$inboundSchema;
@@ -98,13 +98,15 @@ export const AssetFieldDatum$inboundSchema: z.ZodType<
   AssetFieldDatum,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  fieldType: z.string(),
-  fieldName: z.string(),
-  fieldValue: z.string(),
-  sortOrder: z.number(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    fieldType: z.string(),
+    fieldName: z.string(),
+    fieldValue: z.string(),
+    sortOrder: z.number(),
+  })
+);
 /** @internal */
 export type AssetFieldDatum$Outbound = {
   uuid: string;
@@ -119,13 +121,15 @@ export const AssetFieldDatum$outboundSchema: z.ZodType<
   AssetFieldDatum$Outbound,
   z.ZodTypeDef,
   AssetFieldDatum
-> = z.object({
-  uuid: z.string(),
-  fieldType: z.string(),
-  fieldName: z.string(),
-  fieldValue: z.string(),
-  sortOrder: z.number(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    fieldType: z.string(),
+    fieldName: z.string(),
+    fieldValue: z.string(),
+    sortOrder: z.number(),
+  })
+);
 
 export function assetFieldDatumToJSON(
   assetFieldDatum: AssetFieldDatum,
@@ -143,30 +147,33 @@ export function assetFieldDatumFromJSON(
 }
 
 /** @internal */
-export const Asset$inboundSchema: z.ZodType<Asset, z.ZodTypeDef, unknown> = z
-  .object({
-    uuid: z.string().optional(),
-    active: AssetActive$inboundSchema.default(1),
-    edit_date: z.any().optional(),
-    company_uuid: z.string().optional(),
-    asset_code: z.string().optional(),
-    asset_type_uuid: z.string().optional(),
-    name: z.string().optional(),
-    lat: z.number().optional(),
-    lng: z.number().optional(),
-    geo_timestamp: z.string().optional(),
-    altitude: z.number().optional(),
-    field_data: z.array(z.lazy(() => AssetFieldDatum$inboundSchema)).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "edit_date": "editDate",
-      "company_uuid": "companyUuid",
-      "asset_code": "assetCode",
-      "asset_type_uuid": "assetTypeUuid",
-      "geo_timestamp": "geoTimestamp",
-      "field_data": "fieldData",
-    });
-  });
+export const Asset$inboundSchema: z.ZodType<Asset, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      uuid: z.string().optional(),
+      active: AssetActive$inboundSchema.default(1),
+      edit_date: z.any().optional(),
+      company_uuid: z.string().optional(),
+      asset_code: z.string().optional(),
+      asset_type_uuid: z.string().optional(),
+      name: z.string().optional(),
+      lat: z.number().optional(),
+      lng: z.number().optional(),
+      geo_timestamp: z.string().optional(),
+      altitude: z.number().optional(),
+      field_data: z.array(z.lazy(() => AssetFieldDatum$inboundSchema))
+        .optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "edit_date": "editDate",
+        "company_uuid": "companyUuid",
+        "asset_code": "assetCode",
+        "asset_type_uuid": "assetTypeUuid",
+        "geo_timestamp": "geoTimestamp",
+        "field_data": "fieldData",
+      });
+    })
+  );
 /** @internal */
 export type Asset$Outbound = {
   uuid?: string | undefined;
@@ -188,29 +195,31 @@ export const Asset$outboundSchema: z.ZodType<
   Asset$Outbound,
   z.ZodTypeDef,
   Asset
-> = z.object({
-  uuid: z.string().optional(),
-  active: AssetActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  companyUuid: z.string().optional(),
-  assetCode: z.string().optional(),
-  assetTypeUuid: z.string().optional(),
-  name: z.string().optional(),
-  lat: z.number().optional(),
-  lng: z.number().optional(),
-  geoTimestamp: z.string().optional(),
-  altitude: z.number().optional(),
-  fieldData: z.array(z.lazy(() => AssetFieldDatum$outboundSchema)).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-    companyUuid: "company_uuid",
-    assetCode: "asset_code",
-    assetTypeUuid: "asset_type_uuid",
-    geoTimestamp: "geo_timestamp",
-    fieldData: "field_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: AssetActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    companyUuid: z.string().optional(),
+    assetCode: z.string().optional(),
+    assetTypeUuid: z.string().optional(),
+    name: z.string().optional(),
+    lat: z.number().optional(),
+    lng: z.number().optional(),
+    geoTimestamp: z.string().optional(),
+    altitude: z.number().optional(),
+    fieldData: z.array(z.lazy(() => AssetFieldDatum$outboundSchema)).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+      companyUuid: "company_uuid",
+      assetCode: "asset_code",
+      assetTypeUuid: "asset_type_uuid",
+      geoTimestamp: "geo_timestamp",
+      fieldData: "field_data",
+    });
+  })
+);
 
 export function assetToJSON(asset: Asset): string {
   return JSON.stringify(Asset$outboundSchema.parse(asset));

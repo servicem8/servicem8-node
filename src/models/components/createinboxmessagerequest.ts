@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -111,41 +111,43 @@ export type CreateInboxMessageRequest = {
 
 /** @internal */
 export const JobData$inboundSchema: z.ZodType<JobData, z.ZodTypeDef, unknown> =
-  z.object({
-    contact_first: z.string().optional(),
-    contact_last: z.string().optional(),
-    company_name: z.string().optional(),
-    email: z.string().optional(),
-    mobile: z.string().optional(),
-    phone_1: z.string().optional(),
-    phone_2: z.string().optional(),
-    billing_contact_first: z.string().optional(),
-    billing_contact_last: z.string().optional(),
-    billing_email: z.string().optional(),
-    billing_mobile: z.string().optional(),
-    billing_attention: z.string().optional(),
-    job_description: z.string().optional(),
-    job_address: z.string().optional(),
-    billing_address: z.string().optional(),
-    work_done_description: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "contact_first": "contactFirst",
-      "contact_last": "contactLast",
-      "company_name": "companyName",
-      "phone_1": "phone1",
-      "phone_2": "phone2",
-      "billing_contact_first": "billingContactFirst",
-      "billing_contact_last": "billingContactLast",
-      "billing_email": "billingEmail",
-      "billing_mobile": "billingMobile",
-      "billing_attention": "billingAttention",
-      "job_description": "jobDescription",
-      "job_address": "jobAddress",
-      "billing_address": "billingAddress",
-      "work_done_description": "workDoneDescription",
-    });
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      contact_first: z.string().optional(),
+      contact_last: z.string().optional(),
+      company_name: z.string().optional(),
+      email: z.string().optional(),
+      mobile: z.string().optional(),
+      phone_1: z.string().optional(),
+      phone_2: z.string().optional(),
+      billing_contact_first: z.string().optional(),
+      billing_contact_last: z.string().optional(),
+      billing_email: z.string().optional(),
+      billing_mobile: z.string().optional(),
+      billing_attention: z.string().optional(),
+      job_description: z.string().optional(),
+      job_address: z.string().optional(),
+      billing_address: z.string().optional(),
+      work_done_description: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "contact_first": "contactFirst",
+        "contact_last": "contactLast",
+        "company_name": "companyName",
+        "phone_1": "phone1",
+        "phone_2": "phone2",
+        "billing_contact_first": "billingContactFirst",
+        "billing_contact_last": "billingContactLast",
+        "billing_email": "billingEmail",
+        "billing_mobile": "billingMobile",
+        "billing_attention": "billingAttention",
+        "job_description": "jobDescription",
+        "job_address": "jobAddress",
+        "billing_address": "billingAddress",
+        "work_done_description": "workDoneDescription",
+      });
+    })
+  );
 /** @internal */
 export type JobData$Outbound = {
   contact_first?: string | undefined;
@@ -171,41 +173,43 @@ export const JobData$outboundSchema: z.ZodType<
   JobData$Outbound,
   z.ZodTypeDef,
   JobData
-> = z.object({
-  contactFirst: z.string().optional(),
-  contactLast: z.string().optional(),
-  companyName: z.string().optional(),
-  email: z.string().optional(),
-  mobile: z.string().optional(),
-  phone1: z.string().optional(),
-  phone2: z.string().optional(),
-  billingContactFirst: z.string().optional(),
-  billingContactLast: z.string().optional(),
-  billingEmail: z.string().optional(),
-  billingMobile: z.string().optional(),
-  billingAttention: z.string().optional(),
-  jobDescription: z.string().optional(),
-  jobAddress: z.string().optional(),
-  billingAddress: z.string().optional(),
-  workDoneDescription: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    contactFirst: "contact_first",
-    contactLast: "contact_last",
-    companyName: "company_name",
-    phone1: "phone_1",
-    phone2: "phone_2",
-    billingContactFirst: "billing_contact_first",
-    billingContactLast: "billing_contact_last",
-    billingEmail: "billing_email",
-    billingMobile: "billing_mobile",
-    billingAttention: "billing_attention",
-    jobDescription: "job_description",
-    jobAddress: "job_address",
-    billingAddress: "billing_address",
-    workDoneDescription: "work_done_description",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    contactFirst: z.string().optional(),
+    contactLast: z.string().optional(),
+    companyName: z.string().optional(),
+    email: z.string().optional(),
+    mobile: z.string().optional(),
+    phone1: z.string().optional(),
+    phone2: z.string().optional(),
+    billingContactFirst: z.string().optional(),
+    billingContactLast: z.string().optional(),
+    billingEmail: z.string().optional(),
+    billingMobile: z.string().optional(),
+    billingAttention: z.string().optional(),
+    jobDescription: z.string().optional(),
+    jobAddress: z.string().optional(),
+    billingAddress: z.string().optional(),
+    workDoneDescription: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      contactFirst: "contact_first",
+      contactLast: "contact_last",
+      companyName: "company_name",
+      phone1: "phone_1",
+      phone2: "phone_2",
+      billingContactFirst: "billing_contact_first",
+      billingContactLast: "billing_contact_last",
+      billingEmail: "billing_email",
+      billingMobile: "billing_mobile",
+      billingAttention: "billing_attention",
+      jobDescription: "job_description",
+      jobAddress: "job_address",
+      billingAddress: "billing_address",
+      workDoneDescription: "work_done_description",
+    });
+  })
+);
 
 export function jobDataToJSON(jobData: JobData): string {
   return JSON.stringify(JobData$outboundSchema.parse(jobData));
@@ -225,23 +229,25 @@ export const CreateInboxMessageRequest$inboundSchema: z.ZodType<
   CreateInboxMessageRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  subject: z.string(),
-  message_text: z.string(),
-  from_name: z.string().optional(),
-  from_email: z.string().optional(),
-  json_data: z.record(z.any()).optional(),
-  jobData: z.lazy(() => JobData$inboundSchema).optional(),
-  regarding_company_uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "message_text": "messageText",
-    "from_name": "fromName",
-    "from_email": "fromEmail",
-    "json_data": "jsonData",
-    "regarding_company_uuid": "regardingCompanyUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    subject: z.string(),
+    message_text: z.string(),
+    from_name: z.string().optional(),
+    from_email: z.string().optional(),
+    json_data: z.record(z.any()).optional(),
+    jobData: z.lazy(() => JobData$inboundSchema).optional(),
+    regarding_company_uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "message_text": "messageText",
+      "from_name": "fromName",
+      "from_email": "fromEmail",
+      "json_data": "jsonData",
+      "regarding_company_uuid": "regardingCompanyUuid",
+    });
+  })
+);
 /** @internal */
 export type CreateInboxMessageRequest$Outbound = {
   subject: string;
@@ -258,23 +264,25 @@ export const CreateInboxMessageRequest$outboundSchema: z.ZodType<
   CreateInboxMessageRequest$Outbound,
   z.ZodTypeDef,
   CreateInboxMessageRequest
-> = z.object({
-  subject: z.string(),
-  messageText: z.string(),
-  fromName: z.string().optional(),
-  fromEmail: z.string().optional(),
-  jsonData: z.record(z.any()).optional(),
-  jobData: z.lazy(() => JobData$outboundSchema).optional(),
-  regardingCompanyUuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    messageText: "message_text",
-    fromName: "from_name",
-    fromEmail: "from_email",
-    jsonData: "json_data",
-    regardingCompanyUuid: "regarding_company_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    subject: z.string(),
+    messageText: z.string(),
+    fromName: z.string().optional(),
+    fromEmail: z.string().optional(),
+    jsonData: z.record(z.any()).optional(),
+    jobData: z.lazy(() => JobData$outboundSchema).optional(),
+    regardingCompanyUuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      messageText: "message_text",
+      fromName: "from_name",
+      fromEmail: "from_email",
+      jsonData: "json_data",
+      regardingCompanyUuid: "regarding_company_uuid",
+    });
+  })
+);
 
 export function createInboxMessageRequestToJSON(
   createInboxMessageRequest: CreateInboxMessageRequest,

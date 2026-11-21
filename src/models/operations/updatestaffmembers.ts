@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateStaffMembersRequest$inboundSchema: z.ZodType<
   UpdateStaffMembersRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  StaffCreate: components.StaffCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "StaffCreate": "staffCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    StaffCreate: components.StaffCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "StaffCreate": "staffCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateStaffMembersRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateStaffMembersRequest$outboundSchema: z.ZodType<
   UpdateStaffMembersRequest$Outbound,
   z.ZodTypeDef,
   UpdateStaffMembersRequest
-> = z.object({
-  uuid: z.string(),
-  staffCreate: components.StaffCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    staffCreate: "StaffCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    staffCreate: components.StaffCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      staffCreate: "StaffCreate",
+    });
+  })
+);
 
 export function updateStaffMembersRequestToJSON(
   updateStaffMembersRequest: UpdateStaffMembersRequest,

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import { ServiceM8Error } from "./servicem8error.js";
 
 export type NotFoundErrorData = {
@@ -34,20 +35,22 @@ export const NotFoundError$inboundSchema: z.ZodType<
   NotFoundError,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  errorCode: z.number().optional(),
-  message: z.string().optional(),
-  request$: z.instanceof(Request),
-  response$: z.instanceof(Response),
-  body$: z.string(),
-})
-  .transform((v) => {
-    return new NotFoundError(v, {
-      request: v.request$,
-      response: v.response$,
-      body: v.body$,
-    });
-  });
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    errorCode: z.number().optional(),
+    message: z.string().optional(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
+  })
+    .transform((v) => {
+      return new NotFoundError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
+    })
+);
 
 /** @internal */
 export type NotFoundError$Outbound = {
@@ -60,9 +63,11 @@ export const NotFoundError$outboundSchema: z.ZodType<
   NotFoundError$Outbound,
   z.ZodTypeDef,
   NotFoundError
-> = z.instanceof(NotFoundError)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    errorCode: z.number().optional(),
-    message: z.string().optional(),
-  }));
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.instanceof(NotFoundError)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      errorCode: z.number().optional(),
+      message: z.string().optional(),
+    }))
+);

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateFeedbackRequest$inboundSchema: z.ZodType<
   UpdateFeedbackRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  FeedbackCreate: components.FeedbackCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "FeedbackCreate": "feedbackCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    FeedbackCreate: components.FeedbackCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "FeedbackCreate": "feedbackCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateFeedbackRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateFeedbackRequest$outboundSchema: z.ZodType<
   UpdateFeedbackRequest$Outbound,
   z.ZodTypeDef,
   UpdateFeedbackRequest
-> = z.object({
-  uuid: z.string(),
-  feedbackCreate: components.FeedbackCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    feedbackCreate: "FeedbackCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    feedbackCreate: components.FeedbackCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      feedbackCreate: "FeedbackCreate",
+    });
+  })
+);
 
 export function updateFeedbackRequestToJSON(
   updateFeedbackRequest: UpdateFeedbackRequest,

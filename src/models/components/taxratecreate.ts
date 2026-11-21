@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -45,7 +45,9 @@ export type TaxRateCreate = {
 /** @internal */
 export const TaxRateCreateIsDefaultTaxRate$inboundSchema: z.ZodNativeEnum<
   typeof TaxRateCreateIsDefaultTaxRate
-> = z.nativeEnum(TaxRateCreateIsDefaultTaxRate);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(TaxRateCreateIsDefaultTaxRate)
+);
 /** @internal */
 export const TaxRateCreateIsDefaultTaxRate$outboundSchema: z.ZodNativeEnum<
   typeof TaxRateCreateIsDefaultTaxRate
@@ -56,16 +58,18 @@ export const TaxRateCreate$inboundSchema: z.ZodType<
   TaxRateCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  amount: z.string().optional(),
-  is_default_tax_rate: TaxRateCreateIsDefaultTaxRate$inboundSchema.optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_default_tax_rate": "isDefaultTaxRate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    amount: z.string().optional(),
+    is_default_tax_rate: TaxRateCreateIsDefaultTaxRate$inboundSchema.optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_default_tax_rate": "isDefaultTaxRate",
+    });
+  })
+);
 /** @internal */
 export type TaxRateCreate$Outbound = {
   name: string;
@@ -79,16 +83,18 @@ export const TaxRateCreate$outboundSchema: z.ZodType<
   TaxRateCreate$Outbound,
   z.ZodTypeDef,
   TaxRateCreate
-> = z.object({
-  name: z.string(),
-  amount: z.string().optional(),
-  isDefaultTaxRate: TaxRateCreateIsDefaultTaxRate$outboundSchema.optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isDefaultTaxRate: "is_default_tax_rate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    amount: z.string().optional(),
+    isDefaultTaxRate: TaxRateCreateIsDefaultTaxRate$outboundSchema.optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      isDefaultTaxRate: "is_default_tax_rate",
+    });
+  })
+);
 
 export function taxRateCreateToJSON(taxRateCreate: TaxRateCreate): string {
   return JSON.stringify(TaxRateCreate$outboundSchema.parse(taxRateCreate));

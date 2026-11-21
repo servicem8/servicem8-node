@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -55,7 +55,7 @@ export type AllocationWindow = {
 /** @internal */
 export const AllocationWindowActive$inboundSchema: z.ZodNativeEnum<
   typeof AllocationWindowActive
-> = z.nativeEnum(AllocationWindowActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(AllocationWindowActive));
 /** @internal */
 export const AllocationWindowActive$outboundSchema: z.ZodNativeEnum<
   typeof AllocationWindowActive
@@ -66,22 +66,24 @@ export const AllocationWindow$inboundSchema: z.ZodType<
   AllocationWindow,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string().optional(),
-  start_time: z.number().int().optional(),
-  end_time: z.number().int().optional(),
-  sort_priority: z.number().int().optional(),
-  uuid: z.string().optional(),
-  active: AllocationWindowActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "start_time": "startTime",
-    "end_time": "endTime",
-    "sort_priority": "sortPriority",
-    "edit_date": "editDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string().optional(),
+    start_time: z.number().int().optional(),
+    end_time: z.number().int().optional(),
+    sort_priority: z.number().int().optional(),
+    uuid: z.string().optional(),
+    active: AllocationWindowActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "start_time": "startTime",
+      "end_time": "endTime",
+      "sort_priority": "sortPriority",
+      "edit_date": "editDate",
+    });
+  })
+);
 /** @internal */
 export type AllocationWindow$Outbound = {
   name?: string | undefined;
@@ -98,22 +100,24 @@ export const AllocationWindow$outboundSchema: z.ZodType<
   AllocationWindow$Outbound,
   z.ZodTypeDef,
   AllocationWindow
-> = z.object({
-  name: z.string().optional(),
-  startTime: z.number().int().optional(),
-  endTime: z.number().int().optional(),
-  sortPriority: z.number().int().optional(),
-  uuid: z.string().optional(),
-  active: AllocationWindowActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    startTime: "start_time",
-    endTime: "end_time",
-    sortPriority: "sort_priority",
-    editDate: "edit_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string().optional(),
+    startTime: z.number().int().optional(),
+    endTime: z.number().int().optional(),
+    sortPriority: z.number().int().optional(),
+    uuid: z.string().optional(),
+    active: AllocationWindowActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      startTime: "start_time",
+      endTime: "end_time",
+      sortPriority: "sort_priority",
+      editDate: "edit_date",
+    });
+  })
+);
 
 export function allocationWindowToJSON(
   allocationWindow: AllocationWindow,

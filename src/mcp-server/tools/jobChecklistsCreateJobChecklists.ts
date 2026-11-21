@@ -32,7 +32,7 @@ UUID is optional for record creation. If no UUID is supplied, a UUID will be aut
     const [result, apiCall] = await jobChecklistsCreateJobChecklists(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

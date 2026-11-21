@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -102,7 +102,7 @@ export type Material = {
 /** @internal */
 export const MaterialPriceIncludesTaxes$inboundSchema: z.ZodNativeEnum<
   typeof MaterialPriceIncludesTaxes
-> = z.nativeEnum(MaterialPriceIncludesTaxes);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(MaterialPriceIncludesTaxes));
 /** @internal */
 export const MaterialPriceIncludesTaxes$outboundSchema: z.ZodNativeEnum<
   typeof MaterialPriceIncludesTaxes
@@ -111,7 +111,7 @@ export const MaterialPriceIncludesTaxes$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export const MaterialItemIsInventoried$inboundSchema: z.ZodNativeEnum<
   typeof MaterialItemIsInventoried
-> = z.nativeEnum(MaterialItemIsInventoried);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(MaterialItemIsInventoried));
 /** @internal */
 export const MaterialItemIsInventoried$outboundSchema: z.ZodNativeEnum<
   typeof MaterialItemIsInventoried
@@ -120,7 +120,7 @@ export const MaterialItemIsInventoried$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export const MaterialActive$inboundSchema: z.ZodNativeEnum<
   typeof MaterialActive
-> = z.nativeEnum(MaterialActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(MaterialActive));
 /** @internal */
 export const MaterialActive$outboundSchema: z.ZodNativeEnum<
   typeof MaterialActive
@@ -131,33 +131,35 @@ export const Material$inboundSchema: z.ZodType<
   Material,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  item_number: z.string().optional(),
-  price: z.string().optional(),
-  cost: z.string().optional(),
-  quantity_in_stock: z.number().optional(),
-  price_includes_taxes: MaterialPriceIncludesTaxes$inboundSchema.optional(),
-  barcode: z.string().optional(),
-  item_is_inventoried: MaterialItemIsInventoried$inboundSchema.optional(),
-  uuid: z.string().optional(),
-  active: MaterialActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  item_description: z.string().optional(),
-  use_description_for_invoicing: z.string().optional(),
-  tax_rate_uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "item_number": "itemNumber",
-    "quantity_in_stock": "quantityInStock",
-    "price_includes_taxes": "priceIncludesTaxes",
-    "item_is_inventoried": "itemIsInventoried",
-    "edit_date": "editDate",
-    "item_description": "itemDescription",
-    "use_description_for_invoicing": "useDescriptionForInvoicing",
-    "tax_rate_uuid": "taxRateUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    item_number: z.string().optional(),
+    price: z.string().optional(),
+    cost: z.string().optional(),
+    quantity_in_stock: z.number().optional(),
+    price_includes_taxes: MaterialPriceIncludesTaxes$inboundSchema.optional(),
+    barcode: z.string().optional(),
+    item_is_inventoried: MaterialItemIsInventoried$inboundSchema.optional(),
+    uuid: z.string().optional(),
+    active: MaterialActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    item_description: z.string().optional(),
+    use_description_for_invoicing: z.string().optional(),
+    tax_rate_uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "item_number": "itemNumber",
+      "quantity_in_stock": "quantityInStock",
+      "price_includes_taxes": "priceIncludesTaxes",
+      "item_is_inventoried": "itemIsInventoried",
+      "edit_date": "editDate",
+      "item_description": "itemDescription",
+      "use_description_for_invoicing": "useDescriptionForInvoicing",
+      "tax_rate_uuid": "taxRateUuid",
+    });
+  })
+);
 /** @internal */
 export type Material$Outbound = {
   name: string;
@@ -181,33 +183,35 @@ export const Material$outboundSchema: z.ZodType<
   Material$Outbound,
   z.ZodTypeDef,
   Material
-> = z.object({
-  name: z.string(),
-  itemNumber: z.string().optional(),
-  price: z.string().optional(),
-  cost: z.string().optional(),
-  quantityInStock: z.number().optional(),
-  priceIncludesTaxes: MaterialPriceIncludesTaxes$outboundSchema.optional(),
-  barcode: z.string().optional(),
-  itemIsInventoried: MaterialItemIsInventoried$outboundSchema.optional(),
-  uuid: z.string().optional(),
-  active: MaterialActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  itemDescription: z.string().optional(),
-  useDescriptionForInvoicing: z.string().optional(),
-  taxRateUuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    itemNumber: "item_number",
-    quantityInStock: "quantity_in_stock",
-    priceIncludesTaxes: "price_includes_taxes",
-    itemIsInventoried: "item_is_inventoried",
-    editDate: "edit_date",
-    itemDescription: "item_description",
-    useDescriptionForInvoicing: "use_description_for_invoicing",
-    taxRateUuid: "tax_rate_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    itemNumber: z.string().optional(),
+    price: z.string().optional(),
+    cost: z.string().optional(),
+    quantityInStock: z.number().optional(),
+    priceIncludesTaxes: MaterialPriceIncludesTaxes$outboundSchema.optional(),
+    barcode: z.string().optional(),
+    itemIsInventoried: MaterialItemIsInventoried$outboundSchema.optional(),
+    uuid: z.string().optional(),
+    active: MaterialActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    itemDescription: z.string().optional(),
+    useDescriptionForInvoicing: z.string().optional(),
+    taxRateUuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      itemNumber: "item_number",
+      quantityInStock: "quantity_in_stock",
+      priceIncludesTaxes: "price_includes_taxes",
+      itemIsInventoried: "item_is_inventoried",
+      editDate: "edit_date",
+      itemDescription: "item_description",
+      useDescriptionForInvoicing: "use_description_for_invoicing",
+      taxRateUuid: "tax_rate_uuid",
+    });
+  })
+);
 
 export function materialToJSON(material: Material): string {
   return JSON.stringify(Material$outboundSchema.parse(material));

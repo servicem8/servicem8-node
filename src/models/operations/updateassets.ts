@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateAssetsRequest$inboundSchema: z.ZodType<
   UpdateAssetsRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  AssetCreate: components.AssetCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "AssetCreate": "assetCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    AssetCreate: components.AssetCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "AssetCreate": "assetCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateAssetsRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateAssetsRequest$outboundSchema: z.ZodType<
   UpdateAssetsRequest$Outbound,
   z.ZodTypeDef,
   UpdateAssetsRequest
-> = z.object({
-  uuid: z.string(),
-  assetCreate: components.AssetCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    assetCreate: "AssetCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    assetCreate: components.AssetCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      assetCreate: "AssetCreate",
+    });
+  })
+);
 
 export function updateAssetsRequestToJSON(
   updateAssetsRequest: UpdateAssetsRequest,

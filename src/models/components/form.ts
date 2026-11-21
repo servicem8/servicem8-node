@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -72,7 +72,7 @@ export type Form = {
 /** @internal */
 export const FormFieldType$inboundSchema: z.ZodNativeEnum<
   typeof FormFieldType
-> = z.nativeEnum(FormFieldType);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(FormFieldType));
 /** @internal */
 export const FormFieldType$outboundSchema: z.ZodNativeEnum<
   typeof FormFieldType
@@ -83,12 +83,14 @@ export const FormTemplateField$inboundSchema: z.ZodType<
   FormTemplateField,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  fieldType: FormFieldType$inboundSchema,
-  value: z.string(),
-  sortOrder: z.number().int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    fieldType: FormFieldType$inboundSchema,
+    value: z.string(),
+    sortOrder: z.number().int(),
+  })
+);
 /** @internal */
 export type FormTemplateField$Outbound = {
   name: string;
@@ -102,12 +104,14 @@ export const FormTemplateField$outboundSchema: z.ZodType<
   FormTemplateField$Outbound,
   z.ZodTypeDef,
   FormTemplateField
-> = z.object({
-  name: z.string(),
-  fieldType: FormFieldType$outboundSchema,
-  value: z.string(),
-  sortOrder: z.number().int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    fieldType: FormFieldType$outboundSchema,
+    value: z.string(),
+    sortOrder: z.number().int(),
+  })
+);
 
 export function formTemplateFieldToJSON(
   formTemplateField: FormTemplateField,
@@ -127,35 +131,37 @@ export function formTemplateFieldFromJSON(
 }
 
 /** @internal */
-export const FormActive$inboundSchema: z.ZodNativeEnum<typeof FormActive> = z
-  .nativeEnum(FormActive);
+export const FormActive$inboundSchema: z.ZodNativeEnum<typeof FormActive> =
+  /* @__PURE__ */ lazySchema$(() => z.nativeEnum(FormActive));
 /** @internal */
 export const FormActive$outboundSchema: z.ZodNativeEnum<typeof FormActive> =
   FormActive$inboundSchema;
 
 /** @internal */
-export const Form$inboundSchema: z.ZodType<Form, z.ZodTypeDef, unknown> = z
-  .object({
-    name: z.string().optional(),
-    document_template_uuid: z.string().optional(),
-    can_be_used_independently: z.string().optional(),
-    badge_mandatory_state: z.string().optional(),
-    template_fields: z.array(z.lazy(() => FormTemplateField$inboundSchema))
-      .optional(),
-    uuid: z.string().optional(),
-    active: FormActive$inboundSchema.default(1),
-    edit_date: z.any().optional(),
-    badge_name: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "document_template_uuid": "documentTemplateUuid",
-      "can_be_used_independently": "canBeUsedIndependently",
-      "badge_mandatory_state": "badgeMandatoryState",
-      "template_fields": "templateFields",
-      "edit_date": "editDate",
-      "badge_name": "badgeName",
-    });
-  });
+export const Form$inboundSchema: z.ZodType<Form, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      name: z.string().optional(),
+      document_template_uuid: z.string().optional(),
+      can_be_used_independently: z.string().optional(),
+      badge_mandatory_state: z.string().optional(),
+      template_fields: z.array(z.lazy(() => FormTemplateField$inboundSchema))
+        .optional(),
+      uuid: z.string().optional(),
+      active: FormActive$inboundSchema.default(1),
+      edit_date: z.any().optional(),
+      badge_name: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "document_template_uuid": "documentTemplateUuid",
+        "can_be_used_independently": "canBeUsedIndependently",
+        "badge_mandatory_state": "badgeMandatoryState",
+        "template_fields": "templateFields",
+        "edit_date": "editDate",
+        "badge_name": "badgeName",
+      });
+    })
+  );
 /** @internal */
 export type Form$Outbound = {
   name?: string | undefined;
@@ -171,27 +177,29 @@ export type Form$Outbound = {
 
 /** @internal */
 export const Form$outboundSchema: z.ZodType<Form$Outbound, z.ZodTypeDef, Form> =
-  z.object({
-    name: z.string().optional(),
-    documentTemplateUuid: z.string().optional(),
-    canBeUsedIndependently: z.string().optional(),
-    badgeMandatoryState: z.string().optional(),
-    templateFields: z.array(z.lazy(() => FormTemplateField$outboundSchema))
-      .optional(),
-    uuid: z.string().optional(),
-    active: FormActive$outboundSchema.default(1),
-    editDate: z.any().optional(),
-    badgeName: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      documentTemplateUuid: "document_template_uuid",
-      canBeUsedIndependently: "can_be_used_independently",
-      badgeMandatoryState: "badge_mandatory_state",
-      templateFields: "template_fields",
-      editDate: "edit_date",
-      badgeName: "badge_name",
-    });
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      name: z.string().optional(),
+      documentTemplateUuid: z.string().optional(),
+      canBeUsedIndependently: z.string().optional(),
+      badgeMandatoryState: z.string().optional(),
+      templateFields: z.array(z.lazy(() => FormTemplateField$outboundSchema))
+        .optional(),
+      uuid: z.string().optional(),
+      active: FormActive$outboundSchema.default(1),
+      editDate: z.any().optional(),
+      badgeName: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        documentTemplateUuid: "document_template_uuid",
+        canBeUsedIndependently: "can_be_used_independently",
+        badgeMandatoryState: "badge_mandatory_state",
+        templateFields: "template_fields",
+        editDate: "edit_date",
+        badgeName: "badge_name",
+      });
+    })
+  );
 
 export function formToJSON(form: Form): string {
   return JSON.stringify(Form$outboundSchema.parse(form));

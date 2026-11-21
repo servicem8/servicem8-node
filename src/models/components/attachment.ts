@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -97,7 +97,7 @@ export type Attachment = {
 /** @internal */
 export const AttachmentActive$inboundSchema: z.ZodNativeEnum<
   typeof AttachmentActive
-> = z.nativeEnum(AttachmentActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(AttachmentActive));
 /** @internal */
 export const AttachmentActive$outboundSchema: z.ZodNativeEnum<
   typeof AttachmentActive
@@ -108,42 +108,44 @@ export const Attachment$inboundSchema: z.ZodType<
   Attachment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  related_object: z.string().optional(),
-  related_object_uuid: z.string().optional(),
-  attachment_name: z.string().optional(),
-  file_type: z.string().optional(),
-  attachment_source: z.string().optional(),
-  tags: z.string().optional(),
-  lng: z.number().optional(),
-  lat: z.number().optional(),
-  photo_width: z.string().optional(),
-  photo_height: z.string().optional(),
-  extracted_info: z.string().optional(),
-  is_favourite: z.string().optional(),
-  class_name: z.any().optional(),
-  metadata: z.string().optional(),
-  uuid: z.string().optional(),
-  active: AttachmentActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  created_by_staff_uuid: z.string().optional(),
-  timestamp: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "related_object": "relatedObject",
-    "related_object_uuid": "relatedObjectUuid",
-    "attachment_name": "attachmentName",
-    "file_type": "fileType",
-    "attachment_source": "attachmentSource",
-    "photo_width": "photoWidth",
-    "photo_height": "photoHeight",
-    "extracted_info": "extractedInfo",
-    "is_favourite": "isFavourite",
-    "class_name": "className",
-    "edit_date": "editDate",
-    "created_by_staff_uuid": "createdByStaffUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    related_object: z.string().optional(),
+    related_object_uuid: z.string().optional(),
+    attachment_name: z.string().optional(),
+    file_type: z.string().optional(),
+    attachment_source: z.string().optional(),
+    tags: z.string().optional(),
+    lng: z.number().optional(),
+    lat: z.number().optional(),
+    photo_width: z.string().optional(),
+    photo_height: z.string().optional(),
+    extracted_info: z.string().optional(),
+    is_favourite: z.string().optional(),
+    class_name: z.any().optional(),
+    metadata: z.string().optional(),
+    uuid: z.string().optional(),
+    active: AttachmentActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    created_by_staff_uuid: z.string().optional(),
+    timestamp: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "related_object": "relatedObject",
+      "related_object_uuid": "relatedObjectUuid",
+      "attachment_name": "attachmentName",
+      "file_type": "fileType",
+      "attachment_source": "attachmentSource",
+      "photo_width": "photoWidth",
+      "photo_height": "photoHeight",
+      "extracted_info": "extractedInfo",
+      "is_favourite": "isFavourite",
+      "class_name": "className",
+      "edit_date": "editDate",
+      "created_by_staff_uuid": "createdByStaffUuid",
+    });
+  })
+);
 /** @internal */
 export type Attachment$Outbound = {
   related_object?: string | undefined;
@@ -172,42 +174,44 @@ export const Attachment$outboundSchema: z.ZodType<
   Attachment$Outbound,
   z.ZodTypeDef,
   Attachment
-> = z.object({
-  relatedObject: z.string().optional(),
-  relatedObjectUuid: z.string().optional(),
-  attachmentName: z.string().optional(),
-  fileType: z.string().optional(),
-  attachmentSource: z.string().optional(),
-  tags: z.string().optional(),
-  lng: z.number().optional(),
-  lat: z.number().optional(),
-  photoWidth: z.string().optional(),
-  photoHeight: z.string().optional(),
-  extractedInfo: z.string().optional(),
-  isFavourite: z.string().optional(),
-  className: z.any().optional(),
-  metadata: z.string().optional(),
-  uuid: z.string().optional(),
-  active: AttachmentActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  createdByStaffUuid: z.string().optional(),
-  timestamp: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    relatedObject: "related_object",
-    relatedObjectUuid: "related_object_uuid",
-    attachmentName: "attachment_name",
-    fileType: "file_type",
-    attachmentSource: "attachment_source",
-    photoWidth: "photo_width",
-    photoHeight: "photo_height",
-    extractedInfo: "extracted_info",
-    isFavourite: "is_favourite",
-    className: "class_name",
-    editDate: "edit_date",
-    createdByStaffUuid: "created_by_staff_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    relatedObject: z.string().optional(),
+    relatedObjectUuid: z.string().optional(),
+    attachmentName: z.string().optional(),
+    fileType: z.string().optional(),
+    attachmentSource: z.string().optional(),
+    tags: z.string().optional(),
+    lng: z.number().optional(),
+    lat: z.number().optional(),
+    photoWidth: z.string().optional(),
+    photoHeight: z.string().optional(),
+    extractedInfo: z.string().optional(),
+    isFavourite: z.string().optional(),
+    className: z.any().optional(),
+    metadata: z.string().optional(),
+    uuid: z.string().optional(),
+    active: AttachmentActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    createdByStaffUuid: z.string().optional(),
+    timestamp: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      relatedObject: "related_object",
+      relatedObjectUuid: "related_object_uuid",
+      attachmentName: "attachment_name",
+      fileType: "file_type",
+      attachmentSource: "attachment_source",
+      photoWidth: "photo_width",
+      photoHeight: "photo_height",
+      extractedInfo: "extracted_info",
+      isFavourite: "is_favourite",
+      className: "class_name",
+      editDate: "edit_date",
+      createdByStaffUuid: "created_by_staff_uuid",
+    });
+  })
+);
 
 export function attachmentToJSON(attachment: Attachment): string {
   return JSON.stringify(Attachment$outboundSchema.parse(attachment));

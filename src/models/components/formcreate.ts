@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -52,7 +52,7 @@ export type FormCreate = {
 /** @internal */
 export const FormCreateFieldType$inboundSchema: z.ZodNativeEnum<
   typeof FormCreateFieldType
-> = z.nativeEnum(FormCreateFieldType);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(FormCreateFieldType));
 /** @internal */
 export const FormCreateFieldType$outboundSchema: z.ZodNativeEnum<
   typeof FormCreateFieldType
@@ -63,12 +63,14 @@ export const FormCreateTemplateField$inboundSchema: z.ZodType<
   FormCreateTemplateField,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  fieldType: FormCreateFieldType$inboundSchema,
-  value: z.string(),
-  sortOrder: z.number().int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    fieldType: FormCreateFieldType$inboundSchema,
+    value: z.string(),
+    sortOrder: z.number().int(),
+  })
+);
 /** @internal */
 export type FormCreateTemplateField$Outbound = {
   name: string;
@@ -82,12 +84,14 @@ export const FormCreateTemplateField$outboundSchema: z.ZodType<
   FormCreateTemplateField$Outbound,
   z.ZodTypeDef,
   FormCreateTemplateField
-> = z.object({
-  name: z.string(),
-  fieldType: FormCreateFieldType$outboundSchema,
-  value: z.string(),
-  sortOrder: z.number().int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    fieldType: FormCreateFieldType$outboundSchema,
+    value: z.string(),
+    sortOrder: z.number().int(),
+  })
+);
 
 export function formCreateTemplateFieldToJSON(
   formCreateTemplateField: FormCreateTemplateField,
@@ -111,24 +115,27 @@ export const FormCreate$inboundSchema: z.ZodType<
   FormCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string().optional(),
-  document_template_uuid: z.string().optional(),
-  can_be_used_independently: z.string().optional(),
-  badge_mandatory_state: z.string().optional(),
-  template_fields: z.array(z.lazy(() => FormCreateTemplateField$inboundSchema))
-    .optional(),
-  uuid: z.string().optional(),
-  badge_name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "document_template_uuid": "documentTemplateUuid",
-    "can_be_used_independently": "canBeUsedIndependently",
-    "badge_mandatory_state": "badgeMandatoryState",
-    "template_fields": "templateFields",
-    "badge_name": "badgeName",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string().optional(),
+    document_template_uuid: z.string().optional(),
+    can_be_used_independently: z.string().optional(),
+    badge_mandatory_state: z.string().optional(),
+    template_fields: z.array(
+      z.lazy(() => FormCreateTemplateField$inboundSchema),
+    ).optional(),
+    uuid: z.string().optional(),
+    badge_name: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "document_template_uuid": "documentTemplateUuid",
+      "can_be_used_independently": "canBeUsedIndependently",
+      "badge_mandatory_state": "badgeMandatoryState",
+      "template_fields": "templateFields",
+      "badge_name": "badgeName",
+    });
+  })
+);
 /** @internal */
 export type FormCreate$Outbound = {
   name?: string | undefined;
@@ -145,24 +152,27 @@ export const FormCreate$outboundSchema: z.ZodType<
   FormCreate$Outbound,
   z.ZodTypeDef,
   FormCreate
-> = z.object({
-  name: z.string().optional(),
-  documentTemplateUuid: z.string().optional(),
-  canBeUsedIndependently: z.string().optional(),
-  badgeMandatoryState: z.string().optional(),
-  templateFields: z.array(z.lazy(() => FormCreateTemplateField$outboundSchema))
-    .optional(),
-  uuid: z.string().optional(),
-  badgeName: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    documentTemplateUuid: "document_template_uuid",
-    canBeUsedIndependently: "can_be_used_independently",
-    badgeMandatoryState: "badge_mandatory_state",
-    templateFields: "template_fields",
-    badgeName: "badge_name",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string().optional(),
+    documentTemplateUuid: z.string().optional(),
+    canBeUsedIndependently: z.string().optional(),
+    badgeMandatoryState: z.string().optional(),
+    templateFields: z.array(
+      z.lazy(() => FormCreateTemplateField$outboundSchema),
+    ).optional(),
+    uuid: z.string().optional(),
+    badgeName: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      documentTemplateUuid: "document_template_uuid",
+      canBeUsedIndependently: "can_be_used_independently",
+      badgeMandatoryState: "badge_mandatory_state",
+      templateFields: "template_fields",
+      badgeName: "badge_name",
+    });
+  })
+);
 
 export function formCreateToJSON(formCreate: FormCreate): string {
   return JSON.stringify(FormCreate$outboundSchema.parse(formCreate));

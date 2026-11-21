@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -29,23 +29,25 @@ export const NoteCreate$inboundSchema: z.ZodType<
   NoteCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  related_object: z.string().optional(),
-  related_object_uuid: z.string().optional(),
-  note: z.string().optional(),
-  action_required: z.string().optional(),
-  action_completed_by_staff_uuid: z.string().optional(),
-  create_date: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "related_object": "relatedObject",
-    "related_object_uuid": "relatedObjectUuid",
-    "action_required": "actionRequired",
-    "action_completed_by_staff_uuid": "actionCompletedByStaffUuid",
-    "create_date": "createDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    related_object: z.string().optional(),
+    related_object_uuid: z.string().optional(),
+    note: z.string().optional(),
+    action_required: z.string().optional(),
+    action_completed_by_staff_uuid: z.string().optional(),
+    create_date: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "related_object": "relatedObject",
+      "related_object_uuid": "relatedObjectUuid",
+      "action_required": "actionRequired",
+      "action_completed_by_staff_uuid": "actionCompletedByStaffUuid",
+      "create_date": "createDate",
+    });
+  })
+);
 /** @internal */
 export type NoteCreate$Outbound = {
   uuid?: string | undefined;
@@ -62,23 +64,25 @@ export const NoteCreate$outboundSchema: z.ZodType<
   NoteCreate$Outbound,
   z.ZodTypeDef,
   NoteCreate
-> = z.object({
-  uuid: z.string().optional(),
-  relatedObject: z.string().optional(),
-  relatedObjectUuid: z.string().optional(),
-  note: z.string().optional(),
-  actionRequired: z.string().optional(),
-  actionCompletedByStaffUuid: z.string().optional(),
-  createDate: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    relatedObject: "related_object",
-    relatedObjectUuid: "related_object_uuid",
-    actionRequired: "action_required",
-    actionCompletedByStaffUuid: "action_completed_by_staff_uuid",
-    createDate: "create_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    relatedObject: z.string().optional(),
+    relatedObjectUuid: z.string().optional(),
+    note: z.string().optional(),
+    actionRequired: z.string().optional(),
+    actionCompletedByStaffUuid: z.string().optional(),
+    createDate: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      relatedObject: "related_object",
+      relatedObjectUuid: "related_object_uuid",
+      actionRequired: "action_required",
+      actionCompletedByStaffUuid: "action_completed_by_staff_uuid",
+      createDate: "create_date",
+    });
+  })
+);
 
 export function noteCreateToJSON(noteCreate: NoteCreate): string {
   return JSON.stringify(NoteCreate$outboundSchema.parse(noteCreate));

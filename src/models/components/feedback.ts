@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -59,7 +59,7 @@ export type Feedback = {
 /** @internal */
 export const FeedbackActive$inboundSchema: z.ZodNativeEnum<
   typeof FeedbackActive
-> = z.nativeEnum(FeedbackActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(FeedbackActive));
 /** @internal */
 export const FeedbackActive$outboundSchema: z.ZodNativeEnum<
   typeof FeedbackActive
@@ -70,22 +70,24 @@ export const Feedback$inboundSchema: z.ZodType<
   Feedback,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  timestamp: z.string().optional(),
-  related_object: z.string().optional(),
-  related_object_uuid: z.string().optional(),
-  rating: z.string().optional(),
-  comment: z.string().optional(),
-  uuid: z.string().optional(),
-  active: FeedbackActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "related_object": "relatedObject",
-    "related_object_uuid": "relatedObjectUuid",
-    "edit_date": "editDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    timestamp: z.string().optional(),
+    related_object: z.string().optional(),
+    related_object_uuid: z.string().optional(),
+    rating: z.string().optional(),
+    comment: z.string().optional(),
+    uuid: z.string().optional(),
+    active: FeedbackActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "related_object": "relatedObject",
+      "related_object_uuid": "relatedObjectUuid",
+      "edit_date": "editDate",
+    });
+  })
+);
 /** @internal */
 export type Feedback$Outbound = {
   timestamp?: string | undefined;
@@ -103,22 +105,24 @@ export const Feedback$outboundSchema: z.ZodType<
   Feedback$Outbound,
   z.ZodTypeDef,
   Feedback
-> = z.object({
-  timestamp: z.string().optional(),
-  relatedObject: z.string().optional(),
-  relatedObjectUuid: z.string().optional(),
-  rating: z.string().optional(),
-  comment: z.string().optional(),
-  uuid: z.string().optional(),
-  active: FeedbackActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    relatedObject: "related_object",
-    relatedObjectUuid: "related_object_uuid",
-    editDate: "edit_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    timestamp: z.string().optional(),
+    relatedObject: z.string().optional(),
+    relatedObjectUuid: z.string().optional(),
+    rating: z.string().optional(),
+    comment: z.string().optional(),
+    uuid: z.string().optional(),
+    active: FeedbackActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      relatedObject: "related_object",
+      relatedObjectUuid: "related_object_uuid",
+      editDate: "edit_date",
+    });
+  })
+);
 
 export function feedbackToJSON(feedback: Feedback): string {
   return JSON.stringify(Feedback$outboundSchema.parse(feedback));

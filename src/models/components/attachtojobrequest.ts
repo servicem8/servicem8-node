@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,13 +17,15 @@ export const AttachToJobRequest$inboundSchema: z.ZodType<
   AttachToJobRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  job_uuid: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    job_uuid: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "job_uuid": "jobUuid",
+    });
+  })
+);
 /** @internal */
 export type AttachToJobRequest$Outbound = {
   job_uuid: string;
@@ -34,13 +36,15 @@ export const AttachToJobRequest$outboundSchema: z.ZodType<
   AttachToJobRequest$Outbound,
   z.ZodTypeDef,
   AttachToJobRequest
-> = z.object({
-  jobUuid: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    jobUuid: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      jobUuid: "job_uuid",
+    });
+  })
+);
 
 export function attachToJobRequestToJSON(
   attachToJobRequest: AttachToJobRequest,

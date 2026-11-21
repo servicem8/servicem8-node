@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **manage_forms**.
     const [result, apiCall] = await formResponsesUpdateFormResponses(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -67,8 +67,8 @@ export type Queue = {
 };
 
 /** @internal */
-export const QueueActive$inboundSchema: z.ZodNativeEnum<typeof QueueActive> = z
-  .nativeEnum(QueueActive);
+export const QueueActive$inboundSchema: z.ZodNativeEnum<typeof QueueActive> =
+  /* @__PURE__ */ lazySchema$(() => z.nativeEnum(QueueActive));
 /** @internal */
 export const QueueActive$outboundSchema: z.ZodNativeEnum<typeof QueueActive> =
   QueueActive$inboundSchema;
@@ -76,30 +76,32 @@ export const QueueActive$outboundSchema: z.ZodNativeEnum<typeof QueueActive> =
 /** @internal */
 export const QueueRequiresAssignment$inboundSchema: z.ZodNativeEnum<
   typeof QueueRequiresAssignment
-> = z.nativeEnum(QueueRequiresAssignment);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(QueueRequiresAssignment));
 /** @internal */
 export const QueueRequiresAssignment$outboundSchema: z.ZodNativeEnum<
   typeof QueueRequiresAssignment
 > = QueueRequiresAssignment$inboundSchema;
 
 /** @internal */
-export const Queue$inboundSchema: z.ZodType<Queue, z.ZodTypeDef, unknown> = z
-  .object({
-    uuid: z.string().optional(),
-    active: QueueActive$inboundSchema.default(1),
-    edit_date: z.any().optional(),
-    name: z.string().optional(),
-    default_timeframe: z.number().int().optional(),
-    subscribed_staff: z.string().optional(),
-    requires_assignment: QueueRequiresAssignment$inboundSchema.optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "edit_date": "editDate",
-      "default_timeframe": "defaultTimeframe",
-      "subscribed_staff": "subscribedStaff",
-      "requires_assignment": "requiresAssignment",
-    });
-  });
+export const Queue$inboundSchema: z.ZodType<Queue, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      uuid: z.string().optional(),
+      active: QueueActive$inboundSchema.default(1),
+      edit_date: z.any().optional(),
+      name: z.string().optional(),
+      default_timeframe: z.number().int().optional(),
+      subscribed_staff: z.string().optional(),
+      requires_assignment: QueueRequiresAssignment$inboundSchema.optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "edit_date": "editDate",
+        "default_timeframe": "defaultTimeframe",
+        "subscribed_staff": "subscribedStaff",
+        "requires_assignment": "requiresAssignment",
+      });
+    })
+  );
 /** @internal */
 export type Queue$Outbound = {
   uuid?: string | undefined;
@@ -116,22 +118,24 @@ export const Queue$outboundSchema: z.ZodType<
   Queue$Outbound,
   z.ZodTypeDef,
   Queue
-> = z.object({
-  uuid: z.string().optional(),
-  active: QueueActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  name: z.string().optional(),
-  defaultTimeframe: z.number().int().optional(),
-  subscribedStaff: z.string().optional(),
-  requiresAssignment: QueueRequiresAssignment$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-    defaultTimeframe: "default_timeframe",
-    subscribedStaff: "subscribed_staff",
-    requiresAssignment: "requires_assignment",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: QueueActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    name: z.string().optional(),
+    defaultTimeframe: z.number().int().optional(),
+    subscribedStaff: z.string().optional(),
+    requiresAssignment: QueueRequiresAssignment$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+      defaultTimeframe: "default_timeframe",
+      subscribedStaff: "subscribed_staff",
+      requiresAssignment: "requires_assignment",
+    });
+  })
+);
 
 export function queueToJSON(queue: Queue): string {
   return JSON.stringify(Queue$outboundSchema.parse(queue));

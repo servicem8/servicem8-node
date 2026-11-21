@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -51,7 +51,7 @@ export type EmailTemplate = {
 /** @internal */
 export const EmailTemplateActive$inboundSchema: z.ZodNativeEnum<
   typeof EmailTemplateActive
-> = z.nativeEnum(EmailTemplateActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(EmailTemplateActive));
 /** @internal */
 export const EmailTemplateActive$outboundSchema: z.ZodNativeEnum<
   typeof EmailTemplateActive
@@ -62,18 +62,20 @@ export const EmailTemplate$inboundSchema: z.ZodType<
   EmailTemplate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  subject: z.string().optional(),
-  message: z.string().optional(),
-  uuid: z.string().optional(),
-  active: EmailTemplateActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "edit_date": "editDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    subject: z.string().optional(),
+    message: z.string().optional(),
+    uuid: z.string().optional(),
+    active: EmailTemplateActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "edit_date": "editDate",
+    });
+  })
+);
 /** @internal */
 export type EmailTemplate$Outbound = {
   name: string;
@@ -89,18 +91,20 @@ export const EmailTemplate$outboundSchema: z.ZodType<
   EmailTemplate$Outbound,
   z.ZodTypeDef,
   EmailTemplate
-> = z.object({
-  name: z.string(),
-  subject: z.string().optional(),
-  message: z.string().optional(),
-  uuid: z.string().optional(),
-  active: EmailTemplateActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    subject: z.string().optional(),
+    message: z.string().optional(),
+    uuid: z.string().optional(),
+    active: EmailTemplateActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+    });
+  })
+);
 
 export function emailTemplateToJSON(emailTemplate: EmailTemplate): string {
   return JSON.stringify(EmailTemplate$outboundSchema.parse(emailTemplate));

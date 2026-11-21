@@ -20,7 +20,7 @@ Performs a text search within a specific object type. Supported types: job, comp
     const [result, apiCall] = await searchObjectSearch(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

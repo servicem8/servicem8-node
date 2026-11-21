@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -44,20 +44,22 @@ export const SupplierCreate$inboundSchema: z.ZodType<
   SupplierCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  name: z.string().optional(),
-  business_number: z.string().optional(),
-  address: z.string().optional(),
-  email: z.string().optional(),
-  phone: z.string().optional(),
-  account_number: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "business_number": "businessNumber",
-    "account_number": "accountNumber",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    name: z.string().optional(),
+    business_number: z.string().optional(),
+    address: z.string().optional(),
+    email: z.string().optional(),
+    phone: z.string().optional(),
+    account_number: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "business_number": "businessNumber",
+      "account_number": "accountNumber",
+    });
+  })
+);
 /** @internal */
 export type SupplierCreate$Outbound = {
   uuid?: string | undefined;
@@ -74,20 +76,22 @@ export const SupplierCreate$outboundSchema: z.ZodType<
   SupplierCreate$Outbound,
   z.ZodTypeDef,
   SupplierCreate
-> = z.object({
-  uuid: z.string().optional(),
-  name: z.string().optional(),
-  businessNumber: z.string().optional(),
-  address: z.string().optional(),
-  email: z.string().optional(),
-  phone: z.string().optional(),
-  accountNumber: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    businessNumber: "business_number",
-    accountNumber: "account_number",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    name: z.string().optional(),
+    businessNumber: z.string().optional(),
+    address: z.string().optional(),
+    email: z.string().optional(),
+    phone: z.string().optional(),
+    accountNumber: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      businessNumber: "business_number",
+      accountNumber: "account_number",
+    });
+  })
+);
 
 export function supplierCreateToJSON(supplierCreate: SupplierCreate): string {
   return JSON.stringify(SupplierCreate$outboundSchema.parse(supplierCreate));

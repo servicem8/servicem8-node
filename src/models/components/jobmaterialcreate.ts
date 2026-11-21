@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -68,32 +68,34 @@ export const JobMaterialCreate$inboundSchema: z.ZodType<
   JobMaterialCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  job_uuid: z.string().optional(),
-  material_uuid: z.string().optional(),
-  name: z.string().optional(),
-  quantity: z.string(),
-  price: z.string().optional(),
-  displayed_amount: z.string().optional(),
-  displayed_amount_is_tax_inclusive: z.string().optional(),
-  tax_rate_uuid: z.string().optional(),
-  sort_order: z.string().optional(),
-  cost: z.string().optional(),
-  displayed_cost: z.string().optional(),
-  uuid: z.string().optional(),
-  job_material_bundle_uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-    "material_uuid": "materialUuid",
-    "displayed_amount": "displayedAmount",
-    "displayed_amount_is_tax_inclusive": "displayedAmountIsTaxInclusive",
-    "tax_rate_uuid": "taxRateUuid",
-    "sort_order": "sortOrder",
-    "displayed_cost": "displayedCost",
-    "job_material_bundle_uuid": "jobMaterialBundleUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    job_uuid: z.string().optional(),
+    material_uuid: z.string().optional(),
+    name: z.string().optional(),
+    quantity: z.string(),
+    price: z.string().optional(),
+    displayed_amount: z.string().optional(),
+    displayed_amount_is_tax_inclusive: z.string().optional(),
+    tax_rate_uuid: z.string().optional(),
+    sort_order: z.string().optional(),
+    cost: z.string().optional(),
+    displayed_cost: z.string().optional(),
+    uuid: z.string().optional(),
+    job_material_bundle_uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "job_uuid": "jobUuid",
+      "material_uuid": "materialUuid",
+      "displayed_amount": "displayedAmount",
+      "displayed_amount_is_tax_inclusive": "displayedAmountIsTaxInclusive",
+      "tax_rate_uuid": "taxRateUuid",
+      "sort_order": "sortOrder",
+      "displayed_cost": "displayedCost",
+      "job_material_bundle_uuid": "jobMaterialBundleUuid",
+    });
+  })
+);
 /** @internal */
 export type JobMaterialCreate$Outbound = {
   job_uuid?: string | undefined;
@@ -116,32 +118,34 @@ export const JobMaterialCreate$outboundSchema: z.ZodType<
   JobMaterialCreate$Outbound,
   z.ZodTypeDef,
   JobMaterialCreate
-> = z.object({
-  jobUuid: z.string().optional(),
-  materialUuid: z.string().optional(),
-  name: z.string().optional(),
-  quantity: z.string(),
-  price: z.string().optional(),
-  displayedAmount: z.string().optional(),
-  displayedAmountIsTaxInclusive: z.string().optional(),
-  taxRateUuid: z.string().optional(),
-  sortOrder: z.string().optional(),
-  cost: z.string().optional(),
-  displayedCost: z.string().optional(),
-  uuid: z.string().optional(),
-  jobMaterialBundleUuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-    materialUuid: "material_uuid",
-    displayedAmount: "displayed_amount",
-    displayedAmountIsTaxInclusive: "displayed_amount_is_tax_inclusive",
-    taxRateUuid: "tax_rate_uuid",
-    sortOrder: "sort_order",
-    displayedCost: "displayed_cost",
-    jobMaterialBundleUuid: "job_material_bundle_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    jobUuid: z.string().optional(),
+    materialUuid: z.string().optional(),
+    name: z.string().optional(),
+    quantity: z.string(),
+    price: z.string().optional(),
+    displayedAmount: z.string().optional(),
+    displayedAmountIsTaxInclusive: z.string().optional(),
+    taxRateUuid: z.string().optional(),
+    sortOrder: z.string().optional(),
+    cost: z.string().optional(),
+    displayedCost: z.string().optional(),
+    uuid: z.string().optional(),
+    jobMaterialBundleUuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      jobUuid: "job_uuid",
+      materialUuid: "material_uuid",
+      displayedAmount: "displayed_amount",
+      displayedAmountIsTaxInclusive: "displayed_amount_is_tax_inclusive",
+      taxRateUuid: "tax_rate_uuid",
+      sortOrder: "sort_order",
+      displayedCost: "displayed_cost",
+      jobMaterialBundleUuid: "job_material_bundle_uuid",
+    });
+  })
+);
 
 export function jobMaterialCreateToJSON(
   jobMaterialCreate: JobMaterialCreate,
