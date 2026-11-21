@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -35,19 +35,21 @@ export const JobTemplateOverrides$inboundSchema: z.ZodType<
   JobTemplateOverrides,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  job_description: z.string().optional(),
-  company_uuid: z.string().optional(),
-  company_name: z.string().optional(),
-  job_address: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_description": "jobDescription",
-    "company_uuid": "companyUuid",
-    "company_name": "companyName",
-    "job_address": "jobAddress",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    job_description: z.string().optional(),
+    company_uuid: z.string().optional(),
+    company_name: z.string().optional(),
+    job_address: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "job_description": "jobDescription",
+      "company_uuid": "companyUuid",
+      "company_name": "companyName",
+      "job_address": "jobAddress",
+    });
+  })
+);
 /** @internal */
 export type JobTemplateOverrides$Outbound = {
   job_description?: string | undefined;
@@ -61,19 +63,21 @@ export const JobTemplateOverrides$outboundSchema: z.ZodType<
   JobTemplateOverrides$Outbound,
   z.ZodTypeDef,
   JobTemplateOverrides
-> = z.object({
-  jobDescription: z.string().optional(),
-  companyUuid: z.string().optional(),
-  companyName: z.string().optional(),
-  jobAddress: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobDescription: "job_description",
-    companyUuid: "company_uuid",
-    companyName: "company_name",
-    jobAddress: "job_address",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    jobDescription: z.string().optional(),
+    companyUuid: z.string().optional(),
+    companyName: z.string().optional(),
+    jobAddress: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      jobDescription: "job_description",
+      companyUuid: "company_uuid",
+      companyName: "company_name",
+      jobAddress: "job_address",
+    });
+  })
+);
 
 export function jobTemplateOverridesToJSON(
   jobTemplateOverrides: JobTemplateOverrides,

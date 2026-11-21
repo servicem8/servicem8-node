@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -19,9 +19,11 @@ export const GetBadgesRequest$inboundSchema: z.ZodType<
   GetBadgesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+  })
+);
 /** @internal */
 export type GetBadgesRequest$Outbound = {
   uuid: string;
@@ -32,9 +34,11 @@ export const GetBadgesRequest$outboundSchema: z.ZodType<
   GetBadgesRequest$Outbound,
   z.ZodTypeDef,
   GetBadgesRequest
-> = z.object({
-  uuid: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+  })
+);
 
 export function getBadgesRequestToJSON(
   getBadgesRequest: GetBadgesRequest,

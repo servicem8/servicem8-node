@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -40,7 +40,7 @@ export type JobTemplate = {
 /** @internal */
 export const JobTemplateActive$inboundSchema: z.ZodNativeEnum<
   typeof JobTemplateActive
-> = z.nativeEnum(JobTemplateActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobTemplateActive));
 /** @internal */
 export const JobTemplateActive$outboundSchema: z.ZodNativeEnum<
   typeof JobTemplateActive
@@ -51,16 +51,18 @@ export const JobTemplate$inboundSchema: z.ZodType<
   JobTemplate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobTemplateActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "edit_date": "editDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: JobTemplateActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    name: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "edit_date": "editDate",
+    });
+  })
+);
 /** @internal */
 export type JobTemplate$Outbound = {
   uuid?: string | undefined;
@@ -74,16 +76,18 @@ export const JobTemplate$outboundSchema: z.ZodType<
   JobTemplate$Outbound,
   z.ZodTypeDef,
   JobTemplate
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobTemplateActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: JobTemplateActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    name: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+    });
+  })
+);
 
 export function jobTemplateToJSON(jobTemplate: JobTemplate): string {
   return JSON.stringify(JobTemplate$outboundSchema.parse(jobTemplate));

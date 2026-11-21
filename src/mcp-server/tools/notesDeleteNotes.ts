@@ -29,7 +29,7 @@ This endpoint requires the following OAuth scope **publish_job_notes**.
     const [result, apiCall] = await notesDeleteNotes(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

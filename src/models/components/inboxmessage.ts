@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -53,7 +53,7 @@ export type InboxMessage = {
 /** @internal */
 export const InboxMessageMessageType$inboundSchema: z.ZodNativeEnum<
   typeof InboxMessageMessageType
-> = z.nativeEnum(InboxMessageMessageType);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(InboxMessageMessageType));
 /** @internal */
 export const InboxMessageMessageType$outboundSchema: z.ZodNativeEnum<
   typeof InboxMessageMessageType
@@ -64,59 +64,61 @@ export const InboxMessage$inboundSchema: z.ZodType<
   InboxMessage,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: z.boolean().optional(),
-  edit_date: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  timestamp: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  read_timestamp: z.nullable(
-    z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  ).optional(),
-  last_reply_timestamp: z.nullable(
-    z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  ).optional(),
-  snooze_until_timestamp: z.nullable(
-    z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  ).optional(),
-  read_by_staff_uuid: z.nullable(z.string()).optional(),
-  from_name: z.string().optional(),
-  from_email: z.string().optional(),
-  to_email: z.string().optional(),
-  subject: z.string().optional(),
-  message_text: z.string().optional(),
-  message_html: z.string().optional(),
-  is_archived: z.boolean().optional(),
-  archived_timestamp: z.nullable(
-    z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  ).optional(),
-  archived_by_staff_uuid: z.nullable(z.string()).optional(),
-  regarding_company_uuid: z.nullable(z.string()).optional(),
-  converted_to_job_uuid: z.nullable(z.string()).optional(),
-  job_template_uuid: z.nullable(z.string()).optional(),
-  message_type: InboxMessageMessageType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "edit_date": "editDate",
-    "read_timestamp": "readTimestamp",
-    "last_reply_timestamp": "lastReplyTimestamp",
-    "snooze_until_timestamp": "snoozeUntilTimestamp",
-    "read_by_staff_uuid": "readByStaffUuid",
-    "from_name": "fromName",
-    "from_email": "fromEmail",
-    "to_email": "toEmail",
-    "message_text": "messageText",
-    "message_html": "messageHtml",
-    "is_archived": "isArchived",
-    "archived_timestamp": "archivedTimestamp",
-    "archived_by_staff_uuid": "archivedByStaffUuid",
-    "regarding_company_uuid": "regardingCompanyUuid",
-    "converted_to_job_uuid": "convertedToJobUuid",
-    "job_template_uuid": "jobTemplateUuid",
-    "message_type": "messageType",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: z.boolean().optional(),
+    edit_date: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    timestamp: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    read_timestamp: z.nullable(
+      z.string().datetime({ offset: true }).transform(v => new Date(v)),
+    ).optional(),
+    last_reply_timestamp: z.nullable(
+      z.string().datetime({ offset: true }).transform(v => new Date(v)),
+    ).optional(),
+    snooze_until_timestamp: z.nullable(
+      z.string().datetime({ offset: true }).transform(v => new Date(v)),
+    ).optional(),
+    read_by_staff_uuid: z.nullable(z.string()).optional(),
+    from_name: z.string().optional(),
+    from_email: z.string().optional(),
+    to_email: z.string().optional(),
+    subject: z.string().optional(),
+    message_text: z.string().optional(),
+    message_html: z.string().optional(),
+    is_archived: z.boolean().optional(),
+    archived_timestamp: z.nullable(
+      z.string().datetime({ offset: true }).transform(v => new Date(v)),
+    ).optional(),
+    archived_by_staff_uuid: z.nullable(z.string()).optional(),
+    regarding_company_uuid: z.nullable(z.string()).optional(),
+    converted_to_job_uuid: z.nullable(z.string()).optional(),
+    job_template_uuid: z.nullable(z.string()).optional(),
+    message_type: InboxMessageMessageType$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "edit_date": "editDate",
+      "read_timestamp": "readTimestamp",
+      "last_reply_timestamp": "lastReplyTimestamp",
+      "snooze_until_timestamp": "snoozeUntilTimestamp",
+      "read_by_staff_uuid": "readByStaffUuid",
+      "from_name": "fromName",
+      "from_email": "fromEmail",
+      "to_email": "toEmail",
+      "message_text": "messageText",
+      "message_html": "messageHtml",
+      "is_archived": "isArchived",
+      "archived_timestamp": "archivedTimestamp",
+      "archived_by_staff_uuid": "archivedByStaffUuid",
+      "regarding_company_uuid": "regardingCompanyUuid",
+      "converted_to_job_uuid": "convertedToJobUuid",
+      "job_template_uuid": "jobTemplateUuid",
+      "message_type": "messageType",
+    });
+  })
+);
 /** @internal */
 export type InboxMessage$Outbound = {
   uuid?: string | undefined;
@@ -147,53 +149,55 @@ export const InboxMessage$outboundSchema: z.ZodType<
   InboxMessage$Outbound,
   z.ZodTypeDef,
   InboxMessage
-> = z.object({
-  uuid: z.string().optional(),
-  active: z.boolean().optional(),
-  editDate: z.date().transform(v => v.toISOString()).optional(),
-  timestamp: z.date().transform(v => v.toISOString()).optional(),
-  readTimestamp: z.nullable(z.date().transform(v => v.toISOString()))
-    .optional(),
-  lastReplyTimestamp: z.nullable(z.date().transform(v => v.toISOString()))
-    .optional(),
-  snoozeUntilTimestamp: z.nullable(z.date().transform(v => v.toISOString()))
-    .optional(),
-  readByStaffUuid: z.nullable(z.string()).optional(),
-  fromName: z.string().optional(),
-  fromEmail: z.string().optional(),
-  toEmail: z.string().optional(),
-  subject: z.string().optional(),
-  messageText: z.string().optional(),
-  messageHtml: z.string().optional(),
-  isArchived: z.boolean().optional(),
-  archivedTimestamp: z.nullable(z.date().transform(v => v.toISOString()))
-    .optional(),
-  archivedByStaffUuid: z.nullable(z.string()).optional(),
-  regardingCompanyUuid: z.nullable(z.string()).optional(),
-  convertedToJobUuid: z.nullable(z.string()).optional(),
-  jobTemplateUuid: z.nullable(z.string()).optional(),
-  messageType: InboxMessageMessageType$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-    readTimestamp: "read_timestamp",
-    lastReplyTimestamp: "last_reply_timestamp",
-    snoozeUntilTimestamp: "snooze_until_timestamp",
-    readByStaffUuid: "read_by_staff_uuid",
-    fromName: "from_name",
-    fromEmail: "from_email",
-    toEmail: "to_email",
-    messageText: "message_text",
-    messageHtml: "message_html",
-    isArchived: "is_archived",
-    archivedTimestamp: "archived_timestamp",
-    archivedByStaffUuid: "archived_by_staff_uuid",
-    regardingCompanyUuid: "regarding_company_uuid",
-    convertedToJobUuid: "converted_to_job_uuid",
-    jobTemplateUuid: "job_template_uuid",
-    messageType: "message_type",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: z.boolean().optional(),
+    editDate: z.date().transform(v => v.toISOString()).optional(),
+    timestamp: z.date().transform(v => v.toISOString()).optional(),
+    readTimestamp: z.nullable(z.date().transform(v => v.toISOString()))
+      .optional(),
+    lastReplyTimestamp: z.nullable(z.date().transform(v => v.toISOString()))
+      .optional(),
+    snoozeUntilTimestamp: z.nullable(z.date().transform(v => v.toISOString()))
+      .optional(),
+    readByStaffUuid: z.nullable(z.string()).optional(),
+    fromName: z.string().optional(),
+    fromEmail: z.string().optional(),
+    toEmail: z.string().optional(),
+    subject: z.string().optional(),
+    messageText: z.string().optional(),
+    messageHtml: z.string().optional(),
+    isArchived: z.boolean().optional(),
+    archivedTimestamp: z.nullable(z.date().transform(v => v.toISOString()))
+      .optional(),
+    archivedByStaffUuid: z.nullable(z.string()).optional(),
+    regardingCompanyUuid: z.nullable(z.string()).optional(),
+    convertedToJobUuid: z.nullable(z.string()).optional(),
+    jobTemplateUuid: z.nullable(z.string()).optional(),
+    messageType: InboxMessageMessageType$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+      readTimestamp: "read_timestamp",
+      lastReplyTimestamp: "last_reply_timestamp",
+      snoozeUntilTimestamp: "snooze_until_timestamp",
+      readByStaffUuid: "read_by_staff_uuid",
+      fromName: "from_name",
+      fromEmail: "from_email",
+      toEmail: "to_email",
+      messageText: "message_text",
+      messageHtml: "message_html",
+      isArchived: "is_archived",
+      archivedTimestamp: "archived_timestamp",
+      archivedByStaffUuid: "archived_by_staff_uuid",
+      regardingCompanyUuid: "regarding_company_uuid",
+      convertedToJobUuid: "converted_to_job_uuid",
+      jobTemplateUuid: "job_template_uuid",
+      messageType: "message_type",
+    });
+  })
+);
 
 export function inboxMessageToJSON(inboxMessage: InboxMessage): string {
   return JSON.stringify(InboxMessage$outboundSchema.parse(inboxMessage));

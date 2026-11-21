@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -48,22 +48,24 @@ export const JobPaymentCreate$inboundSchema: z.ZodType<
   JobPaymentCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  job_uuid: z.string().optional(),
-  actioned_by_uuid: z.string().optional(),
-  timestamp: z.string().optional(),
-  amount: z.string().optional(),
-  method: z.string().optional(),
-  note: z.string().optional(),
-  attachment_uuid: z.string().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-    "actioned_by_uuid": "actionedByUuid",
-    "attachment_uuid": "attachmentUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    job_uuid: z.string().optional(),
+    actioned_by_uuid: z.string().optional(),
+    timestamp: z.string().optional(),
+    amount: z.string().optional(),
+    method: z.string().optional(),
+    note: z.string().optional(),
+    attachment_uuid: z.string().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "job_uuid": "jobUuid",
+      "actioned_by_uuid": "actionedByUuid",
+      "attachment_uuid": "attachmentUuid",
+    });
+  })
+);
 /** @internal */
 export type JobPaymentCreate$Outbound = {
   job_uuid?: string | undefined;
@@ -81,22 +83,24 @@ export const JobPaymentCreate$outboundSchema: z.ZodType<
   JobPaymentCreate$Outbound,
   z.ZodTypeDef,
   JobPaymentCreate
-> = z.object({
-  jobUuid: z.string().optional(),
-  actionedByUuid: z.string().optional(),
-  timestamp: z.string().optional(),
-  amount: z.string().optional(),
-  method: z.string().optional(),
-  note: z.string().optional(),
-  attachmentUuid: z.string().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-    actionedByUuid: "actioned_by_uuid",
-    attachmentUuid: "attachment_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    jobUuid: z.string().optional(),
+    actionedByUuid: z.string().optional(),
+    timestamp: z.string().optional(),
+    amount: z.string().optional(),
+    method: z.string().optional(),
+    note: z.string().optional(),
+    attachmentUuid: z.string().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      jobUuid: "job_uuid",
+      actionedByUuid: "actioned_by_uuid",
+      attachmentUuid: "attachment_uuid",
+    });
+  })
+);
 
 export function jobPaymentCreateToJSON(
   jobPaymentCreate: JobPaymentCreate,

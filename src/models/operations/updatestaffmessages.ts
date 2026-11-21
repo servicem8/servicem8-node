@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateStaffMessagesRequest$inboundSchema: z.ZodType<
   UpdateStaffMessagesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  StaffMessageCreate: components.StaffMessageCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "StaffMessageCreate": "staffMessageCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    StaffMessageCreate: components.StaffMessageCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "StaffMessageCreate": "staffMessageCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateStaffMessagesRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateStaffMessagesRequest$outboundSchema: z.ZodType<
   UpdateStaffMessagesRequest$Outbound,
   z.ZodTypeDef,
   UpdateStaffMessagesRequest
-> = z.object({
-  uuid: z.string(),
-  staffMessageCreate: components.StaffMessageCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    staffMessageCreate: "StaffMessageCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    staffMessageCreate: components.StaffMessageCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      staffMessageCreate: "StaffMessageCreate",
+    });
+  })
+);
 
 export function updateStaffMessagesRequestToJSON(
   updateStaffMessagesRequest: UpdateStaffMessagesRequest,

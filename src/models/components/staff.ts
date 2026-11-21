@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -118,61 +118,63 @@ export type Staff = {
 /** @internal */
 export const StaffHideFromSchedule$inboundSchema: z.ZodNativeEnum<
   typeof StaffHideFromSchedule
-> = z.nativeEnum(StaffHideFromSchedule);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(StaffHideFromSchedule));
 /** @internal */
 export const StaffHideFromSchedule$outboundSchema: z.ZodNativeEnum<
   typeof StaffHideFromSchedule
 > = StaffHideFromSchedule$inboundSchema;
 
 /** @internal */
-export const StaffActive$inboundSchema: z.ZodNativeEnum<typeof StaffActive> = z
-  .nativeEnum(StaffActive);
+export const StaffActive$inboundSchema: z.ZodNativeEnum<typeof StaffActive> =
+  /* @__PURE__ */ lazySchema$(() => z.nativeEnum(StaffActive));
 /** @internal */
 export const StaffActive$outboundSchema: z.ZodNativeEnum<typeof StaffActive> =
   StaffActive$inboundSchema;
 
 /** @internal */
-export const Staff$inboundSchema: z.ZodType<Staff, z.ZodTypeDef, unknown> = z
-  .object({
-    first: z.string(),
-    last: z.string(),
-    email: z.string(),
-    mobile: z.string().optional(),
-    lng: z.number().optional(),
-    lat: z.number().optional(),
-    geo_timestamp: z.string().optional(),
-    job_title: z.string().optional(),
-    navigating_to_job_uuid: z.string().optional(),
-    navigating_timestamp: z.string().optional(),
-    navigating_expiry_timestamp: z.string().optional(),
-    color: z.string().optional(),
-    custom_icon_url: z.any().optional(),
-    status_message: z.string().optional(),
-    status_message_timestamp: z.string().optional(),
-    hide_from_schedule: StaffHideFromSchedule$inboundSchema.optional(),
-    uuid: z.string().optional(),
-    active: StaffActive$inboundSchema.default(1),
-    edit_date: z.any().optional(),
-    can_receive_push_notification: z.string().optional(),
-    security_role_uuid: z.string().optional(),
-    labour_material_uuid: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "geo_timestamp": "geoTimestamp",
-      "job_title": "jobTitle",
-      "navigating_to_job_uuid": "navigatingToJobUuid",
-      "navigating_timestamp": "navigatingTimestamp",
-      "navigating_expiry_timestamp": "navigatingExpiryTimestamp",
-      "custom_icon_url": "customIconUrl",
-      "status_message": "statusMessage",
-      "status_message_timestamp": "statusMessageTimestamp",
-      "hide_from_schedule": "hideFromSchedule",
-      "edit_date": "editDate",
-      "can_receive_push_notification": "canReceivePushNotification",
-      "security_role_uuid": "securityRoleUuid",
-      "labour_material_uuid": "labourMaterialUuid",
-    });
-  });
+export const Staff$inboundSchema: z.ZodType<Staff, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      first: z.string(),
+      last: z.string(),
+      email: z.string(),
+      mobile: z.string().optional(),
+      lng: z.number().optional(),
+      lat: z.number().optional(),
+      geo_timestamp: z.string().optional(),
+      job_title: z.string().optional(),
+      navigating_to_job_uuid: z.string().optional(),
+      navigating_timestamp: z.string().optional(),
+      navigating_expiry_timestamp: z.string().optional(),
+      color: z.string().optional(),
+      custom_icon_url: z.any().optional(),
+      status_message: z.string().optional(),
+      status_message_timestamp: z.string().optional(),
+      hide_from_schedule: StaffHideFromSchedule$inboundSchema.optional(),
+      uuid: z.string().optional(),
+      active: StaffActive$inboundSchema.default(1),
+      edit_date: z.any().optional(),
+      can_receive_push_notification: z.string().optional(),
+      security_role_uuid: z.string().optional(),
+      labour_material_uuid: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "geo_timestamp": "geoTimestamp",
+        "job_title": "jobTitle",
+        "navigating_to_job_uuid": "navigatingToJobUuid",
+        "navigating_timestamp": "navigatingTimestamp",
+        "navigating_expiry_timestamp": "navigatingExpiryTimestamp",
+        "custom_icon_url": "customIconUrl",
+        "status_message": "statusMessage",
+        "status_message_timestamp": "statusMessageTimestamp",
+        "hide_from_schedule": "hideFromSchedule",
+        "edit_date": "editDate",
+        "can_receive_push_notification": "canReceivePushNotification",
+        "security_role_uuid": "securityRoleUuid",
+        "labour_material_uuid": "labourMaterialUuid",
+      });
+    })
+  );
 /** @internal */
 export type Staff$Outbound = {
   first: string;
@@ -204,46 +206,48 @@ export const Staff$outboundSchema: z.ZodType<
   Staff$Outbound,
   z.ZodTypeDef,
   Staff
-> = z.object({
-  first: z.string(),
-  last: z.string(),
-  email: z.string(),
-  mobile: z.string().optional(),
-  lng: z.number().optional(),
-  lat: z.number().optional(),
-  geoTimestamp: z.string().optional(),
-  jobTitle: z.string().optional(),
-  navigatingToJobUuid: z.string().optional(),
-  navigatingTimestamp: z.string().optional(),
-  navigatingExpiryTimestamp: z.string().optional(),
-  color: z.string().optional(),
-  customIconUrl: z.any().optional(),
-  statusMessage: z.string().optional(),
-  statusMessageTimestamp: z.string().optional(),
-  hideFromSchedule: StaffHideFromSchedule$outboundSchema.optional(),
-  uuid: z.string().optional(),
-  active: StaffActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  canReceivePushNotification: z.string().optional(),
-  securityRoleUuid: z.string().optional(),
-  labourMaterialUuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    geoTimestamp: "geo_timestamp",
-    jobTitle: "job_title",
-    navigatingToJobUuid: "navigating_to_job_uuid",
-    navigatingTimestamp: "navigating_timestamp",
-    navigatingExpiryTimestamp: "navigating_expiry_timestamp",
-    customIconUrl: "custom_icon_url",
-    statusMessage: "status_message",
-    statusMessageTimestamp: "status_message_timestamp",
-    hideFromSchedule: "hide_from_schedule",
-    editDate: "edit_date",
-    canReceivePushNotification: "can_receive_push_notification",
-    securityRoleUuid: "security_role_uuid",
-    labourMaterialUuid: "labour_material_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    first: z.string(),
+    last: z.string(),
+    email: z.string(),
+    mobile: z.string().optional(),
+    lng: z.number().optional(),
+    lat: z.number().optional(),
+    geoTimestamp: z.string().optional(),
+    jobTitle: z.string().optional(),
+    navigatingToJobUuid: z.string().optional(),
+    navigatingTimestamp: z.string().optional(),
+    navigatingExpiryTimestamp: z.string().optional(),
+    color: z.string().optional(),
+    customIconUrl: z.any().optional(),
+    statusMessage: z.string().optional(),
+    statusMessageTimestamp: z.string().optional(),
+    hideFromSchedule: StaffHideFromSchedule$outboundSchema.optional(),
+    uuid: z.string().optional(),
+    active: StaffActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    canReceivePushNotification: z.string().optional(),
+    securityRoleUuid: z.string().optional(),
+    labourMaterialUuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      geoTimestamp: "geo_timestamp",
+      jobTitle: "job_title",
+      navigatingToJobUuid: "navigating_to_job_uuid",
+      navigatingTimestamp: "navigating_timestamp",
+      navigatingExpiryTimestamp: "navigating_expiry_timestamp",
+      customIconUrl: "custom_icon_url",
+      statusMessage: "status_message",
+      statusMessageTimestamp: "status_message_timestamp",
+      hideFromSchedule: "hide_from_schedule",
+      editDate: "edit_date",
+      canReceivePushNotification: "can_receive_push_notification",
+      securityRoleUuid: "security_role_uuid",
+      labourMaterialUuid: "labour_material_uuid",
+    });
+  })
+);
 
 export function staffToJSON(staff: Staff): string {
   return JSON.stringify(Staff$outboundSchema.parse(staff));

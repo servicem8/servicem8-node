@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateBundlesRequest$inboundSchema: z.ZodType<
   UpdateBundlesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  MaterialBundleCreate: components.MaterialBundleCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "MaterialBundleCreate": "materialBundleCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    MaterialBundleCreate: components.MaterialBundleCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "MaterialBundleCreate": "materialBundleCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateBundlesRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateBundlesRequest$outboundSchema: z.ZodType<
   UpdateBundlesRequest$Outbound,
   z.ZodTypeDef,
   UpdateBundlesRequest
-> = z.object({
-  uuid: z.string(),
-  materialBundleCreate: components.MaterialBundleCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    materialBundleCreate: "MaterialBundleCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    materialBundleCreate: components.MaterialBundleCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      materialBundleCreate: "MaterialBundleCreate",
+    });
+  })
+);
 
 export function updateBundlesRequestToJSON(
   updateBundlesRequest: UpdateBundlesRequest,

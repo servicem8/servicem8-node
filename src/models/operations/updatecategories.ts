@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateCategoriesRequest$inboundSchema: z.ZodType<
   UpdateCategoriesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  CategoryCreate: components.CategoryCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "CategoryCreate": "categoryCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    CategoryCreate: components.CategoryCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "CategoryCreate": "categoryCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateCategoriesRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateCategoriesRequest$outboundSchema: z.ZodType<
   UpdateCategoriesRequest$Outbound,
   z.ZodTypeDef,
   UpdateCategoriesRequest
-> = z.object({
-  uuid: z.string(),
-  categoryCreate: components.CategoryCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    categoryCreate: "CategoryCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    categoryCreate: components.CategoryCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      categoryCreate: "CategoryCreate",
+    });
+  })
+);
 
 export function updateCategoriesRequestToJSON(
   updateCategoriesRequest: UpdateCategoriesRequest,

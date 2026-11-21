@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -84,44 +84,46 @@ export const JobAllocationCreate$inboundSchema: z.ZodType<
   JobAllocationCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  job_uuid: z.string().optional(),
-  queue_uuid: z.any().optional(),
-  staff_uuid: z.string().optional(),
-  allocation_date: z.string().optional(),
-  allocation_window_uuid: z.string().optional(),
-  allocated_by_staff_uuid: z.string().optional(),
-  allocated_timestamp: z.string().optional(),
-  expiry_timestamp: z.string().optional(),
-  read_timestamp: z.string().optional(),
-  completion_timestamp: z.string().optional(),
-  estimated_duration: z.any().optional(),
-  revised_duration: z.any().optional(),
-  sort_priority: z.string().optional(),
-  requires_acceptance: z.any().optional(),
-  acceptance_status: z.any().optional(),
-  acceptance_timestamp: z.any().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-    "queue_uuid": "queueUuid",
-    "staff_uuid": "staffUuid",
-    "allocation_date": "allocationDate",
-    "allocation_window_uuid": "allocationWindowUuid",
-    "allocated_by_staff_uuid": "allocatedByStaffUuid",
-    "allocated_timestamp": "allocatedTimestamp",
-    "expiry_timestamp": "expiryTimestamp",
-    "read_timestamp": "readTimestamp",
-    "completion_timestamp": "completionTimestamp",
-    "estimated_duration": "estimatedDuration",
-    "revised_duration": "revisedDuration",
-    "sort_priority": "sortPriority",
-    "requires_acceptance": "requiresAcceptance",
-    "acceptance_status": "acceptanceStatus",
-    "acceptance_timestamp": "acceptanceTimestamp",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    job_uuid: z.string().optional(),
+    queue_uuid: z.any().optional(),
+    staff_uuid: z.string().optional(),
+    allocation_date: z.string().optional(),
+    allocation_window_uuid: z.string().optional(),
+    allocated_by_staff_uuid: z.string().optional(),
+    allocated_timestamp: z.string().optional(),
+    expiry_timestamp: z.string().optional(),
+    read_timestamp: z.string().optional(),
+    completion_timestamp: z.string().optional(),
+    estimated_duration: z.any().optional(),
+    revised_duration: z.any().optional(),
+    sort_priority: z.string().optional(),
+    requires_acceptance: z.any().optional(),
+    acceptance_status: z.any().optional(),
+    acceptance_timestamp: z.any().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "job_uuid": "jobUuid",
+      "queue_uuid": "queueUuid",
+      "staff_uuid": "staffUuid",
+      "allocation_date": "allocationDate",
+      "allocation_window_uuid": "allocationWindowUuid",
+      "allocated_by_staff_uuid": "allocatedByStaffUuid",
+      "allocated_timestamp": "allocatedTimestamp",
+      "expiry_timestamp": "expiryTimestamp",
+      "read_timestamp": "readTimestamp",
+      "completion_timestamp": "completionTimestamp",
+      "estimated_duration": "estimatedDuration",
+      "revised_duration": "revisedDuration",
+      "sort_priority": "sortPriority",
+      "requires_acceptance": "requiresAcceptance",
+      "acceptance_status": "acceptanceStatus",
+      "acceptance_timestamp": "acceptanceTimestamp",
+    });
+  })
+);
 /** @internal */
 export type JobAllocationCreate$Outbound = {
   job_uuid?: string | undefined;
@@ -148,44 +150,46 @@ export const JobAllocationCreate$outboundSchema: z.ZodType<
   JobAllocationCreate$Outbound,
   z.ZodTypeDef,
   JobAllocationCreate
-> = z.object({
-  jobUuid: z.string().optional(),
-  queueUuid: z.any().optional(),
-  staffUuid: z.string().optional(),
-  allocationDate: z.string().optional(),
-  allocationWindowUuid: z.string().optional(),
-  allocatedByStaffUuid: z.string().optional(),
-  allocatedTimestamp: z.string().optional(),
-  expiryTimestamp: z.string().optional(),
-  readTimestamp: z.string().optional(),
-  completionTimestamp: z.string().optional(),
-  estimatedDuration: z.any().optional(),
-  revisedDuration: z.any().optional(),
-  sortPriority: z.string().optional(),
-  requiresAcceptance: z.any().optional(),
-  acceptanceStatus: z.any().optional(),
-  acceptanceTimestamp: z.any().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-    queueUuid: "queue_uuid",
-    staffUuid: "staff_uuid",
-    allocationDate: "allocation_date",
-    allocationWindowUuid: "allocation_window_uuid",
-    allocatedByStaffUuid: "allocated_by_staff_uuid",
-    allocatedTimestamp: "allocated_timestamp",
-    expiryTimestamp: "expiry_timestamp",
-    readTimestamp: "read_timestamp",
-    completionTimestamp: "completion_timestamp",
-    estimatedDuration: "estimated_duration",
-    revisedDuration: "revised_duration",
-    sortPriority: "sort_priority",
-    requiresAcceptance: "requires_acceptance",
-    acceptanceStatus: "acceptance_status",
-    acceptanceTimestamp: "acceptance_timestamp",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    jobUuid: z.string().optional(),
+    queueUuid: z.any().optional(),
+    staffUuid: z.string().optional(),
+    allocationDate: z.string().optional(),
+    allocationWindowUuid: z.string().optional(),
+    allocatedByStaffUuid: z.string().optional(),
+    allocatedTimestamp: z.string().optional(),
+    expiryTimestamp: z.string().optional(),
+    readTimestamp: z.string().optional(),
+    completionTimestamp: z.string().optional(),
+    estimatedDuration: z.any().optional(),
+    revisedDuration: z.any().optional(),
+    sortPriority: z.string().optional(),
+    requiresAcceptance: z.any().optional(),
+    acceptanceStatus: z.any().optional(),
+    acceptanceTimestamp: z.any().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      jobUuid: "job_uuid",
+      queueUuid: "queue_uuid",
+      staffUuid: "staff_uuid",
+      allocationDate: "allocation_date",
+      allocationWindowUuid: "allocation_window_uuid",
+      allocatedByStaffUuid: "allocated_by_staff_uuid",
+      allocatedTimestamp: "allocated_timestamp",
+      expiryTimestamp: "expiry_timestamp",
+      readTimestamp: "read_timestamp",
+      completionTimestamp: "completion_timestamp",
+      estimatedDuration: "estimated_duration",
+      revisedDuration: "revised_duration",
+      sortPriority: "sort_priority",
+      requiresAcceptance: "requires_acceptance",
+      acceptanceStatus: "acceptance_status",
+      acceptanceTimestamp: "acceptance_timestamp",
+    });
+  })
+);
 
 export function jobAllocationCreateToJSON(
   jobAllocationCreate: JobAllocationCreate,

@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **read_customer_contacts**.
     const [result, apiCall] = await companyContactsGetCompanyContacts(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

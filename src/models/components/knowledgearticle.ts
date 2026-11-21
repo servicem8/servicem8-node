@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -74,7 +74,7 @@ export type KnowledgeArticle = {
 /** @internal */
 export const KnowledgeArticleActive$inboundSchema: z.ZodNativeEnum<
   typeof KnowledgeArticleActive
-> = z.nativeEnum(KnowledgeArticleActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(KnowledgeArticleActive));
 /** @internal */
 export const KnowledgeArticleActive$outboundSchema: z.ZodNativeEnum<
   typeof KnowledgeArticleActive
@@ -83,7 +83,7 @@ export const KnowledgeArticleActive$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export const KnowledgeArticleObjectName$inboundSchema: z.ZodNativeEnum<
   typeof KnowledgeArticleObjectName
-> = z.nativeEnum(KnowledgeArticleObjectName);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(KnowledgeArticleObjectName));
 /** @internal */
 export const KnowledgeArticleObjectName$outboundSchema: z.ZodNativeEnum<
   typeof KnowledgeArticleObjectName
@@ -94,19 +94,21 @@ export const KnowledgeArticleRelationship$inboundSchema: z.ZodType<
   KnowledgeArticleRelationship,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  object_name: KnowledgeArticleObjectName$inboundSchema,
-  object_uuid: z.string(),
-  object_description: z.string().optional(),
-  create_date: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "object_name": "objectName",
-    "object_uuid": "objectUuid",
-    "object_description": "objectDescription",
-    "create_date": "createDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    object_name: KnowledgeArticleObjectName$inboundSchema,
+    object_uuid: z.string(),
+    object_description: z.string().optional(),
+    create_date: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "object_name": "objectName",
+      "object_uuid": "objectUuid",
+      "object_description": "objectDescription",
+      "create_date": "createDate",
+    });
+  })
+);
 /** @internal */
 export type KnowledgeArticleRelationship$Outbound = {
   object_name: string;
@@ -120,19 +122,21 @@ export const KnowledgeArticleRelationship$outboundSchema: z.ZodType<
   KnowledgeArticleRelationship$Outbound,
   z.ZodTypeDef,
   KnowledgeArticleRelationship
-> = z.object({
-  objectName: KnowledgeArticleObjectName$outboundSchema,
-  objectUuid: z.string(),
-  objectDescription: z.string().optional(),
-  createDate: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    objectName: "object_name",
-    objectUuid: "object_uuid",
-    objectDescription: "object_description",
-    createDate: "create_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    objectName: KnowledgeArticleObjectName$outboundSchema,
+    objectUuid: z.string(),
+    objectDescription: z.string().optional(),
+    createDate: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      objectName: "object_name",
+      objectUuid: "object_uuid",
+      objectDescription: "object_description",
+      createDate: "create_date",
+    });
+  })
+);
 
 export function knowledgeArticleRelationshipToJSON(
   knowledgeArticleRelationship: KnowledgeArticleRelationship,
@@ -158,23 +162,25 @@ export const KnowledgeArticle$inboundSchema: z.ZodType<
   KnowledgeArticle,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: KnowledgeArticleActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  name: z.string(),
-  content: z.string().optional(),
-  article_type: z.string().optional(),
-  tags: z.string().optional(),
-  relationships: z.array(
-    z.lazy(() => KnowledgeArticleRelationship$inboundSchema),
-  ).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "edit_date": "editDate",
-    "article_type": "articleType",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: KnowledgeArticleActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    name: z.string(),
+    content: z.string().optional(),
+    article_type: z.string().optional(),
+    tags: z.string().optional(),
+    relationships: z.array(
+      z.lazy(() => KnowledgeArticleRelationship$inboundSchema),
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "edit_date": "editDate",
+      "article_type": "articleType",
+    });
+  })
+);
 /** @internal */
 export type KnowledgeArticle$Outbound = {
   uuid?: string | undefined;
@@ -192,23 +198,25 @@ export const KnowledgeArticle$outboundSchema: z.ZodType<
   KnowledgeArticle$Outbound,
   z.ZodTypeDef,
   KnowledgeArticle
-> = z.object({
-  uuid: z.string().optional(),
-  active: KnowledgeArticleActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  name: z.string(),
-  content: z.string().optional(),
-  articleType: z.string().optional(),
-  tags: z.string().optional(),
-  relationships: z.array(
-    z.lazy(() => KnowledgeArticleRelationship$outboundSchema),
-  ).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-    articleType: "article_type",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: KnowledgeArticleActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    name: z.string(),
+    content: z.string().optional(),
+    articleType: z.string().optional(),
+    tags: z.string().optional(),
+    relationships: z.array(
+      z.lazy(() => KnowledgeArticleRelationship$outboundSchema),
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+      articleType: "article_type",
+    });
+  })
+);
 
 export function knowledgeArticleToJSON(
   knowledgeArticle: KnowledgeArticle,

@@ -22,7 +22,7 @@ This endpoint requires the following OAuth scope **manage_badges**.
   tool: async (client, ctx) => {
     const [result, apiCall] = await badgesListBadges(
       client,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -47,7 +47,7 @@ export type SecurityRole = {
 /** @internal */
 export const SecurityRoleActive$inboundSchema: z.ZodNativeEnum<
   typeof SecurityRoleActive
-> = z.nativeEnum(SecurityRoleActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(SecurityRoleActive));
 /** @internal */
 export const SecurityRoleActive$outboundSchema: z.ZodNativeEnum<
   typeof SecurityRoleActive
@@ -58,18 +58,20 @@ export const SecurityRole$inboundSchema: z.ZodType<
   SecurityRole,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  role_description: z.string().optional(),
-  uuid: z.string().optional(),
-  active: SecurityRoleActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "role_description": "roleDescription",
-    "edit_date": "editDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    role_description: z.string().optional(),
+    uuid: z.string().optional(),
+    active: SecurityRoleActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "role_description": "roleDescription",
+      "edit_date": "editDate",
+    });
+  })
+);
 /** @internal */
 export type SecurityRole$Outbound = {
   name: string;
@@ -84,18 +86,20 @@ export const SecurityRole$outboundSchema: z.ZodType<
   SecurityRole$Outbound,
   z.ZodTypeDef,
   SecurityRole
-> = z.object({
-  name: z.string(),
-  roleDescription: z.string().optional(),
-  uuid: z.string().optional(),
-  active: SecurityRoleActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    roleDescription: "role_description",
-    editDate: "edit_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    roleDescription: z.string().optional(),
+    uuid: z.string().optional(),
+    active: SecurityRoleActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      roleDescription: "role_description",
+      editDate: "edit_date",
+    });
+  })
+);
 
 export function securityRoleToJSON(securityRole: SecurityRole): string {
   return JSON.stringify(SecurityRole$outboundSchema.parse(securityRole));

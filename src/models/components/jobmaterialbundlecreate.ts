@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -44,22 +44,24 @@ export const JobMaterialBundleCreate$inboundSchema: z.ZodType<
   JobMaterialBundleCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  item_number: z.string().optional(),
-  name: z.string().optional(),
-  quantity: z.string().optional(),
-  sort_order: z.number().int().optional(),
-  material_bundle_uuid: z.string().optional(),
-  job_uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "item_number": "itemNumber",
-    "sort_order": "sortOrder",
-    "material_bundle_uuid": "materialBundleUuid",
-    "job_uuid": "jobUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    item_number: z.string().optional(),
+    name: z.string().optional(),
+    quantity: z.string().optional(),
+    sort_order: z.number().int().optional(),
+    material_bundle_uuid: z.string().optional(),
+    job_uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "item_number": "itemNumber",
+      "sort_order": "sortOrder",
+      "material_bundle_uuid": "materialBundleUuid",
+      "job_uuid": "jobUuid",
+    });
+  })
+);
 /** @internal */
 export type JobMaterialBundleCreate$Outbound = {
   uuid?: string | undefined;
@@ -76,22 +78,24 @@ export const JobMaterialBundleCreate$outboundSchema: z.ZodType<
   JobMaterialBundleCreate$Outbound,
   z.ZodTypeDef,
   JobMaterialBundleCreate
-> = z.object({
-  uuid: z.string().optional(),
-  itemNumber: z.string().optional(),
-  name: z.string().optional(),
-  quantity: z.string().optional(),
-  sortOrder: z.number().int().optional(),
-  materialBundleUuid: z.string().optional(),
-  jobUuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    itemNumber: "item_number",
-    sortOrder: "sort_order",
-    materialBundleUuid: "material_bundle_uuid",
-    jobUuid: "job_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    itemNumber: z.string().optional(),
+    name: z.string().optional(),
+    quantity: z.string().optional(),
+    sortOrder: z.number().int().optional(),
+    materialBundleUuid: z.string().optional(),
+    jobUuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      itemNumber: "item_number",
+      sortOrder: "sort_order",
+      materialBundleUuid: "material_bundle_uuid",
+      jobUuid: "job_uuid",
+    });
+  })
+);
 
 export function jobMaterialBundleCreateToJSON(
   jobMaterialBundleCreate: JobMaterialBundleCreate,

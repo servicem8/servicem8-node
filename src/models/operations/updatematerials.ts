@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateMaterialsRequest$inboundSchema: z.ZodType<
   UpdateMaterialsRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  MaterialCreate: components.MaterialCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "MaterialCreate": "materialCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    MaterialCreate: components.MaterialCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "MaterialCreate": "materialCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateMaterialsRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateMaterialsRequest$outboundSchema: z.ZodType<
   UpdateMaterialsRequest$Outbound,
   z.ZodTypeDef,
   UpdateMaterialsRequest
-> = z.object({
-  uuid: z.string(),
-  materialCreate: components.MaterialCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    materialCreate: "MaterialCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    materialCreate: components.MaterialCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      materialCreate: "MaterialCreate",
+    });
+  })
+);
 
 export function updateMaterialsRequestToJSON(
   updateMaterialsRequest: UpdateMaterialsRequest,

@@ -20,7 +20,7 @@ Marks an inbox message as read`,
     const [result, apiCall] = await inboxMarkInboxMessageAsRead(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateJobQueuesRequest$inboundSchema: z.ZodType<
   UpdateJobQueuesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  QueueCreate: components.QueueCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "QueueCreate": "queueCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    QueueCreate: components.QueueCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "QueueCreate": "queueCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateJobQueuesRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateJobQueuesRequest$outboundSchema: z.ZodType<
   UpdateJobQueuesRequest$Outbound,
   z.ZodTypeDef,
   UpdateJobQueuesRequest
-> = z.object({
-  uuid: z.string(),
-  queueCreate: components.QueueCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    queueCreate: "QueueCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    queueCreate: components.QueueCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      queueCreate: "QueueCreate",
+    });
+  })
+);
 
 export function updateJobQueuesRequestToJSON(
   updateJobQueuesRequest: UpdateJobQueuesRequest,

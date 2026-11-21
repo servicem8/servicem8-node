@@ -25,7 +25,7 @@ This endpoint requires the following OAuth scope **read_job_notes**.
     const [result, apiCall] = await notesGetNotes(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

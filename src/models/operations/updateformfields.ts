@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateFormFieldsRequest$inboundSchema: z.ZodType<
   UpdateFormFieldsRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  FormFieldCreate: components.FormFieldCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "FormFieldCreate": "formFieldCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    FormFieldCreate: components.FormFieldCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "FormFieldCreate": "formFieldCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateFormFieldsRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateFormFieldsRequest$outboundSchema: z.ZodType<
   UpdateFormFieldsRequest$Outbound,
   z.ZodTypeDef,
   UpdateFormFieldsRequest
-> = z.object({
-  uuid: z.string(),
-  formFieldCreate: components.FormFieldCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    formFieldCreate: "FormFieldCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    formFieldCreate: components.FormFieldCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      formFieldCreate: "FormFieldCreate",
+    });
+  })
+);
 
 export function updateFormFieldsRequestToJSON(
   updateFormFieldsRequest: UpdateFormFieldsRequest,

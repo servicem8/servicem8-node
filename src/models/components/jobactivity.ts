@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -99,7 +99,7 @@ export type JobActivity = {
 /** @internal */
 export const JobActivityActive$inboundSchema: z.ZodNativeEnum<
   typeof JobActivityActive
-> = z.nativeEnum(JobActivityActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobActivityActive));
 /** @internal */
 export const JobActivityActive$outboundSchema: z.ZodNativeEnum<
   typeof JobActivityActive
@@ -110,45 +110,47 @@ export const JobActivity$inboundSchema: z.ZodType<
   JobActivity,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  job_uuid: z.string().optional(),
-  staff_uuid: z.string().optional(),
-  start_date: z.string().optional(),
-  end_date: z.string().optional(),
-  activity_was_scheduled: z.string().optional(),
-  activity_was_recorded: z.string().optional(),
-  activity_was_automated: z.string().optional(),
-  has_been_opened: z.string().optional(),
-  has_been_opened_timestamp: z.string().optional(),
-  travel_time_in_seconds: z.number().int().optional(),
-  travel_distance_in_meters: z.number().int().optional(),
-  allocated_by_staff_uuid: z.any().optional(),
-  allocated_timestamp: z.any().optional(),
-  material_uuid: z.string().optional(),
-  uuid: z.string().optional(),
-  active: JobActivityActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  edit_by_staff_uuid: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-    "staff_uuid": "staffUuid",
-    "start_date": "startDate",
-    "end_date": "endDate",
-    "activity_was_scheduled": "activityWasScheduled",
-    "activity_was_recorded": "activityWasRecorded",
-    "activity_was_automated": "activityWasAutomated",
-    "has_been_opened": "hasBeenOpened",
-    "has_been_opened_timestamp": "hasBeenOpenedTimestamp",
-    "travel_time_in_seconds": "travelTimeInSeconds",
-    "travel_distance_in_meters": "travelDistanceInMeters",
-    "allocated_by_staff_uuid": "allocatedByStaffUuid",
-    "allocated_timestamp": "allocatedTimestamp",
-    "material_uuid": "materialUuid",
-    "edit_date": "editDate",
-    "edit_by_staff_uuid": "editByStaffUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    job_uuid: z.string().optional(),
+    staff_uuid: z.string().optional(),
+    start_date: z.string().optional(),
+    end_date: z.string().optional(),
+    activity_was_scheduled: z.string().optional(),
+    activity_was_recorded: z.string().optional(),
+    activity_was_automated: z.string().optional(),
+    has_been_opened: z.string().optional(),
+    has_been_opened_timestamp: z.string().optional(),
+    travel_time_in_seconds: z.number().int().optional(),
+    travel_distance_in_meters: z.number().int().optional(),
+    allocated_by_staff_uuid: z.any().optional(),
+    allocated_timestamp: z.any().optional(),
+    material_uuid: z.string().optional(),
+    uuid: z.string().optional(),
+    active: JobActivityActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    edit_by_staff_uuid: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "job_uuid": "jobUuid",
+      "staff_uuid": "staffUuid",
+      "start_date": "startDate",
+      "end_date": "endDate",
+      "activity_was_scheduled": "activityWasScheduled",
+      "activity_was_recorded": "activityWasRecorded",
+      "activity_was_automated": "activityWasAutomated",
+      "has_been_opened": "hasBeenOpened",
+      "has_been_opened_timestamp": "hasBeenOpenedTimestamp",
+      "travel_time_in_seconds": "travelTimeInSeconds",
+      "travel_distance_in_meters": "travelDistanceInMeters",
+      "allocated_by_staff_uuid": "allocatedByStaffUuid",
+      "allocated_timestamp": "allocatedTimestamp",
+      "material_uuid": "materialUuid",
+      "edit_date": "editDate",
+      "edit_by_staff_uuid": "editByStaffUuid",
+    });
+  })
+);
 /** @internal */
 export type JobActivity$Outbound = {
   job_uuid?: string | undefined;
@@ -176,45 +178,47 @@ export const JobActivity$outboundSchema: z.ZodType<
   JobActivity$Outbound,
   z.ZodTypeDef,
   JobActivity
-> = z.object({
-  jobUuid: z.string().optional(),
-  staffUuid: z.string().optional(),
-  startDate: z.string().optional(),
-  endDate: z.string().optional(),
-  activityWasScheduled: z.string().optional(),
-  activityWasRecorded: z.string().optional(),
-  activityWasAutomated: z.string().optional(),
-  hasBeenOpened: z.string().optional(),
-  hasBeenOpenedTimestamp: z.string().optional(),
-  travelTimeInSeconds: z.number().int().optional(),
-  travelDistanceInMeters: z.number().int().optional(),
-  allocatedByStaffUuid: z.any().optional(),
-  allocatedTimestamp: z.any().optional(),
-  materialUuid: z.string().optional(),
-  uuid: z.string().optional(),
-  active: JobActivityActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  editByStaffUuid: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-    staffUuid: "staff_uuid",
-    startDate: "start_date",
-    endDate: "end_date",
-    activityWasScheduled: "activity_was_scheduled",
-    activityWasRecorded: "activity_was_recorded",
-    activityWasAutomated: "activity_was_automated",
-    hasBeenOpened: "has_been_opened",
-    hasBeenOpenedTimestamp: "has_been_opened_timestamp",
-    travelTimeInSeconds: "travel_time_in_seconds",
-    travelDistanceInMeters: "travel_distance_in_meters",
-    allocatedByStaffUuid: "allocated_by_staff_uuid",
-    allocatedTimestamp: "allocated_timestamp",
-    materialUuid: "material_uuid",
-    editDate: "edit_date",
-    editByStaffUuid: "edit_by_staff_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    jobUuid: z.string().optional(),
+    staffUuid: z.string().optional(),
+    startDate: z.string().optional(),
+    endDate: z.string().optional(),
+    activityWasScheduled: z.string().optional(),
+    activityWasRecorded: z.string().optional(),
+    activityWasAutomated: z.string().optional(),
+    hasBeenOpened: z.string().optional(),
+    hasBeenOpenedTimestamp: z.string().optional(),
+    travelTimeInSeconds: z.number().int().optional(),
+    travelDistanceInMeters: z.number().int().optional(),
+    allocatedByStaffUuid: z.any().optional(),
+    allocatedTimestamp: z.any().optional(),
+    materialUuid: z.string().optional(),
+    uuid: z.string().optional(),
+    active: JobActivityActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    editByStaffUuid: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      jobUuid: "job_uuid",
+      staffUuid: "staff_uuid",
+      startDate: "start_date",
+      endDate: "end_date",
+      activityWasScheduled: "activity_was_scheduled",
+      activityWasRecorded: "activity_was_recorded",
+      activityWasAutomated: "activity_was_automated",
+      hasBeenOpened: "has_been_opened",
+      hasBeenOpenedTimestamp: "has_been_opened_timestamp",
+      travelTimeInSeconds: "travel_time_in_seconds",
+      travelDistanceInMeters: "travel_distance_in_meters",
+      allocatedByStaffUuid: "allocated_by_staff_uuid",
+      allocatedTimestamp: "allocated_timestamp",
+      materialUuid: "material_uuid",
+      editDate: "edit_date",
+      editByStaffUuid: "edit_by_staff_uuid",
+    });
+  })
+);
 
 export function jobActivityToJSON(jobActivity: JobActivity): string {
   return JSON.stringify(JobActivity$outboundSchema.parse(jobActivity));

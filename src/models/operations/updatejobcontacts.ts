@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateJobContactsRequest$inboundSchema: z.ZodType<
   UpdateJobContactsRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  JobContactCreate: components.JobContactCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "JobContactCreate": "jobContactCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    JobContactCreate: components.JobContactCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "JobContactCreate": "jobContactCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateJobContactsRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateJobContactsRequest$outboundSchema: z.ZodType<
   UpdateJobContactsRequest$Outbound,
   z.ZodTypeDef,
   UpdateJobContactsRequest
-> = z.object({
-  uuid: z.string(),
-  jobContactCreate: components.JobContactCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    jobContactCreate: "JobContactCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    jobContactCreate: components.JobContactCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      jobContactCreate: "JobContactCreate",
+    });
+  })
+);
 
 export function updateJobContactsRequestToJSON(
   updateJobContactsRequest: UpdateJobContactsRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -55,7 +55,7 @@ export type FormField = {
 /** @internal */
 export const FormFieldActive$inboundSchema: z.ZodNativeEnum<
   typeof FormFieldActive
-> = z.nativeEnum(FormFieldActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(FormFieldActive));
 /** @internal */
 export const FormFieldActive$outboundSchema: z.ZodNativeEnum<
   typeof FormFieldActive
@@ -66,22 +66,24 @@ export const FormField$inboundSchema: z.ZodType<
   FormField,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  form_uuid: z.string().optional(),
-  name: z.string().optional(),
-  field_data_json: z.string().optional(),
-  sort_order: z.number().int().optional(),
-  uuid: z.string().optional(),
-  active: FormFieldActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "form_uuid": "formUuid",
-    "field_data_json": "fieldDataJson",
-    "sort_order": "sortOrder",
-    "edit_date": "editDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    form_uuid: z.string().optional(),
+    name: z.string().optional(),
+    field_data_json: z.string().optional(),
+    sort_order: z.number().int().optional(),
+    uuid: z.string().optional(),
+    active: FormFieldActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "form_uuid": "formUuid",
+      "field_data_json": "fieldDataJson",
+      "sort_order": "sortOrder",
+      "edit_date": "editDate",
+    });
+  })
+);
 /** @internal */
 export type FormField$Outbound = {
   form_uuid?: string | undefined;
@@ -98,22 +100,24 @@ export const FormField$outboundSchema: z.ZodType<
   FormField$Outbound,
   z.ZodTypeDef,
   FormField
-> = z.object({
-  formUuid: z.string().optional(),
-  name: z.string().optional(),
-  fieldDataJson: z.string().optional(),
-  sortOrder: z.number().int().optional(),
-  uuid: z.string().optional(),
-  active: FormFieldActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    formUuid: "form_uuid",
-    fieldDataJson: "field_data_json",
-    sortOrder: "sort_order",
-    editDate: "edit_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    formUuid: z.string().optional(),
+    name: z.string().optional(),
+    fieldDataJson: z.string().optional(),
+    sortOrder: z.number().int().optional(),
+    uuid: z.string().optional(),
+    active: FormFieldActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      formUuid: "form_uuid",
+      fieldDataJson: "field_data_json",
+      sortOrder: "sort_order",
+      editDate: "edit_date",
+    });
+  })
+);
 
 export function formFieldToJSON(formField: FormField): string {
   return JSON.stringify(FormField$outboundSchema.parse(formField));

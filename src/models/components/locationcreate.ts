@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -64,25 +64,27 @@ export const LocationCreate$inboundSchema: z.ZodType<
   LocationCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  line1: z.string().optional(),
-  line2: z.string().optional(),
-  line3: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  post_code: z.string().optional(),
-  phone_1: z.string().optional(),
-  state: z.string().optional(),
-  lng: z.number().optional(),
-  lat: z.number().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "post_code": "postCode",
-    "phone_1": "phone1",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    line1: z.string().optional(),
+    line2: z.string().optional(),
+    line3: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    post_code: z.string().optional(),
+    phone_1: z.string().optional(),
+    state: z.string().optional(),
+    lng: z.number().optional(),
+    lat: z.number().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "post_code": "postCode",
+      "phone_1": "phone1",
+    });
+  })
+);
 /** @internal */
 export type LocationCreate$Outbound = {
   name: string;
@@ -104,25 +106,27 @@ export const LocationCreate$outboundSchema: z.ZodType<
   LocationCreate$Outbound,
   z.ZodTypeDef,
   LocationCreate
-> = z.object({
-  name: z.string(),
-  line1: z.string().optional(),
-  line2: z.string().optional(),
-  line3: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  postCode: z.string().optional(),
-  phone1: z.string().optional(),
-  state: z.string().optional(),
-  lng: z.number().optional(),
-  lat: z.number().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    postCode: "post_code",
-    phone1: "phone_1",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    line1: z.string().optional(),
+    line2: z.string().optional(),
+    line3: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    postCode: z.string().optional(),
+    phone1: z.string().optional(),
+    state: z.string().optional(),
+    lng: z.number().optional(),
+    lat: z.number().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      postCode: "post_code",
+      phone1: "phone_1",
+    });
+  })
+);
 
 export function locationCreateToJSON(locationCreate: LocationCreate): string {
   return JSON.stringify(LocationCreate$outboundSchema.parse(locationCreate));

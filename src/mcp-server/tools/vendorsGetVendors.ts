@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **vendor**.
     const [result, apiCall] = await vendorsGetVendors(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateAllocationWindowsRequest$inboundSchema: z.ZodType<
   UpdateAllocationWindowsRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  AllocationWindowCreate: components.AllocationWindowCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "AllocationWindowCreate": "allocationWindowCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    AllocationWindowCreate: components.AllocationWindowCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "AllocationWindowCreate": "allocationWindowCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateAllocationWindowsRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateAllocationWindowsRequest$outboundSchema: z.ZodType<
   UpdateAllocationWindowsRequest$Outbound,
   z.ZodTypeDef,
   UpdateAllocationWindowsRequest
-> = z.object({
-  uuid: z.string(),
-  allocationWindowCreate: components.AllocationWindowCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    allocationWindowCreate: "AllocationWindowCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    allocationWindowCreate: components.AllocationWindowCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      allocationWindowCreate: "AllocationWindowCreate",
+    });
+  })
+);
 
 export function updateAllocationWindowsRequestToJSON(
   updateAllocationWindowsRequest: UpdateAllocationWindowsRequest,
