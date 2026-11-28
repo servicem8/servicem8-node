@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -19,9 +19,11 @@ export const GetJobActivitiesRequest$inboundSchema: z.ZodType<
   GetJobActivitiesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+  })
+);
 /** @internal */
 export type GetJobActivitiesRequest$Outbound = {
   uuid: string;
@@ -32,9 +34,11 @@ export const GetJobActivitiesRequest$outboundSchema: z.ZodType<
   GetJobActivitiesRequest$Outbound,
   z.ZodTypeDef,
   GetJobActivitiesRequest
-> = z.object({
-  uuid: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+  })
+);
 
 export function getJobActivitiesRequestToJSON(
   getJobActivitiesRequest: GetJobActivitiesRequest,

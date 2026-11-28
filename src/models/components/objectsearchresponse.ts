@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -34,12 +34,14 @@ export const ObjectSearchResponse$inboundSchema: z.ZodType<
   ObjectSearchResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  results: z.array(SearchResult$inboundSchema),
-  query: z.string(),
-  objectType: z.string(),
-  count: z.number().int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    results: z.array(SearchResult$inboundSchema),
+    query: z.string(),
+    objectType: z.string(),
+    count: z.number().int(),
+  })
+);
 /** @internal */
 export type ObjectSearchResponse$Outbound = {
   results: Array<SearchResult$Outbound>;
@@ -53,12 +55,14 @@ export const ObjectSearchResponse$outboundSchema: z.ZodType<
   ObjectSearchResponse$Outbound,
   z.ZodTypeDef,
   ObjectSearchResponse
-> = z.object({
-  results: z.array(SearchResult$outboundSchema),
-  query: z.string(),
-  objectType: z.string(),
-  count: z.number().int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    results: z.array(SearchResult$outboundSchema),
+    query: z.string(),
+    objectType: z.string(),
+    count: z.number().int(),
+  })
+);
 
 export function objectSearchResponseToJSON(
   objectSearchResponse: ObjectSearchResponse,

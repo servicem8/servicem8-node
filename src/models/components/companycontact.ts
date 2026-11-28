@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -71,7 +71,7 @@ export type CompanyContact = {
 /** @internal */
 export const CompanyContactActive$inboundSchema: z.ZodNativeEnum<
   typeof CompanyContactActive
-> = z.nativeEnum(CompanyContactActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(CompanyContactActive));
 /** @internal */
 export const CompanyContactActive$outboundSchema: z.ZodNativeEnum<
   typeof CompanyContactActive
@@ -82,25 +82,27 @@ export const CompanyContact$inboundSchema: z.ZodType<
   CompanyContact,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  company_uuid: z.string().optional(),
-  first: z.string().optional(),
-  last: z.string().optional(),
-  phone: z.string().optional(),
-  mobile: z.string().optional(),
-  email: z.string().optional(),
-  type: z.string().optional(),
-  is_primary_contact: z.string().optional(),
-  uuid: z.string().optional(),
-  active: CompanyContactActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_uuid": "companyUuid",
-    "is_primary_contact": "isPrimaryContact",
-    "edit_date": "editDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    company_uuid: z.string().optional(),
+    first: z.string().optional(),
+    last: z.string().optional(),
+    phone: z.string().optional(),
+    mobile: z.string().optional(),
+    email: z.string().optional(),
+    type: z.string().optional(),
+    is_primary_contact: z.string().optional(),
+    uuid: z.string().optional(),
+    active: CompanyContactActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_uuid": "companyUuid",
+      "is_primary_contact": "isPrimaryContact",
+      "edit_date": "editDate",
+    });
+  })
+);
 /** @internal */
 export type CompanyContact$Outbound = {
   company_uuid?: string | undefined;
@@ -121,25 +123,27 @@ export const CompanyContact$outboundSchema: z.ZodType<
   CompanyContact$Outbound,
   z.ZodTypeDef,
   CompanyContact
-> = z.object({
-  companyUuid: z.string().optional(),
-  first: z.string().optional(),
-  last: z.string().optional(),
-  phone: z.string().optional(),
-  mobile: z.string().optional(),
-  email: z.string().optional(),
-  type: z.string().optional(),
-  isPrimaryContact: z.string().optional(),
-  uuid: z.string().optional(),
-  active: CompanyContactActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyUuid: "company_uuid",
-    isPrimaryContact: "is_primary_contact",
-    editDate: "edit_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyUuid: z.string().optional(),
+    first: z.string().optional(),
+    last: z.string().optional(),
+    phone: z.string().optional(),
+    mobile: z.string().optional(),
+    email: z.string().optional(),
+    type: z.string().optional(),
+    isPrimaryContact: z.string().optional(),
+    uuid: z.string().optional(),
+    active: CompanyContactActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyUuid: "company_uuid",
+      isPrimaryContact: "is_primary_contact",
+      editDate: "edit_date",
+    });
+  })
+);
 
 export function companyContactToJSON(companyContact: CompanyContact): string {
   return JSON.stringify(CompanyContact$outboundSchema.parse(companyContact));

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -31,12 +31,14 @@ export const SearchResult$inboundSchema: z.ZodType<
   SearchResult,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  type: z.string(),
-  title: z.string(),
-  highlights: z.record(z.any()).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    type: z.string(),
+    title: z.string(),
+    highlights: z.record(z.any()).optional(),
+  })
+);
 /** @internal */
 export type SearchResult$Outbound = {
   uuid: string;
@@ -50,12 +52,14 @@ export const SearchResult$outboundSchema: z.ZodType<
   SearchResult$Outbound,
   z.ZodTypeDef,
   SearchResult
-> = z.object({
-  uuid: z.string(),
-  type: z.string(),
-  title: z.string(),
-  highlights: z.record(z.any()).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    type: z.string(),
+    title: z.string(),
+    highlights: z.record(z.any()).optional(),
+  })
+);
 
 export function searchResultToJSON(searchResult: SearchResult): string {
   return JSON.stringify(SearchResult$outboundSchema.parse(searchResult));

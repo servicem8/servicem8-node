@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import { ServiceM8Error } from "./servicem8error.js";
 
 export type ErrorTData = {
@@ -30,21 +31,25 @@ export class ErrorT extends ServiceM8Error {
 }
 
 /** @internal */
-export const ErrorT$inboundSchema: z.ZodType<ErrorT, z.ZodTypeDef, unknown> = z
-  .object({
-    errorCode: z.number().optional(),
-    message: z.string().optional(),
-    request$: z.instanceof(Request),
-    response$: z.instanceof(Response),
-    body$: z.string(),
-  })
-  .transform((v) => {
-    return new ErrorT(v, {
-      request: v.request$,
-      response: v.response$,
-      body: v.body$,
-    });
-  });
+export const ErrorT$inboundSchema: z.ZodType<ErrorT, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      errorCode: z.number().optional(),
+      message: z.string().optional(),
+      request$: z.instanceof(Request),
+      response$: z.instanceof(Response),
+      body$: z.string(),
+    })
+      .transform((v) => {
+        const { request$, response$, body$, ...data } = v;
+
+        return new ErrorT(data, {
+          request: request$,
+          response: response$,
+          body: body$,
+        });
+      })
+  );
 
 /** @internal */
 export type ErrorT$Outbound = {
@@ -57,9 +62,11 @@ export const ErrorT$outboundSchema: z.ZodType<
   ErrorT$Outbound,
   z.ZodTypeDef,
   ErrorT
-> = z.instanceof(ErrorT)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    errorCode: z.number().optional(),
-    message: z.string().optional(),
-  }));
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.instanceof(ErrorT)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      errorCode: z.number().optional(),
+      message: z.string().optional(),
+    }))
+);

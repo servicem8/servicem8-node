@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateTaxRatesRequest$inboundSchema: z.ZodType<
   UpdateTaxRatesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  TaxRateCreate: components.TaxRateCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "TaxRateCreate": "taxRateCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    TaxRateCreate: components.TaxRateCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "TaxRateCreate": "taxRateCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateTaxRatesRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateTaxRatesRequest$outboundSchema: z.ZodType<
   UpdateTaxRatesRequest$Outbound,
   z.ZodTypeDef,
   UpdateTaxRatesRequest
-> = z.object({
-  uuid: z.string(),
-  taxRateCreate: components.TaxRateCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    taxRateCreate: "TaxRateCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    taxRateCreate: components.TaxRateCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      taxRateCreate: "TaxRateCreate",
+    });
+  })
+);
 
 export function updateTaxRatesRequestToJSON(
   updateTaxRatesRequest: UpdateTaxRatesRequest,

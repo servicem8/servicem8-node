@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -36,19 +36,21 @@ export const AllocationWindowCreate$inboundSchema: z.ZodType<
   AllocationWindowCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string().optional(),
-  start_time: z.number().int().optional(),
-  end_time: z.number().int().optional(),
-  sort_priority: z.number().int().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "start_time": "startTime",
-    "end_time": "endTime",
-    "sort_priority": "sortPriority",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string().optional(),
+    start_time: z.number().int().optional(),
+    end_time: z.number().int().optional(),
+    sort_priority: z.number().int().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "start_time": "startTime",
+      "end_time": "endTime",
+      "sort_priority": "sortPriority",
+    });
+  })
+);
 /** @internal */
 export type AllocationWindowCreate$Outbound = {
   name?: string | undefined;
@@ -63,19 +65,21 @@ export const AllocationWindowCreate$outboundSchema: z.ZodType<
   AllocationWindowCreate$Outbound,
   z.ZodTypeDef,
   AllocationWindowCreate
-> = z.object({
-  name: z.string().optional(),
-  startTime: z.number().int().optional(),
-  endTime: z.number().int().optional(),
-  sortPriority: z.number().int().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    startTime: "start_time",
-    endTime: "end_time",
-    sortPriority: "sort_priority",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string().optional(),
+    startTime: z.number().int().optional(),
+    endTime: z.number().int().optional(),
+    sortPriority: z.number().int().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      startTime: "start_time",
+      endTime: "end_time",
+      sortPriority: "sort_priority",
+    });
+  })
+);
 
 export function allocationWindowCreateToJSON(
   allocationWindowCreate: AllocationWindowCreate,

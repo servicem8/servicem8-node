@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -65,7 +65,7 @@ export type JobMaterialBundle = {
 /** @internal */
 export const JobMaterialBundleActive$inboundSchema: z.ZodNativeEnum<
   typeof JobMaterialBundleActive
-> = z.nativeEnum(JobMaterialBundleActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobMaterialBundleActive));
 /** @internal */
 export const JobMaterialBundleActive$outboundSchema: z.ZodNativeEnum<
   typeof JobMaterialBundleActive
@@ -76,25 +76,27 @@ export const JobMaterialBundle$inboundSchema: z.ZodType<
   JobMaterialBundle,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobMaterialBundleActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  item_number: z.string().optional(),
-  name: z.string().optional(),
-  quantity: z.string().optional(),
-  sort_order: z.number().int().optional(),
-  material_bundle_uuid: z.string().optional(),
-  job_uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "edit_date": "editDate",
-    "item_number": "itemNumber",
-    "sort_order": "sortOrder",
-    "material_bundle_uuid": "materialBundleUuid",
-    "job_uuid": "jobUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: JobMaterialBundleActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    item_number: z.string().optional(),
+    name: z.string().optional(),
+    quantity: z.string().optional(),
+    sort_order: z.number().int().optional(),
+    material_bundle_uuid: z.string().optional(),
+    job_uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "edit_date": "editDate",
+      "item_number": "itemNumber",
+      "sort_order": "sortOrder",
+      "material_bundle_uuid": "materialBundleUuid",
+      "job_uuid": "jobUuid",
+    });
+  })
+);
 /** @internal */
 export type JobMaterialBundle$Outbound = {
   uuid?: string | undefined;
@@ -113,25 +115,27 @@ export const JobMaterialBundle$outboundSchema: z.ZodType<
   JobMaterialBundle$Outbound,
   z.ZodTypeDef,
   JobMaterialBundle
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobMaterialBundleActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  itemNumber: z.string().optional(),
-  name: z.string().optional(),
-  quantity: z.string().optional(),
-  sortOrder: z.number().int().optional(),
-  materialBundleUuid: z.string().optional(),
-  jobUuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-    itemNumber: "item_number",
-    sortOrder: "sort_order",
-    materialBundleUuid: "material_bundle_uuid",
-    jobUuid: "job_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: JobMaterialBundleActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    itemNumber: z.string().optional(),
+    name: z.string().optional(),
+    quantity: z.string().optional(),
+    sortOrder: z.number().int().optional(),
+    materialBundleUuid: z.string().optional(),
+    jobUuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+      itemNumber: "item_number",
+      sortOrder: "sort_order",
+      materialBundleUuid: "material_bundle_uuid",
+      jobUuid: "job_uuid",
+    });
+  })
+);
 
 export function jobMaterialBundleToJSON(
   jobMaterialBundle: JobMaterialBundle,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const ConvertInboxMessageToJobRequest$inboundSchema: z.ZodType<
   ConvertInboxMessageToJobRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  ConvertToJobRequest: components.ConvertToJobRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "ConvertToJobRequest": "convertToJobRequest",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    ConvertToJobRequest: components.ConvertToJobRequest$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "ConvertToJobRequest": "convertToJobRequest",
+    });
+  })
+);
 /** @internal */
 export type ConvertInboxMessageToJobRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const ConvertInboxMessageToJobRequest$outboundSchema: z.ZodType<
   ConvertInboxMessageToJobRequest$Outbound,
   z.ZodTypeDef,
   ConvertInboxMessageToJobRequest
-> = z.object({
-  uuid: z.string(),
-  convertToJobRequest: components.ConvertToJobRequest$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    convertToJobRequest: "ConvertToJobRequest",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    convertToJobRequest: components.ConvertToJobRequest$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      convertToJobRequest: "ConvertToJobRequest",
+    });
+  })
+);
 
 export function convertInboxMessageToJobRequestToJSON(
   convertInboxMessageToJobRequest: ConvertInboxMessageToJobRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -28,15 +28,17 @@ export const JobEmbeddingSearchRequest$inboundSchema: z.ZodType<
   JobEmbeddingSearchRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  q: z.string(),
-  limit: z.number().int().default(10),
-  similarity_threshold: z.number().default(0.7),
-}).transform((v) => {
-  return remap$(v, {
-    "similarity_threshold": "similarityThreshold",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    q: z.string(),
+    limit: z.number().int().default(10),
+    similarity_threshold: z.number().default(0.7),
+  }).transform((v) => {
+    return remap$(v, {
+      "similarity_threshold": "similarityThreshold",
+    });
+  })
+);
 /** @internal */
 export type JobEmbeddingSearchRequest$Outbound = {
   q: string;
@@ -49,15 +51,17 @@ export const JobEmbeddingSearchRequest$outboundSchema: z.ZodType<
   JobEmbeddingSearchRequest$Outbound,
   z.ZodTypeDef,
   JobEmbeddingSearchRequest
-> = z.object({
-  q: z.string(),
-  limit: z.number().int().default(10),
-  similarityThreshold: z.number().default(0.7),
-}).transform((v) => {
-  return remap$(v, {
-    similarityThreshold: "similarity_threshold",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    q: z.string(),
+    limit: z.number().int().default(10),
+    similarityThreshold: z.number().default(0.7),
+  }).transform((v) => {
+    return remap$(v, {
+      similarityThreshold: "similarity_threshold",
+    });
+  })
+);
 
 export function jobEmbeddingSearchRequestToJSON(
   jobEmbeddingSearchRequest: JobEmbeddingSearchRequest,

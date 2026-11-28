@@ -29,7 +29,7 @@ This endpoint requires the following OAuth scope **manage_suppliers**.
     const [result, apiCall] = await suppliersDeleteSuppliers(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

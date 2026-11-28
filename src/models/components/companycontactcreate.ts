@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -52,22 +52,24 @@ export const CompanyContactCreate$inboundSchema: z.ZodType<
   CompanyContactCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  company_uuid: z.string().optional(),
-  first: z.string().optional(),
-  last: z.string().optional(),
-  phone: z.string().optional(),
-  mobile: z.string().optional(),
-  email: z.string().optional(),
-  type: z.string().optional(),
-  is_primary_contact: z.string().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_uuid": "companyUuid",
-    "is_primary_contact": "isPrimaryContact",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    company_uuid: z.string().optional(),
+    first: z.string().optional(),
+    last: z.string().optional(),
+    phone: z.string().optional(),
+    mobile: z.string().optional(),
+    email: z.string().optional(),
+    type: z.string().optional(),
+    is_primary_contact: z.string().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_uuid": "companyUuid",
+      "is_primary_contact": "isPrimaryContact",
+    });
+  })
+);
 /** @internal */
 export type CompanyContactCreate$Outbound = {
   company_uuid?: string | undefined;
@@ -86,22 +88,24 @@ export const CompanyContactCreate$outboundSchema: z.ZodType<
   CompanyContactCreate$Outbound,
   z.ZodTypeDef,
   CompanyContactCreate
-> = z.object({
-  companyUuid: z.string().optional(),
-  first: z.string().optional(),
-  last: z.string().optional(),
-  phone: z.string().optional(),
-  mobile: z.string().optional(),
-  email: z.string().optional(),
-  type: z.string().optional(),
-  isPrimaryContact: z.string().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyUuid: "company_uuid",
-    isPrimaryContact: "is_primary_contact",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyUuid: z.string().optional(),
+    first: z.string().optional(),
+    last: z.string().optional(),
+    phone: z.string().optional(),
+    mobile: z.string().optional(),
+    email: z.string().optional(),
+    type: z.string().optional(),
+    isPrimaryContact: z.string().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyUuid: "company_uuid",
+      isPrimaryContact: "is_primary_contact",
+    });
+  })
+);
 
 export function companyContactCreateToJSON(
   companyContactCreate: CompanyContactCreate,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -31,16 +31,18 @@ export const Pagination$inboundSchema: z.ZodType<
   Pagination,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  offset: z.number().int().optional(),
-  limit: z.number().int().optional(),
-  total: z.number().int().optional(),
-  has_more: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "has_more": "hasMore",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    offset: z.number().int().optional(),
+    limit: z.number().int().optional(),
+    total: z.number().int().optional(),
+    has_more: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "has_more": "hasMore",
+    });
+  })
+);
 /** @internal */
 export type Pagination$Outbound = {
   offset?: number | undefined;
@@ -54,16 +56,18 @@ export const Pagination$outboundSchema: z.ZodType<
   Pagination$Outbound,
   z.ZodTypeDef,
   Pagination
-> = z.object({
-  offset: z.number().int().optional(),
-  limit: z.number().int().optional(),
-  total: z.number().int().optional(),
-  hasMore: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hasMore: "has_more",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    offset: z.number().int().optional(),
+    limit: z.number().int().optional(),
+    total: z.number().int().optional(),
+    hasMore: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hasMore: "has_more",
+    });
+  })
+);
 
 export function paginationToJSON(pagination: Pagination): string {
   return JSON.stringify(Pagination$outboundSchema.parse(pagination));
@@ -83,10 +87,12 @@ export const InboxMessagesResponse$inboundSchema: z.ZodType<
   InboxMessagesResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  messages: z.array(InboxMessage$inboundSchema).optional(),
-  pagination: z.lazy(() => Pagination$inboundSchema).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    messages: z.array(InboxMessage$inboundSchema).optional(),
+    pagination: z.lazy(() => Pagination$inboundSchema).optional(),
+  })
+);
 /** @internal */
 export type InboxMessagesResponse$Outbound = {
   messages?: Array<InboxMessage$Outbound> | undefined;
@@ -98,10 +104,12 @@ export const InboxMessagesResponse$outboundSchema: z.ZodType<
   InboxMessagesResponse$Outbound,
   z.ZodTypeDef,
   InboxMessagesResponse
-> = z.object({
-  messages: z.array(InboxMessage$outboundSchema).optional(),
-  pagination: z.lazy(() => Pagination$outboundSchema).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    messages: z.array(InboxMessage$outboundSchema).optional(),
+    pagination: z.lazy(() => Pagination$outboundSchema).optional(),
+  })
+);
 
 export function inboxMessagesResponseToJSON(
   inboxMessagesResponse: InboxMessagesResponse,

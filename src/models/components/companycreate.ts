@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -54,40 +54,42 @@ export const CompanyCreate$inboundSchema: z.ZodType<
   CompanyCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  abn_number: z.string().optional(),
-  address: z.string().optional(),
-  billing_address: z.string().optional(),
-  parent_company_uuid: z.any().optional(),
-  uuid: z.string().optional(),
-  website: z.string().optional(),
-  address_street: z.string().optional(),
-  address_city: z.string().optional(),
-  address_state: z.string().optional(),
-  address_postcode: z.string().optional(),
-  address_country: z.string().optional(),
-  fax_number: z.string().optional(),
-  badges: z.string().optional(),
-  tax_rate_uuid: z.string().optional(),
-  billing_attention: z.string().optional(),
-  payment_terms: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "abn_number": "abnNumber",
-    "billing_address": "billingAddress",
-    "parent_company_uuid": "parentCompanyUuid",
-    "address_street": "addressStreet",
-    "address_city": "addressCity",
-    "address_state": "addressState",
-    "address_postcode": "addressPostcode",
-    "address_country": "addressCountry",
-    "fax_number": "faxNumber",
-    "tax_rate_uuid": "taxRateUuid",
-    "billing_attention": "billingAttention",
-    "payment_terms": "paymentTerms",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    abn_number: z.string().optional(),
+    address: z.string().optional(),
+    billing_address: z.string().optional(),
+    parent_company_uuid: z.any().optional(),
+    uuid: z.string().optional(),
+    website: z.string().optional(),
+    address_street: z.string().optional(),
+    address_city: z.string().optional(),
+    address_state: z.string().optional(),
+    address_postcode: z.string().optional(),
+    address_country: z.string().optional(),
+    fax_number: z.string().optional(),
+    badges: z.string().optional(),
+    tax_rate_uuid: z.string().optional(),
+    billing_attention: z.string().optional(),
+    payment_terms: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "abn_number": "abnNumber",
+      "billing_address": "billingAddress",
+      "parent_company_uuid": "parentCompanyUuid",
+      "address_street": "addressStreet",
+      "address_city": "addressCity",
+      "address_state": "addressState",
+      "address_postcode": "addressPostcode",
+      "address_country": "addressCountry",
+      "fax_number": "faxNumber",
+      "tax_rate_uuid": "taxRateUuid",
+      "billing_attention": "billingAttention",
+      "payment_terms": "paymentTerms",
+    });
+  })
+);
 /** @internal */
 export type CompanyCreate$Outbound = {
   name: string;
@@ -114,40 +116,42 @@ export const CompanyCreate$outboundSchema: z.ZodType<
   CompanyCreate$Outbound,
   z.ZodTypeDef,
   CompanyCreate
-> = z.object({
-  name: z.string(),
-  abnNumber: z.string().optional(),
-  address: z.string().optional(),
-  billingAddress: z.string().optional(),
-  parentCompanyUuid: z.any().optional(),
-  uuid: z.string().optional(),
-  website: z.string().optional(),
-  addressStreet: z.string().optional(),
-  addressCity: z.string().optional(),
-  addressState: z.string().optional(),
-  addressPostcode: z.string().optional(),
-  addressCountry: z.string().optional(),
-  faxNumber: z.string().optional(),
-  badges: z.string().optional(),
-  taxRateUuid: z.string().optional(),
-  billingAttention: z.string().optional(),
-  paymentTerms: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    abnNumber: "abn_number",
-    billingAddress: "billing_address",
-    parentCompanyUuid: "parent_company_uuid",
-    addressStreet: "address_street",
-    addressCity: "address_city",
-    addressState: "address_state",
-    addressPostcode: "address_postcode",
-    addressCountry: "address_country",
-    faxNumber: "fax_number",
-    taxRateUuid: "tax_rate_uuid",
-    billingAttention: "billing_attention",
-    paymentTerms: "payment_terms",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    abnNumber: z.string().optional(),
+    address: z.string().optional(),
+    billingAddress: z.string().optional(),
+    parentCompanyUuid: z.any().optional(),
+    uuid: z.string().optional(),
+    website: z.string().optional(),
+    addressStreet: z.string().optional(),
+    addressCity: z.string().optional(),
+    addressState: z.string().optional(),
+    addressPostcode: z.string().optional(),
+    addressCountry: z.string().optional(),
+    faxNumber: z.string().optional(),
+    badges: z.string().optional(),
+    taxRateUuid: z.string().optional(),
+    billingAttention: z.string().optional(),
+    paymentTerms: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      abnNumber: "abn_number",
+      billingAddress: "billing_address",
+      parentCompanyUuid: "parent_company_uuid",
+      addressStreet: "address_street",
+      addressCity: "address_city",
+      addressState: "address_state",
+      addressPostcode: "address_postcode",
+      addressCountry: "address_country",
+      faxNumber: "fax_number",
+      taxRateUuid: "tax_rate_uuid",
+      billingAttention: "billing_attention",
+      paymentTerms: "payment_terms",
+    });
+  })
+);
 
 export function companyCreateToJSON(companyCreate: CompanyCreate): string {
   return JSON.stringify(CompanyCreate$outboundSchema.parse(companyCreate));

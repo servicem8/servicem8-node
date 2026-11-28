@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -26,16 +26,18 @@ export const ConvertToJobResponseJob$inboundSchema: z.ZodType<
   ConvertToJobResponseJob,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  id: z.number().int().optional(),
-  job_number: z.string().optional(),
-  location: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_number": "jobNumber",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    id: z.number().int().optional(),
+    job_number: z.string().optional(),
+    location: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "job_number": "jobNumber",
+    });
+  })
+);
 /** @internal */
 export type ConvertToJobResponseJob$Outbound = {
   uuid?: string | undefined;
@@ -49,16 +51,18 @@ export const ConvertToJobResponseJob$outboundSchema: z.ZodType<
   ConvertToJobResponseJob$Outbound,
   z.ZodTypeDef,
   ConvertToJobResponseJob
-> = z.object({
-  uuid: z.string().optional(),
-  id: z.number().int().optional(),
-  jobNumber: z.string().optional(),
-  location: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobNumber: "job_number",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    id: z.number().int().optional(),
+    jobNumber: z.string().optional(),
+    location: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      jobNumber: "job_number",
+    });
+  })
+);
 
 export function convertToJobResponseJobToJSON(
   convertToJobResponseJob: ConvertToJobResponseJob,
@@ -82,11 +86,13 @@ export const ConvertToJobResponse$inboundSchema: z.ZodType<
   ConvertToJobResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  success: z.boolean().optional(),
-  job: z.lazy(() => ConvertToJobResponseJob$inboundSchema).optional(),
-  message: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    success: z.boolean().optional(),
+    job: z.lazy(() => ConvertToJobResponseJob$inboundSchema).optional(),
+    message: z.string().optional(),
+  })
+);
 /** @internal */
 export type ConvertToJobResponse$Outbound = {
   success?: boolean | undefined;
@@ -99,11 +105,13 @@ export const ConvertToJobResponse$outboundSchema: z.ZodType<
   ConvertToJobResponse$Outbound,
   z.ZodTypeDef,
   ConvertToJobResponse
-> = z.object({
-  success: z.boolean().optional(),
-  job: z.lazy(() => ConvertToJobResponseJob$outboundSchema).optional(),
-  message: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    success: z.boolean().optional(),
+    job: z.lazy(() => ConvertToJobResponseJob$outboundSchema).optional(),
+    message: z.string().optional(),
+  })
+);
 
 export function convertToJobResponseToJSON(
   convertToJobResponse: ConvertToJobResponse,

@@ -3,7 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { dlv } from "./dlv.js";
 
 export interface Env {
   SERVICEM8_API_KEY?: string | undefined;
@@ -16,8 +15,14 @@ export const envSchema: z.ZodType<Env, z.ZodTypeDef, unknown> = z.object({
   SERVICEM8_API_KEY: z.string().optional(),
   SERVICEM8_OAUTH2: z.string().optional(),
 
-  SERVICEM8_DEBUG: z.coerce.boolean().optional(),
+  SERVICEM8_DEBUG: z.unknown().transform(parseEnvFlag).optional(),
 });
+
+function parseEnvFlag(value: unknown): boolean {
+  return ["true", "1", "yes", "on"].includes(
+    String(value).trim().toLowerCase(),
+  );
+}
 
 /**
  * Checks for the existence of the Deno global object to determine the environment.
@@ -40,11 +45,16 @@ export function env(): Env {
     return envMemo;
   }
 
+  const globals = globalThis as {
+    Deno?: { env?: { toObject?: () => Record<string, string | undefined> } };
+    process?: { env?: Record<string, string | undefined> };
+  };
+
   let envObject: Record<string, unknown> = {};
   if (isDeno()) {
-    envObject = (globalThis as any).Deno?.env?.toObject?.() ?? {};
+    envObject = globals.Deno?.env?.toObject?.() ?? {};
   } else {
-    envObject = dlv(globalThis, "process.env") ?? {};
+    envObject = globals.process?.env ?? {};
   }
 
   envMemo = envSchema.parse(envObject);

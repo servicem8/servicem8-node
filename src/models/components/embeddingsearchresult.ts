@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -44,20 +44,22 @@ export const EmbeddingSearchResult$inboundSchema: z.ZodType<
   EmbeddingSearchResult,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  type: z.string(),
-  title: z.string(),
-  description: z.string().optional(),
-  status: z.string().optional(),
-  similarity_score: z.number(),
-  matched_content: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "similarity_score": "similarityScore",
-    "matched_content": "matchedContent",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    type: z.string(),
+    title: z.string(),
+    description: z.string().optional(),
+    status: z.string().optional(),
+    similarity_score: z.number(),
+    matched_content: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "similarity_score": "similarityScore",
+      "matched_content": "matchedContent",
+    });
+  })
+);
 /** @internal */
 export type EmbeddingSearchResult$Outbound = {
   uuid: string;
@@ -74,20 +76,22 @@ export const EmbeddingSearchResult$outboundSchema: z.ZodType<
   EmbeddingSearchResult$Outbound,
   z.ZodTypeDef,
   EmbeddingSearchResult
-> = z.object({
-  uuid: z.string(),
-  type: z.string(),
-  title: z.string(),
-  description: z.string().optional(),
-  status: z.string().optional(),
-  similarityScore: z.number(),
-  matchedContent: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    similarityScore: "similarity_score",
-    matchedContent: "matched_content",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    type: z.string(),
+    title: z.string(),
+    description: z.string().optional(),
+    status: z.string().optional(),
+    similarityScore: z.number(),
+    matchedContent: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      similarityScore: "similarity_score",
+      matchedContent: "matched_content",
+    });
+  })
+);
 
 export function embeddingSearchResultToJSON(
   embeddingSearchResult: EmbeddingSearchResult,

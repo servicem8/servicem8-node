@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -48,14 +48,16 @@ export const CreateJobFromTemplateRequest$inboundSchema: z.ZodType<
   CreateJobFromTemplateRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  JobTemplateOverrides: components.JobTemplateOverrides$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "JobTemplateOverrides": "jobTemplateOverrides",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    JobTemplateOverrides: components.JobTemplateOverrides$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "JobTemplateOverrides": "jobTemplateOverrides",
+    });
+  })
+);
 /** @internal */
 export type CreateJobFromTemplateRequest$Outbound = {
   uuid: string;
@@ -67,14 +69,16 @@ export const CreateJobFromTemplateRequest$outboundSchema: z.ZodType<
   CreateJobFromTemplateRequest$Outbound,
   z.ZodTypeDef,
   CreateJobFromTemplateRequest
-> = z.object({
-  uuid: z.string(),
-  jobTemplateOverrides: components.JobTemplateOverrides$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    jobTemplateOverrides: "JobTemplateOverrides",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    jobTemplateOverrides: components.JobTemplateOverrides$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      jobTemplateOverrides: "JobTemplateOverrides",
+    });
+  })
+);
 
 export function createJobFromTemplateRequestToJSON(
   createJobFromTemplateRequest: CreateJobFromTemplateRequest,
@@ -100,11 +104,13 @@ export const CreateJobFromTemplateResponseBody$inboundSchema: z.ZodType<
   CreateJobFromTemplateResponseBody,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  jobUUID: z.string(),
-  location: z.string(),
-  message: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    jobUUID: z.string(),
+    location: z.string(),
+    message: z.string(),
+  })
+);
 /** @internal */
 export type CreateJobFromTemplateResponseBody$Outbound = {
   jobUUID: string;
@@ -117,11 +123,13 @@ export const CreateJobFromTemplateResponseBody$outboundSchema: z.ZodType<
   CreateJobFromTemplateResponseBody$Outbound,
   z.ZodTypeDef,
   CreateJobFromTemplateResponseBody
-> = z.object({
-  jobUUID: z.string(),
-  location: z.string(),
-  message: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    jobUUID: z.string(),
+    location: z.string(),
+    message: z.string(),
+  })
+);
 
 export function createJobFromTemplateResponseBodyToJSON(
   createJobFromTemplateResponseBody: CreateJobFromTemplateResponseBody,
@@ -147,15 +155,17 @@ export const CreateJobFromTemplateResponse$inboundSchema: z.ZodType<
   CreateJobFromTemplateResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  Headers: z.record(z.array(z.string())).default({}),
-  Result: z.lazy(() => CreateJobFromTemplateResponseBody$inboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    "Headers": "headers",
-    "Result": "result",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    Headers: z.record(z.array(z.string())).default({}),
+    Result: z.lazy(() => CreateJobFromTemplateResponseBody$inboundSchema),
+  }).transform((v) => {
+    return remap$(v, {
+      "Headers": "headers",
+      "Result": "result",
+    });
+  })
+);
 /** @internal */
 export type CreateJobFromTemplateResponse$Outbound = {
   Headers: { [k: string]: Array<string> };
@@ -167,15 +177,17 @@ export const CreateJobFromTemplateResponse$outboundSchema: z.ZodType<
   CreateJobFromTemplateResponse$Outbound,
   z.ZodTypeDef,
   CreateJobFromTemplateResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-  result: z.lazy(() => CreateJobFromTemplateResponseBody$outboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-    result: "Result",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    headers: z.record(z.array(z.string())),
+    result: z.lazy(() => CreateJobFromTemplateResponseBody$outboundSchema),
+  }).transform((v) => {
+    return remap$(v, {
+      headers: "Headers",
+      result: "Result",
+    });
+  })
+);
 
 export function createJobFromTemplateResponseToJSON(
   createJobFromTemplateResponse: CreateJobFromTemplateResponse,

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -34,12 +34,14 @@ export const EmbeddingSearchResponse$inboundSchema: z.ZodType<
   EmbeddingSearchResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  results: z.array(EmbeddingSearchResult$inboundSchema),
-  query: z.string(),
-  count: z.number().int(),
-  searchType: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    results: z.array(EmbeddingSearchResult$inboundSchema),
+    query: z.string(),
+    count: z.number().int(),
+    searchType: z.string(),
+  })
+);
 /** @internal */
 export type EmbeddingSearchResponse$Outbound = {
   results: Array<EmbeddingSearchResult$Outbound>;
@@ -53,12 +55,14 @@ export const EmbeddingSearchResponse$outboundSchema: z.ZodType<
   EmbeddingSearchResponse$Outbound,
   z.ZodTypeDef,
   EmbeddingSearchResponse
-> = z.object({
-  results: z.array(EmbeddingSearchResult$outboundSchema),
-  query: z.string(),
-  count: z.number().int(),
-  searchType: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    results: z.array(EmbeddingSearchResult$outboundSchema),
+    query: z.string(),
+    count: z.number().int(),
+    searchType: z.string(),
+  })
+);
 
 export function embeddingSearchResponseToJSON(
   embeddingSearchResponse: EmbeddingSearchResponse,

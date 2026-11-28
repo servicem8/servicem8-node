@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -52,22 +52,24 @@ export const JobContactCreate$inboundSchema: z.ZodType<
   JobContactCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  job_uuid: z.string().optional(),
-  first: z.string().optional(),
-  last: z.string().optional(),
-  phone: z.string().optional(),
-  mobile: z.string().optional(),
-  email: z.string().optional(),
-  type: z.string().optional(),
-  is_primary_contact: z.any().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-    "is_primary_contact": "isPrimaryContact",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    job_uuid: z.string().optional(),
+    first: z.string().optional(),
+    last: z.string().optional(),
+    phone: z.string().optional(),
+    mobile: z.string().optional(),
+    email: z.string().optional(),
+    type: z.string().optional(),
+    is_primary_contact: z.any().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "job_uuid": "jobUuid",
+      "is_primary_contact": "isPrimaryContact",
+    });
+  })
+);
 /** @internal */
 export type JobContactCreate$Outbound = {
   job_uuid?: string | undefined;
@@ -86,22 +88,24 @@ export const JobContactCreate$outboundSchema: z.ZodType<
   JobContactCreate$Outbound,
   z.ZodTypeDef,
   JobContactCreate
-> = z.object({
-  jobUuid: z.string().optional(),
-  first: z.string().optional(),
-  last: z.string().optional(),
-  phone: z.string().optional(),
-  mobile: z.string().optional(),
-  email: z.string().optional(),
-  type: z.string().optional(),
-  isPrimaryContact: z.any().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-    isPrimaryContact: "is_primary_contact",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    jobUuid: z.string().optional(),
+    first: z.string().optional(),
+    last: z.string().optional(),
+    phone: z.string().optional(),
+    mobile: z.string().optional(),
+    email: z.string().optional(),
+    type: z.string().optional(),
+    isPrimaryContact: z.any().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      jobUuid: "job_uuid",
+      isPrimaryContact: "is_primary_contact",
+    });
+  })
+);
 
 export function jobContactCreateToJSON(
   jobContactCreate: JobContactCreate,

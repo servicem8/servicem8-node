@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -43,7 +43,7 @@ export type AssetType = {
 /** @internal */
 export const AssetTypeActive$inboundSchema: z.ZodNativeEnum<
   typeof AssetTypeActive
-> = z.nativeEnum(AssetTypeActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(AssetTypeActive));
 /** @internal */
 export const AssetTypeActive$outboundSchema: z.ZodNativeEnum<
   typeof AssetTypeActive
@@ -54,16 +54,18 @@ export const AssetType$inboundSchema: z.ZodType<
   AssetType,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: AssetTypeActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "edit_date": "editDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: AssetTypeActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    name: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "edit_date": "editDate",
+    });
+  })
+);
 /** @internal */
 export type AssetType$Outbound = {
   uuid?: string | undefined;
@@ -77,16 +79,18 @@ export const AssetType$outboundSchema: z.ZodType<
   AssetType$Outbound,
   z.ZodTypeDef,
   AssetType
-> = z.object({
-  uuid: z.string().optional(),
-  active: AssetTypeActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: AssetTypeActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    name: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+    });
+  })
+);
 
 export function assetTypeToJSON(assetType: AssetType): string {
   return JSON.stringify(AssetType$outboundSchema.parse(assetType));

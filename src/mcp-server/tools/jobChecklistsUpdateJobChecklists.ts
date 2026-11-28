@@ -27,7 +27,7 @@ This endpoint requires the following OAuth scope **manage_job_checklists**.
     const [result, apiCall] = await jobChecklistsUpdateJobChecklists(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

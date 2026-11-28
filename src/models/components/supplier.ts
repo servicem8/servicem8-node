@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -111,7 +111,7 @@ export type Supplier = {
 /** @internal */
 export const SupplierActive$inboundSchema: z.ZodNativeEnum<
   typeof SupplierActive
-> = z.nativeEnum(SupplierActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(SupplierActive));
 /** @internal */
 export const SupplierActive$outboundSchema: z.ZodNativeEnum<
   typeof SupplierActive
@@ -120,7 +120,7 @@ export const SupplierActive$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export const SupplierGeoIsValid$inboundSchema: z.ZodNativeEnum<
   typeof SupplierGeoIsValid
-> = z.nativeEnum(SupplierGeoIsValid);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(SupplierGeoIsValid));
 /** @internal */
 export const SupplierGeoIsValid$outboundSchema: z.ZodNativeEnum<
   typeof SupplierGeoIsValid
@@ -131,39 +131,41 @@ export const Supplier$inboundSchema: z.ZodType<
   Supplier,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: SupplierActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  name: z.string().optional(),
-  business_number: z.string().optional(),
-  address: z.string().optional(),
-  email: z.string().optional(),
-  phone: z.string().optional(),
-  account_number: z.string().optional(),
-  lng: z.number().optional(),
-  lat: z.number().optional(),
-  geo_is_valid: SupplierGeoIsValid$inboundSchema.optional(),
-  geo_country: z.string().optional(),
-  geo_postcode: z.string().optional(),
-  geo_state: z.string().optional(),
-  geo_city: z.string().optional(),
-  geo_street: z.string().optional(),
-  geo_number: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "edit_date": "editDate",
-    "business_number": "businessNumber",
-    "account_number": "accountNumber",
-    "geo_is_valid": "geoIsValid",
-    "geo_country": "geoCountry",
-    "geo_postcode": "geoPostcode",
-    "geo_state": "geoState",
-    "geo_city": "geoCity",
-    "geo_street": "geoStreet",
-    "geo_number": "geoNumber",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: SupplierActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    name: z.string().optional(),
+    business_number: z.string().optional(),
+    address: z.string().optional(),
+    email: z.string().optional(),
+    phone: z.string().optional(),
+    account_number: z.string().optional(),
+    lng: z.number().optional(),
+    lat: z.number().optional(),
+    geo_is_valid: SupplierGeoIsValid$inboundSchema.optional(),
+    geo_country: z.string().optional(),
+    geo_postcode: z.string().optional(),
+    geo_state: z.string().optional(),
+    geo_city: z.string().optional(),
+    geo_street: z.string().optional(),
+    geo_number: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "edit_date": "editDate",
+      "business_number": "businessNumber",
+      "account_number": "accountNumber",
+      "geo_is_valid": "geoIsValid",
+      "geo_country": "geoCountry",
+      "geo_postcode": "geoPostcode",
+      "geo_state": "geoState",
+      "geo_city": "geoCity",
+      "geo_street": "geoStreet",
+      "geo_number": "geoNumber",
+    });
+  })
+);
 /** @internal */
 export type Supplier$Outbound = {
   uuid?: string | undefined;
@@ -191,39 +193,41 @@ export const Supplier$outboundSchema: z.ZodType<
   Supplier$Outbound,
   z.ZodTypeDef,
   Supplier
-> = z.object({
-  uuid: z.string().optional(),
-  active: SupplierActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  name: z.string().optional(),
-  businessNumber: z.string().optional(),
-  address: z.string().optional(),
-  email: z.string().optional(),
-  phone: z.string().optional(),
-  accountNumber: z.string().optional(),
-  lng: z.number().optional(),
-  lat: z.number().optional(),
-  geoIsValid: SupplierGeoIsValid$outboundSchema.optional(),
-  geoCountry: z.string().optional(),
-  geoPostcode: z.string().optional(),
-  geoState: z.string().optional(),
-  geoCity: z.string().optional(),
-  geoStreet: z.string().optional(),
-  geoNumber: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-    businessNumber: "business_number",
-    accountNumber: "account_number",
-    geoIsValid: "geo_is_valid",
-    geoCountry: "geo_country",
-    geoPostcode: "geo_postcode",
-    geoState: "geo_state",
-    geoCity: "geo_city",
-    geoStreet: "geo_street",
-    geoNumber: "geo_number",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: SupplierActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    name: z.string().optional(),
+    businessNumber: z.string().optional(),
+    address: z.string().optional(),
+    email: z.string().optional(),
+    phone: z.string().optional(),
+    accountNumber: z.string().optional(),
+    lng: z.number().optional(),
+    lat: z.number().optional(),
+    geoIsValid: SupplierGeoIsValid$outboundSchema.optional(),
+    geoCountry: z.string().optional(),
+    geoPostcode: z.string().optional(),
+    geoState: z.string().optional(),
+    geoCity: z.string().optional(),
+    geoStreet: z.string().optional(),
+    geoNumber: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+      businessNumber: "business_number",
+      accountNumber: "account_number",
+      geoIsValid: "geo_is_valid",
+      geoCountry: "geo_country",
+      geoPostcode: "geo_postcode",
+      geoState: "geo_state",
+      geoCity: "geo_city",
+      geoStreet: "geo_street",
+      geoNumber: "geo_number",
+    });
+  })
+);
 
 export function supplierToJSON(supplier: Supplier): string {
   return JSON.stringify(Supplier$outboundSchema.parse(supplier));

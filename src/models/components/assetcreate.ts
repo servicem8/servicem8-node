@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -62,13 +62,15 @@ export const AssetCreateFieldDatum$inboundSchema: z.ZodType<
   AssetCreateFieldDatum,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  fieldType: z.string(),
-  fieldName: z.string(),
-  fieldValue: z.string(),
-  sortOrder: z.number(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    fieldType: z.string(),
+    fieldName: z.string(),
+    fieldValue: z.string(),
+    sortOrder: z.number(),
+  })
+);
 /** @internal */
 export type AssetCreateFieldDatum$Outbound = {
   uuid: string;
@@ -83,13 +85,15 @@ export const AssetCreateFieldDatum$outboundSchema: z.ZodType<
   AssetCreateFieldDatum$Outbound,
   z.ZodTypeDef,
   AssetCreateFieldDatum
-> = z.object({
-  uuid: z.string(),
-  fieldType: z.string(),
-  fieldName: z.string(),
-  fieldValue: z.string(),
-  sortOrder: z.number(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    fieldType: z.string(),
+    fieldName: z.string(),
+    fieldValue: z.string(),
+    sortOrder: z.number(),
+  })
+);
 
 export function assetCreateFieldDatumToJSON(
   assetCreateFieldDatum: AssetCreateFieldDatum,
@@ -113,23 +117,25 @@ export const AssetCreate$inboundSchema: z.ZodType<
   AssetCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  company_uuid: z.string().optional(),
-  name: z.string().optional(),
-  lat: z.number().optional(),
-  lng: z.number().optional(),
-  geo_timestamp: z.string().optional(),
-  altitude: z.number().optional(),
-  field_data: z.array(z.lazy(() => AssetCreateFieldDatum$inboundSchema))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_uuid": "companyUuid",
-    "geo_timestamp": "geoTimestamp",
-    "field_data": "fieldData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    company_uuid: z.string().optional(),
+    name: z.string().optional(),
+    lat: z.number().optional(),
+    lng: z.number().optional(),
+    geo_timestamp: z.string().optional(),
+    altitude: z.number().optional(),
+    field_data: z.array(z.lazy(() => AssetCreateFieldDatum$inboundSchema))
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_uuid": "companyUuid",
+      "geo_timestamp": "geoTimestamp",
+      "field_data": "fieldData",
+    });
+  })
+);
 /** @internal */
 export type AssetCreate$Outbound = {
   uuid?: string | undefined;
@@ -147,23 +153,25 @@ export const AssetCreate$outboundSchema: z.ZodType<
   AssetCreate$Outbound,
   z.ZodTypeDef,
   AssetCreate
-> = z.object({
-  uuid: z.string().optional(),
-  companyUuid: z.string().optional(),
-  name: z.string().optional(),
-  lat: z.number().optional(),
-  lng: z.number().optional(),
-  geoTimestamp: z.string().optional(),
-  altitude: z.number().optional(),
-  fieldData: z.array(z.lazy(() => AssetCreateFieldDatum$outboundSchema))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyUuid: "company_uuid",
-    geoTimestamp: "geo_timestamp",
-    fieldData: "field_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    companyUuid: z.string().optional(),
+    name: z.string().optional(),
+    lat: z.number().optional(),
+    lng: z.number().optional(),
+    geoTimestamp: z.string().optional(),
+    altitude: z.number().optional(),
+    fieldData: z.array(z.lazy(() => AssetCreateFieldDatum$outboundSchema))
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyUuid: "company_uuid",
+      geoTimestamp: "geo_timestamp",
+      fieldData: "field_data",
+    });
+  })
+);
 
 export function assetCreateToJSON(assetCreate: AssetCreate): string {
   return JSON.stringify(AssetCreate$outboundSchema.parse(assetCreate));

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -63,7 +63,7 @@ export type MaterialBundle = {
 /** @internal */
 export const MaterialBundleActive$inboundSchema: z.ZodNativeEnum<
   typeof MaterialBundleActive
-> = z.nativeEnum(MaterialBundleActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(MaterialBundleActive));
 /** @internal */
 export const MaterialBundleActive$outboundSchema: z.ZodNativeEnum<
   typeof MaterialBundleActive
@@ -74,15 +74,17 @@ export const MaterialBundleMaterialList$inboundSchema: z.ZodType<
   MaterialBundleMaterialList,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  quantity: z.number(),
-  sort_order: z.number().int().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "sort_order": "sortOrder",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    quantity: z.number(),
+    sort_order: z.number().int().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "sort_order": "sortOrder",
+    });
+  })
+);
 /** @internal */
 export type MaterialBundleMaterialList$Outbound = {
   uuid: string;
@@ -95,15 +97,17 @@ export const MaterialBundleMaterialList$outboundSchema: z.ZodType<
   MaterialBundleMaterialList$Outbound,
   z.ZodTypeDef,
   MaterialBundleMaterialList
-> = z.object({
-  uuid: z.string(),
-  quantity: z.number(),
-  sortOrder: z.number().int().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    sortOrder: "sort_order",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    quantity: z.number(),
+    sortOrder: z.number().int().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      sortOrder: "sort_order",
+    });
+  })
+);
 
 export function materialBundleMaterialListToJSON(
   materialBundleMaterialList: MaterialBundleMaterialList,
@@ -127,21 +131,24 @@ export const MaterialBundle$inboundSchema: z.ZodType<
   MaterialBundle,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: MaterialBundleActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  item_number: z.string(),
-  name: z.string().optional(),
-  material_list: z.array(z.lazy(() => MaterialBundleMaterialList$inboundSchema))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "edit_date": "editDate",
-    "item_number": "itemNumber",
-    "material_list": "materialList",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: MaterialBundleActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    item_number: z.string(),
+    name: z.string().optional(),
+    material_list: z.array(
+      z.lazy(() => MaterialBundleMaterialList$inboundSchema),
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "edit_date": "editDate",
+      "item_number": "itemNumber",
+      "material_list": "materialList",
+    });
+  })
+);
 /** @internal */
 export type MaterialBundle$Outbound = {
   uuid?: string | undefined;
@@ -157,21 +164,24 @@ export const MaterialBundle$outboundSchema: z.ZodType<
   MaterialBundle$Outbound,
   z.ZodTypeDef,
   MaterialBundle
-> = z.object({
-  uuid: z.string().optional(),
-  active: MaterialBundleActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  itemNumber: z.string(),
-  name: z.string().optional(),
-  materialList: z.array(z.lazy(() => MaterialBundleMaterialList$outboundSchema))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-    itemNumber: "item_number",
-    materialList: "material_list",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: MaterialBundleActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    itemNumber: z.string(),
+    name: z.string().optional(),
+    materialList: z.array(
+      z.lazy(() => MaterialBundleMaterialList$outboundSchema),
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+      itemNumber: "item_number",
+      materialList: "material_list",
+    });
+  })
+);
 
 export function materialBundleToJSON(materialBundle: MaterialBundle): string {
   return JSON.stringify(MaterialBundle$outboundSchema.parse(materialBundle));

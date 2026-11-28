@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -23,10 +23,12 @@ export const AssetTypeCreate$inboundSchema: z.ZodType<
   AssetTypeCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  name: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    name: z.string().optional(),
+  })
+);
 /** @internal */
 export type AssetTypeCreate$Outbound = {
   uuid?: string | undefined;
@@ -38,10 +40,12 @@ export const AssetTypeCreate$outboundSchema: z.ZodType<
   AssetTypeCreate$Outbound,
   z.ZodTypeDef,
   AssetTypeCreate
-> = z.object({
-  uuid: z.string().optional(),
-  name: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    name: z.string().optional(),
+  })
+);
 
 export function assetTypeCreateToJSON(
   assetTypeCreate: AssetTypeCreate,

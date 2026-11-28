@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -171,7 +171,7 @@ export type JobChecklist = {
 /** @internal */
 export const JobChecklistActive$inboundSchema: z.ZodNativeEnum<
   typeof JobChecklistActive
-> = z.nativeEnum(JobChecklistActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobChecklistActive));
 /** @internal */
 export const JobChecklistActive$outboundSchema: z.ZodNativeEnum<
   typeof JobChecklistActive
@@ -180,7 +180,7 @@ export const JobChecklistActive$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export const JobChecklistBaseDate$inboundSchema: z.ZodNativeEnum<
   typeof JobChecklistBaseDate
-> = z.nativeEnum(JobChecklistBaseDate);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobChecklistBaseDate));
 /** @internal */
 export const JobChecklistBaseDate$outboundSchema: z.ZodNativeEnum<
   typeof JobChecklistBaseDate
@@ -189,7 +189,7 @@ export const JobChecklistBaseDate$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export const JobChecklistUnit$inboundSchema: z.ZodNativeEnum<
   typeof JobChecklistUnit
-> = z.nativeEnum(JobChecklistUnit);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobChecklistUnit));
 /** @internal */
 export const JobChecklistUnit$outboundSchema: z.ZodNativeEnum<
   typeof JobChecklistUnit
@@ -200,11 +200,13 @@ export const JobChecklistRelativeDateTime$inboundSchema: z.ZodType<
   JobChecklistRelativeDateTime,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  baseDate: JobChecklistBaseDate$inboundSchema,
-  unit: JobChecklistUnit$inboundSchema,
-  quantity: z.number().int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    baseDate: JobChecklistBaseDate$inboundSchema,
+    unit: JobChecklistUnit$inboundSchema,
+    quantity: z.number().int(),
+  })
+);
 /** @internal */
 export type JobChecklistRelativeDateTime$Outbound = {
   baseDate: string;
@@ -217,11 +219,13 @@ export const JobChecklistRelativeDateTime$outboundSchema: z.ZodType<
   JobChecklistRelativeDateTime$Outbound,
   z.ZodTypeDef,
   JobChecklistRelativeDateTime
-> = z.object({
-  baseDate: JobChecklistBaseDate$outboundSchema,
-  unit: JobChecklistUnit$outboundSchema,
-  quantity: z.number().int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    baseDate: JobChecklistBaseDate$outboundSchema,
+    unit: JobChecklistUnit$outboundSchema,
+    quantity: z.number().int(),
+  })
+);
 
 export function jobChecklistRelativeDateTimeToJSON(
   jobChecklistRelativeDateTime: JobChecklistRelativeDateTime,
@@ -247,9 +251,11 @@ export const JobChecklistReminderData2$inboundSchema: z.ZodType<
   JobChecklistReminderData2,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  relativeDateTime: z.lazy(() => JobChecklistRelativeDateTime$inboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    relativeDateTime: z.lazy(() => JobChecklistRelativeDateTime$inboundSchema),
+  })
+);
 /** @internal */
 export type JobChecklistReminderData2$Outbound = {
   relativeDateTime: JobChecklistRelativeDateTime$Outbound;
@@ -260,9 +266,11 @@ export const JobChecklistReminderData2$outboundSchema: z.ZodType<
   JobChecklistReminderData2$Outbound,
   z.ZodTypeDef,
   JobChecklistReminderData2
-> = z.object({
-  relativeDateTime: z.lazy(() => JobChecklistRelativeDateTime$outboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    relativeDateTime: z.lazy(() => JobChecklistRelativeDateTime$outboundSchema),
+  })
+);
 
 export function jobChecklistReminderData2ToJSON(
   jobChecklistReminderData2: JobChecklistReminderData2,
@@ -286,10 +294,9 @@ export const JobChecklistReminderDataUnion2$inboundSchema: z.ZodType<
   JobChecklistReminderDataUnion2,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => JobChecklistReminderData2$inboundSchema),
-  z.string(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([z.lazy(() => JobChecklistReminderData2$inboundSchema), z.string()])
+);
 /** @internal */
 export type JobChecklistReminderDataUnion2$Outbound =
   | JobChecklistReminderData2$Outbound
@@ -300,10 +307,9 @@ export const JobChecklistReminderDataUnion2$outboundSchema: z.ZodType<
   JobChecklistReminderDataUnion2$Outbound,
   z.ZodTypeDef,
   JobChecklistReminderDataUnion2
-> = z.union([
-  z.lazy(() => JobChecklistReminderData2$outboundSchema),
-  z.string(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([z.lazy(() => JobChecklistReminderData2$outboundSchema), z.string()])
+);
 
 export function jobChecklistReminderDataUnion2ToJSON(
   jobChecklistReminderDataUnion2: JobChecklistReminderDataUnion2,
@@ -329,9 +335,11 @@ export const JobChecklistReminderData1$inboundSchema: z.ZodType<
   JobChecklistReminderData1,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  absoluteDateTime: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    absoluteDateTime: z.string(),
+  })
+);
 /** @internal */
 export type JobChecklistReminderData1$Outbound = {
   absoluteDateTime: string;
@@ -342,9 +350,11 @@ export const JobChecklistReminderData1$outboundSchema: z.ZodType<
   JobChecklistReminderData1$Outbound,
   z.ZodTypeDef,
   JobChecklistReminderData1
-> = z.object({
-  absoluteDateTime: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    absoluteDateTime: z.string(),
+  })
+);
 
 export function jobChecklistReminderData1ToJSON(
   jobChecklistReminderData1: JobChecklistReminderData1,
@@ -368,10 +378,9 @@ export const JobChecklistReminderDataUnion1$inboundSchema: z.ZodType<
   JobChecklistReminderDataUnion1,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => JobChecklistReminderData1$inboundSchema),
-  z.string(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([z.lazy(() => JobChecklistReminderData1$inboundSchema), z.string()])
+);
 /** @internal */
 export type JobChecklistReminderDataUnion1$Outbound =
   | JobChecklistReminderData1$Outbound
@@ -382,10 +391,9 @@ export const JobChecklistReminderDataUnion1$outboundSchema: z.ZodType<
   JobChecklistReminderDataUnion1$Outbound,
   z.ZodTypeDef,
   JobChecklistReminderDataUnion1
-> = z.union([
-  z.lazy(() => JobChecklistReminderData1$outboundSchema),
-  z.string(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([z.lazy(() => JobChecklistReminderData1$outboundSchema), z.string()])
+);
 
 export function jobChecklistReminderDataUnion1ToJSON(
   jobChecklistReminderDataUnion1: JobChecklistReminderDataUnion1,
@@ -411,10 +419,18 @@ export const JobChecklistReminderDataUnion3$inboundSchema: z.ZodType<
   JobChecklistReminderDataUnion3,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.union([z.lazy(() => JobChecklistReminderData1$inboundSchema), z.string()]),
-  z.union([z.lazy(() => JobChecklistReminderData2$inboundSchema), z.string()]),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.union([
+      z.lazy(() => JobChecklistReminderData1$inboundSchema),
+      z.string(),
+    ]),
+    z.union([
+      z.lazy(() => JobChecklistReminderData2$inboundSchema),
+      z.string(),
+    ]),
+  ])
+);
 /** @internal */
 export type JobChecklistReminderDataUnion3$Outbound =
   | JobChecklistReminderData1$Outbound
@@ -427,10 +443,18 @@ export const JobChecklistReminderDataUnion3$outboundSchema: z.ZodType<
   JobChecklistReminderDataUnion3$Outbound,
   z.ZodTypeDef,
   JobChecklistReminderDataUnion3
-> = z.union([
-  z.union([z.lazy(() => JobChecklistReminderData1$outboundSchema), z.string()]),
-  z.union([z.lazy(() => JobChecklistReminderData2$outboundSchema), z.string()]),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.union([
+      z.lazy(() => JobChecklistReminderData1$outboundSchema),
+      z.string(),
+    ]),
+    z.union([
+      z.lazy(() => JobChecklistReminderData2$outboundSchema),
+      z.string(),
+    ]),
+  ])
+);
 
 export function jobChecklistReminderDataUnion3ToJSON(
   jobChecklistReminderDataUnion3: JobChecklistReminderDataUnion3,
@@ -452,8 +476,8 @@ export function jobChecklistReminderDataUnion3FromJSON(
 }
 
 /** @internal */
-export const IsLocked$inboundSchema: z.ZodNativeEnum<typeof IsLocked> = z
-  .nativeEnum(IsLocked);
+export const IsLocked$inboundSchema: z.ZodNativeEnum<typeof IsLocked> =
+  /* @__PURE__ */ lazySchema$(() => z.nativeEnum(IsLocked));
 /** @internal */
 export const IsLocked$outboundSchema: z.ZodNativeEnum<typeof IsLocked> =
   IsLocked$inboundSchema;
@@ -463,59 +487,61 @@ export const JobChecklist$inboundSchema: z.ZodType<
   JobChecklist,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobChecklistActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  job_uuid: z.string().optional(),
-  name: z.string().optional(),
-  section_name: z.string().optional(),
-  item_type: z.string().optional(),
-  sort_order: z.number().int().optional(),
-  completed_timestamp: z.string().optional(),
-  completed_by_staff_uuid: z.string().optional(),
-  completed_during_checkin_uuid: z.string().optional(),
-  reminder_type: z.string().optional(),
-  reminder_data: z.union([
-    z.union([
-      z.lazy(() => JobChecklistReminderData1$inboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => JobChecklistReminderData2$inboundSchema),
-      z.string(),
-    ]),
-  ]).optional(),
-  regarding_object: z.string().optional(),
-  regarding_object_uuid: z.string().optional(),
-  fulfilled_by_object_name: z.string().optional(),
-  fulfilled_by_object_uuid: z.string().optional(),
-  assigned_to_staff_uuids: z.array(z.string()).optional(),
-  is_locked: IsLocked$inboundSchema.optional(),
-  assigned_timestamp: z.string().optional(),
-  assigned_by_staff_uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "edit_date": "editDate",
-    "job_uuid": "jobUuid",
-    "section_name": "sectionName",
-    "item_type": "itemType",
-    "sort_order": "sortOrder",
-    "completed_timestamp": "completedTimestamp",
-    "completed_by_staff_uuid": "completedByStaffUuid",
-    "completed_during_checkin_uuid": "completedDuringCheckinUuid",
-    "reminder_type": "reminderType",
-    "reminder_data": "reminderData",
-    "regarding_object": "regardingObject",
-    "regarding_object_uuid": "regardingObjectUuid",
-    "fulfilled_by_object_name": "fulfilledByObjectName",
-    "fulfilled_by_object_uuid": "fulfilledByObjectUuid",
-    "assigned_to_staff_uuids": "assignedToStaffUuids",
-    "is_locked": "isLocked",
-    "assigned_timestamp": "assignedTimestamp",
-    "assigned_by_staff_uuid": "assignedByStaffUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: JobChecklistActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    job_uuid: z.string().optional(),
+    name: z.string().optional(),
+    section_name: z.string().optional(),
+    item_type: z.string().optional(),
+    sort_order: z.number().int().optional(),
+    completed_timestamp: z.string().optional(),
+    completed_by_staff_uuid: z.string().optional(),
+    completed_during_checkin_uuid: z.string().optional(),
+    reminder_type: z.string().optional(),
+    reminder_data: z.union([
+      z.union([
+        z.lazy(() => JobChecklistReminderData1$inboundSchema),
+        z.string(),
+      ]),
+      z.union([
+        z.lazy(() => JobChecklistReminderData2$inboundSchema),
+        z.string(),
+      ]),
+    ]).optional(),
+    regarding_object: z.string().optional(),
+    regarding_object_uuid: z.string().optional(),
+    fulfilled_by_object_name: z.string().optional(),
+    fulfilled_by_object_uuid: z.string().optional(),
+    assigned_to_staff_uuids: z.array(z.string()).optional(),
+    is_locked: IsLocked$inboundSchema.optional(),
+    assigned_timestamp: z.string().optional(),
+    assigned_by_staff_uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "edit_date": "editDate",
+      "job_uuid": "jobUuid",
+      "section_name": "sectionName",
+      "item_type": "itemType",
+      "sort_order": "sortOrder",
+      "completed_timestamp": "completedTimestamp",
+      "completed_by_staff_uuid": "completedByStaffUuid",
+      "completed_during_checkin_uuid": "completedDuringCheckinUuid",
+      "reminder_type": "reminderType",
+      "reminder_data": "reminderData",
+      "regarding_object": "regardingObject",
+      "regarding_object_uuid": "regardingObjectUuid",
+      "fulfilled_by_object_name": "fulfilledByObjectName",
+      "fulfilled_by_object_uuid": "fulfilledByObjectUuid",
+      "assigned_to_staff_uuids": "assignedToStaffUuids",
+      "is_locked": "isLocked",
+      "assigned_timestamp": "assignedTimestamp",
+      "assigned_by_staff_uuid": "assignedByStaffUuid",
+    });
+  })
+);
 /** @internal */
 export type JobChecklist$Outbound = {
   uuid?: string | undefined;
@@ -551,59 +577,61 @@ export const JobChecklist$outboundSchema: z.ZodType<
   JobChecklist$Outbound,
   z.ZodTypeDef,
   JobChecklist
-> = z.object({
-  uuid: z.string().optional(),
-  active: JobChecklistActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  jobUuid: z.string().optional(),
-  name: z.string().optional(),
-  sectionName: z.string().optional(),
-  itemType: z.string().optional(),
-  sortOrder: z.number().int().optional(),
-  completedTimestamp: z.string().optional(),
-  completedByStaffUuid: z.string().optional(),
-  completedDuringCheckinUuid: z.string().optional(),
-  reminderType: z.string().optional(),
-  reminderData: z.union([
-    z.union([
-      z.lazy(() => JobChecklistReminderData1$outboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => JobChecklistReminderData2$outboundSchema),
-      z.string(),
-    ]),
-  ]).optional(),
-  regardingObject: z.string().optional(),
-  regardingObjectUuid: z.string().optional(),
-  fulfilledByObjectName: z.string().optional(),
-  fulfilledByObjectUuid: z.string().optional(),
-  assignedToStaffUuids: z.array(z.string()).optional(),
-  isLocked: IsLocked$outboundSchema.optional(),
-  assignedTimestamp: z.string().optional(),
-  assignedByStaffUuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-    jobUuid: "job_uuid",
-    sectionName: "section_name",
-    itemType: "item_type",
-    sortOrder: "sort_order",
-    completedTimestamp: "completed_timestamp",
-    completedByStaffUuid: "completed_by_staff_uuid",
-    completedDuringCheckinUuid: "completed_during_checkin_uuid",
-    reminderType: "reminder_type",
-    reminderData: "reminder_data",
-    regardingObject: "regarding_object",
-    regardingObjectUuid: "regarding_object_uuid",
-    fulfilledByObjectName: "fulfilled_by_object_name",
-    fulfilledByObjectUuid: "fulfilled_by_object_uuid",
-    assignedToStaffUuids: "assigned_to_staff_uuids",
-    isLocked: "is_locked",
-    assignedTimestamp: "assigned_timestamp",
-    assignedByStaffUuid: "assigned_by_staff_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: JobChecklistActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    jobUuid: z.string().optional(),
+    name: z.string().optional(),
+    sectionName: z.string().optional(),
+    itemType: z.string().optional(),
+    sortOrder: z.number().int().optional(),
+    completedTimestamp: z.string().optional(),
+    completedByStaffUuid: z.string().optional(),
+    completedDuringCheckinUuid: z.string().optional(),
+    reminderType: z.string().optional(),
+    reminderData: z.union([
+      z.union([
+        z.lazy(() => JobChecklistReminderData1$outboundSchema),
+        z.string(),
+      ]),
+      z.union([
+        z.lazy(() => JobChecklistReminderData2$outboundSchema),
+        z.string(),
+      ]),
+    ]).optional(),
+    regardingObject: z.string().optional(),
+    regardingObjectUuid: z.string().optional(),
+    fulfilledByObjectName: z.string().optional(),
+    fulfilledByObjectUuid: z.string().optional(),
+    assignedToStaffUuids: z.array(z.string()).optional(),
+    isLocked: IsLocked$outboundSchema.optional(),
+    assignedTimestamp: z.string().optional(),
+    assignedByStaffUuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+      jobUuid: "job_uuid",
+      sectionName: "section_name",
+      itemType: "item_type",
+      sortOrder: "sort_order",
+      completedTimestamp: "completed_timestamp",
+      completedByStaffUuid: "completed_by_staff_uuid",
+      completedDuringCheckinUuid: "completed_during_checkin_uuid",
+      reminderType: "reminder_type",
+      reminderData: "reminder_data",
+      regardingObject: "regarding_object",
+      regardingObjectUuid: "regarding_object_uuid",
+      fulfilledByObjectName: "fulfilled_by_object_name",
+      fulfilledByObjectUuid: "fulfilled_by_object_uuid",
+      assignedToStaffUuids: "assigned_to_staff_uuids",
+      isLocked: "is_locked",
+      assignedTimestamp: "assigned_timestamp",
+      assignedByStaffUuid: "assigned_by_staff_uuid",
+    });
+  })
+);
 
 export function jobChecklistToJSON(jobChecklist: JobChecklist): string {
   return JSON.stringify(JobChecklist$outboundSchema.parse(jobChecklist));

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateJobPaymentsRequest$inboundSchema: z.ZodType<
   UpdateJobPaymentsRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  JobPaymentCreate: components.JobPaymentCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "JobPaymentCreate": "jobPaymentCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    JobPaymentCreate: components.JobPaymentCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "JobPaymentCreate": "jobPaymentCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateJobPaymentsRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateJobPaymentsRequest$outboundSchema: z.ZodType<
   UpdateJobPaymentsRequest$Outbound,
   z.ZodTypeDef,
   UpdateJobPaymentsRequest
-> = z.object({
-  uuid: z.string(),
-  jobPaymentCreate: components.JobPaymentCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    jobPaymentCreate: "JobPaymentCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    jobPaymentCreate: components.JobPaymentCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      jobPaymentCreate: "JobPaymentCreate",
+    });
+  })
+);
 
 export function updateJobPaymentsRequestToJSON(
   updateJobPaymentsRequest: UpdateJobPaymentsRequest,

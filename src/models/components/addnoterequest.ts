@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -16,9 +16,11 @@ export const AddNoteRequest$inboundSchema: z.ZodType<
   AddNoteRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  note: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    note: z.string(),
+  })
+);
 /** @internal */
 export type AddNoteRequest$Outbound = {
   note: string;
@@ -29,9 +31,11 @@ export const AddNoteRequest$outboundSchema: z.ZodType<
   AddNoteRequest$Outbound,
   z.ZodTypeDef,
   AddNoteRequest
-> = z.object({
-  note: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    note: z.string(),
+  })
+);
 
 export function addNoteRequestToJSON(addNoteRequest: AddNoteRequest): string {
   return JSON.stringify(AddNoteRequest$outboundSchema.parse(addNoteRequest));

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -49,7 +49,9 @@ export type QueueCreate = {
 /** @internal */
 export const QueueCreateRequiresAssignment$inboundSchema: z.ZodNativeEnum<
   typeof QueueCreateRequiresAssignment
-> = z.nativeEnum(QueueCreateRequiresAssignment);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(QueueCreateRequiresAssignment)
+);
 /** @internal */
 export const QueueCreateRequiresAssignment$outboundSchema: z.ZodNativeEnum<
   typeof QueueCreateRequiresAssignment
@@ -60,19 +62,21 @@ export const QueueCreate$inboundSchema: z.ZodType<
   QueueCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  name: z.string().optional(),
-  default_timeframe: z.number().int().optional(),
-  subscribed_staff: z.string().optional(),
-  requires_assignment: QueueCreateRequiresAssignment$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "default_timeframe": "defaultTimeframe",
-    "subscribed_staff": "subscribedStaff",
-    "requires_assignment": "requiresAssignment",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    name: z.string().optional(),
+    default_timeframe: z.number().int().optional(),
+    subscribed_staff: z.string().optional(),
+    requires_assignment: QueueCreateRequiresAssignment$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "default_timeframe": "defaultTimeframe",
+      "subscribed_staff": "subscribedStaff",
+      "requires_assignment": "requiresAssignment",
+    });
+  })
+);
 /** @internal */
 export type QueueCreate$Outbound = {
   uuid?: string | undefined;
@@ -87,19 +91,21 @@ export const QueueCreate$outboundSchema: z.ZodType<
   QueueCreate$Outbound,
   z.ZodTypeDef,
   QueueCreate
-> = z.object({
-  uuid: z.string().optional(),
-  name: z.string().optional(),
-  defaultTimeframe: z.number().int().optional(),
-  subscribedStaff: z.string().optional(),
-  requiresAssignment: QueueCreateRequiresAssignment$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    defaultTimeframe: "default_timeframe",
-    subscribedStaff: "subscribed_staff",
-    requiresAssignment: "requires_assignment",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    name: z.string().optional(),
+    defaultTimeframe: z.number().int().optional(),
+    subscribedStaff: z.string().optional(),
+    requiresAssignment: QueueCreateRequiresAssignment$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      defaultTimeframe: "default_timeframe",
+      subscribedStaff: "subscribed_staff",
+      requiresAssignment: "requires_assignment",
+    });
+  })
+);
 
 export function queueCreateToJSON(queueCreate: QueueCreate): string {
   return JSON.stringify(QueueCreate$outboundSchema.parse(queueCreate));

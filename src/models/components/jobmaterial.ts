@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -87,7 +87,7 @@ export type JobMaterial = {
 /** @internal */
 export const JobMaterialActive$inboundSchema: z.ZodNativeEnum<
   typeof JobMaterialActive
-> = z.nativeEnum(JobMaterialActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobMaterialActive));
 /** @internal */
 export const JobMaterialActive$outboundSchema: z.ZodNativeEnum<
   typeof JobMaterialActive
@@ -98,35 +98,37 @@ export const JobMaterial$inboundSchema: z.ZodType<
   JobMaterial,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  job_uuid: z.string().optional(),
-  material_uuid: z.string().optional(),
-  name: z.string().optional(),
-  quantity: z.string(),
-  price: z.string().optional(),
-  displayed_amount: z.string().optional(),
-  displayed_amount_is_tax_inclusive: z.string().optional(),
-  tax_rate_uuid: z.string().optional(),
-  sort_order: z.string().optional(),
-  cost: z.string().optional(),
-  displayed_cost: z.string().optional(),
-  uuid: z.string().optional(),
-  active: JobMaterialActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  job_material_bundle_uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-    "material_uuid": "materialUuid",
-    "displayed_amount": "displayedAmount",
-    "displayed_amount_is_tax_inclusive": "displayedAmountIsTaxInclusive",
-    "tax_rate_uuid": "taxRateUuid",
-    "sort_order": "sortOrder",
-    "displayed_cost": "displayedCost",
-    "edit_date": "editDate",
-    "job_material_bundle_uuid": "jobMaterialBundleUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    job_uuid: z.string().optional(),
+    material_uuid: z.string().optional(),
+    name: z.string().optional(),
+    quantity: z.string(),
+    price: z.string().optional(),
+    displayed_amount: z.string().optional(),
+    displayed_amount_is_tax_inclusive: z.string().optional(),
+    tax_rate_uuid: z.string().optional(),
+    sort_order: z.string().optional(),
+    cost: z.string().optional(),
+    displayed_cost: z.string().optional(),
+    uuid: z.string().optional(),
+    active: JobMaterialActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    job_material_bundle_uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "job_uuid": "jobUuid",
+      "material_uuid": "materialUuid",
+      "displayed_amount": "displayedAmount",
+      "displayed_amount_is_tax_inclusive": "displayedAmountIsTaxInclusive",
+      "tax_rate_uuid": "taxRateUuid",
+      "sort_order": "sortOrder",
+      "displayed_cost": "displayedCost",
+      "edit_date": "editDate",
+      "job_material_bundle_uuid": "jobMaterialBundleUuid",
+    });
+  })
+);
 /** @internal */
 export type JobMaterial$Outbound = {
   job_uuid?: string | undefined;
@@ -151,35 +153,37 @@ export const JobMaterial$outboundSchema: z.ZodType<
   JobMaterial$Outbound,
   z.ZodTypeDef,
   JobMaterial
-> = z.object({
-  jobUuid: z.string().optional(),
-  materialUuid: z.string().optional(),
-  name: z.string().optional(),
-  quantity: z.string(),
-  price: z.string().optional(),
-  displayedAmount: z.string().optional(),
-  displayedAmountIsTaxInclusive: z.string().optional(),
-  taxRateUuid: z.string().optional(),
-  sortOrder: z.string().optional(),
-  cost: z.string().optional(),
-  displayedCost: z.string().optional(),
-  uuid: z.string().optional(),
-  active: JobMaterialActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  jobMaterialBundleUuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-    materialUuid: "material_uuid",
-    displayedAmount: "displayed_amount",
-    displayedAmountIsTaxInclusive: "displayed_amount_is_tax_inclusive",
-    taxRateUuid: "tax_rate_uuid",
-    sortOrder: "sort_order",
-    displayedCost: "displayed_cost",
-    editDate: "edit_date",
-    jobMaterialBundleUuid: "job_material_bundle_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    jobUuid: z.string().optional(),
+    materialUuid: z.string().optional(),
+    name: z.string().optional(),
+    quantity: z.string(),
+    price: z.string().optional(),
+    displayedAmount: z.string().optional(),
+    displayedAmountIsTaxInclusive: z.string().optional(),
+    taxRateUuid: z.string().optional(),
+    sortOrder: z.string().optional(),
+    cost: z.string().optional(),
+    displayedCost: z.string().optional(),
+    uuid: z.string().optional(),
+    active: JobMaterialActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    jobMaterialBundleUuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      jobUuid: "job_uuid",
+      materialUuid: "material_uuid",
+      displayedAmount: "displayed_amount",
+      displayedAmountIsTaxInclusive: "displayed_amount_is_tax_inclusive",
+      taxRateUuid: "tax_rate_uuid",
+      sortOrder: "sort_order",
+      displayedCost: "displayed_cost",
+      editDate: "edit_date",
+      jobMaterialBundleUuid: "job_material_bundle_uuid",
+    });
+  })
+);
 
 export function jobMaterialToJSON(jobMaterial: JobMaterial): string {
   return JSON.stringify(JobMaterial$outboundSchema.parse(jobMaterial));

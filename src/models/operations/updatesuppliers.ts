@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateSuppliersRequest$inboundSchema: z.ZodType<
   UpdateSuppliersRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  SupplierCreate: components.SupplierCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "SupplierCreate": "supplierCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    SupplierCreate: components.SupplierCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "SupplierCreate": "supplierCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateSuppliersRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateSuppliersRequest$outboundSchema: z.ZodType<
   UpdateSuppliersRequest$Outbound,
   z.ZodTypeDef,
   UpdateSuppliersRequest
-> = z.object({
-  uuid: z.string(),
-  supplierCreate: components.SupplierCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    supplierCreate: "SupplierCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    supplierCreate: components.SupplierCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      supplierCreate: "SupplierCreate",
+    });
+  })
+);
 
 export function updateSuppliersRequestToJSON(
   updateSuppliersRequest: UpdateSuppliersRequest,
