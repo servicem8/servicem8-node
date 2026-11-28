@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -83,15 +83,15 @@ export type JobPayment = {
 /** @internal */
 export const JobPaymentActive$inboundSchema: z.ZodNativeEnum<
   typeof JobPaymentActive
-> = z.nativeEnum(JobPaymentActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobPaymentActive));
 /** @internal */
 export const JobPaymentActive$outboundSchema: z.ZodNativeEnum<
   typeof JobPaymentActive
 > = JobPaymentActive$inboundSchema;
 
 /** @internal */
-export const IsDeposit$inboundSchema: z.ZodNativeEnum<typeof IsDeposit> = z
-  .nativeEnum(IsDeposit);
+export const IsDeposit$inboundSchema: z.ZodNativeEnum<typeof IsDeposit> =
+  /* @__PURE__ */ lazySchema$(() => z.nativeEnum(IsDeposit));
 /** @internal */
 export const IsDeposit$outboundSchema: z.ZodNativeEnum<typeof IsDeposit> =
   IsDeposit$inboundSchema;
@@ -101,27 +101,29 @@ export const JobPayment$inboundSchema: z.ZodType<
   JobPayment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  job_uuid: z.string().optional(),
-  actioned_by_uuid: z.string().optional(),
-  timestamp: z.string().optional(),
-  amount: z.string().optional(),
-  method: z.string().optional(),
-  note: z.string().optional(),
-  attachment_uuid: z.string().optional(),
-  uuid: z.string().optional(),
-  active: JobPaymentActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-  is_deposit: IsDeposit$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-    "actioned_by_uuid": "actionedByUuid",
-    "attachment_uuid": "attachmentUuid",
-    "edit_date": "editDate",
-    "is_deposit": "isDeposit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    job_uuid: z.string().optional(),
+    actioned_by_uuid: z.string().optional(),
+    timestamp: z.string().optional(),
+    amount: z.string().optional(),
+    method: z.string().optional(),
+    note: z.string().optional(),
+    attachment_uuid: z.string().optional(),
+    uuid: z.string().optional(),
+    active: JobPaymentActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+    is_deposit: IsDeposit$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "job_uuid": "jobUuid",
+      "actioned_by_uuid": "actionedByUuid",
+      "attachment_uuid": "attachmentUuid",
+      "edit_date": "editDate",
+      "is_deposit": "isDeposit",
+    });
+  })
+);
 /** @internal */
 export type JobPayment$Outbound = {
   job_uuid?: string | undefined;
@@ -142,27 +144,29 @@ export const JobPayment$outboundSchema: z.ZodType<
   JobPayment$Outbound,
   z.ZodTypeDef,
   JobPayment
-> = z.object({
-  jobUuid: z.string().optional(),
-  actionedByUuid: z.string().optional(),
-  timestamp: z.string().optional(),
-  amount: z.string().optional(),
-  method: z.string().optional(),
-  note: z.string().optional(),
-  attachmentUuid: z.string().optional(),
-  uuid: z.string().optional(),
-  active: JobPaymentActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  isDeposit: IsDeposit$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-    actionedByUuid: "actioned_by_uuid",
-    attachmentUuid: "attachment_uuid",
-    editDate: "edit_date",
-    isDeposit: "is_deposit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    jobUuid: z.string().optional(),
+    actionedByUuid: z.string().optional(),
+    timestamp: z.string().optional(),
+    amount: z.string().optional(),
+    method: z.string().optional(),
+    note: z.string().optional(),
+    attachmentUuid: z.string().optional(),
+    uuid: z.string().optional(),
+    active: JobPaymentActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    isDeposit: IsDeposit$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      jobUuid: "job_uuid",
+      actionedByUuid: "actioned_by_uuid",
+      attachmentUuid: "attachment_uuid",
+      editDate: "edit_date",
+      isDeposit: "is_deposit",
+    });
+  })
+);
 
 export function jobPaymentToJSON(jobPayment: JobPayment): string {
   return JSON.stringify(JobPayment$outboundSchema.parse(jobPayment));

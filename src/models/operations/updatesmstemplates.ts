@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateSMSTemplatesRequest$inboundSchema: z.ZodType<
   UpdateSMSTemplatesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  SmsTemplateCreate: components.SmsTemplateCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "SmsTemplateCreate": "smsTemplateCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    SmsTemplateCreate: components.SmsTemplateCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "SmsTemplateCreate": "smsTemplateCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateSMSTemplatesRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateSMSTemplatesRequest$outboundSchema: z.ZodType<
   UpdateSMSTemplatesRequest$Outbound,
   z.ZodTypeDef,
   UpdateSMSTemplatesRequest
-> = z.object({
-  uuid: z.string(),
-  smsTemplateCreate: components.SmsTemplateCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    smsTemplateCreate: "SmsTemplateCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    smsTemplateCreate: components.SmsTemplateCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      smsTemplateCreate: "SmsTemplateCreate",
+    });
+  })
+);
 
 export function updateSMSTemplatesRequestToJSON(
   updateSMSTemplatesRequest: UpdateSMSTemplatesRequest,

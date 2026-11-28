@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateKnowledgeArticlesRequest$inboundSchema: z.ZodType<
   UpdateKnowledgeArticlesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  KnowledgeArticleCreate: components.KnowledgeArticleCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "KnowledgeArticleCreate": "knowledgeArticleCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    KnowledgeArticleCreate: components.KnowledgeArticleCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "KnowledgeArticleCreate": "knowledgeArticleCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateKnowledgeArticlesRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateKnowledgeArticlesRequest$outboundSchema: z.ZodType<
   UpdateKnowledgeArticlesRequest$Outbound,
   z.ZodTypeDef,
   UpdateKnowledgeArticlesRequest
-> = z.object({
-  uuid: z.string(),
-  knowledgeArticleCreate: components.KnowledgeArticleCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    knowledgeArticleCreate: "KnowledgeArticleCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    knowledgeArticleCreate: components.KnowledgeArticleCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      knowledgeArticleCreate: "KnowledgeArticleCreate",
+    });
+  })
+);
 
 export function updateKnowledgeArticlesRequestToJSON(
   updateKnowledgeArticlesRequest: UpdateKnowledgeArticlesRequest,

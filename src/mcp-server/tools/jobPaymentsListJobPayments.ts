@@ -22,7 +22,7 @@ This endpoint requires the following OAuth scope **read_job_payments**.
   tool: async (client, ctx) => {
     const [result, apiCall] = await jobPaymentsListJobPayments(
       client,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

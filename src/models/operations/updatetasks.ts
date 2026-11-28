@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateTasksRequest$inboundSchema: z.ZodType<
   UpdateTasksRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  TaskCreate: components.TaskCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "TaskCreate": "taskCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    TaskCreate: components.TaskCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "TaskCreate": "taskCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateTasksRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateTasksRequest$outboundSchema: z.ZodType<
   UpdateTasksRequest$Outbound,
   z.ZodTypeDef,
   UpdateTasksRequest
-> = z.object({
-  uuid: z.string(),
-  taskCreate: components.TaskCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    taskCreate: "TaskCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    taskCreate: components.TaskCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      taskCreate: "TaskCreate",
+    });
+  })
+);
 
 export function updateTasksRequestToJSON(
   updateTasksRequest: UpdateTasksRequest,

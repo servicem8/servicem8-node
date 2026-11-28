@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -19,9 +19,11 @@ export const DeleteAssetTypesRequest$inboundSchema: z.ZodType<
   DeleteAssetTypesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+  })
+);
 /** @internal */
 export type DeleteAssetTypesRequest$Outbound = {
   uuid: string;
@@ -32,9 +34,11 @@ export const DeleteAssetTypesRequest$outboundSchema: z.ZodType<
   DeleteAssetTypesRequest$Outbound,
   z.ZodTypeDef,
   DeleteAssetTypesRequest
-> = z.object({
-  uuid: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+  })
+);
 
 export function deleteAssetTypesRequestToJSON(
   deleteAssetTypesRequest: DeleteAssetTypesRequest,

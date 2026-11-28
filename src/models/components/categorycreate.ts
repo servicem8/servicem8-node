@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -27,11 +27,13 @@ export const CategoryCreate$inboundSchema: z.ZodType<
   CategoryCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  colour: z.string().optional(),
-  uuid: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    colour: z.string().optional(),
+    uuid: z.string().optional(),
+  })
+);
 /** @internal */
 export type CategoryCreate$Outbound = {
   name: string;
@@ -44,11 +46,13 @@ export const CategoryCreate$outboundSchema: z.ZodType<
   CategoryCreate$Outbound,
   z.ZodTypeDef,
   CategoryCreate
-> = z.object({
-  name: z.string(),
-  colour: z.string().optional(),
-  uuid: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    colour: z.string().optional(),
+    uuid: z.string().optional(),
+  })
+);
 
 export function categoryCreateToJSON(categoryCreate: CategoryCreate): string {
   return JSON.stringify(CategoryCreate$outboundSchema.parse(categoryCreate));

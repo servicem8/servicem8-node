@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -22,14 +22,16 @@ export const ArchiveInboxMessageRequest$inboundSchema: z.ZodType<
   ArchiveInboxMessageRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  ArchiveRequest: components.ArchiveRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "ArchiveRequest": "archiveRequest",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    ArchiveRequest: components.ArchiveRequest$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "ArchiveRequest": "archiveRequest",
+    });
+  })
+);
 /** @internal */
 export type ArchiveInboxMessageRequest$Outbound = {
   uuid: string;
@@ -41,14 +43,16 @@ export const ArchiveInboxMessageRequest$outboundSchema: z.ZodType<
   ArchiveInboxMessageRequest$Outbound,
   z.ZodTypeDef,
   ArchiveInboxMessageRequest
-> = z.object({
-  uuid: z.string(),
-  archiveRequest: components.ArchiveRequest$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    archiveRequest: "ArchiveRequest",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    archiveRequest: components.ArchiveRequest$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      archiveRequest: "ArchiveRequest",
+    });
+  })
+);
 
 export function archiveInboxMessageRequestToJSON(
   archiveInboxMessageRequest: ArchiveInboxMessageRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateDocumentTemplatesRequest$inboundSchema: z.ZodType<
   UpdateDocumentTemplatesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  DocumentTemplateCreate: components.DocumentTemplateCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "DocumentTemplateCreate": "documentTemplateCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    DocumentTemplateCreate: components.DocumentTemplateCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "DocumentTemplateCreate": "documentTemplateCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateDocumentTemplatesRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateDocumentTemplatesRequest$outboundSchema: z.ZodType<
   UpdateDocumentTemplatesRequest$Outbound,
   z.ZodTypeDef,
   UpdateDocumentTemplatesRequest
-> = z.object({
-  uuid: z.string(),
-  documentTemplateCreate: components.DocumentTemplateCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    documentTemplateCreate: "DocumentTemplateCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    documentTemplateCreate: components.DocumentTemplateCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      documentTemplateCreate: "DocumentTemplateCreate",
+    });
+  })
+);
 
 export function updateDocumentTemplatesRequestToJSON(
   updateDocumentTemplatesRequest: UpdateDocumentTemplatesRequest,

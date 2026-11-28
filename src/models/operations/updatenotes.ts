@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateNotesRequest$inboundSchema: z.ZodType<
   UpdateNotesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  NoteCreate: components.NoteCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "NoteCreate": "noteCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    NoteCreate: components.NoteCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "NoteCreate": "noteCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateNotesRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateNotesRequest$outboundSchema: z.ZodType<
   UpdateNotesRequest$Outbound,
   z.ZodTypeDef,
   UpdateNotesRequest
-> = z.object({
-  uuid: z.string(),
-  noteCreate: components.NoteCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    noteCreate: "NoteCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    noteCreate: components.NoteCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      noteCreate: "NoteCreate",
+    });
+  })
+);
 
 export function updateNotesRequestToJSON(
   updateNotesRequest: UpdateNotesRequest,

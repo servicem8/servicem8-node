@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -69,35 +69,37 @@ export const TaskCreate$inboundSchema: z.ZodType<
   TaskCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  due_date: z.string().optional(),
-  task_details: z.string().optional(),
-  name: z.string(),
-  related_object: z.string().optional(),
-  related_object_uuid: z.string().optional(),
-  task_complete: z.string().optional(),
-  completed_timestamp: z.string().optional(),
-  completed_by_staff_uuid: z.string().optional(),
-  assigned_to_staff_uuid: z.string().optional(),
-  lng: z.any().optional(),
-  lat: z.any().optional(),
-  uuid: z.string().optional(),
-  created_by_staff_uuid: z.string().optional(),
-  create_date: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "due_date": "dueDate",
-    "task_details": "taskDetails",
-    "related_object": "relatedObject",
-    "related_object_uuid": "relatedObjectUuid",
-    "task_complete": "taskComplete",
-    "completed_timestamp": "completedTimestamp",
-    "completed_by_staff_uuid": "completedByStaffUuid",
-    "assigned_to_staff_uuid": "assignedToStaffUuid",
-    "created_by_staff_uuid": "createdByStaffUuid",
-    "create_date": "createDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    due_date: z.string().optional(),
+    task_details: z.string().optional(),
+    name: z.string(),
+    related_object: z.string().optional(),
+    related_object_uuid: z.string().optional(),
+    task_complete: z.string().optional(),
+    completed_timestamp: z.string().optional(),
+    completed_by_staff_uuid: z.string().optional(),
+    assigned_to_staff_uuid: z.string().optional(),
+    lng: z.any().optional(),
+    lat: z.any().optional(),
+    uuid: z.string().optional(),
+    created_by_staff_uuid: z.string().optional(),
+    create_date: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "due_date": "dueDate",
+      "task_details": "taskDetails",
+      "related_object": "relatedObject",
+      "related_object_uuid": "relatedObjectUuid",
+      "task_complete": "taskComplete",
+      "completed_timestamp": "completedTimestamp",
+      "completed_by_staff_uuid": "completedByStaffUuid",
+      "assigned_to_staff_uuid": "assignedToStaffUuid",
+      "created_by_staff_uuid": "createdByStaffUuid",
+      "create_date": "createDate",
+    });
+  })
+);
 /** @internal */
 export type TaskCreate$Outbound = {
   due_date?: string | undefined;
@@ -121,35 +123,37 @@ export const TaskCreate$outboundSchema: z.ZodType<
   TaskCreate$Outbound,
   z.ZodTypeDef,
   TaskCreate
-> = z.object({
-  dueDate: z.string().optional(),
-  taskDetails: z.string().optional(),
-  name: z.string(),
-  relatedObject: z.string().optional(),
-  relatedObjectUuid: z.string().optional(),
-  taskComplete: z.string().optional(),
-  completedTimestamp: z.string().optional(),
-  completedByStaffUuid: z.string().optional(),
-  assignedToStaffUuid: z.string().optional(),
-  lng: z.any().optional(),
-  lat: z.any().optional(),
-  uuid: z.string().optional(),
-  createdByStaffUuid: z.string().optional(),
-  createDate: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    dueDate: "due_date",
-    taskDetails: "task_details",
-    relatedObject: "related_object",
-    relatedObjectUuid: "related_object_uuid",
-    taskComplete: "task_complete",
-    completedTimestamp: "completed_timestamp",
-    completedByStaffUuid: "completed_by_staff_uuid",
-    assignedToStaffUuid: "assigned_to_staff_uuid",
-    createdByStaffUuid: "created_by_staff_uuid",
-    createDate: "create_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    dueDate: z.string().optional(),
+    taskDetails: z.string().optional(),
+    name: z.string(),
+    relatedObject: z.string().optional(),
+    relatedObjectUuid: z.string().optional(),
+    taskComplete: z.string().optional(),
+    completedTimestamp: z.string().optional(),
+    completedByStaffUuid: z.string().optional(),
+    assignedToStaffUuid: z.string().optional(),
+    lng: z.any().optional(),
+    lat: z.any().optional(),
+    uuid: z.string().optional(),
+    createdByStaffUuid: z.string().optional(),
+    createDate: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      dueDate: "due_date",
+      taskDetails: "task_details",
+      relatedObject: "related_object",
+      relatedObjectUuid: "related_object_uuid",
+      taskComplete: "task_complete",
+      completedTimestamp: "completed_timestamp",
+      completedByStaffUuid: "completed_by_staff_uuid",
+      assignedToStaffUuid: "assigned_to_staff_uuid",
+      createdByStaffUuid: "created_by_staff_uuid",
+      createDate: "create_date",
+    });
+  })
+);
 
 export function taskCreateToJSON(taskCreate: TaskCreate): string {
   return JSON.stringify(TaskCreate$outboundSchema.parse(taskCreate));

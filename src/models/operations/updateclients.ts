@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateClientsRequest$inboundSchema: z.ZodType<
   UpdateClientsRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  CompanyCreate: components.CompanyCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "CompanyCreate": "companyCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    CompanyCreate: components.CompanyCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "CompanyCreate": "companyCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateClientsRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateClientsRequest$outboundSchema: z.ZodType<
   UpdateClientsRequest$Outbound,
   z.ZodTypeDef,
   UpdateClientsRequest
-> = z.object({
-  uuid: z.string(),
-  companyCreate: components.CompanyCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    companyCreate: "CompanyCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    companyCreate: components.CompanyCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      companyCreate: "CompanyCreate",
+    });
+  })
+);
 
 export function updateClientsRequestToJSON(
   updateClientsRequest: UpdateClientsRequest,

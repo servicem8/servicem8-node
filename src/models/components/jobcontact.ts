@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -71,7 +71,7 @@ export type JobContact = {
 /** @internal */
 export const JobContactActive$inboundSchema: z.ZodNativeEnum<
   typeof JobContactActive
-> = z.nativeEnum(JobContactActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobContactActive));
 /** @internal */
 export const JobContactActive$outboundSchema: z.ZodNativeEnum<
   typeof JobContactActive
@@ -82,25 +82,27 @@ export const JobContact$inboundSchema: z.ZodType<
   JobContact,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  job_uuid: z.string().optional(),
-  first: z.string().optional(),
-  last: z.string().optional(),
-  phone: z.string().optional(),
-  mobile: z.string().optional(),
-  email: z.string().optional(),
-  type: z.string().optional(),
-  is_primary_contact: z.any().optional(),
-  uuid: z.string().optional(),
-  active: JobContactActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_uuid": "jobUuid",
-    "is_primary_contact": "isPrimaryContact",
-    "edit_date": "editDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    job_uuid: z.string().optional(),
+    first: z.string().optional(),
+    last: z.string().optional(),
+    phone: z.string().optional(),
+    mobile: z.string().optional(),
+    email: z.string().optional(),
+    type: z.string().optional(),
+    is_primary_contact: z.any().optional(),
+    uuid: z.string().optional(),
+    active: JobContactActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "job_uuid": "jobUuid",
+      "is_primary_contact": "isPrimaryContact",
+      "edit_date": "editDate",
+    });
+  })
+);
 /** @internal */
 export type JobContact$Outbound = {
   job_uuid?: string | undefined;
@@ -121,25 +123,27 @@ export const JobContact$outboundSchema: z.ZodType<
   JobContact$Outbound,
   z.ZodTypeDef,
   JobContact
-> = z.object({
-  jobUuid: z.string().optional(),
-  first: z.string().optional(),
-  last: z.string().optional(),
-  phone: z.string().optional(),
-  mobile: z.string().optional(),
-  email: z.string().optional(),
-  type: z.string().optional(),
-  isPrimaryContact: z.any().optional(),
-  uuid: z.string().optional(),
-  active: JobContactActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    jobUuid: "job_uuid",
-    isPrimaryContact: "is_primary_contact",
-    editDate: "edit_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    jobUuid: z.string().optional(),
+    first: z.string().optional(),
+    last: z.string().optional(),
+    phone: z.string().optional(),
+    mobile: z.string().optional(),
+    email: z.string().optional(),
+    type: z.string().optional(),
+    isPrimaryContact: z.any().optional(),
+    uuid: z.string().optional(),
+    active: JobContactActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      jobUuid: "job_uuid",
+      isPrimaryContact: "is_primary_contact",
+      editDate: "edit_date",
+    });
+  })
+);
 
 export function jobContactToJSON(jobContact: JobContact): string {
   return JSON.stringify(JobContact$outboundSchema.parse(jobContact));

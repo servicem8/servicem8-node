@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -36,19 +36,21 @@ export const FormFieldCreate$inboundSchema: z.ZodType<
   FormFieldCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  form_uuid: z.string().optional(),
-  name: z.string().optional(),
-  field_data_json: z.string().optional(),
-  sort_order: z.number().int().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "form_uuid": "formUuid",
-    "field_data_json": "fieldDataJson",
-    "sort_order": "sortOrder",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    form_uuid: z.string().optional(),
+    name: z.string().optional(),
+    field_data_json: z.string().optional(),
+    sort_order: z.number().int().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "form_uuid": "formUuid",
+      "field_data_json": "fieldDataJson",
+      "sort_order": "sortOrder",
+    });
+  })
+);
 /** @internal */
 export type FormFieldCreate$Outbound = {
   form_uuid?: string | undefined;
@@ -63,19 +65,21 @@ export const FormFieldCreate$outboundSchema: z.ZodType<
   FormFieldCreate$Outbound,
   z.ZodTypeDef,
   FormFieldCreate
-> = z.object({
-  formUuid: z.string().optional(),
-  name: z.string().optional(),
-  fieldDataJson: z.string().optional(),
-  sortOrder: z.number().int().optional(),
-  uuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    formUuid: "form_uuid",
-    fieldDataJson: "field_data_json",
-    sortOrder: "sort_order",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    formUuid: z.string().optional(),
+    name: z.string().optional(),
+    fieldDataJson: z.string().optional(),
+    sortOrder: z.number().int().optional(),
+    uuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      formUuid: "form_uuid",
+      fieldDataJson: "field_data_json",
+      sortOrder: "sort_order",
+    });
+  })
+);
 
 export function formFieldCreateToJSON(
   formFieldCreate: FormFieldCreate,

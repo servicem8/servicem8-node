@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateAttachmentsRequest$inboundSchema: z.ZodType<
   UpdateAttachmentsRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  AttachmentCreate: components.AttachmentCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "AttachmentCreate": "attachmentCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    AttachmentCreate: components.AttachmentCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "AttachmentCreate": "attachmentCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateAttachmentsRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateAttachmentsRequest$outboundSchema: z.ZodType<
   UpdateAttachmentsRequest$Outbound,
   z.ZodTypeDef,
   UpdateAttachmentsRequest
-> = z.object({
-  uuid: z.string(),
-  attachmentCreate: components.AttachmentCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    attachmentCreate: "AttachmentCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    attachmentCreate: components.AttachmentCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      attachmentCreate: "AttachmentCreate",
+    });
+  })
+);
 
 export function updateAttachmentsRequestToJSON(
   updateAttachmentsRequest: UpdateAttachmentsRequest,

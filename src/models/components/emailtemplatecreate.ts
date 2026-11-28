@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -31,12 +31,14 @@ export const EmailTemplateCreate$inboundSchema: z.ZodType<
   EmailTemplateCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  subject: z.string().optional(),
-  message: z.string().optional(),
-  uuid: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    subject: z.string().optional(),
+    message: z.string().optional(),
+    uuid: z.string().optional(),
+  })
+);
 /** @internal */
 export type EmailTemplateCreate$Outbound = {
   name: string;
@@ -50,12 +52,14 @@ export const EmailTemplateCreate$outboundSchema: z.ZodType<
   EmailTemplateCreate$Outbound,
   z.ZodTypeDef,
   EmailTemplateCreate
-> = z.object({
-  name: z.string(),
-  subject: z.string().optional(),
-  message: z.string().optional(),
-  uuid: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    subject: z.string().optional(),
+    message: z.string().optional(),
+    uuid: z.string().optional(),
+  })
+);
 
 export function emailTemplateCreateToJSON(
   emailTemplateCreate: EmailTemplateCreate,

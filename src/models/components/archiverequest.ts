@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,10 +17,12 @@ export const ArchiveRequest$inboundSchema: z.ZodType<
   ArchiveRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  archived: z.boolean().default(true),
-  reason: z.nullable(z.string()).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    archived: z.boolean().default(true),
+    reason: z.nullable(z.string()).optional(),
+  })
+);
 /** @internal */
 export type ArchiveRequest$Outbound = {
   archived: boolean;
@@ -32,10 +34,12 @@ export const ArchiveRequest$outboundSchema: z.ZodType<
   ArchiveRequest$Outbound,
   z.ZodTypeDef,
   ArchiveRequest
-> = z.object({
-  archived: z.boolean().default(true),
-  reason: z.nullable(z.string()).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    archived: z.boolean().default(true),
+    reason: z.nullable(z.string()).optional(),
+  })
+);
 
 export function archiveRequestToJSON(archiveRequest: ArchiveRequest): string {
   return JSON.stringify(ArchiveRequest$outboundSchema.parse(archiveRequest));

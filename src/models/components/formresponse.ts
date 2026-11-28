@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -75,7 +75,7 @@ export type FormResponse = {
 /** @internal */
 export const FormResponseActive$inboundSchema: z.ZodNativeEnum<
   typeof FormResponseActive
-> = z.nativeEnum(FormResponseActive);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(FormResponseActive));
 /** @internal */
 export const FormResponseActive$outboundSchema: z.ZodNativeEnum<
   typeof FormResponseActive
@@ -86,32 +86,34 @@ export const FormResponse$inboundSchema: z.ZodType<
   FormResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  form_uuid: z.string().optional(),
-  staff_uuid: z.string().optional(),
-  regarding_object: z.string().optional(),
-  regarding_object_uuid: z.string().optional(),
-  field_data: z.string().optional(),
-  timestamp: z.string().optional(),
-  form_by_staff_uuid: z.string().optional(),
-  document_attachment_uuid: z.string().optional(),
-  asset_uuid: z.string().optional(),
-  uuid: z.string().optional(),
-  active: FormResponseActive$inboundSchema.default(1),
-  edit_date: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "form_uuid": "formUuid",
-    "staff_uuid": "staffUuid",
-    "regarding_object": "regardingObject",
-    "regarding_object_uuid": "regardingObjectUuid",
-    "field_data": "fieldData",
-    "form_by_staff_uuid": "formByStaffUuid",
-    "document_attachment_uuid": "documentAttachmentUuid",
-    "asset_uuid": "assetUuid",
-    "edit_date": "editDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    form_uuid: z.string().optional(),
+    staff_uuid: z.string().optional(),
+    regarding_object: z.string().optional(),
+    regarding_object_uuid: z.string().optional(),
+    field_data: z.string().optional(),
+    timestamp: z.string().optional(),
+    form_by_staff_uuid: z.string().optional(),
+    document_attachment_uuid: z.string().optional(),
+    asset_uuid: z.string().optional(),
+    uuid: z.string().optional(),
+    active: FormResponseActive$inboundSchema.default(1),
+    edit_date: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "form_uuid": "formUuid",
+      "staff_uuid": "staffUuid",
+      "regarding_object": "regardingObject",
+      "regarding_object_uuid": "regardingObjectUuid",
+      "field_data": "fieldData",
+      "form_by_staff_uuid": "formByStaffUuid",
+      "document_attachment_uuid": "documentAttachmentUuid",
+      "asset_uuid": "assetUuid",
+      "edit_date": "editDate",
+    });
+  })
+);
 /** @internal */
 export type FormResponse$Outbound = {
   form_uuid?: string | undefined;
@@ -133,32 +135,34 @@ export const FormResponse$outboundSchema: z.ZodType<
   FormResponse$Outbound,
   z.ZodTypeDef,
   FormResponse
-> = z.object({
-  formUuid: z.string().optional(),
-  staffUuid: z.string().optional(),
-  regardingObject: z.string().optional(),
-  regardingObjectUuid: z.string().optional(),
-  fieldData: z.string().optional(),
-  timestamp: z.string().optional(),
-  formByStaffUuid: z.string().optional(),
-  documentAttachmentUuid: z.string().optional(),
-  assetUuid: z.string().optional(),
-  uuid: z.string().optional(),
-  active: FormResponseActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    formUuid: "form_uuid",
-    staffUuid: "staff_uuid",
-    regardingObject: "regarding_object",
-    regardingObjectUuid: "regarding_object_uuid",
-    fieldData: "field_data",
-    formByStaffUuid: "form_by_staff_uuid",
-    documentAttachmentUuid: "document_attachment_uuid",
-    assetUuid: "asset_uuid",
-    editDate: "edit_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    formUuid: z.string().optional(),
+    staffUuid: z.string().optional(),
+    regardingObject: z.string().optional(),
+    regardingObjectUuid: z.string().optional(),
+    fieldData: z.string().optional(),
+    timestamp: z.string().optional(),
+    formByStaffUuid: z.string().optional(),
+    documentAttachmentUuid: z.string().optional(),
+    assetUuid: z.string().optional(),
+    uuid: z.string().optional(),
+    active: FormResponseActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      formUuid: "form_uuid",
+      staffUuid: "staff_uuid",
+      regardingObject: "regarding_object",
+      regardingObjectUuid: "regarding_object_uuid",
+      fieldData: "field_data",
+      formByStaffUuid: "form_by_staff_uuid",
+      documentAttachmentUuid: "document_attachment_uuid",
+      assetUuid: "asset_uuid",
+      editDate: "edit_date",
+    });
+  })
+);
 
 export function formResponseToJSON(formResponse: FormResponse): string {
   return JSON.stringify(FormResponse$outboundSchema.parse(formResponse));

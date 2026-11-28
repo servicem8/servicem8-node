@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -250,7 +250,7 @@ export type JobCreate = {
 /** @internal */
 export const JobCreateStatus$inboundSchema: z.ZodNativeEnum<
   typeof JobCreateStatus
-> = z.nativeEnum(JobCreateStatus);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobCreateStatus));
 /** @internal */
 export const JobCreateStatus$outboundSchema: z.ZodNativeEnum<
   typeof JobCreateStatus
@@ -259,7 +259,7 @@ export const JobCreateStatus$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export const JobCreateInvoiceSent$inboundSchema: z.ZodNativeEnum<
   typeof JobCreateInvoiceSent
-> = z.nativeEnum(JobCreateInvoiceSent);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobCreateInvoiceSent));
 /** @internal */
 export const JobCreateInvoiceSent$outboundSchema: z.ZodNativeEnum<
   typeof JobCreateInvoiceSent
@@ -268,7 +268,7 @@ export const JobCreateInvoiceSent$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export const JobCreateQuoteSent$inboundSchema: z.ZodNativeEnum<
   typeof JobCreateQuoteSent
-> = z.nativeEnum(JobCreateQuoteSent);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobCreateQuoteSent));
 /** @internal */
 export const JobCreateQuoteSent$outboundSchema: z.ZodNativeEnum<
   typeof JobCreateQuoteSent
@@ -277,7 +277,7 @@ export const JobCreateQuoteSent$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export const JobCreatePaymentProcessed$inboundSchema: z.ZodNativeEnum<
   typeof JobCreatePaymentProcessed
-> = z.nativeEnum(JobCreatePaymentProcessed);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobCreatePaymentProcessed));
 /** @internal */
 export const JobCreatePaymentProcessed$outboundSchema: z.ZodNativeEnum<
   typeof JobCreatePaymentProcessed
@@ -286,7 +286,7 @@ export const JobCreatePaymentProcessed$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export const JobCreatePaymentReceived$inboundSchema: z.ZodNativeEnum<
   typeof JobCreatePaymentReceived
-> = z.nativeEnum(JobCreatePaymentReceived);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(JobCreatePaymentReceived));
 /** @internal */
 export const JobCreatePaymentReceived$outboundSchema: z.ZodNativeEnum<
   typeof JobCreatePaymentReceived
@@ -297,91 +297,93 @@ export const JobCreate$inboundSchema: z.ZodType<
   JobCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_by_staff_uuid: z.string().optional(),
-  date: z.string().optional(),
-  company_uuid: z.string().optional(),
-  billing_address: z.string().optional(),
-  status: JobCreateStatus$inboundSchema,
-  lng: z.any().optional(),
-  lat: z.any().optional(),
-  payment_date: z.string().optional(),
-  payment_actioned_by_uuid: z.string().optional(),
-  payment_method: z.string().optional(),
-  payment_amount: z.string().optional(),
-  category_uuid: z.string().optional(),
-  payment_note: z.string().optional(),
-  geo_is_valid: z.any().optional(),
-  purchase_order_number: z.string().optional(),
-  invoice_sent: JobCreateInvoiceSent$inboundSchema.optional(),
-  invoice_sent_stamp: z.any().optional(),
-  ready_to_invoice: z.any().optional(),
-  ready_to_invoice_stamp: z.any().optional(),
-  geo_country: z.any().optional(),
-  geo_postcode: z.any().optional(),
-  geo_state: z.any().optional(),
-  geo_city: z.any().optional(),
-  geo_street: z.any().optional(),
-  geo_number: z.any().optional(),
-  queue_uuid: z.string().optional(),
-  queue_expiry_date: z.string().optional(),
-  queue_assigned_staff_uuid: z.string().optional(),
-  badges: z.string().optional(),
-  quote_date: z.string().optional(),
-  quote_sent: JobCreateQuoteSent$inboundSchema.optional(),
-  quote_sent_stamp: z.any().optional(),
-  work_order_date: z.string().optional(),
-  active_network_request_uuid: z.any().optional(),
-  related_knowledge_articles: z.any().optional(),
-  uuid: z.string().optional(),
-  job_address: z.string().optional(),
-  job_description: z.string().optional(),
-  work_done_description: z.string().optional(),
-  payment_processed: JobCreatePaymentProcessed$inboundSchema.optional(),
-  payment_received: JobCreatePaymentReceived$inboundSchema.optional(),
-  completion_date: z.string().optional(),
-  unsuccessful_date: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_by_staff_uuid": "createdByStaffUuid",
-    "company_uuid": "companyUuid",
-    "billing_address": "billingAddress",
-    "payment_date": "paymentDate",
-    "payment_actioned_by_uuid": "paymentActionedByUuid",
-    "payment_method": "paymentMethod",
-    "payment_amount": "paymentAmount",
-    "category_uuid": "categoryUuid",
-    "payment_note": "paymentNote",
-    "geo_is_valid": "geoIsValid",
-    "purchase_order_number": "purchaseOrderNumber",
-    "invoice_sent": "invoiceSent",
-    "invoice_sent_stamp": "invoiceSentStamp",
-    "ready_to_invoice": "readyToInvoice",
-    "ready_to_invoice_stamp": "readyToInvoiceStamp",
-    "geo_country": "geoCountry",
-    "geo_postcode": "geoPostcode",
-    "geo_state": "geoState",
-    "geo_city": "geoCity",
-    "geo_street": "geoStreet",
-    "geo_number": "geoNumber",
-    "queue_uuid": "queueUuid",
-    "queue_expiry_date": "queueExpiryDate",
-    "queue_assigned_staff_uuid": "queueAssignedStaffUuid",
-    "quote_date": "quoteDate",
-    "quote_sent": "quoteSent",
-    "quote_sent_stamp": "quoteSentStamp",
-    "work_order_date": "workOrderDate",
-    "active_network_request_uuid": "activeNetworkRequestUuid",
-    "related_knowledge_articles": "relatedKnowledgeArticles",
-    "job_address": "jobAddress",
-    "job_description": "jobDescription",
-    "work_done_description": "workDoneDescription",
-    "payment_processed": "paymentProcessed",
-    "payment_received": "paymentReceived",
-    "completion_date": "completionDate",
-    "unsuccessful_date": "unsuccessfulDate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_by_staff_uuid: z.string().optional(),
+    date: z.string().optional(),
+    company_uuid: z.string().optional(),
+    billing_address: z.string().optional(),
+    status: JobCreateStatus$inboundSchema,
+    lng: z.any().optional(),
+    lat: z.any().optional(),
+    payment_date: z.string().optional(),
+    payment_actioned_by_uuid: z.string().optional(),
+    payment_method: z.string().optional(),
+    payment_amount: z.string().optional(),
+    category_uuid: z.string().optional(),
+    payment_note: z.string().optional(),
+    geo_is_valid: z.any().optional(),
+    purchase_order_number: z.string().optional(),
+    invoice_sent: JobCreateInvoiceSent$inboundSchema.optional(),
+    invoice_sent_stamp: z.any().optional(),
+    ready_to_invoice: z.any().optional(),
+    ready_to_invoice_stamp: z.any().optional(),
+    geo_country: z.any().optional(),
+    geo_postcode: z.any().optional(),
+    geo_state: z.any().optional(),
+    geo_city: z.any().optional(),
+    geo_street: z.any().optional(),
+    geo_number: z.any().optional(),
+    queue_uuid: z.string().optional(),
+    queue_expiry_date: z.string().optional(),
+    queue_assigned_staff_uuid: z.string().optional(),
+    badges: z.string().optional(),
+    quote_date: z.string().optional(),
+    quote_sent: JobCreateQuoteSent$inboundSchema.optional(),
+    quote_sent_stamp: z.any().optional(),
+    work_order_date: z.string().optional(),
+    active_network_request_uuid: z.any().optional(),
+    related_knowledge_articles: z.any().optional(),
+    uuid: z.string().optional(),
+    job_address: z.string().optional(),
+    job_description: z.string().optional(),
+    work_done_description: z.string().optional(),
+    payment_processed: JobCreatePaymentProcessed$inboundSchema.optional(),
+    payment_received: JobCreatePaymentReceived$inboundSchema.optional(),
+    completion_date: z.string().optional(),
+    unsuccessful_date: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_by_staff_uuid": "createdByStaffUuid",
+      "company_uuid": "companyUuid",
+      "billing_address": "billingAddress",
+      "payment_date": "paymentDate",
+      "payment_actioned_by_uuid": "paymentActionedByUuid",
+      "payment_method": "paymentMethod",
+      "payment_amount": "paymentAmount",
+      "category_uuid": "categoryUuid",
+      "payment_note": "paymentNote",
+      "geo_is_valid": "geoIsValid",
+      "purchase_order_number": "purchaseOrderNumber",
+      "invoice_sent": "invoiceSent",
+      "invoice_sent_stamp": "invoiceSentStamp",
+      "ready_to_invoice": "readyToInvoice",
+      "ready_to_invoice_stamp": "readyToInvoiceStamp",
+      "geo_country": "geoCountry",
+      "geo_postcode": "geoPostcode",
+      "geo_state": "geoState",
+      "geo_city": "geoCity",
+      "geo_street": "geoStreet",
+      "geo_number": "geoNumber",
+      "queue_uuid": "queueUuid",
+      "queue_expiry_date": "queueExpiryDate",
+      "queue_assigned_staff_uuid": "queueAssignedStaffUuid",
+      "quote_date": "quoteDate",
+      "quote_sent": "quoteSent",
+      "quote_sent_stamp": "quoteSentStamp",
+      "work_order_date": "workOrderDate",
+      "active_network_request_uuid": "activeNetworkRequestUuid",
+      "related_knowledge_articles": "relatedKnowledgeArticles",
+      "job_address": "jobAddress",
+      "job_description": "jobDescription",
+      "work_done_description": "workDoneDescription",
+      "payment_processed": "paymentProcessed",
+      "payment_received": "paymentReceived",
+      "completion_date": "completionDate",
+      "unsuccessful_date": "unsuccessfulDate",
+    });
+  })
+);
 /** @internal */
 export type JobCreate$Outbound = {
   created_by_staff_uuid?: string | undefined;
@@ -434,91 +436,93 @@ export const JobCreate$outboundSchema: z.ZodType<
   JobCreate$Outbound,
   z.ZodTypeDef,
   JobCreate
-> = z.object({
-  createdByStaffUuid: z.string().optional(),
-  date: z.string().optional(),
-  companyUuid: z.string().optional(),
-  billingAddress: z.string().optional(),
-  status: JobCreateStatus$outboundSchema,
-  lng: z.any().optional(),
-  lat: z.any().optional(),
-  paymentDate: z.string().optional(),
-  paymentActionedByUuid: z.string().optional(),
-  paymentMethod: z.string().optional(),
-  paymentAmount: z.string().optional(),
-  categoryUuid: z.string().optional(),
-  paymentNote: z.string().optional(),
-  geoIsValid: z.any().optional(),
-  purchaseOrderNumber: z.string().optional(),
-  invoiceSent: JobCreateInvoiceSent$outboundSchema.optional(),
-  invoiceSentStamp: z.any().optional(),
-  readyToInvoice: z.any().optional(),
-  readyToInvoiceStamp: z.any().optional(),
-  geoCountry: z.any().optional(),
-  geoPostcode: z.any().optional(),
-  geoState: z.any().optional(),
-  geoCity: z.any().optional(),
-  geoStreet: z.any().optional(),
-  geoNumber: z.any().optional(),
-  queueUuid: z.string().optional(),
-  queueExpiryDate: z.string().optional(),
-  queueAssignedStaffUuid: z.string().optional(),
-  badges: z.string().optional(),
-  quoteDate: z.string().optional(),
-  quoteSent: JobCreateQuoteSent$outboundSchema.optional(),
-  quoteSentStamp: z.any().optional(),
-  workOrderDate: z.string().optional(),
-  activeNetworkRequestUuid: z.any().optional(),
-  relatedKnowledgeArticles: z.any().optional(),
-  uuid: z.string().optional(),
-  jobAddress: z.string().optional(),
-  jobDescription: z.string().optional(),
-  workDoneDescription: z.string().optional(),
-  paymentProcessed: JobCreatePaymentProcessed$outboundSchema.optional(),
-  paymentReceived: JobCreatePaymentReceived$outboundSchema.optional(),
-  completionDate: z.string().optional(),
-  unsuccessfulDate: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdByStaffUuid: "created_by_staff_uuid",
-    companyUuid: "company_uuid",
-    billingAddress: "billing_address",
-    paymentDate: "payment_date",
-    paymentActionedByUuid: "payment_actioned_by_uuid",
-    paymentMethod: "payment_method",
-    paymentAmount: "payment_amount",
-    categoryUuid: "category_uuid",
-    paymentNote: "payment_note",
-    geoIsValid: "geo_is_valid",
-    purchaseOrderNumber: "purchase_order_number",
-    invoiceSent: "invoice_sent",
-    invoiceSentStamp: "invoice_sent_stamp",
-    readyToInvoice: "ready_to_invoice",
-    readyToInvoiceStamp: "ready_to_invoice_stamp",
-    geoCountry: "geo_country",
-    geoPostcode: "geo_postcode",
-    geoState: "geo_state",
-    geoCity: "geo_city",
-    geoStreet: "geo_street",
-    geoNumber: "geo_number",
-    queueUuid: "queue_uuid",
-    queueExpiryDate: "queue_expiry_date",
-    queueAssignedStaffUuid: "queue_assigned_staff_uuid",
-    quoteDate: "quote_date",
-    quoteSent: "quote_sent",
-    quoteSentStamp: "quote_sent_stamp",
-    workOrderDate: "work_order_date",
-    activeNetworkRequestUuid: "active_network_request_uuid",
-    relatedKnowledgeArticles: "related_knowledge_articles",
-    jobAddress: "job_address",
-    jobDescription: "job_description",
-    workDoneDescription: "work_done_description",
-    paymentProcessed: "payment_processed",
-    paymentReceived: "payment_received",
-    completionDate: "completion_date",
-    unsuccessfulDate: "unsuccessful_date",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdByStaffUuid: z.string().optional(),
+    date: z.string().optional(),
+    companyUuid: z.string().optional(),
+    billingAddress: z.string().optional(),
+    status: JobCreateStatus$outboundSchema,
+    lng: z.any().optional(),
+    lat: z.any().optional(),
+    paymentDate: z.string().optional(),
+    paymentActionedByUuid: z.string().optional(),
+    paymentMethod: z.string().optional(),
+    paymentAmount: z.string().optional(),
+    categoryUuid: z.string().optional(),
+    paymentNote: z.string().optional(),
+    geoIsValid: z.any().optional(),
+    purchaseOrderNumber: z.string().optional(),
+    invoiceSent: JobCreateInvoiceSent$outboundSchema.optional(),
+    invoiceSentStamp: z.any().optional(),
+    readyToInvoice: z.any().optional(),
+    readyToInvoiceStamp: z.any().optional(),
+    geoCountry: z.any().optional(),
+    geoPostcode: z.any().optional(),
+    geoState: z.any().optional(),
+    geoCity: z.any().optional(),
+    geoStreet: z.any().optional(),
+    geoNumber: z.any().optional(),
+    queueUuid: z.string().optional(),
+    queueExpiryDate: z.string().optional(),
+    queueAssignedStaffUuid: z.string().optional(),
+    badges: z.string().optional(),
+    quoteDate: z.string().optional(),
+    quoteSent: JobCreateQuoteSent$outboundSchema.optional(),
+    quoteSentStamp: z.any().optional(),
+    workOrderDate: z.string().optional(),
+    activeNetworkRequestUuid: z.any().optional(),
+    relatedKnowledgeArticles: z.any().optional(),
+    uuid: z.string().optional(),
+    jobAddress: z.string().optional(),
+    jobDescription: z.string().optional(),
+    workDoneDescription: z.string().optional(),
+    paymentProcessed: JobCreatePaymentProcessed$outboundSchema.optional(),
+    paymentReceived: JobCreatePaymentReceived$outboundSchema.optional(),
+    completionDate: z.string().optional(),
+    unsuccessfulDate: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdByStaffUuid: "created_by_staff_uuid",
+      companyUuid: "company_uuid",
+      billingAddress: "billing_address",
+      paymentDate: "payment_date",
+      paymentActionedByUuid: "payment_actioned_by_uuid",
+      paymentMethod: "payment_method",
+      paymentAmount: "payment_amount",
+      categoryUuid: "category_uuid",
+      paymentNote: "payment_note",
+      geoIsValid: "geo_is_valid",
+      purchaseOrderNumber: "purchase_order_number",
+      invoiceSent: "invoice_sent",
+      invoiceSentStamp: "invoice_sent_stamp",
+      readyToInvoice: "ready_to_invoice",
+      readyToInvoiceStamp: "ready_to_invoice_stamp",
+      geoCountry: "geo_country",
+      geoPostcode: "geo_postcode",
+      geoState: "geo_state",
+      geoCity: "geo_city",
+      geoStreet: "geo_street",
+      geoNumber: "geo_number",
+      queueUuid: "queue_uuid",
+      queueExpiryDate: "queue_expiry_date",
+      queueAssignedStaffUuid: "queue_assigned_staff_uuid",
+      quoteDate: "quote_date",
+      quoteSent: "quote_sent",
+      quoteSentStamp: "quote_sent_stamp",
+      workOrderDate: "work_order_date",
+      activeNetworkRequestUuid: "active_network_request_uuid",
+      relatedKnowledgeArticles: "related_knowledge_articles",
+      jobAddress: "job_address",
+      jobDescription: "job_description",
+      workDoneDescription: "work_done_description",
+      paymentProcessed: "payment_processed",
+      paymentReceived: "payment_received",
+      completionDate: "completion_date",
+      unsuccessfulDate: "unsuccessful_date",
+    });
+  })
+);
 
 export function jobCreateToJSON(jobCreate: JobCreate): string {
   return JSON.stringify(JobCreate$outboundSchema.parse(jobCreate));

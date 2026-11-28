@@ -20,7 +20,7 @@ Attaches an inbox message to an existing job`,
     const [result, apiCall] = await inboxAttachInboxMessageToJob(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

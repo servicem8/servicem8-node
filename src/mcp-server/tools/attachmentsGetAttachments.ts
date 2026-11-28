@@ -25,7 +25,7 @@ This endpoint requires the following OAuth scope **read_attachments**.
     const [result, apiCall] = await attachmentsGetAttachments(
       client,
       args.request,
-      { fetchOptions: { signal: ctx.signal } },
+      { fetchOptions: { signal: ctx.mcpReq.signal } },
     ).$inspect();
 
     if (!result.ok) {

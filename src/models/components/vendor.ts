@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -146,72 +146,74 @@ export type Vendor = {
 
 /** @internal */
 export const VendorActive$inboundSchema: z.ZodNativeEnum<typeof VendorActive> =
-  z.nativeEnum(VendorActive);
+  /* @__PURE__ */ lazySchema$(() => z.nativeEnum(VendorActive));
 /** @internal */
 export const VendorActive$outboundSchema: z.ZodNativeEnum<typeof VendorActive> =
   VendorActive$inboundSchema;
 
 /** @internal */
-export const Vendor$inboundSchema: z.ZodType<Vendor, z.ZodTypeDef, unknown> = z
-  .object({
-    business_number: z.string().optional(),
-    email: z.string().optional(),
-    email_accounts: z.string().optional(),
-    billing_address: z.string().optional(),
-    accepted_payment_methods: z.any().optional(),
-    default_region: z.string().optional(),
-    currency: z.string().optional(),
-    opening_time_monday: z.string().optional(),
-    closing_time_monday: z.string().optional(),
-    opening_time_tuesday: z.string().optional(),
-    closing_time_tuesday: z.string().optional(),
-    opening_time_wednesday: z.string().optional(),
-    closing_time_wednesday: z.string().optional(),
-    opening_time_thursday: z.string().optional(),
-    closing_time_thursday: z.string().optional(),
-    opening_time_friday: z.string().optional(),
-    closing_time_friday: z.string().optional(),
-    opening_time_saturday: z.string().optional(),
-    closing_time_saturday: z.string().optional(),
-    opening_time_sunday: z.string().optional(),
-    closing_time_sunday: z.string().optional(),
-    timezone_name: z.string().optional(),
-    invoice_terms: z.string().optional(),
-    job_default_status: z.string().optional(),
-    uuid: z.string().optional(),
-    active: VendorActive$inboundSchema.default(1),
-    edit_date: z.any().optional(),
-    name: z.string(),
-    abn_number: z.string().optional(),
-    website: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "business_number": "businessNumber",
-      "email_accounts": "emailAccounts",
-      "billing_address": "billingAddress",
-      "accepted_payment_methods": "acceptedPaymentMethods",
-      "default_region": "defaultRegion",
-      "opening_time_monday": "openingTimeMonday",
-      "closing_time_monday": "closingTimeMonday",
-      "opening_time_tuesday": "openingTimeTuesday",
-      "closing_time_tuesday": "closingTimeTuesday",
-      "opening_time_wednesday": "openingTimeWednesday",
-      "closing_time_wednesday": "closingTimeWednesday",
-      "opening_time_thursday": "openingTimeThursday",
-      "closing_time_thursday": "closingTimeThursday",
-      "opening_time_friday": "openingTimeFriday",
-      "closing_time_friday": "closingTimeFriday",
-      "opening_time_saturday": "openingTimeSaturday",
-      "closing_time_saturday": "closingTimeSaturday",
-      "opening_time_sunday": "openingTimeSunday",
-      "closing_time_sunday": "closingTimeSunday",
-      "timezone_name": "timezoneName",
-      "invoice_terms": "invoiceTerms",
-      "job_default_status": "jobDefaultStatus",
-      "edit_date": "editDate",
-      "abn_number": "abnNumber",
-    });
-  });
+export const Vendor$inboundSchema: z.ZodType<Vendor, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      business_number: z.string().optional(),
+      email: z.string().optional(),
+      email_accounts: z.string().optional(),
+      billing_address: z.string().optional(),
+      accepted_payment_methods: z.any().optional(),
+      default_region: z.string().optional(),
+      currency: z.string().optional(),
+      opening_time_monday: z.string().optional(),
+      closing_time_monday: z.string().optional(),
+      opening_time_tuesday: z.string().optional(),
+      closing_time_tuesday: z.string().optional(),
+      opening_time_wednesday: z.string().optional(),
+      closing_time_wednesday: z.string().optional(),
+      opening_time_thursday: z.string().optional(),
+      closing_time_thursday: z.string().optional(),
+      opening_time_friday: z.string().optional(),
+      closing_time_friday: z.string().optional(),
+      opening_time_saturday: z.string().optional(),
+      closing_time_saturday: z.string().optional(),
+      opening_time_sunday: z.string().optional(),
+      closing_time_sunday: z.string().optional(),
+      timezone_name: z.string().optional(),
+      invoice_terms: z.string().optional(),
+      job_default_status: z.string().optional(),
+      uuid: z.string().optional(),
+      active: VendorActive$inboundSchema.default(1),
+      edit_date: z.any().optional(),
+      name: z.string(),
+      abn_number: z.string().optional(),
+      website: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "business_number": "businessNumber",
+        "email_accounts": "emailAccounts",
+        "billing_address": "billingAddress",
+        "accepted_payment_methods": "acceptedPaymentMethods",
+        "default_region": "defaultRegion",
+        "opening_time_monday": "openingTimeMonday",
+        "closing_time_monday": "closingTimeMonday",
+        "opening_time_tuesday": "openingTimeTuesday",
+        "closing_time_tuesday": "closingTimeTuesday",
+        "opening_time_wednesday": "openingTimeWednesday",
+        "closing_time_wednesday": "closingTimeWednesday",
+        "opening_time_thursday": "openingTimeThursday",
+        "closing_time_thursday": "closingTimeThursday",
+        "opening_time_friday": "openingTimeFriday",
+        "closing_time_friday": "closingTimeFriday",
+        "opening_time_saturday": "openingTimeSaturday",
+        "closing_time_saturday": "closingTimeSaturday",
+        "opening_time_sunday": "openingTimeSunday",
+        "closing_time_sunday": "closingTimeSunday",
+        "timezone_name": "timezoneName",
+        "invoice_terms": "invoiceTerms",
+        "job_default_status": "jobDefaultStatus",
+        "edit_date": "editDate",
+        "abn_number": "abnNumber",
+      });
+    })
+  );
 /** @internal */
 export type Vendor$Outbound = {
   business_number?: string | undefined;
@@ -251,65 +253,67 @@ export const Vendor$outboundSchema: z.ZodType<
   Vendor$Outbound,
   z.ZodTypeDef,
   Vendor
-> = z.object({
-  businessNumber: z.string().optional(),
-  email: z.string().optional(),
-  emailAccounts: z.string().optional(),
-  billingAddress: z.string().optional(),
-  acceptedPaymentMethods: z.any().optional(),
-  defaultRegion: z.string().optional(),
-  currency: z.string().optional(),
-  openingTimeMonday: z.string().optional(),
-  closingTimeMonday: z.string().optional(),
-  openingTimeTuesday: z.string().optional(),
-  closingTimeTuesday: z.string().optional(),
-  openingTimeWednesday: z.string().optional(),
-  closingTimeWednesday: z.string().optional(),
-  openingTimeThursday: z.string().optional(),
-  closingTimeThursday: z.string().optional(),
-  openingTimeFriday: z.string().optional(),
-  closingTimeFriday: z.string().optional(),
-  openingTimeSaturday: z.string().optional(),
-  closingTimeSaturday: z.string().optional(),
-  openingTimeSunday: z.string().optional(),
-  closingTimeSunday: z.string().optional(),
-  timezoneName: z.string().optional(),
-  invoiceTerms: z.string().optional(),
-  jobDefaultStatus: z.string().optional(),
-  uuid: z.string().optional(),
-  active: VendorActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  name: z.string(),
-  abnNumber: z.string().optional(),
-  website: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    businessNumber: "business_number",
-    emailAccounts: "email_accounts",
-    billingAddress: "billing_address",
-    acceptedPaymentMethods: "accepted_payment_methods",
-    defaultRegion: "default_region",
-    openingTimeMonday: "opening_time_monday",
-    closingTimeMonday: "closing_time_monday",
-    openingTimeTuesday: "opening_time_tuesday",
-    closingTimeTuesday: "closing_time_tuesday",
-    openingTimeWednesday: "opening_time_wednesday",
-    closingTimeWednesday: "closing_time_wednesday",
-    openingTimeThursday: "opening_time_thursday",
-    closingTimeThursday: "closing_time_thursday",
-    openingTimeFriday: "opening_time_friday",
-    closingTimeFriday: "closing_time_friday",
-    openingTimeSaturday: "opening_time_saturday",
-    closingTimeSaturday: "closing_time_saturday",
-    openingTimeSunday: "opening_time_sunday",
-    closingTimeSunday: "closing_time_sunday",
-    timezoneName: "timezone_name",
-    invoiceTerms: "invoice_terms",
-    jobDefaultStatus: "job_default_status",
-    editDate: "edit_date",
-    abnNumber: "abn_number",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    businessNumber: z.string().optional(),
+    email: z.string().optional(),
+    emailAccounts: z.string().optional(),
+    billingAddress: z.string().optional(),
+    acceptedPaymentMethods: z.any().optional(),
+    defaultRegion: z.string().optional(),
+    currency: z.string().optional(),
+    openingTimeMonday: z.string().optional(),
+    closingTimeMonday: z.string().optional(),
+    openingTimeTuesday: z.string().optional(),
+    closingTimeTuesday: z.string().optional(),
+    openingTimeWednesday: z.string().optional(),
+    closingTimeWednesday: z.string().optional(),
+    openingTimeThursday: z.string().optional(),
+    closingTimeThursday: z.string().optional(),
+    openingTimeFriday: z.string().optional(),
+    closingTimeFriday: z.string().optional(),
+    openingTimeSaturday: z.string().optional(),
+    closingTimeSaturday: z.string().optional(),
+    openingTimeSunday: z.string().optional(),
+    closingTimeSunday: z.string().optional(),
+    timezoneName: z.string().optional(),
+    invoiceTerms: z.string().optional(),
+    jobDefaultStatus: z.string().optional(),
+    uuid: z.string().optional(),
+    active: VendorActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    name: z.string(),
+    abnNumber: z.string().optional(),
+    website: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      businessNumber: "business_number",
+      emailAccounts: "email_accounts",
+      billingAddress: "billing_address",
+      acceptedPaymentMethods: "accepted_payment_methods",
+      defaultRegion: "default_region",
+      openingTimeMonday: "opening_time_monday",
+      closingTimeMonday: "closing_time_monday",
+      openingTimeTuesday: "opening_time_tuesday",
+      closingTimeTuesday: "closing_time_tuesday",
+      openingTimeWednesday: "opening_time_wednesday",
+      closingTimeWednesday: "closing_time_wednesday",
+      openingTimeThursday: "opening_time_thursday",
+      closingTimeThursday: "closing_time_thursday",
+      openingTimeFriday: "opening_time_friday",
+      closingTimeFriday: "closing_time_friday",
+      openingTimeSaturday: "opening_time_saturday",
+      closingTimeSaturday: "closing_time_saturday",
+      openingTimeSunday: "opening_time_sunday",
+      closingTimeSunday: "closing_time_sunday",
+      timezoneName: "timezone_name",
+      invoiceTerms: "invoice_terms",
+      jobDefaultStatus: "job_default_status",
+      editDate: "edit_date",
+      abnNumber: "abn_number",
+    });
+  })
+);
 
 export function vendorToJSON(vendor: Vendor): string {
   return JSON.stringify(Vendor$outboundSchema.parse(vendor));

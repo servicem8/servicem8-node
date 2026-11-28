@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,10 +17,12 @@ export const SuccessResponse$inboundSchema: z.ZodType<
   SuccessResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  success: z.boolean().optional(),
-  message: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    success: z.boolean().optional(),
+    message: z.string().optional(),
+  })
+);
 /** @internal */
 export type SuccessResponse$Outbound = {
   success?: boolean | undefined;
@@ -32,10 +34,12 @@ export const SuccessResponse$outboundSchema: z.ZodType<
   SuccessResponse$Outbound,
   z.ZodTypeDef,
   SuccessResponse
-> = z.object({
-  success: z.boolean().optional(),
-  message: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    success: z.boolean().optional(),
+    message: z.string().optional(),
+  })
+);
 
 export function successResponseToJSON(
   successResponse: SuccessResponse,

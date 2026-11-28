@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -21,16 +21,18 @@ export const SnoozeRequest$inboundSchema: z.ZodType<
   SnoozeRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  snooze_until: z.nullable(
-    z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  ).optional(),
-  note: z.nullable(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "snooze_until": "snoozeUntil",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    snooze_until: z.nullable(
+      z.string().datetime({ offset: true }).transform(v => new Date(v)),
+    ).optional(),
+    note: z.nullable(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "snooze_until": "snoozeUntil",
+    });
+  })
+);
 /** @internal */
 export type SnoozeRequest$Outbound = {
   snooze_until?: string | null | undefined;
@@ -42,14 +44,17 @@ export const SnoozeRequest$outboundSchema: z.ZodType<
   SnoozeRequest$Outbound,
   z.ZodTypeDef,
   SnoozeRequest
-> = z.object({
-  snoozeUntil: z.nullable(z.date().transform(v => v.toISOString())).optional(),
-  note: z.nullable(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    snoozeUntil: "snooze_until",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    snoozeUntil: z.nullable(z.date().transform(v => v.toISOString()))
+      .optional(),
+    note: z.nullable(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      snoozeUntil: "snooze_until",
+    });
+  })
+);
 
 export function snoozeRequestToJSON(snoozeRequest: SnoozeRequest): string {
   return JSON.stringify(SnoozeRequest$outboundSchema.parse(snoozeRequest));

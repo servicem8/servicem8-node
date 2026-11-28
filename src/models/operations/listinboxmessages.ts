@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -42,8 +42,8 @@ export type ListInboxMessagesRequest = {
 };
 
 /** @internal */
-export const Filter$inboundSchema: z.ZodNativeEnum<typeof Filter> = z
-  .nativeEnum(Filter);
+export const Filter$inboundSchema: z.ZodNativeEnum<typeof Filter> =
+  /* @__PURE__ */ lazySchema$(() => z.nativeEnum(Filter));
 /** @internal */
 export const Filter$outboundSchema: z.ZodNativeEnum<typeof Filter> =
   Filter$inboundSchema;
@@ -53,12 +53,14 @@ export const ListInboxMessagesRequest$inboundSchema: z.ZodType<
   ListInboxMessagesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  limit: z.number().int().default(50),
-  offset: z.number().int().default(0),
-  filter: Filter$inboundSchema.default("all"),
-  search: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    limit: z.number().int().default(50),
+    offset: z.number().int().default(0),
+    filter: Filter$inboundSchema.default("all"),
+    search: z.string().optional(),
+  })
+);
 /** @internal */
 export type ListInboxMessagesRequest$Outbound = {
   limit: number;
@@ -72,12 +74,14 @@ export const ListInboxMessagesRequest$outboundSchema: z.ZodType<
   ListInboxMessagesRequest$Outbound,
   z.ZodTypeDef,
   ListInboxMessagesRequest
-> = z.object({
-  limit: z.number().int().default(50),
-  offset: z.number().int().default(0),
-  filter: Filter$outboundSchema.default("all"),
-  search: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    limit: z.number().int().default(50),
+    offset: z.number().int().default(0),
+    filter: Filter$outboundSchema.default("all"),
+    search: z.string().optional(),
+  })
+);
 
 export function listInboxMessagesRequestToJSON(
   listInboxMessagesRequest: ListInboxMessagesRequest,

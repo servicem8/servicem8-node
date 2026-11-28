@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -48,32 +48,34 @@ export type Badge = {
 };
 
 /** @internal */
-export const BadgeActive$inboundSchema: z.ZodNativeEnum<typeof BadgeActive> = z
-  .nativeEnum(BadgeActive);
+export const BadgeActive$inboundSchema: z.ZodNativeEnum<typeof BadgeActive> =
+  /* @__PURE__ */ lazySchema$(() => z.nativeEnum(BadgeActive));
 /** @internal */
 export const BadgeActive$outboundSchema: z.ZodNativeEnum<typeof BadgeActive> =
   BadgeActive$inboundSchema;
 
 /** @internal */
-export const Badge$inboundSchema: z.ZodType<Badge, z.ZodTypeDef, unknown> = z
-  .object({
-    uuid: z.string().optional(),
-    active: BadgeActive$inboundSchema.default(1),
-    edit_date: z.any().optional(),
-    name: z.string(),
-    automatically_allocated: z.string().optional(),
-    file_name: z.string().optional(),
-    regarding_form_uuid: z.string().optional(),
-    regarding_asset_type_uuid: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "edit_date": "editDate",
-      "automatically_allocated": "automaticallyAllocated",
-      "file_name": "fileName",
-      "regarding_form_uuid": "regardingFormUuid",
-      "regarding_asset_type_uuid": "regardingAssetTypeUuid",
-    });
-  });
+export const Badge$inboundSchema: z.ZodType<Badge, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      uuid: z.string().optional(),
+      active: BadgeActive$inboundSchema.default(1),
+      edit_date: z.any().optional(),
+      name: z.string(),
+      automatically_allocated: z.string().optional(),
+      file_name: z.string().optional(),
+      regarding_form_uuid: z.string().optional(),
+      regarding_asset_type_uuid: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "edit_date": "editDate",
+        "automatically_allocated": "automaticallyAllocated",
+        "file_name": "fileName",
+        "regarding_form_uuid": "regardingFormUuid",
+        "regarding_asset_type_uuid": "regardingAssetTypeUuid",
+      });
+    })
+  );
 /** @internal */
 export type Badge$Outbound = {
   uuid?: string | undefined;
@@ -91,24 +93,26 @@ export const Badge$outboundSchema: z.ZodType<
   Badge$Outbound,
   z.ZodTypeDef,
   Badge
-> = z.object({
-  uuid: z.string().optional(),
-  active: BadgeActive$outboundSchema.default(1),
-  editDate: z.any().optional(),
-  name: z.string(),
-  automaticallyAllocated: z.string().optional(),
-  fileName: z.string().optional(),
-  regardingFormUuid: z.string().optional(),
-  regardingAssetTypeUuid: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    editDate: "edit_date",
-    automaticallyAllocated: "automatically_allocated",
-    fileName: "file_name",
-    regardingFormUuid: "regarding_form_uuid",
-    regardingAssetTypeUuid: "regarding_asset_type_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    active: BadgeActive$outboundSchema.default(1),
+    editDate: z.any().optional(),
+    name: z.string(),
+    automaticallyAllocated: z.string().optional(),
+    fileName: z.string().optional(),
+    regardingFormUuid: z.string().optional(),
+    regardingAssetTypeUuid: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      editDate: "edit_date",
+      automaticallyAllocated: "automatically_allocated",
+      fileName: "file_name",
+      regardingFormUuid: "regarding_form_uuid",
+      regardingAssetTypeUuid: "regarding_asset_type_uuid",
+    });
+  })
+);
 
 export function badgeToJSON(badge: Badge): string {
   return JSON.stringify(Badge$outboundSchema.parse(badge));

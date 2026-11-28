@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -44,15 +44,17 @@ export const MaterialBundleCreateMaterialList$inboundSchema: z.ZodType<
   MaterialBundleCreateMaterialList,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  quantity: z.number(),
-  sort_order: z.number().int().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "sort_order": "sortOrder",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    quantity: z.number(),
+    sort_order: z.number().int().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "sort_order": "sortOrder",
+    });
+  })
+);
 /** @internal */
 export type MaterialBundleCreateMaterialList$Outbound = {
   uuid: string;
@@ -65,15 +67,17 @@ export const MaterialBundleCreateMaterialList$outboundSchema: z.ZodType<
   MaterialBundleCreateMaterialList$Outbound,
   z.ZodTypeDef,
   MaterialBundleCreateMaterialList
-> = z.object({
-  uuid: z.string(),
-  quantity: z.number(),
-  sortOrder: z.number().int().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    sortOrder: "sort_order",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    quantity: z.number(),
+    sortOrder: z.number().int().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      sortOrder: "sort_order",
+    });
+  })
+);
 
 export function materialBundleCreateMaterialListToJSON(
   materialBundleCreateMaterialList: MaterialBundleCreateMaterialList,
@@ -99,19 +103,21 @@ export const MaterialBundleCreate$inboundSchema: z.ZodType<
   MaterialBundleCreate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string().optional(),
-  item_number: z.string(),
-  name: z.string().optional(),
-  material_list: z.array(
-    z.lazy(() => MaterialBundleCreateMaterialList$inboundSchema),
-  ).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "item_number": "itemNumber",
-    "material_list": "materialList",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    item_number: z.string(),
+    name: z.string().optional(),
+    material_list: z.array(
+      z.lazy(() => MaterialBundleCreateMaterialList$inboundSchema),
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "item_number": "itemNumber",
+      "material_list": "materialList",
+    });
+  })
+);
 /** @internal */
 export type MaterialBundleCreate$Outbound = {
   uuid?: string | undefined;
@@ -125,19 +131,21 @@ export const MaterialBundleCreate$outboundSchema: z.ZodType<
   MaterialBundleCreate$Outbound,
   z.ZodTypeDef,
   MaterialBundleCreate
-> = z.object({
-  uuid: z.string().optional(),
-  itemNumber: z.string(),
-  name: z.string().optional(),
-  materialList: z.array(
-    z.lazy(() => MaterialBundleCreateMaterialList$outboundSchema),
-  ).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    itemNumber: "item_number",
-    materialList: "material_list",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string().optional(),
+    itemNumber: z.string(),
+    name: z.string().optional(),
+    materialList: z.array(
+      z.lazy(() => MaterialBundleCreateMaterialList$outboundSchema),
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      itemNumber: "item_number",
+      materialList: "material_list",
+    });
+  })
+);
 
 export function materialBundleCreateToJSON(
   materialBundleCreate: MaterialBundleCreate,

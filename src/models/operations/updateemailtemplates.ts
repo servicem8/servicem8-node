@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -25,14 +25,16 @@ export const UpdateEmailTemplatesRequest$inboundSchema: z.ZodType<
   UpdateEmailTemplatesRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  uuid: z.string(),
-  EmailTemplateCreate: components.EmailTemplateCreate$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "EmailTemplateCreate": "emailTemplateCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    EmailTemplateCreate: components.EmailTemplateCreate$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "EmailTemplateCreate": "emailTemplateCreate",
+    });
+  })
+);
 /** @internal */
 export type UpdateEmailTemplatesRequest$Outbound = {
   uuid: string;
@@ -44,14 +46,16 @@ export const UpdateEmailTemplatesRequest$outboundSchema: z.ZodType<
   UpdateEmailTemplatesRequest$Outbound,
   z.ZodTypeDef,
   UpdateEmailTemplatesRequest
-> = z.object({
-  uuid: z.string(),
-  emailTemplateCreate: components.EmailTemplateCreate$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    emailTemplateCreate: "EmailTemplateCreate",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    uuid: z.string(),
+    emailTemplateCreate: components.EmailTemplateCreate$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      emailTemplateCreate: "EmailTemplateCreate",
+    });
+  })
+);
 
 export function updateEmailTemplatesRequestToJSON(
   updateEmailTemplatesRequest: UpdateEmailTemplatesRequest,

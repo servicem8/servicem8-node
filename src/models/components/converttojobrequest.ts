@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -18,14 +18,16 @@ export const ConvertToJobRequest$inboundSchema: z.ZodType<
   ConvertToJobRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  template_uuid: z.nullable(z.string()).optional(),
-  note: z.nullable(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "template_uuid": "templateUuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    template_uuid: z.nullable(z.string()).optional(),
+    note: z.nullable(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "template_uuid": "templateUuid",
+    });
+  })
+);
 /** @internal */
 export type ConvertToJobRequest$Outbound = {
   template_uuid?: string | null | undefined;
@@ -37,14 +39,16 @@ export const ConvertToJobRequest$outboundSchema: z.ZodType<
   ConvertToJobRequest$Outbound,
   z.ZodTypeDef,
   ConvertToJobRequest
-> = z.object({
-  templateUuid: z.nullable(z.string()).optional(),
-  note: z.nullable(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    templateUuid: "template_uuid",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    templateUuid: z.nullable(z.string()).optional(),
+    note: z.nullable(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      templateUuid: "template_uuid",
+    });
+  })
+);
 
 export function convertToJobRequestToJSON(
   convertToJobRequest: ConvertToJobRequest,
